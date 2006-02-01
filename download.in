@@ -1,0 +1,107 @@
+__SMALL_HEADER__(`Downloading Octave')
+
+__TITLE_BAR__(`Latest Release')
+
+<p>There are several different versions of Octave available for
+download:</p>
+
+<dl>
+<dt>stable</dt>
+<dd>This version is well tested, reliable, but also quite old and no
+longer maintained.</dd>
+<dt>testing</dt>
+<dd>A recent snapshot of the development sources that has been selected as
+being reasonably good.  Most people who are not actively involved in
+Octave's development will want to use this version.</dd>
+<dt>development</dt>
+<dd>The most recent snapshot of the development sources.  Use this if you
+want the latest features and it doesn't bother you that you might run
+into a few problems (if you do, please report them).  If you are
+interested in up-to-the-minute changes, you may use the sources from
+the public CVS archive instead (see below for details).</dd>
+</dl>
+
+__DOWNLOAD_INFO__(`2.0.17', `12 Apr 2002', `2.1.72', `11 Nov 2005', `2.9.4', `11 Nov 2005')
+
+__TITLE_BAR__(`Contributed Packages')
+
+<p>A collection of contributed packages for Octave is available from 
+__HTTP__(`octave.sf.net').</p>
+
+__TITLE_BAR__(`Binaries')
+
+<p>Binaries for Linux distributions are generally available with
+the distribution (__HTTP__(`www.debian.org', `Debian'),
+__HTTP__(`www.suse.com', `SuSE'),
+__HTTP__(`www.redhat.com', `RedHat'), and others have packages).</p>
+
+<p>Binaries for Apple's Mac OS X are available as part of the fink project
+__HTTP__(`fink.sourceforge.net', `Fink project') and also the
+__HTTP__(`darwinports.opendarwin.org', `DarwinPorts package management system').</p>
+ 
+<p>The current best solution for installing Octave on Windows
+systems is to simply use the most recent Cygwin package of Octave,
+available from __HTTP__(`www.cygwin.com', `www.cygwin.com') (look in
+the Math category when installing).</p>
+ 
+__TITLE_BAR__(`FTP Mirror Sites')
+
+<p>If you have trouble transferring Octave from this site, you might try
+one of those listed below.  They mirror the files from
+__OCTAVE_FTP__(`', `ftp://ftp.octave.org/pub/octave').</p>
+
+<p>__FTP__(`ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave')<br />
+__FTP__(`ftp.math.uni-hamburg.de/pub/soft/math/octave')<br />
+__FTP__(`ftp.task.gda.pl/pub/software/octave')<br />
+__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')<br />
+__FTP__(`mirror.aarnet.edu.au/pub/octave')</p>
+
+__TITLE_BAR__(`GNU Project FTP Site')
+
+<p>The latest stable release of the Octave sources may also be found on
+the official Free Software Foundation ftp site,
+__FTP__(`ftp.gnu.org/pub/gnu', `ftp://ftp.gnu.org/pub/gnu'),
+which is also mirrored on many sites around the world.</p>
+
+__TITLE_BAR__(`Anonymous CVS')
+
+<p>The latest development sources of Octave are also available via
+anonymous access to a read-only CVS archive.  There are also web
+interfaces to the archive available at
+__HTTP__(`www.octave.org/cgi-bin/cvsweb.cgi') and.
+__HTTP__(`www.octave.org/cgi-bin/viewcvs.cgi').</p>
+
+<p>If you decide to use the development sources from the CVS
+archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
+`ftp://ftp.octave.org/pub/octave/bleeding-edge/README').</p>
+
+<p>Assuming you have CVS and ssh installed on your machine you may check
+out the latest development version of Octave sources with the following
+sequence of commands:</p>
+
+<p>Set CVS_RSH in your environment to</p>
+
+<div class="code"><code>ssh</code></div>
+
+<p>Set CVSROOT in your environment to</p>
+
+<div class="code"><code>:ext:anoncvs@www.octave.org:/cvs</code></div>
+
+<p>Or alternately add</p>
+
+<div class="code"><code>-d :ext:anoncvs@www.octave.org:/cvs</code></div>
+
+<p>in the CVS commands below (place it immediately after <code>cvs</code>,
+before any other CVS arguments).</p>
+
+<p>Issue the command</p>
+
+<div class="code"><code>cvs -z 9 checkout octave<code></div>
+
+<p>to check out the all of the current development sources for Octave.</p>
+
+<p>Once you've got the repository checked out, <code>cvs update</code>
+will sync your local copy with the repository.  See the CVS manual for
+additional information on how to use CVS.</p>
+
+__OCTAVE_TRAILER__(`download')

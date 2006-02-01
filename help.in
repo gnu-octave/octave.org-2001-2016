@@ -1,0 +1,30 @@
+__SMALL_HEADER__(`About Octave')
+
+__TITLE_BAR__(`Help!')
+
+<p>
+The __MAILTO__(`help@octave.org', `help') mailing
+list exists for the discussion of matters related to using and
+installing Octave.  If would like to join the discussion, please send
+a message containing just <b>subscribe</b> in the body to
+__MAILTO__(`help-request@octave.org',
+           `help-<b>request</b>@octave.org').
+An __OCTAVE_HTTP__(`archive.html', `archive of older messages') is
+available.
+</p>
+
+<p>
+Please do <strong>not</strong> send requests to be added or removed
+from the the mailing list, or other administrative trivia to the list
+itself.
+</p>
+
+<p>
+If you think you have found a bug in the installation procedure,
+however, you should send a complete bug report for the problem to
+the __MAILTO__(`bug-octave@octave.org', `bug-octave') mailing
+list.  __OCTAVE_HTTP__(`bugs.html', `This page') contains more
+information that will help you to submit a useful report.
+</p>
+
+__OCTAVE_TRAILER__(`about')

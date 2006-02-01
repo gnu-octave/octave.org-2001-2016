@@ -1,0 +1,1358 @@
+<HTML>
+<HEAD>
+<!-- This HTML file has been created by texi2html 1.51
+     from projects.texi on 7 March 1998 -->
+
+<TITLE>Untitled Document</TITLE>
+</HEAD>
+<BODY>
+<H1>Untitled Document</H1>
+<P>
+<P><HR><P>
+<H1>Table of Contents</H1>
+<UL>
+<LI><A NAME="TOC1" HREF="projects.html#SEC1">Octave Projects</A>
+<UL>
+<LI><A NAME="TOC2" HREF="projects.html#SEC2">Numerical</A>
+<LI><A NAME="TOC3" HREF="projects.html#SEC3">Graphics</A>
+<LI><A NAME="TOC4" HREF="projects.html#SEC4">Strings</A>
+<LI><A NAME="TOC5" HREF="projects.html#SEC5">Other Data Types</A>
+<LI><A NAME="TOC6" HREF="projects.html#SEC6">Graphical User Interface</A>
+<LI><A NAME="TOC7" HREF="projects.html#SEC7">Input/Output</A>
+<LI><A NAME="TOC8" HREF="projects.html#SEC8">Interpreter</A>
+<LI><A NAME="TOC9" HREF="projects.html#SEC9">History</A>
+<LI><A NAME="TOC10" HREF="projects.html#SEC10">Configuration and Installation</A>
+<LI><A NAME="TOC11" HREF="projects.html#SEC11">Documentation and On-Line Help</A>
+<LI><A NAME="TOC12" HREF="projects.html#SEC12">Tests</A>
+<LI><A NAME="TOC13" HREF="projects.html#SEC13">Programming</A>
+<LI><A NAME="TOC14" HREF="projects.html#SEC14">Miscellaneous</A>
+<LI><A NAME="TOC15" HREF="projects.html#SEC15">Always</A>
+</UL>
+</UL>
+<P><HR><P>
+
+
+<H1><A NAME="SEC1" HREF="projects.html#TOC1">Octave Projects</A></H1>
+
+<P>
+Check with bug-octave@bevo.che.wisc.edu for a possibly more current
+copy.  Also, if you start working steadily on a project, please let
+bug-octave@bevo.che.wisc.edu know.  We might have information that
+could help you; we'd also like to send you the GNU coding standards.
+
+</P>
+<P>
+This list is not exclusive--there are many other things that might
+be good projects, but it might instead be something we already have,
+so check with bug-octave@bevo.che.wisc.edu before you start.
+
+</P>
+
+
+
+<H2><A NAME="SEC2" HREF="projects.html#TOC2">Numerical</A></H2>
+
+
+<UL>
+<LI>
+
+Merge control stuff.
+
+<LI>
+
+Improve <CODE>logm</CODE>, and <CODE>sqrtm</CODE>.
+
+<LI>
+
+Improve complex mapper functions.
+
+<LI>
+
+Make functions like <CODE>gamma</CODE> return the right IEEE Inf or NaN
+values for extreme args or other undefined cases.
+
+<LI>
+
+Handle complex values in <CODE>fread</CODE> and <CODE>fwrite</CODE>.
+
+<LI>
+
+Support for <CODE>lp_solve</CODE> for linear programming problems.
+
+<LI>
+
+Free QP solver.
+
+<LI>
+
+Free NLP solver.
+
+<LI>
+
+Support for sparse matrices.
+
+<LI>
+
+Fix <CODE>CollocWt</CODE> to handle Laguerre polynomials.  Make it easy to
+extend it to other polynomial types.
+
+<LI>
+
+Make <CODE>filter</CODE> faster (perhaps by calling BLAS functions).
+
+<LI>
+
+Add optional arguments to <CODE>colloc</CODE> so that it's not restricted to
+Legendre polynomials.
+
+<LI>
+
+Fix <CODE>eig</CODE> to also be able to solve the generalized eigenvalue
+problem, and to solve for eigenvalues and eigenvectors without
+performing a balancing step first.
+
+<LI>
+
+Move <CODE>rand</CODE>, <CODE>eye</CODE>, <CODE>xpow</CODE>, <CODE>xdiv</CODE>, etc., functions
+to the matrix classes.
+
+<LI>
+
+Use <CODE>octave_allocator</CODE> for memory management in array classes once
+g++ supports static member templates.
+
+<LI>
+
+Implement <CODE>ppval</CODE>, <CODE>cross</CODE>, and <CODE>dot</CODE>.
+
+<LI>
+
+When constructing <CODE>NLConst</CODE> (and other) objects, make sure that
+there are sufficient checks to ensure that the dimensions all
+conform.
+
+<LI>
+
+Allow parameters to be passed through the call to <CODE>fsolve</CODE> to the
+user-supplied function for Matlab compatibility.  Don't place an
+upper limit on the number of arguments.
+
+<LI>
+
+Check matrix classes for proper handling of empty matrices.
+
+<LI>
+
+Force all empty matrices to be 0x0 even when other dimensions have
+been speicified, for compatibility with Matlab, at least when some
+preference variable is set.
+
+<LI>
+
+Make operations with empty matrices produce empty matrices, for
+compatibility with Matlab (but only if Matlab 5 still does things
+this way). For example:
+
+
+<PRE>
+[1, 2] * []
+     => []
+</PRE>
+
+<LI>
+
+Should <CODE>any ([])</CODE> return <CODE>[]</CODE> or 0?  What about <CODE>all ([])</CODE>?
+
+<LI>
+
+Improve design of ODE, DAE, classes.
+
+<LI>
+
+Make it possible to specify a time which <CODE>dassl</CODE> and <CODE>lsode</CODE>
+should not integrate past.
+
+<LI>
+
+Add interface to <CODE>daspk</CODE> (new version of <CODE>dassl</CODE>).
+
+<LI>
+
+Extend meaning of <CODE>.*</CODE> to include <CODE>v .* M</CODE> or <CODE>M .* v</CODE>
+(where <CODE>v</CODE> is a column vector with the same number of rows as
+<CODE>M</CODE>) to scale rows of <CODE>M</CODE> by elements of <CODE>v</CODE>.  Similarly,
+if <CODE>w</CODE> is a row vector with as many columns as <CODE>M</CODE>, then
+either <CODE>w .* M</CODE> or <CODE>M .* w</CODE> scales the columns of <CODE>M</CODE>.
+
+<LI>
+
+Add support for <CODE>+=</CODE>, <CODE>-=</CODE>, etc.
+
+<LI>
+
+Given two vectors <CODE>x</CODE> and <CODE>y</CODE> of length <CODE>m</CODE>f and
+<CODE>n</CODE>, implement a function <CODE>outer (x, y, f)</CODE> that returns an
+<CODE>m</CODE>-by-<CODE>n</CODE> matrix with entries <CODE>f (x(i), y(j))</CODE>.  If
+<CODE>f</CODE> is omitted, multiplication is the default.  Should probably
+work for any vectors, not just if <CODE>x</CODE> is a column vector and
+<CODE>y</CODE> is a row vector.
+
+<LI>
+
+Make it possible to solve <CODE>b = L \ x</CODE> efficiently, either by
+providing an explicit function call, or by automatically
+determining that <CODE>L</CODE> is triangular.  If it is done automatically,
+provide some means for determining whether Octave has actually
+detected that the matrix is triangular.
+
+<LI>
+
+The <CODE>polyfit</CODE> function uses the economy QR factorization, but even
+that can take a lot of time for large datasets.  Consider an 
+option to compute the result with <CODE>inv (A' * A) * A' * y</CODE> or some
+other faster method.d  Possibly just switch to this method if the
+dataset is larger than some value.
+
+<LI>
+
+Make QR more memory efficient for large matrices when not all the
+columns of Q are required (apparently this is not handled by the
+lapack code yet).
+
+<LI>
+
+Consider making the behavior of the <CODE>/</CODE> and <CODE>\</CODE> operators for
+non-square systems compatible with Matlab.
+</UL>
+
+
+
+<H2><A NAME="SEC3" HREF="projects.html#TOC3">Graphics</A></H2>
+
+
+<UL>
+<LI>
+
+Make plotting with plplot work.
+
+<LI>
+
+Fix interface with gnuplot to wait for gnuplot to output any text
+before octave returns a prompt.  Possible by implementing two
+way communication between gnuplot and Octave.
+
+<LI>
+
+Handle gnuplot ranges correctly for parametric modes (accept 3
+ranges for 2d plots and 5 ranges for 3d plots).
+
+<LI>
+
+Make gsave (and possibly gload) work.  Implement gsave by having it
+also alter the plot command to not use temporary files (perhaps
+with some user-specified template for naming them) and then
+sending a `save' command to gnuplot.
+
+<LI>
+
+It would be nice to be able to check that a plot is currently
+being displayed.
+
+<LI>
+
+Implement <CODE>clf</CODE>, <CODE>gcf</CODE>, <CODE>get</CODE>, <CODE>set</CODE>, <CODE>orient</CODE>,
+<CODE>print</CODE>, <CODE>close</CODE>, etc. in Matlab-compatible ways.
+
+<LI>
+
+Make it possible to check the current graphics terminal type.
+
+<LI>
+
+If possible, pass data to gnuplot without using temporary files.
+
+<LI>
+
+If using temporary files, delete them when gnuplot exits.
+
+<LI>
+
+If possible, pass binary data to gnuplot to speed things up.
+
+<LI>
+
+If using gnuplot, consider setting a smaller default for the
+`zero' value (e.g., <CODE>set zero sqrt (realmin)</CODE> or something).
+</UL>
+
+
+
+<H2><A NAME="SEC4" HREF="projects.html#TOC4">Strings</A></H2>
+
+
+<UL>
+<LI>
+
+Improve performance of string functions, particularly for
+searching and replacing.
+
+<LI>
+
+Provide some regex matching functions.
+
+<LI>
+
+Convert string functions to work on string arrays.
+
+<LI>
+
+Make <CODE>find</CODE> work for strings.
+
+<LI>
+
+Consider making <CODE>octave_print_internal</CODE> print some sort of text
+representation for unprintable characters instead of sending them
+directly to the terminal.  (But don't do this for <CODE>fprintf</CODE>!)
+
+<LI>
+
+Consider changing the default value of <CODE>string_fill_char</CODE> from SPC
+to NUL.
+
+<LI>
+
+Consider making <CODE>["test", []]</CODE> produce <CODE>"test"</CODE>, for
+compatibility with Matlab, at least when some set of preferences are
+set.
+</UL>
+
+
+
+<H2><A NAME="SEC5" HREF="projects.html#TOC5">Other Data Types</A></H2>
+
+
+<UL>
+<LI>
+
+New types (char, short, etc.).
+
+<LI>
+
+3d matrix stuff.
+
+<LI>
+
+Template functions for mixed-type ops.
+
+<LI>
+
+Stuff for arithmetic using charMatrix, intMatrix, etc.
+</UL>
+
+
+
+<H2><A NAME="SEC6" HREF="projects.html#TOC6">Graphical User Interface</A></H2>
+
+
+<UL>
+<LI>
+
+In an X11 or other windowing environment, allow the user to pop up
+windows for menus and other purposes.  A good place to start might
+be Tk, as long as Tcl is avoided.
+
+<LI>
+
+Add a way to handle events, like alarms, mouse clicks, etc.
+</UL>
+
+
+
+<H2><A NAME="SEC7" HREF="projects.html#TOC7">Input/Output</A></H2>
+
+
+<UL>
+<LI>
+
+Make <CODE>fread</CODE> and <CODE>fwrite</CODE> work for complex data.  Iostreams
+based versions of these functions would also be nice, and if you are
+working on them, it would be good to support other size
+specifications (integer*2, etc.).
+
+<LI>
+
+Make <CODE>load</CODE> and <CODE>save</CODE> work for structures.
+
+<LI>
+
+Make <CODE>load</CODE> and <CODE>save</CODE> look for <TT>`file.mat'</TT> if only given
+<TT>`file'</TT>.
+
+Potential sticky points:
+
+
+<UL>
+<LI>
+
+For load, if both <TT>`foo'</TT> and <TT>`foo.mat'</TT> exist, should it prefer
+<TT>`foo'</TT> or <TT>`foo.mat'</TT>?  Should the preference depend on the
+arguments to load?  I think it should only prefer <TT>`.mat'</TT> files if the
+<SAMP>`-mat-binary'</SAMP> option is supplied, or if the file <TT>`foo.mat'</TT> exists
+but the file <TT>`foo'</TT> does not.
+
+<LI>
+
+For <CODE>save</CODE>, should it prefer to create <TT>`foo'</TT> or
+<TT>`foo.mat'</TT>?  Should the preference depend on the arguments to
+<CODE>save</CODE>?  Should the <CODE>default_save_format</CODE> imply a default
+preference?  I think it should only create <TT>`.mat'</TT> files if it is
+writing Matlab compatible files.
+</UL>
+
+<LI>
+
+Move some pr-output stuff to liboctave.
+
+<LI>
+
+Make the cutoff point for changing to packed storage a
+user-preference variable with default value 8192.
+
+<LI>
+
+Save image data in binary format to save space.
+
+<LI>
+
+Make it possible to load other image formats (ppm, pbm, etc. would
+probably be best since there are already filters to convert to
+these formats from others.)
+
+<LI>
+
+Use HDF for binary data.
+
+<LI>
+
+Make ascii load and save work for Inf and NaN.  (This is really a
+problem with the functions for reading floats in the GNU iolib.)
+
+<LI>
+
+Complain if there is not enough disk space available (I think
+there is simply not enough error checking in the code that handles
+writing data).
+
+<LI>
+
+Make it possible to tie arbitrary input and output streams
+together, similar to the way iostreams can be tied together.
+
+<LI>
+
+Allow comments in number-only data files.
+</UL>
+
+
+
+<H2><A NAME="SEC8" HREF="projects.html#TOC8">Interpreter</A></H2>
+
+
+<UL>
+<LI>
+
+Fix the parser so that
+
+
+<PRE>
+function foo ()
+  implicit_str_to_num_ok = 1;
+  '#' + 0;
+endfunction
+</PRE>
+
+succeeds, even when <CODE>implicit_str_to_num_ok</CODE> is 0 at the time the
+function is parsed.
+
+<LI>
+
+Fix the parser so that
+
+
+<PRE>
+if (expr) 'this is a string' end
+</PRE>
+
+is parsed as
+
+
+<PRE>
+IF expr STRING END
+</PRE>
+
+<LI>
+
+Consider making <CODE>x(:)</CODE> work no matter what the value of
+<CODE>do_fortran_indexing</CODE>.
+
+<LI>
+
+For indexing operations, allow <CODE>$</CODE> to indicate the last element.
+For example, <CODE>b = a (3:$, 1:$-1)</CODE>.  This means <CODE>b</CODE> is
+<CODE>a</CODE>, except for its first 2 rows and last column.  Note that
+<CODE>$</CODE> must be able to appear in arbitrarily complex expressions, so
+copying the the current implementation of <CODE>:</CODE> won't work. 
+
+<LI>
+
+If <TT>`foo.oct'</TT> and <TT>`foo.m'</TT> both exist in the <CODE>LOADPATH</CODE>,
+Octave will always find <TT>`foo.oct'</TT>, even if <CODE>foo.m</CODE> appears
+earlier in the list of directories.  This should be fixed (in the
+kpathsearch library) to find the first <TT>`.oct'</TT> or <TT>`.m'</TT> file in
+the path, and only prefer <TT>`.oct'</TT> over <TT>`.m'</TT> if both files are
+in the same directory.
+
+<LI>
+
+Consider grouping all preference variables in a structure instead
+of further polluting the namespace.  Maybe <CODE>Octave_options.xxx</CODE>?
+
+<LI>
+
+Rewrite functions in <TT>`input.cc'</TT> to do the right thing in all cases
+of using readline, forced interactive behavior, echoing of input,
+etc.
+
+<LI>
+
+Make it possible to redefine built-in variables and functions.
+(Fix whatever it is that is happening with clear for built-in
+variables.)
+
+<LI>
+
+Make it possible to check if a variable is complex.
+
+<LI>
+
+Consider making <CODE>linspace</CODE> and <CODE>logspace</CODE> return the value
+corresponding to the first argument if the number of requested
+points is 1.
+
+<LI>
+
+Consider allowing an arbitrary property list to be attached to any
+variable.  This could be a more general way to handle the help
+string that can currently be added with <CODE>document</CODE>.
+
+<LI>
+
+Allow more command line options to be accessible as built-in
+variables (<SAMP>`--echo-commands'</SAMP>, etc.).
+
+<LI>
+
+Allow <CODE>octave -c STRING</CODE> to execute commands from <CODE>STRING</CODE> then
+exit.
+
+<LI>
+
+Handle DOS style CRLFs in M files.  This should probably be
+optional.
+
+<LI>
+
+Make the interpreter run faster.
+
+<LI>
+
+Make it possible to disable or enable all warnings on an
+individual basis from the command line or via some built-in
+structure variable.
+
+<LI>
+
+Make warnings also give some indication about the location of the
+code that triggers the warning.
+
+<LI>
+
+Warn about complex comparisons?  Could just use <CODE>double_value</CODE> or
+<CODE>matrix_value</CODE> instead of explicit conversions to real types.  For
+this to really be useful, some additional information must be
+available to point to the location of the code that triggers the
+warning.
+
+<LI>
+
+Consider making it possible to have arrays of structures, and some
+way of indexing them.
+
+<LI>
+
+Allow arbitrary lower bounds for array indexing.  (Watch out for
+the additional conflict with zero-one style indexing.)
+
+<LI>
+
+Recursive problems.
+
+<LI>
+
+Improve the way <CODE>ignore_function_time_stamp</CODE> works to allow
+selecting by individual directories or functions.  Also,
+optionally allow checking only once between each prompt instead of
+every time the function is called.
+
+<LI>
+
+Make it possible to ask <CODE>exist</CODE> to only look for certain classes
+of variables, functions, files, etc. rather than always looking for
+everything.
+
+<LI>
+
+Add a command-line option to tell Octave to just do syntax
+checking and not execute statements.
+
+<LI>
+
+Is it necessary for <CODE>do_binary_op</CODE> and <CODE>do_unary_op</CODE> to be
+friends of the <CODE>tree_constant</CODE> class?
+
+<LI>
+
+Clean up symtab and variable stuff.
+
+<LI>
+
+Input stream class for parser files--must manage buffers for
+flex and context for global variable settings.
+
+<LI>
+
+make parser do more semantic checking, continue after errors when
+compiling functions, etc.
+
+<LI>
+
+Make <CODE>LEXICAL_ERROR</CODE> have a value that is the error message for
+<CODE>parse_error</CODE> to print?
+
+<LI>
+
+Make it possible to clear dynamically loaded functions.
+
+<LI>
+
+Add a run-time alias mechanism that would allow things like
+
+
+<PRE>
+alias fun function_with_a_very_long_name 
+</PRE>
+
+so that <CODE>function_with_a_very_long_name</CODE> could be invoked as
+<CODE>fun</CODE>.
+
+<LI>
+
+What should <CODE>is_global</CODE> return when called for built-in variables?
+
+<LI>
+
+Allow local changes to variables to be written more compactly than
+is currently possible with <CODE>unwind_protect</CODE>.  For example,
+
+
+<PRE>
+function f ()
+  local prefer_column_vectors = something;
+  ...
+endfunction
+</PRE>
+
+would be equivalent to
+
+
+<PRE>
+function f ()
+  unwind_protect
+    save_prefer_column_vectors = prefer_column_vectors;
+    prefer_column_vectors = something;
+    ...
+  unwind_protect_cleanup
+    prefer_column_vectors = save_prefer_column_vectors;
+  end_unwind_protect
+endfunction
+</PRE>
+
+<LI>
+
+Fix all function files to check for bogus inputs (wrong number or
+types of input arguments, wrong number of output arguments).
+
+<LI>
+
+Reduce the memory and time required to parse very large matrix
+lists.
+
+<LI>
+
+Handle options for built-in functions more consistently.
+
+<LI>
+
+Too much time is spent allocating and freeing memory.  What can be
+done to improve performance?
+
+<LI>
+
+Error output from Fortran code is ugly.  Something should be done to
+make it look better.
+
+<LI>
+
+It would be nice if output from the Fortran routines could be
+passed through the pager.
+
+<LI>
+
+Attempt to recognize common subexpressions in the parser.
+
+<LI>
+
+Remove the buffer size limit in <CODE>octave_read</CODE> in <TT>`input.cc'</TT>.
+
+<LI>
+
+Handle arrays with more than two dimensions.
+
+<LI>
+
+Consider making assignment statements like
+
+
+<PRE>
+M (i_idx, j_idx) = RHS
+</PRE>
+
+produce the value of RHS instead of the value of M.
+
+<LI>
+
+Consider making it possible to specify an empty matrix with a
+syntax like <CODE>[](e1, e2)</CODE>.  Of course at least one of the
+expressions must be zero...
+
+<LI>
+
+Eliminate <CODE>force_numeric</CODE> and <CODE>make_numeric</CODE> functions.
+
+<LI>
+
+Is <CODE>Matrix::fortran_vec</CODE> really necessary?
+
+<LI>
+
+<CODE>print_usage</CODE> should set <CODE>error_state</CODE> in most cases?
+
+<LI>
+
+Make statements like this
+
+
+<PRE>
+foo bar baz
+</PRE>
+
+turn into function calls like this:
+
+
+<PRE>
+foo ("bar", "baz")
+</PRE>
+
+This is pretty ugly and introduces some conflicts.
+
+<LI>
+
+Add a command that works like bash's <CODE>builtin</CODE> command.
+
+<LI>
+
+Handle comments in parse trees for use with the type command.
+
+<LI>
+
+Make the type command handle script files too, by just reading and
+printing them.
+
+<LI>
+
+The <CODE>which</CODE> and <CODE>type</CODE> commands should distinguish between
+dynamically linked functions and built-in functions.  For dynamically
+linked functions, the location of the <TT>`.oct'</TT> file should be displayed.
+
+<LI>
+
+Clean up <CODE>eye</CODE>, <CODE>eval</CODE>, <CODE>feval</CODE>, <CODE>keyboard</CODE>,
+<CODE>input</CODE>, <CODE>ones</CODE>, <CODE>zeros</CODE>.
+
+<LI>
+
+Turn off printing when evaluating expressions in an <CODE>eval</CODE>
+statement, for compatibility with Matlab.
+
+<LI>
+
+It would be nice to have an interactive debugger.
+
+<LI>
+
+Make <CODE>whos</CODE> report total memory used by variables (and functions?).
+
+<LI>
+
+Rewrite <CODE>whos</CODE> and the <CODE>symbol_record_info</CODE> class.  Write a
+built-in function that gives all the basic information, then write
+<CODE>who</CODE> and <CODE>whos</CODE> as M-files.
+
+<LI>
+
+Make <CODE>whos</CODE> work for structure elements:
+
+
+<PRE>
+prot  type               rows   cols  name
+====  ====               ====   ====  ====
+wd    matrix                m      n  struct.x
+</PRE>
+
+<LI>
+
+On systems that support <CODE>matherr</CODE>, make it possible for users to
+enable the printing of warning messages.
+
+<LI>
+
+Make it possible to mark variables and functions as read-only.
+
+<LI>
+
+Provide a built-in function for applying a scalar function to an
+array.  Be sure to note in the manual that this is not the
+preferred way to write a function that can handle vector/matrix
+arguments because there is a significant overhead for function
+calls.  If you are really looking to make a function work for
+vector/matrix arguments and you want it to run fast, you should
+write it in terms of the existing vector/matrix operators as much
+as possible.
+
+<LI>
+
+Make it possible to write a function that gets a reference to a
+matrix in memory and change one or more elements without
+generating a second copy of the data.
+</UL>
+
+
+
+<H2><A NAME="SEC9" HREF="projects.html#TOC9">History</A></H2>
+
+
+<UL>
+<LI>
+
+Add an option to allow saving input from script files in the
+history list.
+
+<LI>
+
+The <CODE>history</CODE> command should accept two numeric arguments to
+indicate a range of history entries to display, save or read.
+
+<LI>
+
+Add an option to include information about the Octave session in
+the history list.  Possibly a time/date stamp and the current
+Octave line number, appended as a comment (users should probably
+be able to control the format).
+
+<LI>
+
+Fix history problems--core dump if multiple processes are
+writing to the same history file?
+</UL>
+
+
+
+<H2><A NAME="SEC10" HREF="projects.html#TOC10">Configuration and Installation</A></H2>
+
+
+<UL>
+<LI>
+
+Handle <CODE>USE_READLINE</CODE> so that <SAMP>`--enable-readline'</SAMP> will work.
+
+<LI>
+
+Make Octave as independent of the particular readline version as
+possible.
+
+<LI>
+
+Add an <SAMP>`--enable-pathsearch'</SAMP> option to configure to make it possible
+to configure and run without kpathsea. 
+
+<LI>
+
+Make configure take more defaults from the environment.  It should
+definitely pay attention to <CODE>CFLAGS</CODE>, <CODE>CXXFLAGS</CODE>,
+<CODE>FFLAGS</CODE>, etc.
+
+<LI>
+
+Should <SAMP>`--enable-lite-kernel'</SAMP> imply <SAMP>`--enable-shared'</SAMP>?
+
+<LI>
+
+Should <SAMP>`--enable-dl'</SAMP> imply <SAMP>`--enable-shared'</SAMP>?
+
+<LI>
+
+Make it possible to configure without readline.
+
+<LI>
+
+Makefile changes:
+
+<UL>
+<LI>
+
+eliminate for loops
+
+<LI>
+
+define shell commands or eliminate them
+
+<LI>
+
+verify distclean
+
+<LI>
+
+consolidate targets
+</UL>
+
+<LI>
+
+Make it possible to configure so that installed binaries and
+shared libraries are stripped.
+
+<LI>
+
+Make installation of the static libraries optional.
+
+<LI>
+
+Create a docs-only distribution?
+</UL>
+
+
+
+<H2><A NAME="SEC11" HREF="projects.html#TOC11">Documentation and On-Line Help</A></H2>
+
+
+<UL>
+<LI>
+
+Document new features.
+
+<UL>
+<LI>
+
+<CODE>history-search-{back,for}ward</CODE>.
+
+<LI>
+
+<CODE>try</CODE>/<CODE>catch</CODE>.
+
+<LI>
+
+Other stuff mentioned in the <TT>`NEWS'</TT> file.
+</UL>
+
+<LI>
+
+Improve the Texinfo Documentation for the interpreter.  It would
+be useful to have lots more examples, to not have so many forward
+references, and to not have very many simple lists of functions.
+
+<LI>
+
+The docs should mention something about efficiency and that using
+array operations is almost always a good idea for speed.
+
+<LI>
+
+Texinfo documentation for the C++ classes.
+
+<LI>
+
+Support multiple info files, perhaps allowing one or more in each
+directory in the <CODE>LOADPATH,b</CODE> so that local collections of M-files
+could be documented with Info.
+
+<LI>
+
+Figure out a good way to have functions and variables documented
+in only one place.
+
+<LI>
+
+Improve help messages for operators and keywords in <TT>`help.cc'</TT>.
+
+<LI>
+
+Make index entries more consistent to improve behavior of <SAMP>`help -i'</SAMP>.
+
+<LI>
+
+Make <SAMP>`help -i'</SAMP> try to find a whole word match first.
+
+<LI>
+
+Allow help for local additions to be accessible with <SAMP>`help -i'</SAMP>.
+
+<LI>
+
+Make the arrow keys work in the info reader.
+
+<LI>
+
+Update Info to be based on the current Texinfo release.
+
+<LI>
+
+Should <TT>`info/terminal.c'</TT> include definitions for <CODE>PC</CODE>,
+<CODE>BC</CODE>, <CODE>UP</CODE>, and <CODE>ospeed</CODE> on all systems?
+
+<LI>
+
+Clean up help stuff.
+
+<LI>
+
+Demo files.
+
+<LI>
+
+As the number of m-files with octave grows perhaps a <TT>`Contents.m'</TT>
+file for each toolbox (directory) would be appropriate so one
+knows exactly what functions are in a toolbox with a quick look.
+It would be best to generate information for each function directly
+from the M-files, so that the information doesn't have to be
+duplicated, and will remain current if the M-files change.  It
+would also be best to do as much of this as possible in an M-file,
+though I wouldn't mind adding some basic support for listing the
+names of all the directories in the <CODE>LOADPATH</CODE>, and the names of all
+the M-files in a given directory if that is needed.
+
+Also make it possible to recursively search for Contents files:
+<DL COMPACT>
+
+<DT><CODE>help dir</CODE>
+<DD>
+Contents from dir
+
+<DT><CODE>help dir//</CODE>
+<DD>
+Contents from dir and all its subdirectories
+
+<DT><CODE>help dir1/dir2</CODE>
+<DD>
+Contents from dir2 which is under dir1
+</DL>
+
+<LI>
+
+Some sort of blurb (2-3 pages) describing Octave in a reasonably
+coherent way, where to get it etc., perhaps formatted pretty,
+i.e. not just text.  Maybe start with the latest Announce file.
+</UL>
+
+
+
+<H2><A NAME="SEC12" HREF="projects.html#TOC12">Tests</A></H2>
+
+
+<UL>
+<LI>
+
+Improved set of tests:
+
+<UL>
+<LI>
+
+Tests for various functions.  Would be nice to have a test file
+corresponding to every function.
+
+<LI>
+
+Tests for element by element operators:
+
+
+<PRE>
++  -  .*  ./  .\  .^  |  &#38;  &#60;  &#60;=  ==  &#62;=  &#62;  !=  ! 
+</PRE>
+
+<LI>
+
+Tests for boolean operators:
+
+
+<PRE>
+&#38;&#38; ||
+</PRE>
+
+<LI>
+
+Tests for other operators:
+
+
+<PRE>
+*  /  \  '  .'
+</PRE>
+
+<LI>
+
+Tests from bug reports.
+
+<LI>
+
+Tests for indexed assignment.  Need to consider resizing, fortran-style
+indexing, zero-one indexing, and assignment of empty matrix as well as
+values.
+</UL>
+
+<LI>
+
+Tests for all internal functions.
+</UL>
+
+
+
+<H2><A NAME="SEC13" HREF="projects.html#TOC13">Programming</A></H2>
+
+
+<UL>
+<LI>
+
+Move toward using more stuff from standard C++ library.
+
+<LI>
+
+More C++/Fortran cleanups.
+
+<LI>
+
+It is likely that there are still some memory leaks.  Hunt then down
+and plug them. 
+
+<LI>
+
+Better error messages for missing operators?
+
+<LI>
+
+Eliminate duplicate enums in <TT>`pt-exp.cc'</TT>, <TT>`pt-const.cc'</TT>, and
+<TT>`ov.cc'</TT>.
+
+<LI>
+
+Handle <CODE>octave_print_internal</CODE> stuff at the liboctave level.  Then
+the <CODE>octave_value</CODE> classes could just call on the <CODE>print</CODE> methods
+for the underlying classes.
+
+<LI>
+
+As much as possible, eliminate explicit checks for the types of
+octave_value objects so that user-defined types will automatically
+do the right thing in more cases.
+
+<LI>
+
+Only include config.h in files that actually need it, instead of
+including it in every .cc file.  Unfortunately, this might not be
+so easy to figure out.
+
+<LI>
+
+GNU coding standards:
+
+
+<UL>
+<LI>
+
+Add a <SAMP>`Makefile'</SAMP> target to the Makefiles.
+
+<LI>
+
+Comments on <CODE>#else</CODE> and <CODE>#endif</CODE> preprocessor commands.
+
+<LI>
+
+Change error message format to match standards everywhere.
+</UL>
+
+<LI>
+
+Use STL stuff instead of libg++ lists, maps, and stacks.
+
+<LI>
+
+Eliminate more global variables.
+
+<LI>
+
+Encapsulate readline in a class.  Include interface to stuff like
+<CODE>blink_matching_paren</CODE>. 
+
+<LI>
+
+Encapsulate resource stuff in a class.
+
+<LI>
+
+Move <CODE>procstream</CODE> to liboctave.
+
+<LI>
+
+Replace more C-style vectors with <CODE>Array&#60;T&#62;</CODE> stuff.
+
+<LI>
+
+Use references and classes in more places.
+
+<LI>
+
+Share more code among the various *_options functions.
+</UL>
+
+
+
+<H2><A NAME="SEC14" HREF="projects.html#TOC14">Miscellaneous</A></H2>
+
+
+<UL>
+<LI>
+
+Implement some functions for interprocess communication:  <CODE>bind</CODE>,
+<CODE>accept</CODE>, <CODE>connect</CODE>, <CODE>gethostbyname</CODE>, etc.
+
+<LI>
+
+The installation process should also install <TT>`octave.el'</TT>.  This
+needs to detect the appropriate Emacs binary to use to
+byte-compile the <TT>`.el'</TT> file.  Following GNU Emacs philosophy,
+installation would be into <SAMP>`$(prefix)/share/emacs/site-lisp'</SAMP> by
+default, but it should be selectable.
+
+<LI>
+
+The ability to transparently handle very large files:
+
+Juhana K Kouhia &#60;kouhia@nic.funet.fi&#62; wrote:
+
+
+<BLOCKQUOTE>
+<P>
+If I have a one-dimensional signal data with the size 400
+Mbytes, then what are my choices to operate with it:
+
+</P>
+
+<UL>
+<LI>
+
+I have to split the data
+<LI>
+
+Octave has a virtual memory on its own and I don't have to
+worry about the splitting.
+</UL>
+
+<P>
+If I split the data, then my easily programmed processing
+programs will become hard to program.
+
+</P>
+<P>
+If possible, I would like to have the virtual memory system in
+Octave i.e. the all big files, the user see as one big array or
+such.  There could be several user selectable models to do the
+virtual memory depending on what kind of data the user have (1d,
+2d) and in what order they are processed (stream or random
+access).
+</BLOCKQUOTE>
+
+Perhaps this can be done entirely with a library of M-files.
+
+<LI>
+
+An interface to gdb.
+
+Michael Smolsky &#60;fnsiguc@weizmann.weizmann.ac.il&#62; wrote:
+
+
+<BLOCKQUOTE>
+<P>
+I was thinking about a tool, which could be very useful for me
+in my numerical simulation work. It is an interconnection
+between gdb and Octave. We are often managing very large arrays
+of data in our Fortran or C codes, which might be studied with
+the help of Octave at the algorithm development stages. Assume
+you're coding, say, wave equation.  And want to debug the
+code. It would be great to pick some array from the memory of
+the code you're develloping, fft it and see the image as a
+log-log plot of the spectral density. I'm facing similar
+problems now.  To avoid high c-development cost, I develop in
+Matlab/Octave, and then rewrite into c. It might be so much
+easier, if I could off-load a C array right from the debugger
+into Octave, study it, and, perhaps, change some [many] values
+with a convenient Matlab/Octave syntax, similar to
+<CODE>a(:,50:250) = zeros(100,200)</CODE>, and then store it back into the
+memory of my C code.
+</BLOCKQUOTE>
+
+<LI>
+
+Add a function like <CODE>strptime</CODE> which is the opposite of
+<CODE>strftime</CODE>.  A C version is apparently in recent releases of the
+Linux C library.
+
+<LI>
+
+Add a definition to lgrind so that it supports Octave.
+(See http://www.tex.ac.uk/tex-archive/support/lgrind/ for more
+information about lgrind.)
+</UL>
+
+
+
+<H2><A NAME="SEC15" HREF="projects.html#TOC15">Always</A></H2>
+
+
+<UL>
+<LI>
+
+Squash bugs.
+</UL>
+
+<P><HR><P>
+This document was generated on 7 March 1998 using the
+<A HREF="http://wwwcn.cern.ch/dci/texi2html/">texi2html</A>
+translator version 1.51.</P>
+</BODY>
+</HTML>

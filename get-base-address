@@ -1,0 +1,14 @@
+#! /bin/sh
+
+HOST=`hostname`
+
+case `hostname` in
+  foobar*|devzero*|frodo*)
+    echo -n "file:/home/jwe/src/octave-www/"
+  ;;
+  *)
+    echo -n "/"
+  ;;
+esac
+
+exit 0

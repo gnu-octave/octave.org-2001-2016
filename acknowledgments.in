@@ -1,0 +1,192 @@
+__SMALL_HEADER__(`Contributors to Octave')
+
+__TITLE_BAR__(`Contributors - Thanks!')
+
+<P>
+Many people have already contributed to Octave's development.  In
+addition to John W. Eaton, the following people have helped write parts
+of Octave or helped out in various other ways.
+</P>
+
+<p>
+Your name could be here - __OCTAVE_HTTP__(`help-wanted.html', `help')
+write new features for Octave!  If you have contributed something and
+your name is not on this list, contact
+__MAILTO__(`jwe@octave.org', `me').
+</p>
+
+<UL>
+<LI>
+__MAILTO__(`baier@ci.tuwien.ac.at', `Thomas Baier') wrote the original versions
+of <CODE>popen</CODE>, <CODE>pclose</CODE>, <CODE>execute</CODE>, <CODE>sync_system</CODE>, and
+<CODE>async_system</CODE>.
+
+</LI><LI>
+
+__MAILTO__(`karl@cs.umb.edu', `Karl Berry') wrote the <CODE>kpathsea</CODE> library
+that allows Octave to recursively search directory paths for function
+and script files.
+
+</LI><LI>
+
+__MAILTO__(`gbeyerle@awi-potsdam.de', `Georg Beyerle') contributed code to save
+values in MATLAB's <TT>`.mat'</TT>-file format, and has provided many
+useful bug reports and suggestions.
+
+</LI><LI>
+
+__MAILTO__(`jcc@bevo.che.wisc.edu', `John Campbell') wrote most of the file and
+C-style input and output functions.
+
+</LI><LI>
+
+__MAILTO__(`bfox@gnu.org', `Brian Fox') wrote the <CODE>readline</CODE> library
+used for command history editing, and the portion of this manual that
+documents it.
+
+</LI><LI>
+
+__MAILTO__(`gebhardt@crunch.ikp.physik.th-darmstadt.de', `Klaus Gebhardt')
+ported Octave to OS/2.
+
+</LI><LI>
+
+__MAILTO__(`A.S.Hodel@eng.auburn.edu', `A. Scottedward Hodel') contributed a number
+of functions including <CODE>expm</CODE>, <CODE>qzval</CODE>, <CODE>qzhess</CODE>,
+<CODE>syl</CODE>, <CODE>lyap</CODE>, and <CODE>balance</CODE>.
+
+</LI><LI>
+
+__MAILTO__(`Kurt.Hornik@ci.tuwien.ac.at', `Kurt Hornik') provided the
+<CODE>corrcoef</CODE>, <CODE>cov</CODE>, <CODE>fftconv</CODE>, <CODE>fftfilt</CODE>, <CODE>gcd</CODE>,
+<CODE>lcd</CODE>, <CODE>kurtosis</CODE>, <CODE>null</CODE>, <CODE>orth</CODE>, <CODE>poly</CODE>,
+<CODE>polyfit</CODE>, <CODE>roots</CODE>, and <CODE>skewness</CODE> functions, supplied
+documentation for these and numerous other functions, rewrote the Emacs
+mode for editing Octave code and provided its documentation, and has
+helped tremendously with testing.  He has also been a constant source of
+new ideas for improving Octave.
+
+</LI><LI>
+
+__MAILTO__(`johnsonp@nicco.sscnet.ucla.edu', `Phil Johnson') has helped to make
+Linux releases available.
+
+</LI><LI>
+
+__MAILTO__(`leisch@ci.tuwien.ac.at', `Friedrich Leisch') provided the
+<CODE>mahalanobis</CODE> function.
+
+</LI><LI>
+
+__MAILTO__(`wkn@leland.stanford.edu', `Ken Neighbors') has provided many useful
+bug reports and comments on MATLAB compatibility.
+
+</LI><LI>
+
+__MAILTO__(`niles@axp745.gsfc.nasa.gov', `Rick Niles') rewrote Octave's plotting
+functions to add line styles and the ability to specify an unlimited
+number of lines in a single call.  He also continues to track down odd
+incompatibilities and bugs.
+
+</LI><LI>
+
+__MAILTO__(`meo@sugarland.unocal.com', `Mark Odegard') provided the initial
+implementation of <CODE>fread</CODE>, <CODE>fwrite</CODE>, <CODE>feof</CODE>, and
+<CODE>ferror</CODE>.
+
+</LI><LI>
+
+__MAILTO__(`tony@guts.biomed.uakron.edu', `Tony Richardson') wrote Octave's
+image processing functions as well as most of the original polynomial
+functions.
+
+</LI><LI>
+
+__MAILTO__(`btenison@dibbs.net', `R. Bruce Tenison') wrote the
+<CODE>hess</CODE> and <CODE>schur</CODE> functions.
+
+</LI><LI>
+
+__MAILTO__(`twaroch@ci.tuwien.ac.at', `Teresa Twaroch') provided the functions
+<CODE>gls</CODE> and <CODE>ols</CODE>.
+
+</LI><LI>
+
+__MAILTO__(`Andreas.Weingessel@ci.tuwien.ac.at', `Andreas Weingessel') wrote the
+audio functions <CODE>lin2mu</CODE>, <CODE>loadaudio</CODE>, <CODE>mu2lin</CODE>,
+<CODE>playaudio</CODE>, <CODE>record</CODE>, <CODE>saveaudio</CODE>, and <CODE>setaudio</CODE>.
+
+</LI><LI>
+
+__MAILTO__(`ffy@eng.cam.ac.uk', `Fook Fah Yap') provided the <CODE>fft</CODE> and
+<CODE>ifft</CODE> functions and valuable bug reports for early versions.
+</UL>
+
+<P>
+Special thanks to the following people and organizations for
+supporting the development of Octave:
+
+</P>
+
+<UL>
+<LI>
+
+The National Science Foundation, through grant numbers CTS-0105360,
+CTS-9708497, CTS-9311420, and CTS-8957123.
+
+</LI><LI>
+
+The industrial members of the Texas-Wisconsin Modeling and Control
+Consortium (__HTTP__(`http://www.che.utexas.edu/twmcc', `TWMCC')).
+
+</LI><LI>
+
+The Paul A. Elfers Endowed Chair in Chemical Engineering at the
+University of Wisconsin-Madison.
+
+</LI><LI>
+
+Digital Equipment Corporation, for an equipment grant as part of their
+External Research Program.
+
+</LI><LI>
+
+Sun Microsystems, Inc., for an Academic Equipment grant.
+
+</LI><LI>
+
+International Business Machines, Inc., for providing equipment as part
+of a grant to the University of Texas College of Engineering.
+
+</LI><LI>
+
+Texaco Chemical Company, for providing funding to continue the
+development of this software.
+
+</LI><LI>
+
+The University of Texas College of Engineering, for providing a
+Challenge for Excellence Research Supplement, and for providing an
+Academic Development Funds grant.
+
+</LI><LI>
+
+The State of Texas, for providing funding through the Texas
+Advanced Technology Program under Grant No. 003658-078.
+
+</LI><LI>
+
+Noel Bell, Senior Engineer, Texaco Chemical Company, Austin Texas.
+
+</LI><LI>
+
+James B. Rawlings, Professor, University of Wisconsin-Madison,
+Department of Chemical Engineering.
+
+</LI><LI>
+
+Richard Stallman, for writing GNU.
+</LI>
+</UL>
+
+__OCTAVE_TRAILER__(`acknowledgements')
