@@ -2,12 +2,10 @@
 
 body,td,a,p {
 font-family: arial,sans-serif;
-background-color: #ffffff;
 color: #000000;
 }
 
 a:link {
-background-color: #ffffff;
 color: #0050fa;
 }
 
@@ -71,5 +69,4 @@ font-family: arial,sans-serif;
 /* Highlighting the code download sections */
 .download {
 background-color: #d0e0ff;
-color: #ffffff;
 }
