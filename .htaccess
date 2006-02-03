@@ -1,0 +1,11 @@
+<FilesMatch "\.(in|m4)$">
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</FilesMatch>
+
+<FilesMatch "(Makefile|get-base-address)$">
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</FilesMatch>
