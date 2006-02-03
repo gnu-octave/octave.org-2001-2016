@@ -2,7 +2,7 @@ __BIG_HEADER__(`Octave Home Page')
 
 ifdef(`__TEXT_MODE__',
       `<p>__OCTAVE_TEXT_MODE_GRAPHIC__(`sombrero.jpg', `3D Graph')',
-      `<p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `style="float: left"')')
+      `<p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `style="float: left; margin: 2em"')')
 GNU Octave is a high-level language, primarily intended for numerical
 computations.  It provides a convenient command line interface for
 solving linear and nonlinear problems numerically, and for performing
