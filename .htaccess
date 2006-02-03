@@ -4,7 +4,7 @@
   Satisfy All
 </FilesMatch>
 
-<FilesMatch "(Makefile|get-base-address)$">
+<FilesMatch "Makefile$">
   Order allow,deny
   Deny from all
   Satisfy All
