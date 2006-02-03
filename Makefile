@@ -1,12 +1,4 @@
-ifeq ($(shell hostname), bevo.che.wisc.edu)
-  SHELL = /usr/local/gnu/bin/bash
-else
-  ifeq ($(shell hostname), bahaha.che.wisc.edu)
-    SHELL = /usr/local/gnu/bin/bash
-  endif
-endif
-
-destdir = /usr/local/www/octave.org
+DESTDIR = /usr/local/www/octave.org
 
 INSTALL_DATA = install -m 644
 
@@ -38,39 +30,29 @@ HTML_SRC := acknowledgments.in \
 	news.in \
 	octave.in
 
-IMG_HTML := $(HTML_SRC:.in=.html)
+HTML_OUT := $(HTML_SRC:.in=.html)
 
-TXT_HTML := $(addprefix text/, $(HTML_SRC:.in=.html))
-
-FILES_TO_INSTALL = $(IMG_HTML) $(TXT_HTML) $(IMAGES) $(EXTRA_HTML)
+FILES_TO_INSTALL = $(HTML_OUT) $(IMAGES) $(EXTRA_HTML)
 
 SOURCES = $(HTML_SRC) $(IMAGES) $(EXTRA_HTML)
 
-all: text $(IMG_HTML) $(TXT_HTML)
+all: $(HTML_OUT)
 .PHONY: all
 
-$(TXT_HTML) $(IMG_HTML): macros.m4
-
-text:
-	if [ -d text ]; then true; else mkdir text; fi
+$(HTML_OUT): macros.m4
 
 %.html : %.in
 	$(M4) $(MACRO_FILE) -D__FILE_NAME__=$(@F) $< > $@.t
 	$(MV) $@.t $@
 
-text/%.html : %.in
-	$(M4) -D__TEXT_MODE__=1 -D__FILE_NAME__=$(@F) $(MACRO_FILE) $< > $@.t
-	$(MV) $@.t $@
-
 clean:
-	rm -f $(TXT_HTML) $(IMG_HTML)
-	rmdir text
+	rm -f $(HTML_OUT)
 .PHONY: clean
 
 define do-install
-if [ ! -f $(destdir)/$f -o $f -nt $(destdir)/$f ] ; then \
-  echo installing $f in $(destdir) ; \
-  $(INSTALL_DATA) $f $(destdir)/$f ; \
+if [ ! -f $(DESTDIR)/$f -o $f -nt $(DESTDIR)/$f ] ; then \
+  echo installing $f in $(DESTDIR) ; \
+  $(INSTALL_DATA) $f $(DESTDIR)/$f ; \
 fi
 
 endef
