@@ -32,7 +32,7 @@ __TITLE_BAR__(`Binaries')
 
 <p>Binaries for Linux distributions are generally available with
 the distribution (__HTTP__(`www.debian.org', `Debian'),
-__HTTP__(`www.suse.com', `SuSE'),
+__HTTP__(`www.novell.com/linux/suse', `SuSE'),
 __HTTP__(`www.redhat.com', `RedHat'), and others have packages).</p>
 
 <p>Binaries for Apple's Mac OS X are available as part of the fink project
@@ -52,9 +52,7 @@ __OCTAVE_FTP__(`', `ftp://ftp.octave.org/pub/octave').</p>
 
 <p>__FTP__(`ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave')<br />
 __FTP__(`ftp.math.uni-hamburg.de/pub/soft/math/octave')<br />
-__FTP__(`ftp.task.gda.pl/pub/software/octave')<br />
-__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')<br />
-__FTP__(`mirror.aarnet.edu.au/pub/octave')</p>
+__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')</p>
 
 __TITLE_BAR__(`GNU Project FTP Site')
 
