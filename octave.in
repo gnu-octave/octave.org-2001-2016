@@ -1,46 +1,36 @@
 __BIG_HEADER__(`Octave Home Page')
 
-ifdef(`__TEXT_MODE__',
-      `<p>__OCTAVE_TEXT_MODE_GRAPHIC__(`sombrero.jpg', `3D Graph')',
-      `<p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `style="float: left; margin: 2em"')')
+<p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `style="float: left; margin: 2em"')
 GNU Octave is a high-level language, primarily intended for numerical
 computations.  It provides a convenient command line interface for
 solving linear and nonlinear problems numerically, and for performing
 other numerical experiments using a language that is mostly compatible
-with Matlab.  It may also be used as a batch-oriented language.
-</p>
+with Matlab.  It may also be used as a batch-oriented language.</p>
 
-<p>
-Octave has extensive tools for solving common numerical linear algebra
+<p>Octave has extensive tools for solving common numerical linear algebra
 problems, finding the roots of nonlinear equations, integrating
 ordinary functions, manipulating polynomials, and integrating ordinary
 differential and differential-algebraic equations.  It is easily
 extensible and customizable via user-defined functions written in
 Octave's own language, or using dynamically loaded modules written in
-C++, C, Fortran, or other languages.
-</p>
+C++, C, Fortran, or other languages.</p>
 
-<p>
-GNU Octave is also freely redistributable software.  You may
+<p>GNU Octave is also freely redistributable software.  You may
 redistribute it and/or modify it under the terms of the GNU General
 Public License (__HTTP__(`www.gnu.org/copyleft/gpl.html', `GPL')) as
-published by the __HTTP__(`www.gnu.org', `Free Software Foundation').
-</p>
+published by the
+__HTTP__(`www.gnu.org', `Free Software Foundation').</p>
 
-<p>
-Octave was written by
+<p>Octave was written by
 __MAILTO__(`jwe@octave.org', `John W. Eaton') and
 __OCTAVE_HTTP__(`acknowledgments.html', `many others').  Because
 Octave is
 __HTTP__(`www.gnu.org/philosophy/free-sw.html', `free software')
 you are encouraged to help make Octave more useful by writing and
 contributing additional functions for it, and by reporting any
-problems you may have.
-</p>
+problems you may have.</p>
 
-<p>
-More information about Octave's history is available on
-__OCTAVE_HTTP__(`history.html', `this page').
-</p>
+<p>More information about Octave's history is available on
+__OCTAVE_HTTP__(`history.html', `this page').</p>
 
 __OCTAVE_TRAILER__(`home')

@@ -54,9 +54,7 @@ dnl
 dnl
 dnl
 define(`__SMALL_HEADER__', `__HEADER__($1)
-<p>
-__OCTAVE_IMAGE__(`octave-small-logo.jpg', `Octave')
-</p>')dnl
+<p>__OCTAVE_IMAGE__(`octave-small-logo.jpg', `Octave')</p>')dnl
 dnl
 dnl
 dnl

@@ -2,23 +2,18 @@ __SMALL_HEADER__(`Octave Mailing Lists')
 
 __TITLE_BAR__(`Octave Mailing List Archives')
 
-<p>
-There are several mailing lists devoted to Octave.
-</p>
+<p>There are several mailing lists devoted to Octave.</p>
 
-<p>
-Thanks to Douglas Eck, we now have a
+<p>Thanks to Douglas Eck, we now have a
 __OCTAVE_HTTP__(`octave-lists/archive/index.html', `searchable archive')
-that is updated approximately once every thirty minutes.
-</p>
+that is updated approximately once every thirty minutes.</p>
 
 __RULE__
 
 <dl>
 <dt>__MAILTO__(`help@octave.org', `help')</dt>
 <dd>General discussion about using and installing Octave.
-<p>
-[ __OCTAVE_HTTP__(`mailing-lists/help-octave/2006', `2006')
+<p>[ __OCTAVE_HTTP__(`mailing-lists/help-octave/2006', `2006')
 | __OCTAVE_HTTP__(`mailing-lists/help-octave/2005', `2005')
 | __OCTAVE_HTTP__(`mailing-lists/help-octave/2004', `2004')
 | __OCTAVE_HTTP__(`mailing-lists/help-octave/2003', `2003')
@@ -32,14 +27,12 @@ __RULE__
 | __OCTAVE_HTTP__(`mailing-lists/help-octave/1995', `1995')
 | __OCTAVE_HTTP__(`mailing-lists/help-octave/1994', `1994')
 | __OCTAVE_HTTP__(`mailing-lists/help-octave/1993', `1993')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1992', `1992') ]
-</p>
+| __OCTAVE_HTTP__(`mailing-lists/help-octave/1992', `1992') ]</p>
 </dd>
 
 <dt>__MAILTO__(`bug@octave.org', `bug')</dt>
 <dd>Bug reports (sometimes fixes are posted to this list).
-<p>
-[ __OCTAVE_HTTP__(`mailing-lists/bug-octave/2006', `2006')
+<p>[ __OCTAVE_HTTP__(`mailing-lists/bug-octave/2006', `2006')
 | __OCTAVE_HTTP__(`mailing-lists/bug-octave/2005', `2005')
 | __OCTAVE_HTTP__(`mailing-lists/bug-octave/2004', `2004')
 | __OCTAVE_HTTP__(`mailing-lists/bug-octave/2003', `2003')
@@ -53,14 +46,12 @@ __RULE__
 | __OCTAVE_HTTP__(`mailing-lists/bug-octave/1995', `1995')
 | __OCTAVE_HTTP__(`mailing-lists/bug-octave/1994', `1994')
 | __OCTAVE_HTTP__(`mailing-lists/bug-octave/1993', `1993')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1992', `1992') ]
-</p>
+| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1992', `1992') ]</p>
 </dd>
 
 <dt>__MAILTO__(`sources@octave.org', `sources')</dt>
 <dd>Enhancements contributed by Octave users.
-<p>
-[ __OCTAVE_HTTP__(`mailing-lists/octave-sources/2006', `2006')
+<p>[ __OCTAVE_HTTP__(`mailing-lists/octave-sources/2006', `2006')
 | __OCTAVE_HTTP__(`mailing-lists/octave-sources/2005', `2005')
 | __OCTAVE_HTTP__(`mailing-lists/octave-sources/2004', `2004')
 | __OCTAVE_HTTP__(`mailing-lists/octave-sources/2003', `2003')
@@ -70,8 +61,7 @@ __RULE__
 | __OCTAVE_HTTP__(`mailing-lists/octave-sources/1999', `1999')
 | __OCTAVE_HTTP__(`mailing-lists/octave-sources/1998', `1998')
 | __OCTAVE_HTTP__(`mailing-lists/octave-sources/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/1996', `1996') ]
-</p>
+| __OCTAVE_HTTP__(`mailing-lists/octave-sources/1996', `1996') ]</p>
 </dd>
 
 <dt>__MAILTO__(`graphics@octave.org', `graphics')</dt>
@@ -79,8 +69,7 @@ __RULE__
 Octave.  <b>PLEASE NOTE:</b> this is a mailing list for discussion of
 future developement <b>not</b> a place to ask how to use the current
 Octave graphics features.
-<p>
-[ __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2006', `2006')
+<p>[ __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2006', `2006')
 | __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2005', `2005')
 | __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2004', `2004')
 | __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2003', `2003')
@@ -90,14 +79,12 @@ Octave graphics features.
 | __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1999', `1999')
 | __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1998', `1998')
 | __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1996', `1996') ]
-</p>
+| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1996', `1996') ]</p>
 </dd>
 
 <dt>__MAILTO__(`maintainers@octave.org', `maintainers')</dt>
 <dd>Discussion about the development and maintenance of Octave.
-<p>
-[ __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2006', `2006')
+<p>[ __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2006', `2006')
 | __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2005', `2005')
 | __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2004', `2004')
 | __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2003', `2003')
@@ -107,32 +94,25 @@ Octave graphics features.
 | __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1999', `1999')
 | __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1998', `1998')
 | __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1996', `1996') ]
-</p>
+| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1996', `1996') ]</p>
 </dd>
 
 <dt>__MAILTO__(`info@octave.org', `info')</dt>
 <dd>Announcements about new releases of Octave and other news.
-<p>
-All postings to info-octave are also sent to the help-octave mailing
-list, so you don't need to subscribe to both info-octave and help-octave.
-</p>
+<p>All postings to info-octave are also sent to the help-octave
+mailing list, so you don't need to subscribe to both info-octave and
+help-octave.</p>
 
-<p>
-Messages sent to the info-octave mailing list are not archived
-separately, but they do appear in the help-octave list archive.
-</p>
+<p>Messages sent to the info-octave mailing list are not archived
+separately, but they do appear in the help-octave list archive.</p>
 </dd>
 </dl>
 
 __RULE__
 
-<p>
-<b><a name="JOIN">Joining the mailing lists</a></b>
-</p>
+<p><b><a name="JOIN">Joining the mailing lists</a></b></p>
 
-<p>
-If you would like to join the discussion and receive all messages sent
+<p>If you would like to join the discussion and receive all messages sent
 to these mailing lists, please send a message containing just the word
 <strong>subscribe</strong> in the body to
 __MAILTO__(`help-subscribe@octave.org',
@@ -152,8 +132,7 @@ __MAILTO__(`maintainers-subscribe@octave.org',
 (to join the maintainers list), or
 __MAILTO__(`info-subscribe@octave.org',
            `info-<b>subscribe</b>@octave.org')
-(to join the info list).
-</p>
+(to join the info list).</p>
 
 <p>Similarly, to unsubscribe, send a message containing the word
 <b>unsubscribe</b> in the body to one of the above <b>-subscribe</b>
@@ -164,9 +143,7 @@ originally used for subscribing, send a message with</p>
 
 <p>in the body.</p>
 
-<p>
-<strong>Please do NOT send subscription requests directly to the lists
-themselves.</strong>
-</p>
+<p><strong>Please do NOT send subscription requests directly to the lists
+themselves.</strong></p>
 
 __OCTAVE_TRAILER__(`archive')

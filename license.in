@@ -2,37 +2,29 @@ __SMALL_HEADER__(`Octave Copyright Information')
 
 __TITLE_BAR__(`Conditions for Copying and Distribution')
 
-<p>
-The source code for Octave is freely redistributable under the terms
+<p>The source code for Octave is freely redistributable under the terms
 of the GNU General Public License
 (__HTTP__(`www.gnu.org/copyleft/gpl.html', `GPL')) as published by the
-__HTTP__(`www.gnu.org', `Free Software Foundation').
-</p>
+__HTTP__(`www.gnu.org', `Free Software Foundation').</p>
 
-<p>
-Simply put, the GPL says that anyone who redistributes the software,
+<p>Simply put, the GPL says that anyone who redistributes the software,
 with or without changes, must pass along the freedom to further copy
 and change it.  By distributing the complete source code for GNU
 Octave under the terms of the GPL, we guarantee that you and all other
-users will have the freedom to redistribute and change Octave.
-</p>
+users will have the freedom to redistribute and change Octave.</p>
 
-<p>
-Releasing the source code for Octave has another benefit as well.  By
+<p>Releasing the source code for Octave has another benefit as well.  By
 having access to all of the source code for a mathematical system like
 Octave, you have the ability to see <em>exactly</em> how each and
 every computation is performed.  There are no black boxes that hide
-the details of any calculation.
-</p>
+the details of any calculation.</p>
 
-<p>
-Although enhancements to Octave that are written as function files in
+<p>Although enhancements to Octave that are written as function files in
 Octave's scripting language are not required to be redistributed under
 the terms of the GPL, we encourage you to release your enhancements to
 Octave under the same terms for the benefit of all users.  We also
 encourage you to
 __OCTAVE_HTTP__(`help-wanted.html', `submit your changes')
-for inclusion in future versions of Octave.
-</p>
+for inclusion in future versions of Octave.</p>
 
 __OCTAVE_TRAILER__(`license')
