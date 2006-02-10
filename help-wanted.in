@@ -3,40 +3,31 @@ __SMALL_HEADER__(`Octave Projects')
 __TITLE_BAR__(`Ask not what Octave can do for you, ask what you can do
 for Octave!')
 
-<p>
-There are a number of ways that you can contribute to help make Octave a
-better system.  Perhaps the most important way to contribute is to write
-high-quality code for solving new problems, and to make your code freely
-available for others to use.  For inspiration, we have a wish-list of
-__OCTAVE_GRAPHICS_HTTP__(`projects.html', `projects')
-and feature requests.
-</p>
+<p>There are a number of ways that you can contribute to help make
+Octave a better system.  Perhaps the most important way to contribute
+is to write high-quality code for solving new problems, and to make
+your code freely available for others to use.  For inspiration, we
+have a wish-list of __OCTAVE_HTTP__(`projects.html', `projects') and feature
+requests.</p>
 
-<p>
-If you've written a useful function for Octave that you would like to
-make available for others to use, please post it to the
-__MAILTO__(`sources@octave.org', `sources')
-mailing list.  Messages sent to this list will be seen by the Octave
-maintainers, and will be considered for inclusion in future releases
-of Octave.  The messages are also
-__OCTAVE_HTTP__(`archive.html', `archived'), so even if the code
-is not included in a future release, it will remain available for
-others to use.
-</p>
+<p>If you've written a useful function for Octave that you would like
+to make available for others to use, please post it to the
+__MAILTO__(`sources@octave.org', `sources') mailing list.  Messages
+sent to this list will be seen by the Octave maintainers, and will be
+considered for inclusion in future releases of Octave.  The messages
+are also __OCTAVE_HTTP__(`archive.html', `archived'), so even if the
+code is not included in a future release, it will remain available for
+others to use.</p>
 
-<p>
-If you find Octave useful, consider 
+<p>If you find Octave useful, consider 
 __OCTAVE_HTTP__(`funding.html', `providing additional funding') to
 continue its development.  Even a modest amount of additional funding
 could make a significant difference in the amount of time that its
-author can devote to development and support.
-</p>
+author can devote to development and support.</p>
 
-<p>
-If you cannot provide funding or contribute code, you can still help
-make Octave better and more reliable by
+<p>If you cannot provide funding or contribute code, you can still
+help make Octave better and more reliable by
 __OCTAVE_HTTP__(`bugs.html', `reporting any bugs') you find and by
-offering suggestions for ways to improve Octave.
-</p>
+offering suggestions for ways to improve Octave.</p>
 
 __OCTAVE_TRAILER__(`help-wanted')
