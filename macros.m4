@@ -65,7 +65,7 @@ notice is preserved.</p>
 
 <p class="footer">University of Wisconsin<br />
 Department of Chemical Engineering<br />
-Madison WI 53719</p>')dnl
+Madison WI 53719</p></body></html>')dnl
 dnl
 dnl
 dnl
