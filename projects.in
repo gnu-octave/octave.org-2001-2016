@@ -1,37 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<title>Octave Projects</title>
-<link rel="stylesheet" type="text/css" href="octave.css" />
-</head>
-<body>
+__SMALL_HEADER__(`Octave Projects')
 
-<p><img src="images/octave-small-logo.jpg" alt="[Octave]" /></p>
-
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Projects
-</td>
-</tr>
-</table>
+__TITLE_BAR__(Projects)
 
 <p>Check with maintainers@octave.org for a possibly more current copy.  Also, if you start working steadily on a project, please let maintainers@octave.org know.  We might have information that could help you; we'd also like to send you the GNU coding standards.</p>
 
 <p>This list is not exclusive -- there are many other things that might be good projects, but it might instead be something we already have, so check with maintainers@octave.org before you start.</p>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Numerical
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Numerical')
 
 <ul>
 
-  <li>Improve complex mapper functions.  See W. Kahan, `Branch Cuts for Complex Elementary Functions, or Much Ado About Nothing's Sign Bit' (in The State of the Art in Numerical Analysis, eds. Iserles and Powell, Clarendon Press, Oxford, 1987) for explicit trigonometric formulae.</li>
+  <li>Improve complex mapper functions.  See W. Kahan, ``Branch Cuts for Complex Elementary Functions, or Much Ado About Nothing's Sign Bit'' (in The State of the Art in Numerical Analysis, eds. Iserles and Powell, Clarendon Press, Oxford, 1987) for explicit trigonometric formulae.</li>
 
   <li>Make functions like <code>gamma()</code> return the right IEEE <code>Inf</code> or <code>NaN</code> values for extreme args or other undefined cases.</li>
 
@@ -75,13 +54,7 @@ Numerical
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Sparse Matrices
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Sparse Matrices')
 
 <ul>
 
@@ -131,13 +104,7 @@ Sparse Matrices
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Graphics
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Graphics')
 
 <ul>
 
@@ -155,17 +122,11 @@ Graphics
 
   <li>If possible, pass binary data to gnuplot to speed things up.</li>
 
-  <li>If using gnuplot, consider setting a smaller default for the zero value (e.g., set zero <code>sqrt (realmin)</code> or something).</li>
+  <li>If using gnuplot, consider setting a smaller default for the `zero' value (e.g., set zero <code>sqrt (realmin)</code> or something).</li>
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Strings
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Strings')
 
 <ul>
 
@@ -181,13 +142,7 @@ Strings
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Other Data Types
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Other Data Types')
 
 <ul>
 
@@ -195,21 +150,9 @@ Other Data Types
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Graphical User Interface
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Graphical User Interface')
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Input/Output
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Input/Output')
 
 <ul>
 
@@ -238,13 +181,7 @@ Input/Output
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Interpreter
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Interpreter')
 
 <ul>
 
@@ -266,7 +203,7 @@ Interpreter
 
     <code>IF expr STRING END.</code></li>
 
-  <li>Consider allowing an arbitrary property list to be attached to any variable.  This could be a more general way to handle the help string that can currently be added with document.</li>
+  <li>Consider allowing an arbitrary property list to be attached to any variable.  This could be a more general way to handle the help string that can currently be added with `document'.</li>
 
   <li>Allow more command line options to be accessible as built-in variables (--echo-commands, etc.).</li>
 
@@ -324,7 +261,7 @@ Interpreter
 
   <li>Is <code>Matrix::fortran_vec()</code> really necessary?</li>
 
-  <li>Add a command that works like bash's builtin command.</li>
+  <li>Add a command that works like bash's `builtin' command.</li>
 
   <li>Handle end-of-line comments correctly in parse trees for use with the type command.</li>
 
@@ -346,13 +283,7 @@ Interpreter
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-History
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`History')
 
 <ul>
 
@@ -360,7 +291,7 @@ History
 
   <li>The history command should accept two numeric arguments to indicate a range of history entries to display, save or read.</li>
 
-  <li>Add an option to include information about the Octave session in the history list.  Possibly a time/date stamp and the current Octave line number, appended as a comment (users should probably be able to control the ).</li>
+  <li>Add an option to include information about the Octave session in the history list.  Possibly a time/date stamp and the current Octave line number, appended as a comment (users should probably be able to control the format).</li>
 
   <li>Avoid writing the history file if the history list has not changed.</li>
 
@@ -370,13 +301,7 @@ History
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Configuration and Installation
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Configuration and Installation')
 
 <ul>
 
@@ -394,13 +319,7 @@ Configuration and Installation
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Documentation and On-Line Help
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Documentation and On-Line Help')
 
 <ul>
 
@@ -442,13 +361,7 @@ Documentation and On-Line Help
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Tests
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Tests')
 
 <ul>
 
@@ -480,13 +393,7 @@ Tests
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Programming
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Programming')
 
 <ul>
 
@@ -502,9 +409,9 @@ Programming
 
   <li>GNU coding standards:
   <ul>
-    <li>Add a Makefile target to the Makefiles.</li>
+    <li>Add a `Makefile' target to the Makefiles.</li>
     <li>Comments on <code>#else</code> and <code>#endif</code> preprocessor commands.</li>
-    <li>Change error message  to match standards everywhere.</li>
+    <li>Change error message format to match standards everywhere.</li>
   </ul>
   </li>
 
@@ -518,13 +425,7 @@ Programming
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Miscellaneous
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Miscellaneous')
 
 <ul>
 
@@ -560,40 +461,10 @@ Miscellaneous
 
 </ul>
 
-<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-Always
-</td>
-</tr>
-</table>
+__TITLE_BAR__(`Always')
 
 <ul>
   <li>Squash bugs.</li>
 </ul>
 
-<div class="nav">
- [ <a href="octave.html">Home</a>
- | <a href="history.html">History</a>
- | <a href="news.html">News</a>
- | <a href="docs.html">Docs</a>
- | <a href="http://wiki.octave.org">Wiki</a>
- | <a href="FAQ.html">FAQ</a> 
- | <a href="help.html">Help</a> 
- | <a href="bugs.html">Bugs</a> 
- ]<br />
- [ <a href="license.html">License</a>
- | <a href="download.html">Download</a>
- | <a href="archive.html">Mailing List Archive</a>
- | <a href="funding.html">Funding</a>
- | <a href="help-wanted.html">Help Wanted</a> ]
-</div>
-
-<p class="footer">Copyright &copy; 1998-2006
-<a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
-copying and distribution is permitted in any medium, provided this
-notice is preserved.</p>
-
-<p class="footer">University of Wisconsin<br />
-Department of Chemical Engineering<br />
-Madison WI 53719</p></body></html>
+__OCTAVE_TRAILER__(`projects')

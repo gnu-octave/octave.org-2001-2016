@@ -70,3 +70,8 @@ font-family: arial,sans-serif;
 .download {
 background-color: #d0e0ff;
 }
+
+/* Temporary highlighting of code to clean up the projects page */
+.done {
+color: #ff0000;
+}

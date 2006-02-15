@@ -28,7 +28,8 @@ HTML_SRC := acknowledgments.in \
 	history.in \
 	license.in \
 	news.in \
-	octave.in
+	octave.in \
+	projects.in
 
 HTML_OUT := $(HTML_SRC:.in=.html)
 
