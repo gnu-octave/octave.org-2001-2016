@@ -1,0 +1,56 @@
+__SMALL_HEADER__(`Related Projects')
+
+__TITLE_BAR__(Related Projects)
+
+<p>This is a list of the projects that work with octave in some way.
+It is not yet a comprehensive list, but it should give an idea of what
+is available.</p>
+
+__TITLE_BAR__(Octave Forge)
+
+<p>__HTTP__(`octave.sourceforge.net', `octave.sourceforge.net') Current version 2006-01-28 for 2.1.72</p>
+
+<p>This is intended to be a central location for custom scripts,
+functions and extensions for GNU Octave.</p>
+
+__TITLE_BAR__(Plotting Projects)
+
+<h2>Octaviz</h2>
+
+<p>__HTTP__(`octaviz.sourceforge.net', `octaviz.sourceforge.net')
+Current version 0.4.0</p>
+
+<p>Octaviz is a visualization system for Octave. It is a wrapper that
+makes all VTK classes accessible from within Octave using the same
+object-oriented syntax as in C++ or Python. Octaviz also provides
+high-level functions for 2D and 3D visualization. Using those
+functions, most common visualization tasks (3D surface plots, contour
+plots, meshes etc) can be accomplished without any knowledge about
+VTK.</p>
+
+<h2>Octplot</h2>
+
+<p>__HTTP__(`octplot.sourceforge.net', `octplot.sourceforge.net')
+Current version 0.3.0</p></p>
+
+<p>OctPlot is a handle graphics package for Octave. OctPlot provides
+quality postscript(TM) and screen graphics. OctPlot is free open
+source software under the terms of the GNU General Public License
+(GPL).</p>
+
+<p>OctPlot should run on following systems: Cygwin (MS Windows), Linux
+(and possibly other UNIXs), OS X</p>
+
+__TITLE_BAR__(Graphical User Interfaces)
+
+<h2>Octave-GUI</h2>
+
+<p>__HTTP__(`www.math.mcgill.ca/loisel/octave-gui/',
+            `www.math.mcgill.ca/loisel/octave-gui/')
+Current version 0.4</p>
+
+<p>A GUI implementation for Octave that has the goal of being
+completely cross platform (the initial and the development platform is
+Windows with MingW).</p>
+
+__OCTAVE_TRAILER__(`related')

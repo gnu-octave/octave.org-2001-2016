@@ -93,6 +93,7 @@ define(`__NAVIGATION__',
  ]<br />
  [ __nav_button__($1, `license', `license.html', `License')
  | __nav_button__($1, `download', `download.html', `Download')
+ | __nav_button__($1, `related', `related.html', `Related Projects')
  | __nav_button__($1, `archive', `archive.html', `Mailing List Archive')
  | __nav_button__($1, `funding', `funding.html', `Funding')
  | __nav_button__($1, `help-wanted', `help-wanted.html', `Help Wanted') ]
