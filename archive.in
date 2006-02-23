@@ -5,7 +5,7 @@ __TITLE_BAR__(`Octave Mailing List Archives')
 <p>There are several mailing lists devoted to Octave.</p>
 
 <p>Thanks to Douglas Eck, we now have a
-__OCTAVE_HTTP__(`octave-lists/archive/index.html', `searchable archive')
+__HTTP__(`velveeta.che.wisc.edu/octave/lists/archive', `searchable archive')
 that is updated approximately once every thirty minutes.</p>
 
 __RULE__
