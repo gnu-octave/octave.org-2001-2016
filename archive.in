@@ -13,55 +13,55 @@ __RULE__
 <dl>
 <dt>__MAILTO__(`help@octave.org', `help')</dt>
 <dd>General discussion about using and installing Octave.
-<p>[ __OCTAVE_HTTP__(`mailing-lists/help-octave/2006', `2006')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/2005', `2005')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/2004', `2004')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/2003', `2003')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/2002', `2002')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/2001', `2001')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/2000', `2000')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1999', `1999')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1998', `1998')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1996', `1996')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1995', `1995')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1994', `1994')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1993', `1993')
-| __OCTAVE_HTTP__(`mailing-lists/help-octave/1992', `1992') ]</p>
+<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2006', `2006')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2005', `2005')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2004', `2004')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2003', `2003')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2002', `2002')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2001', `2001')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2000', `2000')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1999', `1999')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1998', `1998')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1997', `1997')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1996', `1996')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1995', `1995')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1994', `1994')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1993', `1993')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1992', `1992') ]</p>
 </dd>
 
 <dt>__MAILTO__(`bug@octave.org', `bug')</dt>
 <dd>Bug reports (sometimes fixes are posted to this list).
-<p>[ __OCTAVE_HTTP__(`mailing-lists/bug-octave/2006', `2006')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/2005', `2005')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/2004', `2004')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/2003', `2003')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/2002', `2002')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/2001', `2001')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/2000', `2000')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1999', `1999')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1998', `1998')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1996', `1996')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1995', `1995')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1994', `1994')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1993', `1993')
-| __OCTAVE_HTTP__(`mailing-lists/bug-octave/1992', `1992') ]</p>
+<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2006', `2006')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2005', `2005')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2004', `2004')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2003', `2003')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2002', `2002')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2001', `2001')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2000', `2000')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1999', `1999')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1998', `1998')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1997', `1997')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1996', `1996')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1995', `1995')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1994', `1994')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1993', `1993')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1992', `1992') ]</p>
 </dd>
 
 <dt>__MAILTO__(`sources@octave.org', `sources')</dt>
 <dd>Enhancements contributed by Octave users.
-<p>[ __OCTAVE_HTTP__(`mailing-lists/octave-sources/2006', `2006')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/2005', `2005')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/2004', `2004')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/2003', `2003')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/2002', `2002')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/2001', `2001')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/2000', `2000')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/1999', `1999')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/1998', `1998')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/octave-sources/1996', `1996') ]</p>
+<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2006', `2006')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2005', `2005')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2004', `2004')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2003', `2003')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2002', `2002')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2001', `2001')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2000', `2000')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1999', `1999')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1998', `1998')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1997', `1997')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1996', `1996') ]</p>
 </dd>
 
 <dt>__MAILTO__(`graphics@octave.org', `graphics')</dt>
@@ -69,32 +69,32 @@ __RULE__
 Octave.  <b>PLEASE NOTE:</b> this is a mailing list for discussion of
 future developement <b>not</b> a place to ask how to use the current
 Octave graphics features.
-<p>[ __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2006', `2006')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2005', `2005')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2004', `2004')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2003', `2003')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2002', `2002')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2001', `2001')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/2000', `2000')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1999', `1999')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1998', `1998')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/octave-graphics/1996', `1996') ]</p>
+<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2006', `2006')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2005', `2005')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2004', `2004')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2003', `2003')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2002', `2002')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2001', `2001')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2000', `2000')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1999', `1999')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1998', `1998')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1997', `1997')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1996', `1996') ]</p>
 </dd>
 
 <dt>__MAILTO__(`maintainers@octave.org', `maintainers')</dt>
 <dd>Discussion about the development and maintenance of Octave.
-<p>[ __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2006', `2006')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2005', `2005')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2004', `2004')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2003', `2003')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2002', `2002')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2001', `2001')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/2000', `2000')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1999', `1999')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1998', `1998')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1997', `1997')
-| __OCTAVE_HTTP__(`mailing-lists/octave-maintainers/1996', `1996') ]</p>
+<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2006', `2006')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2005', `2005')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2004', `2004')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2003', `2003')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2002', `2002')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2001', `2001')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2000', `2000')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1999', `1999')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1998', `1998')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1997', `1997')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1996', `1996') ]</p>
 </dd>
 
 <dt>__MAILTO__(`info@octave.org', `info')</dt>
