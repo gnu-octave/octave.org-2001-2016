@@ -3,15 +3,15 @@ __SMALL_HEADER__(`Octave Documentation')
 __TITLE_BAR__(`Documentation')
 
 <p>Octave is fully documented by a comprehensive
-__OCTAVE_HTTP__(`doc/index.html', `375 page manual').  The version
-available here has been converted to HTML directly from the Texinfo
-source files that are distributed along with every copy of the Octave
-source code.  You can also use those same source files to create a
-printed copy of the manual, or a copy suitable for viewing with GNU
-Info readers (within GNU Emacs, using the standalone Info reader, etc.).
-The complete text of the manual is also available at the Octave prompt
-using the command <samp>`help -i'</samp> (this command invokes the GNU
-Info browser for you).</p>
+__HTTP__(`velveeta.che.wisc.edu/octave/doc', `375 page manual').  The
+version available here has been converted to HTML directly from the
+Texinfo source files that are distributed along with every copy of the
+Octave source code.  You can also use those same source files to
+create a printed copy of the manual, or a copy suitable for viewing
+with GNU Info readers (within GNU Emacs, using the standalone Info
+reader, etc.). The complete text of the manual is also available at
+the Octave prompt using the command <samp>`help -i'</samp> (this
+command invokes the GNU Info browser for you).</p>
 
 <p>A printed version of the Octave manual is also now available and may
 be ordered from __HTTP__(`www.network-theory.co.uk/octave/manual/').
