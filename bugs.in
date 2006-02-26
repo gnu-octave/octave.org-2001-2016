@@ -1,6 +1,4 @@
-__SMALL_HEADER__(`About Octave')
-
-__TITLE_BAR__(`Bugs!')
+__SMALL_HEADER__(`Bugs!')
 
 <p>Your bug reports play an essential role in making Octave reliable.</p>
 

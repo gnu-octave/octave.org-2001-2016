@@ -1,7 +1,5 @@
 __SMALL_HEADER__(`Octave News')
 
-__TITLE_BAR__(News)
-
 <dl>
 <dt>November 11, 2005</dt>
 <dd>Versions 2.1.72 and 2.9.4 are now available for ftp.</dd>

@@ -1,7 +1,5 @@
 __SMALL_HEADER__(`Contributors to Octave')
 
-__TITLE_BAR__(`Contributors - Thanks!')
-
 <p>Many people have already contributed to Octave's development.  In
 addition to John W. Eaton, the following people have helped write parts
 of Octave or helped out in various other ways.</p>
@@ -10,6 +8,8 @@ of Octave or helped out in various other ways.</p>
 write new features for Octave!  If you have contributed something and
 your name is not on this list, contact
 __MAILTO__(`jwe@octave.org', `me').</p>
+
+__TITLE_BAR__(`Contributors - Thanks!')
 
 <ul>
 

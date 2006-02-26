@@ -1,7 +1,5 @@
 __SMALL_HEADER__(`Octave Documentation')
 
-__TITLE_BAR__(`Documentation')
-
 <p>Octave is fully documented by a comprehensive
 __HTTP__(`velveeta.che.wisc.edu/octave/doc', `375 page manual').  The
 version available here has been converted to HTML directly from the

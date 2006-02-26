@@ -46,15 +46,14 @@ dnl
 dnl
 dnl
 define(`__BIG_HEADER__', `__HEADER__($1)
-  <table width="100%" class="title"><tr><td>
-  __OCTAVE_IMAGE__(`octave-logo.jpg', `Octave')</td>
-  <td style="text-align: right">__OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor')</td></tr>
-  </table>')dnl
+<p class="title">__OCTAVE_IMAGE__(`octave-logo.jpg', `Octave') 
+__OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor', `class="right"')</p>')dnl
 dnl
 dnl
 dnl
 define(`__SMALL_HEADER__', `__HEADER__($1)
-<p>__OCTAVE_IMAGE__(`octave-small-logo.jpg', `Octave')</p>')dnl
+<p>__OCTAVE_IMAGE__(`octave-small-logo.jpg', `Octave')</p>
+__TOP_TITLE_BAR__($1)')dnl
 dnl
 dnl
 dnl
@@ -107,14 +106,8 @@ __COPYING__')dnl
 dnl
 dnl
 dnl
-define(`__TITLE_BAR__',
-`<table width="100%" cellpadding="3" border="0">
-<tr>
-<td align="left" class="header">
-$1
-</td>
-</tr>
-</table>')dnl
+define(`__TITLE_BAR__', `<h3>$1</h3>')dnl
+define(`__TOP_TITLE_BAR__', `<h2>$1</h2>')dnl
 dnl
 dnl
 dnl

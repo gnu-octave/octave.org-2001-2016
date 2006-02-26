@@ -1,7 +1,5 @@
 __SMALL_HEADER__(`Octave Projects')
 
-__TITLE_BAR__(Projects)
-
 <p>Check with maintainers@octave.org for a possibly more current copy.  Also, if you start working steadily on a project, please let maintainers@octave.org know.  We might have information that could help you; we'd also like to send you the GNU coding standards.</p>
 
 <p>This list is not exclusive -- there are many other things that might be good projects, but it might instead be something we already have, so check with maintainers@octave.org before you start.</p>

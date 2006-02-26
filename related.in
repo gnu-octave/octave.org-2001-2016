@@ -1,7 +1,5 @@
 __SMALL_HEADER__(`Related Projects')
 
-__TITLE_BAR__(Related Projects)
-
 <p>This is a list of the projects that work with octave in some way.
 It is not yet a comprehensive list, but it should give an idea of what
 is available.</p>
@@ -15,7 +13,7 @@ functions and extensions for GNU Octave.</p>
 
 __TITLE_BAR__(Plotting Projects)
 
-<h2>Octaviz</h2>
+<h4>Octaviz</h4>
 
 <p>__HTTP__(`octaviz.sourceforge.net', `octaviz.sourceforge.net')
 Current version 0.4.0</p>
@@ -28,7 +26,7 @@ functions, most common visualization tasks (3D surface plots, contour
 plots, meshes etc) can be accomplished without any knowledge about
 VTK.</p>
 
-<h2>Octplot</h2>
+<h4>Octplot</h4>
 
 <p>__HTTP__(`octplot.sourceforge.net', `octplot.sourceforge.net')
 Current version 0.3.5</p>
@@ -43,7 +41,7 @@ source software under the terms of the GNU General Public License
 
 __TITLE_BAR__(Graphical User Interfaces)
 
-<h2>Octave Workshop</h2>
+<h4>Octave Workshop</h4>
 
 <p>__HTTP__(`www.math.mcgill.ca/loisel/octave-workshop/',
             `www.math.mcgill.ca/loisel/octave-workshop/')
