@@ -1,0 +1,468 @@
+<html lang="en">
+<head>
+<title>Special Functions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
+<link rel="prev" href="Sums-and-Products.html#Sums-and-Products" title="Sums and Products">
+<link rel="next" href="Coordinate-Transformations.html#Coordinate-Transformations" title="Coordinate Transformations">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Special-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Coordinate-Transformations.html#Coordinate-Transformations">Coordinate Transformations</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Sums-and-Products.html#Sums-and-Products">Sums and Products</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
+<hr>
+</div>
+
+<h3 class="section">19.5 Special Functions</h3>
+
+<p><a name="doc_002dbesselj"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>j</var>, <var>ierr</var>] = <b>besselj</b> (<var>alpha, x, opt</var>)<var><a name="index-besselj-781"></a></var><br>
+&mdash; Loadable Function: [<var>y</var>, <var>ierr</var>] = <b>bessely</b> (<var>alpha, x, opt</var>)<var><a name="index-bessely-782"></a></var><br>
+&mdash; Loadable Function: [<var>i</var>, <var>ierr</var>] = <b>besseli</b> (<var>alpha, x, opt</var>)<var><a name="index-besseli-783"></a></var><br>
+&mdash; Loadable Function: [<var>k</var>, <var>ierr</var>] = <b>besselk</b> (<var>alpha, x, opt</var>)<var><a name="index-besselk-784"></a></var><br>
+&mdash; Loadable Function: [<var>h</var>, <var>ierr</var>] = <b>besselh</b> (<var>alpha, k, x, opt</var>)<var><a name="index-besselh-785"></a></var><br>
+<blockquote><p>Compute Bessel or Hankel functions of various kinds:
+
+          <dl>
+<dt><code>besselj</code><dd>Bessel functions of the first kind. 
+<br><dt><code>bessely</code><dd>Bessel functions of the second kind. 
+<br><dt><code>besseli</code><dd>Modified Bessel functions of the first kind. 
+<br><dt><code>besselk</code><dd>Modified Bessel functions of the second kind. 
+<br><dt><code>besselh</code><dd>Compute Hankel functions of the first (<var>k</var> = 1) or second (<var>k</var>
+ = 2) kind. 
+</dl>
+
+        <p>If the argument <var>opt</var> is supplied, the result is scaled by the
+<code>exp (-I*</code><var>x</var><code>)</code> for <var>k</var> = 1 or <code>exp (I*</code><var>x</var><code>)</code> for
+ <var>k</var> = 2.
+
+        <p>If <var>alpha</var> is a scalar, the result is the same size as <var>x</var>. 
+If <var>x</var> is a scalar, the result is the same size as <var>alpha</var>. 
+If <var>alpha</var> is a row vector and <var>x</var> is a column vector, the
+result is a matrix with <code>length (</code><var>x</var><code>)</code> rows and
+<code>length (</code><var>alpha</var><code>)</code> columns.  Otherwise, <var>alpha</var> and
+<var>x</var> must conform and the result will be the same size.
+
+        <p>The value of <var>alpha</var> must be real.  The value of <var>x</var> may be
+complex.
+
+        <p>If requested, <var>ierr</var> contains the following status information
+and is the same size as the result.
+
+          <ol type=1 start=0>
+<li>Normal return. 
+<li>Input error, return <code>NaN</code>. 
+<li>Overflow, return <code>Inf</code>. 
+<li>Loss of significance by argument reduction results in less than
+half of machine accuracy. 
+<li>Complete loss of significance by argument reduction, return <code>NaN</code>. 
+<li>Error&mdash;no computation, algorithm termination condition not met,
+return <code>NaN</code>.
+             </ol>
+</p></blockquote></div>
+
+   <p><a name="doc_002dairy"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>a</var>, <var>ierr</var>] = <b>airy</b> (<var>k, z, opt</var>)<var><a name="index-airy-786"></a></var><br>
+<blockquote><p>Compute Airy functions of the first and second kind, and their
+derivatives.
+
+     <pre class="example">            K   Function   Scale factor (if a third argument is supplied)
+           ---  --------   ----------------------------------------------
+            0   Ai (Z)     exp ((2/3) * Z * sqrt (Z))
+            1   dAi(Z)/dZ  exp ((2/3) * Z * sqrt (Z))
+            2   Bi (Z)     exp (-abs (real ((2/3) * Z *sqrt (Z))))
+            3   dBi(Z)/dZ  exp (-abs (real ((2/3) * Z *sqrt (Z))))
+     </pre>
+        <p>The function call <code>airy (</code><var>z</var><code>)</code> is equivalent to
+<code>airy (0, </code><var>z</var><code>)</code>.
+
+        <p>The result is the same size as <var>z</var>.
+
+        <p>If requested, <var>ierr</var> contains the following status information and
+is the same size as the result.
+
+          <ol type=1 start=0>
+<li>Normal return. 
+<li>Input error, return <code>NaN</code>. 
+<li>Overflow, return <code>Inf</code>. 
+<li>Loss of significance by argument reduction results in less than half
+ of machine accuracy. 
+<li>Complete loss of significance by argument reduction, return <code>NaN</code>. 
+<li>Error&mdash;no computation, algorithm termination condition not met,
+return <code>NaN</code>.
+             </ol>
+</p></blockquote></div>
+
+   <p><a name="doc_002dbeta"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>beta</b> (<var>a, b</var>)<var><a name="index-beta-787"></a></var><br>
+<blockquote><p>Return the Beta function,
+
+     <pre class="example">          beta (a, b) = gamma (a) * gamma (b) / gamma (a + b).
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dbetainc"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>betainc</b> (<var>x, a, b</var>)<var><a name="index-betainc-788"></a></var><br>
+<blockquote><p>Return the incomplete Beta function,
+
+     <pre class="smallexample">                                                x
+                                               /
+          betainc (x, a, b) = beta (a, b)^(-1) | t^(a-1) (1-t)^(b-1) dt.
+                                               /
+                                            t=0
+     </pre>
+        <p>If x has more than one component, both <var>a</var> and <var>b</var> must be
+scalars.  If <var>x</var> is a scalar, <var>a</var> and <var>b</var> must be of
+compatible dimensions. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbincoeff"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>bincoeff</b> (<var>n, k</var>)<var><a name="index-bincoeff-789"></a></var><br>
+<blockquote><p>Return the binomial coefficient of <var>n</var> and <var>k</var>, defined as
+
+     <pre class="example">           /   \
+           | n |    n (n-1) (n-2) ... (n-k+1)
+           |   |  = -------------------------
+           | k |               k!
+           \   /
+     </pre>
+        <p>For example,
+
+     <pre class="example">          bincoeff (5, 2)
+          =&gt; 10
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002derf"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>erf</b> (<var>z</var>)<var><a name="index-erf-790"></a></var><br>
+<blockquote><p>Computes the error function,
+
+     <pre class="smallexample">                                   z
+                                  /
+          erf (z) = (2/sqrt (pi)) | e^(-t^2) dt
+                                  /
+                               t=0
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: erfc, erfinv. 
+</p></blockquote></div>
+
+   <p><a name="doc_002derfc"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>erfc</b> (<var>z</var>)<var><a name="index-erfc-791"></a></var><br>
+<blockquote><p>Computes the complementary error function,
+<code>1 - erf (</code><var>z</var><code>)</code>.
+        <pre class="sp">
+     
+     </pre>
+     See also: erf, erfinv. 
+</p></blockquote></div>
+
+   <p><a name="doc_002derfinv"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>erfinv</b> (<var>z</var>)<var><a name="index-erfinv-792"></a></var><br>
+<blockquote><p>Computes the inverse of the error function.
+        <pre class="sp">
+     
+     </pre>
+     See also: erf, erfc. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgamma"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>gamma</b> (<var>z</var>)<var><a name="index-gamma-793"></a></var><br>
+<blockquote><p>Computes the Gamma function,
+
+     <pre class="example">                      infinity
+                      /
+          gamma (z) = | t^(z-1) exp (-t) dt.
+                      /
+                   t=0
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: gammai, lgamma. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgammainc"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a</var>)<var><a name="index-gammainc-794"></a></var><br>
+<blockquote><p>Compute the normalized incomplete gamma function,
+
+     <pre class="smallexample">                                          x
+                                1        /
+          gammainc (x, a) = ---------    | exp (-t) t^(a-1) dt
+                            gamma (a)    /
+                                      t=0
+     </pre>
+        <p>with the limiting value of 1 as <var>x</var> approaches infinity. 
+The standard notation is P(a,x), e.g. Abramowitz and Stegun (6.5.1).
+
+        <p>If <var>a</var> is scalar, then <code>gammainc (</code><var>x</var><code>, </code><var>a</var><code>)</code> is returned
+for each element of <var>x</var> and vice versa.
+
+        <p>If neither <var>x</var> nor <var>a</var> is scalar, the sizes of <var>x</var> and
+<var>a</var> must agree, and <var>gammainc</var> is applied element-by-element.
+        <pre class="sp">
+     
+     </pre>
+     See also: gamma, lgamma. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlgamma"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>lgamma</b> (<var>x</var>)<var><a name="index-lgamma-795"></a></var><br>
+&mdash; Mapping Function:  <b>gammaln</b> (<var>x</var>)<var><a name="index-gammaln-796"></a></var><br>
+<blockquote><p>Return the natural logarithm of the gamma function.
+        <pre class="sp">
+     
+     </pre>
+     See also: gamma, gammai. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcross"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cross</b> (<var>x, y, dim</var>)<var><a name="index-cross-797"></a></var><br>
+<blockquote><p>Computes the vector cross product of the two 3-dimensional vectors
+<var>x</var> and <var>y</var>.
+
+     <pre class="example">          cross ([1,1,0], [0,1,1])
+          =&gt; [ 1; -1; 1 ]
+     </pre>
+        <p>If <var>x</var> and <var>y</var> are matrices, the cross product is applied
+along the first dimension with 3 elements. The optional argument
+<var>dim</var> is used to force the cross product to be calculated along
+the dimension defined by <var>dim</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcommutation_005fmatrix"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>commutation_matrix</b> (<var>m, n</var>)<var><a name="index-commutation_005fmatrix-798"></a></var><br>
+<blockquote><p>Return the commutation matrix
+ K(m,n)
+ which is the unique
+<var>m</var>*<var>n</var> by <var>m</var>*<var>n</var>
+ matrix such that
+K(m,n) * vec(A) = vec(A')
+ for all
+m by n
+ matrices
+A.
+
+        <p>If only one argument <var>m</var> is given,
+K(m,m)
+ is returned.
+
+        <p>See Magnus and Neudecker (1988), Matrix differential calculus with
+applications in statistics and econometrics. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dduplication_005fmatrix"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>duplication_matrix</b> (<var>n</var>)<var><a name="index-duplication_005fmatrix-799"></a></var><br>
+<blockquote><p>Return the duplication matrix
+Dn
+ which is the unique
+n^2 by n*(n+1)/2
+ matrix such that
+Dn vech (A) = vec (A)
+ for all symmetric
+n by n
+ matrices
+A.
+
+        <p>See Magnus and Neudecker (1988), Matrix differential calculus with
+applications in statistics and econometrics. 
+</p></blockquote></div>
+
+   </body></html>
+

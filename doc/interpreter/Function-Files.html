@@ -1,0 +1,350 @@
+<html lang="en">
+<head>
+<title>Function Files - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
+<link rel="prev" href="Returning-From-a-Function.html#Returning-From-a-Function" title="Returning From a Function">
+<link rel="next" href="Script-Files.html#Script-Files" title="Script Files">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Function-Files"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Script-Files.html#Script-Files">Script Files</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Returning-From-a-Function.html#Returning-From-a-Function">Returning From a Function</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>
+<hr>
+</div>
+
+<h3 class="section">13.6 Function Files</h3>
+
+<p><a name="index-function-file-482"></a>
+Except for simple one-shot programs, it is not practical to have to
+define all the functions you need each time you need them.  Instead, you
+will normally want to save them in a file so that you can easily edit
+them, and save them for use at a later time.
+
+   <p>Octave does not require you to load function definitions from files
+before using them.  You simply need to put the function definitions in a
+place where Octave can find them.
+
+   <p>When Octave encounters an identifier that is undefined, it first looks
+for variables or functions that are already compiled and currently
+listed in its symbol table.  If it fails to find a definition there, it
+searches the list of directories specified by the built-in variable
+<code>LOADPATH</code> for files ending in <samp><span class="file">.m</span></samp> that have the same base
+name as the undefined identifier.<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>  Once Octave finds a file
+with a name that matches, the contents of the file are read.  If it
+defines a <em>single</em> function, it is compiled and executed. 
+See <a href="Script-Files.html#Script-Files">Script Files</a>, for more information about how you can define more
+than one function in a single file.
+
+   <p>When Octave defines a function from a function file, it saves the full
+name of the file it read and the time stamp on the file.  After
+that, it checks the time stamp on the file every time it needs the
+function.  If the time stamp indicates that the file has changed since
+the last time it was read, Octave reads it again.
+
+   <p>Checking the time stamp allows you to edit the definition of a function
+while Octave is running, and automatically use the new function
+definition without having to restart your Octave session.  Checking the
+time stamp every time a function is used is rather inefficient, but it
+has to be done to ensure that the correct function definition is used.
+
+   <p>To avoid degrading performance unnecessarily by checking the time stamps
+on functions that are not likely to change, Octave assumes that function
+files in the directory tree
+<samp><var>octave-home</var><span class="file">/share/octave/</span><var>version</var><span class="file">/m</span></samp>
+will not change, so it doesn't have to check their time stamps every time the
+functions defined in those files are used.  This is normally a very good
+assumption and provides a significant improvement in performance for the
+function files that are distributed with Octave.
+
+   <p>If you know that your own function files will not change while you are
+running Octave, you can improve performance by setting the variable
+<code>ignore_function_time_stamp</code> to <code>"all"</code>, so that Octave will
+ignore the time stamps for all function files.  Setting it to
+<code>"system"</code> gives the default behavior.  If you set it to anything
+else, Octave will check the time stamps on all function files.
+
+<!-- XXX FIXME XXX - note about time stamps on files in NFS environments? -->
+<p><a name="doc_002dDEFAULT_005fLOADPATH"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>DEFAULT_LOADPATH</b><var><a name="index-DEFAULT_005fLOADPATH-483"></a></var><br>
+<blockquote><p>A colon separated list of directories in which to search for function
+files.  The value of this variable is automatically substituted for
+leading, trailing, or doubled colons that appear in the built-in
+variable <code>LOADPATH</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dLOADPATH"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>LOADPATH</b><var><a name="index-LOADPATH-484"></a></var><br>
+<blockquote><p>A colon separated list of directories in which to search for function
+files.  See <a href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>.  The value of <code>LOADPATH</code>
+overrides the environment variable <code>OCTAVE_PATH</code>.  See <a href="Installation.html#Installation">Installation</a>.
+
+        <p><code>LOADPATH</code> is now handled in the same way as TeX handles
+<code>TEXINPUTS</code>.  Leading, trailing, or doubled colons that appear in
+<code>LOADPATH</code> are replaced by the value of <code>DEFAULT_LOADPATH</code>. 
+The default value of <code>LOADPATH</code> is <code>"
+:"</code>, which tells Octave to search in the directories specified by
+<code>DEFAULT_LOADPATH</code>.
+
+        <p>In addition, if any path element ends in `<samp><span class="samp">//</span></samp>', that directory and
+all subdirectories it contains are searched recursively for function
+files.  This can result in a slight delay as Octave caches the lists of
+files found in the <code>LOADPATH</code> the first time Octave searches for a
+function.  After that, searching is usually much faster because Octave
+normally only needs to search its internal cache for files.
+
+        <p>To improve performance of recursive directory searching, it is best for
+each directory that is to be searched recursively to contain
+<em>either</em> additional subdirectories <em>or</em> function files, but
+not a mixture of both.
+
+        <p>See <a href="Organization-of-Functions.html#Organization-of-Functions">Organization of Functions</a>, for a description of the function file
+directories that are distributed with Octave. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drehash"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>rehash</b> ()<var><a name="index-rehash-485"></a></var><br>
+<blockquote><p>Reinitialize Octave's <code>LOADPATH</code> directory cache. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfile_005fin_005floadpath"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>file_in_loadpath</b> (<var>file</var>)<var><a name="index-file_005fin_005floadpath-486"></a></var><br>
+&mdash; Built-in Function:  <b>file_in_loadpath</b> (<var>file, "all"</var>)<var><a name="index-file_005fin_005floadpath-487"></a></var><br>
+<blockquote>
+<p>Return the absolute name of <var>file</var> if it can be found in
+the list of directories specified by <code>LOADPATH</code>. 
+If no file is found, return an empty matrix.
+
+        <p>If the first argument is a cell array of strings, search each
+directory of the loadpath for element of the cell array and return
+the first that matches.
+
+        <p>If the second optional argument <code>"all"</code> is supplied, return
+a cell array containing the list of all files that have the same
+name in the path.  If no files are found, return an empty cell array.
+        <pre class="sp">
+     
+     </pre>
+     See also: file_in_path, LOADPATH. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dignore_005ffunction_005ftime_005fstamp"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>ignore_function_time_stamp</b><var><a name="index-ignore_005ffunction_005ftime_005fstamp-488"></a></var><br>
+<blockquote><p>This variable can be used to prevent Octave from making the system call
+<code>stat</code> each time it looks up functions defined in function files. 
+If <code>ignore_function_time_stamp</code> to <code>"system"</code>, Octave will not
+automatically recompile function files in subdirectories of
+<samp><var>octave-home</var><span class="file">/lib/</span><var>version</var></samp> if they have changed since
+they were last compiled, but will recompile other function files in the
+<code>LOADPATH</code> if they change.  If set to <code>"all"</code>, Octave will not
+recompile any function files unless their definitions are removed with
+<code>clear</code>.  For any other value of <code>ignore_function_time_stamp</code>,
+Octave will always check to see if functions defined in function files
+need to recompiled.  The default value of <code>ignore_function_time_stamp</code> is
+<code>"system"</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwarn_005ffunction_005fname_005fclash"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>warn_function_name_clash</b><var><a name="index-warn_005ffunction_005fname_005fclash-489"></a></var><br>
+<blockquote><p>If the value of <code>warn_function_name_clash</code> is nonzero, a warning is
+issued when Octave finds that the name of a function defined in a
+function file differs from the name of the file.  (If the names
+disagree, the name declared inside the file is ignored.)  If the value
+is 0, the warning is omitted.  The default value is 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwarn_005ffuture_005ftime_005fstamp"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>warn_future_time_stamp</b><var><a name="index-warn_005ffuture_005ftime_005fstamp-490"></a></var><br>
+<blockquote><p>If the value of this variable is nonzero, Octave will print a warning
+if it finds a function file with a time stamp that is in the future. 
+</p></blockquote></div>
+
+   <div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> The `<samp><span class="samp">.m</span></samp>' suffix was
+chosen for compatibility with <span class="sc">Matlab</span>.</p>
+
+   <p><hr></div>
+
+   </body></html>
+

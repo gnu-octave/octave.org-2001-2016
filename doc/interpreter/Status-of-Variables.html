@@ -1,0 +1,367 @@
+<html lang="en">
+<head>
+<title>Status of Variables - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Variables.html#Variables" title="Variables">
+<link rel="prev" href="Persistent-Variables.html#Persistent-Variables" title="Persistent Variables">
+<link rel="next" href="Summary-of-Built_002din-Variables.html#Summary-of-Built_002din-Variables" title="Summary of Built-in Variables">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Status-of-Variables"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Summary-of-Built_002din-Variables.html#Summary-of-Built_002din-Variables">Summary of Built-in Variables</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Persistent-Variables.html#Persistent-Variables">Persistent Variables</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Variables.html#Variables">Variables</a>
+<hr>
+</div>
+
+<h3 class="section">9.3 Status of Variables</h3>
+
+<p><a name="doc_002dclear"></a>
+
+<div class="defun">
+&mdash; Command: <b>clear</b> [<var>-x</var>]<var> pattern <small class="dots">...</small><a name="index-clear-264"></a></var><br>
+<blockquote><p>Delete the names matching the given patterns from the symbol table.  The
+pattern may contain the following special characters:
+
+          <dl>
+<dt><code>?</code><dd>Match any single character.
+
+          <br><dt><code>*</code><dd>Match zero or more characters.
+
+          <br><dt><code>[ </code><var>list</var><code> ]</code><dd>Match the list of characters specified by <var>list</var>.  If the first
+character is <code>!</code> or <code>^</code>, match all characters except those
+specified by <var>list</var>.  For example, the pattern `<samp><span class="samp">[a-zA-Z]</span></samp>' will
+match all lower and upper case alphabetic characters. 
+</dl>
+
+        <p>For example, the command
+
+     <pre class="example">          clear foo b*r
+     </pre>
+        <p class="noindent">clears the name <code>foo</code> and all names that begin with the letter
+<code>b</code> and end with the letter <code>r</code>.
+
+        <p>If <code>clear</code> is called without any arguments, all user-defined
+variables (local and global) are cleared from the symbol table.  If
+<code>clear</code> is called with at least one argument, only the visible
+names matching the arguments are cleared.  For example, suppose you have
+defined a function <code>foo</code>, and then hidden it by performing the
+assignment <code>foo = 2</code>.  Executing the command <kbd>clear foo</kbd> once
+will clear the variable definition and restore the definition of
+<code>foo</code> as a function.  Executing <kbd>clear foo</kbd> a second time will
+clear the function definition.
+
+        <p>With -x, clear the variables that don't match the patterns.
+
+        <p>This command may not be used within a function body. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwho"></a>
+
+<div class="defun">
+&mdash; Command: <b>who</b><var> options pattern <small class="dots">...</small><a name="index-who-265"></a></var><br>
+&mdash; Command: <b>whos</b><var> options pattern <small class="dots">...</small><a name="index-whos-266"></a></var><br>
+<blockquote><p>List currently defined symbols matching the given patterns.  The
+following are valid options.  They may be shortened to one character but
+may not be combined.
+
+          <dl>
+<dt><code>-all</code><dd>List all currently defined symbols.
+
+          <br><dt><code>-builtins</code><dd>List built-in variables and functions.  This includes all currently
+compiled function files, but does not include all function files that
+are in the <code>LOADPATH</code>.
+
+          <br><dt><code>-functions</code><dd>List user-defined functions.
+
+          <br><dt><code>-long</code><dd>Print a long listing including the type and dimensions of any symbols. 
+The symbols in the first column of output indicate whether it is
+possible to redefine the symbol, and whether it is possible for it to be
+cleared.
+
+          <br><dt><code>-variables</code><dd>List user-defined variables. 
+</dl>
+
+        <p>Valid patterns are the same as described for the <code>clear</code> command
+above.  If no patterns are supplied, all symbols from the given category
+are listed.  By default, only user defined functions and variables
+visible in the local scope are displayed.
+
+        <p>The command <kbd>whos</kbd> is equivalent to <kbd>who -long</kbd>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwhos"></a>
+
+<div class="defun">
+&mdash; Command: <b>whos</b><var> options pattern <small class="dots">...</small><a name="index-whos-267"></a></var><br>
+<blockquote><p>See who. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwhos_005fline_005fformat"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>whos_line_format</b><var><a name="index-whos_005fline_005fformat-268"></a></var><br>
+<blockquote><p>This string decides in what order attributtes of variables are to be printed. 
+The following commands are used:
+          <dl>
+<dt><code>%b</code><dd>Prints number of bytes occupied by variables. 
+<br><dt><code>%e</code><dd>Prints elements held by variables. 
+<br><dt><code>%n</code><dd>Prints variable names. 
+<br><dt><code>%p</code><dd>Prints protection attributtes of variables. 
+<br><dt><code>%s</code><dd>Prints dimensions of variables. 
+<br><dt><code>%t</code><dd>Prints type names of variables. 
+</dl>
+
+        <p>Every command may also have a modifier:
+          <dl>
+<dt><code>l</code><dd>Left alignment. 
+<br><dt><code>r</code><dd>Right alignment (this is the default). 
+<br><dt><code>c</code><dd>Centered (may only be applied to command %s). 
+</dl>
+
+        <p>A command is composed like this:
+%[modifier]&lt;command&gt;[:size_of_parameter[:center-specific[:print_dims[:balance]]]];
+
+        <p>Command and modifier is already explained. Size_of_parameter
+tells how many columns the parameter will need for printing. 
+print_dims tells how many dimensions to print. If number of
+dimensions exceeds print_dims, dimensions will be printed like
+x-D. 
+center-specific and print_dims may only be applied to command
+%s. A negative value for print_dims will cause Octave to print all
+dimensions whatsoever. 
+balance specifies the offset for printing of the dimensions string.
+
+        <p>Default format is "  %p:4; %ln:6; %cs:16:6:8:1;  %rb:12;  %lt:-1;\n". 
+</p></blockquote></div>
+
+   <p><a name="doc_002dexist"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>exist</b> (<var>name, type</var>)<var><a name="index-exist-269"></a></var><br>
+<blockquote><p>Return 1 if the name exists as a variable, 2 if the name (after
+appending `<samp><span class="samp">.m</span></samp>') is a function file in Octave's LOADPATH, 3 if the
+name is a `<samp><span class="samp">.oct</span></samp>' file in Octave's LOADPATH, 5 if the name is a
+built-in function, 7 if the name is a directory, 101 if the name is
+a built-in variable, 102 if the name is a built-in constant, or 103
+if the name is a function not associated with a file (entered on
+the command line).
+
+        <p>Otherwise, return 0.
+
+        <p>This function also returns 2 if a regular file called <var>name</var>
+exists in Octave's <code>LOADPATH</code>.  If you want information about
+other types of files, you should use some combination of the functions
+<code>file_in_path</code> and <code>stat</code> instead.
+
+        <p>If the optional argument <var>type</var> is supplied, check only for
+symbols of the specified type.  Valid types are
+
+          <dl>
+<dt>`<samp><span class="samp">"var"</span></samp>'<dd>Check only for variables. 
+<br><dt>`<samp><span class="samp">"builtin"</span></samp>'<dd>Check only for built-in functions. 
+<br><dt>`<samp><span class="samp">"file"</span></samp>'<dd>Check only for files. 
+<br><dt>`<samp><span class="samp">"dir"</span></samp>'<dd>Check only for directories. 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002ddocument"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>document</b> (<var>symbol, text</var>)<var><a name="index-document-270"></a></var><br>
+<blockquote><p>Set the documentation string for <var>symbol</var> to <var>text</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtype"></a>
+
+<div class="defun">
+&mdash; Command: <b>type</b><var> options name <small class="dots">...</small><a name="index-type-271"></a></var><br>
+<blockquote><p>Display the definition of each <var>name</var> that refers to a function.
+
+        <p>Normally also displays if each <var>name</var> is user-defined or builtin;
+the <code>-q</code> option suppresses this behaviour.
+
+        <p>Currently, Octave can only display functions that can be compiled
+cleanly, because it uses its internal representation of the function to
+recreate the program text.
+
+        <p>Comments are not displayed because Octave's parser currently discards
+them as it converts the text of a function file to its internal
+representation.  This problem may be fixed in a future release. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwhich"></a>
+
+<div class="defun">
+&mdash; Command: <b>which</b><var> name <small class="dots">...</small><a name="index-which-272"></a></var><br>
+<blockquote><p>Display the type of each <var>name</var>.  If <var>name</var> is defined from a
+function file, the full name of the file is also displayed. 
+</p></blockquote></div>
+
+   </body></html>
+

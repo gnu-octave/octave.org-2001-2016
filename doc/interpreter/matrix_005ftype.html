@@ -1,0 +1,241 @@
+<html lang="en">
+<head>
+<title>matrix_type - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Function-Reference.html#Function-Reference" title="Function Reference">
+<link rel="prev" href="luinc.html#luinc" title="luinc">
+<link rel="next" href="nnz.html#nnz" title="nnz">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="matrix_type"></a>
+<a name="matrix_005ftype"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="nnz.html#nnz">nnz</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="luinc.html#luinc">luinc</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Function-Reference.html#Function-Reference">Function Reference</a>
+<hr>
+</div>
+
+<h5 class="subsubsection">22.6.0.12 matrix_type</h5>
+
+<p><a name="doc_002dmatrix_005ftype"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>type</var> = <b>matrix_type</b> (<var>a</var>)<var><a name="index-matrix_005ftype-898"></a></var><br>
+&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, type</var>)<var><a name="index-matrix_005ftype-899"></a></var><br>
+&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, 'upper', perm</var>)<var><a name="index-matrix_005ftype-900"></a></var><br>
+&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, 'lower', perm</var>)<var><a name="index-matrix_005ftype-901"></a></var><br>
+&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, 'banded', nl, nu</var>)<var><a name="index-matrix_005ftype-902"></a></var><br>
+<blockquote><p>Identify the matrix type or mark a matrix as a particular type. This allows rapid
+for solutions of linear equations involving <var>a</var> to be performed. Called with a
+single argument, <code>matrix_type</code> returns the type of the matrix and caches it for
+future use. Called with more than one argument, <code>matrix_type</code> allows the type
+of the matrix to be defined.
+
+        <p>The possible matrix types depend on whether the matrix is full or sparse, and can be
+one of the following
+
+          <dl>
+<dt>'unknown'<dd>Remove any previously cached matrix type, and mark type as unknown
+
+          <br><dt>'full'<dd>Mark the matrix as full.
+
+          <br><dt>'positive definite'<dd>Full positive definite matrix.
+
+          <br><dt>'diagonal'<dd>Diagonal Matrix. (Sparse matrices only)
+
+          <br><dt>'permuted diagonal'<dd>Permuted Diagonal matrix. The permutation does not need to be specifically
+indicated, as the structure of the matrix explicitly gives this. (Sparse matrices
+only)
+
+          <br><dt>'upper'<dd>Upper triangular. If the optional third argument <var>perm</var> is given, the matrix is
+assumed to be a permuted upper triangular with the permutations defined by the
+vector <var>perm</var>.
+
+          <br><dt>'lower'<dd>Lower triangular. If the optional third argument <var>perm</var> is given, the matrix is
+assumed to be a permuted lower triangular with the permutations defined by the
+vector <var>perm</var>.
+
+          <br><dt>'banded'<dt>'banded positive definite'<dd>Banded matrix with the band size of <var>nl</var> below the diagonal and <var>nu</var> above
+it. If <var>nl</var> and <var>nu</var> are 1, then the matrix is tridiagonal and treated
+with specialized code. In addition the matrix can be marked as positive definite
+(Sparse matrices only)
+
+          <br><dt>'singular'<dd>The matrix is assumed to be singular and will be treated with a minimum norm solution
+
+        </dl>
+
+        <p>Note that the matrix type will be discovered automatically on the first attempt to
+solve a linear equation involving <var>a</var>. Therefore <code>matrix_type</code> is only
+useful to give Octave hints of the matrix type. Incorrectly defining the
+matrix type will result in incorrect results from solutions of linear equations,
+and so it is entirely the responsibility of the user to correctly indentify the
+matrix type. 
+</p></blockquote></div>
+
+   </body></html>
+

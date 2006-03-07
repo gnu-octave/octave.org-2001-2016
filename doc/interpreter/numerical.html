@@ -1,0 +1,487 @@
+<html lang="en">
+<head>
+<title>numerical - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Control-Theory.html#Control-Theory" title="Control Theory">
+<link rel="prev" href="blockdiag.html#blockdiag" title="blockdiag">
+<link rel="next" href="sysprop.html#sysprop" title="sysprop">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="numerical"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="sysprop.html#sysprop">sysprop</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="blockdiag.html#blockdiag">blockdiag</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Control Theory</a>
+<hr>
+</div>
+
+<h3 class="section">30.5 Numerical Functions</h3>
+
+<p><a name="doc_002dare"></a>
+
+<div class="defun">
+&mdash; Function File: <var>x</var> = <b>are</b> (<var>a, b, c, opt</var>)<var><a name="index-are-1241"></a></var><br>
+<blockquote><p>Solve the Algebraic Riccati Equation
+     <pre class="example">          a' * x + x * a - x * b * x + c = 0
+     </pre>
+        <p><strong>Inputs</strong>
+for identically dimensioned square matrices
+          <dl>
+<dt><var>a</var><dd><var>n</var> by <var>n</var> matrix;
+<br><dt><var>b</var><dd><var>n</var> by <var>n</var> matrix or <var>n</var> by <var>m</var> matrix; in the latter case
+<var>b</var> is replaced by b:=b*b';
+<br><dt><var>c</var><dd><var>n</var> by <var>n</var> matrix or <var>p</var> by <var>m</var> matrix; in the latter case
+<var>c</var> is replaced by c:=c'*c;
+<br><dt><var>opt</var><dd>(optional argument; default = <code>"B"</code>):
+String option passed to <code>balance</code> prior to ordered Schur decomposition. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>x</var><dd>solution of the <acronym>ARE</acronym>. 
+</dl>
+
+        <p><strong>Method</strong>
+Laub's Schur method (<acronym>IEEE</acronym> Transactions on
+Automatic Control, 1979) is applied to the appropriate Hamiltonian
+matrix.
+        <pre class="sp">
+     
+     </pre>
+     See also: balance, dare. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddare"></a>
+
+<div class="defun">
+&mdash; Function File: <var>x</var> = <b>dare</b> (<var>a, b, q, r, opt</var>)<var><a name="index-dare-1242"></a></var><br>
+<blockquote>
+<p>Return the solution, <var>x</var> of the discrete-time algebraic Riccati
+equation
+     <pre class="example">          a' x a - x + a' x b (r + b' x b)^(-1) b' x a + q = 0
+     </pre>
+        <p class="noindent"><strong>Inputs</strong>
+          <dl>
+<dt><var>a</var><dd><var>n</var> by <var>n</var> matrix;
+
+          <br><dt><var>b</var><dd><var>n</var> by <var>m</var> matrix;
+
+          <br><dt><var>q</var><dd><var>n</var> by <var>n</var> matrix, symmetric positive semidefinite, or a <var>p</var> by <var>n</var> matrix,
+In the latter case q:=q'*q is used;
+
+          <br><dt><var>r</var><dd><var>m</var> by <var>m</var>, symmetric positive definite (invertible);
+
+          <br><dt><var>opt</var><dd>(optional argument; default = <code>"B"</code>):
+String option passed to <code>balance</code> prior to ordered <var>QZ</var> decomposition. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>x</var><dd>solution of <acronym>DARE</acronym>. 
+</dl>
+
+        <p><strong>Method</strong>
+Generalized eigenvalue approach (Van Dooren; <acronym>SIAM</acronym> J. 
+ Sci. Stat. Comput., Vol 2) applied  to the appropriate symplectic pencil.
+
+        <p>See also: Ran and Rodman, <cite>Stable Hermitian Solutions of Discrete
+ Algebraic Riccati Equations</cite>, Mathematics of Control, Signals and
+ Systems, Vol 5, no 2 (1992), pp 165&ndash;194.
+        <pre class="sp">
+     
+     </pre>
+     See also: balance, are. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddre"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>tvals</var>, <var>plist</var>] = <b>dre</b> (<var>sys, q, r, qf, t0, tf, ptol, maxits</var>)<var><a name="index-dre-1243"></a></var><br>
+<blockquote><p>Solve the differential Riccati equation
+     <pre class="example">            -d P/dt = A'P + P A - P B inv(R) B' P + Q
+            P(tf) = Qf
+     </pre>
+        <p>for the <acronym>LTI</acronym> system sys.  Solution of
+standard <acronym>LTI</acronym> state feedback optimization
+     <pre class="example">            min int(t0, tf) ( x' Q x + u' R u ) dt + x(tf)' Qf x(tf)
+     </pre>
+        <p>optimal input is
+     <pre class="example">            u = - inv(R) B' P(t) x
+     </pre>
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>continuous time system data structure
+<br><dt><var>q</var><dd>state integral penalty
+<br><dt><var>r</var><dd>input integral penalty
+<br><dt><var>qf</var><dd>state terminal penalty
+<br><dt><var>t0</var><dt><var>tf</var><dd>limits on the integral
+<br><dt><var>ptol</var><dd>tolerance (used to select time samples; see below); default = 0.1
+<br><dt><var>maxits</var><dd>number of refinement iterations (default=10)
+</dl>
+        <strong>Outputs</strong>
+          <dl>
+<dt><var>tvals</var><dd>time values at which <var>p</var>(<var>t</var>) is computed
+<br><dt><var>plist</var><dd>list values of <var>p</var>(<var>t</var>); <var>plist</var> { <var>i</var> }
+is <var>p</var>(<var>tvals</var>(<var>i</var>))
+</dl>
+        <var>tvals</var> is selected so that:
+     <pre class="example">          || Plist{i} - Plist{i-1} || &lt; Ptol
+     </pre>
+        <p>for every <var>i</var> between 2 and length(<var>tvals</var>). 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddgram"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dgram</b> (<var>a, b</var>)<var><a name="index-dgram-1244"></a></var><br>
+<blockquote><p>Return controllability gramian of discrete time system
+     <pre class="example">            x(k+1) = a x(k) + b u(k)
+     </pre>
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>a</var><dd><var>n</var> by <var>n</var> matrix
+<br><dt><var>b</var><dd><var>n</var> by <var>m</var> matrix
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>m</var><dd><var>n</var> by <var>n</var> matrix, satisfies
+          <pre class="example">                a m a' - m + b*b' = 0
+          </pre>
+          </dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002ddlyap"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dlyap</b> (<var>a, b</var>)<var><a name="index-dlyap-1245"></a></var><br>
+<blockquote><p>Solve the discrete-time Lyapunov equation
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>a</var><dd><var>n</var> by <var>n</var> matrix;
+<br><dt><var>b</var><dd>  Matrix: <var>n</var> by <var>n</var>, <var>n</var> by <var>m</var>, or <var>p</var> by <var>n</var>. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>x</var><dd>matrix satisfying appropriate discrete time Lyapunov equation. 
+</dl>
+
+        <p>Options:
+          <ul>
+<li><var>b</var> is square: solve
+<code>a x a' - x + b = 0</code>
+<li><var>b</var> is not square: <var>x</var> satisfies either
+          <pre class="example">               a x a' - x + b b' = 0
+          </pre>
+          <p class="noindent">or
+          <pre class="example">               a' x a - x + b' b = 0,
+          </pre>
+          <p class="noindent">whichever is appropriate. 
+</ul>
+
+        <p><strong>Method</strong>
+Uses Schur decomposition method as in Kitagawa,
+<cite>An Algorithm for Solving the Matrix Equation X = F X F' + S</cite>,
+International Journal of Control, Volume 25, Number 5, pages 745&ndash;753
+(1977).
+
+        <p>Column-by-column solution method as suggested in
+Hammarling, <cite>Numerical Solution of the Stable, Non-Negative
+Definite Lyapunov Equation</cite>, <acronym>IMA</acronym> Journal of Numerical Analysis, Volume
+2, pages 303&ndash;323 (1982). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgram"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gram</b> (<var>a, b</var>)<var><a name="index-gram-1246"></a></var><br>
+<blockquote><p>Return controllability gramian <var>m</var> of the continuous time system
+dx/dt = a x + b u.
+
+        <p><var>m</var> satisfies a m + m a' + b b' = 0. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlyap"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>lyap</b> (<var>a, b, c</var>)<var><a name="index-lyap-1247"></a></var><br>
+&mdash; Function File:  <b>lyap</b> (<var>a, b</var>)<var><a name="index-lyap-1248"></a></var><br>
+<blockquote><p>Solve the Lyapunov (or Sylvester) equation via the Bartels-Stewart
+algorithm (Communications of the <acronym>ACM</acronym>, 1972).
+
+        <p>If <var>a</var>, <var>b</var>, and <var>c</var> are specified, then <code>lyap</code> returns
+the solution of the  Sylvester equation
+     <pre class="example">              a x + x b + c = 0
+     </pre>
+        <p>If only <code>(a, b)</code> are specified, then <samp><span class="command">lyap</span></samp> returns the
+solution of the Lyapunov equation
+     <pre class="example">              a' x + x a + b = 0
+     </pre>
+        <p>If <var>b</var> is not square, then <code>lyap</code> returns the solution of either
+     <pre class="example">              a' x + x a + b' b = 0
+     </pre>
+        <p class="noindent">or
+     <pre class="example">              a x + x a' + b b' = 0
+     </pre>
+        <p class="noindent">whichever is appropriate.
+
+        <p>Solves by using the Bartels-Stewart algorithm (1972). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dqzval"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qzval</b> (<var>a, b</var>)<var><a name="index-qzval-1249"></a></var><br>
+<blockquote><p>Compute generalized eigenvalues of the matrix pencil
+     <pre class="example">          (A - lambda B).
+     </pre>
+        <p><var>a</var> and <var>b</var> must be real matrices.
+
+        <p><code>qzval</code> is obsolete; use <code>qz</code> instead. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzgfmul"></a>
+
+<div class="defun">
+&mdash; Function File: <var>y</var> = <b>zgfmul</b> (<var>a, b, c, d, x</var>)<var><a name="index-zgfmul-1250"></a></var><br>
+<blockquote><p>Compute product of <var>zgep</var> incidence matrix F with vector <var>x</var>. 
+Used by <samp><span class="command">zgepbal</span></samp> (in <samp><span class="command">zgscal</span></samp>) as part of generalized conjugate gradient
+iteration. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzgfslv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>zgfslv</b> (<var>n, m, p, b</var>)<var><a name="index-zgfslv-1251"></a></var><br>
+<blockquote><p>Solve system of equations for dense zgep problem. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzginit"></a>
+
+<div class="defun">
+&mdash; Function File: <var>zz</var> = <b>zginit</b> (<var>a, b, c, d</var>)<var><a name="index-zginit-1252"></a></var><br>
+<blockquote><p>Construct right hand side vector <var>zz</var>
+for the zero-computation generalized eigenvalue problem
+balancing procedure.  Called by <samp><span class="command">zgepbal</span></samp>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzgreduce"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>zgreduce</b> (<var>sys, meps</var>)<var><a name="index-zgreduce-1253"></a></var><br>
+<blockquote><p>Implementation of procedure REDUCE in (Emami-Naeini and Van Dooren,
+Automatica, # 1982). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzgrownorm"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>nonz</var>, <var>zer</var>] = <b>zgrownorm</b> (<var>mat, meps</var>)<var><a name="index-zgrownorm-1254"></a></var><br>
+<blockquote><p>Return <var>nonz</var> = number of rows of <var>mat</var> whose two norm
+exceeds <var>meps</var>, and <var>zer</var> = number of rows of mat whose two
+norm is less than <var>meps</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzgscal"></a>
+
+<div class="defun">
+&mdash; Function File: <var>x</var> = <b>zgscal</b> (<var>f, z, n, m, p</var>)<var><a name="index-zgscal-1255"></a></var><br>
+<blockquote><p>Generalized conjugate gradient iteration to
+solve zero-computation generalized eigenvalue problem balancing equation
+fx=z; called by <samp><span class="command">zgepbal</span></samp>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzgsgiv"></a>
+
+<div class="defun">
+&mdash; Function File: [a, b] = <b>zgsgiv</b> (<var>c, s, a, b</var>)<var><a name="index-zgsgiv-1256"></a></var><br>
+<blockquote><p>Apply givens rotation c,s to row vectors <var>a</var>, <var>b</var>. 
+No longer used in zero-balancing (__zgpbal__); kept for backward
+compatibility. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzgshsr"></a>
+
+<div class="defun">
+&mdash; Function File: <var>x</var> = <b>zgshsr</b> (<var>y</var>)<var><a name="index-zgshsr-1257"></a></var><br>
+<blockquote><p>Apply householder vector based on
+e^(m)
+to column vector <var>y</var>. 
+Called by <samp><span class="command">zgfslv</span></samp>. 
+</p></blockquote></div>
+
+   <p><strong>References</strong>
+     <dl>
+<dt><strong>ZGEP</strong><dd> Hodel, <cite>Computation of Zeros with Balancing</cite>, 1992, Linear Algebra
+ and its Applications
+<br><dt><strong>Generalized CG</strong><dd> Golub and Van Loan, <cite>Matrix Computations, 2nd ed</cite> 1989. 
+</dl>
+
+   </body></html>
+

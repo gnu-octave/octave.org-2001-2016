@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+<title>Documentation Tips - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Tips.html#Tips" title="Tips">
+<link rel="prev" href="Coding-Tips.html#Coding-Tips" title="Coding Tips">
+<link rel="next" href="Comment-Tips.html#Comment-Tips" title="Comment Tips">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Documentation-Tips"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Comment-Tips.html#Comment-Tips">Comment Tips</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Coding-Tips.html#Coding-Tips">Coding Tips</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Tips.html#Tips">Tips</a>
+<hr>
+</div>
+
+<h3 class="section">B.3 Tips for Documentation Strings</h3>
+
+<p>Here are some tips for the writing of documentation strings.
+
+     <ul>
+<li>Every command, function, or variable intended for users to know about
+should have a documentation string.
+
+     <li>An internal variable or subroutine of an Octave program might as well have
+a documentation string.
+
+     <li>The first line of the documentation string should consist of one or two
+complete sentences that stand on their own as a summary.
+
+     <p>The documentation string can have additional lines that expand on the
+details of how to use the function or variable.  The additional lines
+should also be made up of complete sentences.
+
+     <li>For consistency, phrase the verb in the first sentence of a
+documentation string as an infinitive with &ldquo;to&rdquo; omitted.  For
+instance, use &ldquo;Return the frob of A and B.&rdquo; in preference to &ldquo;Returns
+the frob of A and B.&rdquo;  Usually it looks good to do likewise for the
+rest of the first paragraph.  Subsequent paragraphs usually look better
+if they have proper subjects.
+
+     <li>Write documentation strings in the active voice, not the passive, and in
+the present tense, not the future.  For instance, use &ldquo;Return a list
+containing A and B.&rdquo; instead of &ldquo;A list containing A and B will be
+returned.&rdquo;
+
+     <li>Avoid using the word &ldquo;cause&rdquo; (or its equivalents) unnecessarily. 
+Instead of, &ldquo;Cause Octave to display text in boldface,&rdquo; write just
+&ldquo;Display text in boldface.&rdquo;
+
+     <li>Do not start or end a documentation string with whitespace.
+
+     <li>Format the documentation string so that it fits in an Emacs window on an
+80-column screen.  It is a good idea for most lines to be no wider than
+60 characters.
+
+     <p>However, rather than simply filling the entire documentation string, you
+can make it much more readable by choosing line breaks with care. 
+Use blank lines between topics if the documentation string is long.
+
+     <li><strong>Do not</strong> indent subsequent lines of a documentation string so
+that the text is lined up in the source code with the text of the first
+line.  This looks nice in the source code, but looks bizarre when users
+view the documentation.  Remember that the indentation before the
+starting double-quote is not part of the string!
+
+     <li>The documentation string for a variable that is a yes-or-no flag should
+start with words such as &ldquo;Nonzero means<small class="dots">...</small>&rdquo;, to make it clear that
+all nonzero values are equivalent and indicate explicitly what zero and
+nonzero mean.
+
+     <li>When a function's documentation string mentions the value of an argument
+of the function, use the argument name in capital letters as if it were
+a name for that value.  Thus, the documentation string of the operator
+<code>/</code> refers to its second argument as `<samp><span class="samp">DIVISOR</span></samp>', because the
+actual argument name is <code>divisor</code>.
+
+     <p>Also use all caps for meta-syntactic variables, such as when you show
+the decomposition of a list or vector into subunits, some of which may
+vary. 
+</ul>
+
+   </body></html>
+

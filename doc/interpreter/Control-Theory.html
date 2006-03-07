@@ -1,0 +1,242 @@
+<html lang="en">
+<head>
+<title>Control Theory - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Polynomial-Manipulations.html#Polynomial-Manipulations" title="Polynomial Manipulations">
+<link rel="next" href="Signal-Processing.html#Signal-Processing" title="Signal Processing">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Control-Theory"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Signal-Processing.html#Signal-Processing">Signal Processing</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Polynomial-Manipulations.html#Polynomial-Manipulations">Polynomial Manipulations</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">30 Control Theory</h2>
+
+<p>The Octave Control Systems Toolbox (<acronym>OCST</acronym>) was initially developed
+by Dr. A. Scottedward Hodel
+<a href="mailto:a.s.hodel@eng.auburn.edu">a.s.hodel@eng.auburn.edu</a> with the assistance
+of his students
+     <ul>
+<li>R. Bruce Tenison <a href="mailto:btenison@dibbs.net">btenison@dibbs.net</a>,
+<li>David C. Clem,
+<li>John E. Ingram <a href="mailto:John.Ingram@sea.siemans.com">John.Ingram@sea.siemans.com</a>, and
+<li>Kristi McGowan. 
+</ul>
+   This development was supported in part by <acronym>NASA</acronym>'s Marshall Space Flight
+Center as part of an in-house <acronym>CACSD</acronym> environment.  Additional important
+contributions were made by Dr. Kai Mueller <a href="mailto:mueller@ifr.ing.tu-bs.de">mueller@ifr.ing.tu-bs.de</a>
+and Jose Daniel Munoz Frias (<code>place.m</code>).
+
+   <p>An on-line menu-driven tutorial is available via <code>DEMOcontrol</code>;
+beginning <acronym>OCST</acronym> users should start with this program.
+
+   <p><a name="doc_002dDEMOcontrol"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>DEMOcontrol</b><var><a name="index-DEMOcontrol-1197"></a></var><br>
+<blockquote><p>Octave Control Systems Toolbox demo/tutorial program.  The demo
+allows the user to select among several categories of <acronym>OCST</acronym> function:
+     <pre class="example">          octave:1&gt; DEMOcontrol
+          O C T A V E    C O N T R O L   S Y S T E M S   T O O L B O X
+          Octave Controls System Toolbox Demo
+          
+            [ 1] System representation
+            [ 2] Block diagram manipulations
+            [ 3] Frequency response functions
+            [ 4] State space analysis functions
+            [ 5] Root locus functions
+            [ 6] LQG/H2/Hinfinity functions
+            [ 7] End
+     </pre>
+        <p>Command examples are interactively run for users to observe the use
+of <acronym>OCST</acronym> functions.
+        <pre class="sp">
+     
+     </pre>
+     See also: Demo Programs: bddemo.m, frdemo.m, analdemo.m,
+moddmeo.m, rldemo.m. 
+</p></blockquote></div>
+
+<ul class="menu">
+<li><a accesskey="1" href="sysstruct.html#sysstruct">sysstruct</a>
+<li><a accesskey="2" href="sysinterface.html#sysinterface">sysinterface</a>
+<li><a accesskey="3" href="sysdisp.html#sysdisp">sysdisp</a>
+<li><a accesskey="4" href="blockdiag.html#blockdiag">blockdiag</a>
+<li><a accesskey="5" href="numerical.html#numerical">numerical</a>
+<li><a accesskey="6" href="sysprop.html#sysprop">sysprop</a>
+<li><a accesskey="7" href="systime.html#systime">systime</a>
+<li><a accesskey="8" href="sysfreq.html#sysfreq">sysfreq</a>
+<li><a accesskey="9" href="cacsd.html#cacsd">cacsd</a>
+<li><a href="misc.html#misc">misc</a>
+</ul>
+
+   </body></html>
+

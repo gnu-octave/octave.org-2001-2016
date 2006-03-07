@@ -1,0 +1,319 @@
+<html lang="en">
+<head>
+<title>Command Line Options - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Invoking-Octave.html#Invoking-Octave" title="Invoking Octave">
+<link rel="next" href="Startup-Files.html#Startup-Files" title="Startup Files">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Command-Line-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Startup-Files.html#Startup-Files">Startup Files</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-Octave.html#Invoking-Octave">Invoking Octave</a>
+<hr>
+</div>
+
+<h4 class="subsection">2.1.1 Command Line Options</h4>
+
+<p><a name="index-Octave-command-options-28"></a><a name="index-command-options-29"></a><a name="index-options_002c-Octave-command-30"></a>
+Here is a complete list of all the command line options that Octave
+accepts.
+
+     <dl>
+<dt><code>--debug</code><dt><code>-d</code><dd><a name="index-g_t_0040code_007b_002d_002ddebug_007d-31"></a><a name="index-g_t_0040code_007b_002dd_007d-32"></a>Enter parser debugging mode.  Using this option will cause Octave's
+parser to print a lot of information about the commands it reads, and is
+probably only useful if you are actually trying to debug the parser.
+
+     <br><dt><code>--echo-commands</code><dt><code>-x</code><dd><a name="index-g_t_0040code_007b_002d_002decho_002dcommands_007d-33"></a><a name="index-g_t_0040code_007b_002dx_007d-34"></a>Echo commands as they are executed.
+
+     <br><dt><code>--eval </code><var>code</var><dd>Evaluate <var>code</var> and exit when done unless <code>--persist</code> is also
+specified.
+
+     <br><dt><code>--exec-path </code><var>path</var><dd><a name="index-g_t_0040code_007b_002d_002dexec_002dpath-_0040var_007bpath_007d_007d-35"></a>Specify the path to search for programs to run.  The value of <var>path</var>
+specified on the command line will override any value of
+<code>OCTAVE_EXEC_PATH</code> found in the environment, but not any commands
+in the system or user startup files that set the built-in variable
+<code>EXEC_PATH</code>.
+
+     <br><dt><code>--help</code><dt><code>-h</code><dt><code>-?</code><dd><a name="index-g_t_0040code_007b_002d_002dhelp_007d-36"></a><a name="index-g_t_0040code_007b_002dh_007d-37"></a><a name="index-g_t_0040code_007b_002d_003f_007d-38"></a>Print short help message and exit.
+
+     <br><dt><code>--info-file </code><var>filename</var><dd><a name="index-g_t_0040code_007b_002d_002dinfo_002dfile-_0040var_007bfilename_007d_007d-39"></a>Specify the name of the info file to use.  The value of <var>filename</var>
+specified on the command line will override any value of
+<code>OCTAVE_INFO_FILE</code> found in the environment, but not any commands
+in the system or user startup files that set the built-in variable
+<code>INFO_FILE</code>.
+
+     <br><dt><code>--info-program </code><var>program</var><dd><a name="index-g_t_0040code_007b_002d_002dinfo_002dprogram-_0040var_007bprogram_007d_007d-40"></a>Specify the name of the info program to use.  The value of <var>program</var>
+specified on the command line will override any value of
+<code>OCTAVE_INFO_PROGRAM</code> found in the environment, but not any
+commands in the system or user startup files that set the built-in
+variable <code>INFO_PROGRAM</code>.
+
+     <br><dt><code>--interactive</code><dt><code>-i</code><dd><a name="index-g_t_0040code_007b_002d_002dinteractive_007d-41"></a><a name="index-g_t_0040code_007b_002di_007d-42"></a>Force interactive behavior.  This can be useful for running Octave via a
+remote shell command or inside an Emacs shell buffer.  For another way
+to run Octave within Emacs, see <a href="Emacs.html#Emacs">Emacs</a>.
+
+     <br><dt><code>--no-history</code><dt><code>-H</code><dd>Disable command-line history.
+
+     <br><dt><code>--no-init-file</code><dd><a name="index-g_t_0040code_007b_002d_002dno_002dinit_002dfile_007d-43"></a>Don't read the <samp><span class="file">~/.octaverc</span></samp> or <samp><span class="file">.octaverc</span></samp> files.
+
+     <br><dt><code>--no-line-editing</code><dd><a name="index-g_t_0040code_007b_002d_002dno_002dline_002dediting_007d-44"></a>Disable command-line editing.
+
+     <br><dt><code>--no-site-file</code><dd><a name="index-g_t_0040code_007b_002d_002dno_002dsite_002dfile_007d-45"></a>Don't read the site-wide <samp><span class="file">octaverc</span></samp> file.
+
+     <br><dt><code>--norc</code><dt><code>-f</code><dd><a name="index-g_t_0040code_007b_002d_002dnorc_007d-46"></a><a name="index-g_t_0040code_007b_002df_007d-47"></a>Don't read any of the system or user initialization files at startup. 
+This is equivalent to using both of the options <code>--no-init-file</code>
+and <code>--no-site-file</code>.
+
+     <br><dt><code>--path </code><var>path</var><dt><code>-p </code><var>path</var><dd><a name="index-g_t_0040code_007b_002d_002dpath-_0040var_007bpath_007d_007d-48"></a><a name="index-g_t_0040code_007b_002dp-_0040var_007bpath_007d_007d-49"></a>Specify the path to search for function files.  The value of <var>path</var>
+specified on the command line will override any value of
+<code>OCTAVE_PATH</code> found in the environment, but not any commands in the
+system or user startup files that set the built-in variable <code>LOADPATH</code>.
+
+     <br><dt><code>--persist</code><dd>Go to interactive mode after <code>--eval</code> or reading from a file
+named on the command line.
+
+     <br><dt><code>--silent</code><dt><code>--quiet</code><dt><code>-q</code><dd><a name="index-g_t_0040code_007b_002d_002dsilent_007d-50"></a><a name="index-g_t_0040code_007b_002d_002dquiet_007d-51"></a><a name="index-g_t_0040code_007b_002dq_007d-52"></a>Don't print the usual greeting and version message at startup.
+
+     <br><dt><code>--traditional</code><dt><code>--braindead</code><dd><a name="index-g_t_0040code_007b_002d_002dtraditional_007d-53"></a><a name="index-g_t_0040code_007b_002d_002dbraindead_007d-54"></a>Set initial values for user-preference variables to the following
+values for compatibility with <span class="sc">Matlab</span>.
+
+     <pre class="example">            PS1                           = "&gt;&gt; "
+            PS2                           = ""
+            beep_on_error                 = true
+            crash_dumps_octave_core       = false
+            default_save_options          = "-mat-binary"
+            fixed_point_format            = true
+            page_screen_output            = false
+            print_empty_dimensions        = false
+            warn_function_name_clash      = false
+     </pre>
+     <br><dt><code>--verbose</code><dt><code>-V</code><dd><a name="index-g_t_0040code_007b_002d_002dverbose_007d-55"></a><a name="index-g_t_0040code_007b_002dV_007d-56"></a>Turn on verbose output.
+
+     <br><dt><code>--version</code><dt><code>-v</code><dd><a name="index-g_t_0040code_007b_002d_002dversion_007d-57"></a><a name="index-g_t_0040code_007b_002dv_007d-58"></a>Print the program version number and exit.
+
+     <br><dt><var>file</var><dd>Execute commands from <var>file</var>.  Exit when done unless
+<code>--persist</code> is also specified. 
+</dl>
+
+   <p>Octave also includes several built-in variables that contain information
+about the command line, including the number of arguments and all of the
+options.
+
+   <p><a name="doc_002dargv"></a>
+
+<div class="defun">
+&mdash; Built-in Constant: <b>argv</b><var><a name="index-argv-59"></a></var><br>
+<blockquote><p>The command line arguments passed to Octave are available in this
+variable.  For example, if you invoked Octave using the command
+
+     <pre class="example">          octave --no-line-editing --silent
+     </pre>
+        <p class="noindent"><code>argv</code> would be a cell array of strings with the elements
+<code>--no-line-editing</code> and <code>--silent</code>.
+
+        <p>If you write an executable Octave script, <code>argv</code> will contain the
+list of arguments passed to the script.  See <a href="Executable-Octave-Programs.html#Executable-Octave-Programs">Executable Octave Programs</a>,
+for an example of how to create an executable Octave script. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dprogram_005finvocation_005fname"></a>
+
+<div class="defun">
+&mdash; Built-in Constant: <b>program_invocation_name</b><var><a name="index-program_005finvocation_005fname-60"></a></var><br>
+&mdash; Built-in Constant: <b>program_name</b><var><a name="index-program_005fname-61"></a></var><br>
+<blockquote><p>When Octave starts, the value of the built-in variable
+<code>program_invocation_name</code> is automatically set to the name that was
+typed at the shell prompt to run Octave, and the value of
+<code>program_name</code> is automatically set to the final component of
+<code>program_invocation_name</code>.  For example, if you typed
+`<samp><span class="samp">/usr/local/bin/octave</span></samp>' to start Octave,
+<code>program_invocation_name</code> would have the value
+<code>"/usr/local/bin/octave"</code>, and <code>program_name</code> would
+have the value <code>"octave"</code>.
+
+        <p>If executing a script from the command line (e.g., <code>octave foo.m</code>)
+or using an executable Octave script, the program name is set to the
+name of the script.  See <a href="Executable-Octave-Programs.html#Executable-Octave-Programs">Executable Octave Programs</a>, for an example of
+how to create an executable Octave script. 
+</p></blockquote></div>
+
+   <p>Here is an example of using these variables to reproduce Octave's
+command line.
+
+<pre class="example">     printf ("%s", program_name);
+     for i = 1:nargin
+       printf (" %s", nth (argv, i));
+     endfor
+     printf ("\n");
+</pre>
+   <p class="noindent">See <a href="Index-Expressions.html#Index-Expressions">Index Expressions</a>, for an explanation of how to properly index
+arrays of strings and substrings in Octave, and See <a href="Defining-Functions.html#Defining-Functions">Defining Functions</a>,
+for information about the variable <code>nargin</code>.
+
+   </body></html>
+

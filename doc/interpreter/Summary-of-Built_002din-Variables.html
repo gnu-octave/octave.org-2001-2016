@@ -1,0 +1,408 @@
+<html lang="en">
+<head>
+<title>Summary of Built-in Variables - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Variables.html#Variables" title="Variables">
+<link rel="prev" href="Status-of-Variables.html#Status-of-Variables" title="Status of Variables">
+<link rel="next" href="Defaults-from-the-Environment.html#Defaults-from-the-Environment" title="Defaults from the Environment">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Summary-of-Built-in-Variables"></a>
+<a name="Summary-of-Built_002din-Variables"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Defaults-from-the-Environment.html#Defaults-from-the-Environment">Defaults from the Environment</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Status-of-Variables.html#Status-of-Variables">Status of Variables</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Variables.html#Variables">Variables</a>
+<hr>
+</div>
+
+<h3 class="section">9.4 Summary of Built-in Variables</h3>
+
+<p>Here is a summary of all of Octave's built-in variables along with
+cross references to additional information and their default values.  In
+the following table <var>octave-home</var> stands for the root directory
+where all of Octave is installed (the default is <samp><span class="file">/usr/local</span></samp>,
+<var>version</var> stands for the Octave version number (for example,
+2.1.x) and <var>arch</var> stands for the type of system for which
+Octave was compiled (for example, <code>i586-pc-linux-gnu</code>).
+
+     <dl>
+<dt><code>DEFAULT_LOADPATH</code><a name="index-DEFAULT_005fLOADPATH-273"></a><dd>See <a href="Function-Files.html#Function-Files">Function Files</a>.
+
+     <p>Default value: <code>".:</code><var>octave-home</var><code>/lib/</code><var>version</var><code>"</code>.
+
+     <br><dt><code>EDITOR</code><a name="index-EDITOR-274"></a><dd>See <a href="Commands-For-History.html#Commands-For-History">Commands For History</a>.
+
+     <p>Default value: <code>"emacs"</code>.
+
+     <br><dt><code>EXEC_PATH</code><a name="index-EXEC_005fPATH-275"></a><dd>See <a href="Controlling-Subprocesses.html#Controlling-Subprocesses">Controlling Subprocesses</a>.
+
+     <p>Default value: <code>":$PATH"</code>.
+
+     <br><dt><code>INFO_FILE</code><a name="index-INFO_005fFILE-276"></a><dd>See <a href="Getting-Help.html#Getting-Help">Getting Help</a>.
+
+     <p>Default value: <code>"</code><var>octave-home</var><code>/info/octave.info"</code>.
+
+     <br><dt><code>INFO_PROGRAM</code><a name="index-INFO_005fPROGRAM-277"></a><dd>See <a href="Getting-Help.html#Getting-Help">Getting Help</a>.
+
+     <p>Default value: <code>"</code><var>octave-home</var><code>/libexec/octave/</code><var>version</var><code>/exec/</code><var>arch</var><code>/info"</code>.
+
+     <br><dt><code>LOADPATH</code><a name="index-LOADPATH-278"></a><dd>See <a href="Function-Files.html#Function-Files">Function Files</a>.
+
+     <p>Default value: <code>":"</code>, which tells Octave to use the directories
+specified by the built-in variable <code>DEFAULT_LOADPATH</code>.
+
+     <br><dt><code>OCTAVE_HOME</code><a name="index-OCTAVE_005fHOME-279"></a><dd>
+Default value: <code>"/usr/local"</code>.
+
+     <br><dt><code>PAGER</code><a name="index-PAGER-280"></a><dd>See <a href="Input-and-Output.html#Input-and-Output">Input and Output</a>.
+
+     <p>Default value: <code>"less", or "more"</code>.
+
+     <br><dt><code>PS1</code><a name="index-PS1-281"></a><dd>See <a href="Customizing-the-Prompt.html#Customizing-the-Prompt">Customizing the Prompt</a>.
+
+     <p>Default value: <code>"\s:\#&gt; "</code>.
+
+     <br><dt><code>PS2</code><a name="index-PS2-282"></a><dd>See <a href="Customizing-the-Prompt.html#Customizing-the-Prompt">Customizing the Prompt</a>.
+
+     <p>Default value: <code>"&gt; "</code>.
+
+     <br><dt><code>PS4</code><a name="index-PS4-283"></a><dd>See <a href="Customizing-the-Prompt.html#Customizing-the-Prompt">Customizing the Prompt</a>.
+
+     <p>Default value: <code>"+ "</code>.
+
+     <br><dt><code>automatic_replot</code><a name="index-automatic_005freplot-284"></a><dd>See <a href="Two_002dDimensional-Plotting.html#Two_002dDimensional-Plotting">Two-Dimensional Plotting</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>beep_on_error</code><a name="index-beep_005fon_005ferror-285"></a><dd>See <a href="Error-Handling.html#Error-Handling">Error Handling</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>completion_append_char</code><a name="index-completion_005fappend_005fchar-286"></a><dd>See <a href="Commands-For-Completion.html#Commands-For-Completion">Commands For Completion</a>.
+
+     <p>Default value: <code>" "</code>.
+
+     <br><dt><code>default_save_options</code><a name="index-default_005fsave_005foptions-287"></a><dd>See <a href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>.
+
+     <p>Default value: <code>"ascii"</code>.
+
+     <br><dt><code>crash_dumps_octave_core</code><a name="index-crash_005fdumps_005foctave_005fcore-288"></a><dd>See <a href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>fixed_point_format</code><a name="index-fixed_005fpoint_005fformat-289"></a><dd>See <a href="Matrices.html#Matrices">Matrices</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>gnuplot_binary</code><a name="index-gnuplot_005fbinary-290"></a><dd>See <a href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">Three-Dimensional Plotting</a>.
+
+     <p>Default value: <code>"gnuplot"</code>.
+
+     <br><dt><code>history_file</code><a name="index-history_005ffile-291"></a><dd>See <a href="Commands-For-History.html#Commands-For-History">Commands For History</a>.
+
+     <p>Default value: <code>"~/.octave_hist"</code>.
+
+     <br><dt><code>history_size</code><a name="index-history_005fsize-292"></a><dd>See <a href="Commands-For-History.html#Commands-For-History">Commands For History</a>.
+
+     <p>Default value: 1024.
+
+     <br><dt><code>ignore_function_time_stamp</code><a name="index-ignore_005ffunction_005ftime_005fstamp-293"></a><dd>See <a href="Function-Files.html#Function-Files">Function Files</a>.
+
+     <p>Default value: <code>"system"</code>.
+
+     <br><dt><code>max_recursion_depth</code><a name="index-max_005frecursion_005fdepth-294"></a><dd>See <a href="Recursion.html#Recursion">Recursion</a>.
+
+     <p>Default value: 256.
+
+     <br><dt><code>output_max_field_width</code><a name="index-output_005fmax_005ffield_005fwidth-295"></a><dd>See <a href="Matrices.html#Matrices">Matrices</a>.
+
+     <p>Default value: 10.
+
+     <br><dt><code>output_precision</code><a name="index-output_005fprecision-296"></a><dd>See <a href="Matrices.html#Matrices">Matrices</a>.
+
+     <p>Default value: 5.
+
+     <br><dt><code>page_screen_output</code><a name="index-page_005fscreen_005foutput-297"></a><dd>See <a href="Input-and-Output.html#Input-and-Output">Input and Output</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>print_answer_id_name</code><a name="index-print_005fanswer_005fid_005fname-298"></a><dd>See <a href="Terminal-Output.html#Terminal-Output">Terminal Output</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>print_empty_dimensions</code><a name="index-print_005fempty_005fdimensions-299"></a><dd>See <a href="Empty-Matrices.html#Empty-Matrices">Empty Matrices</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>return_last_computed_value</code><a name="index-return_005flast_005fcomputed_005fvalue-300"></a><dd>See <a href="Returning-From-a-Function.html#Returning-From-a-Function">Returning From a Function</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>save_precision</code><a name="index-save_005fprecision-301"></a><dd>See <a href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>.
+
+     <p>Default value: 17.
+
+     <br><dt><code>saving_history</code><a name="index-saving_005fhistory-302"></a><dd>See <a href="Commands-For-History.html#Commands-For-History">Commands For History</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>sighup_dumps_octave_core</code><a name="index-sighup_005fdumps_005foctave_005fcore-303"></a><dd>See <a href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>sigterm_dumps_octave_core</code><a name="index-sigterm_005fdumps_005foctave_005fcore-304"></a><dd>See <a href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>silent_functions</code><a name="index-silent_005ffunctions-305"></a><dd>See <a href="Defining-Functions.html#Defining-Functions">Defining Functions</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>split_long_rows</code><a name="index-split_005flong_005frows-306"></a><dd>See <a href="Matrices.html#Matrices">Matrices</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>struct_levels_to_print</code><a name="index-struct_005flevels_005fto_005fprint-307"></a><dd>See <a href="Data-Structures.html#Data-Structures">Data Structures</a>.
+
+     <p>Default value: 2.
+
+     <br><dt><code>suppress_verbose_help_message</code><a name="index-suppress_005fverbose_005fhelp_005fmessage-308"></a><dd>See <a href="Getting-Help.html#Getting-Help">Getting Help</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>warn_assign_as_truth_value</code><a name="index-warn_005fassign_005fas_005ftruth_005fvalue-309"></a><dd>See <a href="The-if-Statement.html#The-if-Statement">The if Statement</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>warn_comma_in_global_decl</code><a name="index-warn_005fcomma_005fin_005fglobal_005fdecl-310"></a><dd>See <a href="Global-Variables.html#Global-Variables">Global Variables</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>warn_divide_by_zero</code><a name="index-warn_005fdivide_005fby_005fzero-311"></a><dd>See <a href="Arithmetic-Ops.html#Arithmetic-Ops">Arithmetic Ops</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>warn_empty_list_elements</code><a name="index-warn_005fempty_005flist_005felements-312"></a><dd>See <a href="Empty-Matrices.html#Empty-Matrices">Empty Matrices</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_fortran_indexing</code><a name="index-warn_005ffortran_005findexing-313"></a><dd>See <a href="Index-Expressions.html#Index-Expressions">Index Expressions</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_function_name_clash</code><a name="index-warn_005ffunction_005fname_005fclash-314"></a><dd>See <a href="Function-Files.html#Function-Files">Function Files</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>warn_imag_to_real</code><a name="index-warn_005fimag_005fto_005freal-315"></a><dd>See <a href="Special-Utility-Matrices.html#Special-Utility-Matrices">Special Utility Matrices</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_missing_semicolon</code><a name="index-warn_005fmissing_005fsemicolon-316"></a><dd>See <a href="Defining-Functions.html#Defining-Functions">Defining Functions</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_neg_dim_as_zero</code><a name="index-warn_005fneg_005fdim_005fas_005fzero-317"></a><dd>See <a href="Special-Utility-Matrices.html#Special-Utility-Matrices">Special Utility Matrices</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_num_to_str</code><a name="index-warn_005fnum_005fto_005fstr-318"></a><dd>See <a href="String-Conversions.html#String-Conversions">String Conversions</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>warn_reload_forces_clear</code><a name="index-warn_005freload_005fforces_005fclear-319"></a><dd>See <a href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Dynamically Linked Functions</a>.
+
+     <p>Default value: 1.
+
+     <br><dt><code>warn_resize_on_range_error</code><a name="index-warn_005fresize_005fon_005frange_005ferror-320"></a><dd>See <a href="Index-Expressions.html#Index-Expressions">Index Expressions</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_separator_insert</code><a name="index-warn_005fseparator_005finsert-321"></a><dd>See <a href="Matrices.html#Matrices">Matrices</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_single_quote_string</code><a name="index-warn_005fsingle_005fquote_005fstring-322"></a><dd>See <a href="String-Conversions.html#String-Conversions">String Conversions</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_str_to_num</code><a name="index-warn_005fstr_005fto_005fnum-323"></a><dd>See <a href="String-Conversions.html#String-Conversions">String Conversions</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_undefined_return_values</code><a name="index-warn_005fundefined_005freturn_005fvalues-324"></a><dd>See <a href="Multiple-Return-Values.html#Multiple-Return-Values">Multiple Return Values</a>.
+
+     <p>Default value: 0.
+
+     <br><dt><code>warn_variable_switch_label</code><a name="index-warn_005fvariable_005fswitch_005flabel-325"></a><dd>See <a href="The-switch-Statement.html#The-switch-Statement">The switch Statement</a>.
+
+     <p>Default value: 0. 
+</dl>
+
+   </body></html>
+

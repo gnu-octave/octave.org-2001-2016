@@ -1,0 +1,255 @@
+<html lang="en">
+<head>
+<title>Sets - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Financial-Functions.html#Financial-Functions" title="Financial Functions">
+<link rel="next" href="Polynomial-Manipulations.html#Polynomial-Manipulations" title="Polynomial Manipulations">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Sets"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Polynomial-Manipulations.html#Polynomial-Manipulations">Polynomial Manipulations</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Financial-Functions.html#Financial-Functions">Financial Functions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">28 Sets</h2>
+
+<p>Octave has a limited set of functions for managing sets of data, where a
+set is defined as a collection unique elements.
+
+   <p><a name="doc_002dcreate_005fset"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>create_set</b> (<var>x</var>)<var><a name="index-create_005fset-1177"></a></var><br>
+<blockquote><p>Return a row vector containing the unique values in <var>x</var>, sorted in
+ascending order.  For example,
+
+     <pre class="example">          create_set ([ 1, 2; 3, 4; 4, 2 ])
+          =&gt; [ 1, 2, 3, 4 ]
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: union, intersection, complement. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunion"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>union</b> (<var>x, y</var>)<var><a name="index-union-1178"></a></var><br>
+<blockquote><p>Return the set of elements that are in either of the sets <var>x</var> and
+<var>y</var>.  For example,
+
+     <pre class="example">          union ([ 1, 2, 4 ], [ 2, 3, 5 ])
+          =&gt; [ 1, 2, 3, 4, 5 ]
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: create_set, intersection, complement. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dintersection"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>intersection</b> (<var>x, y</var>)<var><a name="index-intersection-1179"></a></var><br>
+<blockquote><p>Return the set of elements that are in both sets <var>x</var> and <var>y</var>. 
+For example,
+
+     <pre class="example">          intersection ([ 1, 2, 3 ], [ 2, 3, 5 ])
+          =&gt; [ 2, 3 ]
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: create_set, union, complement. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcomplement"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>complement</b> (<var>x, y</var>)<var><a name="index-complement-1180"></a></var><br>
+<blockquote><p>Return the elements of set <var>y</var> that are not in set <var>x</var>.  For
+example,
+
+     <pre class="example">          complement ([ 1, 2, 3 ], [ 2, 3, 5 ])
+          =&gt; 5
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: create_set, union, intersection. 
+</p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

@@ -1,0 +1,385 @@
+<html lang="en">
+<head>
+<title>Simple Examples - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Introduction.html#Introduction" title="Introduction">
+<link rel="prev" href="Running-Octave.html#Running-Octave" title="Running Octave">
+<link rel="next" href="Conventions.html#Conventions" title="Conventions">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Simple-Examples"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Conventions.html#Conventions">Conventions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Running-Octave.html#Running-Octave">Running Octave</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Introduction.html#Introduction">Introduction</a>
+<hr>
+</div>
+
+<h3 class="section">1.2 Simple Examples</h3>
+
+<p>The following chapters describe all of Octave's features in detail, but
+before doing that, it might be helpful to give a sampling of some of its
+capabilities.
+
+   <p>If you are new to Octave, I recommend that you try these examples to
+begin learning Octave by using it.  Lines marked with `<samp><span class="samp">octave:13&gt;</span></samp>'
+are lines you type, ending each with a carriage return.  Octave will
+respond with an answer, or by displaying a graph.
+
+<h4 class="unnumberedsubsec">Creating a Matrix</h4>
+
+<p>To create a new matrix and store it in a variable so that it you can
+refer to it later, type the command
+
+<pre class="example">     octave:1&gt; a = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
+</pre>
+   <p class="noindent">Octave will respond by printing the matrix in neatly aligned columns. 
+Ending a command with a semicolon tells Octave to not print the result
+of a command.  For example
+
+<pre class="example">     octave:2&gt; b = rand (3, 2);
+</pre>
+   <p class="noindent">will create a 3 row, 2 column matrix with each element set to a random
+value between zero and one.
+
+   <p>To display the value of any variable, simply type the name of the
+variable.  For example, to display the value stored in the matrix
+<code>b</code>, type the command
+
+<pre class="example">     octave:3&gt; b
+</pre>
+   <h4 class="unnumberedsubsec">Matrix Arithmetic</h4>
+
+<p>Octave has a convenient operator notation for performing matrix
+arithmetic.  For example, to multiply the matrix <code>a</code> by a scalar
+value, type the command
+
+<pre class="example">     octave:4&gt; 2 * a
+</pre>
+   <p>To multiply the two matrices <code>a</code> and <code>b</code>, type the command
+
+<pre class="example">     octave:5&gt; a * b
+</pre>
+   <p>To form the matrix product
+<code>transpose (a) * a</code>,
+type the command
+
+<pre class="example">     octave:6&gt; a' * a
+</pre>
+   <h4 class="unnumberedsubsec">Solving Linear Equations</h4>
+
+<p>To solve the set of linear equations <code>a</code><var>x</var><code> = b</code>,
+use the left division operator, `<samp><span class="samp">\</span></samp>':
+
+<pre class="example">     octave:7&gt; a \ b
+</pre>
+   <p class="noindent">This is conceptually equivalent to
+<code>inv (a) * b</code>,
+but avoids computing the inverse of a matrix directly.
+
+   <p>If the coefficient matrix is singular, Octave will print a warning
+message and compute a minimum norm solution.
+
+<h4 class="unnumberedsubsec">Integrating Differential Equations</h4>
+
+<p>Octave has built-in functions for solving nonlinear differential
+equations of the form
+
+<pre class="example">     dx
+     -- = f (x, t)
+     dt
+</pre>
+   <p class="noindent">with the initial condition
+
+<pre class="example">     x(t = t0) = x0
+</pre>
+   <p class="noindent">For Octave to integrate equations of this form, you must first provide a
+definition of the function
+<code>f(x,t)</code>. 
+This is straightforward, and may be accomplished by entering the
+function body directly on the command line.  For example, the following
+commands define the right hand side function for an interesting pair of
+nonlinear differential equations.  Note that while you are entering a
+function, Octave responds with a different prompt, to indicate that it
+is waiting for you to complete your input.
+
+<pre class="example">     octave:8&gt; function xdot = f (x, t)
+     &gt;
+     &gt;  r = 0.25;
+     &gt;  k = 1.4;
+     &gt;  a = 1.5;
+     &gt;  b = 0.16;
+     &gt;  c = 0.9;
+     &gt;  d = 0.8;
+     &gt;
+     &gt;  xdot(1) = r*x(1)*(1 - x(1)/k) - a*x(1)*x(2)/(1 + b*x(1));
+     &gt;  xdot(2) = c*a*x(1)*x(2)/(1 + b*x(1)) - d*x(2);
+     &gt;
+     &gt; endfunction
+</pre>
+   <p class="noindent">Given the initial condition
+
+<pre class="example">     x0 = [1; 2];
+</pre>
+   <p class="noindent">and the set of output times as a column vector (note that the first
+output time corresponds to the initial condition given above)
+
+<pre class="example">     t = linspace (0, 50, 200)';
+</pre>
+   <p class="noindent">it is easy to integrate the set of differential equations:
+
+<pre class="example">     x = lsode ("f", x0, t);
+</pre>
+   <p class="noindent">The function <code>lsode</code> uses the Livermore Solver for Ordinary
+Differential Equations, described in A. C. Hindmarsh, <cite>ODEPACK, a
+Systematized Collection of ODE Solvers</cite>, in: Scientific Computing, R. S. 
+Stepleman et al. (Eds.), North-Holland, Amsterdam, 1983, pages 55&ndash;64.
+
+<h4 class="unnumberedsubsec">Producing Graphical Output</h4>
+
+<p>To display the solution of the previous example graphically, use the
+command
+
+<pre class="example">     plot (t, x)
+</pre>
+   <p>If you are using the X Window System, Octave will automatically create
+a separate window to display the plot.  If you are using a terminal that
+supports some other graphics commands, you will need to tell Octave what
+kind of terminal you have.  Type the command
+
+<pre class="example">     gset term
+</pre>
+   <p class="noindent">to see a list of the supported terminal types.  Octave uses
+<code>gnuplot</code> to display graphics, and can display graphics on any
+terminal that is supported by <code>gnuplot</code>.
+
+   <p>To capture the output of the plot command in a file rather than sending
+the output directly to your terminal, you can use a set of commands like
+this
+
+<pre class="example">     gset term postscript
+     gset output "foo.ps"
+     replot
+</pre>
+   <p class="noindent">This will work for other types of output devices as well.  Octave's
+<code>gset</code> command is really just piped to the <code>gnuplot</code>
+subprocess, so that once you have a plot on the screen that you like,
+you should be able to do something like this to create an output file
+suitable for your graphics printer.
+
+   <p>Or, you can eliminate the intermediate file by using commands like this
+
+<pre class="example">     gset term postscript
+     gset output "|lpr -Pname_of_your_graphics_printer"
+     replot
+</pre>
+   <h4 class="unnumberedsubsec">Editing What You Have Typed</h4>
+
+<p>At the Octave prompt, you can recall, edit, and reissue previous
+commands using Emacs- or vi-style editing commands.  The default
+keybindings use Emacs-style commands.  For example, to recall the
+previous command, type <kbd>Control-p</kbd> (usually written <kbd>C-p</kbd> for
+short).  <kbd>C-p</kbd> gets its name from the fact that you type it by
+holding down &lt;CTRL&gt; and then pressing &lt;p&gt;.  Doing this will
+normally bring back the previous line of input.  <kbd>C-n</kbd> will bring up
+the next line of input, <kbd>C-b</kbd> will move the cursor backward on the
+line, <kbd>C-f</kbd> will move the cursor forward on the line, etc.
+
+   <p>A complete description of the command line editing capability is given
+in this manual in <a href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>.
+
+<h4 class="unnumberedsubsec">Help and Documentation</h4>
+
+<p>Octave has an extensive help facility.  The same documentation that is
+available in printed form is also available from the Octave prompt,
+because both forms of the documentation are created from the same input
+file.
+
+   <p>In order to get good help you first need to know the name of the command
+that you want to use.  This name of the function may not always be
+obvious, but a good place to start is to just type <code>help</code>. 
+This will show you all the operators, reserved words, functions,
+built-in variables, and function files.  You can then get more
+help on anything that is listed by simply including the name as an
+argument to help.  For example,
+
+<pre class="example">     help plot
+</pre>
+   <p class="noindent">will display the help text for the <code>plot</code> function.
+
+   <p>Octave sends output that is too long to fit on one screen through a
+pager like <code>less</code> or <code>more</code>.  Type a &lt;RET&gt; to advance one
+line, a &lt;SPC&gt; to advance one page, and &lt;q&gt; to exit the pager.
+
+   <p>The part of Octave's help facility that allows you to read the complete
+text of the printed manual from within Octave normally uses a separate
+program called Info.  When you invoke Info you will be put into a menu
+driven program that contains the entire Octave manual.  Help for using
+Info is provided in this manual in <a href="Getting-Help.html#Getting-Help">Getting Help</a>.
+
+   </body></html>
+

@@ -1,0 +1,635 @@
+<html lang="en">
+<head>
+<title>Basic Statistical Functions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Statistics.html#Statistics" title="Statistics">
+<link rel="next" href="Tests.html#Tests" title="Tests">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Basic-Statistical-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Tests.html#Tests">Tests</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
+<hr>
+</div>
+
+<h3 class="section">26.1 Basic Statistical Functions</h3>
+
+<p><a name="doc_002dmean"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>mean</b> (<var>x, dim, opt</var>)<var><a name="index-mean-994"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the mean of the elements of <var>x</var>
+
+     <pre class="example">          mean (x) = SUM_i x(i) / N
+     </pre>
+        <p>If <var>x</var> is a matrix, compute the mean for each column and return them
+in a row vector.
+
+        <p>With the optional argument <var>opt</var>, the kind of mean computed can be
+selected.  The following options are recognized:
+
+          <dl>
+<dt><code>"a"</code><dd>Compute the (ordinary) arithmetic mean.  This is the default.
+
+          <br><dt><code>"g"</code><dd>Computer the geometric mean.
+
+          <br><dt><code>"h"</code><dd>Compute the harmonic mean. 
+</dl>
+
+        <p>If the optional argument <var>dim</var> is supplied, work along dimension
+<var>dim</var>.
+
+        <p>Both <var>dim</var> and <var>opt</var> are optional.  If both are supplied,
+either may appear first. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmedian"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>median</b> (<var>x</var>)<var><a name="index-median-995"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the median value of the elements of
+<var>x</var>.
+
+     <pre class="example">                      x(ceil(N/2)),             N odd
+          median(x) =
+                      (x(N/2) + x((N/2)+1))/2,  N even
+     </pre>
+        <p>If <var>x</var> is a matrix, compute the median value for each
+column and return them in a row vector.
+        <pre class="sp">
+     
+     </pre>
+     See also: std, mean. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>std</b> (<var>x</var>)<var><a name="index-std-996"></a></var><br>
+&mdash; Function File:  <b>std</b> (<var>x, opt</var>)<var><a name="index-std-997"></a></var><br>
+&mdash; Function File:  <b>std</b> (<var>x, opt, dim</var>)<var><a name="index-std-998"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the standard deviation of the elements
+of <var>x</var>.
+
+     <pre class="example">          std (x) = sqrt (sumsq (x - mean (x)) / (n - 1))
+     </pre>
+        <p>If <var>x</var> is a matrix, compute the standard deviation for
+each column and return them in a row vector.
+
+        <p>The argument <var>opt</var> determines the type of normalization to use. Valid values
+are
+
+          <dl>
+<dt>0:<dd>  normalizes with N-1, provides the square root of best unbiased estimator of
+  the variance [default]
+<br><dt>1:<dd>  normalizes with N, this provides the square root of the second moment around
+  the mean
+</dl>
+
+        <p>The third argument <var>dim</var> determines the dimension along which the standard
+deviation is calculated.
+        <pre class="sp">
+     
+     </pre>
+     See also: mean, median. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcov"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cov</b> (<var>x, y</var>)<var><a name="index-cov-999"></a></var><br>
+<blockquote><p>If each row of <var>x</var> and <var>y</var> is an observation and each column is
+a variable, the (<var>i</var>, <var>j</var>)-th entry of
+<code>cov (</code><var>x</var><code>, </code><var>y</var><code>)</code> is the covariance between the <var>i</var>-th
+variable in <var>x</var> and the <var>j</var>-th variable in <var>y</var>.  If called
+with one argument, compute <code>cov (</code><var>x</var><code>, </code><var>x</var><code>)</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcorrcoef"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>corrcoef</b> (<var>x, y</var>)<var><a name="index-corrcoef-1000"></a></var><br>
+<blockquote><p>If each row of <var>x</var> and <var>y</var> is an observation and each column is
+a variable, the (<var>i</var>, <var>j</var>)-th entry of
+<code>corrcoef (</code><var>x</var><code>, </code><var>y</var><code>)</code> is the correlation between the
+<var>i</var>-th variable in <var>x</var> and the <var>j</var>-th variable in <var>y</var>. 
+If called with one argument, compute <code>corrcoef (</code><var>x</var><code>, </code><var>x</var><code>)</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dkurtosis"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>kurtosis</b> (<var>x, dim</var>)<var><a name="index-kurtosis-1001"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector of length N, return the kurtosis
+
+     <pre class="example">          kurtosis (x) = N^(-1) std(x)^(-4) sum ((x - mean(x)).^4) - 3
+     </pre>
+        <p class="noindent">of <var>x</var>.  If <var>x</var> is a matrix, return the kurtosis over the
+first non-singleton dimension. The optional argument <var>dim</var>
+can be given to force the kurtosis to be given over that
+dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmahalanobis"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>mahalanobis</b> (<var>x, y</var>)<var><a name="index-mahalanobis-1002"></a></var><br>
+<blockquote><p>Return the Mahalanobis' D-square distance between the multivariate
+samples <var>x</var> and <var>y</var>, which must have the same number of
+components (columns), but may have a different number of observations
+(rows). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dskewness"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>skewness</b> (<var>x, dim</var>)<var><a name="index-skewness-1003"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector of length n, return the skewness
+
+     <pre class="example">          skewness (x) = N^(-1) std(x)^(-3) sum ((x - mean(x)).^3)
+     </pre>
+        <p class="noindent">of <var>x</var>.  If <var>x</var> is a matrix, return the skewness along the
+first non-singleton dimension of the matrix. If the optional
+<var>dim</var> argument is given, operate along this dimension. 
+</p></blockquote></div>
+
+<!-- XXX FIXME XXX - these need to be organized. -->
+<p><a name="doc_002dvalues"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>values</b> (<var>x</var>)<var><a name="index-values-1004"></a></var><br>
+<blockquote><p>Return the different values in a column vector, arranged in ascending
+order. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dvar"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>var</b> (<var>x</var>)<var><a name="index-var-1005"></a></var><br>
+<blockquote><p>For vector arguments, return the (real) variance of the values. 
+For matrix arguments, return a row vector contaning the variance for
+each column.
+
+        <p>The argument <var>opt</var> determines the type of normalization to use. 
+Valid values are
+
+          <dl>
+<dt>0:<dd>Normalizes with N-1, provides the best unbiased estimator of the
+variance [default]. 
+<br><dt>1:<dd>Normalizes with N, this provides the second moment around the mean. 
+</dl>
+
+        <p>The third argument <var>dim</var> determines the dimension along which the
+variance is calculated. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtable"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>t</var>, <var>l_x</var>] = <b>table</b> (<var>x</var>)<var><a name="index-table-1006"></a></var><br>
+&mdash; Function File: [<var>t</var>, <var>l_x</var>, <var>l_y</var>] = <b>table</b> (<var>x, y</var>)<var><a name="index-table-1007"></a></var><br>
+<blockquote><p>Create a contingency table <var>t</var> from data vectors.  The <var>l</var>
+vectors are the corresponding levels.
+
+        <p>Currently, only 1- and 2-dimensional tables are supported. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstudentize"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>studentize</b> (<var>x, dim</var>)<var><a name="index-studentize-1008"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, subtract its mean and divide by its standard
+deviation.
+
+        <p>If <var>x</var> is a matrix, do the above along the first non-singleton
+dimension. If the optional argument <var>dim</var> is given then operate
+along this dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstatistics"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>statistics</b> (<var>x</var>)<var><a name="index-statistics-1009"></a></var><br>
+<blockquote><p>If <var>x</var> is a matrix, return a matrix with the minimum, first
+quartile, median, third quartile, maximum, mean, standard deviation,
+skewness and kurtosis of the columns of <var>x</var> as its rows.
+
+        <p>If <var>x</var> is a vector, treat it as a column vector. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspearman"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>spearman</b> (<var>x, y</var>)<var><a name="index-spearman-1010"></a></var><br>
+<blockquote><p>Compute Spearman's rank correlation coefficient <var>rho</var> for each of
+the variables specified by the input arguments.
+
+        <p>For matrices, each row is an observation and each column a variable;
+vectors are always observations and may be row or column vectors.
+
+        <p><code>spearman (</code><var>x</var><code>)</code> is equivalent to <code>spearman (</code><var>x</var><code>,
+</code><var>x</var><code>)</code>.
+
+        <p>For two data vectors <var>x</var> and <var>y</var>, Spearman's <var>rho</var> is the
+correlation of the ranks of <var>x</var> and <var>y</var>.
+
+        <p>If <var>x</var> and <var>y</var> are drawn from independent distributions,
+<var>rho</var> has zero mean and variance <code>1 / (n - 1)</code>, and is
+asymptotically normally distributed. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drun_005fcount"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>run_count</b> (<var>x, n</var>)<var><a name="index-run_005fcount-1011"></a></var><br>
+<blockquote><p>Count the upward runs along the first non-singleton dimension of
+<var>x</var> of length 1, 2, ..., <var>n</var>-1 and greater than or equal
+to <var>n</var>. If the optional argument <var>dim</var> is given operate
+along this dimension
+</p></blockquote></div>
+
+   <p><a name="doc_002dranks"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ranks</b> (<var>x, dim</var>)<var><a name="index-ranks-1012"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, return the (column) vector of ranks of
+<var>x</var> adjusted for ties.
+
+        <p>If <var>x</var> is a matrix, do the above for along the first
+non-singleton dimension. If the optional argument <var>dim</var> is
+given, operate along this dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drange"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>range</b> (<var>x</var>)<var><a name="index-range-1013"></a></var><br>
+&mdash; Function File:  <b>range</b> (<var>x, dim</var>)<var><a name="index-range-1014"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, return the range, i.e., the difference
+between the maximum and the minimum, of the input data.
+
+        <p>If <var>x</var> is a matrix, do the above for each column of <var>x</var>.
+
+        <p>If the optional argument <var>dim</var> is supplied, work along dimension
+<var>dim</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dqqplot"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist, params</var>)<var><a name="index-qqplot-1015"></a></var><br>
+<blockquote><p>Perform a QQ-plot (quantile plot).
+
+        <p>If F is the CDF of the distribution <var>dist</var> with parameters
+<var>params</var> and G its inverse, and <var>x</var> a sample vector of length
+<var>n</var>, the QQ-plot graphs ordinate <var>s</var>(<var>i</var>) = <var>i</var>-th
+largest element of x versus abscissa <var>q</var>(<var>i</var>f) = G((<var>i</var> -
+0.5)/<var>n</var>).
+
+        <p>If the sample comes from F except for a transformation of location
+and scale, the pairs will approximately follow a straight line.
+
+        <p>The default for <var>dist</var> is the standard normal distribution.  The
+optional argument <var>params</var> contains a list of parameters of
+<var>dist</var>.  For example, for a quantile plot of the uniform
+distribution on [2,4] and <var>x</var>, use
+
+     <pre class="example">          qqplot (x, "uniform", 2, 4)
+     </pre>
+        <p>If no output arguments are given, the data are plotted directly. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dprobit"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>probit</b> (<var>p</var>)<var><a name="index-probit-1016"></a></var><br>
+<blockquote><p>For each component of <var>p</var>, return the probit (the quantile of the
+standard normal distribution) of <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dppplot"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>p</var>, <var>y</var>] = <b>ppplot</b> (<var>x, dist, params</var>)<var><a name="index-ppplot-1017"></a></var><br>
+<blockquote><p>Perform a PP-plot (probability plot).
+
+        <p>If F is the CDF of the distribution <var>dist</var> with parameters
+<var>params</var> and <var>x</var> a sample vector of length <var>n</var>, the
+PP-plot graphs ordinate <var>y</var>(<var>i</var>) = F (<var>i</var>-th largest
+element of <var>x</var>) versus abscissa <var>p</var>(<var>i</var>) = (<var>i</var> -
+0.5)/<var>n</var>.  If the sample comes from F, the pairs will
+approximately follow a straight line.
+
+        <p>The default for <var>dist</var> is the standard normal distribution.  The
+optional argument <var>params</var> contains a list of parameters of
+<var>dist</var>.  For example, for a probability plot of the uniform
+distribution on [2,4] and <var>x</var>, use
+
+     <pre class="example">          ppplot (x, "uniform", 2, 4)
+     </pre>
+        <p>If no output arguments are given, the data are plotted directly. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmoment"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>moment</b> (<var>x, p, opt, dim</var>)<var><a name="index-moment-1018"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the <var>p</var>-th moment of <var>x</var>.
+
+        <p>If <var>x</var> is a matrix, return the row vector containing the
+<var>p</var>-th moment of each column.
+
+        <p>With the optional string opt, the kind of moment to be computed can
+be specified.  If opt contains <code>"c"</code> or <code>"a"</code>, central
+and/or absolute moments are returned.  For example,
+
+     <pre class="example">          moment (x, 3, "ac")
+     </pre>
+        <p class="noindent">computes the third central absolute moment of <var>x</var>.
+
+        <p>If the optional argument <var>dim</var> is supplied, work along dimension
+<var>dim</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmeansq"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>meansq</b> (<var>x</var>)<var><a name="index-meansq-1019"></a></var><br>
+&mdash; Function File:  <b>meansq</b> (<var>x, dim</var>)<var><a name="index-meansq-1020"></a></var><br>
+<blockquote><p>For vector arguments, return the mean square of the values. 
+For matrix arguments, return a row vector contaning the mean square
+of each column. With the optional <var>dim</var> argument, returns the
+mean squared of the values along this dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlogit"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>logit</b> (<var>p</var>)<var><a name="index-logit-1021"></a></var><br>
+<blockquote><p>For each component of <var>p</var>, return the logit <code>log (</code><var>p</var><code> /
+(1-</code><var>p</var><code>))</code> of <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dkendall"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>kendall</b> (<var>x, y</var>)<var><a name="index-kendall-1022"></a></var><br>
+<blockquote><p>Compute Kendall's <var>tau</var> for each of the variables specified by
+the input arguments.
+
+        <p>For matrices, each row is an observation and each column a variable;
+vectors are always observations and may be row or column vectors.
+
+        <p><code>kendall (</code><var>x</var><code>)</code> is equivalent to <code>kendall (</code><var>x</var><code>,
+</code><var>x</var><code>)</code>.
+
+        <p>For two data vectors <var>x</var>, <var>y</var> of common length <var>n</var>,
+Kendall's <var>tau</var> is the correlation of the signs of all rank
+differences of <var>x</var> and <var>y</var>;  i.e., if both <var>x</var> and
+<var>y</var> have distinct entries, then
+
+     <pre class="example">                   1
+          tau = -------   SUM sign (q(i) - q(j)) * sign (r(i) - r(j))
+                n (n-1)   i,j
+     </pre>
+        <p class="noindent">in which the
+<var>q</var>(<var>i</var>) and <var>r</var>(<var>i</var>)
+ are the ranks of
+<var>x</var> and <var>y</var>, respectively.
+
+        <p>If <var>x</var> and <var>y</var> are drawn from independent distributions,
+Kendall's <var>tau</var> is asymptotically normal with mean 0 and variance
+<code>(2 * (2</code><var>n</var><code>+5)) / (9 * </code><var>n</var><code> * (</code><var>n</var><code>-1))</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002diqr"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>iqr</b> (<var>x, dim</var>)<var><a name="index-iqr-1023"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, return the interquartile range, i.e., the
+difference between the upper and lower quartile, of the input data.
+
+        <p>If <var>x</var> is a matrix, do the above for first non singleton
+dimension of <var>x</var>. If the option <var>dim</var> argument is given,
+then operate along this dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcut"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cut</b> (<var>x, breaks</var>)<var><a name="index-cut-1024"></a></var><br>
+<blockquote><p>Create categorical data out of numerical or continuous data by
+cutting into intervals.
+
+        <p>If <var>breaks</var> is a scalar, the data is cut into that many
+equal-width intervals.  If <var>breaks</var> is a vector of break points,
+the category has <code>length (</code><var>breaks</var><code>) - 1</code> groups.
+
+        <p>The returned value is a vector of the same size as <var>x</var> telling
+which group each point in <var>x</var> belongs to.  Groups are labelled
+from 1 to the number of groups; points outside the range of
+<var>breaks</var> are labelled by <code>NaN</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcor"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cor</b> (<var>x, y</var>)<var><a name="index-cor-1025"></a></var><br>
+<blockquote><p>The (<var>i</var>, <var>j</var>)-th entry of <code>cor (</code><var>x</var><code>, </code><var>y</var><code>)</code> is
+the correlation between the <var>i</var>-th variable in <var>x</var> and the
+<var>j</var>-th variable in <var>y</var>.
+
+        <p>For matrices, each row is an observation and each column a variable;
+vectors are always observations and may be row or column vectors.
+
+        <p><code>cor (</code><var>x</var><code>)</code> is equivalent to <code>cor (</code><var>x</var><code>, </code><var>x</var><code>)</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcloglog"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cloglog</b> (<var>x</var>)<var><a name="index-cloglog-1026"></a></var><br>
+<blockquote><p>Return the complementary log-log function of <var>x</var>, defined as
+
+     <pre class="example">          - log (- log (<var>x</var>))
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dcenter"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>center</b> (<var>x</var>)<var><a name="index-center-1027"></a></var><br>
+&mdash; Function File:  <b>center</b> (<var>x, dim</var>)<var><a name="index-center-1028"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, subtract its mean. 
+If <var>x</var> is a matrix, do the above for each column. 
+If the optional argument <var>dim</var> is given, perform the above
+operation along this dimension
+</p></blockquote></div>
+
+   </body></html>
+

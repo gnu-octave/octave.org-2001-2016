@@ -1,0 +1,217 @@
+<html lang="en">
+<head>
+<title>Commands For Completion - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
+<link rel="prev" href="Commands-For-Text.html#Commands-For-Text" title="Commands For Text">
+<link rel="next" href="Commands-For-History.html#Commands-For-History" title="Commands For History">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Commands-For-Completion"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Commands-For-History.html#Commands-For-History">Commands For History</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Commands-For-Text.html#Commands-For-Text">Commands For Text</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>
+<hr>
+</div>
+
+<h4 class="subsection">2.4.4 Letting Readline Type For You</h4>
+
+<p><a name="index-command-completion-84"></a>
+The following commands allow Octave to complete command and variable
+names for you.
+
+     <dl>
+<dt><kbd>&lt;TAB&gt;</kbd><dd>Attempt to do completion on the text before the cursor.  Octave can
+complete the names of commands and variables.
+
+     <br><dt><kbd>M-?</kbd><dd>List the possible completions of the text before the cursor. 
+</dl>
+
+   <p><a name="doc_002dcompletion_005fappend_005fchar"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>completion_append_char</b><var><a name="index-completion_005fappend_005fchar-85"></a></var><br>
+<blockquote><p>The value of <code>completion_append_char</code> is used as the character to
+append to successful command-line completion attempts.  The default
+value is <code>" "</code> (a single space). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcompletion_005fmatches"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>completion_matches</b> (<var>hint</var>)<var><a name="index-completion_005fmatches-86"></a></var><br>
+<blockquote><p>Generate possible completions given <var>hint</var>.
+
+        <p>This function is provided for the benefit of programs like Emacs which
+might be controlling Octave and handling user input.  The current
+command number is not incremented when this function is called.  This is
+a feature, not a bug. 
+</p></blockquote></div>
+
+   </body></html>
+

@@ -1,0 +1,574 @@
+<html lang="en">
+<head>
+<title>Timing Utilities - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
+<link rel="next" href="Filesystem-Utilities.html#Filesystem-Utilities" title="Filesystem Utilities">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Timing-Utilities"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Filesystem-Utilities.html#Filesystem-Utilities">Filesystem Utilities</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities">System Utilities</a>
+<hr>
+</div>
+
+<h3 class="section">35.1 Timing Utilities</h3>
+
+<p>Octave's core set of functions for manipulating time values are
+patterned after the corresponding functions from the standard C library. 
+Several of these functions use a data structure for time that includes
+the following elements:
+
+     <dl>
+<dt><code>usec</code><dd>Microseconds after the second (0-999999).
+
+     <br><dt><code>sec</code><dd>Seconds after the minute (0-61).  This number can be 61 to account
+for leap seconds.
+
+     <br><dt><code>min</code><dd>Minutes after the hour (0-59).
+
+     <br><dt><code>hour</code><dd>Hours since midnight (0-23).
+
+     <br><dt><code>mday</code><dd>Day of the month (1-31).
+
+     <br><dt><code>mon</code><dd>Months since January (0-11).
+
+     <br><dt><code>year</code><dd>Years since 1900.
+
+     <br><dt><code>wday</code><dd>Days since Sunday (0-6).
+
+     <br><dt><code>yday</code><dd>Days since January 1 (0-365).
+
+     <br><dt><code>isdst</code><dd>Daylight Savings Time flag.
+
+     <br><dt><code>zone</code><dd>Time zone. 
+</dl>
+
+<p class="noindent">In the descriptions of the following functions, this structure is
+referred to as a <var>tm_struct</var>.
+
+   <p><a name="doc_002dtime"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>time</b> ()<var><a name="index-time-1428"></a></var><br>
+<blockquote><p>Return the current time as the number of seconds since the epoch.  The
+epoch is referenced to 00:00:00 CUT (Coordinated Universal Time) 1 Jan
+1970.  For example, on Monday February 17, 1997 at 07:15:06 CUT, the
+value returned by <code>time</code> was 856163706. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dctime"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ctime</b> (<var>t</var>)<var><a name="index-ctime-1429"></a></var><br>
+<blockquote><p>Convert a value returned from <code>time</code> (or any other nonnegative
+integer), to the local time and return a string of the same form as
+<code>asctime</code>.  The function <code>ctime (time)</code> is equivalent to
+<code>asctime (localtime (time))</code>.  For example,
+
+     <pre class="example">          ctime (time ())
+          =&gt; "Mon Feb 17 01:15:06 1997\n"
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dgmtime"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>gmtime</b> (<var>t</var>)<var><a name="index-gmtime-1430"></a></var><br>
+<blockquote><p>Given a value returned from time (or any nonnegative integer),
+return a time structure corresponding to CUT.  For example,
+
+     <pre class="example">          gmtime (time ())
+               =&gt; {
+                     usec = 0
+                     year = 97
+                     mon = 1
+                     mday = 17
+                     sec = 6
+                     zone = CST
+                     min = 15
+                     wday = 1
+                     hour = 7
+                     isdst = 0
+                     yday = 47
+                   }
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dlocaltime"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>localtime</b> (<var>t</var>)<var><a name="index-localtime-1431"></a></var><br>
+<blockquote><p>Given a value returned from time (or any nonnegative integer),
+return a time structure corresponding to the local time zone.
+
+     <pre class="example">          localtime (time ())
+               =&gt; {
+                     usec = 0
+                     year = 97
+                     mon = 1
+                     mday = 17
+                     sec = 6
+                     zone = CST
+                     min = 15
+                     wday = 1
+                     hour = 1
+                     isdst = 0
+                     yday = 47
+                   }
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dmktime"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>mktime</b> (<var>tm_struct</var>)<var><a name="index-mktime-1432"></a></var><br>
+<blockquote><p>Convert a time structure corresponding to the local time to the number
+of seconds since the epoch.  For example,
+
+     <pre class="example">          mktime (localtime (time ())
+               =&gt; 856163706
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dasctime"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>asctime</b> (<var>tm_struct</var>)<var><a name="index-asctime-1433"></a></var><br>
+<blockquote><p>Convert a time structure to a string using the following five-field
+format: Thu Mar 28 08:40:14 1996.  For example,
+
+     <pre class="example">          asctime (localtime (time ())
+          =&gt; "Mon Feb 17 01:15:06 1997\n"
+     </pre>
+        <p>This is equivalent to <code>ctime (time ())</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstrftime"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>strftime</b> (<var>tm_struct</var>)<var><a name="index-strftime-1434"></a></var><br>
+<blockquote><p>Format a time structure in a flexible way using `<samp><span class="samp">%</span></samp>' substitutions
+similar to those in <code>printf</code>.  Except where noted, substituted
+fields have a fixed size; numeric fields are padded if necessary. 
+Padding is with zeros by default; for fields that display a single
+number, padding can be changed or inhibited by following the `<samp><span class="samp">%</span></samp>'
+with one of the modifiers described below.  Unknown field specifiers are
+copied as normal characters.  All other characters are copied to the
+output without change.  For example,
+
+     <pre class="example">          strftime ("%r (%Z) %A %e %B %Y", localtime (time ()))
+               =&gt; "01:15:06 AM (CST) Monday 17 February 1997"
+     </pre>
+        <p>Octave's <code>strftime</code> function supports a superset of the ANSI C
+field specifiers.
+
+     <p class="noindent">Literal character fields:
+
+          <dl>
+<dt><code>%</code><dd>% character.
+
+          <br><dt><code>n</code><dd>Newline character.
+
+          <br><dt><code>t</code><dd>Tab character. 
+</dl>
+
+     <p class="noindent">Numeric modifiers (a nonstandard extension):
+
+          <dl>
+<dt><code>- (dash)</code><dd>Do not pad the field.
+
+          <br><dt><code>_ (underscore)</code><dd>Pad the field with spaces. 
+</dl>
+
+     <p class="noindent">Time fields:
+
+          <dl>
+<dt><code>%H</code><dd>Hour (00-23).
+
+          <br><dt><code>%I</code><dd>Hour (01-12).
+
+          <br><dt><code>%k</code><dd>Hour (0-23).
+
+          <br><dt><code>%l</code><dd>Hour (1-12).
+
+          <br><dt><code>%M</code><dd>Minute (00-59).
+
+          <br><dt><code>%p</code><dd>Locale's AM or PM.
+
+          <br><dt><code>%r</code><dd>Time, 12-hour (hh:mm:ss [AP]M).
+
+          <br><dt><code>%R</code><dd>Time, 24-hour (hh:mm).
+
+          <br><dt><code>%s</code><dd>Time in seconds since 00:00:00, Jan 1, 1970 (a nonstandard extension).
+
+          <br><dt><code>%S</code><dd>Second (00-61).
+
+          <br><dt><code>%T</code><dd>Time, 24-hour (hh:mm:ss).
+
+          <br><dt><code>%X</code><dd>Locale's time representation (%H:%M:%S).
+
+          <br><dt><code>%Z</code><dd>Time zone (EDT), or nothing if no time zone is determinable. 
+</dl>
+
+     <p class="noindent">Date fields:
+
+          <dl>
+<dt><code>%a</code><dd>Locale's abbreviated weekday name (Sun-Sat).
+
+          <br><dt><code>%A</code><dd>Locale's full weekday name, variable length (Sunday-Saturday).
+
+          <br><dt><code>%b</code><dd>Locale's abbreviated month name (Jan-Dec).
+
+          <br><dt><code>%B</code><dd>Locale's full month name, variable length (January-December).
+
+          <br><dt><code>%c</code><dd>Locale's date and time (Sat Nov 04 12:02:33 EST 1989).
+
+          <br><dt><code>%C</code><dd>Century (00-99).
+
+          <br><dt><code>%d</code><dd>Day of month (01-31).
+
+          <br><dt><code>%e</code><dd>Day of month ( 1-31).
+
+          <br><dt><code>%D</code><dd>Date (mm/dd/yy).
+
+          <br><dt><code>%h</code><dd>Same as %b.
+
+          <br><dt><code>%j</code><dd>Day of year (001-366).
+
+          <br><dt><code>%m</code><dd>Month (01-12).
+
+          <br><dt><code>%U</code><dd>Week number of year with Sunday as first day of week (00-53).
+
+          <br><dt><code>%w</code><dd>Day of week (0-6).
+
+          <br><dt><code>%W</code><dd>Week number of year with Monday as first day of week (00-53).
+
+          <br><dt><code>%x</code><dd>Locale's date representation (mm/dd/yy).
+
+          <br><dt><code>%y</code><dd>Last two digits of year (00-99).
+
+          <br><dt><code>%Y</code><dd>Year (1970-). 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dstrptime"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>tm_struct</var>, <var>nchars</var>] = <b>strptime</b> (<var>str, fmt</var>)<var><a name="index-strptime-1435"></a></var><br>
+<blockquote><p>Convert the string <var>str</var> to a time structure under the control of
+the format <var>fmt</var>. 
+</p></blockquote></div>
+
+   <p>Most of the remaining functions described in this section are not
+patterned after the standard C library.  Some are available for
+compatiblity with <span class="sc">Matlab</span> and others are provided because they are
+useful.
+
+   <p><a name="doc_002dclock"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>clock</b> ()<var><a name="index-clock-1436"></a></var><br>
+<blockquote><p>Return a vector containing the current year, month (1-12), day (1-31),
+hour (0-23), minute (0-59) and second (0-61).  For example,
+
+     <pre class="example">          clock ()
+          =&gt; [ 1993, 8, 20, 4, 56, 1 ]
+     </pre>
+        <p>The function clock is more accurate on systems that have the
+<code>gettimeofday</code> function. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddate"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>date</b> ()<var><a name="index-date-1437"></a></var><br>
+<blockquote><p>Return the date as a character string in the form DD-MMM-YY.  For
+example,
+
+     <pre class="example">          date ()
+          =&gt; "20-Aug-93"
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002detime"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>etime</b> (<var>t1, t2</var>)<var><a name="index-etime-1438"></a></var><br>
+<blockquote><p>Return the difference (in seconds) between two time values returned from
+<code>clock</code>.  For example:
+
+     <pre class="example">          t0 = clock ();
+           many computations later...
+          elapsed_time = etime (clock (), t0);
+     </pre>
+        <p class="noindent">will set the variable <code>elapsed_time</code> to the number of seconds since
+the variable <code>t0</code> was set.
+        <pre class="sp">
+     
+     </pre>
+     See also: tic, toc, clock, cputime. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcputime"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>total</var>, <var>user</var>, <var>system</var>] = <b>cputime</b> ()<var>;<a name="index-cputime-1439"></a></var><br>
+<blockquote><p>Return the CPU time used by your Octave session.  The first output is
+the total time spent executing your process and is equal to the sum of
+second and third outputs, which are the number of CPU seconds spent
+executing in user mode and the number of CPU seconds spent executing in
+system mode, respectively.  If your system does not have a way to report
+CPU time usage, <code>cputime</code> returns 0 for each of its output values. 
+Note that because Octave used some CPU time to start, it is reasonable
+to check to see if <code>cputime</code> works by checking to see if the total
+CPU time used is nonzero. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fleap_005fyear"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>is_leap_year</b> (<var>year</var>)<var><a name="index-is_005fleap_005fyear-1440"></a></var><br>
+<blockquote><p>Return 1 if the given year is a leap year and 0 otherwise.  If no
+arguments are provided, <code>is_leap_year</code> will use the current year. 
+For example,
+
+     <pre class="example">          is_leap_year (2000)
+          =&gt; 1
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dtic"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>tic</b> ()<var><a name="index-tic-1441"></a></var><br>
+&mdash; Function File:  <b>toc</b> ()<var><a name="index-toc-1442"></a></var><br>
+<blockquote><p>These functions set and check a wall-clock timer.  For example,
+
+     <pre class="example">          tic ();
+           many computations later...
+          elapsed_time = toc ();
+     </pre>
+        <p class="noindent">will set the variable <code>elapsed_time</code> to the number of seconds since
+the most recent call to the function <code>tic</code>.
+
+        <p>Nested timing with <code>tic</code> and <code>toc</code> is not supported. 
+Therefore <code>toc</code> will always return the elapsed time from the most
+recent call to <code>tic</code>.
+
+        <p>If you are more interested in the CPU time that your process used, you
+should use the <code>cputime</code> function instead.  The <code>tic</code> and
+<code>toc</code> functions report the actual wall clock time that elapsed
+between the calls.  This may include time spent processing other jobs or
+doing nothing at all.  For example,
+
+     <pre class="example">          tic (); sleep (5); toc ()
+          =&gt; 5
+          t = cputime (); sleep (5); cputime () - t
+          =&gt; 0
+     </pre>
+        <p class="noindent">(This example also illustrates that the CPU timer may have a fairly
+coarse resolution.) 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpause"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>pause</b> (<var>seconds</var>)<var><a name="index-pause-1443"></a></var><br>
+<blockquote><p>Suspend the execution of the program.  If invoked without any arguments,
+Octave waits until you type a character.  With a numeric argument, it
+pauses for the given number of seconds.  For example, the following
+statement prints a message and then waits 5 seconds before clearing the
+screen.
+
+     <pre class="example">          fprintf (stderr, "wait please...
+          ");
+          pause (5);
+          clc;
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dsleep"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>sleep</b> (<var>seconds</var>)<var><a name="index-sleep-1444"></a></var><br>
+<blockquote><p>Suspend the execution of the program for the given number of seconds. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dusleep"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>usleep</b> (<var>microseconds</var>)<var><a name="index-usleep-1445"></a></var><br>
+<blockquote><p>Suspend the execution of the program for the given number of
+microseconds.  On systems where it is not possible to sleep for periods
+of time less than one second, <code>usleep</code> will pause the execution for
+<code>round (</code><var>microseconds</var><code> / 1e6)</code> seconds. 
+</p></blockquote></div>
+
+   </body></html>
+

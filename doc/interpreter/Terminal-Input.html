@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+<title>Terminal Input - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Basic-Input-and-Output.html#Basic-Input-and-Output" title="Basic Input and Output">
+<link rel="prev" href="Terminal-Output.html#Terminal-Output" title="Terminal Output">
+<link rel="next" href="Simple-File-I_002fO.html#Simple-File-I_002fO" title="Simple File I/O">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Terminal-Input"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Terminal-Output.html#Terminal-Output">Terminal Output</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Basic-Input-and-Output.html#Basic-Input-and-Output">Basic Input and Output</a>
+<hr>
+</div>
+
+<h4 class="subsection">16.1.2 Terminal Input</h4>
+
+<p>Octave has three functions that make it easy to prompt users for
+input.  The <code>input</code> and <code>menu</code> functions are normally
+used for managing an interactive dialog with a user, and the
+<code>keyboard</code> function is normally used for doing simple debugging.
+
+   <p><a name="doc_002dinput"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>input</b> (<var>prompt</var>)<var><a name="index-input-534"></a></var><br>
+&mdash; Built-in Function:  <b>input</b> (<var>prompt, "s"</var>)<var><a name="index-input-535"></a></var><br>
+<blockquote><p>Print a prompt and wait for user input.  For example,
+
+     <pre class="example">          input ("Pick a number, any number! ")
+     </pre>
+        <p class="noindent">prints the prompt
+
+     <pre class="example">          Pick a number, any number!
+     </pre>
+        <p class="noindent">and waits for the user to enter a value.  The string entered by the user
+is evaluated as an expression, so it may be a literal constant, a
+variable name, or any other valid expression.
+
+        <p>Currently, <code>input</code> only returns one value, regardless of the number
+of values produced by the evaluation of the expression.
+
+        <p>If you are only interested in getting a literal string value, you can
+call <code>input</code> with the character string <code>"s"</code> as the second
+argument.  This tells Octave to return the string entered by the user
+directly, without evaluating it first.
+
+        <p>Because there may be output waiting to be displayed by the pager, it is
+a good idea to always call <code>fflush (stdout)</code> before calling
+<code>input</code>.  This will ensure that all pending output is written to
+the screen before your prompt.  See <a href="Input-and-Output.html#Input-and-Output">Input and Output</a>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmenu"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>menu</b> (<var>title, opt1, <small class="dots">...</small></var>)<var><a name="index-menu-536"></a></var><br>
+<blockquote><p>Print a title string followed by a series of options.  Each option will
+be printed along with a number.  The return value is the number of the
+option selected by the user.  This function is useful for interactive
+programs.  There is no limit to the number of options that may be passed
+in, but it may be confusing to present more than will fit easily on one
+screen.
+        <pre class="sp">
+     
+     </pre>
+     See also: disp, printf, input. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dkeyboard"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>keyboard</b> (<var>prompt</var>)<var><a name="index-keyboard-537"></a></var><br>
+<blockquote><p>This function is normally used for simple debugging.  When the
+<code>keyboard</code> function is executed, Octave prints a prompt and waits
+for user input.  The input strings are then evaluated and the results
+are printed.  This makes it possible to examine the values of variables
+within a function, and to assign new values to variables.  No value is
+returned from the <code>keyboard</code> function, and it continues to prompt
+for input until the user types `<samp><span class="samp">quit</span></samp>', or `<samp><span class="samp">exit</span></samp>'.
+
+        <p>If <code>keyboard</code> is invoked without any arguments, a default prompt of
+`<samp><span class="samp">debug&gt; </span></samp>' is used. 
+</p></blockquote></div>
+
+   <p>For both <code>input</code> and <code>keyboard</code>, the normal command line
+history and editing functions are available at the prompt.
+
+   <p>Octave also has a function that makes it possible to get a single
+character from the keyboard without requiring the user to type a
+carriage return.
+
+   <p><a name="doc_002dkbhit"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>kbhit</b> ()<var><a name="index-kbhit-538"></a></var><br>
+<blockquote><p>Read a single keystroke from the keyboard. If called with one
+argument, don't wait for a keypress.  For example,
+
+     <pre class="example">          x = kbhit ();
+     </pre>
+        <p class="noindent">will set <var>x</var> to the next character typed at the keyboard as soon as
+it is typed.
+
+     <pre class="example">          x = kbhit (1);
+     </pre>
+        <p class="noindent">identical to the above example, but don't wait for a keypress,
+returning the empty string if no key is available. 
+</p></blockquote></div>
+
+   </body></html>
+

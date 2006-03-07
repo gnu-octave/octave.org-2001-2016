@@ -1,0 +1,425 @@
+<html lang="en">
+<head>
+<title>misc - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Control-Theory.html#Control-Theory" title="Control Theory">
+<link rel="prev" href="cacsd.html#cacsd" title="cacsd">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="misc"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="cacsd.html#cacsd">cacsd</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Control Theory</a>
+<hr>
+</div>
+
+<h3 class="section">30.10 Miscellaneous Functions (Not yet properly filed/documented)</h3>
+
+<p><a name="doc_002daxis2dlim"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>axis2dlim</b> (<var>axdata</var>)<var><a name="index-axis2dlim-1318"></a></var><br>
+<blockquote><p>Determine axis limits for 2-D data (column vectors); leaves a 10%
+margin around the plots. 
+Inserts margins of +/- 0.1 if data is one-dimensional
+(or a single point).
+
+        <p><strong>Input</strong>
+          <dl>
+<dt><var>axdata</var><dd><var>n</var> by 2 matrix of data [<var>x</var>, <var>y</var>]. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>axvec</var><dd>Vector of axis limits appropriate for call to <samp><span class="command">axis</span></samp> function. 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dmoddemo"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>moddemo</b> (<var>inputs</var>)<var><a name="index-moddemo-1319"></a></var><br>
+<blockquote><p>Octave Control toolbox demo: Model Manipulations demo. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dprompt"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>prompt</b> (<var>str</var>)<var><a name="index-prompt-1320"></a></var><br>
+<blockquote><p>Prompt user to continue
+
+        <p><strong>Input</strong>
+          <dl>
+<dt><var>str</var><dd>Input string. Its default value is:
+          <pre class="example">               \n ---- Press a key to  continue ---
+          </pre>
+          </dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002drldemo"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>rldemo</b> (<var>inputs</var>)<var><a name="index-rldemo-1321"></a></var><br>
+<blockquote><p>Octave Control toolbox demo: Root Locus demo. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drlocus"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>rldata</var>, <var>k_break</var>, <var>rlpol</var>, <var>gvec</var>, <var>real_ax_pts</var>] = <b>rlocus</b> (<var>sys</var>[<var>, increment, min_k, max_k</var>])<var><a name="index-rlocus-1322"></a></var><br>
+<blockquote>
+<p>Display root locus plot of the specified <acronym>SISO</acronym> system.
+     <pre class="example">                 -----   ---     --------
+             ---&gt;| + |---|k|----&gt;| SISO |-----------&gt;
+                 -----   ---     --------        |
+                 - ^                             |
+                   |_____________________________|
+     </pre>
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>system data structure
+<br><dt><var>min_k</var><dd>Minimum value of <var>k</var>
+<br><dt><var>max_k</var><dd>Maximum value of <var>k</var>
+<br><dt><var>increment</var><dd>The increment used in computing gain values
+</dl>
+
+        <p><strong>Outputs</strong>
+
+        <p>Plots the root locus to the screen.
+          <dl>
+<dt><var>rldata</var><dd>Data points plotted: in column 1 real values, in column 2 the imaginary values. 
+<br><dt><var>k_break</var><dd>Gains for real axis break points. 
+<br><dt><var>rlpol</var><dd>Closed-loop roots for each gain value: 1 locus branch per row; 1 pole
+set per column
+<br><dt><var>gvec</var><dd>Gains vector
+<br><dt><var>real_ax_pts</var><dd>Real axis breakpoints
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dsortcom"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>yy</var>, <var>idx</var>] = <b>sortcom</b> (<var>xx</var>[<var>, opt</var>])<var><a name="index-sortcom-1323"></a></var><br>
+<blockquote><p>Sort a complex vector.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>xx</var><dd>Complex vector
+<br><dt><var>opt</var><dd>sorting option:
+               <dl>
+<dt><code>"re"</code><dd>Real part (default);
+<br><dt><code>"mag"</code><dd>By magnitude;
+<br><dt><code>"im"</code><dd>By imaginary part. 
+</dl>
+          if <var>opt</var> is not chosen as <code>"im"</code>, then complex conjugate pairs are grouped together,
+a - jb followed by a + jb. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>yy</var><dd>Sorted values
+<br><dt><var>idx</var><dd>Permutation vector: <code>yy = xx(idx)</code>
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dss2tf"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>num</var>, <var>den</var>] = <b>ss2tf</b> (<var>a, b, c, d</var>)<var><a name="index-ss2tf-1324"></a></var><br>
+<blockquote><p>Conversion from tranfer function to state-space. 
+The state space system:
+     <pre class="example">                .
+                x = Ax + Bu
+                y = Cx + Du
+     </pre>
+        <p>is converted to a transfer function:
+     <pre class="example">          
+                          num(s)
+                    G(s)=-------
+                          den(s)
+     </pre>
+        <p>used internally in system data structure format manipulations. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dss2zp"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>pol</var>, <var>zer</var>, <var>k</var>] = <b>ss2zp</b> (<var>a, b, c, d</var>)<var><a name="index-ss2zp-1325"></a></var><br>
+<blockquote><p>Converts a state space representation to a set of poles and zeros;
+<var>k</var> is a gain associated with the zeros.
+
+        <p>Used internally in system data structure format manipulations. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstarp"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>starp</b> (<var>P, K, ny, nu</var>)<var><a name="index-starp-1326"></a></var><br>
+<blockquote>
+<p>Redheffer star product or upper/lower LFT, respectively.
+     <pre class="example">          
+                         +-------+
+               ---------&gt;|       |---------&gt;
+                         |   P   |
+                    +---&gt;|       |---+  ny
+                    |    +-------+   |
+                    +-------------------+
+                                     |  |
+                    +----------------+  |
+                    |                   |
+                    |    +-------+      |
+                    +---&gt;|       |------+ nu
+                         |   K   |
+               ---------&gt;|       |---------&gt;
+                         +-------+
+     </pre>
+        <p>If <var>ny</var> and <var>nu</var> &ldquo;consume&rdquo; all inputs and outputs of
+<var>K</var> then the result is a lower fractional transformation. 
+If <var>ny</var> and <var>nu</var> &ldquo;consume&rdquo; all inputs and outputs of
+<var>P</var> then the result is an upper fractional transformation.
+
+        <p><var>ny</var> and/or <var>nu</var> may be negative (i.e. negative feedback). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtf2ss"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>a</var>, <var>b</var>, <var>c</var>, <var>d</var>] = <b>tf2ss</b> (<var>num, den</var>)<var><a name="index-tf2ss-1327"></a></var><br>
+<blockquote><p>Conversion from tranfer function to state-space. 
+The state space system:
+     <pre class="example">                .
+                x = Ax + Bu
+                y = Cx + Du
+     </pre>
+        <p>is obtained from a transfer function:
+     <pre class="example">                          num(s)
+                    G(s)=-------
+                          den(s)
+     </pre>
+        <p>The vector <var>den</var> must contain only one row, whereas the vector
+<var>num</var> may contain as many rows as there are outputs <var>y</var> of
+the system. The state space system matrices obtained from this function
+will be in controllable canonical form as described in <cite>Modern Control
+Theory</cite>, (Brogan, 1991). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtf2zp"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>zer</var>, <var>pol</var>, <var>k</var>] = <b>tf2zp</b> (<var>num, den</var>)<var><a name="index-tf2zp-1328"></a></var><br>
+<blockquote><p>Converts transfer functions to poles-and-zero representations.
+
+        <p>Returns the zeros and poles of the <acronym>SISO</acronym> system defined
+by <var>num</var>/<var>den</var>. 
+<var>k</var> is a gain associated with the system zeros. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzp2ss"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>a</var>, <var>b</var>, <var>c</var>, <var>d</var>] = <b>zp2ss</b> (<var>zer, pol, k</var>)<var><a name="index-zp2ss-1329"></a></var><br>
+<blockquote><p>Conversion from zero / pole to state space.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>zer</var><dt><var>pol</var><dd>Vectors of (possibly) complex poles and zeros of a transfer
+function. Complex values must come in conjugate pairs
+(i.e., x+jy in <var>zer</var> means that x-jy is also in <var>zer</var>). 
+The number of zeros must not exceed the number of poles. 
+<br><dt><var>k</var><dd>Real scalar (leading coefficient). 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>a</var><dt><var>b</var><dt><var>c</var><dt><var>d</var><dd>The state space system, in the form:
+          <pre class="example">                    .
+                    x = Ax + Bu
+                    y = Cx + Du
+          </pre>
+          </dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dzp2tf"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>num</var>, <var>den</var>] = <b>zp2tf</b> (<var>zer, pol, k</var>)<var><a name="index-zp2tf-1330"></a></var><br>
+<blockquote><p>Converts zeros / poles to a transfer function.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>zer</var><dt><var>pol</var><dd>Vectors of (possibly complex) poles and zeros of a transfer
+function.  Complex values must appear in conjugate pairs. 
+<br><dt><var>k</var><dd>Real scalar (leading coefficient). 
+</dl>
+        </p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

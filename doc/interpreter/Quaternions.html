@@ -1,0 +1,334 @@
+<html lang="en">
+<head>
+<title>Quaternions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Audio-Processing.html#Audio-Processing" title="Audio Processing">
+<link rel="next" href="System-Utilities.html#System-Utilities" title="System Utilities">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Quaternions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="System-Utilities.html#System-Utilities">System Utilities</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Audio-Processing.html#Audio-Processing">Audio Processing</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">34 Quaternions</h2>
+
+<p>Quaternions are hypercomplex numbers used to represent spatial
+rotations in three dimensions.  This set of routines provides a useful
+basis for working with quaternions in Octave.  A tutorial is in the
+Octave source, scripts/quaternion/quaternion.ps.
+
+   <p>These functions were written by A. S. Hodel, Associate Professor,
+Auburn University.
+
+   <p><a name="doc_002dquaternion"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>a</var>, <var>b</var>, <var>c</var>, <var>d</var>] = <b>quaternion</b> (<var>w</var>)<var><a name="index-quaternion-1415"></a></var><br>
+&mdash; Function File: [<var>vv</var>, <var>theta</var>] = <b>quaternion</b> (<var>w</var>)<var><a name="index-quaternion-1416"></a></var><br>
+&mdash; Function File: <var>w</var> = <b>quaternion</b> (<var>a, b, c, d</var>)<var><a name="index-quaternion-1417"></a></var><br>
+&mdash; Function File: <var>w</var> = <b>quaternion</b> (<var>vv, theta</var>)<var><a name="index-quaternion-1418"></a></var><br>
+<blockquote><p>Construct or extract a quaternion
+
+     <pre class="example">          w = a*i + b*j + c*k + d
+     </pre>
+        <p class="noindent">from given data. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dqconj"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qconj</b> (<var>q</var>)<var><a name="index-qconj-1419"></a></var><br>
+<blockquote><p>Conjugate of a quaternion.
+
+     <pre class="example">          q = [w, x, y, z] = w*i + x*j + y*k + z
+          qconj (q) = -w*i -x*j -y*k + z
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dqderiv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qderiv</b> (<var>omega</var>)<var><a name="index-qderiv-1420"></a></var><br>
+<blockquote><p>Derivative of a quaternion.
+
+        <p>Let Q be a quaternion to transform a vector from a fixed frame to
+a rotating frame.  If the rotating frame is rotating about the
+[x, y, z] axes at angular rates [wx, wy, wz], then the derivative
+of Q is given by
+
+     <pre class="example">          Q' = qderivmat (omega) * Q
+     </pre>
+        <p>If the passive convention is used (rotate the frame, not the vector),
+then
+
+     <pre class="example">          Q' = -qderivmat (omega) * Q
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dqderivmat"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qderivmat</b> (<var>omega</var>)<var><a name="index-qderivmat-1421"></a></var><br>
+<blockquote><p>Derivative of a quaternion.
+
+        <p>Let Q be a quaternion to transform a vector from a fixed frame to
+a rotating frame.  If the rotating frame is rotating about the
+[x, y, z] axes at angular rates [wx, wy, wz], then the derivative
+of Q is given by
+
+     <pre class="example">          Q' = qderivmat (omega) * Q
+     </pre>
+        <p>If the passive convention is used (rotate the frame, not the vector),
+then
+
+     <pre class="example">          Q' = -qderivmat (omega) * Q.
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dqinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qinv</b> (<var>q</var>)<var><a name="index-qinv-1422"></a></var><br>
+<blockquote><p>Return the inverse of a quaternion.
+
+     <pre class="example">          q = [w, x, y, z] = w*i + x*j + y*k + z
+          qmult (q, qinv (q)) = 1 = [0 0 0 1]
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dqmult"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qmult</b> (<var>a, b</var>)<var><a name="index-qmult-1423"></a></var><br>
+<blockquote><p>Multiply two quaternions.
+
+     <pre class="example">          [w, x, y, z] = w*i + x*j + y*k + z
+     </pre>
+        <p class="noindent">identities:
+
+     <pre class="example">          i^2 = j^2 = k^2 = -1
+          ij = k                 jk = i
+          ki = j                 kj = -i
+          ji = -k                ik = -j
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dqtrans"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qtrans</b> (<var>v, q</var>)<var><a name="index-qtrans-1424"></a></var><br>
+<blockquote><p>Transform the unit quaternion <var>v</var> by the unit quaternion <var>q</var>. 
+Returns <var>v</var><code> = </code><var>q</var><code>*</code><var>v</var><code>/</code><var>q</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dqtransv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qtransv</b> (<var>v, q</var>)<var><a name="index-qtransv-1425"></a></var><br>
+<blockquote><p>Transform the 3-D vector <var>v</var> by the unit quaternion <var>q</var>. 
+Return a column vector.
+
+     <pre class="example">          vi = (2*real(q)^2 - 1)*vb + 2*imag(q)*(imag(q)'*vb)
+             + 2*real(q)*cross(imag(q),vb)
+     </pre>
+        <p class="noindent">Where imag(q) is a column vector of length 3. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dqtransvmat"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qtransvmat</b> (<var>qib</var>)<var><a name="index-qtransvmat-1426"></a></var><br>
+<blockquote><p>Construct a 3x3 transformation matrix from quaternion <var>qib</var> that
+is equivalent to rotation of th radians about axis <var>vv</var>, where
+<code>[</code><var>vv</var><code>, </code><var>th</var><code>] = quaternion (</code><var>qib</var><code>)</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dqcoordinate_005fplot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>qcoordinate_plot</b> (<var>qf, qb, qv</var>)<var><a name="index-qcoordinate_005fplot-1427"></a></var><br>
+<blockquote><p>Plot in the current figure a set of coordinate axes as viewed from
+the orientation specified by quaternion <var>qv</var>.  Inertial axes are
+also plotted:
+
+          <dl>
+<dt><var>qf</var><dd>Quaternion from reference (x,y,z) to inertial. 
+<br><dt><var>qb</var><dd>Quaternion from reference to body. 
+<br><dt><var>qv</var><dd>Quaternion from reference to view angle. 
+</dl>
+        </p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

@@ -1,0 +1,398 @@
+<html lang="en">
+<head>
+<title>sysfreq - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Control-Theory.html#Control-Theory" title="Control Theory">
+<link rel="prev" href="systime.html#systime" title="systime">
+<link rel="next" href="cacsd.html#cacsd" title="cacsd">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="sysfreq"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="cacsd.html#cacsd">cacsd</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="systime.html#systime">systime</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Control Theory</a>
+<hr>
+</div>
+
+<h3 class="section">30.8 System Analysis-Frequency Domain</h3>
+
+<p><strong>Demonstration/tutorial script</strong>
+<a name="doc_002dfrdemo"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>frdemo</b> ()<var><a name="index-frdemo-1292"></a></var><br>
+<blockquote><p>Octave Control Toolbox demo: Frequency Response demo. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbode"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>mag</var>, <var>phase</var>, <var>w</var>] = <b>bode</b> (<var>sys, w, out_idx, in_idx</var>)<var><a name="index-bode-1293"></a></var><br>
+<blockquote><p>If no output arguments are given: produce Bode plots of a system; otherwise,
+compute the frequency response of a system data structure
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>a system data structure (must be either purely continuous or discrete;
+see is_digital)
+<br><dt><var>w</var><dd>frequency values for evaluation.
+
+          <p>if <var>sys</var> is continuous, then bode evaluates G(jw) where
+G(s) is the system transfer function.
+
+          <p>if <var>sys</var> is discrete, then bode evaluates G(<code>exp</code>(jwT)), where
+               <ul>
+<li>T is the system sampling time
+<li>G(z) is the system transfer function. 
+</ul>
+
+          <p><strong>Default</strong> the default frequency range is selected as follows: (These
+steps are <strong>not</strong> performed if <var>w</var> is specified)
+               <ol type=1 start=1>
+<li>via routine __bodquist__, isolate all poles and zeros away from
+<var>w</var>=0 (<var>jw</var>=0 or <code>exp</code>(jwT)=1) and select the frequency
+range based on the breakpoint locations of the frequencies. 
+<li>if <var>sys</var> is discrete time, the frequency range is limited
+              to jwT in
+[0,2 pi /T]
+<li>A "smoothing" routine is used to ensure that the plot phase does
+not change excessively from point to point and that singular
+points (e.g., crossovers from +/- 180) are accurately shown.
+
+               </ol>
+<br><dt><var>out_idx</var><dt><var>in_idx</var><dd>
+The names or indices of outputs and inputs to be used in the frequency
+response.  See <code>sysprune</code>.
+
+          <p><strong>Example</strong>
+          <pre class="example">               bode(sys,[],"y_3", {"u_1","u_4"});
+          </pre>
+          </dl>
+        <strong>Outputs</strong>
+          <dl>
+<dt><var>mag</var><dt><var>phase</var><dd>the magnitude and phase of the frequency response G(jw) or
+G(<code>exp</code>(jwT)) at the selected frequency values. 
+<br><dt><var>w</var><dd>the vector of frequency values used
+</dl>
+
+          <ol type=1 start=1>
+<li>If no output arguments are given, e.g.,
+          <pre class="example">               bode(sys);
+          </pre>
+          <p>bode plots the results to the screen.  Descriptive labels are
+automatically placed.
+
+          <p>Failure to include a concluding semicolon will yield some garbage
+being printed to the screen (<code>ans = []</code>).
+
+          <li>If the requested plot is for an <acronym>MIMO</acronym> system, mag is set to
+||G(jw)|| or ||G(<code>exp</code>(jwT))||
+and phase information is not computed.
+             </ol>
+</p></blockquote></div>
+
+   <p><a name="doc_002dbode_005fbounds"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>wmin</var>, <var>wmax</var>] = <b>bode_bounds</b> (<var>zer, pol, dflg, tsam</var>)<var><a name="index-bode_005fbounds-1294"></a></var><br>
+<blockquote><p>Get default range of frequencies based on cutoff frequencies of system
+poles and zeros. 
+Frequency range is the interval
+[10^<var>wmin</var>, 10^<var>wmax</var>]
+
+        <p>Used internally in <samp><span class="command">__freqresp__</span></samp> (<samp><span class="command">bode</span></samp>, <samp><span class="command">nyquist</span></samp>)
+</p></blockquote></div>
+
+   <p><a name="doc_002dfreqchkw"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>freqchkw</b> (<var>w</var>)<var><a name="index-freqchkw-1295"></a></var><br>
+<blockquote><p>Used by <samp><span class="command">__freqresp__</span></samp> to check that input frequency vector <var>w</var>
+is valid. 
+Returns boolean value. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dltifr"></a>
+
+<div class="defun">
+&mdash; Function File: <var>out</var> = <b>ltifr</b> (<var>a, b, w</var>)<var><a name="index-ltifr-1296"></a></var><br>
+&mdash; Function File: <var>out</var> = <b>ltifr</b> (<var>sys, w</var>)<var><a name="index-ltifr-1297"></a></var><br>
+<blockquote><p>Linear time invariant frequency response of single-input systems.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>a</var><dt><var>b</var><dd>coefficient matrices of dx/dt = A x + B u
+<br><dt><var>sys</var><dd>system data structure
+<br><dt><var>w</var><dd>vector of frequencies
+</dl>
+        <strong>Output</strong>
+          <dl>
+<dt><var>out</var><dd>frequency response, that is:
+</dl>
+
+     <pre class="example">                                     -1
+                       G(s) = (jw I-A) B
+     </pre>
+        <p>for complex frequencies s = jw. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnyquist"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>realp</var>, <var>imagp</var>, <var>w</var>] = <b>nyquist</b> (<var>sys, w, out_idx, in_idx, atol</var>)<var><a name="index-nyquist-1298"></a></var><br>
+&mdash; Function File:  <b>nyquist</b> (<var>sys, w, out_idx, in_idx, atol</var>)<var><a name="index-nyquist-1299"></a></var><br>
+<blockquote><p>Produce Nyquist plots of a system; if no output arguments are given, Nyquist
+plot is printed to the screen.
+
+        <p>Compute the frequency response of a system.
+
+        <p><strong>Inputs</strong> (pass as empty to get default values)
+          <dl>
+<dt><var>sys</var><dd>system data structure (must be either purely continuous or discrete;
+see <code>is_digital</code>)
+<br><dt><var>w</var><dd>frequency values for evaluation. 
+If sys is continuous, then bode evaluates G(<var>jw</var>);
+if sys is discrete, then bode evaluates G(exp(<var>jwT</var>)),
+where <var>T</var> is the system sampling time. 
+<br><dt><var>default</var><dd>the default frequency range is selected as follows: (These
+steps are <strong>not</strong> performed if <var>w</var> is specified)
+               <ol type=1 start=1>
+<li>via routine <samp><span class="command">__bodquist__</span></samp>, isolate all poles and zeros away from
+<var>w</var>=0 (<var>jw</var>=0 or exp(<var>jwT</var>)=1) and select the frequency
+range based on the breakpoint locations of the frequencies. 
+<li>if <var>sys</var> is discrete time, the frequency range is limited
+to <var>jwT</var> in
+[0,2p*pi]
+<li>A &ldquo;smoothing&rdquo; routine is used to ensure that the plot phase does
+not change excessively from point to point and that singular
+points (e.g., crossovers from +/- 180) are accurately shown.
+               </ol>
+<br><dt><var>atol</var><dd>for interactive nyquist plots: atol is a change-in-slope tolerance
+for the of asymptotes (default = 0; 1e-2 is a good choice).  This allows
+the user to &ldquo;zoom in&rdquo; on portions of the Nyquist plot too small to be
+seen with large asymptotes. 
+</dl>
+        <strong>Outputs</strong>
+          <dl>
+<dt><var>realp</var><dt><var>imagp</var><dd>the real and imaginary parts of the frequency response
+G(jw) or G(exp(jwT)) at the selected frequency values. 
+<br><dt><var>w</var><dd>the vector of frequency values used
+</dl>
+
+        <p>If no output arguments are given, nyquist plots the results to the screen. 
+If <var>atol</var> != 0 and asymptotes are detected then the user is asked
+interactively if they wish to zoom in (remove asymptotes)
+Descriptive labels are automatically placed.
+
+        <p>Note: if the requested plot is for an <acronym>MIMO</acronym> system, a warning message is
+presented; the returned information is of the magnitude
+||G(jw)|| or ||G(exp(jwT))||
+only; phase information is not computed. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtzero"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>zer</var>, <var>gain</var>] = <b>tzero</b> (<var>a, b, c, d, opt</var>)<var><a name="index-tzero-1300"></a></var><br>
+&mdash; Function File: [<var>zer</var>, <var>gain</var>] = <b>tzero</b> (<var>sys, opt</var>)<var><a name="index-tzero-1301"></a></var><br>
+<blockquote><p>Compute transmission zeros of a continuous system:
+     <pre class="example">          .
+          x = Ax + Bu
+          y = Cx + Du
+     </pre>
+        <p>or of a discrete one:
+     <pre class="example">          x(k+1) = A x(k) + B u(k)
+          y(k)   = C x(k) + D u(k)
+     </pre>
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>zer</var><dd> transmission zeros of the system
+<br><dt><var>gain</var><dd>leading coefficient (pole-zero form) of <acronym>SISO</acronym> transfer function
+returns gain=0 if system is multivariable
+</dl>
+        <strong>References</strong>
+          <ol type=1 start=1>
+<li>Emami-Naeini and Van Dooren, Automatica, 1982. 
+<li>Hodel, <cite>Computation of Zeros with Balancing</cite>, 1992 Lin. Alg. Appl.
+             </ol>
+</p></blockquote></div>
+
+   <p><a name="doc_002dtzero2"></a>
+
+<div class="defun">
+&mdash; Function File: <var>zr</var> = <b>tzero2</b> (<var>a, b, c, d, bal</var>)<var><a name="index-tzero2-1302"></a></var><br>
+<blockquote><p>Compute the transmission zeros of <var>a</var>, <var>b</var>, <var>c</var>, <var>d</var>.
+
+        <p><var>bal</var> = balancing option (see balance); default is <code>"B"</code>.
+
+        <p>Needs to incorporate <samp><span class="command">mvzero</span></samp> algorithm to isolate finite zeros;
+use <samp><span class="command">tzero</span></samp> instead. 
+</p></blockquote></div>
+
+   </body></html>
+

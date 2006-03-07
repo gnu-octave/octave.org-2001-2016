@@ -1,0 +1,299 @@
+<html lang="en">
+<head>
+<title>Multiple Plots on One Page - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Plotting.html#Plotting" title="Plotting">
+<link rel="prev" href="Plot-Annotations.html#Plot-Annotations" title="Plot Annotations">
+<link rel="next" href="Multiple-Plot-Windows.html#Multiple-Plot-Windows" title="Multiple Plot Windows">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Multiple-Plots-on-One-Page"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">Multiple Plot Windows</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Plot-Annotations.html#Plot-Annotations">Plot Annotations</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Plotting.html#Plotting">Plotting</a>
+<hr>
+</div>
+
+<h3 class="section">17.5 Multiple Plots on One Page</h3>
+
+<p>The following functions all require a version of <code>gnuplot</code> that
+supports the multiplot feature.
+
+   <p><a name="doc_002dmplot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>mplot</b> (<var>x, y</var>)<var><a name="index-mplot-628"></a></var><br>
+&mdash; Function File:  <b>mplot</b> (<var>x, y, fmt</var>)<var><a name="index-mplot-629"></a></var><br>
+&mdash; Function File:  <b>mplot</b> (<var>x1, y1, x2, y2</var>)<var><a name="index-mplot-630"></a></var><br>
+<blockquote><p>This is a modified version of the <code>plot</code> function that works with
+the multiplot version of <code>gnuplot</code> to plot multiple plots per page. 
+This plot version automatically advances to the next subplot position
+after each set of arguments are processed.
+
+        <p>See the description of the <var>plot</var> function for the various options. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmultiplot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>multiplot</b> (<var>xn, yn</var>)<var><a name="index-multiplot-631"></a></var><br>
+<blockquote><p>Sets and resets multiplot mode.
+
+        <p>If the arguments are non-zero, <code>multiplot</code> will set up multiplot
+mode with <var>xn</var>, <var>yn</var> subplots along the <var>x</var> and <var>y</var>
+axes.  If both arguments are zero, <code>multiplot</code> closes multiplot
+mode. 
+</p></blockquote></div>
+
+   <p><a name="doc_002doneplot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>oneplot</b> ()<var><a name="index-oneplot-632"></a></var><br>
+<blockquote><p>If in multiplot mode, switches to single plot mode. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dplot_005fborder"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>plot_border</b> (<var>...</var>)<var><a name="index-plot_005fborder-633"></a></var><br>
+<blockquote><p>Multiple arguments allowed to specify the sides on which the border
+is shown.  Allowed arguments include:
+
+          <dl>
+<dt><code>"blank"</code><dd>No borders displayed.
+
+          <br><dt><code>"all"</code><dd>All borders displayed
+
+          <br><dt><code>"north"</code><dd>North Border
+
+          <br><dt><code>"south"</code><dd>South Border
+
+          <br><dt><code>"east"</code><dd>East Border
+
+          <br><dt><code>"west"</code><dd>West Border
+</dl>
+
+     <p class="noindent">The arguments may be abbreviated to single characters.  Without any
+arguments, <code>plot_border</code> turns borders off. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsubplot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>subplot</b> (<var>rows, cols, index</var>)<var><a name="index-subplot-634"></a></var><br>
+&mdash; Function File:  <b>subplot</b> (<var>rcn</var>)<var><a name="index-subplot-635"></a></var><br>
+<blockquote><p>Sets <code>gnuplot</code> in multiplot mode and plots in location
+given by index (there are <var>cols</var> by <var>rows</var> subwindows).
+
+        <p>The global variable <var>__multiplot_scale__</var> should be used when the
+command <code>__gnuplot_set__ size xsize, ysize</code> has been used prior to calling
+<code>subplot</code>.
+
+        <p>The value of <var>__multiplot_scale__</var> should be a vector with two
+elements, the first set equal to <var>xsize</var> and the second to
+<var>ysize</var>.
+
+        <p>Input:
+
+          <dl>
+<dt><var>rows</var><dd>Number of rows in subplot grid.
+
+          <br><dt><var>columns</var><dd>Number of columns in subplot grid.
+
+          <br><dt><var>index</var><dd>Index of subplot where to make the next plot. 
+</dl>
+
+        <p>If only one argument is supplied, then it must be a three digit value
+specifying the location in digits 1 (rows) and 2 (columns) and the plot
+index in digit 3.
+
+        <p>The plot index runs row-wise.  First all the columns in a row are filled
+and then the next row is filled.
+
+        <p>For example, a plot with 4 by 2 grid will have plot indices running as
+follows:
+     <pre class="display">          +&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;+
+          |  1  |  2  |  3  |  4  |
+          +&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;+
+          |  5  |  6  |  7  |  8  |
+          +&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;+
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dsubwindow"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>subwindow</b> (<var>xn, yn</var>)<var><a name="index-subwindow-636"></a></var><br>
+<blockquote><p>Sets the subwindow position in multiplot mode for the next plot.  The
+multiplot mode has to be previously initialized using the
+<code>multiplot</code> function, otherwise this command just becomes an alias
+to <code>multiplot</code>
+</p></blockquote></div>
+
+   </body></html>
+

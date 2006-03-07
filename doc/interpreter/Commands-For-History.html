@@ -1,0 +1,325 @@
+<html lang="en">
+<head>
+<title>Commands For History - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
+<link rel="prev" href="Commands-For-Completion.html#Commands-For-Completion" title="Commands For Completion">
+<link rel="next" href="Customizing-readline.html#Customizing-readline" title="Customizing readline">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Commands-For-History"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Customizing-readline.html#Customizing-readline">Customizing readline</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Commands-For-Completion.html#Commands-For-Completion">Commands For Completion</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>
+<hr>
+</div>
+
+<h4 class="subsection">2.4.5 Commands For Manipulating The History</h4>
+
+<p><a name="index-command-history-87"></a><a name="index-input-history-88"></a><a name="index-history-of-commands-89"></a>
+Octave normally keeps track of the commands you type so that you can
+recall previous commands to edit or execute them again.  When you exit
+Octave, the most recent commands you have typed, up to the number
+specified by the variable <code>history_size</code>, are saved in a file. 
+When Octave starts, it loads an initial list of commands from the file
+named by the variable <code>history_file</code>.
+
+   <p>Here are the commands for simple browsing and searching the history
+list.
+
+     <dl>
+<dt><kbd>&lt;LFD&gt;</kbd><dt><kbd>&lt;RET&gt;</kbd><dd>Accept the line regardless of where the cursor is.  If this line is
+non-empty, add it to the history list.  If this line was a history
+line, then restore the history line to its original state.
+
+     <br><dt><kbd>C-p</kbd><dd>Move `up' through the history list.
+
+     <br><dt><kbd>C-n</kbd><dd>Move `down' through the history list.
+
+     <br><dt><kbd>M-&lt;</kbd><dd>Move to the first line in the history.
+
+     <br><dt><kbd>M-&gt;</kbd><dd>Move to the end of the input history, i.e., the line you are entering!
+
+     <br><dt><kbd>C-r</kbd><dd>Search backward starting at the current line and moving `up' through
+the history as necessary.  This is an incremental search.
+
+     <br><dt><kbd>C-s</kbd><dd>Search forward starting at the current line and moving `down' through
+the history as necessary. 
+</dl>
+
+   <p>On most terminals, you can also use the arrow keys in place of <kbd>C-p</kbd>
+and <kbd>C-n</kbd> to move through the history list.
+
+   <p>In addition to the keyboard commands for moving through the history
+list, Octave provides three functions for viewing, editing, and
+re-running chunks of commands from the history list.
+
+   <p><a name="doc_002dhistory"></a>
+
+<div class="defun">
+&mdash; Command: <b>history</b><var> options<a name="index-history-90"></a></var><br>
+<blockquote><p>If invoked with no arguments, <code>history</code> displays a list of commands
+that you have executed.  Valid options are:
+
+          <dl>
+<dt><code>-w </code><var>file</var><dd>Write the current history to the file <var>file</var>.  If the name is
+omitted, use the default history file (normally <samp><span class="file">~/.octave_hist</span></samp>).
+
+          <br><dt><code>-r </code><var>file</var><dd>Read the file <var>file</var>, replacing the current history list with its
+contents.  If the name is omitted, use the default history file
+(normally <samp><span class="file">~/.octave_hist</span></samp>).
+
+          <br><dt><var>n</var><dd>Only display the most recent <var>n</var> lines of history.
+
+          <br><dt><code>-q</code><dd>Don't number the displayed lines of history.  This is useful for cutting
+and pasting commands if you are using the X Window System. 
+</dl>
+
+        <p>For example, to display the five most recent commands that you have
+typed without displaying line numbers, use the command
+<kbd>history -q 5</kbd>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dedit_005fhistory"></a>
+
+<div class="defun">
+&mdash; Command: <b>edit_history</b><var> options<a name="index-edit_005fhistory-91"></a></var><br>
+<blockquote><p>If invoked with no arguments, <code>edit_history</code> allows you to edit the
+history list using the editor named by the variable <code>EDITOR</code>.  The
+commands to be edited are first copied to a temporary file.  When you
+exit the editor, Octave executes the commands that remain in the file. 
+It is often more convenient to use <code>edit_history</code> to define functions
+rather than attempting to enter them directly on the command line. 
+By default, the block of commands is executed as soon as you exit the
+editor.  To avoid executing any commands, simply delete all the lines
+from the buffer before exiting the editor.
+
+        <p>The <code>edit_history</code> command takes two optional arguments specifying
+the history numbers of first and last commands to edit.  For example,
+the command
+
+     <pre class="example">          edit_history 13
+     </pre>
+        <p class="noindent">extracts all the commands from the 13th through the last in the history
+list.  The command
+
+     <pre class="example">          edit_history 13 169
+     </pre>
+        <p class="noindent">only extracts commands 13 through 169.  Specifying a larger number for
+the first command than the last command reverses the list of commands
+before placing them in the buffer to be edited.  If both arguments are
+omitted, the previous command in the history list is used. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drun_005fhistory"></a>
+
+<div class="defun">
+&mdash; Command: <b>run_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-run_005fhistory-92"></a></var><br>
+<blockquote><p>Similar to <code>edit_history</code>, except that the editor is not invoked,
+and the commands are simply executed as they appear in the history list. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dEDITOR"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>EDITOR</b><var><a name="index-EDITOR-93"></a></var><br>
+<blockquote><p>A string naming the editor to use with the <code>edit_history</code> command. 
+If the environment variable <code>EDITOR</code> is set when Octave starts, its
+value is used as the default.  Otherwise, <code>EDITOR</code> is set to
+<code>"emacs"</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhistory_005ffile"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>history_file</b><var><a name="index-history_005ffile-94"></a></var><br>
+<blockquote><p>This variable specifies the name of the file used to store command
+history.  The default value is <code>"~/.octave_hist"</code>, but may be
+overridden by the environment variable <code>OCTAVE_HISTFILE</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhistory_005fsize"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>history_size</b><var><a name="index-history_005fsize-95"></a></var><br>
+<blockquote><p>This variable specifies how many entries to store in the history file. 
+The default value is <code>1024</code>, but may be overridden by the
+environment variable <code>OCTAVE_HISTSIZE</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsaving_005fhistory"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>saving_history</b><var><a name="index-saving_005fhistory-96"></a></var><br>
+<blockquote><p>If the value of <code>saving_history</code> is nonzero, command entered
+on the command line are saved in the file specified by the variable
+<code>history_file</code>. 
+</p></blockquote></div>
+
+   </body></html>
+

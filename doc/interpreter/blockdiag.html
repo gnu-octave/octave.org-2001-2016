@@ -1,0 +1,773 @@
+<html lang="en">
+<head>
+<title>blockdiag - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Control-Theory.html#Control-Theory" title="Control Theory">
+<link rel="prev" href="sysdisp.html#sysdisp" title="sysdisp">
+<link rel="next" href="numerical.html#numerical" title="numerical">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="blockdiag"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="numerical.html#numerical">numerical</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="sysdisp.html#sysdisp">sysdisp</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Control Theory</a>
+<hr>
+</div>
+
+<h3 class="section">30.4 Block Diagram Manipulations</h3>
+
+<p>See <a href="systime.html#systime">systime</a>.
+
+   <p>Unless otherwise noted, all parameters (input,output) are
+system data structures.
+
+   <p><a name="doc_002dbddemo"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>bddemo</b> (<var>inputs</var>)<var><a name="index-bddemo-1221"></a></var><br>
+<blockquote><p>Octave Controls toolbox demo: Block Diagram Manipulations demo. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbuildssic"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>buildssic</b> (<var>clst, ulst, olst, ilst, s1, s2, s3, s4, s5, s6, s7, s8</var>)<var><a name="index-buildssic-1222"></a></var><br>
+<blockquote>
+<p>Form an arbitrary complex (open or closed loop) system in
+state-space form from several systems. <samp><span class="command">buildssic</span></samp> can
+easily (despite its cryptic syntax) integrate transfer functions
+from a complex block diagram into a single system with one call. 
+This function is especially useful for building open loop
+interconnections for
+H-infinity and H-2
+designs or for closing loops with these controllers.
+
+        <p>Although this function is general purpose, the use of <samp><span class="command">sysgroup</span></samp>
+<samp><span class="command">sysmult</span></samp>, <samp><span class="command">sysconnect</span></samp> and the like is recommended for
+standard operations since they can handle mixed discrete and continuous
+systems and also the names of inputs, outputs, and states.
+
+        <p>The parameters consist of 4 lists that describe the connections
+outputs and inputs and up to 8 systems <var>s1</var>&ndash;<var>s8</var>. 
+Format of the lists:
+          <dl>
+<dt><var>clst</var><dd>connection list, describes the input signal of
+each system. The maximum number of rows of Clst is
+equal to the sum of all inputs of s1-s8.
+
+          <p>Example:
+<code>[1 2 -1; 2 1 0]</code> means that:  new input 1 is old input 1
++ output 2 - output 1, and new input 2 is old input 2
++ output 1. The order of rows is arbitrary.
+
+          <br><dt><var>ulst</var><dd>if not empty the old inputs in vector <var>ulst</var> will
+be appended to the outputs. You need this if you
+want to &ldquo;pull out&rdquo; the input of a system. Elements
+are input numbers of <var>s1</var>&ndash;<var>s8</var>.
+
+          <br><dt><var>olst</var><dd>output list, specifiy the outputs of the resulting
+systems. Elements are output numbers of <var>s1</var>&ndash;<var>s8</var>. 
+The numbers are allowed to be negative and may
+appear in any order. An empty matrix means
+all outputs.
+
+          <br><dt><var>ilst</var><dd>input list, specifiy the inputs of the resulting
+systems. Elements are input numbers of <var>s1</var>&ndash;<var>s8</var>. 
+The numbers are allowed to be negative and may
+appear in any order. An empty matrix means
+all inputs. 
+</dl>
+
+        <p>Example:  Very simple closed loop system.
+     <pre class="example">          w        e  +-----+   u  +-----+
+           ---&gt;o--*--&gt;|  K  |--*--&gt;|  G  |--*---&gt; y
+               ^  |   +-----+  |   +-----+  |
+             - |  |            |            |
+               |  |            +----------------&gt; u
+               |  |                         |
+               |  +-------------------------|---&gt; e
+               |                            |
+               +----------------------------+
+     </pre>
+        <p>The closed loop system <var>GW</var> can be optained by
+     <pre class="example">          GW = buildssic([1 2; 2 -1], 2, [1 2 3], 2, G, K);
+     </pre>
+          <dl>
+<dt><var>clst</var><dd>1st row: connect input 1 (<var>G</var>) with output 2 (<var>K</var>).
+
+          <p>2nd row: connect input 2 (<var>K</var>) with negative output 1 (<var>G</var>). 
+<br><dt><var>ulst</var><dd>Append input of 2 (<var>K</var>) to the number of outputs. 
+<br><dt><var>olst</var><dd>Outputs are output of 1 (<var>G</var>), 2 (<var>K</var>) and
+appended output 3 (from <var>ulst</var>). 
+<br><dt><var>ilst</var><dd>The only input is 2 (<var>K</var>). 
+</dl>
+
+        <p>Here is a real example:
+     <pre class="example">                                   +----+
+              --------------------&gt;| W1 |---&gt; v1
+          z   |                    +----+
+          ----|-------------+
+              |             |
+              |    +---+    v      +----+
+              *---&gt;| G |---&gt;O--*--&gt;| W2 |---&gt; v2
+              |    +---+       |   +----+
+              |                |
+              |                v
+             u                  y
+     </pre>
+        <pre class="example">          min || GW   ||
+                   vz   infty
+     </pre>
+        <p>The closed loop system <var>GW</var>
+from [z, u]' to [v1, v2, y]'
+can be obtained by (all <acronym>SISO</acronym> systems):
+     <pre class="example">          GW = buildssic([1, 4; 2, 4; 3, 1], 3, [2, 3, 5],
+                         [3, 4], G, W1, W2, One);
+     </pre>
+        <p>where &ldquo;One&rdquo; is a unity gain (auxillary) function with order 0. 
+(e.g. <code>One = ugain(1);</code>)
+</p></blockquote></div>
+
+   <p><a name="doc_002djet707"></a>
+
+<div class="defun">
+&mdash; Function File: <var>sys</var> = <b>jet707</b> ()<var><a name="index-jet707-1223"></a></var><br>
+<blockquote><p>Creates a linearized state-space model of a Boeing 707-321 aircraft
+at <var>v</var>=80 m/s
+(<var>M</var> = 0.26, <var>Ga0</var> = -3 deg, <var>alpha0</var> = 4 deg, <var>kappa</var> = 50 deg).
+
+        <p>System inputs: (1) thrust and (2) elevator angle.
+
+        <p>System outputs:  (1) airspeed and (2) pitch angle.
+
+        <p><strong>Reference</strong>: R. Brockhaus: <cite>Flugregelung</cite> (Flight Control), Springer, 1994.
+        <pre class="sp">
+     
+     </pre>
+     See also: ord2. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dord2"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ord2</b> (<var>nfreq, damp, gain</var>)<var><a name="index-ord2-1224"></a></var><br>
+<blockquote><p>Creates a continuous 2nd order system with parameters:
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>nfreq</var><dd>natural frequency [Hz]. (not in rad/s)
+<br><dt><var>damp</var><dd>damping coefficient
+<br><dt><var>gain</var><dd>dc-gain
+This is steady state value only for damp &gt; 0. 
+gain is assumed to be 1.0 if ommitted. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>outsys</var><dd>system data structure has representation with
+w = 2 * pi * nfreq:
+          <pre class="example">                   /                                        \
+                   | / -2w*damp -w \  / w \                 |
+               G = | |             |, |   |, [ 0  gain ], 0 |
+                   | \   w       0 /  \ 0 /                 |
+                   \                                        /
+          </pre>
+          </dl>
+        <strong>See also</strong> <samp><span class="command">jet707</span></samp> (<acronym>MIMO</acronym> example, Boeing 707-321
+aircraft model)
+</p></blockquote></div>
+
+   <p><a name="doc_002dsysadd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>sysadd</b> (<var>gsys, hsys</var>)<var><a name="index-sysadd-1225"></a></var><br>
+<blockquote><p>returns <var>sys</var> = <var>gsys</var> + <var>hsys</var>.
+          <ul>
+<li>Exits with
+an error if <var>gsys</var> and <var>hsys</var> are not compatibly dimensioned. 
+<li>Prints a warning message is system states have identical names;
+duplicate names are given a suffix to make them unique. 
+<li><var>sys</var> input/output names are taken from <var>gsys</var>. 
+</ul>
+
+     <pre class="example">                    ________
+               ----|  gsys  |---
+          u   |    ----------  +|
+          -----                (_)----&gt; y
+              |     ________   +|
+               ----|  hsys  |---
+                    --------
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dsysappend"></a>
+
+<div class="defun">
+&mdash; Function File: <var>sys</var> = <b>sysappend</b> (<var>syst, b, c, d, outname, inname, yd</var>)<var><a name="index-sysappend-1226"></a></var><br>
+<blockquote><p>appends new inputs and/or outputs to a system
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>syst</var><dd>system data structure
+
+          <br><dt><var>b</var><dd>matrix to be appended to sys "B" matrix (empty if none)
+
+          <br><dt><var>c</var><dd>matrix to be appended to sys "C" matrix (empty if none)
+
+          <br><dt><var>d</var><dd>revised sys d matrix (can be passed as [] if the revised d is all zeros)
+
+          <br><dt><var>outname</var><dd>list of names for new outputs
+
+          <br><dt><var>inname</var><dd>list of names for new inputs
+
+          <br><dt><var>yd</var><dd>binary vector; yd(ii)=0 indicates a continuous output;
+yd(ii)=1 indicates a discrete output. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>sys</var><dd>
+          <pre class="example">                  sys.b := [syst.b , b]
+                  sys.c := [syst.c  ]
+                           [ c     ]
+                  sys.d := [syst.d | D12 ]
+                           [ D21   | D22 ]
+          </pre>
+          <p>where D12, D21, and D22 are the appropriate dimensioned
+blocks of the input parameter <var>d</var>.
+               <ul>
+<li>The leading block D11 of <var>d</var> is ignored. 
+<li>If <var>inname</var> and <var>outname</var> are not given as arguments,
+     the new inputs and outputs are be assigned default names. 
+<li><var>yd</var> is a binary vector of length rows(c) that indicates
+     continuous/sampled outputs.  Default value for <var>yd</var> is:
+                    <ul>
+<li><var>sys</var> is continuous or mixed
+<var>yd</var> = <code>zeros(1,rows(c))</code>
+
+                    <li><var>sys</var> is discrete
+<var>yd</var> = <code>ones(1,rows(c))</code>
+</ul>
+               </ul>
+          </dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dsysconnect"></a>
+
+<div class="defun">
+&mdash; Function File: <var>clsys</var> = <b>sysconnect</b> (<var>sys, out_idx, in_idx, order, tol</var>)<var><a name="index-sysconnect-1227"></a></var><br>
+<blockquote><p>Close the loop from specified outputs to respective specified inputs
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure. 
+<br><dt><var>out_idx</var><dt><var>in_idx</var><dd>Names or indices of signals to connect (see <code>sysidx</code>). 
+The output specified by out_idx(ii) is connected to the input
+specified by in_idx(ii). 
+<br><dt><var>order</var><dd>logical flag (default = 0)
+               <dl>
+<dt><code>0</code><dd>Leave inputs and outputs in their original order. 
+<br><dt><code>1</code><dd>Permute inputs and outputs to the order shown in the diagram below. 
+</dl>
+          <br><dt><var>tol</var><dd>Tolerance for singularities in algebraic loops, default: 200<code>eps</code>. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>clsys</var><dd>Resulting closed loop system. 
+</dl>
+
+        <p><strong>Method</strong>
+
+        <p><code>sysconnect</code> internally permutes selected inputs, outputs as shown
+below, closes the loop, and then permutes inputs and outputs back to their
+original order
+     <pre class="example">                           --------------------
+           u_1       -----&gt;|                  |----&gt; y_1
+                           |        sys       |
+                   old u_2 |                  |
+          u_2* ----&gt;(+)---&gt;|                  |-----&gt;y_2
+          (in_idx)   ^     --------------------    | (out_idx)
+                     |                             |
+                     -------------------------------
+     </pre>
+        <p>The input that has the summing junction added to it has an * added to
+the end  of the input name. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsyscont"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>csys</var>, <var>acd</var>, <var>ccd</var>] = <b>syscont</b> (<var>sys</var>)<var><a name="index-syscont-1228"></a></var><br>
+<blockquote><p>Extract the purely continuous subsystem of an input system.
+
+        <p><strong>Input</strong>
+          <dl>
+<dt><var>sys</var><dd>system data structure. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>csys</var><dd>is the purely continuous input/output connections of <var>sys</var>
+<br><dt><var>acd</var><dt><var>ccd</var><dd>connections from discrete states to continuous states,
+discrete states to continuous outputs, respectively.
+
+          <p>returns <var>csys</var> empty if no continuous/continous path exists
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dsysdisc"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>dsys</var>, <var>adc</var>, <var>cdc</var>] = <b>sysdisc</b> (<var>sys</var>)<var><a name="index-sysdisc-1229"></a></var><br>
+<blockquote>
+<p><strong>Input</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>dsys</var><dd>Purely discrete portion of sys (returned empty if there is
+no purely discrete path from inputs to outputs). 
+<br><dt><var>adc</var><dt><var>cdc</var><dd>Connections from continuous states to discrete states and discrete. 
+outputs, respectively. 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dsysdup"></a>
+
+<div class="defun">
+&mdash; Function File: <var>retsys</var> = <b>sysdup</b> (<var>asys, out_idx, in_idx</var>)<var><a name="index-sysdup-1230"></a></var><br>
+<blockquote><p>Duplicate specified input/output connections of a system
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>asys</var><dd>system data structure
+<br><dt><var>out_idx</var><dt><var>in_idx</var><dd>indices or names of desired signals (see <code>sigidx</code>). 
+duplicates are made of <code>y(out_idx(ii))</code> and <code>u(in_idx(ii))</code>. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>retsys</var><dd>Resulting closed loop system:
+duplicated i/o names are appended with a <code>"+"</code> suffix. 
+</dl>
+
+        <p><strong>Method</strong>
+
+        <p><code>sysdup</code> creates copies of selected inputs and outputs as
+shown below.  <var>u1</var>, <var>y1</var> is the set of original inputs/outputs, and
+<var>u2</var>, <var>y2</var> is the set of duplicated inputs/outputs in the order
+specified in <var>in_idx</var>, <var>out_idx</var>, respectively
+     <pre class="example">                    ____________________
+          u1  -----&gt;|                  |----&gt; y1
+                    |       asys       |
+          u2 ------&gt;|                  |-----&gt;y2
+          (in_idx)  -------------------- (out_idx)
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dsysgroup"></a>
+
+<div class="defun">
+&mdash; Function File: <var>sys</var> = <b>sysgroup</b> (<var>asys, bsys</var>)<var><a name="index-sysgroup-1231"></a></var><br>
+<blockquote><p>Combines two systems into a single system.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>asys</var><dt><var>bsys</var><dd>System data structures. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>sys</var><dd>sys = <span class="roman">block diag</span>(asys,bsys)
+</dl>
+
+     <pre class="example">                   __________________
+                   |    ________    |
+          u1 -----&gt;|--&gt; | asys |---&gt;|----&gt; y1
+                   |    --------    |
+                   |    ________    |
+          u2 -----&gt;|--&gt; | bsys |---&gt;|----&gt; y2
+                   |    --------    |
+                   ------------------
+                        Ksys
+     </pre>
+        <p>The function also rearranges the internal state-space realization of <var>sys</var>
+so that the continuous states come first and the discrete states come last. 
+If there are duplicate names, the second name has a unique suffix appended
+on to the end of the name. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsysmult"></a>
+
+<div class="defun">
+&mdash; Function File: <var>sys</var> = <b>sysmult</b> (<var>Asys, Bsys</var>)<var><a name="index-sysmult-1232"></a></var><br>
+<blockquote><p>Compute sys = Asys*Bsys (series connection):
+     <pre class="example">          u   ----------     ----------
+          ---&gt;|  Bsys  |----&gt;|  Asys  |---&gt;
+              ----------     ----------
+     </pre>
+        <p>A warning occurs if there is direct feed-through from an input
+or a continuous state of <var>Bsys</var>, through a discrete output
+of <var>Bsys</var>, to a continuous state or output in <var>Asys</var>
+(system data structure does not recognize discrete inputs). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsysprune"></a>
+
+<div class="defun">
+&mdash; Function File: <var>retsys</var> = <b>sysprune</b> (<var>asys, out_idx, in_idx</var>)<var><a name="index-sysprune-1233"></a></var><br>
+<blockquote><p>Extract specified inputs/outputs from a system
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>asys</var><dd>system data structure
+<br><dt><var>out_idx</var><dt><var>in_idx</var><dd>Indices or signal names of the outputs and inputs to be kept in the returned
+system; remaining connections are &ldquo;pruned&rdquo; off. 
+May select as [] (empty matrix) to specify all outputs/inputs.
+
+          <pre class="example">               retsys = sysprune (Asys, [1:3,4], "u_1");
+               retsys = sysprune (Asys, {"tx", "ty", "tz"}, 4);
+          </pre>
+          </dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>retsys</var><dd>Resulting system. 
+</dl>
+
+     <pre class="example">                     ____________________
+          u1 -------&gt;|                  |----&gt; y1
+           (in_idx)  |       Asys       | (out_idx)
+          u2 -------&gt;|                  |----| y2
+            (deleted)-------------------- (deleted)
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dsysreorder"></a>
+
+<div class="defun">
+&mdash; Function File: <var>pv</var> = <b>sysreorder</b> (<var>vlen, list</var>)<var><a name="index-sysreorder-1234"></a></var><br>
+<blockquote>
+<p><strong>Inputs</strong>
+          <dl>
+<dt><var>vlen</var><dd>Vector length. 
+<br><dt><var>list</var><dd>A subset of <code>[1:vlen]</code>. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>pv</var><dd>A permutation vector to order elements of <code>[1:vlen]</code> in
+<code>list</code> to the end of a vector. 
+</dl>
+
+        <p>Used internally by <code>sysconnect</code> to permute vector elements to their
+desired locations. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsysscale"></a>
+
+<div class="defun">
+&mdash; Function File: <var>retsys</var> = <b>sysscale</b> (<var>sys, outscale, inscale, outname, inname</var>)<var><a name="index-sysscale-1235"></a></var><br>
+<blockquote><p>scale inputs/outputs of a system.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>Structured system. 
+<br><dt><var>outscale</var><dt><var>inscale</var><dd>Constant matrices of appropriate dimension. 
+<br><dt><var>outname</var><dt><var>inname</var><dd>Lists of strings with the names of respectively outputs and inputs. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>retsys</var><dd>resulting open loop system:
+          <pre class="example">                     -----------    -------    -----------
+               u ---&gt;| inscale |---&gt;| sys |---&gt;| outscale |---&gt; y
+                     -----------    -------    -----------
+          </pre>
+          </dl>
+        If the input names and output names (each a list of strings)
+are not given and the scaling matrices
+are not square, then default names will be given to the inputs and/or
+outputs.
+
+        <p>A warning message is printed if outscale attempts to add continuous
+system outputs to discrete system outputs; otherwise <var>yd</var> is
+set appropriately in the returned value of <var>sys</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsyssub"></a>
+
+<div class="defun">
+&mdash; Function File: <var>sys</var> = <b>syssub</b> (<var>Gsys, Hsys</var>)<var><a name="index-syssub-1236"></a></var><br>
+<blockquote><p>Return sys = Gsys - Hsys.
+
+        <p><strong>Method</strong>
+
+        <p><var>Gsys</var> and <var>Hsys</var> are connected in parallel. 
+The input vector is connected to both systems; the outputs are
+subtracted.  Returned system names are those of <var>Gsys</var>.
+     <pre class="example">                   +--------+
+              +---&gt;|  Gsys  |---+
+              |    +--------+   |
+              |                +|
+          u --+                (_)--&gt; y
+              |                -|
+              |    +--------+   |
+              +---&gt;|  Hsys  |---+
+                   +--------+
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dugain"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ugain</b> (<var>n</var>)<var><a name="index-ugain-1237"></a></var><br>
+<blockquote><p>Creates a system with unity gain, no states. 
+This trivial system is sometimes needed to create arbitrary
+complex systems from simple systems with <samp><span class="command">buildssic</span></samp>. 
+Watch out if you are forming sampled systems since <samp><span class="command">ugain</span></samp>
+does not contain a sampling period.
+        <pre class="sp">
+     
+     </pre>
+     See also: hinfdemo, jet707. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwgt1o"></a>
+
+<div class="defun">
+&mdash; Function File: <var>W</var> = <b>wgt1o</b> (<var>vl, vh, fc</var>)<var><a name="index-wgt1o-1238"></a></var><br>
+<blockquote><p>State space description of a first order weighting function.
+
+        <p>Weighting function are needed by the
+H-2/H-infinity
+design procedure. 
+These function are part of the augmented plant <var>P</var>
+(see <samp><span class="command">hinfdemo</span></samp> for an application example).
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>vl</var><dd>Gain at low frequencies. 
+<br><dt><var>vh</var><dd>Gain at high frequencies. 
+<br><dt><var>fc</var><dd>Corner frequency (in Hz, <strong>not</strong> in rad/sec)
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>W</var><dd>Weighting function, given in form of a system data structure. 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dparallel"></a>
+
+<div class="defun">
+&mdash; Function File: <var>ksys</var> = <b>parallel</b> (<var>asys, bsys</var>)<var><a name="index-parallel-1239"></a></var><br>
+<blockquote><p>Forms the parallel connection of two systems.
+
+     <pre class="example">                       --------------------
+                       |      --------    |
+              u  -----&gt;|----&gt; | asys |---&gt;|----&gt; y1
+                  |    |      --------    |
+                  |    |      --------    |
+                  |---&gt;|----&gt; | bsys |---&gt;|----&gt; y2
+                       |      --------    |
+                       --------------------
+                            ksys
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dsysmin"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>retsys</var>, <var>nc</var>, <var>no</var>] = <b>sysmin</b> (<var>sys, flg</var>)<var><a name="index-sysmin-1240"></a></var><br>
+<blockquote><p>Returns a minimal (or reduced order) system
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure
+<br><dt><var>flg</var><dd>When equal to 0 (default value), returns minimal system,
+in which state names are lost; when equal to 1, returns system
+with physical states removed that are either uncontrollable or
+unobservable (cannot reduce further without discarding physical
+meaning of states). 
+</dl>
+        <strong>Outputs</strong>
+          <dl>
+<dt><var>retsys</var><dd>Returned system. 
+<br><dt><var>nc</var><dd>Number of controllable states in the returned system. 
+<br><dt><var>no</var><dd>Number of observable states in the returned system. 
+<br><dt><var>cflg</var><dd><code>is_controllable(retsys)</code>. 
+<br><dt><var>oflg</var><dd><code>is_observable(retsys)</code>. 
+</dl>
+        </p></blockquote></div>
+
+   </body></html>
+

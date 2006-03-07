@@ -1,0 +1,246 @@
+<html lang="en">
+<head>
+<title>OctDifferences - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
+<link rel="prev" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
+<link rel="next" href="OctCreation.html#OctCreation" title="OctCreation">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="OctDifferences"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="OctCreation.html#OctCreation">OctCreation</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
+<hr>
+</div>
+
+<h4 class="subsection">22.5.1 The Differences between the Array and Sparse Classes</h4>
+
+<p>The number of elements in a sparse matrix is considered to be the number
+of non-zero elements rather than the product of the dimensions. Therefore
+
+<pre class="example">       SparseMatrix sm;
+       ...
+       int nel = sm.nelem ();
+</pre>
+   <p>returns the number of non-zero elements. If the user really requires the
+number of elements in the matrix, including the non-zero elements, they
+should use <code>numel</code> rather than <code>nelem</code>. Note that for very
+large matrices, where the product of the two dimensions is large that
+the representation of the an unsigned int, then <code>numel</code> can overflow. 
+An example is <code>speye(1e6)</code> which will create a matrix with a million
+rows and columns, but only a million non-zero elements. Therefore the
+number of rows by the number of columns in this case is more than two
+hundred times the maximum value that can be represented by an unsigned int. 
+The use of <code>numel</code> should therefore be avoided useless it is known
+it won't overflow.
+
+   <p>Extreme care must be take with the elem method and the "()" operator,
+which perform basically the same function. The reason is that if a
+sparse object is non-const, then Octave will assume that a
+request for a zero element in a sparse matrix is in fact a request
+to create this element so it can be filled. Therefore a piece of
+code like
+
+<pre class="example">       SparseMatrix sm;
+       ...
+       for (int j = 0; j &lt; nc; j++)
+         for (int i = 0; i &lt; nr; i++)
+           std::cerr &lt;&lt; " (" &lt;&lt; i &lt;&lt; "," &lt;&lt; j &lt;&lt; "): " &lt;&lt; sm(i,j)
+                     &lt;&lt; std::endl;
+</pre>
+   <p>is a great way of turning the sparse matrix into a dense one, and a
+very slow way at that since it reallocates the sparse object at each
+zero element in the matrix.
+
+   <p>An easy way of preventing the above from hapening is to create a temporary
+constant version of the sparse matrix. Note that only the container for
+the sparse matrix will be copied, while the actual representation of the
+data will be shared between the two versions of the sparse matrix. So this
+is not a costly operation. For example, the above would become
+
+<pre class="example">       SparseMatrix sm;
+       ...
+       const SparseMatrix tmp (sm);
+       for (int j = 0; j &lt; nc; j++)
+         for (int i = 0; i &lt; nr; i++)
+           std::cerr &lt;&lt; " (" &lt;&lt; i &lt;&lt; "," &lt;&lt; j &lt;&lt; "): " &lt;&lt; tmp(i,j)
+                     &lt;&lt; std::endl;
+</pre>
+   <p>Finally, as the sparse types aren't just represented as a contiguous
+block of memory, the <code>fortran_vec</code> method of the <code>Array&lt;T&gt;</code>
+is not available. It is however replaced by three seperate methods
+<code>ridx</code>, <code>cidx</code> and <code>data</code>, that access the raw compressed
+column format that the Octave sparse matrices are stored in. 
+Additionally, these methods can be used in a manner similar to <code>elem</code>,
+to allow the matrix to be accessed or filled. However, in that case it is
+up to the user to repect the sparse matrix compressed column format
+discussed previous.
+
+   </body></html>
+

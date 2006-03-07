@@ -1,0 +1,350 @@
+<html lang="en">
+<head>
+<title>Installation - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Trouble.html#Trouble" title="Trouble">
+<link rel="next" href="Emacs.html#Emacs" title="Emacs">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Installation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Emacs.html#Emacs">Emacs</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Trouble.html#Trouble">Trouble</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="appendix">Appendix D Installing Octave</h2>
+
+   <p><a name="index-installing-Octave-1582"></a>
+Here is the procedure for installing Octave from scratch on a Unix
+system.
+
+     <ul>
+<li>Run the shell script <samp><span class="file">configure</span></samp>.  This will determine the features
+your system has (or doesn't have) and create a file named
+<samp><span class="file">Makefile</span></samp> from each of the files named <samp><span class="file">Makefile.in</span></samp>.
+
+     <p>Here is a summary of the configure options that are most frequently used
+when building Octave:
+
+          <dl>
+<dt><code>--prefix=</code><var>prefix</var><dd>Install Octave in subdirectories below <var>prefix</var>.  The default value
+of <var>prefix</var> is <samp><span class="file">/usr/local</span></samp>.
+
+          <br><dt><code>--srcdir=</code><var>dir</var><dd>Look for Octave sources in the directory <var>dir</var>.
+
+          <br><dt><code>--with-f2c</code><dd>Use <code>f2c</code> even if a Fortran compiler is available.
+
+          <br><dt><code>--with-f77</code><dd>Use <code>f77</code> to compile Fortran code.  You may also specify the name
+of the compiler to use as an optional argument.  For example,
+<code>--with-f77=g77</code> sets the name of the Fortran compiler to
+<code>g77</code>.
+
+          <br><dt><code>--enable-shared</code><dd>Create shared libraries.  If you are planning to use
+<code>--enable-lite-kernel</code> or the dynamic loading features, you will
+probably want to use this option.  It will make your <samp><span class="file">.oct</span></samp> files
+much smaller and on some systems it may be necessary to build shared
+libraries in order to use dynamically linked functions.
+
+          <p>You may also want to build a shared version of <code>libstdc++</code>, if your
+system doesn't already have one.  Note that a patch is needed to build
+shared versions of version 2.7.2 of <code>libstdc++</code> on the HP-PA
+architecture.  You can find the patch at
+<a href="ftp://ftp.cygnus.com/pub/g++/libg++-2.7.2-hppa-gcc-fix">ftp://ftp.cygnus.com/pub/g++/libg++-2.7.2-hppa-gcc-fix</a>.
+
+          <br><dt><code>--enable-dl</code><dd>Use <code>dlopen</code> and friends to make Octave capable of dynamically
+linking externally compiled functions.  This only works on systems that
+actually have these functions.  If you plan on using this feature, you
+should probably also use <code>--enable-shared</code> to reduce the size of
+your <samp><span class="file">.oct</span></samp> files.
+
+          <br><dt><code>--enable-shl</code><dd>Use <code>shl_load</code> and friends to make Octave capable of dynamically
+linking externally compiled functions.  This only works on systems that
+actually have these functions (only HP-UX systems).  If you plan on
+using this feature, you should probably also use <code>--enable-shared</code>
+to reduce the size of your <samp><span class="file">.oct</span></samp> files.
+
+          <br><dt><code>--enable-lite-kernel</code><dd>Compile smaller kernel.  This currently requires the dynamic linking
+functions <code>dlopen</code> or <code>shl_load</code> and friends so that Octave
+can load functions at run time that are not loaded at compile time.
+
+          <br><dt><code>--without-blas</code><dd>Compile and use the generic BLAS and LAPACK versions included with
+Octave.  By default, configure first looks for BLAS and LAPACK matrix
+libraries on your system, including optimized BLAS implementations such
+as the free ATLAS 3.0, as well as vendor-tuned libraries.  (The use of
+an optimized BLAS will generally result in several-times faster matrix
+operations.)  Only use this option if your system has BLAS/LAPACK
+libraries that cause problems for some reason.  You can also use
+<code>--with-blas=lib</code> to specify a particular BLAS library
+<code>-llib</code> that configure doesn't check for automatically.
+
+          <br><dt><code>--help</code><dd>Print a summary of the options recognized by the configure script. 
+</dl>
+
+     <p>See the file <samp><span class="file">INSTALL</span></samp> for more information about the command line
+options used by configure.  That file also contains instructions for
+compiling in a directory other than where the source is located.
+
+     <li>Run make.
+
+     <p>You will need a recent version of GNU Make.  Modifying Octave's
+makefiles to work with other make programs is probably not worth
+your time.  We recommend you get and compile GNU Make instead.
+
+     <p>For plotting, you will need to have gnuplot installed on your system. 
+Gnuplot is a command-driven interactive function plotting program. 
+Gnuplot is copyrighted, but freely distributable.  The `gnu' in gnuplot
+is a coincidence&mdash;it is not related to the GNU project or the FSF in
+any but the most peripheral sense.
+
+     <p>To compile Octave, you will need a recent version of GNU Make.  You
+will also need <code>g++</code> 2.7.2 or later.  Version 2.8.0 or <code>egcs</code>
+1.0.x should work.  Later versions may work, but C++ is still evolving,
+so don't be too surprised if you run into some trouble.
+
+     <p>It is no longer necessary to have <code>libg++</code>, but you do need to have
+the GNU implementation of <code>libstdc++</code>.  If you are using <code>g++</code>
+2.7.2, <code>libstdc++</code> is distributed along with <code>libg++</code>, but for
+later versions, <code>libstdc++</code> is distributed separately.  For
+<code>egcs</code>, <code>libstdc++</code> is included with the compiler
+distribution.
+
+     <p>If you plan to modify the parser you will also need GNU <code>bison</code> and
+<code>flex</code>.  If you modify the documentation, you will need GNU
+Texinfo, along with the patch for the <code>makeinfo</code> program that is
+distributed with Octave.
+
+     <p>GNU Make, <code>gcc</code>, and <code>libstdc++</code>, <code>gnuplot</code>,
+<code>bison</code>, <code>flex</code>, and Texinfo are all available from many
+anonymous ftp archives.  The primary site is <a href="ftp.gnu.org">ftp.gnu.org</a>, but it
+is often very busy.  A list of sites that mirror the software on
+<a href="ftp.gnu.org">ftp.gnu.org</a> is available by anonymous ftp from
+<a href="ftp://ftp.gnu.org/pub/gnu/GNUinfo/FTP">ftp://ftp.gnu.org/pub/gnu/GNUinfo/FTP</a>.
+
+     <p>If you don't have a Fortran compiler, or if your Fortran compiler
+doesn't work like the traditional Unix f77, you will need to have the
+Fortran to C translator <code>f2c</code>.  You can get <code>f2c</code> from any
+number of anonymous ftp archives.  The most recent version of <code>f2c</code>
+is always available from <a href="netlib.att.com">netlib.att.com</a>.
+
+     <p>On an otherwise idle Pentium 133 running Linux, it will take somewhere
+between 1-1/2 to 3 hours to compile everything, depending on whether you
+are building shared libraries.  You will need about 100 megabytes of disk
+storage to work with (considerably less if you don't compile with debugging
+symbols).  To do that, use the command
+
+     <pre class="example">          make CFLAGS=-O CXXFLAGS=-O LDFLAGS=
+     </pre>
+     <p class="noindent">instead of just `<samp><span class="samp">make</span></samp>'.
+
+     <li>If you encounter errors while compiling Octave, first check the list of
+known problems below to see if there is a workaround or solution for
+your problem.  If not,
+see <a href="Trouble.html#Trouble">Trouble</a>,
+for information about how to report bugs.
+
+     <li>Once you have successfully compiled Octave, run `<samp><span class="samp">make install</span></samp>'.
+
+     <p>This will install a copy of octave, its libraries, and its documentation
+in the destination directory.  As distributed, Octave is installed in
+the following directories.  In the table below, <var>prefix</var> defaults to
+<samp><span class="file">/usr/local</span></samp>, <var>version</var> stands for the current version number
+of the interpreter, and <var>arch</var> is the type of computer on which
+Octave is installed (for example, `<samp><span class="samp">i586-unknown-gnu</span></samp>').
+
+          <dl>
+<dt><samp><var>prefix</var><span class="file">/bin</span></samp><dd>Octave and other binaries that people will want to run directly.
+
+          <br><dt><samp><var>prefix</var><span class="file">/lib</span></samp><dd>Libraries like libcruft.a and liboctave.a.
+
+          <br><dt><samp><var>prefix</var><span class="file">/share</span></samp><dd>Architecture-independent data files.
+
+          <br><dt><samp><var>prefix</var><span class="file">/include/octave</span></samp><dd>Include files distributed with Octave.
+
+          <br><dt><samp><var>prefix</var><span class="file">/man/man1</span></samp><dd>Unix-style man pages describing Octave.
+
+          <br><dt><samp><var>prefix</var><span class="file">/info</span></samp><dd>Info files describing Octave.
+
+          <br><dt><samp><var>prefix</var><span class="file">/share/octave/</span><var>version</var><span class="file">/m</span></samp><dd>Function files distributed with Octave.  This includes the Octave
+version, so that multiple versions of Octave may be installed at the
+same time.
+
+          <br><dt><samp><var>prefix</var><span class="file">/lib/octave/</span><var>version</var><span class="file">/exec/</span><var>arch</var></samp><dd>Executables to be run by Octave rather than the user.
+
+          <br><dt><samp><var>prefix</var><span class="file">/lib/octave/</span><var>version</var><span class="file">/oct/</span><var>arch</var></samp><dd>Object files that will be dynamically loaded.
+
+          <br><dt><samp><var>prefix</var><span class="file">/share/octave/</span><var>version</var><span class="file">/imagelib</span></samp><dd>Image files that are distributed with Octave. 
+</dl>
+     </ul>
+
+<ul class="menu">
+<li><a accesskey="1" href="Installation-Problems.html#Installation-Problems">Installation Problems</a>
+</ul>
+
+   </body></html>
+

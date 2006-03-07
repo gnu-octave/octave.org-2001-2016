@@ -1,0 +1,444 @@
+<html lang="en">
+<head>
+<title>String Conversions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Strings.html#Strings" title="Strings">
+<link rel="prev" href="Searching-and-Replacing.html#Searching-and-Replacing" title="Searching and Replacing">
+<link rel="next" href="Character-Class-Functions.html#Character-Class-Functions" title="Character Class Functions">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="String-Conversions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Character-Class-Functions.html#Character-Class-Functions">Character Class Functions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Searching-and-Replacing.html#Searching-and-Replacing">Searching and Replacing</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
+<hr>
+</div>
+
+<h3 class="section">5.3 String Conversions</h3>
+
+<p><a name="doc_002dbin2dec"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hex2dec</b> (<var>s</var>)<var><a name="index-hex2dec-204"></a></var><br>
+<blockquote><p>Return the decimal number corresponding to the binary number stored
+in the string <var>s</var>.  For example,
+
+     <pre class="example">          hex2dec ("1110")
+          =&gt; 14
+     </pre>
+        <p>If <var>s</var> is a string matrix, returns a column vector of converted
+numbers, one per row of <var>s</var>.  Invalid rows evaluate to NaN.
+        <pre class="sp">
+     
+     </pre>
+     See also: dec2hex, base2dec, dec2base, bin2dec, dec2bin. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddec2bin"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dec2bin</b> (<var>n, len</var>)<var><a name="index-dec2bin-205"></a></var><br>
+<blockquote><p>Return a binary number corresponding the nonnegative decimal number
+<var>n</var>, as a string of ones and zeros.  For example,
+
+     <pre class="example">          dec2bin (14)
+          =&gt; "1110"
+     </pre>
+        <p>If <var>n</var> is a vector, returns a string matrix, one row per value,
+padded with leading zeros to the width of the largest value.
+
+        <p>The optional second argument, <var>len</var>, specifies the minimum
+number of digits in the result.
+        <pre class="sp">
+     
+     </pre>
+     See also: bin2dec, dec2base, base2dec, hex2dec, dec2hex. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddec2hex"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dec2hex</b> (<var>n, len</var>)<var><a name="index-dec2hex-206"></a></var><br>
+<blockquote><p>Return the hexadecimal string corresponding to the nonnegative
+integer <var>n</var>.  For example,
+
+     <pre class="example">          dec2hex (2748)
+          =&gt; "ABC"
+     </pre>
+        <p>If <var>n</var> is a vector, returns a string matrix, one row per value,
+padded with leading zeros to the width of the largest value.
+
+        <p>The optional second argument, <var>len</var>, specifies the minimum
+number of digits in the result.
+        <pre class="sp">
+     
+     </pre>
+     See also: hex2dec, dec2base, base2dec, bin2dec, dec2bin. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhex2dec"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hex2dec</b> (<var>s</var>)<var><a name="index-hex2dec-207"></a></var><br>
+<blockquote><p>Returns the integer corresponding to the hexadecimal number stored
+in the string <var>s</var>.  For example,
+
+     <pre class="example">          hex2dec ("12B")
+          =&gt; 299
+          hex2dec ("12b")
+          =&gt; 299
+     </pre>
+        <p>If <var>s</var> is a string matrix, returns a column vector of converted
+numbers, one per row of <var>s</var>.  Invalid rows evaluate to NaN.
+        <pre class="sp">
+     
+     </pre>
+     See also: dec2hex, base2dec, dec2base, bin2dec, dec2bin. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddec2base"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dec2base</b> (<var>n, b, len</var>)<var><a name="index-dec2base-208"></a></var><br>
+<blockquote><p>Return a string of symbols in base <var>b</var> corresponding to the
+the nonnegative integer <var>n</var>.
+
+     <pre class="example">          dec2base (123, 3)
+          =&gt; "11120"
+     </pre>
+        <p>If <var>n</var> is a vector, return a string matrix with one row per value,
+padded with leading zeros to the width of the largest value.
+
+        <p>If <var>b</var> is a string then the characters of <var>b</var> are used as
+the symbols for the digits of <var>n</var>.  Space (' ') may not be used
+as a symbol.
+
+     <pre class="example">          dec2base (123, "aei")
+          =&gt; "eeeia"
+     </pre>
+        <p>The optional third argument, <var>len</var>, specifies the minimum
+number of digits in the result.
+        <pre class="sp">
+     
+     </pre>
+     See also: base2dec, dec2bin, bin2dec, hex2dec, dec2hex. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbase2dec"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>base2dec</b> (<var>s, b</var>)<var><a name="index-base2dec-209"></a></var><br>
+<blockquote><p>Convert <var>s</var> from a string of digits of base <var>b</var> into an
+integer.
+
+     <pre class="example">          base2dec ("11120", 3)
+          =&gt; 123
+     </pre>
+        <p>If <var>s</var> is a matrix, returns a column vector with one value per
+row of <var>s</var>.  If a row contains invalid symbols then the
+corresponding value will be NaN.  Rows are right-justified before
+converting so that trailing spaces are ignored.
+
+        <p>If <var>b</var> is a string, the characters of <var>b</var> are used as the
+symbols for the digits of <var>s</var>. Space (' ') may not be used as a
+symbol.
+
+     <pre class="example">          base2dec ("yyyzx", "xyz")
+          =&gt; 123
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: dec2base, dec2bin, bin2dec, hex2dec, dec2hex. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstrjust"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>strjust</b> (<var>s, </var>[<var>"left"|"right"|"center"</var>])<var><a name="index-strjust-210"></a></var><br>
+<blockquote><p>Shift the non-blank text of <var>s</var> to the left, right or center of
+the string.  If <var>s</var> is a string array, justify each string in the
+array.  Null characters are replaced by blanks.  If no justification
+is specified, then all rows are right-justified. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstr2num"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>str2num</b> (<var>s</var>)<var><a name="index-str2num-211"></a></var><br>
+<blockquote><p>Convert the string <var>s</var> to a number. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtoascii"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>toascii</b> (<var>s</var>)<var><a name="index-toascii-212"></a></var><br>
+<blockquote><p>Return ASCII representation of <var>s</var> in a matrix.  For example,
+
+     <pre class="example">          toascii ("ASCII")
+               =&gt; [ 65, 83, 67, 73, 73 ]
+          
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dtolower"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>tolower</b> (<var>s</var>)<var><a name="index-tolower-213"></a></var><br>
+<blockquote><p>Return a copy of the string <var>s</var>, with each upper-case character
+replaced by the corresponding lower-case one; nonalphabetic characters
+are left unchanged.  For example,
+
+     <pre class="example">          tolower ("MiXeD cAsE 123")
+               =&gt; "mixed case 123"
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dtoupper"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>toupper</b> (<var>s</var>)<var><a name="index-toupper-214"></a></var><br>
+<blockquote><p>Return a copy of the string <var>s</var>, with each  lower-case character
+replaced by the corresponding upper-case one; nonalphabetic characters
+are left unchanged.  For example,
+
+     <pre class="example">          toupper ("MiXeD cAsE 123")
+               =&gt; "MIXED CASE 123"
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002ddo_005fstring_005fescapes"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>do_string_escapes</b> (<var>string</var>)<var><a name="index-do_005fstring_005fescapes-215"></a></var><br>
+<blockquote><p>Convert special characters in <var>string</var> to their escaped forms. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dundo_005fstring_005fescapes"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>undo_string_escapes</b> (<var>s</var>)<var><a name="index-undo_005fstring_005fescapes-216"></a></var><br>
+<blockquote><p>Converts special characters in strings back to their escaped forms.  For
+example, the expression
+
+     <pre class="example">          bell = "\a";
+     </pre>
+        <p class="noindent">assigns the value of the alert character (control-g, ASCII code 7) to
+the string variable <code>bell</code>.  If this string is printed, the
+system will ring the terminal bell (if it is possible).  This is
+normally the desired outcome.  However, sometimes it is useful to be
+able to print the original representation of the string, with the
+special characters replaced by their escape sequences.  For example,
+
+     <pre class="example">          octave:13&gt; undo_string_escapes (bell)
+          ans = \a
+     </pre>
+        <p class="noindent">replaces the unprintable alert character with its printable
+representation. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwarn_005fnum_005fto_005fstr"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>warn_num_to_str</b><var><a name="index-warn_005fnum_005fto_005fstr-217"></a></var><br>
+<blockquote><p>If the value of <code>warn_num_to_str</code> is nonzero, a warning is
+printed for implicit conversions of numbers to their ASCII character
+equivalents when strings are constructed using a mixture of strings and
+numbers in matrix notation.  For example,
+
+     <pre class="example">          [ "f", 111, 111 ]
+               =&gt; "foo"
+     </pre>
+        <p>elicits a warning if <code>warn_num_to_str</code> is nonzero.  The default
+value is 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwarn_005fstr_005fto_005fnum"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>warn_str_to_num</b><var><a name="index-warn_005fstr_005fto_005fnum-218"></a></var><br>
+<blockquote><p>If the value of <code>warn_str_to_num</code> is nonzero, a warning is printed
+for implicit conversions of strings to their numeric ASCII equivalents. 
+For example,
+     <pre class="example">          "abc" + 0
+               =&gt; 97 98 99
+     </pre>
+        <p>elicits a warning if <code>warn_str_to_num</code> is nonzero.  The default
+value is 0. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwarn_005fsingle_005fquote_005fstring"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>warn_single_quote_string</b><var><a name="index-warn_005fsingle_005fquote_005fstring-219"></a></var><br>
+<blockquote><p>Print warning if a signle quote character is used to introduce a
+string constant. 
+</p></blockquote></div>
+
+   </body></html>
+

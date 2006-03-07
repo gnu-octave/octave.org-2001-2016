@@ -1,0 +1,378 @@
+<html lang="en">
+<head>
+<title>Terminal Output - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Basic-Input-and-Output.html#Basic-Input-and-Output" title="Basic Input and Output">
+<link rel="next" href="Terminal-Input.html#Terminal-Input" title="Terminal Input">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Terminal-Output"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Terminal-Input.html#Terminal-Input">Terminal Input</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Basic-Input-and-Output.html#Basic-Input-and-Output">Basic Input and Output</a>
+<hr>
+</div>
+
+<h4 class="subsection">16.1.1 Terminal Output</h4>
+
+<p>Since Octave normally prints the value of an expression as soon as it
+has been evaluated, the simplest of all I/O functions is a simple
+expression.  For example, the following expression will display the
+value of pi
+
+<pre class="example">     pi
+          -| pi = 3.1416
+</pre>
+   <p>This works well as long as it is acceptable to have the name of the
+variable (or `<samp><span class="samp">ans</span></samp>') printed along with the value.  To print the
+value of a variable without printing its name, use the function
+<code>disp</code>.
+
+   <p>The <code>format</code> command offers some control over the way Octave prints
+values with <code>disp</code> and through the normal echoing mechanism.
+
+   <p><a name="doc_002dans"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>ans</b><var><a name="index-ans-529"></a></var><br>
+<blockquote><p>This variable holds the most recently computed result that was not
+explicitly assigned to a variable.  For example, after the expression
+
+     <pre class="example">          3^2 + 4^2
+     </pre>
+        <p class="noindent">is evaluated, the value of <code>ans</code> is 25. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfdisp"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>fdisp</b> (<var>fid, x</var>)<var><a name="index-fdisp-530"></a></var><br>
+<blockquote><p>Display the value of <var>x</var> on the stream <var>fid</var>.  For example,
+
+     <pre class="example">          fdisp (stdout, "The value of pi is:"), fdisp (stdout, pi)
+          
+               -| the value of pi is:
+               -| 3.1416
+     </pre>
+        <p class="noindent">Note that the output from <code>fdisp</code> always ends with a newline.
+        <pre class="sp">
+     
+     </pre>
+     See also: disp. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddisp"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>disp</b> (<var>x</var>)<var><a name="index-disp-531"></a></var><br>
+<blockquote><p>Display the value of <var>x</var>.  For example,
+
+     <pre class="example">          disp ("The value of pi is:"), disp (pi)
+          
+               -| the value of pi is:
+               -| 3.1416
+     </pre>
+        <p class="noindent">Note that the output from <code>disp</code> always ends with a newline.
+
+        <p>If an output value is requested, <code>disp</code> prints nothing and
+returns the formatted output in a string.
+        <pre class="sp">
+     
+     </pre>
+     See also: fdisp. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dformat"></a>
+
+<div class="defun">
+&mdash; Command: <b>format</b><var> options<a name="index-format-532"></a></var><br>
+<blockquote><p>Control the format of the output produced by <code>disp</code> and Octave's
+normal echoing mechanism.  Valid options are listed in the following
+table.
+
+          <dl>
+<dt><code>short</code><dd>Octave will try to print numbers with at
+least 5 significant figures within a field that is a maximum of 10
+characters wide (not counting additional spacing that is added between
+columns of a matrix).
+
+          <p>If Octave is unable to format a matrix so that columns line up on the
+decimal point and all the numbers fit within the maximum field width,
+it switches to an `<samp><span class="samp">e</span></samp>' format.
+
+          <br><dt><code>long</code><dd>Octave will try to print numbers with at least 15 significant figures
+within a field that is a maximum of 20 characters wide (not counting
+additional spacing that is added between columns of a matrix).
+
+          <p>As will the `<samp><span class="samp">short</span></samp>' format, Octave will switch to an `<samp><span class="samp">e</span></samp>'
+format if it is unable to format a matrix so that columns line up on the
+decimal point and all the numbers fit within the maximum field width.
+
+          <br><dt><code>long e</code><dt><code>short e</code><dd>The same as `<samp><span class="samp">format long</span></samp>' or `<samp><span class="samp">format short</span></samp>' but always display
+output with an `<samp><span class="samp">e</span></samp>' format.  For example, with the `<samp><span class="samp">short e</span></samp>'
+format, <code>pi</code> is displayed as <code>3.14e+00</code>.
+
+          <br><dt><code>long E</code><dt><code>short E</code><dd>The same as `<samp><span class="samp">format long e</span></samp>' or `<samp><span class="samp">format short e</span></samp>' but always
+display output with an uppercase `<samp><span class="samp">E</span></samp>' format.  For example, with
+the `<samp><span class="samp">long E</span></samp>' format, <code>pi</code> is displayed as
+<code>3.14159265358979E+00</code>. 
+<br><dt><code>long g</code><dt><code>short g</code><dd>Choose between normal `<samp><span class="samp">long</span></samp>' (or `<samp><span class="samp">short</span></samp>') and and
+`<samp><span class="samp">long e</span></samp>' (or `<samp><span class="samp">short e</span></samp>') formats based on the magnitude
+of the number.  For example, with the `<samp><span class="samp">short g</span></samp>' format,
+<code>pi .^ [2; 4; 8; 16; 32]</code> is displayed as
+
+          <pre class="example">               ans =
+               
+                     3.1416
+                     9.8696
+                     97.409
+                     9488.5
+                 9.0032e+07
+                 8.1058e+15
+          </pre>
+          <br><dt><code>long G</code><dt><code>short G</code><dd>The same as `<samp><span class="samp">format long g</span></samp>' or `<samp><span class="samp">format short g</span></samp>' but use an
+uppercase `<samp><span class="samp">E</span></samp>' format.  For example, with the `<samp><span class="samp">short G</span></samp>' format,
+<code>pi .^ [2; 4; 8; 16; 32]</code> is displayed as
+
+          <pre class="example">               ans =
+               
+                     3.1416
+                     9.8696
+                     97.409
+                     9488.5
+                 9.0032E+07
+                 8.1058E+15
+          </pre>
+          <br><dt><code>free</code><dt><code>none</code><dd>Print output in free format, without trying to line up columns of
+matrices on the decimal point.  This also causes complex numbers to be
+formatted like this `<samp><span class="samp">(0.604194, 0.607088)</span></samp>' instead of like this
+`<samp><span class="samp">0.60419 + 0.60709i</span></samp>'.
+
+          <br><dt><code>bank</code><dd>Print in a fixed format with two places to the right of the decimal
+point.
+
+          <br><dt><code>+</code><dt><code>+ </code><var>chars</var><dt><code>plus</code><dt><code>plus </code><var>chars</var><dd>Print a `<samp><span class="samp">+</span></samp>' symbol for nonzero matrix elements and a space for zero
+matrix elements.  This format can be very useful for examining the
+structure of a large matrix.
+
+          <p>The optional argument <var>chars</var> specifies a list of 3 characters to use
+for printing values greater than zero, less than zero and equal to zero. 
+For example, with the `<samp><span class="samp">+ "+-."</span></samp>' format, <code>[1, 0, -1; -1, 0, 1]</code>
+is displayed as
+
+          <pre class="example">               ans =
+               
+               +.-
+               -.+
+          </pre>
+          <dt><code>native-hex</code><dd>Print the hexadecimal representation numbers as they are stored in
+memory.  For example, on a workstation which stores 8 byte real values
+in IEEE format with the least significant byte first, the value of
+<code>pi</code> when printed in <code>hex</code> format is <code>400921fb54442d18</code>. 
+This format only works for numeric values.
+
+          <br><dt><code>hex</code><dd>The same as <code>native-hex</code>, but always print the most significant
+byte first. 
+<br><dt><code>native-bit</code><dd>Print the bit representation of numbers as stored in memory. 
+For example, the value of <code>pi</code> is
+
+          <pre class="example">               01000000000010010010000111111011
+               01010100010001000010110100011000
+          </pre>
+          <p>(shown here in two 32 bit sections for typesetting purposes) when
+printed in bit format on a workstation which stores 8 byte real values
+in IEEE format with the least significant byte first.  This format only
+works for numeric types. 
+<br><dt><code>bit</code><dd>The same as <code>native-bit</code>, but always print the most significant
+bits first. 
+<br><dt><code>compact</code><dd>Remove extra blank space around column number labels. 
+<br><dt><code>loose</code><dd>Insert blank lines above and below column number labels (this is the
+default). 
+</dl>
+
+        <p>By default, Octave will try to print numbers with at least 5 significant
+figures within a field that is a maximum of 10 characters wide.
+
+        <p>If Octave is unable to format a matrix so that columns line up on the
+decimal point and all the numbers fit within the maximum field width,
+it switches to an `<samp><span class="samp">e</span></samp>' format.
+
+        <p>If <code>format</code> is invoked without any options, the default format
+state is restored. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dprint_005fanswer_005fid_005fname"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>print_answer_id_name</b><var><a name="index-print_005fanswer_005fid_005fname-533"></a></var><br>
+<blockquote><p>If the value of <code>print_answer_id_name</code> is nonzero, variable
+names are printed along with the result.  Otherwise, only the result
+values are printed.  The default value is 1. 
+</p></blockquote></div>
+
+   </body></html>
+

@@ -1,0 +1,302 @@
+<html lang="en">
+<head>
+<title>Bug Reporting - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Trouble.html#Trouble" title="Trouble">
+<link rel="prev" href="Bug-Lists.html#Bug-Lists" title="Bug Lists">
+<link rel="next" href="Sending-Patches.html#Sending-Patches" title="Sending Patches">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Bug-Reporting"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Sending-Patches.html#Sending-Patches">Sending Patches</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Bug-Lists.html#Bug-Lists">Bug Lists</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Trouble.html#Trouble">Trouble</a>
+<hr>
+</div>
+
+<h3 class="appendixsec">C.5 How to Report Bugs</h3>
+
+<p><a name="index-bugs_002c-reporting-1568"></a>
+Send bug reports for Octave to one of the addresses listed in
+<a href="Bug-Lists.html#Bug-Lists">Bug Lists</a>.
+
+   <p>The fundamental principle of reporting bugs usefully is this:
+<strong>report all the facts</strong>.  If you are not sure whether to state a
+fact or leave it out, state it!
+
+   <p>Often people omit facts because they think they know what causes the
+problem and they conclude that some details don't matter.  Thus, you might
+assume that the name of the variable you use in an example does not matter. 
+Well, probably it doesn't, but one cannot be sure.  Perhaps the bug is a
+stray memory reference which happens to fetch from the location where that
+name is stored in memory; perhaps, if the name were different, the contents
+of that location would fool the interpreter into doing the right thing
+despite the bug.  Play it safe and give a specific, complete example.
+
+   <p>Keep in mind that the purpose of a bug report is to enable someone to
+fix the bug if it is not known. Always write your bug reports on
+the assumption that the bug is not known.
+
+   <p>Sometimes people give a few sketchy facts and ask, &ldquo;Does this ring a
+bell?&rdquo;  This cannot help us fix a bug.  It is better to send a complete
+bug report to begin with.
+
+   <p>Try to make your bug report self-contained.  If we have to ask you for
+more information, it is best if you include all the previous information
+in your response, as well as the information that was missing.
+
+   <p>To enable someone to investigate the bug, you should include all these
+things:
+
+     <ul>
+<li>The version of Octave.  You can get this by noting the version number
+that is printed when Octave starts, or running it with the `<samp><span class="samp">-v</span></samp>'
+option.
+
+     <li>A complete input file that will reproduce the bug.
+
+     <p>A single statement may not be enough of an example&mdash;the bug might
+depend on other details that are missing from the single statement where
+the error finally occurs.
+
+     <li>The command arguments you gave Octave to execute that example
+and observe the bug.  To guarantee you won't omit something important,
+list all the options.
+
+     <p>If we were to try to guess the arguments, we would probably guess wrong
+and then we would not encounter the bug.
+
+     <li>The type of machine you are using, and the operating system name and
+version number.
+
+     <li>The command-line arguments you gave to the <code>configure</code> command when
+you installed the interpreter.
+
+     <li>A complete list of any modifications you have made to the interpreter
+source.
+
+     <p>Be precise about these changes&mdash;show a context diff for them.
+
+     <li>Details of any other deviations from the standard procedure for installing
+Octave.
+
+     <p><a name="index-incorrect-output-1569"></a><a name="index-incorrect-results-1570"></a><a name="index-results_002c-incorrect-1571"></a><a name="index-answers_002c-incorrect-1572"></a><a name="index-erroneous-results-1573"></a><a name="index-wrong-answers-1574"></a><li>A description of what behavior you observe that you believe is
+incorrect.  For example, "The interpreter gets a fatal signal," or, "The
+output produced at line 208 is incorrect."
+
+     <p>Of course, if the bug is that the interpreter gets a fatal signal, then
+one can't miss it.  But if the bug is incorrect output, we might not
+notice unless it is glaringly wrong.
+
+     <p>Even if the problem you experience is a fatal signal, you should still
+say so explicitly.  Suppose something strange is going on, such as, your
+copy of the interpreter is out of synch, or you have encountered a bug
+in the C library on your system.  Your copy might crash and the copy
+here would not.  If you said to expect a crash, then when the
+interpreter here fails to crash, we would know that the bug was not
+happening.  If you don't say to expect a crash, then we would not know
+whether the bug was happening.  We would not be able to draw any
+conclusion from our observations.
+
+     <p>Often the observed symptom is incorrect output when your program is run. 
+Unfortunately, this is not enough information unless the program is
+short and simple.  It is very helpful if you can include an explanation
+of the expected output, and why the actual output is incorrect.
+
+     <li>If you wish to suggest changes to the Octave source, send them as
+context diffs.  If you even discuss something in the Octave source,
+refer to it by context, not by line number, because the line numbers in
+the development sources probably won't match those in your sources. 
+</ul>
+
+   <p>Here are some things that are not necessary:
+
+     
+<a name="index-bugs_002c-investigating-1575"></a>
+<ul><li>A description of the envelope of the bug.
+
+     <p>Often people who encounter a bug spend a lot of time investigating which
+changes to the input file will make the bug go away and which changes
+will not affect it.  Such information is usually not necessary to enable
+us to fix bugs in Octave, but if you can find a simpler example to
+report <em>instead</em> of the original one, that is a convenience. 
+Errors in the output will be easier to spot, running under the debugger
+will take less time, etc. Most Octave bugs involve just one function, so
+the most straightforward way to simplify an example is to delete all the
+function definitions except the one in which the bug occurs.
+
+     <p>However, simplification is not vital; if you don't want to do
+this, report the bug anyway and send the entire test case you
+used.
+
+     <li>A patch for the bug.  Patches can be helpful, but if you find a bug, you
+should report it, even if you cannot send a fix for the problem. 
+</ul>
+
+   </body></html>
+

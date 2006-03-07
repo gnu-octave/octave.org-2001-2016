@@ -1,0 +1,584 @@
+<html lang="en">
+<head>
+<title>sysprop - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Control-Theory.html#Control-Theory" title="Control Theory">
+<link rel="prev" href="numerical.html#numerical" title="numerical">
+<link rel="next" href="systime.html#systime" title="systime">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="sysprop"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="systime.html#systime">systime</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="numerical.html#numerical">numerical</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Control Theory</a>
+<hr>
+</div>
+
+<h3 class="section">30.6 System Analysis-Properties</h3>
+
+<p><a name="doc_002danaldemo"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>analdemo</b> ()<var><a name="index-analdemo-1258"></a></var><br>
+<blockquote><p>Octave Controls toolbox demo: State Space analysis demo
+</p></blockquote></div>
+
+   <p><a name="doc_002dabcddim"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>n</var>, <var>m</var>, <var>p</var>] = <b>abcddim</b> (<var>a, b, c, d</var>)<var><a name="index-abcddim-1259"></a></var><br>
+<blockquote><p>Check for compatibility of the dimensions of the matrices defining
+the linear system
+[A, B, C, D] corresponding to
+
+     <pre class="example">          dx/dt = a x + b u
+          y = c x + d u
+     </pre>
+        <p>or a similar discrete-time system.
+
+        <p>If the matrices are compatibly dimensioned, then <code>abcddim</code> returns
+
+          <dl>
+<dt><var>n</var><dd>The number of system states.
+
+          <br><dt><var>m</var><dd>The number of system inputs.
+
+          <br><dt><var>p</var><dd>The number of system outputs. 
+</dl>
+
+        <p>Otherwise <code>abcddim</code> returns <var>n</var> = <var>m</var> = <var>p</var> = &minus;1.
+
+        <p>Note: n = 0 (pure gain block) is returned without warning.
+        <pre class="sp">
+     
+     </pre>
+     See also: is_abcd. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dctrb"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ctrb</b> (<var>sys, b</var>)<var><a name="index-ctrb-1260"></a></var><br>
+&mdash; Function File:  <b>ctrb</b> (<var>a, b</var>)<var><a name="index-ctrb-1261"></a></var><br>
+<blockquote><p>Build controllability matrix:
+     <pre class="example">                       2       n-1
+          Qs = [ B AB A B ... A   B ]
+     </pre>
+        <p>of a system data structure or the pair (<var>a</var>, <var>b</var>).
+
+        <p><samp><span class="command">ctrb</span></samp> forms the controllability matrix. 
+The numerical properties of <samp><span class="command">is_controllable</span></samp>
+are much better for controllability tests. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dh2norm"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>h2norm</b> (<var>sys</var>)<var><a name="index-h2norm-1262"></a></var><br>
+<blockquote><p>Computes the
+H-2
+norm of a system data structure (continuous time only).
+
+        <p>Reference:
+Doyle, Glover, Khargonekar, Francis, <cite>State-Space Solutions to Standard</cite>
+<cite>H-2 and H-infinity</cite>
+<cite>Control Problems</cite>, <acronym>IEEE</acronym> <acronym>TAC</acronym> August 1989. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhinfnorm"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>g</var>, <var>gmin</var>, <var>gmax</var>] = <b>hinfnorm</b> (<var>sys, tol, gmin, gmax, ptol</var>)<var><a name="index-hinfnorm-1263"></a></var><br>
+<blockquote><p>Computes the
+H-infinity
+norm of a system data structure.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>system data structure
+<br><dt><var>tol</var><dd>H-infinity
+norm search tolerance (default: 0.001)
+<br><dt><var>gmin</var><dd>minimum value for norm search (default: 1e-9)
+<br><dt><var>gmax</var><dd>maximum value for norm search (default: 1e+9)
+<br><dt><var>ptol</var><dd>pole tolerance:
+               <ul>
+<li>if sys is continuous, poles with
+ |real(pole))| &lt; ptol*||H|| 
+(<var>H</var> is appropriate Hamiltonian)
+are considered to be on the imaginary axis.
+
+               <li>if sys is discrete, poles with
+|abs(pole)-1| &lt; ptol*||[s1,s2]||
+(appropriate symplectic pencil)
+are considered to be on the unit circle.
+
+               <li>Default value: 1e-9
+</ul>
+          </dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>g</var><dd>Computed gain, within <var>tol</var> of actual gain.  <var>g</var> is returned as Inf
+if the system is unstable. 
+<br><dt><var>gmin</var><dt><var>gmax</var><dd>Actual system gain lies in the interval [<var>gmin</var>, <var>gmax</var>]. 
+</dl>
+
+        <p>References:
+Doyle, Glover, Khargonekar, Francis, <cite>State-space solutions to standard</cite>
+<cite>H-2 and H-infinity</cite>
+<cite>control problems</cite>, <acronym>IEEE</acronym> <acronym>TAC</acronym> August 1989;
+Iglesias and Glover, <cite>State-Space approach to discrete-time</cite>
+<cite>H-infinity</cite>
+<cite>control</cite>, Int. J. Control, vol 54, no. 5, 1991;
+Zhou, Doyle, Glover, <cite>Robust and Optimal Control</cite>, Prentice-Hall, 1996. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dobsv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>obsv</b> (<var>sys, c</var>)<var><a name="index-obsv-1264"></a></var><br>
+&mdash; Function File:  <b>obsv</b> (<var>a, c</var>)<var><a name="index-obsv-1265"></a></var><br>
+<blockquote><p>Build observability matrix:
+     <pre class="example">               | C        |
+               | CA       |
+          Qb = | CA^2     |
+               | ...      |
+               | CA^(n-1) |
+     </pre>
+        <p>of a system data structure or the pair (<var>a</var>, <var>c</var>).
+
+        <p>The numerical properties of <samp><span class="command">is_observable</span></samp>
+are much better for observability tests. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpzmap"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>zer</var>, <var>pol</var>] = <b>pzmap</b> (<var>sys</var>)<var><a name="index-pzmap-1266"></a></var><br>
+<blockquote><p>Plots the zeros and poles of a system in the complex plane.
+
+        <p><strong>Input</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>pol</var><br><dt><var>zer</var><dd>if omitted, the poles and zeros are plotted on the screen. 
+otherwise, <var>pol</var> and <var>zer</var> are returned as the
+system poles and zeros (see <samp><span class="command">sys2zp</span></samp> for a preferable function call). 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dis_005fabcd"></a>
+
+<div class="defun">
+&mdash; Function File: <var>retval</var> = <b>is_abcd</b> (<var>a, b, c, d</var>)<var><a name="index-is_005fabcd-1267"></a></var><br>
+<blockquote><p> Returns <var>retval</var> = 1 if the dimensions of <var>a</var>, <var>b</var>,
+<var>c</var>, <var>d</var> are compatible, otherwise <var>retval</var> = 0 with an
+ appropriate diagnostic message printed to the screen.  The matrices
+<var>b</var>, <var>c</var>, or <var>d</var> may be omitted.
+        <pre class="sp">
+     
+     </pre>
+     See also: abcddim. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fcontrollable"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>retval</var>, <var>u</var>] = <b>is_controllable</b> (<var>sys, tol</var>)<var><a name="index-is_005fcontrollable-1268"></a></var><br>
+&mdash; Function File: [<var>retval</var>, <var>u</var>] = <b>is_controllable</b> (<var>a, b, tol</var>)<var><a name="index-is_005fcontrollable-1269"></a></var><br>
+<blockquote><p>Logical check for system controllability.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>system data structure
+<br><dt><var>a</var><dt><var>b</var><dd><var>n</var> by <var>n</var>, <var>n</var> by <var>m</var> matrices, respectively
+<br><dt><var>tol</var><dd>optional roundoff parameter.  Default value: <code>10*eps</code>
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>retval</var><dd>Logical flag; returns true (1) if the system <var>sys</var> or the
+pair (<var>a</var>, <var>b</var>) is controllable, whichever was passed as input
+arguments. 
+<br><dt><var>u</var><dd><var>u</var> is an orthogonal basis of the controllable subspace. 
+</dl>
+
+        <p><strong>Method</strong>
+Controllability is determined by applying Arnoldi iteration with
+complete re-orthogonalization to obtain an orthogonal basis of the
+Krylov subspace
+     <pre class="example">          span ([b,a*b,...,a^{n-1}*b]).
+     </pre>
+        <p>The Arnoldi iteration is executed with <code>krylov</code> if the system
+has a single input; otherwise a block Arnoldi iteration is performed
+with <code>krylovb</code>.
+        <pre class="sp">
+     
+     </pre>
+     See also: size, rows, columns, length, ismatrix, isscalar, isvector
+is_observable, is_stabilizable, is_detectable, krylov, krylovb. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fdetectable"></a>
+
+<div class="defun">
+&mdash; Function File: <var>retval</var> = <b>is_detectable</b> (<var>a, c, tol, dflg</var>)<var><a name="index-is_005fdetectable-1270"></a></var><br>
+&mdash; Function File: <var>retval</var> = <b>is_detectable</b> (<var>sys, tol</var>)<var><a name="index-is_005fdetectable-1271"></a></var><br>
+<blockquote><p>Test for detactability (observability of unstable modes) of (<var>a</var>, <var>c</var>).
+
+        <p>Returns 1 if the system <var>a</var> or the pair (<var>a</var>, <var>c</var>) is
+detectable, 0 if not, and -1 if the system has unobservable modes at the
+imaginary axis (unit circle for discrete-time systems).
+
+        <p><strong>See</strong> <samp><span class="command">is_stabilizable</span></samp> for detailed description of
+arguments and computational method.
+        <pre class="sp">
+     
+     </pre>
+     See also: is_stabilizable, size, rows, columns, length, ismatrix,
+isscalar, isvector. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fdgkf"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>retval</var>, <var>dgkf_struct</var> ] = <b>is_dgkf</b> (<var>asys, nu, ny, tol </var>)<var><a name="index-is_005fdgkf-1272"></a></var><br>
+<blockquote><p>Determine whether a continuous time state space system meets
+assumptions of <acronym>DGKF</acronym> algorithm. 
+Partitions system into:
+     <pre class="example">          [dx/dt]   [A  | Bw  Bu  ][w]
+          [ z   ] = [Cz | Dzw Dzu ][u]
+          [ y   ]   [Cy | Dyw Dyu ]
+     </pre>
+        <p>or similar discrete-time system. 
+If necessary, orthogonal transformations <var>qw</var>, <var>qz</var> and nonsingular
+transformations <var>ru</var>, <var>ry</var> are applied to respective vectors
+<var>w</var>, <var>z</var>, <var>u</var>, <var>y</var> in order to satisfy <acronym>DGKF</acronym> assumptions. 
+Loop shifting is used if <var>dyu</var> block is nonzero.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>asys</var><dd>system data structure
+<br><dt><var>nu</var><dd>number of controlled inputs
+<br><dt><var>ny</var><dd>number of measured outputs
+<br><dt><var>tol</var><dd>threshold for 0; default: 200*<code>eps</code>. 
+</dl>
+        <strong>Outputs</strong>
+          <dl>
+<dt><var>retval</var><dd>true(1) if system passes check, false(0) otherwise
+<br><dt><var>dgkf_struct</var><dd>data structure of <samp><span class="command">is_dgkf</span></samp> results.  Entries:
+               <dl>
+<dt><var>nw</var><dt><var>nz</var><dd>dimensions of <var>w</var>, <var>z</var>
+<br><dt><var>a</var><dd>system A matrix
+<br><dt><var>bw</var><dd>(<var>n</var> x <var>nw</var>) <var>qw</var>-transformed disturbance input matrix
+<br><dt><var>bu</var><dd>(<var>n</var> x <var>nu</var>) <var>ru</var>-transformed controlled input matrix;
+
+               <p>B = [Bw Bu]
+<br><dt><var>cz</var><dd>(<var>nz</var> x <var>n</var>) Qz-transformed error output matrix
+<br><dt><var>cy</var><dd>(<var>ny</var> x <var>n</var>) <var>ry</var>-transformed measured output matrix
+
+               <p>C = [Cz; Cy]
+<br><dt><var>dzu</var><br><dt><var>dyw</var><dd>off-diagonal blocks of transformed system D matrix that enter
+<var>z</var>, <var>y</var> from <var>u</var>, <var>w</var> respectively
+<br><dt><var>ru</var><dd>controlled input transformation matrix
+<br><dt><var>ry</var><dd>observed output transformation matrix
+<br><dt><var>dyu_nz</var><dd>nonzero if the <var>dyu</var> block is nonzero. 
+<br><dt><var>dyu</var><dd>untransformed <var>dyu</var> block
+<br><dt><var>dflg</var><dd>nonzero if the system is discrete-time
+</dl>
+          </dl>
+        <code>is_dgkf</code> exits with an error if the system is mixed
+discrete/continuous.
+
+        <p><strong>References</strong>
+          <dl>
+<dt><strong>[1]</strong><dd>Doyle, Glover, Khargonekar, Francis, <cite>State Space Solutions to Standard</cite>
+<cite>H-2 and H-infinity</cite>
+<cite>Control Problems</cite>, <acronym>IEEE</acronym> <acronym>TAC</acronym> August 1989. 
+<br><dt><strong>[2]</strong><dd>Maciejowksi, J.M., <cite>Multivariable Feedback Design</cite>, Addison-Wesley, 1989. 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dis_005fdigital"></a>
+
+<div class="defun">
+&mdash; Function File: <var>digital</var> = <b>is_digital</b> (<var>sys, eflg</var>)<var><a name="index-is_005fdigital-1273"></a></var><br>
+<blockquote><p>Return nonzero if system is digital.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure. 
+<br><dt><var>eflg</var><dd>When equal to 0 (default value), exits with an error if the system
+is mixed (continuous and discrete components); when equal to 1, print
+a warning if the system is mixed (continuous and discrete); when equal
+to 2, operate silently. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>digital</var><dd>When equal to 0, the system is purely continuous; when equal to 1, the
+system is purely discrete; when equal to -1, the system is mixed continuous
+and discrete. 
+</dl>
+        Exits with an error if <var>sys</var> is a mixed (continuous and discrete) system. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fobservable"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>retval</var>, <var>u</var>] = <b>is_observable</b> (<var>a, c, tol</var>)<var><a name="index-is_005fobservable-1274"></a></var><br>
+&mdash; Function File: [<var>retval</var>, <var>u</var>] = <b>is_observable</b> (<var>sys, tol</var>)<var><a name="index-is_005fobservable-1275"></a></var><br>
+<blockquote><p>Logical check for system observability.
+
+        <p>Default: tol = <code>tol = 10*norm(a,'fro')*eps</code>
+
+        <p>Returns 1 if the system <var>sys</var> or the pair (<var>a</var>, <var>c</var>) is
+observable, 0 if not.
+
+        <p>See <samp><span class="command">is_controllable</span></samp> for detailed description of arguments
+and default values.
+        <pre class="sp">
+     
+     </pre>
+     See also: size, rows, columns, length, ismatrix, isscalar, isvector. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fsample"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>is_sample</b> (<var>ts</var>)<var><a name="index-is_005fsample-1276"></a></var><br>
+<blockquote><p>Return true if <var>ts</var> is a valid sampling time
+(real, scalar, &gt; 0). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fsiso"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>is_siso</b> (<var>sys</var>)<var><a name="index-is_005fsiso-1277"></a></var><br>
+<blockquote><p>Returns nonzero if the system data structure
+<var>sys</var> is single-input, single-output. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fstabilizable"></a>
+
+<div class="defun">
+&mdash; Function File: <var>retval</var> = <b>is_stabilizable</b> (<var>sys, tol</var>)<var><a name="index-is_005fstabilizable-1278"></a></var><br>
+&mdash; Function File: <var>retval</var> = <b>is_stabilizable</b> (<var>a, b, tol, dflg</var>)<var><a name="index-is_005fstabilizable-1279"></a></var><br>
+<blockquote><p>Logical check for system stabilizability (i.e., all unstable modes are controllable). 
+Returns 1 if the system is stabilizable, 0 if the the system is not stabilizable, -1
+if the system has non stabilizable modes at the imaginary axis (unit circle for
+discrete-time systems.
+
+        <p>Test for stabilizability is performed via Hautus Lemma. If
+<var>dflg</var>!=0
+assume that discrete-time matrices (a,b) are supplied.
+        <pre class="sp">
+     
+     </pre>
+     See also: size, rows, columns, length, ismatrix, isscalar, isvector
+is_observable, is_stabilizable, is_detectable. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fsignal_005flist"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>is_signal_list</b> (<var>mylist</var>)<var><a name="index-is_005fsignal_005flist-1280"></a></var><br>
+<blockquote><p>Return true if <var>mylist</var> is a list of individual strings. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dis_005fstable"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>is_stable</b> (<var>a, tol, dflg</var>)<var><a name="index-is_005fstable-1281"></a></var><br>
+&mdash; Function File:  <b>is_stable</b> (<var>sys, tol</var>)<var><a name="index-is_005fstable-1282"></a></var><br>
+<blockquote><p>Returns 1 if the matrix <var>a</var> or the system <var>sys</var>
+is stable, or 0 if not.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>tol</var><dd>is a roundoff parameter, set to 200*<code>eps</code> if omitted. 
+<br><dt><var>dflg</var><dd>Digital system flag (not required for system data structure):
+               <dl>
+<dt><var>dflg</var><code> != 0</code><dd>stable if eig(a) is in the unit circle
+
+               <br><dt><var>dflg</var><code> == 0</code><dd>stable if eig(a) is in the open LHP (default)
+</dl>
+          </dl>
+
+        <pre class="sp">
+     
+     </pre>
+     See also: size, rows, columns, length, ismatrix, isscalar, isvector
+is_observable, is_stabilizable, is_detectable, krylov, krylovb. 
+</p></blockquote></div>
+
+   </body></html>
+

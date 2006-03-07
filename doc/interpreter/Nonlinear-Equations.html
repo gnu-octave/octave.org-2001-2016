@@ -1,0 +1,270 @@
+<html lang="en">
+<head>
+<title>Nonlinear Equations - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Linear-Algebra.html#Linear-Algebra" title="Linear Algebra">
+<link rel="next" href="Sparse-Matrices.html#Sparse-Matrices" title="Sparse Matrices">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Nonlinear-Equations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Sparse-Matrices.html#Sparse-Matrices">Sparse Matrices</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">21 Nonlinear Equations</h2>
+
+<p><a name="index-nonlinear-equations-864"></a><a name="index-equations_002c-nonlinear-865"></a>
+Octave can solve sets of nonlinear equations of the form
+
+<pre class="example">     F (x) = 0
+</pre>
+   <p class="noindent">using the function <code>fsolve</code>, which is based on the <span class="sc">Minpack</span>
+subroutine <code>hybrd</code>.
+
+   <p><a name="doc_002dfsolve"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>x</var>, <var>info</var>, <var>msg</var>] = <b>fsolve</b> (<var>fcn, x0</var>)<var><a name="index-fsolve-866"></a></var><br>
+<blockquote><p>Given <var>fcn</var>, the name of a function of the form <code>f (</code><var>x</var><code>)</code>
+and an initial starting point <var>x0</var>, <code>fsolve</code> solves the set of
+equations such that <code>f(</code><var>x</var><code>) == 0</code>.
+
+        <p>If <var>fcn</var> is a two-element string array, the first element names
+the function f described above, and the second element names
+a function of the form <code>j (</code><var>x</var><code>)</code> to compute the Jacobian
+matrix with elements
+
+     <pre class="example">                     df_i
+          jac(i,j) = ----
+                     dx_j
+     </pre>
+        <p>You can use the function <code>fsolve_options</code> to set optional
+parameters for <code>fsolve</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfsolve_005foptions"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>fsolve_options</b> (<var>opt, val</var>)<var><a name="index-fsolve_005foptions-867"></a></var><br>
+<blockquote><p>When called with two arguments, this function allows you set options
+parameters for the function <code>fsolve</code>.  Given one argument,
+<code>fsolve_options</code> returns the value of the corresponding option.  If
+no arguments are supplied, the names of all the available options and
+their current values are displayed.
+
+        <p>Options include
+
+          <dl>
+<dt><code>"tolerance"</code><dd>Nonnegative relative tolerance. 
+</dl>
+        </p></blockquote></div>
+
+   <p>Here is a complete example.  To solve the set of equations
+
+<pre class="example">     -2x^2 + 3xy   + 4 sin(y) = 6
+      3x^2 - 2xy^2 + 3 cos(x) = -4
+</pre>
+   <p class="noindent">you first need to write a function to compute the value of the given
+function.  For example:
+
+<pre class="example">     function y = f (x)
+       y(1) = -2*x(1)^2 + 3*x(1)*x(2)   + 4*sin(x(2)) - 6;
+       y(2) =  3*x(1)^2 - 2*x(1)*x(2)^2 + 3*cos(x(1)) + 4;
+     endfunction
+</pre>
+   <p>Then, call <code>fsolve</code> with a specified initial condition to find the
+roots of the system of equations.  For example, given the function
+<code>f</code> defined above,
+
+<pre class="example">     [x, info] = fsolve ("f", [1; 2])
+</pre>
+   <p class="noindent">results in the solution
+
+<pre class="example">     x =
+     
+       0.57983
+       2.54621
+     
+     info = 1
+</pre>
+   <p>A value of <code>info = 1</code> indicates that the solution has converged.
+
+   <p>The function <code>perror</code> may be used to print English messages
+corresponding to the numeric error codes.  For example,
+
+<pre class="example">     perror ("fsolve", 1)
+          -| solution converged to requested tolerance
+</pre>
+   <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 2004, 2005 David Bateman -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

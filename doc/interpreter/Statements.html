@@ -1,0 +1,222 @@
+<html lang="en">
+<head>
+<title>Statements - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Evaluation.html#Evaluation" title="Evaluation">
+<link rel="next" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Statements"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Evaluation.html#Evaluation">Evaluation</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">12 Statements</h2>
+
+<p><a name="index-statements-431"></a>
+Statements may be a simple constant expression or a complicated list of
+nested loops and conditional statements.
+
+   <p><dfn>Control statements</dfn> such as <code>if</code>, <code>while</code>, and so on
+control the flow of execution in Octave programs.  All the control
+statements start with special keywords such as <code>if</code> and
+<code>while</code>, to distinguish them from simple expressions. 
+Many control statements contain other statements; for example, the
+<code>if</code> statement contains another statement which may or may not be
+executed.
+
+   <p><a name="index-g_t_0040code_007bend_007d-statement-432"></a>Each control statement has a corresponding <dfn>end</dfn> statement that
+marks the end of the end of the control statement.  For example, the
+keyword <code>endif</code> marks the end of an <code>if</code> statement, and
+<code>endwhile</code> marks the end of a <code>while</code> statement.  You can use
+the keyword <code>end</code> anywhere a more specific end keyword is expected,
+but using the more specific keywords is preferred because if you use
+them, Octave is able to provide better diagnostics for mismatched or
+missing end tokens.
+
+   <p>The list of statements contained between keywords like <code>if</code> or
+<code>while</code> and the corresponding end statement is called the
+<dfn>body</dfn> of a control statement.
+
+<ul class="menu">
+<li><a accesskey="1" href="The-if-Statement.html#The-if-Statement">The if Statement</a>
+<li><a accesskey="2" href="The-switch-Statement.html#The-switch-Statement">The switch Statement</a>
+<li><a accesskey="3" href="The-while-Statement.html#The-while-Statement">The while Statement</a>
+<li><a accesskey="4" href="The-do_002duntil-Statement.html#The-do_002duntil-Statement">The do-until Statement</a>
+<li><a accesskey="5" href="The-for-Statement.html#The-for-Statement">The for Statement</a>
+<li><a accesskey="6" href="The-break-Statement.html#The-break-Statement">The break Statement</a>
+<li><a accesskey="7" href="The-continue-Statement.html#The-continue-Statement">The continue Statement</a>
+<li><a accesskey="8" href="The-unwind_005fprotect-Statement.html#The-unwind_005fprotect-Statement">The unwind_protect Statement</a>
+<li><a accesskey="9" href="The-try-Statement.html#The-try-Statement">The try Statement</a>
+<li><a href="Continuation-Lines.html#Continuation-Lines">Continuation Lines</a>
+</ul>
+
+   </body></html>
+

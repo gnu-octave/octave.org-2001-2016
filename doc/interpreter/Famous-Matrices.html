@@ -1,0 +1,319 @@
+<html lang="en">
+<head>
+<title>Famous Matrices - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Matrix-Manipulation.html#Matrix-Manipulation" title="Matrix Manipulation">
+<link rel="prev" href="Special-Utility-Matrices.html#Special-Utility-Matrices" title="Special Utility Matrices">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Famous-Matrices"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Special-Utility-Matrices.html#Special-Utility-Matrices">Special Utility Matrices</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Matrix-Manipulation.html#Matrix-Manipulation">Matrix Manipulation</a>
+<hr>
+</div>
+
+<h3 class="section">18.4 Famous Matrices</h3>
+
+<p>The following functions return famous matrix forms.
+
+   <p><a name="doc_002dhankel"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hankel</b> (<var>c, r</var>)<var><a name="index-hankel-714"></a></var><br>
+<blockquote><p>Return the Hankel matrix constructed given the first column <var>c</var>, and
+(optionally) the last row <var>r</var>.  If the last element of <var>c</var> is
+not the same as the first element of <var>r</var>, the last element of
+<var>c</var> is used.  If the second argument is omitted, it is assumed to
+be a vector of zeros with the same size as <var>c</var>.
+
+        <p>A Hankel matrix formed from an m-vector <var>c</var>, and an n-vector
+<var>r</var>, has the elements
+
+     <pre class="example">          H(i,j) = c(i+j-1),  i+j-1 &lt;= m;
+          H(i,j) = r(i+j-m),  otherwise
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: vander, sylvester_matrix, hilb, invhilb, toeplitz. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhilb"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hilb</b> (<var>n</var>)<var><a name="index-hilb-715"></a></var><br>
+<blockquote><p>Return the Hilbert matrix of order <var>n</var>.  The
+i, j
+element of a Hilbert matrix is defined as
+
+     <pre class="example">          H (i, j) = 1 / (i + j - 1)
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: hankel, vander, sylvester_matrix, invhilb, toeplitz. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dinvhilb"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>invhilb</b> (<var>n</var>)<var><a name="index-invhilb-716"></a></var><br>
+<blockquote><p>Return the inverse of a Hilbert matrix of order <var>n</var>.  This can be
+computed exactly using
+     <pre class="example">          
+                      (i+j)         /n+i-1\  /n+j-1\   /i+j-2\ 2
+           A(i,j) = -1      (i+j-1)(       )(       ) (       )
+                                    \ n-j /  \ n-i /   \ i-2 /
+          
+                  = p(i) p(j) / (i+j-1)
+          
+     </pre>
+        <p>where
+     <pre class="example">                       k  /k+n-1\   /n\
+              p(k) = -1  (       ) (   )
+                          \ k-1 /   \k/
+     </pre>
+        <p>The validity of this formula can easily be checked by expanding
+the binomial coefficients in both formulas as factorials.  It can
+be derived more directly via the theory of Cauchy matrices:
+see J. W. Demmel, Applied Numerical Linear Algebra, page 92.
+
+        <p>Compare this with the numerical calculation of <code>inverse (hilb (n))</code>,
+which suffers from the ill-conditioning of the Hilbert matrix, and the
+finite precision of your computer's floating point arithmetic.
+        <pre class="sp">
+     
+     </pre>
+     See also: hankel, vander, sylvester_matrix, hilb, toeplitz. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsylvester_005fmatrix"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>sylvester_matrix</b> (<var>k</var>)<var><a name="index-sylvester_005fmatrix-717"></a></var><br>
+<blockquote><p>Return the Sylvester matrix of order
+n = 2^k.
+        <pre class="sp">
+     
+     </pre>
+     See also: hankel, vander, hilb, invhilb, toeplitz. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtoeplitz"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>toeplitz</b> (<var>c, r</var>)<var><a name="index-toeplitz-718"></a></var><br>
+<blockquote><p>Return the Toeplitz matrix constructed given the first column <var>c</var>,
+and (optionally) the first row <var>r</var>.  If the first element of <var>c</var>
+is not the same as the first element of <var>r</var>, the first element of
+<var>c</var> is used.  If the second argument is omitted, the first row is
+taken to be the same as the first column.
+
+        <p>A square Toeplitz matrix has the form:
+
+     <pre class="example">          c(0)  r(1)   r(2)  ...  r(n)
+          c(1)  c(0)   r(1)  ... r(n-1)
+          c(2)  c(1)   c(0)  ... r(n-2)
+           .     ,      ,   .      .
+           .     ,      ,     .    .
+           .     ,      ,       .  .
+          c(n) c(n-1) c(n-2) ...  c(0)
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: hankel, vander, sylvester_matrix, hilb, invhib. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dvander"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>vander</b> (<var>c</var>)<var><a name="index-vander-719"></a></var><br>
+<blockquote><p>Return the Vandermonde matrix whose next to last column is <var>c</var>.
+
+        <p>A Vandermonde matrix has the form:
+
+     <pre class="example">          c(1)^(n-1) ... c(1)^2  c(1)  1
+          c(2)^(n-1) ... c(2)^2  c(2)  1
+              .     .      .      .    .
+              .       .    .      .    .
+              .         .  .      .    .
+          c(n)^(n-1) ... c(n)^2  c(n)  1
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: hankel, sylvester_matrix, hilb, invhilb, toeplitz. 
+</p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

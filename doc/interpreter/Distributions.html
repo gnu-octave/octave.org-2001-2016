@@ -1,0 +1,1125 @@
+<html lang="en">
+<head>
+<title>Distributions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Statistics.html#Statistics" title="Statistics">
+<link rel="prev" href="Models.html#Models" title="Models">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Distributions"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Models.html#Models">Models</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
+<hr>
+</div>
+
+<h3 class="section">26.4 Distributions</h3>
+
+<p><a name="doc_002dbetacdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>betacdf</b> (<var>x, a, b</var>)<var><a name="index-betacdf-1055"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, returns the CDF at <var>x</var> of the beta
+distribution with parameters <var>a</var> and <var>b</var>, i.e.,
+PROB (beta (<var>a</var>, <var>b</var>) &lt;= <var>x</var>). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbetainv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>betainv</b> (<var>x, a, b</var>)<var><a name="index-betainv-1056"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the Beta distribution with parameters <var>a</var>
+and <var>b</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbetapdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>betapdf</b> (<var>x, a, b</var>)<var><a name="index-betapdf-1057"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, returns the PDF at <var>x</var> of the beta
+distribution with parameters <var>a</var> and <var>b</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbetarnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>betarnd</b> (<var>a, b, r, c</var>)<var><a name="index-betarnd-1058"></a></var><br>
+&mdash; Function File:  <b>betarnd</b> (<var>a, b, sz</var>)<var><a name="index-betarnd-1059"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> or <code>size (</code><var>sz</var><code>)</code> matrix of
+random samples from the Beta distribution with parameters <var>a</var> and
+<var>b</var>.  Both <var>a</var> and <var>b</var> must be scalar or of size <var>r</var>
+ by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>a</var> and <var>b</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbinocdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>binocdf</b> (<var>x, n, p</var>)<var><a name="index-binocdf-1060"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the CDF at <var>x</var> of the
+binomial distribution with parameters <var>n</var> and <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbinoinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>binoinv</b> (<var>x, n, p</var>)<var><a name="index-binoinv-1061"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
+binomial distribution with parameters <var>n</var> and <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbinopdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>binopdf</b> (<var>x, n, p</var>)<var><a name="index-binopdf-1062"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the binomial distribution with parameters <var>n</var>
+and <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbinornd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>binornd</b> (<var>n, p, r, c</var>)<var><a name="index-binornd-1063"></a></var><br>
+&mdash; Function File:  <b>binornd</b> (<var>n, p, sz</var>)<var><a name="index-binornd-1064"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var>  or a <code>size (</code><var>sz</var><code>)</code> matrix of
+random samples from the binomial distribution with parameters <var>n</var>
+and <var>p</var>.  Both <var>n</var> and <var>p</var> must be scalar or of size
+<var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>n</var> and <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcauchy_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cauchy_cdf</b> (<var>x, lambda, sigma</var>)<var><a name="index-cauchy_005fcdf-1065"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the Cauchy distribution with location
+parameter <var>lambda</var> and scale parameter <var>sigma</var>.  Default
+values are <var>lambda</var> = 0, <var>sigma</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcauchy_005finv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cauchy_inv</b> (<var>x, lambda, sigma</var>)<var><a name="index-cauchy_005finv-1066"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the Cauchy distribution with location parameter
+<var>lambda</var> and scale parameter <var>sigma</var>.  Default values are
+<var>lambda</var> = 0, <var>sigma</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcauchy_005fpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cauchy_pdf</b> (<var>x, lambda, sigma</var>)<var><a name="index-cauchy_005fpdf-1067"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the Cauchy distribution with location parameter
+<var>lambda</var> and scale parameter <var>sigma</var> &gt; 0.  Default values are
+<var>lambda</var> = 0, <var>sigma</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcauchy_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cauchy_rnd</b> (<var>lambda, sigma, r, c</var>)<var><a name="index-cauchy_005frnd-1068"></a></var><br>
+&mdash; Function File:  <b>cauchy_rnd</b> (<var>lambda, sigma, sz</var>)<var><a name="index-cauchy_005frnd-1069"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> or a <code>size (</code><var>sz</var><code>)</code> matrix of
+random samples from the Cauchy distribution with parameters <var>lambda</var>
+and <var>sigma</var> which must both be scalar or of size <var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>lambda</var> and <var>sigma</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dchi2cdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>chi2cdf</b> (<var>x, n</var>)<var><a name="index-chi2cdf-1070"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the chisquare distribution with <var>n</var>
+degrees of freedom. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dchi2inv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>chi2inv</b> (<var>x, n</var>)<var><a name="index-chi2inv-1071"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the chisquare distribution with <var>n</var> degrees of
+freedom. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dchi2pdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>chisquare_pdf</b> (<var>x, n</var>)<var><a name="index-chisquare_005fpdf-1072"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the chisquare distribution with <var>n</var> degrees
+of freedom. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dchi2rnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>chi2rnd</b> (<var>n, r, c</var>)<var><a name="index-chi2rnd-1073"></a></var><br>
+&mdash; Function File:  <b>chi2rnd</b> (<var>n, sz</var>)<var><a name="index-chi2rnd-1074"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var>  or a <code>size (</code><var>sz</var><code>)</code> matrix of
+random samples from the chisquare distribution with <var>n</var> degrees
+of freedom.  <var>n</var> must be a scalar or of size <var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the size of <var>n</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddiscrete_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>discrete_cdf</b> (<var>x, v, p</var>)<var><a name="index-discrete_005fcdf-1075"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of a univariate discrete distribution which
+assumes the values in <var>v</var> with probabilities <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddiscrete_005finv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>discrete_inv</b> (<var>x, v, p</var>)<var><a name="index-discrete_005finv-1076"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the univariate distribution which assumes the
+values in <var>v</var> with probabilities <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddiscrete_005fpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>discrete_pdf</b> (<var>x, v, p</var>)<var><a name="index-discrete_005fpdf-1077"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(pDF) at <var>x</var> of a univariate discrete distribution which assumes
+the values in <var>v</var> with probabilities <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddiscrete_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>discrete_rnd</b> (<var>n, v, p</var>)<var><a name="index-discrete_005frnd-1078"></a></var><br>
+&mdash; Function File:  <b>discrete_rnd</b> (<var>v, p, r, c</var>)<var><a name="index-discrete_005frnd-1079"></a></var><br>
+&mdash; Function File:  <b>discrete_rnd</b> (<var>v, p, sz</var>)<var><a name="index-discrete_005frnd-1080"></a></var><br>
+<blockquote><p>Generate a row vector containing a random sample of size <var>n</var> from
+the univariate distribution which assumes the values in <var>v</var> with
+probabilities <var>p</var>. <var>n</var> must be a scalar.
+
+        <p>If <var>r</var> and <var>c</var> are given create a matrix with <var>r</var> rows and
+<var>c</var> columns. Or if <var>sz</var> is a vector, create a matrix of size
+<var>sz</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dempirical_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>empirical_cdf</b> (<var>x, data</var>)<var><a name="index-empirical_005fcdf-1081"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the empirical distribution obtained from
+the univariate sample <var>data</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dempirical_005finv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>empirical_inv</b> (<var>x, data</var>)<var><a name="index-empirical_005finv-1082"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the empirical distribution obtained from the
+univariate sample <var>data</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dempirical_005fpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>empirical_pdf</b> (<var>x, data</var>)<var><a name="index-empirical_005fpdf-1083"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the empirical distribution obtained from the
+univariate sample <var>data</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dempirical_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>empirical_rnd</b> (<var>n, data</var>)<var><a name="index-empirical_005frnd-1084"></a></var><br>
+&mdash; Function File:  <b>empirical_rnd</b> (<var>data, r, c</var>)<var><a name="index-empirical_005frnd-1085"></a></var><br>
+&mdash; Function File:  <b>empirical_rnd</b> (<var>data, sz</var>)<var><a name="index-empirical_005frnd-1086"></a></var><br>
+<blockquote><p>Generate a bootstrap sample of size <var>n</var> from the empirical
+distribution obtained from the univariate sample <var>data</var>.
+
+        <p>If <var>r</var> and <var>c</var> are given create a matrix with <var>r</var> rows and
+<var>c</var> columns. Or if <var>sz</var> is a vector, create a matrix of size
+<var>sz</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dexpcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>expcdf</b> (<var>x, lambda</var>)<var><a name="index-expcdf-1087"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the exponential distribution with
+parameter <var>lambda</var>.
+
+        <p>The arguments can be of common size or scalar. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dexpinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>expinv</b> (<var>x, lambda</var>)<var><a name="index-expinv-1088"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the exponential distribution with parameter
+<var>lambda</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dexppdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>exppdf</b> (<var>x, lambda</var>)<var><a name="index-exppdf-1089"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) of the exponential distribution with parameter <var>lambda</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dexprnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>exprnd</b> (<var>lambda, r, c</var>)<var><a name="index-exprnd-1090"></a></var><br>
+&mdash; Function File:  <b>exprnd</b> (<var>lambda, sz</var>)<var><a name="index-exprnd-1091"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random samples from the
+exponential distribution with parameter <var>lambda</var>, which must be a
+scalar or of size <var>r</var> by <var>c</var>. Or if <var>sz</var> is a vector,
+create a matrix of size <var>sz</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the size of <var>lambda</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>fcdf</b> (<var>x, m, n</var>)<var><a name="index-fcdf-1092"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the CDF at <var>x</var> of the F
+distribution with <var>m</var> and <var>n</var> degrees of freedom, i.e.,
+PROB (F (<var>m</var>, <var>n</var>) &lt;= <var>x</var>). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>finv</b> (<var>x, m, n</var>)<var><a name="index-finv-1093"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the F distribution with parameters <var>m</var> and
+<var>n</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>fpdf</b> (<var>x, m, n</var>)<var><a name="index-fpdf-1094"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the F distribution with <var>m</var> and <var>n</var>
+degrees of freedom. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>frnd</b> (<var>m, n, r, c</var>)<var><a name="index-frnd-1095"></a></var><br>
+&mdash; Function File:  <b>frnd</b> (<var>m, n, sz</var>)<var><a name="index-frnd-1096"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random samples from the F
+distribution with <var>m</var> and <var>n</var> degrees of freedom.  Both
+<var>m</var> and <var>n</var> must be scalar or of size <var>r</var> by <var>c</var>. 
+If <var>sz</var> is a vector the random samples are in a matrix of
+size <var>sz</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>m</var> and <var>n</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgamcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gamcdf</b> (<var>x, a, b</var>)<var><a name="index-gamcdf-1097"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the Gamma distribution with parameters
+<var>a</var> and <var>b</var>.
+        <pre class="sp">
+     
+     </pre>
+     See also: gamma, gammaln, gammainc, gampdf, gaminv, gamrnd. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgaminv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gaminv</b> (<var>x, a, b</var>)<var><a name="index-gaminv-1098"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the Gamma distribution with parameters <var>a</var>
+and <var>b</var>.
+        <pre class="sp">
+     
+     </pre>
+     See also: gamma, gammaln, gammainc, gampdf, gamcdf, gamrnd. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgampdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gampdf</b> (<var>x, a, b</var>)<var><a name="index-gampdf-1099"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, return the probability density function
+(PDF) at <var>x</var> of the Gamma distribution with parameters <var>a</var>
+and <var>b</var>.
+        <pre class="sp">
+     
+     </pre>
+     See also: gamma, gammaln, gammainc, gamcdf, gaminv, gamrnd. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgamrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gamrnd</b> (<var>a, b, r, c</var>)<var><a name="index-gamrnd-1100"></a></var><br>
+&mdash; Function File:  <b>gamrnd</b> (<var>a, b, sz</var>)<var><a name="index-gamrnd-1101"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> or a <code>size (</code><var>sz</var><code>)</code> matrix of
+random samples from the Gamma distribution with parameters <var>a</var>
+and <var>b</var>.  Both <var>a</var> and <var>b</var> must be scalar or of size
+<var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>a</var> and <var>b</var>.
+        <pre class="sp">
+     
+     </pre>
+     See also: gamma, gammaln, gammainc, gampdf, gamcdf, gaminv. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgeocdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>geocdf</b> (<var>x, p</var>)<var><a name="index-geocdf-1102"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the CDF at <var>x</var> of the
+geometric distribution with parameter <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgeoinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>geoinv</b> (<var>x, p</var>)<var><a name="index-geoinv-1103"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
+geometric distribution with parameter <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgeopdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>geopdf</b> (<var>x, p</var>)<var><a name="index-geopdf-1104"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the geometric distribution with parameter <var>p</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgeornd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>geornd</b> (<var>p, r, c</var>)<var><a name="index-geornd-1105"></a></var><br>
+&mdash; Function File:  <b>geornd</b> (<var>p, sz</var>)<var><a name="index-geornd-1106"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random samples from the
+geometric distribution with parameter <var>p</var>, which must be a scalar
+or of size <var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are given create a matrix with <var>r</var> rows and
+<var>c</var> columns. Or if <var>sz</var> is a vector, create a matrix of size
+<var>sz</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhygecdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hygecdf</b> (<var>x, m, t, n</var>)<var><a name="index-hygecdf-1107"></a></var><br>
+<blockquote><p>Compute the cumulative distribution function (CDF) at <var>x</var> of the
+hypergeometric distribution with parameters <var>m</var>, <var>t</var>, and
+<var>n</var>.  This is the probability of obtaining not more than <var>x</var>
+marked items when randomly drawing a sample of size <var>n</var> without
+replacement from a population of total size <var>t</var> containing
+<var>m</var> marked items.
+
+        <p>The parameters <var>m</var>, <var>t</var>, and <var>n</var> must positive integers
+with <var>m</var> and <var>n</var> not greater than <var>t</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhygeinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hygeinv</b> (<var>x, m, t, n</var>)<var><a name="index-hygeinv-1108"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
+hypergeometric distribution with parameters <var>m</var>, <var>t</var>, and
+<var>n</var>.
+
+        <p>The parameters <var>m</var>, <var>t</var>, and <var>n</var> must positive integers
+with <var>m</var> and <var>n</var> not greater than <var>t</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhygepdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hygepdf</b> (<var>x, m, t, n</var>)<var><a name="index-hygepdf-1109"></a></var><br>
+<blockquote><p>Compute the probability density function (PDF) at <var>x</var> of the
+hypergeometric distribution with parameters <var>m</var>, <var>t</var>, and
+<var>n</var>. This is the probability of obtaining <var>x</var> marked items
+when randomly drawing a sample of size <var>n</var> without replacement
+from a population of total size <var>t</var> containing <var>m</var> marked items.
+
+        <p>The arguments must be of common size or scalar. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhygernd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hygernd</b> (<var>n_size, m, t, n</var>)<var><a name="index-hygernd-1110"></a></var><br>
+&mdash; Function File:  <b>hygernd</b> (<var>m, t, n, r, c</var>)<var><a name="index-hygernd-1111"></a></var><br>
+&mdash; Function File:  <b>hygernd</b> (<var>m, t, n, sz</var>)<var><a name="index-hygernd-1112"></a></var><br>
+<blockquote><p>Generate a row vector containing a random sample of size <var>n_size</var>
+from the hypergeometric distribution with parameters <var>m</var>, <var>t</var>,
+and <var>n</var>.
+
+        <p>If  <var>r</var> and <var>c</var> are given create a matrix with <var>r</var> rows and
+<var>c</var> columns. Or if <var>sz</var> is a vector, create a matrix of size
+<var>sz</var>.
+
+        <p>The parameters <var>m</var>, <var>t</var>, and <var>n</var> must positive integers
+with <var>m</var> and <var>n</var> not greater than <var>t</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dkolmogorov_005fsmirnov_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>kolmogorov_smirnov_cdf</b> (<var>x, tol</var>)<var><a name="index-kolmogorov_005fsmirnov_005fcdf-1113"></a></var><br>
+<blockquote><p>Return the CDF at <var>x</var> of the Kolmogorov-Smirnov distribution,
+     <pre class="example">                   Inf
+          Q(x) =   SUM    (-1)^k exp(-2 k^2 x^2)
+                 k = -Inf
+     </pre>
+        <p class="noindent">for <var>x</var> &gt; 0.
+
+        <p>The optional parameter <var>tol</var> specifies the precision up to which
+the series should be evaluated;  the default is <var>tol</var> = <code>eps</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlaplace_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>laplace_cdf</b> (<var>x</var>)<var><a name="index-laplace_005fcdf-1114"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the Laplace distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlaplace_005finv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>laplace_inv</b> (<var>x</var>)<var><a name="index-laplace_005finv-1115"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the Laplace distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlaplace_005fpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>laplace_pdf</b> (<var>x</var>)<var><a name="index-laplace_005fpdf-1116"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the Laplace distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlaplace_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>laplace_rnd</b> (<var>r, c</var>)<var><a name="index-laplace_005frnd-1117"></a></var><br>
+&mdash; Function File:  <b>laplace_rnd</b> (<var>sz</var>)<var>;<a name="index-laplace_005frnd-1118"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random numbers from the
+Laplace distribution.  Or if <var>sz</var> is a vector, create a matrix of
+<var>sz</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlogistic_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>logistic_cdf</b> (<var>x</var>)<var><a name="index-logistic_005fcdf-1119"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the CDF at <var>x</var> of the
+logistic distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlogistic_005finv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>logistic_inv</b> (<var>x</var>)<var><a name="index-logistic_005finv-1120"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the logistic distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlogistic_005fpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>logistic_pdf</b> (<var>x</var>)<var><a name="index-logistic_005fpdf-1121"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the PDF at <var>x</var> of the
+logistic distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlogistic_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>logistic_rnd</b> (<var>r, c</var>)<var><a name="index-logistic_005frnd-1122"></a></var><br>
+&mdash; Function File:  <b>logistic_rnd</b> (<var>sz</var>)<var><a name="index-logistic_005frnd-1123"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random numbers from the
+logistic distribution. Or if <var>sz</var> is a vector, create a matrix of
+<var>sz</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlogncdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>logncdf</b> (<var>x, a, v</var>)<var><a name="index-logncdf-1124"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the lognormal distribution with
+parameters <var>a</var> and <var>v</var>.  If a random variable follows this
+distribution, its logarithm is normally distributed with mean
+<code>log (</code><var>a</var><code>)</code> and variance <var>v</var>.
+
+        <p>Default values are <var>a</var> = 1, <var>v</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlogninv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>logninv</b> (<var>x, a, v</var>)<var><a name="index-logninv-1125"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the lognormal distribution with parameters <var>a</var>
+and <var>v</var>.  If a random variable follows this distribution, its
+logarithm is normally distributed with mean <code>log (</code><var>a</var><code>)</code> and
+variance <var>v</var>.
+
+        <p>Default values are <var>a</var> = 1, <var>v</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlognpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>lognpdf</b> (<var>x, a, v</var>)<var><a name="index-lognpdf-1126"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the lognormal distribution with parameters
+<var>a</var> and <var>v</var>.  If a random variable follows this distribution,
+its logarithm is normally distributed with mean <code>log (</code><var>a</var><code>)</code>
+and variance <var>v</var>.
+
+        <p>Default values are <var>a</var> = 1, <var>v</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlognrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>lognrnd</b> (<var>a, v, r, c</var>)<var><a name="index-lognrnd-1127"></a></var><br>
+&mdash; Function File:  <b>lognrnd</b> (<var>a, v, sz</var>)<var><a name="index-lognrnd-1128"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random samples from the
+lognormal distribution with parameters <var>a</var> and <var>v</var>. Both
+<var>a</var> and <var>v</var> must be scalar or of size <var>r</var> by <var>c</var>. 
+Or if <var>sz</var> is a vector, create a matrix of size <var>sz</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>a</var> and <var>v</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnormcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>normcdf</b> (<var>x, m, v</var>)<var><a name="index-normcdf-1129"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the normal distribution with mean
+<var>m</var> and variance <var>v</var>.
+
+        <p>Default values are <var>m</var> = 0, <var>v</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnorminv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>norminv</b> (<var>x, m, v</var>)<var><a name="index-norminv-1130"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the normal distribution with mean <var>m</var> and
+variance <var>v</var>.
+
+        <p>Default values are <var>m</var> = 0, <var>v</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnormpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>normpdf</b> (<var>x, m, v</var>)<var><a name="index-normpdf-1131"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the normal distribution with mean <var>m</var> and
+variance <var>v</var>.
+
+        <p>Default values are <var>m</var> = 0, <var>v</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnormrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>normrnd</b> (<var>m, v, r, c</var>)<var><a name="index-normrnd-1132"></a></var><br>
+&mdash; Function File:  <b>normrnd</b> (<var>m, v, sz</var>)<var><a name="index-normrnd-1133"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var>  or <code>size (</code><var>sz</var><code>)</code> matrix of
+random samples from the normal distribution with parameters <var>m</var>
+and <var>v</var>.  Both <var>m</var> and <var>v</var> must be scalar or of size
+<var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>m</var> and <var>v</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpascal_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>pascal_cdf</b> (<var>x, n, p</var>)<var><a name="index-pascal_005fcdf-1134"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the CDF at x of the Pascal
+(negative binomial) distribution with parameters <var>n</var> and <var>p</var>.
+
+        <p>The number of failures in a Bernoulli experiment with success
+probability <var>p</var> before the <var>n</var>-th success follows this
+distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpascal_005finv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>pascal_inv</b> (<var>x, n, p</var>)<var><a name="index-pascal_005finv-1135"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
+Pascal (negative binomial) distribution with parameters <var>n</var> and
+<var>p</var>.
+
+        <p>The number of failures in a Bernoulli experiment with success
+probability <var>p</var> before the <var>n</var>-th success follows this
+distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpascal_005fpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>pascal_pdf</b> (<var>x, n, p</var>)<var><a name="index-pascal_005fpdf-1136"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the Pascal (negative binomial) distribution with
+parameters <var>n</var> and <var>p</var>.
+
+        <p>The number of failures in a Bernoulli experiment with success
+probability <var>p</var> before the <var>n</var>-th success follows this
+distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpascal_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>pascal_rnd</b> (<var>n, p, r, c</var>)<var><a name="index-pascal_005frnd-1137"></a></var><br>
+&mdash; Function File:  <b>pascal_rnd</b> (<var>n, p, sz</var>)<var><a name="index-pascal_005frnd-1138"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random samples from the Pascal
+(negative binomial) distribution with parameters <var>n</var> and <var>p</var>. 
+Both <var>n</var> and <var>p</var> must be scalar or of size <var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>n</var> and <var>p</var>. Or if <var>sz</var> is a vector,
+create a matrix of size <var>sz</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpoisscdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>poisscdf</b> (<var>x, lambda</var>)<var><a name="index-poisscdf-1139"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the Poisson distribution with parameter
+lambda. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpoissinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>poissinv</b> (<var>x, lambda</var>)<var><a name="index-poissinv-1140"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the Poisson distribution with parameter
+<var>lambda</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpoisspdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>poisspdf</b> (<var>x, lambda</var>)<var><a name="index-poisspdf-1141"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the poisson distribution with parameter <var>lambda</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpoissrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>poissrnd</b> (<var>lambda, r, c</var>)<var><a name="index-poissrnd-1142"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random samples from the
+Poisson distribution with parameter <var>lambda</var>, which must be a
+scalar or of size <var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the size of <var>lambda</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstdnormal_005fcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>stdnormal_cdf</b> (<var>x</var>)<var><a name="index-stdnormal_005fcdf-1143"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the CDF of the standard normal
+distribution at <var>x</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstdnormal_005finv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>stdnormal_inv</b> (<var>x</var>)<var><a name="index-stdnormal_005finv-1144"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute compute the quantile (the
+inverse of the CDF) at <var>x</var> of the standard normal distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstdnormal_005fpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>stdnormal_pdf</b> (<var>x</var>)<var><a name="index-stdnormal_005fpdf-1145"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) of the standard normal distribution at <var>x</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstdnormal_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>stdnormal_rnd</b> (<var>r, c</var>)<var><a name="index-stdnormal_005frnd-1146"></a></var><br>
+&mdash; Function File:  <b>stdnormal_rnd</b> (<var>sz</var>)<var><a name="index-stdnormal_005frnd-1147"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> or <code>size (</code><var>sz</var><code>)</code> matrix of
+random numbers from the standard normal distribution. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>tcdf</b> (<var>x, n</var>)<var><a name="index-tcdf-1148"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the CDF at <var>x</var> of the
+t (Student) distribution with <var>n</var> degrees of freedom, i.e.,
+PROB (t(<var>n</var>) &lt;= <var>x</var>). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>tinv</b> (<var>x, n</var>)<var><a name="index-tinv-1149"></a></var><br>
+<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the t (Student) distribution with parameter
+<var>n</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>tpdf</b> (<var>x, n</var>)<var><a name="index-tpdf-1150"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function
+(PDF) at <var>x</var> of the <var>t</var> (Student) distribution with <var>n</var>
+degrees of freedom. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>trnd</b> (<var>n, r, c</var>)<var><a name="index-trnd-1151"></a></var><br>
+&mdash; Function File:  <b>trnd</b> (<var>n, sz</var>)<var><a name="index-trnd-1152"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> matrix of random samples from the t
+(Student) distribution with <var>n</var> degrees of freedom.  <var>n</var> must
+be a scalar or of size <var>r</var> by <var>c</var>. Or if <var>sz</var> is a
+vector create a matrix of size <var>sz</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the size of <var>n</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunifcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>unifcdf</b> (<var>x, a, b</var>)<var><a name="index-unifcdf-1153"></a></var><br>
+<blockquote><p>Return the CDF at <var>x</var> of the uniform distribution on [<var>a</var>,
+<var>b</var>], i.e., PROB (uniform (<var>a</var>, <var>b</var>) &lt;= x).
+
+        <p>Default values are <var>a</var> = 0, <var>b</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunifinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>unifinv</b> (<var>x, a, b</var>)<var><a name="index-unifinv-1154"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
+CDF) at <var>x</var> of the uniform distribution on [<var>a</var>, <var>b</var>].
+
+        <p>Default values are <var>a</var> = 0, <var>b</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunifpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>unifpdf</b> (<var>x, a, b</var>)<var><a name="index-unifpdf-1155"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the PDF at <var>x</var> of the uniform
+distribution on [<var>a</var>, <var>b</var>].
+
+        <p>Default values are <var>a</var> = 0, <var>b</var> = 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunifrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>unifrnd</b> (<var>a, b, r, c</var>)<var><a name="index-unifrnd-1156"></a></var><br>
+&mdash; Function File:  <b>unifrnd</b> (<var>a, b, sz</var>)<var><a name="index-unifrnd-1157"></a></var><br>
+<blockquote><p>Return an <var>r</var> by <var>c</var> or a <code>size (</code><var>sz</var><code>)</code> matrix of
+random samples from the uniform distribution on [<var>a</var>, <var>b</var>]. 
+Both <var>a</var> and <var>b</var> must be scalar or of size <var>r</var> by <var>c</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>a</var> and <var>b</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dweibcdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>weibcdf</b> (<var>x, alpha, sigma</var>)<var><a name="index-weibcdf-1158"></a></var><br>
+<blockquote><p>Compute the cumulative distribution function (CDF) at <var>x</var> of the
+Weibull distribution with shape parameter <var>alpha</var> and scale
+parameter <var>sigma</var>, which is
+
+     <pre class="example">          1 - exp(-(x/sigma)^alpha)
+     </pre>
+        <p class="noindent">for <var>x</var> &gt;= 0. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dweibinv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>weibinv</b> (<var>x, lambda, alpha</var>)<var><a name="index-weibinv-1159"></a></var><br>
+<blockquote><p>Compute the quantile (the inverse of the CDF) at <var>x</var> of the
+Weibull distribution with shape parameter <var>alpha</var> and scale
+parameter <var>sigma</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dweibpdf"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>weibpdf</b> (<var>x, alpha, sigma</var>)<var><a name="index-weibpdf-1160"></a></var><br>
+<blockquote><p>Compute the probability density function (PDF) at <var>x</var> of the
+Weibull distribution with shape parameter <var>alpha</var> and scale
+parameter <var>sigma</var> which is given by
+
+     <pre class="example">             alpha * sigma^(-alpha) * x^(alpha-1) * exp(-(x/sigma)^alpha)
+     </pre>
+        <p class="noindent">for <var>x</var> &gt; 0. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dweibull_005frnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>weibull_rnd</b> (<var>alpha, sigma, r, c</var>)<var><a name="index-weibull_005frnd-1161"></a></var><br>
+&mdash; Function File:  <b>weibull_rnd</b> (<var>alpha, sigma, sz</var>)<var><a name="index-weibull_005frnd-1162"></a></var><br>
+<blockquote>
+<p>This function has been deprecated.  Use weibrnd instead.
+
+        <p>Return an <var>r</var> by <var>c</var> matrix of random samples from the
+Weibull distribution with parameters <var>alpha</var> and <var>sigma</var>
+which must be scalar or of size <var>r</var> by <var>c</var>. Or if <var>sz</var>
+is a vector return a matrix of size <var>sz</var>.
+
+        <p>If <var>r</var> and <var>c</var> are omitted, the size of the result matrix is
+the common size of <var>alpha</var> and <var>sigma</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwienrnd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>wienrnd</b> (<var>t, d, n</var>)<var><a name="index-wienrnd-1163"></a></var><br>
+<blockquote><p>Return a simulated realization of the <var>d</var>-dimensional Wiener Process
+on the interval [0, <var>t</var>].  If <var>d</var> is omitted, <var>d</var> = 1 is
+used. The first column of the return matrix contains time, the
+remaining columns contain the Wiener process.
+
+        <p>The optional parameter <var>n</var> gives the number of summands used for
+simulating the process over an interval of length 1.  If <var>n</var> is
+omitted, <var>n</var> = 1000 is used. 
+</p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

@@ -1,0 +1,274 @@
+<html lang="en">
+<head>
+<title>Storage - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Basics.html#Basics" title="Basics">
+<link rel="prev" href="Basics.html#Basics" title="Basics">
+<link rel="next" href="Creation.html#Creation" title="Creation">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Storage"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Creation.html#Creation">Creation</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Basics.html#Basics">Basics</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Basics.html#Basics">Basics</a>
+<hr>
+</div>
+
+<h4 class="subsection">22.1.1 Storage of Sparse Matrices</h4>
+
+<p>It is not strictly speaking necessary for the user to understand how
+sparse matrices are stored. However, such an understanding will help
+to get an understanding of the size of sparse matrices. Understanding
+the storage technique is also necessary for those users wishing to
+create their own oct-files.
+
+   <p>There are many different means of storing sparse matrix data. What all
+of the methods have in common is that they attempt to reduce the compelxity
+and storage given a-priori knowledge of the particular class of problems
+that will be solved. A good summary of the available techniques for storing
+sparse matrix is given by Saad <a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>. 
+With full matrices, knowledge of the point of an element of the matrix
+within the matrix is implied by its position in the computers memory. 
+However, this is not the case for sparse matrices, and so the positions
+of the non-zero elements of the matrix must equally be stored.
+
+   <p>An obvious way to do this is by storing the elements of the matrix as
+triplets, with two elements being their position in the array
+(rows and column) and the third being the data itself. This is conceptually
+easy to grasp, but requires more storage than is strictly needed.
+
+   <p>The storage technique used within Octave is compressed column
+format.  In this format the position of each element in a row and the
+data are stored as previously. However, if we assume that all elements
+in the same column are stored adjacent in the computers memory, then
+we only need to store information on the number of non-zero elements
+in each column, rather than their positions. Thus assuming that the
+matrix has more non-zero elements than there are columns in the
+matrix, we win in terms of the amount of memory used.
+
+   <p>In fact, the column index contains one more element than the number of
+columns, with the first element always being zero. The advantage of
+this is a simplication in the code, in that their is no special case
+for the first or last columns. A short example, demonstrating this in
+C is.
+
+<pre class="example">       for (j = 0; j &lt; nc; j++)
+         for (i = cidx (j); i &lt; cidx(j+1); i++)
+            printf ("non-zero element (%i,%i) is %d\n", ridx(i), j, data(i));
+</pre>
+   <p>A clear understanding might be had by considering an example of how the
+above applies to an example matrix. Consider the matrix
+
+<pre class="example">         1   2   0  0
+         0   0   0  3
+         0   0   0  4
+</pre>
+   <p>The non-zero elements of this matrix are
+
+<pre class="example">        (1, 1)  =&gt; 1
+        (1, 2)  =&gt; 2
+        (2, 4)  =&gt; 3
+        (3, 4)  =&gt; 4
+</pre>
+   <p>This will be stored as three vectors <var>cidx</var>, <var>ridx</var> and <var>data</var>,
+representing the column indexing, row indexing and data respectively. The
+contents of these three vectors for the above matrix will be
+
+<pre class="example">       <var>cidx</var> = [0, 1, 2, 2, 4]
+       <var>ridx</var> = [0, 0, 1, 2]
+       <var>data</var> = [1, 2, 3, 4]
+</pre>
+   <p>Note that this is the representation of these elements with the first row
+and column assumed to start at zero. Thus the number of elements in the
+<var>i</var>-th column is given by <var>cidx</var><code> (</code><var>i</var><code> + 1) -
+</code><var>cidx</var><code> (</code><var>i</var><code>)</code>.
+
+   <p>It should be noted that compressed row formats are equally possible. However,
+in the context of mixed operations between mixed sparse and dense matrices,
+it makes sense that the elements of the sparse matrices are in the same
+order as the dense matrices. Octave stores dense matrices in column
+major ordering, and so sparse matrices are equally stored in this manner.
+
+   <p>A further constraint on the sparse matrix storage used by Octave is that
+all elements in the rows are stored in increasing order of their row
+index, which makes certain operations faster. However, it imposes
+the need to sort the elements on the creation of sparse matrices. Having
+dis-ordered elements is potentially an advantage in that it makes operations
+such as concatenating two sparse matrices together easier and faster, however
+it adds complexity and speed problems elsewhere.
+
+   <div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Youcef Saad "SPARSKIT: A basic toolkit
+for sparse matrix computation", 1994,
+<a href="ftp://ftp.cs.umn.edu/dept/sparse/SPARSKIT2/DOC/paper.ps">ftp://ftp.cs.umn.edu/dept/sparse/SPARSKIT2/DOC/paper.ps</a></p>
+
+   <p><hr></div>
+
+   </body></html>
+

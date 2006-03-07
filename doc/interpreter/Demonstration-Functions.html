@@ -1,0 +1,345 @@
+<html lang="en">
+<head>
+<title>Demonstration Functions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Test-and-Demo-Functions.html#Test-and-Demo-Functions" title="Test and Demo Functions">
+<link rel="prev" href="Test-Functions.html#Test-Functions" title="Test Functions">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Demonstration-Functions"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Test-Functions.html#Test-Functions">Test Functions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Test-and-Demo-Functions.html#Test-and-Demo-Functions">Test and Demo Functions</a>
+<hr>
+</div>
+
+<h3 class="section">A.2 Demonstration Functions</h3>
+
+<p><a name="doc_002ddemo"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>demo</b> (<var>'name',n</var>)<var><a name="index-demo-1529"></a></var><br>
+<blockquote>
+<p>Runs any examples associated with the function '<var>name</var>'. 
+Examples are stored in the script file, or in a file with the same
+name but no extension somewhere on your path.  To keep them separate
+from the usual script code, all lines are prefixed by <code>%!</code>. Each
+example is introduced by the keyword 'demo' flush left to the prefix,
+with no intervening spaces.  The remainder of the example can contain
+arbitrary octave code. For example:
+
+     <pre class="example">             %!demo
+             %! t=0:0.01:2*pi; x = sin(t);
+             %! plot(t,x)
+             %! %-------------------------------------------------
+             %! % the figure window shows one cycle of a sine wave
+     </pre>
+        <p>Note that the code is displayed before it is executed, so a simple
+comment at the end suffices.  It is generally not necessary to use
+disp or printf within the demo.
+
+        <p>Demos are run in a function environment with no access to external
+variables. This means that all demos in your function must use
+separate initialization code. Alternatively, you can combine your
+demos into one huge demo, with the code:
+
+     <pre class="example">             %! input("Press &lt;enter&gt; to continue: ","s");
+     </pre>
+        <p>between the sections, but this is discouraged.  Other techniques
+include using multiple plots by saying figure between each, or
+using subplot to put multiple plots in the same window.
+
+        <p>Also, since demo evaluates inside a function context, you cannot
+define new functions inside a demo.  Instead you will have to
+use <code>eval(example('function',n))</code> to see them.  Because eval only
+evaluates one line, or one statement if the statement crosses
+multiple lines, you must wrap your demo in "if 1 &lt;demo stuff&gt; endif"
+with the 'if' on the same line as 'demo'. For example,
+
+     <pre class="example">            %!demo if 1
+            %!  function y=f(x)
+            %!    y=x;
+            %!  endfunction
+            %!  f(3)
+            %! endif
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: test, example. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dexample"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>example</b> (<var>'name',n</var>)<var><a name="index-example-1530"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>idx</var>] = <b>example</b> (<var>'name',n</var>)<var><a name="index-example-1531"></a></var><br>
+<blockquote>
+<p>Display the code for example <var>n</var> associated with the function
+'<var>name</var>', but do not run it. If <var>n</var> is not given, all examples
+are displayed.
+
+        <p>Called with output arguments, the examples are returned in the form of
+a string <var>x</var>, with <var>idx</var> indicating the ending position of the
+various examples.
+
+        <p>See <code>demo</code> for a complete explanation.
+        <pre class="sp">
+     
+     </pre>
+     See also: demo, test. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspeed"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>speed</b> (<var>f, init, max_n, f2, tol, err</var>)<var><a name="index-speed-1532"></a></var><br>
+&mdash; Function File: <var>r</var> = <b>speed</b> (<var><small class="dots">...</small></var>)<var><a name="index-speed-1533"></a></var><br>
+<blockquote>
+<p>Determine the execution time of an expression for various <var>n</var>. 
+The <var>n</var> are log-spaced from 1 to <var>max_n</var>.  For each <var>n</var>,
+an initialization expression is computed to create whatever data
+are needed for the test. Called without output arguments the data
+is presented graphically. Called with an output argument <var>r</var>,
+the speedup ratio is returned instead of displaying it graphically.
+
+          <dl>
+<dt><var>f</var><dd>The expression to evaluate.
+
+          <br><dt><var>max_n</var><dd>The maximum test length to run. Default value is 100.
+
+          <br><dt><var>init</var><dd>Initialization expression for function argument values.  Use <var>k</var>
+for the test number and <var>n</var> for the size of the test.  This should
+compute values for all variables listed in args.  Note that init will
+be evaluated first for k=0, so things which are constant throughout
+the test can be computed then. The default value is <var>x</var><code> =
+randn (</code><var>n</var><code>, 1);</code>.
+
+          <br><dt><var>f2</var><dd>An alternative expression to evaluate, so the speed of the two
+can be compared. Default is <code>[]</code>.
+
+          <br><dt><var>tol</var><dd>If <var>tol</var> is <code>Inf</code>, then no comparison will be made between the
+results of expression <var>f</var> and expression <var>f2</var>.  Otherwise,
+expression <var>f</var> should produce a value <var>v</var> and expression <var>f2</var>
+should produce a value <var>v2</var>, and these shall be compared using
+<code>assert(</code><var>v</var><code>,</code><var>v2</var><code>,</code><var>tol</var><code>,</code><var>err</var><code>)</code>. The default is
+<code>eps</code>. 
+</dl>
+
+        <p>Some global variables are also referenced. Choose values suitable to
+your machine and your work style.
+
+          <dl>
+<dt><code>speed_test_plot</code><dd>If true, plot a nice speed comparison graph. Default is true.
+
+          <br><dt><code>speed_test_numtests</code><dd>Number of vector lengths to test. The default is 25. 
+</dl>
+
+        <p>Some comments on the graphs.  The line on the speedup ratio graph
+should be larger than 1 if your function is faster.  The slope on
+the runtime graph shows you the O(f) speed characteristics.  Where it
+is flat, execution time is O(1).  Where it is sloping, execution time
+is O(n^m), with steeper slopes for larger <var>n</var>.  Generally vectorizing
+a function will not change the slope of the run-time graph, but it
+will shift it relative to the original.
+
+        <p>A simple example is
+
+     <pre class="example">            speed("strrep(s,x,y)", "s=blanks(n);x=' ';y='b';", 100)
+     </pre>
+        <p>A more complex example, if you had an original version of <code>xcorr</code>
+using for loops and another version using an FFT, you could compare the
+run speed for various lags as follows, or for a fixed lag with varying
+vector lengths as follows:
+
+     <pre class="example">            speed("v=xcorr(x,n)", "x=rand(128,1);", 100, ...
+                  "v2=xcorr_orig(x,n)", 100*eps,'rel')
+            speed("v=xcorr(x,15)", "x=rand(20+n,1);", 100, ...
+                  "v2=xcorr_orig(x,n)", 100*eps,'rel')
+     </pre>
+        <p>Assuming one of the two versions is in <var>xcorr_orig</var>, this would
+would compare their speed and their output values.  Note that the
+FFT version is not exact, so we specify an acceptable tolerance on
+the comparison <code>100*eps</code>, and the errors should be computed
+relatively, as <code>abs((</code><var>x</var><code> - </code><var>y</var><code>)./</code><var>y</var><code>)</code> rather than
+absolutely as <code>abs(</code><var>x</var><code> - </code><var>y</var><code>)</code>.
+
+        <p>Type <code>example('speed')</code> to see some real examples. Note for
+obscure reasons, you can't run examples 1 and 2 directly using
+<code>demo('speed')</code>. Instead use, <code>eval(example('speed',1))</code>
+and <code>eval(example('speed',2))</code>. 
+</p></blockquote></div>
+
+<!-- Local Variables: *** -->
+<!-- Mode: texinfo *** -->
+<!-- End: *** -->
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

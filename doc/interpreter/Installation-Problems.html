@@ -1,0 +1,347 @@
+<html lang="en">
+<head>
+<title>Installation Problems - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Installation.html#Installation" title="Installation">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Installation-Problems"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Installation.html#Installation">Installation</a>
+<hr>
+</div>
+
+<h3 class="appendixsec">D.1 Installation Problems</h3>
+
+<p>This section contains a list of problems (and some apparent problems
+that don't really mean anything is wrong) that may show up during
+installation of Octave.
+
+     <ul>
+<li>On some SCO systems, <code>info</code> fails to compile if
+<code>HAVE_TERMIOS_H</code> is defined int <samp><span class="file">config.h</span></samp>.  Simply removing
+the definition from <samp><span class="file">info/config.h</span></samp> should allow it to compile.
+
+     <li>If <code>configure</code> finds <code>dlopen</code>, <code>dlsym</code>, <code>dlclose</code>,
+and <code>dlerror</code>, but not the header file <samp><span class="file">dlfcn.h</span></samp>, you need to
+find the source for the header file and install it in the directory
+<samp><span class="file">usr/include</span></samp>.  This is reportedly a problem with Slackware 3.1. 
+For Linux/GNU systems, the source for <samp><span class="file">dlfcn.h</span></samp> is in the
+<code>ldso</code> package.
+
+     <li>Building <samp><span class="file">.oct</span></samp> files doesn't work.
+
+     <p>You should probably have a shared version of <code>libstdc++</code>.  A patch
+is needed to build shared versions of version 2.7.2 of <code>libstdc++</code>
+on the HP-PA architecture.  You can find the patch at
+<a href="ftp://ftp.cygnus.com/pub/g++/libg++-2.7.2-hppa-gcc-fix">ftp://ftp.cygnus.com/pub/g++/libg++-2.7.2-hppa-gcc-fix</a>.
+
+     <li>On some alpha systems there may be a problem with the <code>libdxml</code>
+library, resulting in floating point errors and/or segmentation faults in
+the linear algebra routines called by Octave.  If you encounter such
+problems, then you should modify the configure script so that
+<code>SPECIAL_MATH_LIB</code> is not set to <code>-ldxml</code>.
+
+     <li>On FreeBSD systems Octave may hang while initializing some internal
+constants.  The fix appears to be to use
+
+     <pre class="example">          options      GPL_MATH_EMULATE
+     </pre>
+     <p class="noindent">rather than
+
+     <pre class="example">          options      MATH_EMULATE
+     </pre>
+     <p class="noindent">in the kernel configuration files (typically found in the directory
+<samp><span class="file">/sys/i386/conf</span></samp>.  After making this change, you'll need to rebuild
+the kernel, install it, and reboot.
+
+     <li>If you encounter errors like
+
+     <pre class="smallexample">          passing `void (*)()' as argument 2 of
+            `octave_set_signal_handler(int, void (*)(int))'
+     </pre>
+     <p class="noindent">or
+
+     <pre class="smallexample">          warning: ANSI C++ prohibits conversion from `(int)' to `(...)'
+     </pre>
+     <p class="noindent">while compiling <samp><span class="file">sighandlers.cc</span></samp>, you may need to edit some files
+in the <code>gcc</code> include subdirectory to add proper prototypes for functions
+there.  For example, Ultrix 4.2 needs proper declarations for the
+<code>signal</code> function and the <code>SIG_IGN</code> macro in the file
+<samp><span class="file">signal.h</span></samp>.
+
+     <p>On some systems the <code>SIG_IGN</code> macro is defined to be something like
+this:
+
+     <pre class="example">          #define  SIG_IGN  (void (*)())1
+     </pre>
+     <p class="noindent">when it should really be something like:
+
+     <pre class="example">          #define  SIG_IGN  (void (*)(int))1
+     </pre>
+     <p class="noindent">to match the prototype declaration for the <code>signal</code> function.  This
+change should also be made for the <code>SIG_DFL</code> and <code>SIG_ERR</code>
+symbols. It may be necessary to change the definitions in
+<samp><span class="file">sys/signal.h</span></samp> as well.
+
+     <p>The <code>gcc</code> <code>fixincludes</code> and <code>fixproto</code> scripts should
+probably fix these problems when <code>gcc</code> installs its modified set of
+header files, but I don't think that's been done yet.
+
+     <p><strong>You should not change the files in <samp></strong><span class="file">/usr/include</span><strong></samp></strong>.  You
+can find the <code>gcc</code> include directory tree by running the command
+
+     <pre class="example">          gcc -print-libgcc-file-name
+     </pre>
+     <p class="noindent">The directory of <code>gcc</code> include files normally begins in the same directory
+that contains the file <samp><span class="file">libgcc.a</span></samp>.
+
+     <li>Some of the Fortran subroutines may fail to compile with older versions
+of the Sun Fortran compiler.  If you get errors like
+
+     <pre class="smallexample">          zgemm.f:
+          	zgemm:
+          warning: unexpected parent of complex expression subtree
+          zgemm.f, line 245: warning: unexpected parent of complex
+            expression subtree
+          warning: unexpected parent of complex expression subtree
+          zgemm.f, line 304: warning: unexpected parent of complex
+            expression subtree
+          warning: unexpected parent of complex expression subtree
+          zgemm.f, line 327: warning: unexpected parent of complex
+            expression subtree
+          pcc_binval: missing IR_CONV in complex op
+          make[2]: *** [zgemm.o] Error 1
+     </pre>
+     <p class="noindent">when compiling the Fortran subroutines in the <samp><span class="file">libcruft</span></samp>
+subdirectory, you should either upgrade your compiler or try compiling
+with optimization turned off.
+
+     <li>On NeXT systems, if you get errors like this:
+
+     <pre class="example">          /usr/tmp/cc007458.s:unknown:Undefined local symbol LBB7656
+          /usr/tmp/cc007458.s:unknown:Undefined local symbol LBE7656
+     </pre>
+     <p class="noindent">when compiling <samp><span class="file">Array.cc</span></samp> and <samp><span class="file">Matrix.cc</span></samp>, try recompiling
+these files without <code>-g</code>.
+
+     <li>Some people have reported that calls to shell_cmd and the pager do not
+work on SunOS systems.  This is apparently due to having
+<code>G_HAVE_SYS_WAIT</code> defined to be 0 instead of 1 when compiling
+<code>libg++</code>.
+
+     <li>On NeXT systems, linking to <samp><span class="file">libsys_s.a</span></samp> may fail to resolve the
+following functions
+
+     <pre class="example">          _tcgetattr
+          _tcsetattr
+          _tcflow
+     </pre>
+     <p class="noindent">which are part of <samp><span class="file">libposix.a</span></samp>.  Unfortunately, linking Octave with
+<code>-posix</code> results in the following undefined symbols.
+
+     <pre class="example">          .destructors_used
+          .constructors_used
+          _objc_msgSend
+          _NXGetDefaultValue
+          _NXRegisterDefaults
+          .objc_class_name_NXStringTable
+          .objc_class_name_NXBundle
+     </pre>
+     <p>One kluge around this problem is to extract <samp><span class="file">termios.o</span></samp> from
+<samp><span class="file">libposix.a</span></samp>, put it in Octave's <samp><span class="file">src</span></samp> directory, and add it
+to the list of files to link together in the makefile.  Suggestions for
+better ways to solve this problem are welcome!
+
+     <li>If Octave crashes immediately with a floating point exception, it is
+likely that it is failing to initialize the IEEE floating point values
+for infinity and NaN.
+
+     <p>If your system actually does support IEEE arithmetic, you should be able
+to fix this problem by modifying the function <code>octave_ieee_init</code> in
+the file <samp><span class="file">lo-ieee.cc</span></samp> to correctly initialize Octave's internal
+infinity and NaN variables.
+
+     <p>If your system does not support IEEE arithmetic but Octave's configure
+script incorrectly determined that it does, you can work around the
+problem by editing the file <samp><span class="file">config.h</span></samp> to not define
+<code>HAVE_ISINF</code>, <code>HAVE_FINITE</code>, and <code>HAVE_ISNAN</code>.
+
+     <p>In any case, please report this as a bug since it might be possible to
+modify Octave's configuration script to automatically determine the
+proper thing to do.
+
+   </ul>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- Written by Kurt Hornik <Kurt.Hornik@wu-wien.ac.at> on 1996/05/17. -->
+<!-- Last updated by KH on 1997/07/31. -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

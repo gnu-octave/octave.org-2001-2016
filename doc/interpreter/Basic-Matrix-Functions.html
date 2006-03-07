@@ -1,0 +1,400 @@
+<html lang="en">
+<head>
+<title>Basic Matrix Functions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Linear-Algebra.html#Linear-Algebra" title="Linear Algebra">
+<link rel="next" href="Matrix-Factorizations.html#Matrix-Factorizations" title="Matrix Factorizations">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Basic-Matrix-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Matrix-Factorizations.html#Matrix-Factorizations">Matrix Factorizations</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>
+<hr>
+</div>
+
+<h3 class="section">20.1 Basic Matrix Functions</h3>
+
+<p><a name="doc_002dbalance"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>aa</var> = <b>balance</b> (<var>a, opt</var>)<var><a name="index-balance-819"></a></var><br>
+&mdash; Loadable Function: [<var>dd</var>, <var>aa</var>] = <b>balance</b> (<var>a, opt</var>)<var><a name="index-balance-820"></a></var><br>
+&mdash; Loadable Function: [<var>cc</var>, <var>dd</var>, <var>aa</var>, <var>bb</var>] = <b>balance</b> (<var>a, b, opt</var>)<var><a name="index-balance-821"></a></var><br>
+<blockquote>
+<p><code>[dd, aa] = balance (a)</code> returns <code>aa = dd \ a * dd</code>. 
+<code>aa</code> is a matrix whose row and column norms are roughly equal in
+magnitude, and <code>dd</code> = <code>p * d</code>, where <code>p</code> is a permutation
+matrix and <code>d</code> is a diagonal matrix of powers of two.  This allows
+the equilibration to be computed without roundoff.  Results of
+eigenvalue calculation are typically improved by balancing first.
+
+        <p><code>[cc, dd, aa, bb] = balance (a, b)</code> returns <code>aa = cc*a*dd</code> and
+<code>bb = cc*b*dd)</code>, where <code>aa</code> and <code>bb</code> have non-zero
+elements of approximately the same magnitude and <code>cc</code> and <code>dd</code>
+are permuted diagonal matrices as in <code>dd</code> for the algebraic
+eigenvalue problem.
+
+        <p>The eigenvalue balancing option <code>opt</code> is selected as follows:
+
+          <dl>
+<dt><code>"N"</code>, <code>"n"</code><dd>No balancing; arguments copied, transformation(s) set to identity.
+
+          <br><dt><code>"P"</code>, <code>"p"</code><dd>Permute argument(s) to isolate eigenvalues where possible.
+
+          <br><dt><code>"S"</code>, <code>"s"</code><dd>Scale to improve accuracy of computed eigenvalues.
+
+          <br><dt><code>"B"</code>, <code>"b"</code><dd>Permute and scale, in that order. Rows/columns of a (and b)
+that are isolated by permutation are not scaled.  This is the default
+behavior. 
+</dl>
+
+        <p>Algebraic eigenvalue balancing uses standard <span class="sc">Lapack</span> routines.
+
+        <p>Generalized eigenvalue problem balancing uses Ward's algorithm
+(SIAM Journal on Scientific and Statistical Computing, 1981). 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcond"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cond</b> (<var>a</var>)<var><a name="index-cond-822"></a></var><br>
+<blockquote><p>Compute the (two-norm) condition number of a matrix. <code>cond (a)</code> is
+defined as <code>norm (a) * norm (inv (a))</code>, and is computed via a
+singular value decomposition.
+        <pre class="sp">
+     
+     </pre>
+     See also: norm, svd, rank. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddet"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>d</var>, <var>rcond</var>] = <b>det</b> (<var>a</var>)<var><a name="index-det-823"></a></var><br>
+<blockquote><p>Compute the determinant of <var>a</var> using <span class="sc">Lapack</span>.  Return an estimate
+of the reciprocal condition number if requested. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddmult"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dmult</b> (<var>a, b</var>)<var><a name="index-dmult-824"></a></var><br>
+<blockquote><p>If <var>a</var> is a vector of length <code>rows (</code><var>b</var><code>)</code>, return
+<code>diag (</code><var>a</var><code>) * </code><var>b</var> (but computed much more efficiently). 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dot</b> (<var>x, y, dim</var>)<var><a name="index-dot-825"></a></var><br>
+<blockquote><p>Computes the dot product of two vectors. If <var>x</var> and <var>y</var>
+are matrices, calculate the dot-product along the first
+non-singleton dimension. If the optional argument <var>dim</var> is
+given, calculate the dot-product along this dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002deig"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>lambda</var> = <b>eig</b> (<var>a</var>)<var><a name="index-eig-826"></a></var><br>
+&mdash; Loadable Function: [<var>v</var>, <var>lambda</var>] = <b>eig</b> (<var>a</var>)<var><a name="index-eig-827"></a></var><br>
+<blockquote><p>The eigenvalues (and eigenvectors) of a matrix are computed in a several
+step process which begins with a Hessenberg decomposition, followed by a
+Schur decomposition, from which the eigenvalues are apparent.  The
+eigenvectors, when desired, are computed by further manipulations of the
+Schur decomposition. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgivens"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>g</var> = <b>givens</b> (<var>x, y</var>)<var><a name="index-givens-828"></a></var><br>
+&mdash; Loadable Function: [<var>c</var>, <var>s</var>] = <b>givens</b> (<var>x, y</var>)<var><a name="index-givens-829"></a></var><br>
+<blockquote><p>Return a 2 by 2 orthogonal matrix
+<var>g</var><code> = [</code><var>c</var> <var>s</var><code>; -</code><var>s</var><code>' </code><var>c</var><code>]</code> such that
+<var>g</var><code> [</code><var>x</var><code>; </code><var>y</var><code>] = [*; 0]</code> with <var>x</var> and <var>y</var> scalars.
+
+        <p>For example,
+
+     <pre class="example">          givens (1, 1)
+               =&gt;   0.70711   0.70711
+                   -0.70711   0.70711
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dinv"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>x</var>, <var>rcond</var>] = <b>inv</b> (<var>a</var>)<var><a name="index-inv-830"></a></var><br>
+&mdash; Loadable Function: [<var>x</var>, <var>rcond</var>] = <b>inverse</b> (<var>a</var>)<var><a name="index-inverse-831"></a></var><br>
+<blockquote><p>Compute the inverse of the square matrix <var>a</var>.  Return an estimate
+of the reciprocal condition number if requested, otherwise warn of an
+ill-conditioned matrix if the reciprocal condition number is small. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnorm"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>norm</b> (<var>a, p</var>)<var><a name="index-norm-832"></a></var><br>
+<blockquote><p>Compute the p-norm of the matrix <var>a</var>.  If the second argument is
+missing, <code>p = 2</code> is assumed.
+
+        <p>If <var>a</var> is a matrix:
+
+          <dl>
+<dt><var>p</var> = <code>1</code><dd>1-norm, the largest column sum of the absolute values of <var>a</var>.
+
+          <br><dt><var>p</var> = <code>2</code><dd>Largest singular value of <var>a</var>.
+
+          <br><dt><var>p</var> = <code>Inf</code><dd><a name="index-infinity-norm-833"></a>Infinity norm, the largest row sum of the absolute values of <var>a</var>.
+
+          <br><dt><var>p</var> = <code>"fro"</code><dd><a name="index-Frobenius-norm-834"></a>Frobenius norm of <var>a</var>, <code>sqrt (sum (diag (</code><var>a</var><code>' * </code><var>a</var><code>)))</code>. 
+</dl>
+
+        <p>If <var>a</var> is a vector or a scalar:
+
+          <dl>
+<dt><var>p</var> = <code>Inf</code><dd><code>max (abs (</code><var>a</var><code>))</code>.
+
+          <br><dt><var>p</var> = <code>-Inf</code><dd><code>min (abs (</code><var>a</var><code>))</code>.
+
+          <br><dt>other<dd>p-norm of <var>a</var>, <code>(sum (abs (</code><var>a</var><code>) .^ </code><var>p</var><code>)) ^ (1/</code><var>p</var><code>)</code>. 
+</dl>
+
+        <pre class="sp">
+     
+     </pre>
+     See also: cond, svd. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnull"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>null</b> (<var>a, tol</var>)<var><a name="index-null-835"></a></var><br>
+<blockquote><p>Return an orthonormal basis of the null space of <var>a</var>.
+
+        <p>The dimension of the null space is taken as the number of singular
+values of <var>a</var> not greater than <var>tol</var>.  If the argument <var>tol</var>
+is missing, it is computed as
+
+     <pre class="example">          max (size (<var>a</var>)) * max (svd (<var>a</var>)) * eps
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dorth"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>orth</b> (<var>a, tol</var>)<var><a name="index-orth-836"></a></var><br>
+<blockquote><p>Return an orthonormal basis of the range space of <var>a</var>.
+
+        <p>The dimension of the range space is taken as the number of singular
+values of <var>a</var> greater than <var>tol</var>.  If the argument <var>tol</var> is
+missing, it is computed as
+
+     <pre class="example">          max (size (<var>a</var>)) * max (svd (<var>a</var>)) * eps
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dpinv"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>pinv</b> (<var>x, tol</var>)<var><a name="index-pinv-837"></a></var><br>
+<blockquote><p>Return the pseudoinverse of <var>x</var>.  Singular values less than
+<var>tol</var> are ignored.
+
+        <p>If the second argument is omitted, it is assumed that
+
+     <pre class="example">          tol = max (size (<var>x</var>)) * sigma_max (<var>x</var>) * eps,
+     </pre>
+        <p class="noindent">where <code>sigma_max (</code><var>x</var><code>)</code> is the maximal singular value of <var>x</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drank"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>rank</b> (<var>a, tol</var>)<var><a name="index-rank-838"></a></var><br>
+<blockquote><p>Compute the rank of <var>a</var>, using the singular value decomposition. 
+The rank is taken to be the number  of singular values of <var>a</var> that
+are greater than the specified tolerance <var>tol</var>.  If the second
+argument is omitted, it is taken to be
+
+     <pre class="example">          tol = max (size (<var>a</var>)) * sigma(1) * eps;
+     </pre>
+        <p class="noindent">where <code>eps</code> is machine precision and <code>sigma(1)</code> is the largest
+singular value of <var>a</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtrace"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>trace</b> (<var>a</var>)<var><a name="index-trace-839"></a></var><br>
+<blockquote><p>Compute the trace of <var>a</var>, <code>sum (diag (</code><var>a</var><code>))</code>. 
+</p></blockquote></div>
+
+   </body></html>
+

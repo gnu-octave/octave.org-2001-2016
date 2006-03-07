@@ -1,0 +1,285 @@
+<html lang="en">
+<head>
+<title>Arithmetic Ops - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Expressions.html#Expressions" title="Expressions">
+<link rel="prev" href="Calling-Functions.html#Calling-Functions" title="Calling Functions">
+<link rel="next" href="Comparison-Ops.html#Comparison-Ops" title="Comparison Ops">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Arithmetic-Ops"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Comparison-Ops.html#Comparison-Ops">Comparison Ops</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Calling-Functions.html#Calling-Functions">Calling Functions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressions</a>
+<hr>
+</div>
+
+<h3 class="section">10.3 Arithmetic Operators</h3>
+
+<p><a name="index-arithmetic-operators-341"></a><a name="index-operators_002c-arithmetic-342"></a><a name="index-addition-343"></a><a name="index-subtraction-344"></a><a name="index-multiplication-345"></a><a name="index-matrix-multiplication-346"></a><a name="index-division-347"></a><a name="index-quotient-348"></a><a name="index-negation-349"></a><a name="index-unary-minus-350"></a><a name="index-exponentiation-351"></a><a name="index-transpose-352"></a><a name="index-Hermitian-operator-353"></a><a name="index-transpose_002c-complex_002dconjugate-354"></a><a name="index-complex_002dconjugate-transpose-355"></a>
+The following arithmetic operators are available, and work on scalars
+and matrices.
+
+     <dl>
+<dt><var>x</var><code> + </code><var>y</var><dd><a name="index-g_t_002b-356"></a>Addition.  If both operands are matrices, the number of rows and columns
+must both agree.  If one operand is a scalar, its value is added to
+all the elements of the other operand.
+
+     <br><dt><var>x</var><code> .+ </code><var>y</var><dd><a name="index-g_t_002e_002b-357"></a>Element by element addition.  This operator is equivalent to <code>+</code>.
+
+     <br><dt><var>x</var><code> - </code><var>y</var><dd><a name="index-g_t_002d-358"></a>Subtraction.  If both operands are matrices, the number of rows and
+columns of both must agree.
+
+     <br><dt><var>x</var><code> .- </code><var>y</var><dd>Element by element subtraction.  This operator is equivalent to <code>-</code>.
+
+     <br><dt><var>x</var><code> * </code><var>y</var><dd><a name="index-g_t_002a-359"></a>Matrix multiplication.  The number of columns of <var>x</var> must agree
+with the number of rows of <var>y</var>.
+
+     <br><dt><var>x</var><code> .* </code><var>y</var><dd><a name="index-g_t_002e_002a-360"></a>Element by element multiplication.  If both operands are matrices, the
+number of rows and columns must both agree.
+
+     <br><dt><var>x</var><code> / </code><var>y</var><dd><a name="index-g_t_002f-361"></a>Right division.  This is conceptually equivalent to the expression
+
+     <pre class="example">          (inverse (y') * x')'
+     </pre>
+     <p class="noindent">but it is computed without forming the inverse of <var>y'</var>.
+
+     <p>If the system is not square, or if the coefficient matrix is singular,
+a minimum norm solution is computed.
+
+     <br><dt><var>x</var><code> ./ </code><var>y</var><dd><a name="index-g_t_002e_002f-362"></a>Element by element right division.
+
+     <br><dt><var>x</var><code> \ </code><var>y</var><dd><a name="index-g_t_005c-363"></a>Left division.  This is conceptually equivalent to the expression
+
+     <pre class="example">          inverse (x) * y
+     </pre>
+     <p class="noindent">but it is computed without forming the inverse of <var>x</var>.
+
+     <p>If the system is not square, or if the coefficient matrix is singular,
+a minimum norm solution is computed.
+
+     <br><dt><var>x</var><code> .\ </code><var>y</var><dd><a name="index-g_t_002e_005c-364"></a>Element by element left division.  Each element of <var>y</var> is divided
+by each corresponding element of <var>x</var>.
+
+     <br><dt><var>x</var><code> ^ </code><var>y</var><dt><var>x</var><code> ** </code><var>y</var><dd><a name="index-g_t_002a_002a-365"></a><a name="index-g_t_005e-366"></a>Power operator.  If <var>x</var> and <var>y</var> are both scalars, this operator
+returns <var>x</var> raised to the power <var>y</var>.  If <var>x</var> is a scalar and
+<var>y</var> is a square matrix, the result is computed using an eigenvalue
+expansion.  If <var>x</var> is a square matrix. the result is computed by
+repeated multiplication if <var>y</var> is an integer, and by an eigenvalue
+expansion if <var>y</var> is not an integer.  An error results if both
+<var>x</var> and <var>y</var> are matrices.
+
+     <p>The implementation of this operator needs to be improved.
+
+     <br><dt><var>x</var><code> .^ </code><var>y</var><br><dt><var>x</var><code> .** </code><var>y</var><dd><a name="index-g_t_002e_002a_002a-367"></a><a name="index-g_t_002e_005e-368"></a>Element by element power operator.  If both operands are matrices, the
+number of rows and columns must both agree.
+
+     <br><dt><code>-</code><var>x</var><dd><a name="index-g_t_002d-369"></a>Negation.
+
+     <br><dt><code>+</code><var>x</var><dd><a name="index-g_t_002b-370"></a>Unary plus.  This operator has no effect on the operand.
+
+     <br><dt><var>x</var><code>'</code><dd><a name="index-g_t_0027-371"></a>Complex conjugate transpose.  For real arguments, this operator is the
+same as the transpose operator.  For complex arguments, this operator is
+equivalent to the expression
+
+     <pre class="example">          conj (x.')
+     </pre>
+     <br><dt><var>x</var><code>.'</code><dd><a name="index-g_t_002e_0027-372"></a>Transpose. 
+</dl>
+
+   <p>Note that because Octave's element by element operators begin with a
+`<samp><span class="samp">.</span></samp>', there is a possible ambiguity for statements like
+
+<pre class="example">     1./m
+</pre>
+   <p class="noindent">because the period could be interpreted either as part of the constant
+or as part of the operator.  To resolve this conflict, Octave treats the
+expression as if you had typed
+
+<pre class="example">     (1) ./ m
+</pre>
+   <p class="noindent">and not
+
+<pre class="example">     (1.) / m
+</pre>
+   <p class="noindent">Although this is inconsistent with the normal behavior of Octave's
+lexer, which usually prefers to break the input into tokens by
+preferring the longest possible match at any given point, it is more
+useful in this case.
+
+   <p><a name="doc_002dwarn_005fdivide_005fby_005fzero"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>warn_divide_by_zero</b><var><a name="index-warn_005fdivide_005fby_005fzero-373"></a></var><br>
+<blockquote><p>If the value of <code>warn_divide_by_zero</code> is nonzero, a warning
+is issued when Octave encounters a division by zero.  If the value is
+0, the warning is omitted.  The default value is 1. 
+</p></blockquote></div>
+
+   </body></html>
+

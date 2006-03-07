@@ -1,0 +1,361 @@
+<html lang="en">
+<head>
+<title>ss2sys - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="sysinterface.html#sysinterface" title="sysinterface">
+<link rel="prev" href="fir2sys.html#fir2sys" title="fir2sys">
+<link rel="next" href="tf2sys.html#tf2sys" title="tf2sys">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="ss2sys"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="tf2sys.html#tf2sys">tf2sys</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="fir2sys.html#fir2sys">fir2sys</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="sysinterface.html#sysinterface">sysinterface</a>
+<hr>
+</div>
+
+<h4 class="subsection">30.2.2 State space system interface functions</h4>
+
+<p><a name="doc_002dss2sys"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ss</b> (<var>a, b, c, d, tsam, n, nz, stname, inname, outname, outlist</var>)<var><a name="index-ss-1201"></a></var><br>
+<blockquote><p>Create system structure from state-space data.   May be continous,
+discrete, or mixed (sampled data)
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>a</var><dt><var>b</var><dt><var>c</var><dt><var>d</var><dd>usual state space matrices.
+
+          <p>default: <var>d</var> = zero matrix
+
+          <br><dt><var>tsam</var><dd>sampling rate.  Default: tsam = 0 (continuous system)
+
+          <br><dt><var>n</var><dt><var>nz</var><dd>number of continuous, discrete states in the system
+
+          <p>If <var>tsam</var> is 0, n = <code>rows</code>(<var>a</var>), nz = 0.
+
+          <p>If <var>tsam</var> is greater than zero, n = 0,
+nz = <code>rows</code>(<var>a</var>)
+
+          <p>see below for system partitioning
+
+          <br><dt><var>stname</var><dd>cell array of strings of state signal names
+
+          <p>default (<var>stname</var>=[] on input): <code>x_n</code> for continuous states,
+<code>xd_n</code> for discrete states
+
+          <br><dt><var>inname</var><dd>cell array of strings of input signal names
+
+          <p>default (<var>inname</var> = [] on input): <code>u_n</code>
+
+          <br><dt><var>outname</var><dd>cell array of strings of input signal names
+
+          <p>default (<var>outname</var> = [] on input): <code>y_n</code>
+
+          <br><dt><var>outlist</var><dd>
+list of indices of outputs y that are sampled
+
+          <p>If <var>tsam</var> is 0, outlist = [].
+
+          <p>If <var>tsam</var> is greater than 0, outlist = 1:<code>rows</code>(<var>c</var>). 
+</dl>
+
+        <p>Unlike states, discrete/continous outputs may appear in any order.
+
+        <p><code>sys2ss</code> returns a vector <var>yd</var> where
+<var>yd</var>(<var>outlist</var>) = 1; all other entries of <var>yd</var> are 0.
+
+        <p><strong>Outputs</strong>
+<var>outsys</var> = system data structure
+
+        <p><strong>System partitioning</strong>
+
+        <p>Suppose for simplicity that outlist specified
+that the first several outputs were continuous and the remaining outputs
+were discrete.  Then the system is partitioned as
+     <pre class="example">          x = [ xc ]  (n x 1)
+              [ xd ]  (nz x 1 discrete states)
+          a = [ acc acd ]  b = [ bc ]
+              [ adc add ]      [ bd ]
+          c = [ ccc ccd ]  d = [ dc ]
+              [ cdc cdd ]      [ dd ]
+          
+              (cdc = c(outlist,1:n), etc.)
+     </pre>
+        <p>with dynamic equations:
+d/dt xc(t)     = acc*xc(t)      + acd*xd(k*tsam) + bc*u(t)
+
+        <p>xd((k+1)*tsam) = adc*xc(k*tsam) + add*xd(k*tsam) + bd*u(k*tsam)
+
+        <p>yc(t)      = ccc*xc(t)      + ccd*xd(k*tsam) + dc*u(t)
+
+        <p>yd(k*tsam) = cdc*xc(k*tsam) + cdd*xd(k*tsam) + dd*u(k*tsam)
+
+        <p><strong>Signal partitions</strong>
+     <pre class="example">                  | continuous      | discrete               |
+          ----------------------------------------------------
+          states  | stname(1:n,:)   | stname((n+1):(n+nz),:) |
+          ----------------------------------------------------
+          outputs | outname(cout,:) | outname(outlist,:)     |
+          ----------------------------------------------------
+     </pre>
+        <p>where cout is the list of in 1:<code>rows</code>(<var>p</var>)
+that are not contained in outlist. (Discrete/continuous outputs
+may be entered in any order desired by the user.)
+
+        <p><strong>Example</strong>
+     <pre class="example">          octave:1&gt; a = [1 2 3; 4 5 6; 7 8 10];
+          octave:2&gt; b = [0 0 ; 0 1 ; 1 0];
+          octave:3&gt; c = eye (3);
+          octave:4&gt; sys = ss (a, b, c, [], 0, 3, 0, {"volts", "amps", "joules"});
+          octave:5&gt; sysout(sys);
+          Input(s)
+                  1: u_1
+                  2: u_2
+          
+          Output(s):
+                  1: y_1
+                  2: y_2
+                  3: y_3
+          
+          state-space form:
+          3 continuous states, 0 discrete states
+          State(s):
+                  1: volts
+                  2: amps
+                  3: joules
+          
+          A matrix: 3 x 3
+             1   2   3
+             4   5   6
+             7   8  10
+          B matrix: 3 x 2
+            0  0
+            0  1
+            1  0
+          C matrix: 3 x 3
+            1  0  0
+            0  1  0
+            0  0  1
+          D matrix: 3 x 3
+            0  0
+            0  0
+            0  0
+     </pre>
+        <p>Notice that the D matrix is constructed  by default to the
+correct dimensions.  Default input and output signals names were assigned
+since none were given. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsys2ss"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>a</var>, <var>b</var>, <var>c</var>, <var>d</var>, <var>tsam</var>, <var>n</var>, <var>nz</var>, <var>stname</var>, <var>inname</var>, <var>outname</var>, <var>yd</var>] = <b>sys2ss</b> (<var>sys</var>)<var><a name="index-sys2ss-1202"></a></var><br>
+<blockquote><p>Extract state space representation from system data structure.
+
+        <p><strong>Input</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>a</var><dt><var>b</var><dt><var>c</var><dt><var>d</var><dd>State space matrices for <var>sys</var>.
+
+          <br><dt><var>tsam</var><dd>Sampling time of <var>sys</var> (0 if continuous).
+
+          <br><dt><var>n</var><dt><var>nz</var><dd>Number of continuous, discrete states (discrete states come
+last in state vector <var>x</var>).
+
+          <br><dt><var>stname</var><dt><var>inname</var><dt><var>outname</var><dd>Signal names (lists of strings);  names of states,
+inputs, and outputs, respectively.
+
+          <br><dt><var>yd</var><dd>Binary vector; <var>yd</var>(<var>ii</var>) is 1 if output <var>y</var>(<var>ii</var>)
+is discrete (sampled); otherwise  <var>yd</var>(<var>ii</var>) is 0.
+
+        </dl>
+        A warning massage is printed if the system is a mixed
+continuous and discrete system.
+
+        <p><strong>Example</strong>
+     <pre class="example">          octave:1&gt; sys=tf2sys([1 2],[3 4 5]);
+          octave:2&gt; [a,b,c,d] = sys2ss(sys)
+          a =
+             0.00000   1.00000
+            -1.66667  -1.33333
+          b =
+            0
+            1
+          c = 0.66667  0.33333
+          d = 0
+     </pre>
+        </blockquote></div>
+
+   </body></html>
+

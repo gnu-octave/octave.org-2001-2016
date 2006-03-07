@@ -1,0 +1,426 @@
+<html lang="en">
+<head>
+<title>Simple File I/O - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Basic-Input-and-Output.html#Basic-Input-and-Output" title="Basic Input and Output">
+<link rel="prev" href="Terminal-Input.html#Terminal-Input" title="Terminal Input">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Simple-File-I%2fO"></a>
+<a name="Simple-File-I_002fO"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Terminal-Input.html#Terminal-Input">Terminal Input</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Basic-Input-and-Output.html#Basic-Input-and-Output">Basic Input and Output</a>
+<hr>
+</div>
+
+<h4 class="subsection">16.1.3 Simple File I/O</h4>
+
+<p><a name="index-saving-data-539"></a><a name="index-loading-data-540"></a>The <code>save</code> and <code>load</code> commands allow data to be written to and
+read from disk files in various formats.  The default format of files
+written by the <code>save</code> command can be controlled using the built-in
+variables <code>default_save_options</code> and <code>save_precision</code>.
+
+   <p>Note that Octave cannot yet save or load structure variables or any
+user-defined types.
+
+   <p><a name="doc_002dsave"></a>
+
+<div class="defun">
+&mdash; Command: <b>save</b><var> options file v1 v2 <small class="dots">...</small><a name="index-save-541"></a></var><br>
+<blockquote><p>Save the named variables <var>v1</var>, <var>v2</var>, <small class="dots">...</small> in the file
+<var>file</var>.  The special filename `<samp><span class="samp">-</span></samp>' can be used to write the
+output to your terminal.  If no variable names are listed, Octave saves
+all the variables in the current scope.  Valid options for the
+<code>save</code> command are listed in the following table.  Options that
+modify the output format override the format specified by the built-in
+variable <code>default_save_options</code>.
+
+          <dl>
+<dt><code>-ascii</code><dd>Save the data in Octave's text data format.
+
+          <p><strong>WARNING: the meaning of this option will change in a future
+version of Octave to be compatible with </strong><span class="sc">Matlab</span><strong>.  To keep the
+meaning of your code the same across this change, use the </strong><code>-text</code><strong>
+option instead.</strong>
+
+          <br><dt><code>-binary</code><dd>Save the data in Octave's binary data format.
+
+          <br><dt><code>-float-binary</code><dd>Save the data in Octave's binary data format but only using single
+precision.  You should use this format only if you know that all the
+values to be saved can be represented in single precision.
+
+          <br><dt><code>-V7</code><dt><code>-v7</code><dt><code>-7</code><dt><code>-mat7-binary</code><dd>Save the data in <span class="sc">Matlab</span>'s v7 binary data format.
+
+          <br><dt><code>-V6</code><dt><code>-v6</code><dt><code>-6</code><dt><code>-mat</code><dt><code>-mat-binary</code><dd>Save the data in <span class="sc">Matlab</span>'s v6 binary data format.
+
+          <br><dt><code>-V4</code><dt><code>-v4</code><dt><code>-4</code><dt><code>-mat4-binary</code><dd>Save the data in the binary format written by <span class="sc">Matlab</span> version 4.
+
+          <br><dt><code>-hdf5</code><dd>Save the data in HDF5 format. 
+(HDF5 is a free, portable binary format developed by the National
+Center for Supercomputing Applications at the University of Illinois.)
+
+          <br><dt><code>-float-hdf5</code><dd>Save the data in HDF5 format but only using single precision. 
+You should use this format only if you know that all the
+values to be saved can be represented in single precision.
+
+          <br><dt><code>-save-builtins</code><dd>Force Octave to save the values of built-in variables too.  By default,
+Octave does not save built-in variables.
+
+          <br><dt><code>-zip</code><dt><code>-z</code><dd>Use the gzip algorithm to compress the file. This works equally on files that
+are compressed with gzip outside of octave, and gzip can equally be used to
+convert the files for backward compatibility. 
+</dl>
+
+        <p>The list of variables to save may include wildcard patterns containing
+the following special characters:
+          <dl>
+<dt><code>?</code><dd>Match any single character.
+
+          <br><dt><code>*</code><dd>Match zero or more characters.
+
+          <br><dt><code>[ </code><var>list</var><code> ]</code><dd>Match the list of characters specified by <var>list</var>.  If the first
+character is <code>!</code> or <code>^</code>, match all characters except those
+specified by <var>list</var>.  For example, the pattern `<samp><span class="samp">[a-zA-Z]</span></samp>' will
+match all lower and upper case alphabetic characters.
+
+          <br><dt><code>-text</code><dd>Save the data in Octave's text data format. 
+</dl>
+
+        <p>Except when using the <span class="sc">Matlab</span> binary data file format, saving global
+variables also saves the global status of the variable, so that if it is
+restored at a later time using `<samp><span class="samp">load</span></samp>', it will be restored as a
+global variable.
+
+        <p>The command
+
+     <pre class="example">          save -binary data a b*
+     </pre>
+        <p class="noindent">saves the variable `<samp><span class="samp">a</span></samp>' and all variables beginning with `<samp><span class="samp">b</span></samp>' to
+the file <samp><span class="file">data</span></samp> in Octave's binary format. 
+</p></blockquote></div>
+
+   <p>There are three variables that modify the behavior of <code>save</code> and
+three more that control whether variables are saved when Octave exits
+unexpectedly.
+
+   <p><a name="doc_002dcrash_005fdumps_005foctave_005fcore"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>crash_dumps_octave_core</b><var><a name="index-crash_005fdumps_005foctave_005fcore-542"></a></var><br>
+<blockquote><p>If this variable is set to a nonzero value, Octave tries to save all
+current variables the the file "octave-core" if it crashes or receives a
+hangup, terminate or similar signal.  The default value is 1.
+        <pre class="sp">
+     
+     </pre>
+     See also: octave_core_file_limit, octave_core_file_name, octave_core_file_options. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsighup_005fdumps_005foctave_005fcore"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>sighup_dumps_octave_core</b><var><a name="index-sighup_005fdumps_005foctave_005fcore-543"></a></var><br>
+<blockquote><p>If this variable is set to a nonzero value and
+<code>crash_dumps_octave_core</code> is also nonzero, Octave tries to save all
+current variables the the file "octave-core" if it receives a
+hangup signal.  The default value is 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsigterm_005fdumps_005foctave_005fcore"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>sigterm_dumps_octave_core</b><var><a name="index-sigterm_005fdumps_005foctave_005fcore-544"></a></var><br>
+<blockquote><p>If this variable is set to a nonzero value and
+<code>crash_dumps_octave_core</code> is also nonzero, Octave tries to save all
+current variables the the file "octave-core" if it receives a
+terminate signal.  The default value is 1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddefault_005fsave_005foptions"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>default_save_options</b><var><a name="index-default_005fsave_005foptions-545"></a></var><br>
+<blockquote><p>This variable specifies the default options for the <code>save</code> command,
+and is used to define the default format. Typical values include,
+<code>"-ascii"</code>, <code>"-ascii -zip"</code>. For other possible options
+see the <code>save</code> command. The initial value of this variable is
+<code>-ascii</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002doctave_005fcore_005ffile_005foptions"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>octave_core_file_options</b><var><a name="index-octave_005fcore_005ffile_005foptions-546"></a></var><br>
+<blockquote><p>If Octave aborts, it attempts to save the contents of the top-level
+workspace in a file using this variable to define the format. The value of
+<code>octave_core_file_options</code> should follow the same format as the options
+that may be used with <code>save</code>. The default value is Octave's binary
+format.
+        <pre class="sp">
+     
+     </pre>
+     See also: crash_dumps_octave_core, octave_core_file_name, octave_core_file_limit. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsave_005fprecision"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>save_precision</b><var><a name="index-save_005fprecision-547"></a></var><br>
+<blockquote><p>This variable specifies the number of digits to keep when saving data in
+text format.  The default value is 17. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsave_005fheader_005fformat_005fstring"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>save_header_format_string</b><var><a name="index-save_005fheader_005fformat_005fstring-548"></a></var><br>
+<blockquote><p>This variable specifies the the format string for the comment line
+that is written at the beginning of text-format data files saved by
+Octave.  The format string is passed to <code>strftime</code> and should
+begin with the character `<samp><span class="samp">#</span></samp>' and contain no newline characters. 
+If the value of <code>save_header_format_string</code> is the empty string,
+the header comment is omitted from text-format data files.  The
+default value is
+
+     <pre class="example">          "# Created by Octave VERSION, %a %b %d %H:%M:%S %Y %Z &lt;USER@HOST&gt;"
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     See also: strftime. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dload"></a>
+
+<div class="defun">
+&mdash; Command: <b>load</b><var> options file v1 v2 <small class="dots">...</small><a name="index-load-549"></a></var><br>
+<blockquote><p>Load the named variables from the file <var>file</var>.  As with <code>save</code>,
+you may specify a list of variables and <code>load</code> will only extract
+those variables with names that match.  For example, to restore the
+variables saved in the file <samp><span class="file">data</span></samp>, use the command
+
+     <pre class="example">          load data
+     </pre>
+        <p>If a variable that is not marked as global is loaded from a file when a
+global symbol with the same name already exists, it is loaded in the
+global symbol table.  Also, if a variable is marked as global in a file
+and a local symbol exists, the local symbol is moved to the global
+symbol table and given the value from the file.  Since it seems that
+both of these cases are likely to be the result of some sort of error,
+they will generate warnings.
+
+        <p>If invoked with a single output argument, Octave returns data instead
+of inserting variables in the symbol table.  If the data file contains
+only numbers (TAB- or space-delimited columns), a matrix of values is
+returned.  Otherwise, <code>load</code> returns a structure with members
+ corresponding to the names of the variables in the file.
+
+        <p>The <code>load</code> command can read data stored in Octave's text and
+binary formats, and <span class="sc">Matlab</span>'s binary format.  It will automatically
+detect the type of file and do conversion from different floating point
+formats (currently only IEEE big and little endian, though other formats
+may added in the future).
+
+        <p>Valid options for <code>load</code> are listed in the following table.
+
+          <dl>
+<dt><code>-force</code><dd>The `<samp><span class="samp">-force</span></samp>' option is accepted but ignored for backward
+compatiability. Octave now overwrites variables currently in memory with
+the same name as those found in the file.
+
+          <br><dt><code>-ascii</code><dd>Force Octave to assume the file is in Octave's text format.
+
+          <p><strong>WARNING: the meaning of this option will change in a future
+version of Octave to be compatible with </strong><span class="sc">Matlab</span><strong>.  To keep the
+meaning of your code the same across this change, use the </strong><code>-text</code><strong>
+option instead.</strong>
+
+          <br><dt><code>-binary</code><dd>Force Octave to assume the file is in Octave's binary format.
+
+          <br><dt><code>-mat</code><dt><code>-mat-binary</code><dt><code>-6</code><dt><code>-v6</code><dt><code>-7</code><dt><code>-v7</code><dd>Force Octave to assume the file is in <span class="sc">Matlab</span>'s version 6 or 7 binary
+format.
+
+          <br><dt><code>-V4</code><dt><code>-v4</code><dt><code>-4</code><dt><code>-mat4-binary</code><dd>Force Octave to assume the file is in the binary format written by
+<span class="sc">Matlab</span> version 4.
+
+          <br><dt><code>-hdf5</code><dd>Force Octave to assume the file is in HDF5 format. 
+(HDF5 is a free, portable binary format developed by the National
+Center for Supercomputing Applications at the University of Illinois.) 
+Note that Octave can read HDF5 files not created by itself, but may
+skip some datasets in formats that it cannot support.
+
+          <br><dt><code>-import</code><dd>The `<samp><span class="samp">-import</span></samp>' is accepted but ignored for backward compatiability. 
+Octave can now support multi-dimensional HDF data and automatically
+modifies variable names if they are invalid Octave identifiers.
+
+          <br><dt><code>-text</code><dd>Force Octave to assume the file is in Octave's text format. 
+</dl>
+        </p></blockquote></div>
+
+   </body></html>
+

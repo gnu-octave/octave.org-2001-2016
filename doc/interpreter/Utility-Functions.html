@@ -1,0 +1,479 @@
+<html lang="en">
+<head>
+<title>Utility Functions - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
+<link rel="next" href="Complex-Arithmetic.html#Complex-Arithmetic" title="Complex Arithmetic">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Utility-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Complex-Arithmetic.html#Complex-Arithmetic">Complex Arithmetic</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
+<hr>
+</div>
+
+<h3 class="section">19.1 Utility Functions</h3>
+
+<p>The following functions are available for working with complex numbers. 
+Each expects a single argument.  They are called <dfn>mapping functions</dfn>
+because when given a matrix argument, they apply the given function to
+each element of the matrix.
+
+   <p><a name="doc_002dceil"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>ceil</b> (<var>x</var>)<var><a name="index-ceil-720"></a></var><br>
+<blockquote><p>Return the smallest integer not less than <var>x</var>.  If <var>x</var> is
+complex, return <code>ceil (real (</code><var>x</var><code>)) + ceil (imag (</code><var>x</var><code>)) * I</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dexp"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>exp</b> (<var>x</var>)<var><a name="index-exp-721"></a></var><br>
+<blockquote><p>Compute the exponential of <var>x</var>.  To compute the matrix exponential,
+see <a href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfix"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>fix</b> (<var>x</var>)<var><a name="index-fix-722"></a></var><br>
+<blockquote><p>Truncate <var>x</var> toward zero.  If <var>x</var> is complex, return
+<code>fix (real (</code><var>x</var><code>)) + fix (imag (</code><var>x</var><code>)) * I</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfloor"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>floor</b> (<var>x</var>)<var><a name="index-floor-723"></a></var><br>
+<blockquote><p>Return the largest integer not greater than <var>x</var>.  If <var>x</var> is
+complex, return <code>floor (real (</code><var>x</var><code>)) + floor (imag (</code><var>x</var><code>)) * I</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgcd"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>g</var> = <b>gcd</b> (<var>a1, </var><code>...</code>)<var><a name="index-gcd-724"></a></var><br>
+&mdash; Loadable Function: [<var>g</var>, <var>v1</var>, <var>...</var>] = <b>gcd</b> (<var>a1, </var><code>...</code>)<var><a name="index-gcd-725"></a></var><br>
+<blockquote>
+<p>If a single argument is given then compute the greatest common divisor of
+the elements of this argument. Otherwise if more than one argument is
+given all arguments must be the same size or scalar. In this case the
+greatest common divisor is calculated for element individually. All
+elements must be integers. For example,
+
+     <pre class="example">          gcd ([15, 20])
+              =&gt;  5
+     </pre>
+        <p class="noindent">and
+
+     <pre class="example">          gcd ([15, 9], [20 18])
+              =&gt;  5  9
+     </pre>
+        <p>Optional return arguments <var>v1</var>, etc, contain integer vectors such
+that,
+
+     <pre class="example">          <var>g</var> = <var>v1</var> .* <var>a1</var> + <var>v2</var> .* <var>a2</var> + <var>...</var>
+     </pre>
+        <p>For backward compatiability with previous versions of this function, when
+all arguments are scalr, a single return argument <var>v1</var> containing
+all of the values of <var>v1</var>, <var>...</var> is acceptable.
+        <pre class="sp">
+     
+     </pre>
+     See also: lcm, min, max, ceil, floor. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlcm"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>lcm</b> (<var>x, </var><code>...</code>)<var><a name="index-lcm-726"></a></var><br>
+<blockquote><p>Compute the least common multiple of the elements elements of <var>x</var>, or
+the list of all the arguments.  For example,
+
+     <pre class="example">          lcm (a1, ..., ak)
+     </pre>
+        <p class="noindent">is the same as
+
+     <pre class="example">          lcm ([a1, ..., ak]).
+     </pre>
+        <p>All elements must be the same size or scalar.
+        <pre class="sp">
+     
+     </pre>
+     See also: gcd, min, max, ceil, floor. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlog"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>log</b> (<var>x</var>)<var><a name="index-log-727"></a></var><br>
+<blockquote><p>Compute the natural logarithm for each element of <var>x</var>.  To compute the
+matrix logarithm, see <a href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>.
+        <pre class="sp">
+     
+     </pre>
+     See also: log2, log10, logspace, exp. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlog10"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>log10</b> (<var>x</var>)<var><a name="index-log10-728"></a></var><br>
+<blockquote><p>Compute the base-10 logarithm for each element of <var>x</var>.
+        <pre class="sp">
+     
+     </pre>
+     See also: log, log2, logspace, exp. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlog2"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>log2</b> (<var>x</var>)<var><a name="index-log2-729"></a></var><br>
+&mdash; Mapping Function: [<var>f</var>, <var>e</var>] = <b>log2</b> (<var>x</var>)<var><a name="index-log2-730"></a></var><br>
+<blockquote><p>Compute the base-2 logarithm of <var>x</var>.  With two outputs, returns
+<var>f</var> and <var>e</var> such that
+ 1/2 &lt;= abs(f) &lt; 1 and x = f * 2^e.
+        <pre class="sp">
+     
+     </pre>
+     See also: log, log10, logspace, exp. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmax"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>max</b> (<var>x, y, dim</var>)<var><a name="index-max-731"></a></var><br>
+&mdash; Mapping Function: [<var>w</var>, <var>iw</var>] = <b>max</b> (<var>x</var>)<var><a name="index-max-732"></a></var><br>
+<blockquote><p><a name="index-Utility-Functions-733"></a>For a vector argument, return the maximum value.  For a matrix
+argument, return the maximum value from each column, as a row
+vector, or over the dimension <var>dim</var> if defined. For two matrices
+(or a matrix and scalar), return the pair-wise maximum. 
+Thus,
+
+     <pre class="example">          max (max (<var>x</var>))
+     </pre>
+        <p class="noindent">returns the largest element of <var>x</var>, and
+
+     <pre class="example">          max (2:5, pi)
+              =&gt;  3.1416  3.1416  4.0000  5.0000
+     </pre>
+        <p class="noindent">compares each element of the range <code>2:5</code> with <code>pi</code>, and
+returns a row vector of the maximum values.
+
+        <p>For complex arguments, the magnitude of the elements are used for
+comparison.
+
+        <p>If called with one input and two output arguments,
+<code>max</code> also returns the first index of the
+maximum value(s). Thus,
+
+     <pre class="example">          [x, ix] = max ([1, 3, 5, 2, 5])
+              =&gt;  x = 5
+                  ix = 3
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dmin"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>min</b> (<var>x, y, dim</var>)<var><a name="index-min-734"></a></var><br>
+&mdash; Mapping Function: [<var>w</var>, <var>iw</var>] = <b>min</b> (<var>x</var>)<var><a name="index-min-735"></a></var><br>
+<blockquote><p><a name="index-Utility-Functions-736"></a>For a vector argument, return the minimum value.  For a matrix
+argument, return the minimum value from each column, as a row
+vector, or over the dimension <var>dim</var> if defined. For two matrices
+(or a matrix and scalar), return the pair-wise minimum. 
+Thus,
+
+     <pre class="example">          min (min (<var>x</var>))
+     </pre>
+        <p class="noindent">returns the smallest element of <var>x</var>, and
+
+     <pre class="example">          min (2:5, pi)
+              =&gt;  2.0000  3.0000  3.1416  3.1416
+     </pre>
+        <p class="noindent">compares each element of the range <code>2:5</code> with <code>pi</code>, and
+returns a row vector of the minimum values.
+
+        <p>For complex arguments, the magnitude of the elements are used for
+comparison.
+
+        <p>If called with one input and two output arguments,
+<code>min</code> also returns the first index of the
+minimum value(s). Thus,
+
+     <pre class="example">          [x, ix] = min ([1, 3, 0, 2, 5])
+              =&gt;  x = 0
+                  ix = 3
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dmod"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>mod</b> (<var>x, y</var>)<var><a name="index-mod-737"></a></var><br>
+<blockquote><p>Compute modulo function, using
+
+     <pre class="example">          x - y .* floor (x ./ y)
+     </pre>
+        <p>Note that this handles negative numbers correctly:
+<code>mod (-1, 3)</code> is 2, not -1 as <code>rem (-1, 3)</code> returns. 
+Also, <code>mod (</code><var>x</var><code>, 0)</code> returns <var>x</var>.
+
+        <p>An error message is printed if the dimensions of the arguments do not
+agree, or if either of the arguments is complex.
+        <pre class="sp">
+     
+     </pre>
+     See also: rem, round. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnextpow2"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>nextpow2</b> (<var>x</var>)<var><a name="index-nextpow2-738"></a></var><br>
+<blockquote><p>If <var>x</var> is a scalar, returns the first integer <var>n</var> such that
+ 2^n &gt;= abs (x).
+
+        <p>If <var>x</var> is a vector, return <code>nextpow2 (length (</code><var>x</var><code>))</code>.
+        <pre class="sp">
+     
+     </pre>
+     See also: pow2. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpow2"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>pow2</b> (<var>x</var>)<var><a name="index-pow2-739"></a></var><br>
+&mdash; Mapping Function:  <b>pow2</b> (<var>f, e</var>)<var><a name="index-pow2-740"></a></var><br>
+<blockquote><p>With one argument, computes
+ 2 .^ x
+for each element of <var>x</var>.  With two arguments, returns
+ f .* (2 .^ e).
+        <pre class="sp">
+     
+     </pre>
+     See also: nextpow2. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drem"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>rem</b> (<var>x, y</var>)<var><a name="index-rem-741"></a></var><br>
+<blockquote><p>Return the remainder of <var>x</var><code> / </code><var>y</var>, computed using the
+expression
+
+     <pre class="example">          x - y .* fix (x ./ y)
+     </pre>
+        <p>An error message is printed if the dimensions of the arguments do not
+agree, or if either of the arguments is complex.
+        <pre class="sp">
+     
+     </pre>
+     See also: mod, round. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dround"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>round</b> (<var>x</var>)<var><a name="index-round-742"></a></var><br>
+<blockquote><p>Return the integer nearest to <var>x</var>.  If <var>x</var> is complex, return
+<code>round (real (</code><var>x</var><code>)) + round (imag (</code><var>x</var><code>)) * I</code>.
+        <pre class="sp">
+     
+     </pre>
+     See also: rem. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsign"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>sign</b> (<var>x</var>)<var><a name="index-sign-743"></a></var><br>
+<blockquote><p>Compute the <dfn>signum</dfn> function, which is defined as
+
+     <pre class="example">                     -1, x &lt; 0;
+          sign (x) =  0, x = 0;
+                      1, x &gt; 0.
+     </pre>
+        <p>For complex arguments, <code>sign</code> returns <code>x ./ abs (</code><var>x</var><code>)</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsqrt"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>sqrt</b> (<var>x</var>)<var><a name="index-sqrt-744"></a></var><br>
+<blockquote><p>Compute the square root of <var>x</var>.  If <var>x</var> is negative, a complex
+result is returned.  To compute the matrix square root, see
+<a href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>. 
+</p></blockquote></div>
+
+   </body></html>
+

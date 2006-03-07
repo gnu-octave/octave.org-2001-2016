@@ -1,0 +1,218 @@
+<html lang="en">
+<head>
+<title>Style Tips - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Tips.html#Tips" title="Tips">
+<link rel="next" href="Coding-Tips.html#Coding-Tips" title="Coding Tips">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Style-Tips"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Coding-Tips.html#Coding-Tips">Coding Tips</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Tips.html#Tips">Tips</a>
+<hr>
+</div>
+
+<h3 class="section">B.1 Writing Clean Octave Programs</h3>
+
+<p>Here are some tips for avoiding common errors in writing Octave code
+intended for widespread use:
+
+     <ul>
+<li>Since all global variables share the same name space, and all functions
+share another name space, you should choose a short word to distinguish
+your program from other Octave programs.  Then take care to begin the
+names of all global variables, constants, and functions with the chosen
+prefix.  This helps avoid name conflicts.
+
+     <p>If you write a function that you think ought to be added to Octave under
+a certain name, such as <code>fiddle_matrix</code>, don't call it by that name
+in your program.  Call it <code>mylib_fiddle_matrix</code> in your program,
+and send mail to <a href="mailto:maintainers@octave.org">maintainers@octave.org</a> suggesting that it
+be added to Octave.  If and when it is, the name can be changed easily
+enough.
+
+     <p>If one prefix is insufficient, your package may use two or three
+alternative common prefixes, so long as they make sense.
+
+     <p>Separate the prefix from the rest of the symbol name with an underscore
+`<samp><span class="samp">_</span></samp>'.  This will be consistent with Octave itself and with most
+Octave programs.
+
+     <li>When you encounter an error condition, call the function <code>error</code>
+(or <code>usage</code>).  The <code>error</code> and <code>usage</code> functions do not
+return. 
+See <a href="Errors.html#Errors">Errors</a>.
+
+     <li>Please put a copyright notice on the file if you give copies to anyone. 
+Use the same lines that appear at the top of the function files
+distributed with Octave.  If you have not signed papers to assign the
+copyright to anyone else, then place your name in the copyright notice. 
+</ul>
+
+   </body></html>
+

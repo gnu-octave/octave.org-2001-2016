@@ -1,0 +1,232 @@
+<html lang="en">
+<head>
+<title>Cursor Motion - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
+<link rel="next" href="Killing-and-Yanking.html#Killing-and-Yanking" title="Killing and Yanking">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Cursor-Motion"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Killing-and-Yanking.html#Killing-and-Yanking">Killing and Yanking</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>
+<hr>
+</div>
+
+<h4 class="subsection">2.4.1 Cursor Motion</h4>
+
+<p>The following commands allow you to position the cursor.
+
+     <dl>
+<dt><kbd>C-b</kbd><dd>Move back one character.
+
+     <br><dt><kbd>C-f</kbd><dd>Move forward one character.
+
+     <br><dt><kbd>&lt;DEL&gt;</kbd><dd>Delete the character to the left of the cursor.
+
+     <br><dt><kbd>C-d</kbd><dd>Delete the character underneath the cursor.
+
+     <br><dt><kbd>M-f</kbd><dd>Move forward a word.
+
+     <br><dt><kbd>M-b</kbd><dd>Move backward a word.
+
+     <br><dt><kbd>C-a</kbd><dd>Move to the start of the line.
+
+     <br><dt><kbd>C-e</kbd><dd>Move to the end of the line.
+
+     <br><dt><kbd>C-l</kbd><dd>Clear the screen, reprinting the current line at the top.
+
+     <br><dt><kbd>C-_</kbd><dt><kbd>C-/</kbd><dd>Undo the last thing that you did.  You can undo all the way back to an
+empty line.
+
+     <br><dt><kbd>M-r</kbd><dd>Undo all changes made to this line.  This is like typing the `undo'
+command enough times to get back to the beginning. 
+</dl>
+
+   <p>The above table describes the most basic possible keystrokes that you need
+in order to do editing of the input line.  On most terminals, you can
+also use the arrow keys in place of <kbd>C-f</kbd> and <kbd>C-b</kbd> to move
+forward and backward.
+
+   <p>Notice how <kbd>C-f</kbd> moves forward a character, while <kbd>M-f</kbd> moves
+forward a word.  It is a loose convention that control keystrokes
+operate on characters while meta keystrokes operate on words.
+
+   <p>There is also a function available so that you can clear the screen from
+within Octave programs.
+
+   <p><a name="index-clearing-the-screen-81"></a>
+<a name="doc_002dclc"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>clc</b> ()<var><a name="index-clc-82"></a></var><br>
+&mdash; Built-in Function:  <b>home</b> ()<var><a name="index-home-83"></a></var><br>
+<blockquote><p>Clear the terminal screen and move the cursor to the upper left corner. 
+</p></blockquote></div>
+
+   </body></html>
+

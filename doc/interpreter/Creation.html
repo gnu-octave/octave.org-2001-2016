@@ -1,0 +1,289 @@
+<html lang="en">
+<head>
+<title>Creation - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Basics.html#Basics" title="Basics">
+<link rel="prev" href="Storage.html#Storage" title="Storage">
+<link rel="next" href="Operators-and-Functions.html#Operators-and-Functions" title="Operators and Functions">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Creation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Operators-and-Functions.html#Operators-and-Functions">Operators and Functions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Storage.html#Storage">Storage</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Basics.html#Basics">Basics</a>
+<hr>
+</div>
+
+<h4 class="subsection">22.1.2 Creating Sparse Matrices</h4>
+
+<p>There are several means to create sparse matrix.
+
+     <dl>
+<dt>Returned from a function<dd>There are many functions that directly return sparse matrices. These include
+<dfn>speye</dfn>, <dfn>sprand</dfn>, <dfn>spdiag</dfn>, etc. 
+<br><dt>Constructed from matrices or vectors<dd>The function <dfn>sparse</dfn> allows a sparse matrix to be constructed from
+three vectors representing the row, column and data. Alternatively, the
+function <dfn>spconvert</dfn> uses a three column matrix format to allow easy
+importation of data from elsewhere. 
+<br><dt>Created and then filled<dd>The function <dfn>sparse</dfn> or <dfn>spalloc</dfn> can be used to create an empty
+matrix that is then filled by the user
+<br><dt>From a user binary program<dd>The user can directly create the sparse matrix within an oct-file. 
+</dl>
+
+   <p>There are several basic functions to return specific sparse
+matrices. For example the sparse identity matrix, is a matrix that is
+often needed. It therefore has its own function to create it as
+<code>speye (</code><var>n</var><code>)</code> or <code>speye (</code><var>r</var><code>, </code><var>c</var><code>)</code>, which
+creates an <var>n</var>-by-<var>n</var> or <var>r</var>-by-<var>c</var> sparse identity
+matrix.
+
+   <p>Another typical sparse matrix that is often needed is a random distribution
+of random elements. The functions <dfn>sprand</dfn> and <dfn>sprandn</dfn> perform
+this for uniform and normal random distributions of elements. They have exactly
+the same calling convention, where <code>sprand (</code><var>r</var><code>, </code><var>c</var><code>, </code><var>d</var><code>)</code>,
+creates an <var>r</var>-by-<var>c</var> sparse matrix with a density of filled
+elements of <var>d</var>.
+
+   <p>Other functions of interest that directly creates a sparse matrices, are
+<dfn>spdiag</dfn> or its generalization <dfn>spdiags</dfn>, that can take the
+definition of the diagonals of the matrix and create the sparse matrix
+that corresponds to this. For example
+
+<pre class="example">     s = diag (sparse(randn(1,n)), -1);
+</pre>
+   <p>creates a sparse (<var>n</var>+1)-by-(<var>n</var>+1) sparse matrix with a single
+diagonal defined.
+
+   <p>The recommended way for the user to create a sparse matrix, is to create
+two vectors contain the row and column index of the data and a third
+vector of the same size containing the data to be stored. For example
+
+<pre class="example">      function x = foo (r, j)
+       idx = randperm (r);
+       x = ([zeros(r-2,1); rand(2,1)])(idx);
+      endfunction
+     
+      ri = [];
+      ci = [];
+      d = [];
+     
+      for j=1:c
+         dtmp = foo (r, j);  # Returns vector of length r with (:,j) values
+         idx = find (dtmp != 0.);
+         ri = [ri; idx];
+         ci = [ci; j*ones(length(idx),1)];
+         d = [d; dtmp(idx)];
+      endfor
+      s = sparse (ri, ci, d, r, c);
+</pre>
+   <p>creates an <var>r</var>-by-<var>c</var> sparse matrix with a random distribution of
+2 elements per row. The elements of the vectors do not need to be sorted in
+any particular order as Octave will sort them prior to storing the
+data. However, pre-sorting the data will make the creation of the sparse
+matrix faster.
+
+   <p>The function <dfn>spconvert</dfn> takes a three or four column real matrix. 
+The first two columns represent the row and column index respectively and
+the third and four columns, the real and imaginary parts of the sparse
+matrix. The matrix can contain zero elements and the elements can be
+sorted in any order. Adding zero elements is a convenient way to define
+the size of the sparse matrix. For example
+
+<pre class="example">     s = spconvert ([1 2 3 4; 1 3 4 4; 1 2 3 0]')
+     =&gt; Compressed Column Sparse (rows=4, cols=4, nnz=3)
+           (1 , 1) -&gt; 1
+           (2 , 3) -&gt; 2
+           (3 , 4) -&gt; 3
+</pre>
+   <p>An example of creating and filling a matrix might be
+
+<pre class="example">     k = 5;
+     nz = r * k;
+     s = spalloc (r, c, nz)
+     for j = 1:c
+       idx = randperm (r);
+       s (:, j) = [zeros(r - k, 1); rand(k, 1)] (idx);
+     endfor
+</pre>
+   <p>It should be noted, that due to the way that the Octave
+assignment functions are written that the assignment will reallocate
+the memory used by the sparse matrix at each iteration of the above loop. 
+Therefore the <dfn>spalloc</dfn> function ignores the <var>nz</var> argument and
+does not preassign the memory for the matrix. Therefore, it is vitally
+important that code using to above structure should be as vectorized
+much as possible to minimize the number of assignments and reduce the
+number of memory allocations.
+
+   <p>The above problem can be avoided in oct-files. However, the
+construction of a sparse matrix from an oct-file is more complex than
+can be discussed in this brief introduction, and you are referred to
+section <a href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>, to have a full description of the techniques
+involved.
+
+   </body></html>
+

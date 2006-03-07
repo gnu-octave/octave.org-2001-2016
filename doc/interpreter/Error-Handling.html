@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+<title>Error Handling - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
+<link rel="next" href="Debugging.html#Debugging" title="Debugging">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Error-Handling"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Debugging.html#Debugging">Debugging</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">14 Error Handling</h2>
+
+<p>Octave includes several functions for printing error and warning
+messages.  When you write functions that need to take special action
+when they encounter abnormal conditions, you should print the error
+messages using the functions described in this chapter.
+
+   <p><a name="doc_002derror"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>error</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-error-506"></a></var><br>
+<blockquote><p>The <code>error</code> function formats the optional arguments under the
+control of the template string <var>template</var> using the same rules as
+the <code>printf</code> family of functions (see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>). 
+The resulting message is prefixed by the string `<samp><span class="samp">error: </span></samp>' and
+printed on the <code>stderr</code> stream.
+
+        <p>Calling <code>error</code> also sets Octave's internal error state such that
+control will return to the top level without evaluating any more
+commands.  This is useful for aborting from functions or scripts.
+
+        <p>If the error message does not end with a new line character, Octave will
+print a traceback of all the function calls leading to the error.  For
+example, given the following function definitions:
+
+     <pre class="example">          function f () g () end
+          function g () h () end
+          function h () nargin == 1 || error ("nargin != 1"); end
+     </pre>
+        <p class="noindent">calling the function <code>f</code> will result in a list of messages that
+can help you to quickly locate the exact location of the error:
+
+     <pre class="example">          f ()
+          error: nargin != 1
+          error: evaluating index expression near line 1, column 30
+          error: evaluating binary operator `||' near line 1, column 27
+          error: called from `h'
+          error: called from `g'
+          error: called from `f'
+     </pre>
+        <p>If the error message ends in a new line character, Octave will print the
+message but will not display any traceback messages as it returns
+control to the top level.  For example, modifying the error message
+in the previous example to end in a new line causes Octave to only print
+a single message:
+
+     <pre class="example">          function h () nargin == 1 || error ("nargin != 1\n"); end
+          f ()
+          error: nargin != 1
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dbeep_005fon_005ferror"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>beep_on_error</b><var><a name="index-beep_005fon_005ferror-507"></a></var><br>
+<blockquote><p>If the value of <code>beep_on_error</code> is nonzero, Octave will try
+to ring your terminal's bell before printing an error message.  The
+default value is 0. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwarning"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>warning</b> (<var>msg</var>)<var><a name="index-warning-508"></a></var><br>
+<blockquote><p>Print a warning message <var>msg</var> prefixed by the string `<samp><span class="samp">warning: </span></samp>'. 
+After printing the warning message, Octave will continue to execute
+commands.  You should use this function when you want to notify the user
+of an unusual condition, but only when it makes sense for your program
+to go on. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dusage"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>usage</b> (<var>msg</var>)<var><a name="index-usage-509"></a></var><br>
+<blockquote><p>Print the message <var>msg</var>, prefixed by the string `<samp><span class="samp">usage: </span></samp>', and
+set Octave's internal error state such that control will return to the
+top level without evaluating any more commands.  This is useful for
+aborting from functions.
+
+        <p>After <code>usage</code> is evaluated, Octave will print a traceback of all
+the function calls leading to the usage message.
+
+        <p>You should use this function for reporting problems errors that result
+from an improper call to a function, such as calling a function with an
+incorrect number of arguments, or with arguments of the wrong type.  For
+example, most functions distributed with Octave begin with code like
+this
+
+     <pre class="example">          if (nargin != 2)
+            usage ("foo (a, b)");
+          endif
+     </pre>
+        <p class="noindent">to check for the proper number of arguments. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlasterr"></a>
+
+<div class="defun">
+&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lasterr</b> (<var>msg, msgid</var>)<var><a name="index-lasterr-510"></a></var><br>
+<blockquote><p>Without any arguments, return the last error message.  With one
+argument, set the last error message to <var>msg</var>.  With two arguments,
+also set the last message identifier. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlastwarn"></a>
+
+<div class="defun">
+&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lastwarn</b> (<var>msg, msgid</var>)<var><a name="index-lastwarn-511"></a></var><br>
+<blockquote><p>Without any arguments, return the last warning message.  With one
+argument, set the last warning message to <var>msg</var>.  With two arguments,
+also set the last message identifier. 
+</p></blockquote></div>
+
+   <p>The following pair of functions are of limited usefulness, and may be
+removed from future versions of Octave.
+
+   <p><a name="doc_002dperror"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>perror</b> (<var>name, num</var>)<var><a name="index-perror-512"></a></var><br>
+<blockquote><p>Print the error message for function <var>name</var> corresponding to the
+error number <var>num</var>.  This function is intended to be used to print
+useful error messages for those functions that return numeric error
+codes.
+        <pre class="sp">
+     
+     </pre>
+     See also: strerror. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstrerror"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>strerror</b> (<var>name, num</var>)<var><a name="index-strerror-513"></a></var><br>
+<blockquote><p>Return the text of an error message for function <var>name</var>
+corresponding to the error number <var>num</var>.  This function is intended
+to be used to print useful error messages for those functions that
+return numeric error codes. 
+</p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

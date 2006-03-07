@@ -1,0 +1,411 @@
+<html lang="en">
+<head>
+<title>systime - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Control-Theory.html#Control-Theory" title="Control Theory">
+<link rel="prev" href="sysprop.html#sysprop" title="sysprop">
+<link rel="next" href="sysfreq.html#sysfreq" title="sysfreq">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="systime"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="sysfreq.html#sysfreq">sysfreq</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="sysprop.html#sysprop">sysprop</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Control Theory</a>
+<hr>
+</div>
+
+<h3 class="section">30.7 System Analysis-Time Domain</h3>
+
+<p><a name="doc_002dc2d"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>c2d</b> (<var>sys, opt, t</var>)<var><a name="index-c2d-1283"></a></var><br>
+&mdash; Function File:  <b>c2d</b> (<var>sys, t</var>)<var><a name="index-c2d-1284"></a></var><br>
+<blockquote>
+<p>Converts the system data structure describing:
+     <pre class="example">          .
+          x = Ac x + Bc u
+     </pre>
+        <p>into a discrete time equivalent model:
+     <pre class="example">          x[n+1] = Ad x[n] + Bd u[n]
+     </pre>
+        <p>via the matrix exponential or bilinear transform.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>system data structure (may have both continuous time and discrete
+time subsystems)
+<br><dt><var>opt</var><dd>string argument; conversion option (optional argument;
+may be omitted as shown above)
+               <dl>
+<dt><code>"ex"</code><dd>use the matrix exponential (default)
+<br><dt><code>"bi"</code><dd>use the bilinear transformation
+               <pre class="example">                        2(z-1)
+                    s = -----
+                        T(z+1)
+               </pre>
+               <p>FIXME: This option exits with an error if <var>sys</var> is not purely
+continuous. (The <code>ex</code> option can handle mixed systems.) 
+<br><dt><code>"matched"</code><dd>Use the matched pole/zero equivalent transformation (currently only
+works for purely continuous <acronym>SISO</acronym> systems). 
+</dl>
+          <br><dt><var>t</var><dd>sampling time; required if <var>sys</var> is purely continuous.
+
+          <p><strong>Note</strong> that if the second argument is not a string, <code>c2d()</code>
+assumes that the second argument is <var>t</var> and performs
+appropriate argument checks. 
+</dl>
+
+        <p><strong>Output</strong>
+          <dl>
+<dt><var>dsys</var><dd>Discrete time equivalent via zero-order hold, sample each <var>t</var> sec. 
+</dl>
+
+        <p>This function adds the suffix  <code>_d</code>
+to the names of the new discrete states. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dd2c"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>d2c</b> (<var>sys, tol</var>)<var><a name="index-d2c-1285"></a></var><br>
+&mdash; Function File:  <b>d2c</b> (<var>sys, opt</var>)<var><a name="index-d2c-1286"></a></var><br>
+<blockquote><p>Convert a discrete (sub)system into a purely continuous one. 
+The sampling time used is <code>sysgettsam(</code><var>sys</var><code>)</code>.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>system data structure with discrete components
+<br><dt><var>tol</var><dd>Scalar value. 
+Tolerance for convergence of default <code>"log"</code> option (see below)
+<br><dt><var>opt</var><dd>conversion option.  Choose from:
+               <dl>
+<dt><code>"log"</code><dd>(default) Conversion is performed via a matrix logarithm. 
+Due to some problems with this computation, it is
+followed by a steepest descent algorithm to identify continuous time
+<var>a</var>, <var>b</var>, to get a better fit to the original data.
+
+               <p>If called as <code>d2c (</code><var>sys</var><code>, </code><var>tol</var><code>)</code>, with <var>tol</var>
+positive scalar, the <code>"log"</code> option is used.  The default value
+for <var>tol</var> is <code>1e-8</code>. 
+<br><dt><code>"bi"</code><dd>Conversion is performed via bilinear transform
+z = (1 + s T / 2)/(1 - s T / 2) where T is the
+system sampling time (see <code>sysgettsam</code>).
+
+               <p>FIXME: bilinear option exits with an error if <var>sys</var> is not purely
+discrete
+</dl>
+          </dl>
+        <strong>Output</strong>
+          <dl>
+<dt><var>csys</var><dd>continuous time system (same dimensions and signal names as in <var>sys</var>). 
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002ddmr2d"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>dsys</var>, <var>fidx</var>] = <b>dmr2d</b> (<var>sys, idx, sprefix, ts2, cuflg</var>)<var><a name="index-dmr2d-1287"></a></var><br>
+<blockquote><p>convert a multirate digital system to a single rate digital system
+states specified by <var>idx</var>, <var>sprefix</var> are sampled at <var>ts2</var>, all
+others are assumed sampled at <var>ts1</var> = <code>sysgettsam (</code><var>sys</var><code>)</code>.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>discrete time system;
+<code>dmr2d</code> exits with an error if <var>sys</var> is not discrete
+<br><dt><var>idx</var><dd>indices or names of states with sampling time
+<code>sysgettsam(</code><var>sys</var><code>)</code> (may be empty); see <code>cellidx</code>
+<br><dt><var>sprefix</var><dd>list of string prefixes of states with sampling time
+<code>sysgettsam(</code><var>sys</var><code>)</code> (may be empty)
+<br><dt><var>ts2</var><dd>sampling time of states not specified by <var>idx</var>, <var>sprefix</var>
+must be an integer multiple of <code>sysgettsam(</code><var>sys</var><code>)</code>
+<br><dt><var>cuflg</var><dd>"constant u flag" if <var>cuflg</var> is nonzero then the system inputs are
+assumed to be constant over the revised sampling interval <var>ts2</var>. 
+Otherwise, since the inputs can change during the interval
+<var>t</var> in [k ts2, (k+1) ts2], an additional set of inputs is
+included in the revised B matrix so that these intersample inputs
+may be included in the single-rate system. 
+default <var>cuflg</var> = 1. 
+</dl>
+
+        <p><strong>Outputs</strong>
+          <dl>
+<dt><var>dsys</var><dd>equivalent discrete time system with sampling time <var>ts2</var>.
+
+          <p>The sampling time of sys is updated to <var>ts2</var>.
+
+          <p>if <var>cuflg</var>=0 then a set of additional inputs is added to
+the system with suffixes _d1, ..., _dn to indicate their
+delay from the starting time k <var>ts2</var>, i.e. 
+u = [u_1; u_1_d1; ..., u_1_dn] where u_1_dk is the input
+k*ts1 units of time after u_1 is sampled. (<var>ts1</var> is
+the original sampling time of the discrete time system and
+<var>ts2</var> = (n+1)*ts1)
+
+          <br><dt><var>fidx</var><dd>indices of "formerly fast" states specified by <var>idx</var> and <var>sprefix</var>;
+these states are updated to the new (slower) sampling interval <var>ts2</var>. 
+</dl>
+
+        <p><strong>WARNING</strong> Not thoroughly tested yet; especially when
+<var>cuflg</var> == 0. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddamp"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>damp</b> (<var>p, tsam</var>)<var><a name="index-damp-1288"></a></var><br>
+<blockquote><p>Displays eigenvalues, natural frequencies and damping ratios
+of the eigenvalues of a matrix <var>p</var> or the A matrix of a
+system <var>p</var>, respectively. 
+If <var>p</var> is a system, <var>tsam</var> must not be specified. 
+If <var>p</var> is a matrix and <var>tsam</var> is specified, eigenvalues
+of <var>p</var> are assumed to be in <var>z</var>-domain.
+        <pre class="sp">
+     
+     </pre>
+     See also: eig. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddcgain"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dcgain</b> (<var>sys, tol</var>)<var><a name="index-dcgain-1289"></a></var><br>
+<blockquote><p>Returns dc-gain matrix. If dc-gain is infinite
+an empty matrix is returned. 
+The argument <var>tol</var> is an optional tolerance for the condition
+number of the A Matrix in <var>sys</var> (default <var>tol</var> = 1.0e-10)
+</p></blockquote></div>
+
+   <p><a name="doc_002dimpulse"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>y</var>, <var>t</var>] = <b>impulse</b> (<var>sys, inp, tstop, n</var>)<var><a name="index-impulse-1290"></a></var><br>
+<blockquote><p>Impulse response for a linear system. 
+The system can be discrete or multivariable (or both). 
+If no output arguments are specified, <code>impulse</code>
+produces a plot or the impulse response data for system <var>sys</var>.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure. 
+<br><dt><var>inp</var><dd>Index of input being excited
+<br><dt><var>tstop</var><dd>The argument <var>tstop</var> (scalar value) denotes the time when the
+simulation should end. 
+<br><dt><var>n</var><dd>the number of data values.
+
+          <p>Both parameters <var>tstop</var> and <var>n</var> can be omitted and will be
+computed from the eigenvalues of the A Matrix. 
+</dl>
+        <strong>Outputs</strong>
+          <dl>
+<dt><var>y</var><dd>Values of the impulse response. 
+<br><dt><var>t</var><dd>Times of the impulse response. 
+</dl>
+
+        <pre class="sp">
+     
+     </pre>
+     See also: step, __stepimp__. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstep"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>y</var>, <var>t</var>] = <b>step</b> (<var>sys, inp, tstop, n</var>)<var><a name="index-step-1291"></a></var><br>
+<blockquote><p>Step response for a linear system. 
+The system can be discrete or multivariable (or both). 
+If no output arguments are specified, <code>step</code>
+produces a plot or the step response data for system <var>sys</var>.
+
+        <p><strong>Inputs</strong>
+          <dl>
+<dt><var>sys</var><dd>System data structure. 
+<br><dt><var>inp</var><dd>Index of input being excited
+<br><dt><var>tstop</var><dd>The argument <var>tstop</var> (scalar value) denotes the time when the
+simulation should end. 
+<br><dt><var>n</var><dd>the number of data values.
+
+          <p>Both parameters <var>tstop</var> and <var>n</var> can be omitted and will be
+computed from the eigenvalues of the A Matrix. 
+</dl>
+        <strong>Outputs</strong>
+          <dl>
+<dt><var>y</var><dd>Values of the step response. 
+<br><dt><var>t</var><dd>Times of the step response. 
+</dl>
+
+        <p>When invoked with the output parameter <var>y</var> the plot is not displayed.
+        <pre class="sp">
+     
+     </pre>
+     See also: impulse, __stepimp__. 
+</p></blockquote></div>
+
+   </body></html>
+

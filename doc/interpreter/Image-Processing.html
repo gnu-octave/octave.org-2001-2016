@@ -1,0 +1,450 @@
+<html lang="en">
+<head>
+<title>Image Processing - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Signal-Processing.html#Signal-Processing" title="Signal Processing">
+<link rel="next" href="Audio-Processing.html#Audio-Processing" title="Audio Processing">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Image-Processing"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Audio-Processing.html#Audio-Processing">Audio Processing</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Signal-Processing.html#Signal-Processing">Signal Processing</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">32 Image Processing</h2>
+
+<p>Octave can display images with the X Window System using the
+<code>xloadimage</code> program.  You do not need to be running X in order to
+manipulate images, however, so some of these functions may be useful
+even if you are not able to view the results.
+
+   <p>Loading images only works with Octave's image format (a file with a
+matrix containing the image data, and a matrix containing the
+colormap).  Contributions of robust, well-written functions to read
+other image formats are welcome.  If you can provide them, or would like
+to improve Octave's image processing capabilities in other ways, please
+contact <a href="mailto:bug@octave.org">bug@octave.org</a>.
+
+   <p><a name="doc_002dcolormap"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>colormap</b> (<var>map</var>)<var><a name="index-colormap-1381"></a></var><br>
+&mdash; Function File:  <b>colormap</b> (<var>"default"</var>)<var><a name="index-colormap-1382"></a></var><br>
+<blockquote><p>Set the current colormap.
+
+        <p><code>colormap (</code><var>map</var><code>)</code> sets the current colormap to <var>map</var>.  The
+color map should be an <var>n</var> row by 3 column matrix.  The columns
+contain red, green, and blue intensities respectively.  All entries
+should be between 0 and 1 inclusive.  The new colormap is returned.
+
+        <p><code>colormap ("default")</code> restores the default colormap (a gray scale
+colormap with 64 entries).  The default colormap is returned.
+
+        <p>With no arguments, <code>colormap</code> returns the current color map. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgray"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gray</b> (<var>n</var>)<var><a name="index-gray-1383"></a></var><br>
+<blockquote><p>Return a gray colormap with <var>n</var> entries corresponding to values from
+0 to <var>n</var>-1.  The argument <var>n</var> should be a scalar.  If it is
+omitted, 64 is assumed. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgray2ind"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>img</var>, <var>map</var>] = <b>gray2ind</b> ()<var><a name="index-gray2ind-1384"></a></var><br>
+<blockquote><p>Convert a gray scale intensity image to an Octave indexed image. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dimage"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>image</b> (<var>x, zoom</var>)<var><a name="index-image-1385"></a></var><br>
+&mdash; Function File:  <b>image</b> (<var>x, y, A, zoom</var>)<var><a name="index-image-1386"></a></var><br>
+<blockquote><p>Display a matrix as a color image.  The elements of <var>x</var> are indices
+into the current colormap and should have values between 1 and the
+length of the colormap.  If <var>zoom</var> is omitted, the image will be
+scaled to fit within 600x350 (to a max of 4).
+
+        <p>It first tries to use <code>display</code> from <code>ImageMagick</code> then
+<code>xv</code> and then <code>xloadimage</code>.
+
+        <p>The axis values corresponding to the matrix elements are specified in
+<var>x</var> and <var>y</var>. At present they are ignored.
+        <pre class="sp">
+     
+     </pre>
+     See also: imshow, imagesc, colormap. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dimagesc"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>imagesc</b> (<var>A</var>)<var><a name="index-imagesc-1387"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var>x, y, A</var>)<var><a name="index-imagesc-1388"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var><small class="dots">...</small>, zoom</var>)<var><a name="index-imagesc-1389"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var><small class="dots">...</small>, limits</var>)<var><a name="index-imagesc-1390"></a></var><br>
+&mdash; Function File:  <var>B</var> = <b>imagesc</b> (<var><small class="dots">...</small></var>)<var><a name="index-imagesc-1391"></a></var><br>
+<blockquote><p>Display a scaled version of the matrix <var>A</var> as a color image.  The
+matrix is scaled so that its entries are indices into the current
+colormap.  The scaled matrix is returned.  If <var>zoom</var> is omitted, a
+comfortable size is chosen.  If <var>limits</var> = [<var>lo</var>, <var>hi</var>] are
+given, then that range maps into the full range of the colormap rather
+than the minimum and maximum values of <var>A</var>.
+
+        <p>The axis values corresponding to the matrix elements are specified in
+<var>x</var> and <var>y</var>, either as pairs giving the minimum and maximum
+values for the respective axes, or as values for each row and column
+of the matrix <var>A</var>.  At present they are ignored.
+        <pre class="sp">
+     
+     </pre>
+     See also: image, imshow. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dimshow"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>imshow</b> (<var>i</var>)<var><a name="index-imshow-1392"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>x, map</var>)<var><a name="index-imshow-1393"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>i, n</var>)<var><a name="index-imshow-1394"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>r, g, b</var>)<var><a name="index-imshow-1395"></a></var><br>
+<blockquote><p>Display an image.
+
+        <p><code>imshow (</code><var>x</var><code>)</code> displays an image <var>x</var>. 
+The numerical class of the image determines its bit-depth: 1 for
+<code>logical</code>, 8 for <code>uint8</code> and <code>logical</code>, and 16 for
+<code>double</code> or <code>uint16</code>.  If <var>x</var> has dimensions MxNx3, the
+three matrices represent the red, green and blue components of the
+image.
+
+        <p><code>imshow (</code><var>x</var><code>, </code><var>map</var><code>)</code> displays an indexed image using the
+specified colormap.
+
+        <p><code>imshow (</code><var>i</var><code>, </code><var>n</var><code>)</code> displays a gray scale intensity image of
+N levels.
+
+        <p><code>imshow (</code><var>r</var><code>, </code><var>g</var><code>, </code><var>b</var><code>)</code> displays an RGB image.
+
+        <p>The character string <code>"truesize"</code> can always be used as an
+optional final argument to prevent automatic zooming of the image.
+        <pre class="sp">
+     
+     </pre>
+     See also: image, imagesc, colormap, gray2ind, rgb2ind. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dind2gray"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ind2gray</b> (<var>x, map</var>)<var><a name="index-ind2gray-1396"></a></var><br>
+<blockquote><p>Convert an Octave indexed image to a gray scale intensity image. 
+If <var>map</var> is omitted, the current colormap is used to determine the
+intensities.
+        <pre class="sp">
+     
+     </pre>
+     See also: gray2ind, rgb2ntsc, image, colormap. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dind2rgb"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>r</var>, <var>g</var>, <var>b</var>] = <b>ind2rgb</b> (<var>x, map</var>)<var><a name="index-ind2rgb-1397"></a></var><br>
+<blockquote><p>Convert an indexed image to red, green, and blue color components. 
+If <var>map</var> is omitted, the current colormap is used for the conversion.
+        <pre class="sp">
+     
+     </pre>
+     See also: rgb2ind, image, imshow, ind2gray, gray2ind. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dloadimage"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>x</var>, <var>map</var>] = <b>loadimage</b> (<var>file</var>)<var><a name="index-loadimage-1398"></a></var><br>
+<blockquote><p>Load an image file and it's associated color map from the specified
+<var>file</var>.  The image must be stored in Octave's image format.
+        <pre class="sp">
+     
+     </pre>
+     See also: saveimage, load, save. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drgb2ntsc"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>rgb2ntsc</b> (<var>rgb</var>)<var><a name="index-rgb2ntsc-1399"></a></var><br>
+<blockquote><p>Image format conversion. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dntsc2rgb"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ntsc2rgb</b> (<var>yiq</var>)<var><a name="index-ntsc2rgb-1400"></a></var><br>
+<blockquote><p>Image format conversion. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dhsv2rgb"></a>
+
+<div class="defun">
+&mdash; Function File:  <var>rgb_map</var><var> = hsv2rgb </var>(<var>hsv_map</var>)<var><a name="index-g_t_0040var_007brgb_005fmap_007d-1401"></a></var><br>
+<blockquote><p>Transform a colormap from the hsv space to the rgb space.
+        <pre class="sp">
+     
+     </pre>
+     See also: rgb2hsv. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drgb2hsv"></a>
+
+<div class="defun">
+&mdash; Function File:  <var>hsv_map</var><var> = rgb2hsv </var>(<var>rgb_map</var>)<var><a name="index-g_t_0040var_007bhsv_005fmap_007d-1402"></a></var><br>
+<blockquote><p>Transform a colormap from the rgb space to the hsv space.
+
+        <p>A color n the RGB space consists of the red, green and blue intensities.
+
+        <p>In the HSV space each color is represented by their hue, saturation
+and value (brightness).  Value gives the amount of light in the color. 
+Hue describes the dominant wavelegth. 
+Saturation is the amount of Hue mixed into the color.
+        <pre class="sp">
+     
+     </pre>
+     See also: hsv2rgb. 
+</p></blockquote></div>
+
+   <p><a name="doc_002docean"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ocean</b> (<var>n</var>)<var><a name="index-ocean-1403"></a></var><br>
+<blockquote><p>Create color colormap.  The argument <var>n</var> should be a scalar.  If it
+is omitted, 64 is assumed. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drgb2ind"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>x</var>, <var>map</var>] = <b>rgb2ind</b> (<var>r, g, b</var>)<var><a name="index-rgb2ind-1404"></a></var><br>
+<blockquote><p>Convert and RGB image to an Octave indexed image.
+        <pre class="sp">
+     
+     </pre>
+     See also: ind2rgb, rgb2ntsc. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsaveimage"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>saveimage</b> (<var>file, x, fmt, map</var>)<var><a name="index-saveimage-1405"></a></var><br>
+<blockquote><p>Save the matrix <var>x</var> to <var>file</var> in image format <var>fmt</var>.  Valid
+values for <var>fmt</var> are
+
+          <dl>
+<dt><code>"img"</code><dd>Octave's image format.  The current colormap is also saved in the file.
+
+          <br><dt><code>"ppm"</code><dd>Portable pixmap format.
+
+          <br><dt><code>"ps"</code><dd>PostScript format.  Note that images saved in PostScript format can not
+be read back into Octave with loadimage. 
+</dl>
+
+        <p>If the fourth argument is supplied, the specified colormap will also be
+saved along with the image.
+
+        <p>Note: if the colormap contains only two entries and these entries are
+black and white, the bitmap ppm and PostScript formats are used.  If the
+image is a gray scale image (the entries within each row of the colormap
+are equal) the gray scale ppm and PostScript image formats are used,
+otherwise the full color formats are used.
+        <pre class="sp">
+     
+     </pre>
+     See also: loadimage, save, load, colormap. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dIMAGEPATH"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>IMAGEPATH</b><var><a name="index-IMAGEPATH-1406"></a></var><br>
+<blockquote><p>A colon separated list of directories in which to search for image
+files. 
+</p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- Written by Kurt Hornik <Kurt.Hornik@wu-wien.ac.at> on 1996/05/14 -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

@@ -1,0 +1,241 @@
+<html lang="en">
+<head>
+<title>Operator Precedence - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Expressions.html#Expressions" title="Expressions">
+<link rel="prev" href="Increment-Ops.html#Increment-Ops" title="Increment Ops">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Operator-Precedence"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Increment-Ops.html#Increment-Ops">Increment Ops</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressions</a>
+<hr>
+</div>
+
+<h3 class="section">10.8 Operator Precedence</h3>
+
+<p><a name="index-operator-precedence-426"></a>
+<dfn>Operator precedence</dfn> determines how operators are grouped, when
+different operators appear close by in one expression.  For example,
+`<samp><span class="samp">*</span></samp>' has higher precedence than `<samp><span class="samp">+</span></samp>'.  Thus, the expression
+<code>a + b * c</code> means to multiply <code>b</code> and <code>c</code>, and then add
+<code>a</code> to the product (i.e., <code>a + (b * c)</code>).
+
+   <p>You can overrule the precedence of the operators by using parentheses. 
+You can think of the precedence rules as saying where the parentheses
+are assumed if you do not write parentheses yourself.  In fact, it is
+wise to use parentheses whenever you have an unusual combination of
+operators, because other people who read the program may not remember
+what the precedence is in this case.  You might forget as well, and then
+you too could make a mistake.  Explicit parentheses will help prevent
+any such mistake.
+
+   <p>When operators of equal precedence are used together, the leftmost
+operator groups first, except for the assignment and exponentiation
+operators, which group in the opposite order.  Thus, the expression
+<code>a - b + c</code> groups as <code>(a - b) + c</code>, but the expression
+<code>a = b = c</code> groups as <code>a = (b = c)</code>.
+
+   <p>The precedence of prefix unary operators is important when another
+operator follows the operand.  For example, <code>-x^2</code> means
+<code>-(x^2)</code>, because `<samp><span class="samp">-</span></samp>' has lower precedence than `<samp><span class="samp">^</span></samp>'.
+
+   <p>Here is a table of the operators in Octave, in order of increasing
+precedence.
+
+     <dl>
+<dt><code>statement separators</code><dd>`<samp><span class="samp">;</span></samp>', `<samp><span class="samp">,</span></samp>'.
+
+     <br><dt><code>assignment</code><dd>`<samp><span class="samp">=</span></samp>'.  This operator groups right to left.
+
+     <br><dt><code>logical "or" and "and"</code><dd>`<samp><span class="samp">||</span></samp>', `<samp><span class="samp">&amp;&amp;</span></samp>'.
+
+     <br><dt><code>element-wise "or" and "and"</code><dd>`<samp><span class="samp">|</span></samp>', `<samp><span class="samp">&amp;</span></samp>'.
+
+     <br><dt><code>relational</code><dd>`<samp><span class="samp">&lt;</span></samp>', `<samp><span class="samp">&lt;=</span></samp>', `<samp><span class="samp">==</span></samp>', `<samp><span class="samp">&gt;=</span></samp>', `<samp><span class="samp">&gt;</span></samp>', `<samp><span class="samp">!=</span></samp>',
+`<samp><span class="samp">~=</span></samp>', `<samp><span class="samp">&lt;&gt;</span></samp>'.
+
+     <br><dt><code>colon</code><dd>`<samp><span class="samp">:</span></samp>'.
+
+     <br><dt><code>add, subtract</code><dd>`<samp><span class="samp">+</span></samp>', `<samp><span class="samp">-</span></samp>'.
+
+     <br><dt><code>multiply, divide</code><dd>`<samp><span class="samp">*</span></samp>', `<samp><span class="samp">/</span></samp>', `<samp><span class="samp">\</span></samp>', `<samp><span class="samp">.\</span></samp>', `<samp><span class="samp">.*</span></samp>', `<samp><span class="samp">./</span></samp>'.
+
+     <br><dt><code>transpose</code><dd>`<samp><span class="samp">'</span></samp>', `<samp><span class="samp">.'</span></samp>'
+
+     <br><dt><code>unary plus, minus, increment, decrement, and ``not''</code><dd>`<samp><span class="samp">+</span></samp>', `<samp><span class="samp">-</span></samp>', `<samp><span class="samp">++</span></samp>', `<samp><span class="samp">--</span></samp>', `<samp><span class="samp">!</span></samp>', `<samp><span class="samp">~</span></samp>'.
+
+     <br><dt><code>exponentiation</code><dd>`<samp><span class="samp">^</span></samp>', `<samp><span class="samp">**</span></samp>', `<samp><span class="samp">.^</span></samp>', `<samp><span class="samp">.**</span></samp>'. 
+</dl>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

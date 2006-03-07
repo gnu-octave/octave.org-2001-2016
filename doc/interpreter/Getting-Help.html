@@ -1,0 +1,261 @@
+<html lang="en">
+<head>
+<title>Getting Help - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Getting-Started.html#Getting-Started" title="Getting Started">
+<link rel="prev" href="Quitting-Octave.html#Quitting-Octave" title="Quitting Octave">
+<link rel="next" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Getting-Help"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Quitting-Octave.html#Quitting-Octave">Quitting Octave</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting-Started">Getting Started</a>
+<hr>
+</div>
+
+<h3 class="section">2.3 Commands for Getting Help</h3>
+
+<p><a name="index-on_002dline-help-72"></a><a name="index-help_002c-on_002dline-73"></a>
+The entire text of this manual is available from the Octave prompt
+via the command <kbd>help -i</kbd>.  In addition, the documentation for
+individual user-written functions and variables is also available via
+the <kbd>help</kbd> command.  This section describes the commands used for
+reading the manual and the documentation strings for user-supplied
+functions and variables.  See <a href="Function-Files.html#Function-Files">Function Files</a>, for more information
+about how to document the functions you write.
+
+   <p><a name="doc_002dhelp"></a>
+
+<div class="defun">
+&mdash; Command: <b>help</b><var><a name="index-help-74"></a></var><br>
+<blockquote><p>Octave's <code>help</code> command can be used to print brief usage-style
+messages, or to display information directly from an on-line version of
+the printed manual, using the GNU Info browser.  If invoked without any
+arguments, <code>help</code> prints a list of all the available operators,
+functions, and built-in variables.  If the first argument is <code>-i</code>,
+the <code>help</code> command searches the index of the on-line version of
+this manual for the given topics.
+
+        <p>For example, the command <kbd>help help</kbd> prints a short message
+describing the <code>help</code> command, and <kbd>help -i help</kbd> starts the
+GNU Info browser at this node in the on-line version of the manual.
+
+        <p>Once the GNU Info browser is running, help for using it is available
+using the command <kbd>C-h</kbd>. 
+</p></blockquote></div>
+
+   <p>The help command can give you information about operators, but not the
+comma and semicolons that are used as command separators.  To get help
+for those, you must type <kbd>help comma</kbd> or <kbd>help semicolon</kbd>.
+
+   <p><a name="doc_002dINFO_005fFILE"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>INFO_FILE</b><var><a name="index-INFO_005fFILE-75"></a></var><br>
+<blockquote><p>The variable <code>INFO_FILE</code> names the location of the Octave info file. 
+The default value is <code>"</code><var>octave-home</var><code>/info/octave.info"</code>, in
+which <var>octave-home</var> is the directory where all of Octave is installed. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dINFO_005fPROGRAM"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>INFO_PROGRAM</b><var><a name="index-INFO_005fPROGRAM-76"></a></var><br>
+<blockquote><p>The variable <code>INFO_PROGRAM</code> names the info program to run.  Its
+default initial value is
+<code>"</code><var>octave-home</var><code>/libexec/octave/</code><var>version</var><code>/exec/</code><var>arch</var><code>/info"</code>
+in which <var>octave-home</var> is the directory where all of Octave is
+installed, <var>version</var> is the Octave version number, and <var>arch</var>
+is the system type (for example, <code>i686-pc-linux-gnu</code>).  The
+default initial value may be overridden by the environment variable
+<code>OCTAVE_INFO_PROGRAM</code>, or the command line argument
+<code>--info-program NAME</code>, or by setting the value of
+<code>INFO_PROGRAM</code> in a startup script
+</p></blockquote></div>
+
+   <p><a name="doc_002dMAKEINFO_005fPROGRAM"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>MAKEINFO_PROGRAM</b><var><a name="index-MAKEINFO_005fPROGRAM-77"></a></var><br>
+<blockquote><p>The variable <code>MAKEINFO_PROGRAM</code> names the makeinfo program that
+Octave runs to format help text that contains Texinfo markup commands. 
+Its default initial value is <code>"makeinfo"</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsuppress_005fverbose_005fhelp_005fmessage"></a>
+
+<div class="defun">
+&mdash; Built-in Variable: <b>suppress_verbose_help_message</b><var><a name="index-suppress_005fverbose_005fhelp_005fmessage-78"></a></var><br>
+<blockquote><p>If the value of <code>suppress_verbose_help_message</code> is nonzero, Octave
+will not add additional help information to the end of the output from
+the <code>help</code> command and usage messages for built-in commands. 
+</p></blockquote></div>
+
+   </body></html>
+

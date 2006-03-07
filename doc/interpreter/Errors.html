@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+<title>Errors - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Getting-Started.html#Getting-Started" title="Getting Started">
+<link rel="prev" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
+<link rel="next" href="Executable-Octave-Programs.html#Executable-Octave-Programs" title="Executable Octave Programs">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+body,td,p {
+font-family: arial,sans-serif;
+color: #000000;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  min-width: 500px;
+  max-width: 950px;
+  margin-left: 3%;
+  margin-right: 12%;
+}
+
+a:link {
+color: #0050fa;
+}
+
+a:visited {
+color: #33ccff;
+}
+
+.code {
+margin-left: 30px;
+margin-right: 30px;
+background-color: #d0d0d0;
+color: #000000;
+}
+
+/* the navigation choices at the bottom of the page. */
+
+.nav {
+background-color: #ffffff;
+color: #000000;
+font-family: arial,sans-serif;
+text-align: center;
+}
+
+/* the title bar on non-main pages */
+
+.title {
+border-bottom: 5px solid #33ccff;
+}
+
+/* The blue title bar on non-main pages */
+
+.header {
+color: #ffffff;
+background-color: #10a0ff;
+font-family: arial,sans-serif;
+padding: 0;
+font-size: medium;
+font-weight: bold;
+border: 3px solid #10a0ff;
+}
+
+/* For all page footers */
+
+.footer {
+font-size: x-small;
+text-align: center;
+}
+
+/* For the download page */
+
+/* descriptions of versions available */
+dt {
+font-weight: bold;
+}
+
+dd {
+font-family: arial,sans-serif;
+}
+
+/* Highlighting the code download sections */
+.download {
+background-color: #d0e0ff;
+}
+
+/* Changes for Octave Wiki */
+
+h1,h2,h3 {
+color: #ffffff;
+background-color: #10a0ff;
+padding: 2px;
+}
+
+h1 {
+font-size: xx-large;
+padding: 2em;
+margin: 8em;
+}
+
+h2 {
+font-size: x-large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h3 {
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+h4,h5,h6 {
+color: #606060;
+font-size: large;
+padding: 2px;
+margin-top: 5px;
+}
+
+/* for links in the header */
+h1 a {
+color: #ffffff;
+}
+
+#im {
+float: right;
+margin: 10px;
+border: 2px solid #000000;
+}
+
+#iml { 
+margin: 10px;
+float: right;
+border: 2px solid #000000;
+clear: right;
+}
+
+img.left { float:left; margin:1em; }
+img.right { float:right; margin:1em; }
+img.middle { text-align:center; margin:1em; }
+
+img.logo { float: right; clear: right; border-style:none; }
+
+pre {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+white-space: pre;
+background-color: #e6e6e6;
+color: black;
+}--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Errors"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Executable-Octave-Programs.html#Executable-Octave-Programs">Executable Octave Programs</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting-Started">Getting Started</a>
+<hr>
+</div>
+
+<h3 class="section">2.5 How Octave Reports Errors</h3>
+
+<p><a name="index-error-messages-111"></a><a name="index-messages_002c-error-112"></a>
+Octave reports two kinds of errors for invalid programs.
+
+   <p>A <dfn>parse error</dfn> occurs if Octave cannot understand something you
+have typed.  For example, if you misspell a keyword,
+
+<pre class="example">     octave:13&gt; functon y = f (x) y = x^2; endfunction
+</pre>
+   <p class="noindent">Octave will respond immediately with a message like this:
+
+<pre class="example">     parse error:
+     
+       functon y = f (x) y = x^2; endfunction
+               ^
+</pre>
+   <p class="noindent">For most parse errors, Octave uses a caret (`<samp><span class="samp">^</span></samp>') to mark the point
+on the line where it was unable to make sense of your input.  In this
+case, Octave generated an error message because the keyword
+<code>function</code> was misspelled.  Instead of seeing `<samp><span class="samp">function f</span></samp>',
+Octave saw two consecutive variable names, which is invalid in this
+context.  It marked the error at <code>y</code> because the first name by
+itself was accepted as valid input.
+
+   <p>Another class of error message occurs at evaluation time.  These
+errors are called <dfn>run-time errors</dfn>, or sometimes
+<dfn>evaluation errors</dfn> because they occur when your program is being
+<dfn>run</dfn>, or <dfn>evaluated</dfn>.  For example, if after correcting the
+mistake in the previous function definition, you type
+
+<pre class="example">     octave:13&gt; f ()
+</pre>
+   <p class="noindent">Octave will respond with
+
+<pre class="example">     error: `x' undefined near line 1 column 24
+     error: evaluating expression near line 1, column 24
+     error: evaluating assignment expression near line 1, column 22
+     error: called from `f'
+</pre>
+   <p>This error message has several parts, and gives you quite a bit of
+information to help you locate the source of the error.  The messages
+are generated from the point of the innermost error, and provide a
+traceback of enclosing expressions and function calls.
+
+   <p>In the example above, the first line indicates that a variable named
+`<samp><span class="samp">x</span></samp>' was found to be undefined near line 1 and column 24 of some
+function or expression.  For errors occurring within functions, lines
+are counted from the beginning of the file containing the function
+definition.  For errors occurring at the top level, the line number
+indicates the input line number, which is usually displayed in the
+prompt string.
+
+   <p>The second and third lines in the example indicate that the error
+occurred within an assignment expression, and the last line of the error
+message indicates that the error occurred within the function <code>f</code>. 
+If the function <code>f</code> had been called from another function, for
+example, <code>g</code>, the list of errors would have ended with one more
+line:
+
+<pre class="example">     error: called from `g'
+</pre>
+   <p>These lists of function calls usually make it fairly easy to trace the
+path your program took before the error occurred, and to correct the
+error before trying again.
+
+   </body></html>
+
