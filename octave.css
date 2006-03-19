@@ -45,6 +45,13 @@ text-align: center;
 
 .title {
 border-bottom: 5px solid #33ccff;
+font-size: xx-large;
+color: #10a0ff;
+}
+
+.titlesmall {
+font-size: xx-large;
+color: #10a0ff;
 }
 
 /* The blue title bar on non-main pages */

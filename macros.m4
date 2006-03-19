@@ -46,14 +46,12 @@ dnl
 dnl
 dnl
 define(`__BIG_HEADER__', `__HEADER__($1)
-<p class="title">__OCTAVE_IMAGE__(`octave-logo.jpg', `Octave') 
-__OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor', `class="right"')</p>')dnl
+<p class="title">Octave __OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor', `class="right"')</p>')dnl
 dnl
 dnl
 dnl
 define(`__SMALL_HEADER__', `__HEADER__($1)
-<p>__OCTAVE_IMAGE__(`octave-small-logo.jpg', `Octave')</p>
-__TOP_TITLE_BAR__($1)')dnl
+<p class="title">$1</p>')dnl
 dnl
 dnl
 dnl
