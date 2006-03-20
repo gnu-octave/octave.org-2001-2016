@@ -25,25 +25,39 @@ __DOWNLOAD_INFO__(`2.0.17', `12 Apr 2002', `2.1.72', `11 Nov 2005', `2.9.4', `11
 
 __TITLE_BAR__(`Contributed Packages')
 
-<p>A collection of contributed packages for Octave is available from 
+<p>A collection of contributed packages for Octave is available from
 __HTTP__(`octave.sf.net').</p>
 
 __TITLE_BAR__(`Binaries')
+
+<h4>Linux</h4>
 
 <p>Binaries for Linux distributions are generally available with
 the distribution (__HTTP__(`www.debian.org', `Debian'),
 __HTTP__(`www.novell.com/linux/suse', `SuSE'),
 __HTTP__(`www.redhat.com', `RedHat'), and others have packages).</p>
 
+<h4>Mac OS X</h4>
+
 <p>Binaries for Apple's Mac OS X are available as part of the fink project
 __HTTP__(`fink.sourceforge.net', `Fink project') and also the
 __HTTP__(`darwinports.opendarwin.org', `DarwinPorts package management system').</p>
- 
-<p>The current best solution for installing Octave on Windows
-systems is to simply use the most recent Cygwin package of Octave,
-available from __HTTP__(`www.cygwin.com', `www.cygwin.com') (look in
-the Math category when installing).</p>
- 
+
+<h4>Windows</h4>
+
+<ul>
+<li>If you have cygwin, then look in the Math category for the most
+recent Cygwin package of Octave, available from
+__HTTP__(`www.cygwin.com', `www.cygwin.com').</li>
+
+<li>If you do not have cygwin (you will most likely know if you have
+it), download the most recent version of octave-forge-windows from
+__HTTP__(`sourceforge.net/project/showfiles.php?group_id=2888',
+`Octave-Forge Files').  WARNING: do not install this package if you
+have cygwin installed</li>
+
+</ul>
+
 __TITLE_BAR__(`FTP Mirror Sites')
 
 <p>If you have trouble transferring Octave from this site, you might try
