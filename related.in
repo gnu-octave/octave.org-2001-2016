@@ -45,7 +45,7 @@ __TITLE_BAR__(Graphical User Interfaces)
 
 <p>__HTTP__(`www.math.mcgill.ca/loisel/octave-workshop/',
             `www.math.mcgill.ca/loisel/octave-workshop/')
-Current version 0.9</p>
+Current version 0.10</p>
 
 <p>A GUI implementation for Octave that has the goal of being
 completely cross platform (the initial and the development platform is
