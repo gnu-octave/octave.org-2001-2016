@@ -39,9 +39,16 @@ __HTTP__(`www.redhat.com', `RedHat'), and others have packages).</p>
 
 <h4>Mac OS X</h4>
 
-<p>Binaries for Apple's Mac OS X are available as part of the fink project
-__HTTP__(`fink.sourceforge.net', `Fink project') and also the
-__HTTP__(`darwinports.opendarwin.org', `DarwinPorts package management system').</p>
+<p>There are several choices for OS X binaries:</p>
+
+<ul>
+<li>__HTTP__(`hpc.sourceforge.net',
+             `Mac OS X High Performance Computing')</li>
+<li>__HTTP__(`darwinports.opendarwin.org',
+             `DarwinPorts package management system')</li>
+<li>The __HTTP__(`fink.sourceforge.net', `Fink project')
+ currently only has an old version of Octave available.</li>
+</ul>
 
 <h4>Windows</h4>
 
