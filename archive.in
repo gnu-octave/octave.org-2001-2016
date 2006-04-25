@@ -1,18 +1,38 @@
 __SMALL_HEADER__(`Octave Mailing Lists')
 
-<p>There are several mailing lists devoted to Octave.  To join the
-lists, see the instructions at the bottom of the page.</p>
-
-<p>Thanks to Douglas Eck, we now have a
-__HTTP__(`velveeta.che.wisc.edu/octave/lists/archive', `searchable archive')
-that is updated approximately once every thirty minutes.</p>
-
-__TITLE_BAR__(`Archives')
+<p>There are several mailing lists devoted to Octave.</p>
 
 <dl>
-<dt>__MAILTO__(`help@octave.org', `help')</dt>
-<dd>General discussion about using and installing Octave.
-<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2006', `2006')
+__MAILING_LIST_INFO__(`help', `help-octave',
+  `General discussion about using and installing Octave.')
+__MAILING_LIST_INFO__(`bug', `bug-octave',
+  `Bug reports (sometimes fixes are posted to this list).')
+__MAILING_LIST_INFO__(`sources', `octave-sources',
+  `Enhancements contributed by Octave users.')
+__MAILING_LIST_INFO__(`graphics', `octave-graphics',
+  `Discussion about future development of GUI and graphics tools for Octave.',
+  `<b>Please note: this is a mailing list for discussion of
+   future developement, not a place to ask how to use the current
+   Octave graphics features.</b>')
+__MAILING_LIST_INFO__(`maintainers', `octave-maintainers',
+  `Discussion about the development and maintenance of Octave.')
+__MAILING_LIST_INFO__(`info', `info-octave',
+  `Announcements about new releases of Octave and other news.',
+  `<b>All postings to info-octave are also sent to the help-octave
+   mailing list, so you do not need to subscribe to both info-octave
+   and help-octave.</b>')
+</dl>
+
+
+
+<p><b>Note:</b> we are in the process of moving the mailing lists to a
+new server.  Archives of messages posted <b>prior to 24 April 2006 may be
+found here:</b></p>
+
+
+<p>
+help:
+[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2004', `2004')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2003', `2003')
@@ -27,11 +47,10 @@ __TITLE_BAR__(`Archives')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1994', `1994')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1993', `1993')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1992', `1992') ]</p>
-</dd>
 
-<dt>__MAILTO__(`bug@octave.org', `bug')</dt>
-<dd>Bug reports (sometimes fixes are posted to this list).
-<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2006', `2006')
+<p>
+bug:
+[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2004', `2004')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2003', `2003')
@@ -46,11 +65,10 @@ __TITLE_BAR__(`Archives')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1994', `1994')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1993', `1993')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1992', `1992') ]</p>
-</dd>
 
-<dt>__MAILTO__(`sources@octave.org', `sources')</dt>
-<dd>Enhancements contributed by Octave users.
-<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2006', `2006')
+<p>
+sources:
+[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2004', `2004')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2003', `2003')
@@ -61,14 +79,10 @@ __TITLE_BAR__(`Archives')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1998', `1998')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1997', `1997')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1996', `1996') ]</p>
-</dd>
 
-<dt>__MAILTO__(`graphics@octave.org', `graphics')</dt>
-<dd>Discussion about future development of GUI and graphics tools for
-Octave.  <b>PLEASE NOTE:</b> this is a mailing list for discussion of
-future developement <b>not</b> a place to ask how to use the current
-Octave graphics features.
-<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2006', `2006')
+<p>
+graphics:
+[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2004', `2004')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2003', `2003')
@@ -79,11 +93,10 @@ Octave graphics features.
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1998', `1998')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1997', `1997')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1996', `1996') ]</p>
-</dd>
 
-<dt>__MAILTO__(`maintainers@octave.org', `maintainers')</dt>
-<dd>Discussion about the development and maintenance of Octave.
-<p>[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2006', `2006')
+<p>
+maintainers:
+[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2004', `2004')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2003', `2003')
@@ -94,53 +107,9 @@ Octave graphics features.
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1998', `1998')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1997', `1997')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1996', `1996') ]</p>
-</dd>
 
-<dt>__MAILTO__(`info@octave.org', `info')</dt>
-<dd>Announcements about new releases of Octave and other news.
-<p>All postings to info-octave are also sent to the help-octave
-mailing list, so you don't need to subscribe to both info-octave and
-help-octave.</p>
-
-<p>Messages sent to the info-octave mailing list are not archived
-separately, but they do appear in the help-octave list archive.</p>
-</dd>
-</dl>
-
-__TITLE_BAR__(`Joining the Mailing Lists')
-
-<p>If you would like to join the discussion and receive all messages sent
-to these mailing lists, please send a message containing just the word
-<strong>subscribe</strong> in the body to
-__MAILTO__(`help-subscribe@octave.org',
-           `help-<b>subscribe</b>@octave.org')
-(to join the help list), or
-__MAILTO__(`bug-subscribe@octave.org',
-           `bug-<b>subscribe</b>@octave.org')
-(to join the bug list), or
-__MAILTO__(`sources-subscribe@octave.org',
-           `sources-<b>subscribe</b>@octave.org')
-(to join the sources list), or
-__MAILTO__(`graphics-subscribe@octave.org',
-           `graphics-<b>subscribe</b>@octave.org')
-(to join the graphics list), or
-__MAILTO__(`maintainers-subscribe@octave.org',
-           `maintainers-<b>subscribe</b>@octave.org')
-(to join the maintainers list), or
-__MAILTO__(`info-subscribe@octave.org',
-           `info-<b>subscribe</b>@octave.org')
-(to join the info list).</p>
-
-<p>Similarly, to unsubscribe, send a message containing the word
-<b>unsubscribe</b> in the body to one of the above <b>-subscribe</b>
-addresses.  If you can no longer send mail from the account you
-originally used for subscribing, send a message with</p>
-
-<blockquote><p><b>unsubscribe old-address@your.domain</b></p></blockquote>
-
-<p>in the body.</p>
-
-<p><strong>Please do NOT send subscription requests directly to the lists
-themselves.</strong></p>
+<p>Thanks to Douglas Eck, the old message archives are also
+__HTTP__(`velveeta.che.wisc.edu/octave/lists/archive', `searchable').
+A search feature for the new archives is not yet available.</p>
 
 __OCTAVE_TRAILER__(`archive')

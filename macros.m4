@@ -136,3 +136,14 @@ __FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Development')  (latest featu
 </td>
 <td class="download">$6</td></tr>
 </table>')dnl
+dnl
+dnl
+dnl
+define(`__MAILING_LIST_INFO__',
+`<p>__HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `$1'): <i>$3</i><br>
+ifelse($#, 4, `$4<br>')
+To see the collection of prior posting to the list, visit the
+__HTTP__(`www.cae.wisc.edu/pipermail/$2', `$1 archives').<br>
+You can (un)subscribe to the list by following instructions on the
+__HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `list information page').<br>
+</p>')dnl
