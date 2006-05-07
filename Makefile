@@ -17,7 +17,8 @@ IMG_TMP := octave-logo.jpg \
 
 IMAGES := $(addprefix images/, $(IMG_TMP))
 
-HTML_SRC := acknowledgments.in \
+HTML_SRC := about.in \
+	acknowledgments.in \
 	archive.in \
 	bugs.in \
 	docs.in \

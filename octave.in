@@ -1,36 +1,30 @@
 __BIG_HEADER__(`Octave Home Page')
 
-<p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `class="left"')
+<div><p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `class="left"')
 GNU Octave is a high-level language, primarily intended for numerical
 computations.  It provides a convenient command line interface for
 solving linear and nonlinear problems numerically, and for performing
 other numerical experiments using a language that is mostly compatible
-with Matlab.  It may also be used as a batch-oriented language.</p>
+with Matlab. It may also be used as a batch-oriented language.</p>
 
-<p>Octave has extensive tools for solving common numerical linear algebra
-problems, finding the roots of nonlinear equations, integrating
-ordinary functions, manipulating polynomials, and integrating ordinary
-differential and differential-algebraic equations.  It is easily
-extensible and customizable via user-defined functions written in
-Octave's own language, or using dynamically loaded modules written in
-C++, C, Fortran, or other languages.</p>
+<p>For more information, see the page
+__OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 
-<p>GNU Octave is also freely redistributable software.  You may
-redistribute it and/or modify it under the terms of the GNU General
-Public License (__HTTP__(`www.gnu.org/copyleft/gpl.html', `GPL')) as
-published by the
-__HTTP__(`www.gnu.org', `Free Software Foundation').</p>
+__TITLE_BAR__(`Current News')
 
-<p>Octave was written by
-__MAILTO__(`jwe@octave.org', `John W. Eaton') and
-__OCTAVE_HTTP__(`acknowledgments.html', `many others').  Because
-Octave is
-__HTTP__(`www.gnu.org/philosophy/free-sw.html', `free software')
-you are encouraged to help make Octave more useful by writing and
-contributing additional functions for it, and by reporting any
-problems you may have.</p>
+<dl>
+<dt>May 3, 2006</dt>
+<dd>Significantly more efficient versions of mat2cell and regexp were
+developed.</dd>
+<dt>May 2, 2006</dt>
+<dd>All warn_* built-in variables were removed and replaced with
+functions.  For example, <code>warn_divide_by_zero = false;</code>
+would now be <code>warning ("off", "Octave:divide-by-zero");</code>.</dd>
+<dt>March 23, 2006</dt>
+<dd>Versions 2.1.73 and 2.9.5 are now available for ftp.</dd>
+</dl>
 
-<p>More information about Octave's history is available on
-__OCTAVE_HTTP__(`history.html', `this page').</p>
+<p>For historical news, see the
+__OCTAVE_HTTP__(`news.html', `news archive').</p>
 
 __OCTAVE_TRAILER__(`home')

@@ -80,8 +80,9 @@ dnl
 define(`__NAVIGATION__',
 `<div class="nav">
  [ __nav_button__($1, `home', `octave.html', `Home')
+ | __nav_button__($1, `about', `about.html', `About Octave')
  | __nav_button__($1, `history', `history.html', `History')
- | __nav_button__($1, `news', `news.html', `News')
+ | __nav_button__($1, `news', `news.html', `News Archive')
  | __nav_button__($1, `docs', `docs.html', `Docs')
  | __ext_nav_button__(`wiki.octave.org', `Wiki')
  | __nav_button__($1, `faq', `FAQ.html', `FAQ') 
