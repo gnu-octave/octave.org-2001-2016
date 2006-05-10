@@ -23,12 +23,17 @@ with Matlab. It may also be used as a batch-oriented language.</p>
 
 <dl>
 <dt>May 3, 2006</dt>
-<dd>Significantly more efficient versions of mat2cell and regexp were
-developed.</dd>
+<dd>To enable XML reading, mat2cell was developed along 
+with significantly more efficient versions of regexp and regexprep.
+<a href="https://www.cae.wisc.edu/pipermail/octave-maintainers/2006-May/000025.html"
+class="mailthread">[Mailing List Thread]</a></dd>
 <dt>May 2, 2006</dt>
-<dd>All warn_* built-in variables were removed and replaced with
-functions.  For example, <code>warn_divide_by_zero = false;</code>
-would now be <code>warning ("off", "Octave:divide-by-zero");</code>.</dd>
+<dd>All warn_* built-in variables were removed and replaced by warning
+identifiers that may be used with the warning function.  For example,
+<code>warn_divide_by_zero = false;</code> would now be
+<code>warning ("off", "Octave:divide-by-zero");</code>.
+<a href="https://www.cae.wisc.edu/pipermail/octave-maintainers/2006-May/000044.html"
+class="mailthread">[Mailing List Thread]</a></dd>
 <dt>March 23, 2006</dt>
 <dd>Versions 2.1.73 and 2.9.5 are now available for ftp.</dd>
 </dl>

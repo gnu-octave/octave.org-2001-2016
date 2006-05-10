@@ -148,3 +148,9 @@ __HTTP__(`www.cae.wisc.edu/pipermail/$2', `$1 archives').<br>
 You can (un)subscribe to the list by following instructions on the
 __HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `list information page').<br>
 </p>')dnl
+dnl
+dnl
+dnl
+define(`__MAIL_THREAD__',
+`<a href="https://www.cae.wisc.edu/pipermail/octave-$1/$2-$3/$4.html"
+class="mailthread">[Mailing List Thread]</a>')dnl
