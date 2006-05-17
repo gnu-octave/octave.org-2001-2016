@@ -2,7 +2,6 @@ __SMALL_HEADER__(`Octave Mailing Lists')
 
 <p>There are several mailing lists devoted to Octave.</p>
 
-<dl>
 __MAILING_LIST_INFO__(`help', `help-octave',
   `General discussion about using and installing Octave.')
 __MAILING_LIST_INFO__(`bug', `bug-octave',
@@ -21,17 +20,12 @@ __MAILING_LIST_INFO__(`info', `info-octave',
   `<b>All postings to info-octave are also sent to the help-octave
    mailing list, so you do not need to subscribe to both info-octave
    and help-octave.</b>')
-</dl>
-
-
 
 <p><b>Note:</b> we are in the process of moving the mailing lists to a
 new server.  Archives of messages posted <b>prior to 24 April 2006 may be
 found here:</b></p>
 
-
-<p>
-help:
+<p>help:
 [ __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2004', `2004')
@@ -48,8 +42,7 @@ help:
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1993', `1993')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/1992', `1992') ]</p>
 
-<p>
-bug:
+<p>bug:
 [ __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/2004', `2004')
@@ -66,8 +59,7 @@ bug:
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1993', `1993')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1992', `1992') ]</p>
 
-<p>
-sources:
+<p>sources:
 [ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2004', `2004')
@@ -80,8 +72,7 @@ sources:
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1997', `1997')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1996', `1996') ]</p>
 
-<p>
-graphics:
+<p>graphics:
 [ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2004', `2004')
@@ -94,8 +85,7 @@ graphics:
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1997', `1997')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1996', `1996') ]</p>
 
-<p>
-maintainers:
+<p>maintainers:
 [ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2005', `2005')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2004', `2004')
