@@ -26,7 +26,6 @@ HTML_SRC := about.in \
 	funding.in \
 	help.in \
 	help-wanted.in \
-	history.in \
 	license.in \
 	news.in \
 	octave.in \
