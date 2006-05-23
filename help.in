@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Octave Help')
+__HEADER__(`Octave Help')
 
+<div class="section">
 <p>The __MAILTO__(`help@octave.org', `help') mailing list exists for
 the discussion of matters related to using and installing Octave.  If
 would like to join the discussion, please send a message containing
@@ -18,5 +19,6 @@ however, you should send a complete bug report for the problem to the
 __MAILTO__(`bug-octave@octave.org', `bug-octave') mailing list.
 __OCTAVE_HTTP__(`bugs.html', `This page') contains more information
 that will help you to submit a useful report.</p>
+</div>
 
 __OCTAVE_TRAILER__(`about')

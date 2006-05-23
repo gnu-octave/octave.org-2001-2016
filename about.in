@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`About Octave')
+__HEADER__(`About Octave')
 
+<div class="section">
 <p>GNU Octave is a high-level language, primarily intended for numerical
 computations.  It provides a convenient command line interface for
 solving linear and nonlinear problems numerically, and for performing
@@ -28,7 +29,9 @@ __HTTP__(`www.gnu.org/philosophy/free-sw.html', `free software')
 you are encouraged to help make Octave more useful by writing and
 contributing additional functions for it, and by reporting any
 problems you may have.</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`History')
 
 <p>Octave was originally conceived (in about 1988) to be companion
@@ -81,5 +84,6 @@ terms of the GNU General Public License
 encouraged to help make Octave more useful by writing and contributing
 additional functions for it, and by reporting any problems you may
 have.</p>
+</div>
 
 __OCTAVE_TRAILER__(`about')

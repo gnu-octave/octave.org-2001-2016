@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Octave Mailing Lists')
+__HEADER__(`Octave Mailing Lists')
 
+<div class="section">
 <p>There are several mailing lists devoted to Octave.</p>
 
 __MAILING_LIST_INFO__(`help', `help-octave',
@@ -20,7 +21,9 @@ __MAILING_LIST_INFO__(`info', `info-octave',
   `<b>All postings to info-octave are also sent to the help-octave
    mailing list, so you do not need to subscribe to both info-octave
    and help-octave.</b>')
+</div>
 
+<div class="section">
 <p><b>Note:</b> we are in the process of moving the mailing lists to a
 new server.  Archives of messages posted <b>prior to 24 April 2006 may be
 found here:</b></p>
@@ -101,5 +104,6 @@ found here:</b></p>
 <p>Thanks to Douglas Eck, the old message archives are also
 __HTTP__(`velveeta.che.wisc.edu/octave/lists/archive', `searchable').
 A search feature for the new archives is not yet available.</p>
+</div>
 
 __OCTAVE_TRAILER__(`archive')

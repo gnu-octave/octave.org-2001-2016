@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Contributors to Octave')
+__HEADER__(`Contributors to Octave')
 
+<div class="section">
 <p>Many people have already contributed to Octave's development.  In
 addition to John W. Eaton, the following people have helped write parts
 of Octave or helped out in various other ways.</p>
@@ -8,11 +9,12 @@ of Octave or helped out in various other ways.</p>
 write new features for Octave!  If you have contributed something and
 your name is not on this list, contact
 __MAILTO__(`jwe@octave.org', `me').</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Contributors - Thanks!')
 
 <ul>
-
 <li>__MAILTO__(`baier@ci.tuwien.ac.at', `Thomas Baier') wrote the
 original versions of <code>popen</code>, <code>pclose</code>,
 <code>execute</code>, <code>sync_system</code>, and
@@ -91,7 +93,9 @@ wrote the audio functions <code>lin2mu</code>, <code>loadaudio</code>,
 reports for early versions.</li>
 
 </ul>
+</div>
 
+<div class="section">
 <p>Other contributors include (in alphabetical order by first name):</p>
 
 <p>Aaron A. King, Albert Chin-A-Young, Al Niessner, Alois Schloegl,
@@ -119,7 +123,9 @@ Standish, Schloegl Alois, Shan G. Smith, Soren Hauberg, Stefan
 Monnier, Stefan van der Walt, Stephen Eglen, Steven G. Johnson, Teemu
 Ikonen, Thomas Walter, Todd Neal, Tom Holroyd, Toni Saarela, Volker
 Kuhlmann, Walter Landry, and William Poetra Yoga.</p>
+</div>
 
+<div class="section">
 <p>Special thanks to the following people and organizations for
 supporting the development of Octave:</p>
 
@@ -160,5 +166,6 @@ Department of Chemical Engineering.</li>
 
 <li>Richard Stallman, for writing GNU.</li>
 </ul>
+</div>
 
 __OCTAVE_TRAILER__(`acknowledgements')

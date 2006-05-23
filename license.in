@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Octave Copyright Information')
+__HEADER__(`Octave Copyright Information')
 
+<div class="section">
 <p>The source code for Octave is freely redistributable under the terms
 of the GNU General Public License
 (__HTTP__(`www.gnu.org/copyleft/gpl.html', `GPL')) as published by the
@@ -24,5 +25,6 @@ Octave under the same terms for the benefit of all users.  We also
 encourage you to
 __OCTAVE_HTTP__(`help-wanted.html', `submit your changes')
 for inclusion in future versions of Octave.</p>
+</div>
 
 __OCTAVE_TRAILER__(`license')

@@ -1,14 +1,14 @@
 /* Regular elements */
 
-body,td,p {
+td,p {
 font-family: arial,sans-serif;
 color: #000000;
 }
 
 body {
   background: white;
-  color: black;
-  font-family: sans-serif;
+  color: #000000;
+  font-family: arial,sans-serif;
   font-weight: normal;
   font-size: medium;
   min-width: 500px;
@@ -22,7 +22,7 @@ color: #0050fa;
 }
 
 a:visited {
-color: #33ccff;
+color: #1188ff;
 }
 
 .code {
@@ -34,24 +34,77 @@ color: #000000;
 
 /* the navigation choices at the bottom of the page. */
 
-.nav {
-background-color: #ffffff;
+div#nav {
 color: #000000;
+float: left;
 font-family: arial,sans-serif;
-text-align: center;
+font-size: 0.75em;
+margin: 1em 0 0 1em;
+padding: 0;
+position: fixed;
+text-align: left;
+width: 10em;
 }
 
-/* the title bar on non-main pages */
+div#nav a {
+background-color: #dde4ff;
+border: 1px solid;
+border-color: #10a0ff;
+display: block;
+padding: 0.2em 0.5em 0.2em 0.5em ;
+text-decoration: none;
+color: #1155dd;
+}
 
-.title {
+div#nav a:hover {
+background-color: #f5f5ff;
+}
+
+div#nav div#currentnav {
+background-color: #ccccdd;
+border: solid;
+border-left-width: 1px;
+border-top-width; 1px;
+border-bottom-width: 1px;
+border-right-width: 0px;
+border-color: #10a0ff;
+display: block;
+padding: 0.2em 0.5em 0.2em 0.5em ;
+text-align: right;
+}
+
+/* the page content */
+
+div#content {
+display: block;
+margin-left: 9em;
+}
+
+div.section {
+}
+
+/* For all page footers */
+div#footer {
+clear: both;
+font-size: x-small;
+text-align: center;
+color: #606060;
+}
+
+/* the title bar */
+
+div#title {
+width: 100%;
+clear: both;
+}
+
+div#title h1 {
+background-color: #ffffff;
 border-bottom: 5px solid #33ccff;
 font-size: xx-large;
 color: #10a0ff;
-}
-
-.titlesmall {
-font-size: xx-large;
-color: #10a0ff;
+padding: 0;
+margin: 0;
 }
 
 /* The blue title bar on non-main pages */
@@ -64,14 +117,6 @@ padding: 0;
 font-size: medium;
 font-weight: bold;
 border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-color: #606060;
 }
 
 /* For the download page */
@@ -90,28 +135,36 @@ font-family: arial,sans-serif;
 background-color: #d0e0ff;
 }
 
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
+caption {
+display: none;
 }
 
+th {
+text-align: left;
+}
+
+/* Changes for Octave Wiki */
+
 h1 {
+background-color: #10a0ff;
+color: #ffffff;
 font-size: xx-large;
 padding: 2em;
 margin: 8em;
 }
 
 h2 {
-font-size: x-large;
+background-color: #10a0ff;
+color: #ffffff;
+font-size: 1.2em;
 padding: 2px;
 margin-top: 5px;
 }
 
 h3 {
-font-size: large;
+background-color: #10a0ff;
+color: #ffffff;
+font-size: 1.1em;
 padding: 2px;
 margin-top: 5px;
 }

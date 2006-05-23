@@ -1,6 +1,8 @@
-__BIG_HEADER__(`Octave Home Page')
+__HEADER__(`Octave')
 
+<div class="section">
 <div><p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `class="left"')
+__OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor', `class="right"')
 GNU Octave is a high-level language, primarily intended for numerical
 computations.  It provides a convenient command line interface for
 solving linear and nonlinear problems numerically, and for performing
@@ -9,7 +11,9 @@ with Matlab. It may also be used as a batch-oriented language.</p>
 
 <p>For more information, see the page
 __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Current News')
 
 <dl>
@@ -39,5 +43,6 @@ __MAIL_THREAD__(`maintainers', `2006', `May', `000044')</dd>
 
 <p>For historical news, see the
 __OCTAVE_HTTP__(`news.html', `news archive').</p>
+</div>
 
 __OCTAVE_TRAILER__(`home')

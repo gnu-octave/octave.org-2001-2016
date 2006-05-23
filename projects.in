@@ -1,9 +1,13 @@
-__SMALL_HEADER__(`Octave Projects')
+__HEADER__(`Octave Projects')
+
+<div class="section">
 
 <p>Check with maintainers@octave.org for a possibly more current copy.  Also, if you start working steadily on a project, please let maintainers@octave.org know.  We might have information that could help you; we'd also like to send you the GNU coding standards.</p>
 
 <p>This list is not exclusive -- there are many other things that might be good projects, but it might instead be something we already have, so check with maintainers@octave.org before you start.</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Numerical')
 
 <ul>
@@ -51,7 +55,9 @@ __TITLE_BAR__(`Numerical')
   <li>Consider making the behavior of the <code>/</code> and <code>\</code> operators for non-square systems compatible with Matlab.  Currently, they return the minimum norm solution from DGELSS, which behaves differently.</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Sparse Matrices')
 
 <ul>
@@ -101,7 +107,9 @@ __TITLE_BAR__(`Sparse Matrices')
   </ul></li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Graphics')
 
 <ul>
@@ -123,7 +131,9 @@ __TITLE_BAR__(`Graphics')
   <li>If using gnuplot, consider setting a smaller default for the `zero' value (e.g., set zero <code>sqrt (realmin)</code> or something).</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Strings')
 
 <ul>
@@ -139,7 +149,9 @@ __TITLE_BAR__(`Strings')
   <li>Consider changing the default value of <code>string_fill_char</code> from <code>SPC</code> to <code>NUL</code>.</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Other Data Types')
 
 <ul>
@@ -148,8 +160,11 @@ __TITLE_BAR__(`Other Data Types')
 
 </ul>
 
+<div class="section">
 __TITLE_BAR__(`Graphical User Interface')
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Input/Output')
 
 <ul>
@@ -178,7 +193,9 @@ __TITLE_BAR__(`Input/Output')
   <li>Make it possible to tie arbitrary input and output streams together, similar to the way iostreams can be tied together.</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Interpreter')
 
 <ul>
@@ -280,7 +297,9 @@ __TITLE_BAR__(`Interpreter')
   <li>Use nanosleep instead of usleep if it is available?  Apparently nanosleep is to be preferred over usleep on Solaris systems.</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`History')
 
 <ul>
@@ -298,7 +317,9 @@ __TITLE_BAR__(`History')
   <li>Fix history problems -- core dump if multiple processes are writing to the same history file?</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Configuration and Installation')
 
 <ul>
@@ -316,7 +337,9 @@ __TITLE_BAR__(`Configuration and Installation')
   <li>Create a docs-only distribution?</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Documentation and On-Line Help')
 
 <ul>
@@ -358,7 +381,9 @@ __TITLE_BAR__(`Documentation and On-Line Help')
   <li>Some sort of blurb (2-3 pages) describing Octave in a reasonably coherent way, where to get it etc., perhaps formatted pretty, i.e. not just text.  Maybe start with the latest Announce file.</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Tests')
 
 <ul>
@@ -390,7 +415,9 @@ __TITLE_BAR__(`Tests')
   <li>Tests for all internal functions.</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Programming')
 
 <ul>
@@ -422,7 +449,9 @@ __TITLE_BAR__(`Programming')
   <li>Share more code among the various <code>*_options</code> functions.</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Miscellaneous')
 
 <ul>
@@ -458,11 +487,14 @@ __TITLE_BAR__(`Miscellaneous')
   <li>Add a definition to lgrind so that it supports Octave. (See http://www.tex.ac.uk/tex-archive/support/lgrind/ for more information about lgrind.)</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Always')
 
 <ul>
   <li>Squash bugs.</li>
 </ul>
+</div>
 
 __OCTAVE_TRAILER__(`projects')

@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Downloading Octave')
+__HEADER__(`Downloading Octave')
 
+<div class="section">
 __TITLE_BAR__(`Latest Release')
 
 <p>There are several different versions of Octave available for
@@ -22,12 +23,16 @@ the public CVS archive instead (see below for details).</dd>
 </dl>
 
 __DOWNLOAD_INFO__(`2.0.17', `12 Apr 2002', `2.1.73', `22 Mar 2006', `2.9.5', `22 Mar 2006')
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Contributed Packages')
 
 <p>A collection of contributed packages for Octave is available from
 __HTTP__(`octave.sf.net').</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Binaries')
 
 <h4>Linux</h4>
@@ -64,7 +69,9 @@ __HTTP__(`sourceforge.net/project/showfiles.php?group_id=2888',
 have cygwin installed</li>
 
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`FTP Mirror Sites')
 
 <p>If you have trouble transferring Octave from this site, you might try
@@ -81,7 +88,9 @@ __TITLE_BAR__(`GNU Project FTP Site')
 the official Free Software Foundation ftp site,
 __FTP__(`ftp.gnu.org/pub/gnu', `ftp://ftp.gnu.org/pub/gnu'),
 which is also mirrored on many sites around the world.</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Anonymous CVS')
 
 <p>The latest development sources of Octave are also available via
@@ -122,5 +131,6 @@ before any other CVS arguments).</p>
 <p>Once you've got the repository checked out, <code>cvs update</code>
 will sync your local copy with the repository.  See the CVS manual for
 additional information on how to use CVS.</p>
+</div>
 
 __OCTAVE_TRAILER__(`download')

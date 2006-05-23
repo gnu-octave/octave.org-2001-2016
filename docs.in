@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Octave Documentation')
+__HEADER__(`Octave Documentation')
 
+<div class="section">
 <p>Octave is fully documented by a comprehensive
 __OCTAVE_HTTP__(`doc/interpreter', `375 page manual').  The
 version available here has been converted to HTML directly from the
@@ -27,5 +28,6 @@ with Octave releases.</p>
 for, the __OCTAVE_HTTP__(`help.html', `help-octave') mailing list
 exists for the discussion of matters related to using and installing
 Octave.</p>
+</div>
 
 __OCTAVE_TRAILER__(`docs')

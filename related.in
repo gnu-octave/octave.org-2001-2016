@@ -1,9 +1,12 @@
-__SMALL_HEADER__(`Related Projects')
+__HEADER__(`Related Projects')
 
+<div class="section">
 <p>This is a list of the projects that work with octave in some way.
 It is not yet a comprehensive list, but it should give an idea of what
 is available.</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(Octave Forge)
 
 <p>__HTTP__(`octave.sourceforge.net', `octave.sourceforge.net')
@@ -11,7 +14,9 @@ Current version 2006-03-17 for 2.1.72</p>
 
 <p>This is intended to be a central location for custom scripts,
 functions and extensions for GNU Octave.</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(Plotting Projects)
 
 <h4>Octaviz</h4>
@@ -39,7 +44,9 @@ source software under the terms of the GNU General Public License
 
 <p>OctPlot should run on following systems: Cygwin (MS Windows), Linux
 (and possibly other UNIXs), OS X</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(Graphical User Interfaces)
 
 <h4>Octave Workshop</h4>
@@ -51,5 +58,6 @@ Current version 0.10</p>
 <p>A GUI implementation for Octave that has the goal of being
 completely cross platform (the initial and the development platform is
 Windows with MingW).</p>
+</div>
 
 __OCTAVE_TRAILER__(`related')

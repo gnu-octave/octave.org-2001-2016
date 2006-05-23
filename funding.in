@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Octave Funding')
+__HEADER__(`Octave Funding')
 
+<div class="section">
 __TITLE_BAR__(`Funding for Future Development')
 
 <p>The easiest and most secure way to make a contribution to the
@@ -41,5 +42,6 @@ provide a more stable funding base for the future.</p>
 <p>If you are aware of any funding opportunities within your
 organization that could help ensure that Octave development continues,
 please contact __MAILTO__(`jwe@octave.org', `John W. Eaton').</p>
+</div>
 
 __OCTAVE_TRAILER__(`funding')

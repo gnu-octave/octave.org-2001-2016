@@ -6,14 +6,35 @@
 <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
 <body>
+<div id="title"><h1>Octave Projects</h1></div>
+<div id="nav">
+ <a href="octave.html">Home</a>
+ <a href="about.html">About Octave</a>
+ <a href="news.html">News Archive</a>
+ <a href="docs.html">Docs</a>
+ <a href="http://wiki.octave.org">Wiki</a>
+ <a href="FAQ.html">FAQ</a> 
+ <a href="help.html">Help</a> 
+ <a href="bugs.html">Bugs</a> 
+ <a href="license.html">License</a>
+ <a href="download.html">Download</a>
+ <a href="related.html">Related Projects</a>
+ <a href="archive.html">Mailing List Archive</a>
+ <a href="funding.html">Funding</a>
+ <div id="currentnav">Help Wanted</div>
+</div>
 
-<p class="title">Octave Projects</p>
+<div id="content">
+
+<div class="section">
 
 <p>Check with maintainers@octave.org for a possibly more current copy.  Also, if you start working steadily on a project, please let maintainers@octave.org know.  We might have information that could help you; we'd also like to send you the GNU coding standards.</p>
 
 <p>This list is not exclusive -- there are many other things that might be good projects, but it might instead be something we already have, so check with maintainers@octave.org before you start.</p>
+</div>
 
-<h3>Numerical</h3>
+<div class="section">
+<h2>Numerical</h2>
 
 <ul>
 
@@ -60,8 +81,10 @@
   <li>Consider making the behavior of the <code>/</code> and <code>\</code> operators for non-square systems compatible with Matlab.  Currently, they return the minimum norm solution from DGELSS, which behaves differently.</li>
 
 </ul>
+</div>
 
-<h3>Sparse Matrices</h3>
+<div class="section">
+<h2>Sparse Matrices</h2>
 
 <ul>
 
@@ -110,8 +133,10 @@
   </ul></li>
 
 </ul>
+</div>
 
-<h3>Graphics</h3>
+<div class="section">
+<h2>Graphics</h2>
 
 <ul>
 
@@ -132,8 +157,10 @@
   <li>If using gnuplot, consider setting a smaller default for the zero value (e.g., set zero <code>sqrt (realmin)</code> or something).</li>
 
 </ul>
+</div>
 
-<h3>Strings</h3>
+<div class="section">
+<h2>Strings</h2>
 
 <ul>
 
@@ -148,8 +175,10 @@
   <li>Consider changing the default value of <code>string_fill_char</code> from <code>SPC</code> to <code>NUL</code>.</li>
 
 </ul>
+</div>
 
-<h3>Other Data Types</h3>
+<div class="section">
+<h2>Other Data Types</h2>
 
 <ul>
 
@@ -157,9 +186,12 @@
 
 </ul>
 
-<h3>Graphical User Interface</h3>
+<div class="section">
+<h2>Graphical User Interface</h2>
+</div>
 
-<h3>Input/Output</h3>
+<div class="section">
+<h2>Input/Output</h2>
 
 <ul>
 
@@ -187,8 +219,10 @@
   <li>Make it possible to tie arbitrary input and output streams together, similar to the way iostreams can be tied together.</li>
 
 </ul>
+</div>
 
-<h3>Interpreter</h3>
+<div class="section">
+<h2>Interpreter</h2>
 
 <ul>
 
@@ -289,8 +323,10 @@
   <li>Use nanosleep instead of usleep if it is available?  Apparently nanosleep is to be preferred over usleep on Solaris systems.</li>
 
 </ul>
+</div>
 
-<h3>History</h3>
+<div class="section">
+<h2>History</h2>
 
 <ul>
 
@@ -307,8 +343,10 @@
   <li>Fix history problems -- core dump if multiple processes are writing to the same history file?</li>
 
 </ul>
+</div>
 
-<h3>Configuration and Installation</h3>
+<div class="section">
+<h2>Configuration and Installation</h2>
 
 <ul>
 
@@ -325,8 +363,10 @@
   <li>Create a docs-only distribution?</li>
 
 </ul>
+</div>
 
-<h3>Documentation and On-Line Help</h3>
+<div class="section">
+<h2>Documentation and On-Line Help</h2>
 
 <ul>
 
@@ -367,8 +407,10 @@
   <li>Some sort of blurb (2-3 pages) describing Octave in a reasonably coherent way, where to get it etc., perhaps formatted pretty, i.e. not just text.  Maybe start with the latest Announce file.</li>
 
 </ul>
+</div>
 
-<h3>Tests</h3>
+<div class="section">
+<h2>Tests</h2>
 
 <ul>
 
@@ -399,8 +441,10 @@
   <li>Tests for all internal functions.</li>
 
 </ul>
+</div>
 
-<h3>Programming</h3>
+<div class="section">
+<h2>Programming</h2>
 
 <ul>
 
@@ -431,8 +475,10 @@
   <li>Share more code among the various <code>*_options</code> functions.</li>
 
 </ul>
+</div>
 
-<h3>Miscellaneous</h3>
+<div class="section">
+<h2>Miscellaneous</h2>
 
 <ul>
 
@@ -467,36 +513,22 @@
   <li>Add a definition to lgrind so that it supports Octave. (See http://www.tex.ac.uk/tex-archive/support/lgrind/ for more information about lgrind.)</li>
 
 </ul>
+</div>
 
-<h3>Always</h3>
+<div class="section">
+<h2>Always</h2>
 
 <ul>
   <li>Squash bugs.</li>
 </ul>
-
-<div class="nav">
- [ <a href="octave.html">Home</a>
- | <a href="about.html">About Octave</a>
- | <a href="news.html">News Archive</a>
- | <a href="docs.html">Docs</a>
- | <a href="http://wiki.octave.org">Wiki</a>
- | <a href="FAQ.html">FAQ</a> 
- | <a href="help.html">Help</a> 
- | <a href="bugs.html">Bugs</a> 
- ]<br />
- [ <a href="license.html">License</a>
- | <a href="download.html">Download</a>
- | <a href="related.html">Related Projects</a>
- | <a href="archive.html">Mailing List Archive</a>
- | <a href="funding.html">Funding</a>
- | <a href="help-wanted.html">Help Wanted</a> ]
 </div>
 
-<p class="footer">Copyright &copy; 1998-2006
+<div id="footer"><p>Copyright &copy; 1998-2006
 <a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
 copying and distribution is permitted in any medium, provided this
 notice is preserved.</p>
 
-<p class="footer">University of Wisconsin<br />
+<p>University of Wisconsin<br />
 Department of Chemical Engineering<br />
-Madison WI 53719</p></body></html>
+Madison WI 53719</p></div></body></html>
+</div>

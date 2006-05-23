@@ -41,34 +41,26 @@ define(`__HEADER__', `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
 <body>
-')dnl
+<div id="title"><h1>$1</h1></div>
+__NAVIGATION__(`$1')
+<div id="content">')dnl
 dnl
 dnl
 dnl
-define(`__BIG_HEADER__', `__HEADER__($1)
-<p class="title">Octave __OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor', `class="right"')</p>')dnl
-dnl
-dnl
-dnl
-define(`__SMALL_HEADER__', `__HEADER__($1)
-<p class="title">$1</p>')dnl
-dnl
-dnl
-dnl
-define(`__COPYING__', `<p class="footer">Copyright &copy; 1998-2006
+define(`__COPYING__', `<div id="footer"><p>Copyright &copy; 1998-2006
 <a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
 copying and distribution is permitted in any medium, provided this
 notice is preserved.</p>
 
-<p class="footer">University of Wisconsin<br />
+<p>University of Wisconsin<br />
 Department of Chemical Engineering<br />
-Madison WI 53719</p></body></html>')dnl
+Madison WI 53719</p></div></body></html>')dnl
 dnl
 dnl
 dnl
 define(`__nav_button__',
 `ifelse(`$1', `$2',
-  `$4',
+  `<div id="currentnav">$4</div>',
   `__OCTAVE_HTTP__($3, $4)')')dnl
 dnl
 dnl
@@ -78,42 +70,40 @@ dnl
 dnl
 dnl
 define(`__NAVIGATION__',
-`<div class="nav">
- [ __nav_button__($1, `home', `octave.html', `Home')
- | __nav_button__($1, `about', `about.html', `About Octave')
- | __nav_button__($1, `news', `news.html', `News Archive')
- | __nav_button__($1, `docs', `docs.html', `Docs')
- | __ext_nav_button__(`wiki.octave.org', `Wiki')
- | __nav_button__($1, `faq', `FAQ.html', `FAQ') 
- | __nav_button__($1, `help', `help.html', `Help') 
- | __nav_button__($1, `bugs', `bugs.html', `Bugs') 
- ]<br />
- [ __nav_button__($1, `license', `license.html', `License')
- | __nav_button__($1, `download', `download.html', `Download')
- | __nav_button__($1, `related', `related.html', `Related Projects')
- | __nav_button__($1, `archive', `archive.html', `Mailing List Archive')
- | __nav_button__($1, `funding', `funding.html', `Funding')
- | __nav_button__($1, `help-wanted', `help-wanted.html', `Help Wanted') ]
+`<div id="nav">
+ __nav_button__($1, `Octave', `octave.html', `Home')
+ __nav_button__($1, `About Octave', `about.html', `About Octave')
+ __nav_button__($1, `Octave News Archive', `news.html', `News Archive')
+ __nav_button__($1, `Octave Documentation', `docs.html', `Docs')
+ __ext_nav_button__(`wiki.octave.org', `Wiki')
+ __nav_button__($1, `faq', `FAQ.html', `FAQ') 
+ __nav_button__($1, `Octave Help', `help.html', `Help') 
+ __nav_button__($1, `Bugs!', `bugs.html', `Bugs') 
+ __nav_button__($1, `Octave Copyright Information', `license.html', `License')
+ __nav_button__($1, `Downloading Octave', `download.html', `Download')
+ __nav_button__($1, `Related Projects', `related.html', `Related Projects')
+ __nav_button__($1, `Octave Mailing Lists', `archive.html', `Mailing List Archive')
+ __nav_button__($1, `Octave Funding', `funding.html', `Funding')
+ __nav_button__($1, `Octave Projects', `help-wanted.html', `Help Wanted')
 </div>
 ')dnl
 dnl
 dnl
 dnl
-define(`__OCTAVE_TRAILER__', `__NAVIGATION__(`$1')
-__COPYING__')dnl
+define(`__OCTAVE_TRAILER__', `__COPYING__
+</div>')dnl
 dnl
 dnl
 dnl
-define(`__TITLE_BAR__', `<h3>$1</h3>')dnl
-define(`__TOP_TITLE_BAR__', `<h2>$1</h2>')dnl
+define(`__TITLE_BAR__', `<h2>$1</h2>')dnl
 dnl
 dnl
 dnl
 define(`__DOWNLOAD_INFO__',
-`<table width="100%" cellpadding="3" border="0">
-<tr><td><b>Octave version</b></td>
-<td><b>Version</b></td>
-<td><b>Release Date</b></td></tr>
+`<table width="100%" cellpadding="3" border="0" summary="Download Links for Octave">
+<tr><th>Octave version</th>
+<th>Version</th>
+<th>Release Date</th></tr>
 <tr><td class="download">
 __FTP__(`ftp.octave.org/pub/octave', `Stable') (also currently ancient and obsolete)</td>
 <td class="download">$1
@@ -135,6 +125,7 @@ __FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Development')  (latest featu
     (__OCTAVE_FTP__(`bleeding-edge/octave-'$5`.tar.bz2',`.tar.bz2'))
 </td>
 <td class="download">$6</td></tr>
+<caption>Download links for Octave</caption>
 </table>')dnl
 dnl
 dnl

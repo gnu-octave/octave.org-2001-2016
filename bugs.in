@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Bugs!')
+__HEADER__(`Bugs!')
 
+<div class="section">
 <p>Your bug reports play an essential role in making Octave reliable.</p>
 
 <p>When you encounter a problem, the first thing to do is to see if it is
@@ -19,7 +20,9 @@ Octave.</p>
 
 <p>In order for a bug report to serve its purpose, you must include the
 information that makes it possible to fix the bug.</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Have You Found a Bug?')
 
 <p>If you are not sure whether you have found a bug, here are some guidelines:</p>
@@ -47,7 +50,9 @@ practice".</li>
 <li>If you are an experienced user of programs like Octave, your
 suggestions for improvement are welcome in any case.</li>
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Where and How to Send Bug Reports')
 
 <p>If you have Octave working at all, the easiest way to prepare a
@@ -61,7 +66,9 @@ editor, Octave will mail the bug report for you.</p>
 <samp>help-octave</samp> mailing list.  Most users of Octave do not
 want to receive bug reports.  Those that do have asked to be on the
 bug-octave mailing list.</p>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Making Your Bug Report Count')
 
 <p>The fundamental principle of reporting bugs usefully is this:
@@ -176,7 +183,9 @@ used.</li>
 <li>A patch for the bug.  Patches can be helpful, but if you find a bug, you
 should report it, even if you cannot send a fix for the problem.</li>
 </ul>
+</div>
 
+<div class="section">
 __TITLE_BAR__(`Sending Patches for Octave')
 
 <p>If you would like to write bug fixes or improvements for Octave, that is
@@ -232,5 +241,6 @@ much more useful if you put it in comments in the code.
 If you would like your name to appear in the header line for who made
 the change, send us the header line.</li>
 </ul>
+</div>
 
 __OCTAVE_TRAILER__(`bugs')

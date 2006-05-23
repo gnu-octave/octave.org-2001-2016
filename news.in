@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Octave News Archive')
+__HEADER__(`Octave News Archive')
 
+<div class="section">
 <dl>
 <dt>March 23, 2006</dt>
 <dd>Versions 2.1.73 and 2.9.5 are now available for ftp.</dd>
@@ -32,5 +33,6 @@ in the series leading to Octave 3.0.</dd>
 split to allow work to proceed toward Octave 3.0 while also
 stabilizing a 2.1.x version.</dd>
 </dl>
+</div>
 
 __OCTAVE_TRAILER__(`news')

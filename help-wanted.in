@@ -1,5 +1,6 @@
-__SMALL_HEADER__(`Octave Projects')
+__HEADER__(`Octave Projects')
 
+<div class="section">
 __TITLE_BAR__(`Ask not what Octave can do for you, ask what you can do
 for Octave!')
 
@@ -29,5 +30,6 @@ author can devote to development and support.</p>
 help make Octave better and more reliable by
 __OCTAVE_HTTP__(`bugs.html', `reporting any bugs') you find and by
 offering suggestions for ways to improve Octave.</p>
+</div>
 
 __OCTAVE_TRAILER__(`help-wanted')
