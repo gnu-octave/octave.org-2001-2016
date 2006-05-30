@@ -17,6 +17,10 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>May 26, 2006</dt>
+<dd>Function file cacheing has been improved with hopefully major 
+speedups when calling m-file functions.
+__MAIL_THREAD__(`maintainers', `2006', `May', `000230')</dd>
 <dt>May 21, 2006</dt>
 <dd>Octave-forge is being cleaned up by moving core functions into
 the main Octave distribution.
