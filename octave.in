@@ -17,6 +17,9 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>June 9, 2006</dt>
+<dd>Version 2.9.6 is now available for ftp.
+__MAIL_THREAD__(`maintainers', `2006', `June', `000281')</dd>
 <dt>May 26, 2006</dt>
 <dd>Function file cacheing has been improved with hopefully major 
 speedups when calling m-file functions.
@@ -31,21 +34,9 @@ manipulating the <code>LOADPATH</code> variable, you can use the
 <code>addpath</code>, <code>rmpath</code>, and <code>path</code>
 functions.
 __MAIL_THREAD__(`maintainers', `2006', `May', `000147')</dd>
-<dt>May 3, 2006</dt>
-<dd>To enable XML reading, mat2cell was developed along 
-with significantly more efficient versions of regexp and regexprep.
-__MAIL_THREAD__(`maintainers', `2006', `May', `000025')</dd>
-<dt>May 2, 2006</dt>
-<dd>All warn_* built-in variables were removed and replaced by warning
-identifiers that may be used with the warning function.  For example,
-<code>warn_divide_by_zero = false;</code> would now be
-<code>warning ("off", "Octave:divide-by-zero");</code>.
-__MAIL_THREAD__(`maintainers', `2006', `May', `000044')</dd>
-<dt>March 23, 2006</dt>
-<dd>Versions 2.1.73 and 2.9.5 are now available for ftp.</dd>
 </dl>
 
-<p>For historical news, see the
+<p>For older news, see the
 __OCTAVE_HTTP__(`news.html', `news archive').</p>
 </div>
 
