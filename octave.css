@@ -81,7 +81,7 @@ margin-left: 11em;
 }
 
 div.section {
-  clear: left;
+  clear: both;
 }
 
 /* For all page footers */
