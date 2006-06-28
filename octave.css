@@ -77,10 +77,11 @@ text-align: right;
 
 div#content {
 display: block;
-margin-left: 9em;
+margin-left: 11em;
 }
 
 div.section {
+  clear: left;
 }
 
 /* For all page footers */
@@ -187,7 +188,7 @@ margin: 10px;
 border: 2px solid #000000;
 }
 
-#iml { 
+#iml {
 margin: 10px;
 float: right;
 border: 2px solid #000000;
