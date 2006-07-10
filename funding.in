@@ -44,4 +44,8 @@ organization that could help ensure that Octave development continues,
 please contact __MAILTO__(`jwe@octave.org', `John W. Eaton').</p>
 </div>
 
+<p>Please see the __OCTAVE_HTTP__(`acknowledgments.html',
+`contributors') page for a list of people and organizations who
+have helped with the development of Octave.</p>
+
 __OCTAVE_TRAILER__(`funding')

@@ -82,8 +82,9 @@ define(`__NAVIGATION__',
  __nav_button__($1, `Octave Copyright Information', `license.html', `License')
  __nav_button__($1, `Downloading Octave', `download.html', `Download')
  __nav_button__($1, `Related Projects', `related.html', `Related Projects')
- __nav_button__($1, `Octave Mailing Lists', `archive.html', `Mailing List Archive')
+ __nav_button__($1, `Octave Mailing Lists', `archive.html', `Mailing Lists')
  __nav_button__($1, `Octave Funding', `funding.html', `Funding')
+ __nav_button__($1, `Acknowledgments', `acknowledgments.html', `Contributors')
  __nav_button__($1, `Octave Projects', `help-wanted.html', `Help Wanted')
 </div>
 ')dnl
