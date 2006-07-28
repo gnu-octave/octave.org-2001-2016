@@ -17,6 +17,9 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>July 28, 2006</dt>
+<dd>Version 2.9.7 is now available for ftp.
+__MAIL_THREAD__(`maintainers', `2006', `July', `000431')</dd>
 <dt>July 27, 2006</dt>
 <dd>Fairly complete support for Matlab's MEX interface has been
 added to the Octave CVS archive and will be part of the 2.9.7
