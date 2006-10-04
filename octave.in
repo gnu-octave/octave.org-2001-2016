@@ -17,6 +17,9 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>October 2, 2006</dt>
+<dd>Version 2.9.9 is now available for ftp.
+__MAIL_THREAD__(`maintainers', `2006', `October', `000743')</dd>
 <dt>August 24, 2006</dt>
 <dd>Version 2.9.8 is now available for ftp.
 __MAIL_THREAD__(`maintainers', `2006', `August', `000500')</dd>
