@@ -4,7 +4,7 @@ __HEADER__(`Octave Documentation')
 
 <p>Octave is fully documented by a comprehensive
 __OCTAVE_HTTP__(`doc/interpreter', `375 page manual') (a
-__HTTP__(`octave.wz.cz', `&#268;esk&#253; (Czech) Version'
+__HTTP__(`www.octave.cz', `&#268;esk&#253; (Czech) Version'
 ) and a
 __HTTP__(`www.obihiro.ac.jp/~suzukim/masuda/octave/html/',
 `日本語 (Japanese) Version') are available).  The version
