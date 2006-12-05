@@ -101,8 +101,7 @@ __TITLE_BAR__(`Anonymous CVS')
 <p>The latest development sources of Octave are also available via
 anonymous access to a read-only CVS archive.  There are also web
 interfaces to the archive available at
-__HTTP__(`www.octave.org/cgi-bin/cvsweb.cgi') and.
-__HTTP__(`www.octave.org/cgi-bin/viewcvs.cgi').</p>
+__HTTP__(`www.octave.org/cgi-bin/cvsweb.cgi').</p>
 
 <p>If you decide to use the development sources from the CVS
 archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
