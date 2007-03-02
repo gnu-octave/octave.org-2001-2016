@@ -17,6 +17,11 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>March 1, 2007</dt>
+<dd>Thanks to Bob Weigel and Nabble, it is not possible to
+__HTTP__(`www.nabble.com/Octave-f1895.html', `search') the contents of
+the Octave mailing lists all the way back to the beginning of time
+(around 1992).</dd> 
 <dt>December 7, 2006</dt>
 <dd>A new graphics branch of the code is now in the works to keep all
 graphics data in Octave to improve compatibility with Matlab and

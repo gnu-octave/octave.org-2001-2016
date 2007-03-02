@@ -23,12 +23,15 @@ __MAILING_LIST_INFO__(`info', `info-octave',
    and help-octave.</b>')
 </div>
 
+<div class="section">
+__TITLE_BAR__(`Search the Mailing Lists')
 <p>
 A searchable archive of the Octave mailing lists is available from
 __HTTP__(`www.nabble.com/Octave-f1895.html', `Nabble').
 </p>
 
 <div class="section">
+__TITLE_BAR__(`Older Archives')
 <p>
 <b>Note:</b> Archives of messages posted <b>prior to 24 April 2006
 may be found here:
@@ -106,10 +109,5 @@ may be found here:
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1998', `1998')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1997', `1997')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1996', `1996') ]</p>
-
-<p>Thanks to Douglas Eck, the old message archives are also
-__HTTP__(`velveeta.che.wisc.edu/octave/lists/archive', `searchable').
-A search feature for the new archives is not yet available.</p>
-</div>
 
 __OCTAVE_TRAILER__(`archive')
