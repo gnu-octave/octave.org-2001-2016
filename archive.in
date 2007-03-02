@@ -23,10 +23,16 @@ __MAILING_LIST_INFO__(`info', `info-octave',
    and help-octave.</b>')
 </div>
 
+<p>
+A searchable archive of the Octave mailing lists is available from
+__HTTP__(`www.nabble.com/Octave-f1895.html', `Nabble').
+</p>
+
 <div class="section">
-<p><b>Note:</b> we are in the process of moving the mailing lists to a
-new server.  Archives of messages posted <b>prior to 24 April 2006 may be
-found here:</b></p>
+<p>
+<b>Note:</b> Archives of messages posted <b>prior to 24 April 2006
+may be found here:
+</p>
 
 <p>help:
 [ __HTTP__(`velveeta.che.wisc.edu/octave/lists/help-octave/2006', `2006')
