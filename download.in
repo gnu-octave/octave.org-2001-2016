@@ -22,7 +22,7 @@ interested in up-to-the-minute changes, you may use the sources from
 the public CVS archive instead (see below for details).</dd>
 </dl>
 
-__DOWNLOAD_INFO__(`2.0.17', `12 Apr 2002', `2.1.73', `22 Mar 2006', `2.9.9', `2 Oct 2006')
+__DOWNLOAD_INFO__(`2.0.17', `12 Apr 2002', `2.1.73', `27 Mar 2006', `2.9.9', `2 Oct 2006')
 </div>
 
 <div class="section">
@@ -99,9 +99,9 @@ which is also mirrored on many sites around the world.</p>
 __TITLE_BAR__(`Anonymous CVS')
 
 <p>The latest development sources of Octave are also available via
-anonymous access to a read-only CVS archive.  There are also web
-interfaces to the archive available at
-__HTTP__(`www.octave.org/cgi-bin/cvsweb.cgi').</p>
+anonymous access to a read-only CVS archive.  There is also a web
+interface to the archive available at
+__HTTP__(`www.octave.org/cgi-bin/cvsweb.cgi/octave').</p>
 
 <p>If you decide to use the development sources from the CVS
 archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
