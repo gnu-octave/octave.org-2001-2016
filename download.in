@@ -84,8 +84,8 @@ one of those listed below.  They mirror the files from
 __OCTAVE_FTP__(`', `ftp://ftp.octave.org/pub/octave').</p>
 
 <p>__FTP__(`ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave')<br />
-__FTP__(`ftp.math.uni-hamburg.de/pub/soft/math/octave')<br />
-__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')</p>
+__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')<br />
+__FTP__(`neacm.fe.up.pt/pub/octave')</p></p>
 
 __TITLE_BAR__(`GNU Project FTP Site')
 
