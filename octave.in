@@ -17,6 +17,9 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>March 27, 2007</dt>
+<dd>Version 2.9.10 is now available for ftp.
+__MAIL_THREAD__(`maintainers', `2007', `March', `002372')</dd>
 <dt>March 1, 2007</dt>
 <dd>Thanks to Bob Weigel and Nabble, it is now possible to
 __HTTP__(`www.nabble.com/Octave-f1895.html', `search') the contents of

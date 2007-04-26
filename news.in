@@ -2,10 +2,20 @@ __HEADER__(`Octave News Archive')
 
 <div class="section">
 <dl>
-<dt>March , 2007</dt>
+<dt>March 27, 2007</dt>
 <dd>Version 2.9.10 is now available for ftp.
 __MAIL_THREAD__(`maintainers', `2007', `March', `002372')</dd>
-<dt>October 4, 2006</dt>
+<dt>March 1, 2007</dt>
+<dd>Thanks to Bob Weigel and Nabble, it is now possible to
+__HTTP__(`www.nabble.com/Octave-f1895.html', `search') the
+contents of the Octave mailing lists all the way back to the beginning
+of time (around 1992).</dd>
+<dt>December 7, 2006</dt>
+<dd>A new graphics branch of the code is now in the works to keep all
+graphics data in Octave to improve compatibility with Matlab and
+facilitate newer graphics back-ends.
+__MAIL_THREAD__(`maintainers', `2006', `December', `001435')</dd>
+<dt>October 2, 2006</dt>
 <dd>Version 2.9.9 is now available for ftp.
 __MAIL_THREAD__(`maintainers', `2006', `October', `000743')</dd>
 <dt>August 24, 2006</dt>
