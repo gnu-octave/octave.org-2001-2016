@@ -2,6 +2,12 @@ __HEADER__(`Octave News Archive')
 
 <div class="section">
 <dl>
+<dt>March , 2007</dt>
+<dd>Version 2.9.10 is now available for ftp.
+__MAIL_THREAD__(`maintainers', `2007', `March', `002372')</dd>
+<dt>October 4, 2006</dt>
+<dd>Version 2.9.9 is now available for ftp.
+__MAIL_THREAD__(`maintainers', `2006', `October', `000743')</dd>
 <dt>August 24, 2006</dt>
 <dd>Version 2.9.8 is now available for ftp.
 __MAIL_THREAD__(`maintainers', `2006', `August', `000500')</dd>
