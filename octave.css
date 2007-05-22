@@ -211,3 +211,12 @@ white-space: pre;
 background-color: #e6e6e6;
 color: black;
 }
+
+blockquote.note {
+border: #777777 1px solid;
+padding: 0.5em;
+margin-left: 1em;
+margin-right: 2em;
+background-color: #e6e6e6;
+color: black;
+}

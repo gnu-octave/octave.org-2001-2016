@@ -103,11 +103,11 @@ dnl
 dnl
 define(`__DOWNLOAD_INFO__',
 `<table width="100%" cellpadding="3" border="0" summary="Download Links for Octave">
-<tr><th>Octave version</th>
-<th>Version</th>
+<tr><th>Octave version label</th>
+<th>Version number</th>
 <th>Release Date</th></tr>
 <tr><td class="download">
-__FTP__(`ftp.octave.org/pub/octave', `Stable') (also currently ancient and obsolete)</td>
+__FTP__(`ftp.octave.org/pub/octave', `Stable')</td>
 <td class="download">$1
     (__OCTAVE_FTP__(`obsolete/octave-'$1`.tar.gz',`.tar.gz'))
     (__OCTAVE_FTP__(`obsolete/octave-'$1`.tar.bz2',`.tar.bz2'))
@@ -121,7 +121,7 @@ __FTP__(`ftp.octave.org/pub/octave', `Testing') (you probably want this)</td>
 </td>
 <td class="download">$4</td></tr>
 <tr><td class="download">
-__FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Development')  (latest features, but expect a few rough spots)</td>
+__FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Development')  (latest features, expect a few rough spots)</td>
 <td class="download">$5
     (__OCTAVE_FTP__(`bleeding-edge/octave-'$5`.tar.gz',`.tar.gz'))
     (__OCTAVE_FTP__(`bleeding-edge/octave-'$5`.tar.bz2',`.tar.bz2'))
