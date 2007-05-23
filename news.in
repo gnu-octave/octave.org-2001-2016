@@ -9,7 +9,7 @@ page, 2.9.12 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
 __OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
-__MAIL_THREAD__(`maintainers', `2007', `May', `002932')</dd>
+__MAIL_THREAD__(`maintainers', `2007', `May', `002949')</dd>
 <dt>May 22, 2007</dt>
 <dd>Version 2.9.11 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
