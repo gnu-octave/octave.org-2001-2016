@@ -59,9 +59,7 @@ __HTTP__(`www.redhat.com', `RedHat'), and others have packages).</p>
              `Mac OS X High Performance Computing')</li>
 <li>__HTTP__(`darwinports.opendarwin.org',
              `DarwinPorts package management system')</li>
-<li>The __HTTP__(`fink.sourceforge.net', `Fink project')
- currently has an old version of Octave available as a binary package
- but does include a source package for the current 2.9.12 snapshot.</li>
+<li>The __HTTP__(`fink.sourceforge.net', `Fink project')</li>
 </ul>
 
 <h4>Windows</h4>
