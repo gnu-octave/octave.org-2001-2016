@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,7 +32,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Con
 <hr>
 </div>
 
-<h3 class="section">30.4 Block Diagram Manipulations</h3>
+<h3 class="section">32.4 Block Diagram Manipulations</h3>
 
 <p>See <a href="systime.html#systime">systime</a>.
 
@@ -189,14 +42,14 @@ system data structures.
    <p><a name="doc_002dbddemo"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>bddemo</b> (<var>inputs</var>)<var><a name="index-bddemo-1221"></a></var><br>
+&mdash; Function File:  <b>bddemo</b> (<var>inputs</var>)<var><a name="index-bddemo-1556"></a></var><br>
 <blockquote><p>Octave Controls toolbox demo: Block Diagram Manipulations demo. 
 </p></blockquote></div>
 
    <p><a name="doc_002dbuildssic"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>buildssic</b> (<var>clst, ulst, olst, ilst, s1, s2, s3, s4, s5, s6, s7, s8</var>)<var><a name="index-buildssic-1222"></a></var><br>
+&mdash; Function File:  <b>buildssic</b> (<var>clst, ulst, olst, ilst, s1, s2, s3, s4, s5, s6, s7, s8</var>)<var><a name="index-buildssic-1557"></a></var><br>
 <blockquote>
 <p>Form an arbitrary complex (open or closed loop) system in
 state-space form from several systems. <samp><span class="command">buildssic</span></samp> can
@@ -296,7 +149,7 @@ can be obtained by (all <acronym>SISO</acronym> systems):
    <p><a name="doc_002djet707"></a>
 
 <div class="defun">
-&mdash; Function File: <var>sys</var> = <b>jet707</b> ()<var><a name="index-jet707-1223"></a></var><br>
+&mdash; Function File: <var>sys</var> = <b>jet707</b> ()<var><a name="index-jet707-1558"></a></var><br>
 <blockquote><p>Creates a linearized state-space model of a Boeing 707-321 aircraft
 at <var>v</var>=80 m/s
 (<var>M</var> = 0.26, <var>Ga0</var> = -3 deg, <var>alpha0</var> = 4 deg, <var>kappa</var> = 50 deg).
@@ -309,13 +162,13 @@ at <var>v</var>=80 m/s
         <pre class="sp">
      
      </pre>
-     See also: ord2. 
+     <strong>See also:</strong> ord2. 
 </p></blockquote></div>
 
    <p><a name="doc_002dord2"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ord2</b> (<var>nfreq, damp, gain</var>)<var><a name="index-ord2-1224"></a></var><br>
+&mdash; Function File:  <b>ord2</b> (<var>nfreq, damp, gain</var>)<var><a name="index-ord2-1559"></a></var><br>
 <blockquote><p>Creates a continuous 2nd order system with parameters:
 
         <p><strong>Inputs</strong>
@@ -345,7 +198,7 @@ aircraft model)
    <p><a name="doc_002dsysadd"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>sysadd</b> (<var>gsys, hsys</var>)<var><a name="index-sysadd-1225"></a></var><br>
+&mdash; Function File:  <b>sysadd</b> (<var>gsys, hsys</var>)<var><a name="index-sysadd-1560"></a></var><br>
 <blockquote><p>returns <var>sys</var> = <var>gsys</var> + <var>hsys</var>.
           <ul>
 <li>Exits with
@@ -368,7 +221,7 @@ duplicate names are given a suffix to make them unique.
    <p><a name="doc_002dsysappend"></a>
 
 <div class="defun">
-&mdash; Function File: <var>sys</var> = <b>sysappend</b> (<var>syst, b, c, d, outname, inname, yd</var>)<var><a name="index-sysappend-1226"></a></var><br>
+&mdash; Function File: <var>sys</var> = <b>sysappend</b> (<var>syst, b, c, d, outname, inname, yd</var>)<var><a name="index-sysappend-1561"></a></var><br>
 <blockquote><p>appends new inputs and/or outputs to a system
 
         <p><strong>Inputs</strong>
@@ -420,7 +273,7 @@ blocks of the input parameter <var>d</var>.
    <p><a name="doc_002dsysconnect"></a>
 
 <div class="defun">
-&mdash; Function File: <var>clsys</var> = <b>sysconnect</b> (<var>sys, out_idx, in_idx, order, tol</var>)<var><a name="index-sysconnect-1227"></a></var><br>
+&mdash; Function File: <var>clsys</var> = <b>sysconnect</b> (<var>sys, out_idx, in_idx, order, tol</var>)<var><a name="index-sysconnect-1562"></a></var><br>
 <blockquote><p>Close the loop from specified outputs to respective specified inputs
 
         <p><strong>Inputs</strong>
@@ -463,7 +316,7 @@ the end  of the input name.
    <p><a name="doc_002dsyscont"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>csys</var>, <var>acd</var>, <var>ccd</var>] = <b>syscont</b> (<var>sys</var>)<var><a name="index-syscont-1228"></a></var><br>
+&mdash; Function File: [<var>csys</var>, <var>acd</var>, <var>ccd</var>] = <b>syscont</b> (<var>sys</var>)<var><a name="index-syscont-1563"></a></var><br>
 <blockquote><p>Extract the purely continuous subsystem of an input system.
 
         <p><strong>Input</strong>
@@ -484,7 +337,7 @@ discrete states to continuous outputs, respectively.
    <p><a name="doc_002dsysdisc"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>dsys</var>, <var>adc</var>, <var>cdc</var>] = <b>sysdisc</b> (<var>sys</var>)<var><a name="index-sysdisc-1229"></a></var><br>
+&mdash; Function File: [<var>dsys</var>, <var>adc</var>, <var>cdc</var>] = <b>sysdisc</b> (<var>sys</var>)<var><a name="index-sysdisc-1564"></a></var><br>
 <blockquote>
 <p><strong>Input</strong>
           <dl>
@@ -503,7 +356,7 @@ outputs, respectively.
    <p><a name="doc_002dsysdup"></a>
 
 <div class="defun">
-&mdash; Function File: <var>retsys</var> = <b>sysdup</b> (<var>asys, out_idx, in_idx</var>)<var><a name="index-sysdup-1230"></a></var><br>
+&mdash; Function File: <var>retsys</var> = <b>sysdup</b> (<var>asys, out_idx, in_idx</var>)<var><a name="index-sysdup-1565"></a></var><br>
 <blockquote><p>Duplicate specified input/output connections of a system
 
         <p><strong>Inputs</strong>
@@ -536,7 +389,7 @@ specified in <var>in_idx</var>, <var>out_idx</var>, respectively
    <p><a name="doc_002dsysgroup"></a>
 
 <div class="defun">
-&mdash; Function File: <var>sys</var> = <b>sysgroup</b> (<var>asys, bsys</var>)<var><a name="index-sysgroup-1231"></a></var><br>
+&mdash; Function File: <var>sys</var> = <b>sysgroup</b> (<var>asys, bsys</var>)<var><a name="index-sysgroup-1566"></a></var><br>
 <blockquote><p>Combines two systems into a single system.
 
         <p><strong>Inputs</strong>
@@ -568,7 +421,7 @@ on to the end of the name.
    <p><a name="doc_002dsysmult"></a>
 
 <div class="defun">
-&mdash; Function File: <var>sys</var> = <b>sysmult</b> (<var>Asys, Bsys</var>)<var><a name="index-sysmult-1232"></a></var><br>
+&mdash; Function File: <var>sys</var> = <b>sysmult</b> (<var>Asys, Bsys</var>)<var><a name="index-sysmult-1567"></a></var><br>
 <blockquote><p>Compute sys = Asys*Bsys (series connection):
      <pre class="example">          u   ----------     ----------
           ---&gt;|  Bsys  |----&gt;|  Asys  |---&gt;
@@ -583,7 +436,7 @@ of <var>Bsys</var>, to a continuous state or output in <var>Asys</var>
    <p><a name="doc_002dsysprune"></a>
 
 <div class="defun">
-&mdash; Function File: <var>retsys</var> = <b>sysprune</b> (<var>asys, out_idx, in_idx</var>)<var><a name="index-sysprune-1233"></a></var><br>
+&mdash; Function File: <var>retsys</var> = <b>sysprune</b> (<var>asys, out_idx, in_idx</var>)<var><a name="index-sysprune-1568"></a></var><br>
 <blockquote><p>Extract specified inputs/outputs from a system
 
         <p><strong>Inputs</strong>
@@ -614,7 +467,7 @@ May select as [] (empty matrix) to specify all outputs/inputs.
    <p><a name="doc_002dsysreorder"></a>
 
 <div class="defun">
-&mdash; Function File: <var>pv</var> = <b>sysreorder</b> (<var>vlen, list</var>)<var><a name="index-sysreorder-1234"></a></var><br>
+&mdash; Function File: <var>pv</var> = <b>sysreorder</b> (<var>vlen, list</var>)<var><a name="index-sysreorder-1569"></a></var><br>
 <blockquote>
 <p><strong>Inputs</strong>
           <dl>
@@ -635,7 +488,7 @@ desired locations.
    <p><a name="doc_002dsysscale"></a>
 
 <div class="defun">
-&mdash; Function File: <var>retsys</var> = <b>sysscale</b> (<var>sys, outscale, inscale, outname, inname</var>)<var><a name="index-sysscale-1235"></a></var><br>
+&mdash; Function File: <var>retsys</var> = <b>sysscale</b> (<var>sys, outscale, inscale, outname, inname</var>)<var><a name="index-sysscale-1570"></a></var><br>
 <blockquote><p>scale inputs/outputs of a system.
 
         <p><strong>Inputs</strong>
@@ -666,7 +519,7 @@ set appropriately in the returned value of <var>sys</var>.
    <p><a name="doc_002dsyssub"></a>
 
 <div class="defun">
-&mdash; Function File: <var>sys</var> = <b>syssub</b> (<var>Gsys, Hsys</var>)<var><a name="index-syssub-1236"></a></var><br>
+&mdash; Function File: <var>sys</var> = <b>syssub</b> (<var>Gsys, Hsys</var>)<var><a name="index-syssub-1571"></a></var><br>
 <blockquote><p>Return sys = Gsys - Hsys.
 
         <p><strong>Method</strong>
@@ -689,7 +542,7 @@ subtracted.  Returned system names are those of <var>Gsys</var>.
    <p><a name="doc_002dugain"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ugain</b> (<var>n</var>)<var><a name="index-ugain-1237"></a></var><br>
+&mdash; Function File:  <b>ugain</b> (<var>n</var>)<var><a name="index-ugain-1572"></a></var><br>
 <blockquote><p>Creates a system with unity gain, no states. 
 This trivial system is sometimes needed to create arbitrary
 complex systems from simple systems with <samp><span class="command">buildssic</span></samp>. 
@@ -698,13 +551,13 @@ does not contain a sampling period.
         <pre class="sp">
      
      </pre>
-     See also: hinfdemo, jet707. 
+     <strong>See also:</strong> hinfdemo, jet707. 
 </p></blockquote></div>
 
    <p><a name="doc_002dwgt1o"></a>
 
 <div class="defun">
-&mdash; Function File: <var>W</var> = <b>wgt1o</b> (<var>vl, vh, fc</var>)<var><a name="index-wgt1o-1238"></a></var><br>
+&mdash; Function File: <var>W</var> = <b>wgt1o</b> (<var>vl, vh, fc</var>)<var><a name="index-wgt1o-1573"></a></var><br>
 <blockquote><p>State space description of a first order weighting function.
 
         <p>Weighting function are needed by the
@@ -729,7 +582,7 @@ These function are part of the augmented plant <var>P</var>
    <p><a name="doc_002dparallel"></a>
 
 <div class="defun">
-&mdash; Function File: <var>ksys</var> = <b>parallel</b> (<var>asys, bsys</var>)<var><a name="index-parallel-1239"></a></var><br>
+&mdash; Function File: <var>ksys</var> = <b>parallel</b> (<var>asys, bsys</var>)<var><a name="index-parallel-1574"></a></var><br>
 <blockquote><p>Forms the parallel connection of two systems.
 
      <pre class="example">                       --------------------
@@ -747,7 +600,7 @@ These function are part of the augmented plant <var>P</var>
    <p><a name="doc_002dsysmin"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>retsys</var>, <var>nc</var>, <var>no</var>] = <b>sysmin</b> (<var>sys, flg</var>)<var><a name="index-sysmin-1240"></a></var><br>
+&mdash; Function File: [<var>retsys</var>, <var>nc</var>, <var>no</var>] = <b>sysmin</b> (<var>sys, flg</var>)<var><a name="index-sysmin-1575"></a></var><br>
 <blockquote><p>Returns a minimal (or reduced order) system
 
         <p><strong>Inputs</strong>

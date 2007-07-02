@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,12 +32,155 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Variables.html#Variables">Variables</a>
 <hr>
 </div>
 
-<h3 class="section">9.3 Status of Variables</h3>
+<h3 class="section">8.3 Status of Variables</h3>
 
-<p><a name="doc_002dclear"></a>
+<p>When creating simple one-shot programs it can be very convenient to
+see which variables are available at the prompt. The function <code>who</code>
+and its siblings <code>whos</code> and <code>whos_line_format</code> will show
+different information about what is in memory, as the following shows.
+
+<pre class="example">     str = "A random string";
+     who -variables
+          -| *** local user variables:
+          -|
+          -| __nargin__  str
+</pre>
+   <p><a name="doc_002dwho"></a>
 
 <div class="defun">
-&mdash; Command: <b>clear</b> [<var>-x</var>]<var> pattern <small class="dots">...</small><a name="index-clear-264"></a></var><br>
+&mdash; Command: <b>who</b><var> options pattern <small class="dots">...</small><a name="index-who-356"></a></var><br>
+&mdash; Command: <b>whos</b><var> options pattern <small class="dots">...</small><a name="index-whos-357"></a></var><br>
+<blockquote><p>List currently defined symbols matching the given patterns.  The
+following are valid options.  They may be shortened to one character but
+may not be combined.
+
+          <dl>
+<dt><code>-all</code><dd>List all currently defined symbols.
+
+          <br><dt><code>-builtins</code><dd>List built-in functions.  This includes all currently
+compiled function files, but does not include all function files that
+are in the search path.
+
+          <br><dt><code>-functions</code><dd>List user-defined functions.
+
+          <br><dt><code>-long</code><dd>Print a long listing including the type and dimensions of any symbols. 
+The symbols in the first column of output indicate whether it is
+possible to redefine the symbol, and whether it is possible for it to be
+cleared.
+
+          <br><dt><code>-variables</code><dd>List user-defined variables. 
+</dl>
+
+        <p>Valid patterns are the same as described for the <code>clear</code> command
+above.  If no patterns are supplied, all symbols from the given category
+are listed.  By default, only user defined functions and variables
+visible in the local scope are displayed.
+
+        <p>The command <kbd>whos</kbd> is equivalent to <kbd>who -long</kbd>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwhos"></a>
+
+<div class="defun">
+&mdash; Command: <b>whos</b><var> options pattern <small class="dots">...</small><a name="index-whos-358"></a></var><br>
+<blockquote><p>See who. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwhos_005fline_005fformat"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>whos_line_format</b> ()<var><a name="index-whos_005fline_005fformat-359"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>whos_line_format</b> (<var>new_val</var>)<var><a name="index-whos_005fline_005fformat-360"></a></var><br>
+<blockquote><p>Query or set the format string used by the <code>whos</code>.
+
+        <p>The following escape sequences may be used in the format:
+          <dl>
+<dt><code>%b</code><dd>Prints number of bytes occupied by variables. 
+<br><dt><code>%c</code><dd>Prints class names of variables. 
+<br><dt><code>%e</code><dd>Prints elements held by variables. 
+<br><dt><code>%n</code><dd>Prints variable names. 
+<br><dt><code>%p</code><dd>Prints protection attributtes of variables. 
+<br><dt><code>%s</code><dd>Prints dimensions of variables. 
+<br><dt><code>%t</code><dd>Prints type names of variables. 
+</dl>
+
+        <p>Every command may also have a modifier:
+          <dl>
+<dt><code>l</code><dd>Left alignment. 
+<br><dt><code>r</code><dd>Right alignment (this is the default). 
+<br><dt><code>c</code><dd>Centered (may only be applied to command %s). 
+</dl>
+
+        <p>A command is composed like this:
+%[modifier]&lt;command&gt;[:size_of_parameter[:center-specific[:print_dims[:balance]]]];
+
+        <p>Command and modifier is already explained. Size_of_parameter
+tells how many columns the parameter will need for printing. 
+print_dims tells how many dimensions to print. If number of
+dimensions exceeds print_dims, dimensions will be printed like
+x-D. 
+center-specific and print_dims may only be applied to command
+%s. A negative value for print_dims will cause Octave to print all
+dimensions whatsoever. 
+balance specifies the offset for printing of the dimensions string.
+
+        <p>The default format is "  %p:4; %ln:6; %cs:16:6:8:1;  %rb:12;  %lc:-1;\n". 
+</p></blockquote></div>
+
+   <p>Instead of displaying which variables are in memory, it is possible
+to determine if a given variable is available. That way it is possible
+to alter the behaviour of a program depending on the existence of a
+variable. The following example illustrates this.
+
+<pre class="example">     if (! exist ("meaning", "var"))
+       disp ("The program has no 'meaning'");
+     endif
+</pre>
+   <p><a name="doc_002dexist"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>exist</b> (<var>name, type</var>)<var><a name="index-exist-361"></a></var><br>
+<blockquote><p>Return 1 if the name exists as a variable, 2 if the name (after
+appending `<samp><span class="samp">.m</span></samp>') is a function file in Octave's <code>path</code>, 3 if the
+name is a `<samp><span class="samp">.oct</span></samp>' or `<samp><span class="samp">.mex</span></samp>' file in Octave's <code>path</code>,
+5 if the name is a built-in function, 7 if the name is a directory, or 103
+if the name is a function not associated with a file (entered on
+the command line).
+
+        <p>Otherwise, return 0.
+
+        <p>This function also returns 2 if a regular file called <var>name</var>
+exists in Octave's search path.  If you want information about
+other types of files, you should use some combination of the functions
+<code>file_in_path</code> and <code>stat</code> instead.
+
+        <p>If the optional argument <var>type</var> is supplied, check only for
+symbols of the specified type.  Valid types are
+
+          <dl>
+<dt>`<samp><span class="samp">"var"</span></samp>'<dd>Check only for variables. 
+<br><dt>`<samp><span class="samp">"builtin"</span></samp>'<dd>Check only for built-in functions. 
+<br><dt>`<samp><span class="samp">"file"</span></samp>'<dd>Check only for files. 
+<br><dt>`<samp><span class="samp">"dir"</span></samp>'<dd>Check only for directories. 
+</dl>
+        </p></blockquote></div>
+
+   <p>Usually Octave will manage the memory, but sometimes it can be practical
+to remove variables from memory manually. This is usually needed when
+working with large variables that fill a substantial part of the memory. 
+On a computer that uses the IEEE floating point format, the following
+program allocates a matrix that requires around 128 MB memory.
+
+<pre class="example">     large_matrix = zeros (4000, 4000);
+</pre>
+   <p class="noindent">Since having this variable in memory might slow down other computations,
+it can be necessary to remove it manually from memory. The <code>clear</code>
+function allows this.
+
+   <p><a name="doc_002dclear"></a>
+
+<div class="defun">
+&mdash; Command: <b>clear</b> [<var>-x</var>]<var> pattern <small class="dots">...</small><a name="index-clear-362"></a></var><br>
 <blockquote><p>Delete the names matching the given patterns from the symbol table.  The
 pattern may contain the following special characters:
 
@@ -216,151 +212,40 @@ will clear the variable definition and restore the definition of
 <code>foo</code> as a function.  Executing <kbd>clear foo</kbd> a second time will
 clear the function definition.
 
-        <p>With -x, clear the variables that don't match the patterns.
-
-        <p>This command may not be used within a function body. 
+        <p>With -x, clear the variables that don't match the patterns. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dwho"></a>
-
-<div class="defun">
-&mdash; Command: <b>who</b><var> options pattern <small class="dots">...</small><a name="index-who-265"></a></var><br>
-&mdash; Command: <b>whos</b><var> options pattern <small class="dots">...</small><a name="index-whos-266"></a></var><br>
-<blockquote><p>List currently defined symbols matching the given patterns.  The
-following are valid options.  They may be shortened to one character but
-may not be combined.
-
-          <dl>
-<dt><code>-all</code><dd>List all currently defined symbols.
-
-          <br><dt><code>-builtins</code><dd>List built-in variables and functions.  This includes all currently
-compiled function files, but does not include all function files that
-are in the <code>LOADPATH</code>.
-
-          <br><dt><code>-functions</code><dd>List user-defined functions.
-
-          <br><dt><code>-long</code><dd>Print a long listing including the type and dimensions of any symbols. 
-The symbols in the first column of output indicate whether it is
-possible to redefine the symbol, and whether it is possible for it to be
-cleared.
-
-          <br><dt><code>-variables</code><dd>List user-defined variables. 
-</dl>
-
-        <p>Valid patterns are the same as described for the <code>clear</code> command
-above.  If no patterns are supplied, all symbols from the given category
-are listed.  By default, only user defined functions and variables
-visible in the local scope are displayed.
-
-        <p>The command <kbd>whos</kbd> is equivalent to <kbd>who -long</kbd>. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dwhos"></a>
-
-<div class="defun">
-&mdash; Command: <b>whos</b><var> options pattern <small class="dots">...</small><a name="index-whos-267"></a></var><br>
-<blockquote><p>See who. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dwhos_005fline_005fformat"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>whos_line_format</b><var><a name="index-whos_005fline_005fformat-268"></a></var><br>
-<blockquote><p>This string decides in what order attributtes of variables are to be printed. 
-The following commands are used:
-          <dl>
-<dt><code>%b</code><dd>Prints number of bytes occupied by variables. 
-<br><dt><code>%e</code><dd>Prints elements held by variables. 
-<br><dt><code>%n</code><dd>Prints variable names. 
-<br><dt><code>%p</code><dd>Prints protection attributtes of variables. 
-<br><dt><code>%s</code><dd>Prints dimensions of variables. 
-<br><dt><code>%t</code><dd>Prints type names of variables. 
-</dl>
-
-        <p>Every command may also have a modifier:
-          <dl>
-<dt><code>l</code><dd>Left alignment. 
-<br><dt><code>r</code><dd>Right alignment (this is the default). 
-<br><dt><code>c</code><dd>Centered (may only be applied to command %s). 
-</dl>
-
-        <p>A command is composed like this:
-%[modifier]&lt;command&gt;[:size_of_parameter[:center-specific[:print_dims[:balance]]]];
-
-        <p>Command and modifier is already explained. Size_of_parameter
-tells how many columns the parameter will need for printing. 
-print_dims tells how many dimensions to print. If number of
-dimensions exceeds print_dims, dimensions will be printed like
-x-D. 
-center-specific and print_dims may only be applied to command
-%s. A negative value for print_dims will cause Octave to print all
-dimensions whatsoever. 
-balance specifies the offset for printing of the dimensions string.
-
-        <p>Default format is "  %p:4; %ln:6; %cs:16:6:8:1;  %rb:12;  %lt:-1;\n". 
-</p></blockquote></div>
-
-   <p><a name="doc_002dexist"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>exist</b> (<var>name, type</var>)<var><a name="index-exist-269"></a></var><br>
-<blockquote><p>Return 1 if the name exists as a variable, 2 if the name (after
-appending `<samp><span class="samp">.m</span></samp>') is a function file in Octave's LOADPATH, 3 if the
-name is a `<samp><span class="samp">.oct</span></samp>' file in Octave's LOADPATH, 5 if the name is a
-built-in function, 7 if the name is a directory, 101 if the name is
-a built-in variable, 102 if the name is a built-in constant, or 103
-if the name is a function not associated with a file (entered on
-the command line).
-
-        <p>Otherwise, return 0.
-
-        <p>This function also returns 2 if a regular file called <var>name</var>
-exists in Octave's <code>LOADPATH</code>.  If you want information about
-other types of files, you should use some combination of the functions
-<code>file_in_path</code> and <code>stat</code> instead.
-
-        <p>If the optional argument <var>type</var> is supplied, check only for
-symbols of the specified type.  Valid types are
-
-          <dl>
-<dt>`<samp><span class="samp">"var"</span></samp>'<dd>Check only for variables. 
-<br><dt>`<samp><span class="samp">"builtin"</span></samp>'<dd>Check only for built-in functions. 
-<br><dt>`<samp><span class="samp">"file"</span></samp>'<dd>Check only for files. 
-<br><dt>`<samp><span class="samp">"dir"</span></samp>'<dd>Check only for directories. 
-</dl>
-        </p></blockquote></div>
+   <p>Information about a function or variable such as it's location in the
+file system can also be acquired from within Octave. This is usually
+only useful during development of programs, and not within a program.
 
    <p><a name="doc_002ddocument"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>document</b> (<var>symbol, text</var>)<var><a name="index-document-270"></a></var><br>
+&mdash; Built-in Function:  <b>document</b> (<var>symbol, text</var>)<var><a name="index-document-363"></a></var><br>
 <blockquote><p>Set the documentation string for <var>symbol</var> to <var>text</var>. 
 </p></blockquote></div>
 
    <p><a name="doc_002dtype"></a>
 
 <div class="defun">
-&mdash; Command: <b>type</b><var> options name <small class="dots">...</small><a name="index-type-271"></a></var><br>
+&mdash; Command: <b>type</b><var> options name <small class="dots">...</small><a name="index-type-364"></a></var><br>
 <blockquote><p>Display the definition of each <var>name</var> that refers to a function.
 
-        <p>Normally also displays if each <var>name</var> is user-defined or builtin;
-the <code>-q</code> option suppresses this behaviour.
-
-        <p>Currently, Octave can only display functions that can be compiled
-cleanly, because it uses its internal representation of the function to
-recreate the program text.
-
-        <p>Comments are not displayed because Octave's parser currently discards
-them as it converts the text of a function file to its internal
-representation.  This problem may be fixed in a future release. 
+        <p>Normally also displays whether each <var>name</var> is user-defined or built-in;
+the <code>-q</code> option suppresses this behaviour. 
 </p></blockquote></div>
 
    <p><a name="doc_002dwhich"></a>
 
 <div class="defun">
-&mdash; Command: <b>which</b><var> name <small class="dots">...</small><a name="index-which-272"></a></var><br>
+&mdash; Command: <b>which</b><var> name <small class="dots">...</small><a name="index-which-365"></a></var><br>
 <blockquote><p>Display the type of each <var>name</var>.  If <var>name</var> is defined from a
-function file, the full name of the file is also displayed. 
+function file, the full name of the file is also displayed.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> help, lookfor. 
 </p></blockquote></div>
 
    </body></html>

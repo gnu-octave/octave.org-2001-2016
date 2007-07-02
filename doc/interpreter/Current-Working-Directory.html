@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,13 +32,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities"
 <hr>
 </div>
 
-<h3 class="section">35.6 Current Working Directory</h3>
+<h3 class="section">37.8 Current Working Directory</h3>
 
 <p><a name="doc_002dcd"></a>
 
 <div class="defun">
-&mdash; Command: <b>cd</b><var> dir<a name="index-cd-1497"></a></var><br>
-&mdash; Command: <b>chdir</b><var> dir<a name="index-chdir-1498"></a></var><br>
+&mdash; Command: <b>cd</b><var> dir<a name="index-cd-1909"></a></var><br>
+&mdash; Command: <b>chdir</b><var> dir<a name="index-chdir-1910"></a></var><br>
 <blockquote><p>Change the current working directory to <var>dir</var>.  If <var>dir</var> is
 omitted, the current directory is changed to the users home
 directory.  For example,
@@ -198,19 +51,19 @@ directory is not changed.
         <pre class="sp">
      
      </pre>
-     See also: mkdir, rmdir, dir. 
+     <strong>See also:</strong> mkdir, rmdir, dir. 
 </p></blockquote></div>
 
    <p><a name="doc_002dls"></a>
 
 <div class="defun">
-&mdash; Command: <b>ls</b><var> options<a name="index-ls-1499"></a></var><br>
+&mdash; Command: <b>ls</b><var> options<a name="index-ls-1911"></a></var><br>
 <blockquote><p>List directory contents.  For example,
 
      <pre class="example">          ls -l
-               -| total 12
-               -| -rw-r--r--   1 jwe  users  4488 Aug 19 04:02 foo.m
-               -| -rw-r--r--   1 jwe  users  1315 Aug 17 23:14 bar.m
+          -| total 12
+          -| -rw-r--r--   1 jwe  users  4488 Aug 19 04:02 foo.m
+          -| -rw-r--r--   1 jwe  users  1315 Aug 17 23:14 bar.m
      </pre>
         <p>The <code>dir</code> and <code>ls</code> commands are implemented by calling your
 system's directory listing command, so the available options may vary
@@ -218,18 +71,57 @@ from system to system.
         <pre class="sp">
      
      </pre>
-     See also: dir, stat, readdir, glob, filesep. 
+     <strong>See also:</strong> dir, stat, readdir, glob, filesep, ls_command. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dls_005fcommand"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>old_cmd</var> = <b>ls_command</b> (<var>cmd</var>)<var><a name="index-ls_005fcommand-1912"></a></var><br>
+<blockquote><p>Set or return the shell command used by Octave's <code>ls</code> command. 
+The value of <var>cmd</var> must be a character string. 
+With no arguments, simply return the previous value.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> ls. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddir"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dir</b> (<var>directory</var>)<var><a name="index-dir-1913"></a></var><br>
+&mdash; Function File: [<var>list</var>] = <b>dir</b> (<var>directory</var>)<var><a name="index-dir-1914"></a></var><br>
+<blockquote><p>Display file listing for directory <var>directory</var>.  If a return
+value is requested, return a structure array with the fields
+
+     <pre class="example">          name
+          bytes
+          date
+          isdir
+          statinfo
+     </pre>
+        <p class="noindent">in which <code>statinfo</code> is the structure returned from <code>stat</code>.
+
+        <p>If <var>directory</var> is not a directory, return information about the
+named <var>filename</var>.  <var>directory</var> may be a list of directories
+specified either by name or with wildcard characters (like * and ?) 
+which will be expanded with glob.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> ls, stat, readdir, glob, filesep. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpwd"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>pwd</b> ()<var><a name="index-pwd-1500"></a></var><br>
+&mdash; Built-in Function:  <b>pwd</b> ()<var><a name="index-pwd-1915"></a></var><br>
 <blockquote><p>Return the current working directory.
         <pre class="sp">
      
      </pre>
-     See also: dir, ls. 
+     <strong>See also:</strong> dir, ls. 
 </p></blockquote></div>
 
    </body></html>

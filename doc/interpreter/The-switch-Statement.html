@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,16 +32,39 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Statements.html#Statements">Statements<
 <hr>
 </div>
 
-<h3 class="section">12.2 The <code>switch</code> Statement</h3>
+<h3 class="section">11.2 The <code>switch</code> Statement</h3>
 
-<p><a name="index-g_t_0040code_007bswitch_007d-statement-438"></a><a name="index-g_t_0040code_007bcase_007d-statement-439"></a><a name="index-g_t_0040code_007botherwise_007d-statement-440"></a><a name="index-g_t_0040code_007bendswitch_007d-statement-441"></a>
-The <code>switch</code> statement was introduced in Octave 2.0.5.  It should
-be considered experimental, and details of the implementation may change
-slightly in future versions of Octave.  If you have comments or would
-like to share your experiences in trying to use this new command in real
-programs, please send them to <a href="mailto:maintainers@octave.org">maintainers@octave.org</a>.  (But if
-you think you've found a bug, please report it to
-<a href="mailto:bug@octave.org">bug@octave.org</a>.
+<p><a name="index-g_t_0040code_007bswitch_007d-statement-518"></a><a name="index-g_t_0040code_007bcase_007d-statement-519"></a><a name="index-g_t_0040code_007botherwise_007d-statement-520"></a><a name="index-g_t_0040code_007bendswitch_007d-statement-521"></a>
+It is very common to take different actions depending on the value of
+one variable. This is possible using the <code>if</code> statement in the
+following way
+
+<pre class="example">     if (X == 1)
+       do_something ();
+     elseif (X == 2)
+       do_something_else ();
+     else
+       do_something_completely_different ();
+     endif
+</pre>
+   <p class="noindent">This kind of code can however be very cumbersome to both write and
+maintain. To overcome this problem Octave supports the <code>switch</code>
+statement. Using this statement, the above example becomes
+
+<pre class="example">     switch (X)
+       case 1
+         do_something ();
+       case 2
+         do_something_else ();
+       otherwise
+         do_something_completely_different ();
+     endswitch
+</pre>
+   <p class="noindent">This code makes the repetitive structure of the problem more explicit,
+making the code easier to read, and hence maintain. Also, if the
+variable <code>X</code> should change it's name, only one line would need
+changing compared to one line per case when <code>if</code> statements are
+used.
 
    <p>The general form of the <code>switch</code> statement is
 
@@ -203,59 +79,51 @@ you think you've found a bug, please report it to
          <var>command_list</var>
      endswitch
 </pre>
-     <ul>
-<li>The identifiers <code>switch</code>, <code>case</code>, <code>otherwise</code>, and
-<code>endswitch</code> are now keywords.
+   <p class="noindent">where <var>label</var> can be any expression. However, duplicate
+<var>label</var> values are not detected, and only the <var>command_list</var>
+corresponding to the first match will be executed. For the
+<code>switch</code> statement to be meaningful at least one
+<code>case </code><var>label</var> <var>command_list</var> clause must be present,
+while the <code>otherwise </code><var>command_list</var> clause is optional.
 
-     <li>The <var>label</var> may be any expression.
+   <p>If <var>label</var> is a cell array the corresponding <var>command_list</var>
+is executed if <em>any</em> of the elements of the cell array match
+<var>expression</var>. As an example, the following program will print
+`<samp><span class="samp">Variable is either 6 or 7</span></samp>'.
 
-     <li>Duplicate <var>label</var> values are not detected.  The <var>command_list</var>
-corresponding to the first match will be executed.
-
-     <li>You must have at least one <code>case </code><var>label</var> <var>command_list</var>
-clause.
-
-     <li>The <code>otherwise </code><var>command_list</var> clause is optional.
-
-     <li>As with all other specific <code>end</code> keywords, <code>endswitch</code> may be
+<pre class="example">     A = 7;
+     switch A
+       case { 6, 7 }
+         printf ("variable is either 6 or 7\n");
+       otherwise
+         printf ("variable is neither 6 nor 7\n");
+     endswitch
+</pre>
+   <p>As with all other specific <code>end</code> keywords, <code>endswitch</code> may be
 replaced by <code>end</code>, but you can get better diagnostics if you use
 the specific forms.
 
-     <li>Cases are exclusive, so they don't `fall through' as do the cases
-in the switch statement of the C language.
+<!-- Strings can be matched -->
+<p>One advantage of using the <code>switch</code> statement compared to using
+<code>if</code> statements is that the <var>label</var>s can be strings. If an
+<code>if</code> statement is used it is <em>not</em> possible to write
 
-     <li>The <var>command_list</var> elements are not optional.  Making the list
-optional would have meant requiring a separator between the label and
-the command list.  Otherwise, things like
+<pre class="example">     if (X == "a string") # This is NOT valid
+</pre>
+   <p class="noindent">since a character-to-character comparison between <code>X</code> and the
+string will be made instead of evaluating if the strings are equal. 
+This special-case is handled by the <code>switch</code> statement, and it
+is possible to write programs that look like this
 
-     <pre class="example">          switch (foo)
-            case (1) -2
-            ...
-     </pre>
-     <p class="noindent">would produce surprising results, as would
-
-     <pre class="example">          switch (foo)
-            case (1)
-            case (2)
-              doit ();
-            ...
-     </pre>
-     <p class="noindent">particularly for C programmers.
-
-     <li>The implementation is simple-minded and currently offers no real
-performance improvement over an equivalent <code>if</code> block, even if all
-the labels are integer constants.  Perhaps a future variation on this
-could detect all constant integer labels and improve performance by
-using a jump table. 
+<pre class="example">     switch (X)
+       case "a string"
+         do_something
+       ...
+     endswitch
+</pre>
+   <ul class="menu">
+<li><a accesskey="1" href="Notes-for-the-C-programmer.html#Notes-for-the-C-programmer">Notes for the C programmer</a>
 </ul>
-
-   <p><a name="doc_002dwarn_005fvariable_005fswitch_005flabel"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>warn_variable_switch_label</b><var><a name="index-warn_005fvariable_005fswitch_005flabel-442"></a></var><br>
-<blockquote><p>If the value of this variable is nonzero, Octave will print a warning if
-a switch label is not a constant or constant expression
-</p></blockquote></div>
 
    </body></html>
 

@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+<title>Loading and Saving Images - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Image-Processing.html#Image-Processing" title="Image Processing">
+<link rel="next" href="Displaying-Images.html#Displaying-Images" title="Displaying Images">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Loading-and-Saving-Images"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Displaying-Images.html#Displaying-Images">Displaying Images</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Image-Processing.html#Image-Processing">Image Processing</a>
+<hr>
+</div>
+
+<h3 class="section">34.1 Loading and Saving Images</h3>
+
+<p>The first step in most image processing tasks is to load an image
+into Octave. Currently Octave only support saving images in the
+Portable Pixmap Format (PPM), PostScript, and Octave's own format, and
+loading images in Octave's format. Most image processing code will
+follow the structure of this code
+
+<pre class="example">     I = loadimage ("my_input_image.img");
+     J = process_my_image (I);
+     saveimage ("my_output_image.img", J);
+</pre>
+   <p><a name="doc_002dloadimage"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>x</var>, <var>map</var>] = <b>loadimage</b> (<var>file</var>)<var><a name="index-loadimage-1727"></a></var><br>
+<blockquote><p>Load an image file and it's associated color map from the specified
+<var>file</var>.  The image must be stored in Octave's image format.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> saveimage, load, save. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsaveimage"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>saveimage</b> (<var>file, x, fmt, map</var>)<var><a name="index-saveimage-1728"></a></var><br>
+<blockquote><p>Save the matrix <var>x</var> to <var>file</var> in image format <var>fmt</var>.  Valid
+values for <var>fmt</var> are
+
+          <dl>
+<dt><code>"img"</code><dd>Octave's image format.  The current colormap is also saved in the file.
+
+          <br><dt><code>"ppm"</code><dd>Portable pixmap format.
+
+          <br><dt><code>"ps"</code><dd>PostScript format.  Note that images saved in PostScript format can not
+be read back into Octave with loadimage. 
+</dl>
+
+        <p>If the fourth argument is supplied, the specified colormap will also be
+saved along with the image.
+
+        <p>Note: if the colormap contains only two entries and these entries are
+black and white, the bitmap ppm and PostScript formats are used.  If the
+image is a gray scale image (the entries within each row of the colormap
+are equal) the gray scale ppm and PostScript image formats are used,
+otherwise the full color formats are used.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> loadimage, save, load, colormap. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dIMAGE_005fPATH"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>IMAGE_PATH</b> ()<var><a name="index-IMAGE_005fPATH-1729"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>IMAGE_PATH</b> (<var>new_val</var>)<var><a name="index-IMAGE_005fPATH-1730"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies a colon separated
+list of directories in which to search for image files. 
+</p></blockquote></div>
+
+   </body></html>
+

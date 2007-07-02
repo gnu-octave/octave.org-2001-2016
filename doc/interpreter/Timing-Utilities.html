@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -177,7 +30,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities"
 <hr>
 </div>
 
-<h3 class="section">35.1 Timing Utilities</h3>
+<h3 class="section">37.1 Timing Utilities</h3>
 
 <p>Octave's core set of functions for manipulating time values are
 patterned after the corresponding functions from the standard C library. 
@@ -215,17 +68,41 @@ referred to as a <var>tm_struct</var>.
    <p><a name="doc_002dtime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>time</b> ()<var><a name="index-time-1428"></a></var><br>
+&mdash; Loadable Function:  <b>time</b> ()<var><a name="index-time-1787"></a></var><br>
 <blockquote><p>Return the current time as the number of seconds since the epoch.  The
 epoch is referenced to 00:00:00 CUT (Coordinated Universal Time) 1 Jan
 1970.  For example, on Monday February 17, 1997 at 07:15:06 CUT, the
-value returned by <code>time</code> was 856163706. 
+value returned by <code>time</code> was 856163706.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strftime, strptime, localtime, gmtime, mktime, now, date, clock, datenum, datestr, datevec, calendar, weekday. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnow"></a>
+
+<div class="defun">
+&mdash; Function File: t = <b>now</b> ()<var><a name="index-now-1788"></a></var><br>
+<blockquote><p>Returns the current local time as the number of days since Jan 1, 0000. 
+By this reckoning, Jan 1, 1970 is day number 719529.
+
+        <p>The integral part, <code>floor (now)</code> corresponds to 00:00:00 today.
+
+        <p>The fractional part, <code>rem (now, 1)</code> corresponds to the current
+time on Jan 1, 0000.
+
+        <p>The returned value is also called a "serial date number"
+(see <code>datenum</code>).
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> clock, date, datenum. 
 </p></blockquote></div>
 
    <p><a name="doc_002dctime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ctime</b> (<var>t</var>)<var><a name="index-ctime-1429"></a></var><br>
+&mdash; Function File:  <b>ctime</b> (<var>t</var>)<var><a name="index-ctime-1789"></a></var><br>
 <blockquote><p>Convert a value returned from <code>time</code> (or any other nonnegative
 integer), to the local time and return a string of the same form as
 <code>asctime</code>.  The function <code>ctime (time)</code> is equivalent to
@@ -239,7 +116,7 @@ integer), to the local time and return a string of the same form as
    <p><a name="doc_002dgmtime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>gmtime</b> (<var>t</var>)<var><a name="index-gmtime-1430"></a></var><br>
+&mdash; Loadable Function:  <b>gmtime</b> (<var>t</var>)<var><a name="index-gmtime-1790"></a></var><br>
 <blockquote><p>Given a value returned from time (or any nonnegative integer),
 return a time structure corresponding to CUT.  For example,
 
@@ -258,12 +135,16 @@ return a time structure corresponding to CUT.  For example,
                      yday = 47
                    }
      </pre>
-        </blockquote></div>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strftime, strptime, localtime, mktime, time, now, date, clock, datenum, datestr, datevec, calendar, weekday. 
+</p></blockquote></div>
 
    <p><a name="doc_002dlocaltime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>localtime</b> (<var>t</var>)<var><a name="index-localtime-1431"></a></var><br>
+&mdash; Loadable Function:  <b>localtime</b> (<var>t</var>)<var><a name="index-localtime-1791"></a></var><br>
 <blockquote><p>Given a value returned from time (or any nonnegative integer),
 return a time structure corresponding to the local time zone.
 
@@ -282,24 +163,32 @@ return a time structure corresponding to the local time zone.
                      yday = 47
                    }
      </pre>
-        </blockquote></div>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strftime, strptime, gmtime, mktime, time, now, date, clock, datenum, datestr, datevec, calendar, weekday. 
+</p></blockquote></div>
 
    <p><a name="doc_002dmktime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>mktime</b> (<var>tm_struct</var>)<var><a name="index-mktime-1432"></a></var><br>
+&mdash; Loadable Function:  <b>mktime</b> (<var>tm_struct</var>)<var><a name="index-mktime-1792"></a></var><br>
 <blockquote><p>Convert a time structure corresponding to the local time to the number
 of seconds since the epoch.  For example,
 
      <pre class="example">          mktime (localtime (time ())
                =&gt; 856163706
      </pre>
-        </blockquote></div>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strftime, strptime, localtime, gmtime, time, now, date, clock, datenum, datestr, datevec, calendar, weekday. 
+</p></blockquote></div>
 
    <p><a name="doc_002dasctime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>asctime</b> (<var>tm_struct</var>)<var><a name="index-asctime-1433"></a></var><br>
+&mdash; Function File:  <b>asctime</b> (<var>tm_struct</var>)<var><a name="index-asctime-1793"></a></var><br>
 <blockquote><p>Convert a time structure to a string using the following five-field
 format: Thu Mar 28 08:40:14 1996.  For example,
 
@@ -312,8 +201,9 @@ format: Thu Mar 28 08:40:14 1996.  For example,
    <p><a name="doc_002dstrftime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>strftime</b> (<var>tm_struct</var>)<var><a name="index-strftime-1434"></a></var><br>
-<blockquote><p>Format a time structure in a flexible way using `<samp><span class="samp">%</span></samp>' substitutions
+&mdash; Loadable Function:  <b>strftime</b> (<var>fmt, tm_struct</var>)<var><a name="index-strftime-1794"></a></var><br>
+<blockquote><p>Format the time structure <var>tm_struct</var> in a flexible way using the
+format string <var>fmt</var> that contains `<samp><span class="samp">%</span></samp>' substitutions
 similar to those in <code>printf</code>.  Except where noted, substituted
 fields have a fixed size; numeric fields are padded if necessary. 
 Padding is with zeros by default; for fields that display a single
@@ -415,14 +305,27 @@ field specifiers.
 
           <br><dt><code>%Y</code><dd>Year (1970-). 
 </dl>
-        </p></blockquote></div>
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strptime, localtime, gmtime, mktime, time, now, date, clock, datenum, datestr, datevec, calendar, weekday. 
+</p></blockquote></div>
 
    <p><a name="doc_002dstrptime"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>tm_struct</var>, <var>nchars</var>] = <b>strptime</b> (<var>str, fmt</var>)<var><a name="index-strptime-1435"></a></var><br>
-<blockquote><p>Convert the string <var>str</var> to a time structure under the control of
-the format <var>fmt</var>. 
+&mdash; Loadable Function: [<var>tm_struct</var>, <var>nchars</var>] = <b>strptime</b> (<var>str, fmt</var>)<var><a name="index-strptime-1795"></a></var><br>
+<blockquote><p>Convert the string <var>str</var> to the time structure <var>tm_struct</var> under
+the control of the format string <var>fmt</var>.
+
+        <p>If <var>fmt</var> fails to match, <var>nchars</var> is 0; otherwise it is set to the
+position of last matched character plus 1. Always check for this unless
+you're absolutely sure the date string will be parsed correctly.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strftime, localtime, gmtime, mktime, time, now, date, clock, datenum, datestr, datevec, calendar, weekday. 
 </p></blockquote></div>
 
    <p>Most of the remaining functions described in this section are not
@@ -433,7 +336,7 @@ useful.
    <p><a name="doc_002dclock"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>clock</b> ()<var><a name="index-clock-1436"></a></var><br>
+&mdash; Function File:  <b>clock</b> ()<var><a name="index-clock-1796"></a></var><br>
 <blockquote><p>Return a vector containing the current year, month (1-12), day (1-31),
 hour (0-23), minute (0-59) and second (0-61).  For example,
 
@@ -447,7 +350,7 @@ hour (0-23), minute (0-59) and second (0-61).  For example,
    <p><a name="doc_002ddate"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>date</b> ()<var><a name="index-date-1437"></a></var><br>
+&mdash; Function File:  <b>date</b> ()<var><a name="index-date-1797"></a></var><br>
 <blockquote><p>Return the date as a character string in the form DD-MMM-YY.  For
 example,
 
@@ -459,7 +362,7 @@ example,
    <p><a name="doc_002detime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>etime</b> (<var>t1, t2</var>)<var><a name="index-etime-1438"></a></var><br>
+&mdash; Function File:  <b>etime</b> (<var>t1, t2</var>)<var><a name="index-etime-1798"></a></var><br>
 <blockquote><p>Return the difference (in seconds) between two time values returned from
 <code>clock</code>.  For example:
 
@@ -472,13 +375,13 @@ the variable <code>t0</code> was set.
         <pre class="sp">
      
      </pre>
-     See also: tic, toc, clock, cputime. 
+     <strong>See also:</strong> tic, toc, clock, cputime. 
 </p></blockquote></div>
 
    <p><a name="doc_002dcputime"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>total</var>, <var>user</var>, <var>system</var>] = <b>cputime</b> ()<var>;<a name="index-cputime-1439"></a></var><br>
+&mdash; Function File: [<var>total</var>, <var>user</var>, <var>system</var>] = <b>cputime</b> ()<var>;<a name="index-cputime-1799"></a></var><br>
 <blockquote><p>Return the CPU time used by your Octave session.  The first output is
 the total time spent executing your process and is equal to the sum of
 second and third outputs, which are the number of CPU seconds spent
@@ -493,7 +396,7 @@ CPU time used is nonzero.
    <p><a name="doc_002dis_005fleap_005fyear"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>is_leap_year</b> (<var>year</var>)<var><a name="index-is_005fleap_005fyear-1440"></a></var><br>
+&mdash; Function File:  <b>is_leap_year</b> (<var>year</var>)<var><a name="index-is_005fleap_005fyear-1800"></a></var><br>
 <blockquote><p>Return 1 if the given year is a leap year and 0 otherwise.  If no
 arguments are provided, <code>is_leap_year</code> will use the current year. 
 For example,
@@ -506,8 +409,8 @@ For example,
    <p><a name="doc_002dtic"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>tic</b> ()<var><a name="index-tic-1441"></a></var><br>
-&mdash; Function File:  <b>toc</b> ()<var><a name="index-toc-1442"></a></var><br>
+&mdash; Function File:  <b>tic</b> ()<var><a name="index-tic-1801"></a></var><br>
+&mdash; Function File:  <b>toc</b> ()<var><a name="index-toc-1802"></a></var><br>
 <blockquote><p>These functions set and check a wall-clock timer.  For example,
 
      <pre class="example">          tic ();
@@ -539,7 +442,7 @@ coarse resolution.)
    <p><a name="doc_002dpause"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>pause</b> (<var>seconds</var>)<var><a name="index-pause-1443"></a></var><br>
+&mdash; Built-in Function:  <b>pause</b> (<var>seconds</var>)<var><a name="index-pause-1803"></a></var><br>
 <blockquote><p>Suspend the execution of the program.  If invoked without any arguments,
 Octave waits until you type a character.  With a numeric argument, it
 pauses for the given number of seconds.  For example, the following
@@ -556,18 +459,187 @@ screen.
    <p><a name="doc_002dsleep"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sleep</b> (<var>seconds</var>)<var><a name="index-sleep-1444"></a></var><br>
+&mdash; Built-in Function:  <b>sleep</b> (<var>seconds</var>)<var><a name="index-sleep-1804"></a></var><br>
 <blockquote><p>Suspend the execution of the program for the given number of seconds. 
 </p></blockquote></div>
 
    <p><a name="doc_002dusleep"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>usleep</b> (<var>microseconds</var>)<var><a name="index-usleep-1445"></a></var><br>
+&mdash; Built-in Function:  <b>usleep</b> (<var>microseconds</var>)<var><a name="index-usleep-1805"></a></var><br>
 <blockquote><p>Suspend the execution of the program for the given number of
 microseconds.  On systems where it is not possible to sleep for periods
 of time less than one second, <code>usleep</code> will pause the execution for
 <code>round (</code><var>microseconds</var><code> / 1e6)</code> seconds. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddatestr"></a>
+
+<div class="defun">
+&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, </var>[<var>f, </var>[<var>p</var>]])<var><a name="index-datestr-1806"></a></var><br>
+<blockquote><p>Format the given date/time according to the format <code>f</code> and return
+the result in <var>str</var>. <var>date</var> is a serial date number (see
+<code>datenum</code>) or a date vector (see <code>datevec</code>).  The value of
+<var>date</var> may also be a string or cell array of strings.
+
+        <p><var>f</var> can be an integer which corresponds to one of the codes in
+the table below, or a date format string.
+
+        <p><var>p</var> is the year at the start of the century in which two-digit years
+are to be interpreted in. If not specified, it defaults to the current
+year minus 50.
+
+        <p>For example, the date 730736.65149 (2000-09-07 15:38:09.0934) would be
+formatted as follows:
+
+        <p><table summary=""><tr align="left"><th valign="top" width="10%">Code </th><th valign="top" width="45%">Format </th><th valign="top" width="35%">Example
+<br></th></tr><tr align="left"><td valign="top" width="10%">0 </td><td valign="top" width="45%">dd-mmm-yyyy HH:MM:SS   </td><td valign="top" width="35%">07-Sep-2000 15:38:09
+<br></td></tr><tr align="left"><td valign="top" width="10%">1 </td><td valign="top" width="45%">dd-mmm-yyyy            </td><td valign="top" width="35%">07-Sep-2000
+<br></td></tr><tr align="left"><td valign="top" width="10%">2 </td><td valign="top" width="45%">mm/dd/yy               </td><td valign="top" width="35%">09/07/00
+<br></td></tr><tr align="left"><td valign="top" width="10%">3 </td><td valign="top" width="45%">mmm                    </td><td valign="top" width="35%">Sep
+<br></td></tr><tr align="left"><td valign="top" width="10%">4 </td><td valign="top" width="45%">m                      </td><td valign="top" width="35%">S
+<br></td></tr><tr align="left"><td valign="top" width="10%">5 </td><td valign="top" width="45%">mm                     </td><td valign="top" width="35%">09
+<br></td></tr><tr align="left"><td valign="top" width="10%">6 </td><td valign="top" width="45%">mm/dd                  </td><td valign="top" width="35%">09/07
+<br></td></tr><tr align="left"><td valign="top" width="10%">7 </td><td valign="top" width="45%">dd                     </td><td valign="top" width="35%">07
+<br></td></tr><tr align="left"><td valign="top" width="10%">8 </td><td valign="top" width="45%">ddd                    </td><td valign="top" width="35%">Thu
+<br></td></tr><tr align="left"><td valign="top" width="10%">9 </td><td valign="top" width="45%">d                      </td><td valign="top" width="35%">T
+<br></td></tr><tr align="left"><td valign="top" width="10%">10 </td><td valign="top" width="45%">yyyy                   </td><td valign="top" width="35%">2000
+<br></td></tr><tr align="left"><td valign="top" width="10%">11 </td><td valign="top" width="45%">yy                     </td><td valign="top" width="35%">00
+<br></td></tr><tr align="left"><td valign="top" width="10%">12 </td><td valign="top" width="45%">mmmyy                  </td><td valign="top" width="35%">Sep00
+<br></td></tr><tr align="left"><td valign="top" width="10%">13 </td><td valign="top" width="45%">HH:MM:SS               </td><td valign="top" width="35%">15:38:09
+<br></td></tr><tr align="left"><td valign="top" width="10%">14 </td><td valign="top" width="45%">HH:MM:SS PM            </td><td valign="top" width="35%">03:38:09 PM
+<br></td></tr><tr align="left"><td valign="top" width="10%">15 </td><td valign="top" width="45%">HH:MM                  </td><td valign="top" width="35%">15:38
+<br></td></tr><tr align="left"><td valign="top" width="10%">16 </td><td valign="top" width="45%">HH:MM PM               </td><td valign="top" width="35%">03:38 PM
+<br></td></tr><tr align="left"><td valign="top" width="10%">17 </td><td valign="top" width="45%">QQ-YY                  </td><td valign="top" width="35%">Q3-00
+<br></td></tr><tr align="left"><td valign="top" width="10%">18 </td><td valign="top" width="45%">QQ                     </td><td valign="top" width="35%">Q3
+<br></td></tr><tr align="left"><td valign="top" width="10%">19 </td><td valign="top" width="45%">dd/mm                  </td><td valign="top" width="35%">13/03
+<br></td></tr><tr align="left"><td valign="top" width="10%">20 </td><td valign="top" width="45%">dd/mm/yy               </td><td valign="top" width="35%">13/03/95
+<br></td></tr><tr align="left"><td valign="top" width="10%">21 </td><td valign="top" width="45%">mmm.dd.yyyy HH:MM:SS   </td><td valign="top" width="35%">Mar.03.1962 13:53:06
+<br></td></tr><tr align="left"><td valign="top" width="10%">22 </td><td valign="top" width="45%">mmm.dd.yyyy            </td><td valign="top" width="35%">Mar.03.1962
+<br></td></tr><tr align="left"><td valign="top" width="10%">23 </td><td valign="top" width="45%">mm/dd/yyyy             </td><td valign="top" width="35%">03/13/1962
+<br></td></tr><tr align="left"><td valign="top" width="10%">24 </td><td valign="top" width="45%">dd/mm/yyyy             </td><td valign="top" width="35%">12/03/1962
+<br></td></tr><tr align="left"><td valign="top" width="10%">25 </td><td valign="top" width="45%">yy/mm/dd               </td><td valign="top" width="35%">95/03/13
+<br></td></tr><tr align="left"><td valign="top" width="10%">26 </td><td valign="top" width="45%">yyyy/mm/dd             </td><td valign="top" width="35%">1995/03/13
+<br></td></tr><tr align="left"><td valign="top" width="10%">27 </td><td valign="top" width="45%">QQ-YYYY                </td><td valign="top" width="35%">Q4-2132
+<br></td></tr><tr align="left"><td valign="top" width="10%">28 </td><td valign="top" width="45%">mmmyyyy                </td><td valign="top" width="35%">Mar2047
+<br></td></tr><tr align="left"><td valign="top" width="10%">29 </td><td valign="top" width="45%">yyyymmdd               </td><td valign="top" width="35%">20470313
+<br></td></tr><tr align="left"><td valign="top" width="10%">30 </td><td valign="top" width="45%">yyyymmddTHHMMSS        </td><td valign="top" width="35%">20470313T132603
+<br></td></tr><tr align="left"><td valign="top" width="10%">31 </td><td valign="top" width="45%">yyyy-mm-dd HH:MM:SS    </td><td valign="top" width="35%">1047-03-13 13:26:03
+        <br></td></tr></table>
+
+        <p>If <var>f</var> is a format string, the following symbols are recognised:
+
+        <p><table summary=""><tr align="left"><th valign="top" width="10%">Symbol </th><th valign="top" width="70%">Meaning </th><th valign="top" width="20%">Example
+<br></th></tr><tr align="left"><td valign="top" width="10%">yyyy </td><td valign="top" width="70%">Full year                                    </td><td valign="top" width="20%">2005
+<br></td></tr><tr align="left"><td valign="top" width="10%">yy   </td><td valign="top" width="70%">Two-digit year                               </td><td valign="top" width="20%">2005
+<br></td></tr><tr align="left"><td valign="top" width="10%">mmmm </td><td valign="top" width="70%">Full month name                              </td><td valign="top" width="20%">December
+<br></td></tr><tr align="left"><td valign="top" width="10%">mmm  </td><td valign="top" width="70%">Abbreviated month name                       </td><td valign="top" width="20%">Dec
+<br></td></tr><tr align="left"><td valign="top" width="10%">mm   </td><td valign="top" width="70%">Numeric month number (padded with zeros)     </td><td valign="top" width="20%">01, 08, 12
+<br></td></tr><tr align="left"><td valign="top" width="10%">m    </td><td valign="top" width="70%">First letter of month name (capitalized)     </td><td valign="top" width="20%">D
+<br></td></tr><tr align="left"><td valign="top" width="10%">dddd </td><td valign="top" width="70%">Full weekday name                            </td><td valign="top" width="20%">Sunday
+<br></td></tr><tr align="left"><td valign="top" width="10%">ddd  </td><td valign="top" width="70%">Abbreviated weekday name                     </td><td valign="top" width="20%">Sun
+<br></td></tr><tr align="left"><td valign="top" width="10%">dd   </td><td valign="top" width="70%">Numeric day of month (padded with zeros)     </td><td valign="top" width="20%">11
+<br></td></tr><tr align="left"><td valign="top" width="10%">d    </td><td valign="top" width="70%">First letter of weekday name (capitalized)   </td><td valign="top" width="20%">S
+<br></td></tr><tr align="left"><td valign="top" width="10%">HH   </td><td valign="top" width="70%">Hour of day, padded with zeros if PM is set  </td><td valign="top" width="20%">09:00
+<br></td></tr><tr align="left"><td valign="top" width="10%"></td><td valign="top" width="70%">and not padded with zeros otherwise          </td><td valign="top" width="20%">9:00 AM
+<br></td></tr><tr align="left"><td valign="top" width="10%">MM   </td><td valign="top" width="70%">Minute of hour (padded with zeros)           </td><td valign="top" width="20%">10:05
+<br></td></tr><tr align="left"><td valign="top" width="10%">SS   </td><td valign="top" width="70%">Second of minute (padded with zeros)         </td><td valign="top" width="20%">10:05:03
+<br></td></tr><tr align="left"><td valign="top" width="10%">PM   </td><td valign="top" width="70%">Use 12-hour time format                      </td><td valign="top" width="20%">11:30 PM
+        <br></td></tr></table>
+
+        <p>If <var>f</var> is not specified or is <code>-1</code>, then use 0, 1 or 16,
+depending on whether the date portion or the time portion of
+<var>date</var> is empty.
+
+        <p>If <var>p</var> is nor specified, it defaults to the current year minus 50.
+
+        <p>If a matrix or cell array of dates is given, a vector of date strings is
+returned.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> datenum, datevec, date, clock, now, datetick. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddatevec"></a>
+
+<div class="defun">
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date</var>)<var><a name="index-datevec-1807"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f</var>)<var><a name="index-datevec-1808"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, p</var>)<var><a name="index-datevec-1809"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f, p</var>)<var><a name="index-datevec-1810"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>m</var>, <var>d</var>, <var>h</var>, <var>mi</var>, <var>s</var>] = <b>datevec</b> (<var><small class="dots">...</small></var>)<var><a name="index-datevec-1811"></a></var><br>
+<blockquote><p>Convert a serial date number (see <code>datenum</code>) or date string (see
+<code>datestr</code>) into a date vector.
+
+        <p>A date vector is a row vector with six members, representing the year,
+month, day, hour, minute, and seconds respectively.
+
+        <p><var>f</var> is the format string used to interpret date strings
+(see <code>datestr</code>).
+
+        <p><var>p</var> is the year at the start of the century in which two-digit years
+are to be interpreted in. If not specified, it defaults to the current
+year minus 50.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> datenum, datestr, date, clock, now. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcalendar"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>calendar</b> (<var><small class="dots">...</small></var>)<var><a name="index-calendar-1812"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> ()<var><a name="index-calendar-1813"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>d</var>)<var><a name="index-calendar-1814"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>y, m</var>)<var><a name="index-calendar-1815"></a></var><br>
+<blockquote><p>If called with no arguments, return the current monthly calendar in
+a 6x7 matrix.
+
+        <p>If <var>d</var> is specified, return the calendar for the month containing
+the day <var>d</var>, which must be a serial date number or a date string.
+
+        <p>If <var>y</var> and <var>m</var> are specified, return the calendar for year <var>y</var>
+and month <var>m</var>.
+
+        <p>If no output arguments are specified, print the calendar on the screen
+instead of returning a matrix.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> datenum. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dweekday"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d, </var>[<var>form</var>])<var><a name="index-weekday-1816"></a></var><br>
+<blockquote><p>Return the day of week as a number in <var>n</var> and a string in <var>s</var>,
+for example <code>[1, "Sun"]</code>, <code>[2, "Mon"]</code>, <small class="dots">...</small>, or
+<code>[7, "Sat"]</code>.
+
+        <p><var>d</var> is a serial date number or a date string.
+
+        <p>If the string <var>form</var> is given and is <code>"long"</code>, <var>s</var> will
+contain the full name of the weekday; otherwise (or if <var>form</var> is
+<code>"short"</code>), <var>s</var> will contain the abbreviated name of the weekday.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> datenum, datevec, eomday. 
+</p></blockquote></div>
+
+   <p><a name="doc_002deomday"></a>
+
+<div class="defun">
+&mdash; Function File: <var>e</var> = <b>eomday</b> (<var>y, m</var>)<var><a name="index-eomday-1817"></a></var><br>
+<blockquote><p>Return the last day of the month <var>m</var> for the year <var>y</var>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> datenum, datevec, weekday. 
 </p></blockquote></div>
 
    </body></html>

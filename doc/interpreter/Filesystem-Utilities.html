@@ -7,7 +7,7 @@
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
 <link rel="prev" href="Timing-Utilities.html#Timing-Utilities" title="Timing Utilities">
-<link rel="next" href="Controlling-Subprocesses.html#Controlling-Subprocesses" title="Controlling Subprocesses">
+<link rel="next" href="File-Archiving-Utilities.html#File-Archiving-Utilities" title="File Archiving Utilities">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -20,166 +20,19 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Filesystem-Utilities"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Controlling-Subprocesses.html#Controlling-Subprocesses">Controlling Subprocesses</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="File-Archiving-Utilities.html#File-Archiving-Utilities">File Archiving Utilities</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Timing-Utilities.html#Timing-Utilities">Timing Utilities</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities">System Utilities</a>
 <hr>
 </div>
 
-<h3 class="section">35.2 Filesystem Utilities</h3>
+<h3 class="section">37.2 Filesystem Utilities</h3>
 
 <p>Octave includes the following functions for renaming and deleting files,
 creating, deleting, and reading directories, and for getting information
@@ -188,7 +41,7 @@ about the status of files.
    <p><a name="doc_002drename"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>rename</b> (<var>old, new</var>)<var><a name="index-rename-1446"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>rename</b> (<var>old, new</var>)<var><a name="index-rename-1818"></a></var><br>
 <blockquote><p>Change the name of file <var>old</var> to <var>new</var>.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -197,13 +50,13 @@ system-dependent error message.
         <pre class="sp">
      
      </pre>
-     See also: ls, dir. 
+     <strong>See also:</strong> ls, dir. 
 </p></blockquote></div>
 
    <p><a name="doc_002dlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>link</b> (<var>old, new</var>)<var><a name="index-link-1447"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>link</b> (<var>old, new</var>)<var><a name="index-link-1819"></a></var><br>
 <blockquote><p>Create a new link (also known as a hard link) to an existing file.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -212,13 +65,13 @@ system-dependent error message.
         <pre class="sp">
      
      </pre>
-     See also: symlink. 
+     <strong>See also:</strong> symlink. 
 </p></blockquote></div>
 
    <p><a name="doc_002dsymlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>symlink</b> (<var>old, new</var>)<var><a name="index-symlink-1448"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>symlink</b> (<var>old, new</var>)<var><a name="index-symlink-1820"></a></var><br>
 <blockquote><p>Create a symbolic link <var>new</var> which contains the string <var>old</var>.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -227,13 +80,13 @@ system-dependent error message.
         <pre class="sp">
      
      </pre>
-     See also: link, readlink. 
+     <strong>See also:</strong> link, readlink. 
 </p></blockquote></div>
 
    <p><a name="doc_002dreadlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>result</var>, <var>err</var>, <var>msg</var>] = <b>readlink</b> (<var>symlink</var>)<var><a name="index-readlink-1449"></a></var><br>
+&mdash; Built-in Function: [<var>result</var>, <var>err</var>, <var>msg</var>] = <b>readlink</b> (<var>symlink</var>)<var><a name="index-readlink-1821"></a></var><br>
 <blockquote><p>Read the value of the symbolic link <var>symlink</var>.
 
         <p>If successful, <var>result</var> contains the contents of the symbolic link
@@ -243,13 +96,13 @@ system-dependent error message.
         <pre class="sp">
      
      </pre>
-     See also: link, symlink. 
+     <strong>See also:</strong> link, symlink. 
 </p></blockquote></div>
 
    <p><a name="doc_002dunlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>unlink</b> (<var>file</var>)<var><a name="index-unlink-1450"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>unlink</b> (<var>file</var>)<var><a name="index-unlink-1822"></a></var><br>
 <blockquote><p>Delete the file named <var>file</var>.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -260,7 +113,7 @@ system-dependent error message.
    <p><a name="doc_002dreaddir"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>files</var>, <var>err</var>, <var>msg</var>] = <b>readdir</b> (<var>dir</var>)<var><a name="index-readdir-1451"></a></var><br>
+&mdash; Built-in Function: [<var>files</var>, <var>err</var>, <var>msg</var>] = <b>readdir</b> (<var>dir</var>)<var><a name="index-readdir-1823"></a></var><br>
 <blockquote><p>Return names of the files in the directory <var>dir</var> as a cell array of
 strings.  If an error occurs, return an empty cell array in <var>files</var>.
 
@@ -270,13 +123,14 @@ system-dependent error message.
         <pre class="sp">
      
      </pre>
-     See also: dir, glob. 
+     <strong>See also:</strong> dir, glob. 
 </p></blockquote></div>
 
    <p><a name="doc_002dmkdir"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>mkdir</b> (<var>dir</var>)<var><a name="index-mkdir-1452"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>mkdir</b> (<var>dir</var>)<var><a name="index-mkdir-1824"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>mkdir</b> (<var>parent, dir</var>)<var><a name="index-mkdir-1825"></a></var><br>
 <blockquote><p>Create a directory named <var>dir</var>.
 
         <p>If successful, <var>status</var> is 1, with <var>msg</var> and <var>msgid</var> empty
@@ -286,14 +140,14 @@ message identifier.
         <pre class="sp">
      
      </pre>
-     See also: rmdir. 
+     <strong>See also:</strong> rmdir. 
 </p></blockquote></div>
 
    <p><a name="doc_002drmdir"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir</var>)<var><a name="index-rmdir-1453"></a></var><br>
-&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir, </var><code>"s"</code>)<var><a name="index-rmdir-1454"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir</var>)<var><a name="index-rmdir-1826"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir, </var><code>"s"</code>)<var><a name="index-rmdir-1827"></a></var><br>
 <blockquote><p>Remove the directory named <var>dir</var>.
 
         <p>If successful, <var>status</var> is 1, with <var>msg</var> and <var>msgid</var> empty
@@ -301,18 +155,27 @@ character strings.  Otherwise, <var>status</var> is 0, <var>msg</var> contains a
 system-dependent error message, and <var>msgid</var> contains a unique
 message identifier.
 
-        <p>If the optional second parameter is suplied, recursively remove all
-subdirectories as well.
+        <p>If the optional second parameter is suplied with value <code>"s"</code>,
+recursively remove all subdirectories as well.
         <pre class="sp">
      
      </pre>
-     See also: mkdir, confirm_recursive_rmdir. 
+     <strong>See also:</strong> mkdir, confirm_recursive_rmdir. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dconfirm_005frecursive_005frmdir"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>confirm_recursive_rmdir</b> ()<var><a name="index-confirm_005frecursive_005frmdir-1828"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>confirm_recursive_rmdir</b> (<var>new_val</var>)<var><a name="index-confirm_005frecursive_005frmdir-1829"></a></var><br>
+<blockquote><p>Query or set the internal variable that controls whether Octave
+will ask for confirmation before recursively removing a directory tree. 
 </p></blockquote></div>
 
    <p><a name="doc_002dmkfifo"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>mkfifo</b> (<var>name, mode</var>)<var><a name="index-mkfifo-1455"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>mkfifo</b> (<var>name, mode</var>)<var><a name="index-mkfifo-1830"></a></var><br>
 <blockquote><p>Create a <var>fifo</var> special file named <var>name</var> with file mode <var>mode</var>
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -323,7 +186,7 @@ system-dependent error message.
    <p><a name="doc_002dumask"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>umask</b> (<var>mask</var>)<var><a name="index-umask-1456"></a></var><br>
+&mdash; Built-in Function:  <b>umask</b> (<var>mask</var>)<var><a name="index-umask-1831"></a></var><br>
 <blockquote><p>Set the permission mask for file creation.  The parameter <var>mask</var>
 is an integer, interpreted as an octal number.  If successful,
 returns the previous value of the mask (as an integer to be
@@ -333,8 +196,8 @@ interpreted as an octal number); otherwise an error message is printed.
    <p><a name="doc_002dstat"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>stat</b> (<var>file</var>)<var><a name="index-stat-1457"></a></var><br>
-&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>lstat</b> (<var>file</var>)<var><a name="index-lstat-1458"></a></var><br>
+&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>stat</b> (<var>file</var>)<var><a name="index-stat-1832"></a></var><br>
+&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>lstat</b> (<var>file</var>)<var><a name="index-lstat-1833"></a></var><br>
 <blockquote><p>Return a structure <var>s</var> containing the following information about
 <var>file</var>.
 
@@ -409,10 +272,60 @@ if you want information about the symbolic link itself.
      </pre>
         </blockquote></div>
 
+   <p><a name="doc_002dlstat"></a>
+
+<div class="defun">
+&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>lstat</b> (<var>file</var>)<var><a name="index-lstat-1834"></a></var><br>
+<blockquote><p>See stat. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfileattrib"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>fileattrib</b> (<var>file</var>)<var><a name="index-fileattrib-1835"></a></var><br>
+<blockquote><p>Return information about <var>file</var>.
+
+        <p>If successful, <var>status</var> is 1, with <var>result</var> containing a
+structure with the following fields:
+
+          <dl>
+<dt><code>Name</code><dd>Full name of <var>file</var>. 
+<br><dt><code>archive</code><dd>True if <var>file</var> is an archive (Windows). 
+<br><dt><code>system</code><dd>True if <var>file</var> is a system file (Windows). 
+<br><dt><code>hidden</code><dd>True if <var>file</var> is a hidden file (Windows). 
+<br><dt><code>directory</code><dd>True if <var>file</var> is a directory. 
+<br><dt><code>UserRead</code><dt><code>GroupRead</code><dt><code>OtherRead</code><dd>True if the user (group; other users) has read permission for
+<var>file</var>. 
+<br><dt><code>UserWrite</code><dt><code>GroupWrite</code><dt><code>OtherWrite</code><dd>True if the user (group; other users) has write permission for
+<var>file</var>. 
+<br><dt><code>UserExecute</code><dt><code>GroupExecute</code><dt><code>OtherExecute</code><dd>True if the user (group; other users) has execute permission for
+<var>file</var>. 
+</dl>
+        If an attribute does not apply (i.e., archive on a Unix system) then
+the field is set to NaN.
+
+        <p>With no input arguments, return information about the current
+directory.
+
+        <p>If <var>file</var> contains globbing characters, return information about
+all the matching files.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> glob. 
+</p></blockquote></div>
+
+   <p><a name="doc_002disdir"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>isdir</b> (<var>f</var>)<var><a name="index-isdir-1836"></a></var><br>
+<blockquote><p>Return true if <var>f</var> is a directory. 
+</p></blockquote></div>
+
    <p><a name="doc_002dglob"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>glob</b> (<var>pattern</var>)<var><a name="index-glob-1459"></a></var><br>
+&mdash; Built-in Function:  <b>glob</b> (<var>pattern</var>)<var><a name="index-glob-1837"></a></var><br>
 <blockquote><p>Given an array of strings (as a char array or a cell array) in
 <var>pattern</var>, return a cell array of file names that match any of
 them, or an empty cell array if no patterns match.  Tilde expansion
@@ -425,18 +338,18 @@ names.  For example,
         <pre class="sp">
      
      </pre>
-     See also: dir, ls, stat, readdir. 
+     <strong>See also:</strong> dir, ls, stat, readdir. 
 </p></blockquote></div>
 
    <p><a name="doc_002dfnmatch"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fnmatch</b> (<var>pattern, string</var>)<var><a name="index-fnmatch-1460"></a></var><br>
+&mdash; Built-in Function:  <b>fnmatch</b> (<var>pattern, string</var>)<var><a name="index-fnmatch-1838"></a></var><br>
 <blockquote><p>Return 1 or zero for each element of <var>string</var> that matches any of
 the elements of the string array <var>pattern</var>, using the rules of
 filename pattern matching.  For example,
 
-     <pre class="example">          fnmatch ("a*b", ["ab"; "axyzb"; "xyzab"])
+     <pre class="example">          fnmatch ("a*b", {"ab"; "axyzb"; "xyzab"})
                =&gt; [ 1; 1; 0 ]
      </pre>
         </blockquote></div>
@@ -444,13 +357,12 @@ filename pattern matching.  For example,
    <p><a name="doc_002dfile_005fin_005fpath"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file</var>)<var><a name="index-file_005fin_005fpath-1461"></a></var><br>
-&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file, "all"</var>)<var><a name="index-file_005fin_005fpath-1462"></a></var><br>
+&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file</var>)<var><a name="index-file_005fin_005fpath-1839"></a></var><br>
+&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file, "all"</var>)<var><a name="index-file_005fin_005fpath-1840"></a></var><br>
 <blockquote><p>Return the absolute name of <var>file</var> if it can be found in
 <var>path</var>.  The value of <var>path</var> should be a colon-separated list of
-directories in the format described for the built-in variable
-<code>LOADPATH</code>.  If no file is found, return an empty matrix. 
-For example,
+directories in the format described for <code>path</code>.  If no file
+is found, return an empty matrix.  For example,
 
      <pre class="example">          file_in_path (EXEC_PATH, "sh")
                =&gt; "/bin/sh"
@@ -462,21 +374,16 @@ the first that matches.
         <p>If the third optional argument <code>"all"</code> is supplied, return
 a cell array containing the list of all files that have the same
 name in the path.  If no files are found, return an empty cell array.
-
-        <p>Note that <code>file_in_path</code> does not expand leading, trailing,
-or doubled colons the way that <code>file_in_loadpath</code> does.  See
-also See <a href="Function-Files.html#Function-Files">Function Files</a>, for an explanation of
-how colon expansion is applied to <code>LOADPATH</code>.
         <pre class="sp">
      
      </pre>
-     See also: file_in_loadpath. 
+     <strong>See also:</strong> file_in_loadpath. 
 </p></blockquote></div>
 
    <p><a name="doc_002dtilde_005fexpand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>tilde_expand</b> (<var>string</var>)<var><a name="index-tilde_005fexpand-1463"></a></var><br>
+&mdash; Built-in Function:  <b>tilde_expand</b> (<var>string</var>)<var><a name="index-tilde_005fexpand-1841"></a></var><br>
 <blockquote><p>Performs tilde expansion on <var>string</var>.  If <var>string</var> begins with a
 tilde character, (`<samp><span class="samp">~</span></samp>'), all of the characters preceding the first
 slash (or all characters, if there is no slash) are treated as a
@@ -491,6 +398,106 @@ home directory of the user running Octave.  For example,
                =&gt; "/home/jwe/bin"
      </pre>
         </blockquote></div>
+
+   <p><a name="doc_002dcanonicalize_005ffile_005fname"></a>
+
+<div class="defun">
+&mdash; Built-in Function: [<var>cname</var>, <var>status</var>, <var>msg</var>] <b>canonicalize_file_name</b> (<var>name</var>)<var><a name="index-canonicalize_005ffile_005fname-1842"></a></var><br>
+<blockquote><p>Return the canonical name of file <var>name</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmovefile"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>movefile</b> (<var>f1, f2</var>)<var><a name="index-movefile-1843"></a></var><br>
+<blockquote><p>Move the file <var>f1</var> to the new name <var>f2</var>.  The name <var>f1</var>
+may contain globbing patterns.  If <var>f1</var> expands to multiple file
+names, <var>f2</var> must be a directory.
+
+        <p>If successful, <var>status</var> is 1, with <var>msg</var> and <var>msgid</var> empty\n\
+character strings.  Otherwise, <var>status</var> is 0, <var>msg</var> contains a\n\
+system-dependent error message, and <var>msgid</var> contains a unique\n\
+message identifier.\n\
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> glob. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcopyfile"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>copyfile</b> (<var>f1, f2, force</var>)<var><a name="index-copyfile-1844"></a></var><br>
+<blockquote><p>Copy the file <var>f1</var> to the new name <var>f2</var>.  The name <var>f1</var>
+may contain globbing patterns.  If <var>f1</var> expands to multiple file
+names, <var>f2</var> must be a directory. If <var>force</var> is given and equals
+the string "f" the copy operation will be forced.
+
+        <p>If successful, <var>status</var> is 1, with <var>msg</var> and <var>msgid</var> empty\n\
+character strings.  Otherwise, <var>status</var> is 0, <var>msg</var> contains a\n\
+system-dependent error message, and <var>msgid</var> contains a unique\n\
+message identifier.\n\
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> glob, movefile. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfileparts"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>dir</var>, <var>name</var>, <var>ext</var>, <var>ver</var>] = <b>fileparts</b> (<var>filename</var>)<var><a name="index-fileparts-1845"></a></var><br>
+<blockquote><p>Return the directory, name, extension, and version components of
+<var>filename</var>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> fullfile. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfilesep"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>filesep</b> ()<var><a name="index-filesep-1846"></a></var><br>
+<blockquote><p>Return the system-dependent character used to separate directory names.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> pathsep, dir, ls. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfullfile"></a>
+
+<div class="defun">
+&mdash; Function File: <var>filename</var> = <b>fullfile</b> (<var>dir1, dir2, <small class="dots">...</small>, file</var>)<var><a name="index-fullfile-1847"></a></var><br>
+<blockquote><p>Return a complete filename constructed from the given components.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> fileparts. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtempdir"></a>
+
+<div class="defun">
+&mdash; Function File: <var>dir</var> = <b>fullfile</b> ()<var><a name="index-fullfile-1848"></a></var><br>
+<blockquote><p>Return the name of the system's directory for temporary files. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtempname"></a>
+
+<div class="defun">
+&mdash; Function File: filename = <b>tempname</b> ()<var><a name="index-tempname-1849"></a></var><br>
+<blockquote><p>This function is an alias for <code>tmpnam</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dP_005ftmpdir"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>P_tmpdir</b> ()<var><a name="index-P_005ftmpdir-1850"></a></var><br>
+<blockquote><p>Return the default name of the directory for temporary files on
+this system.  The name of this directory is system dependent. 
+</p></blockquote></div>
 
    </body></html>
 

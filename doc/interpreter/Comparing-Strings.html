@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+<title>Comparing Strings - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Strings.html#Strings" title="Strings">
+<link rel="prev" href="Creating-Strings.html#Creating-Strings" title="Creating Strings">
+<link rel="next" href="Manipulating-Strings.html#Manipulating-Strings" title="Manipulating Strings">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Comparing-Strings"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Manipulating-Strings.html#Manipulating-Strings">Manipulating Strings</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Creating-Strings.html#Creating-Strings">Creating Strings</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
+<hr>
+</div>
+
+<h3 class="section">5.2 Comparing Strings</h3>
+
+<p>Since a string is a character array comparison between strings work
+element by element as the following example shows.
+
+<pre class="example">     GNU = "GNU's Not UNIX";
+     spaces = (GNU == " ")
+          =&gt; spaces =
+                0   0   0   0   0   1   0   0   0   1   0   0   0   0
+</pre>
+   <p class="noindent">To determine if two functions are identical it is therefore necessary
+to use the <code>strcmp</code> or <code>strncpm</code> functions. Similar
+functions exists for doing case-insensitive comparisons.
+
+   <p><a name="doc_002dstrcmp"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>strcmp</b> (<var>s1, s2</var>)<var><a name="index-strcmp-257"></a></var><br>
+<blockquote><p>Return 1 if the character strings <var>s1</var> and <var>s2</var> are the same,
+and 0 otherwise.
+
+        <p>If either <var>s1</var> or <var>s2</var> is a cell array of strings, then an array
+of the same size is returned, containing the values described above for
+every member of the cell array. The other argument may also be a cell
+array of strings (of the same size or with only one element), char matrix
+or character string.
+
+        <p><strong>Caution:</strong> For compatibility with <span class="sc">Matlab</span>, Octave's strcmp
+function returns 1 if the character strings are equal, and 0 otherwise. 
+This is just the opposite of the corresponding C library function.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strcmpi, strncmp, strncmpi. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstrcmpi"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>strcmpi</b> (<var>s1, s2</var>)<var><a name="index-strcmpi-258"></a></var><br>
+<blockquote><p>Ignoring case, return 1 if the character strings <var>s1</var> and <var>s2</var>
+are the same, and 0 otherwise.
+
+        <p>If either <var>s1</var> or <var>s2</var> is a cell array of strings, then an array
+of the same size is returned, containing the values described above for
+every member of the cell array. The other argument may also be a cell
+array of strings (of the same size or with only one element), char matrix
+or character string.
+
+        <p><strong>Caution:</strong> For compatibility with <span class="sc">Matlab</span>, Octave's strcmpi
+function returns 1 if the character strings are equal, and 0 otherwise. 
+This is just the opposite of the corresponding C library function.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strcmp, strncmp, strncmpi. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstrncmp"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>strncmp</b> (<var>s1, s2, n</var>)<var><a name="index-strncmp-259"></a></var><br>
+<blockquote><p>Return 1 if the first <var>n</var> characters of strings <var>s1</var> and <var>s2</var> are the same,
+and 0 otherwise.
+
+     <pre class="example">          strncmp ("abce", "abcd", 3)
+               =&gt; 1
+     </pre>
+        <p>If either <var>s1</var> or <var>s2</var> is a cell array of strings, then an array
+of the same size is returned, containing the values described above for
+every member of the cell array. The other argument may also be a cell
+array of strings (of the same size or with only one element), char matrix
+or character string.
+
+     <pre class="example">          strncmp ("abce", {"abcd", "bca", "abc"}, 3)
+               =&gt; [1, 0, 1]
+     </pre>
+        <p><strong>Caution:</strong> For compatibility with <span class="sc">Matlab</span>, Octave's strncmp
+function returns 1 if the character strings are equal, and 0 otherwise. 
+This is just the opposite of the corresponding C library function.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strncmpi, strcmp, strcmpi. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstrncmpi"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>strncmpi</b> (<var>s1, s2, n</var>)<var><a name="index-strncmpi-260"></a></var><br>
+<blockquote><p>Ignoring case, return 1 if the first <var>n</var> characters of character
+strings <var>s1</var> and <var>s2</var> are the same, and 0 otherwise.
+
+        <p>If either <var>s1</var> or <var>s2</var> is a cell array of strings, then an array
+of the same size is returned, containing the values described above for
+every member of the cell array. The other argument may also be a cell
+array of strings (of the same size or with only one element), char matrix
+or character string.
+
+        <p><strong>Caution:</strong> For compatibility with <span class="sc">Matlab</span>, Octave's strncmpi
+function returns 1 if the character strings are equal, and 0 otherwise. 
+This is just the opposite of the corresponding C library function.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strcmp, strcmpi, strncmp. 
+</p></blockquote></div>
+
+   </body></html>
+

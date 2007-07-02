@@ -5,7 +5,7 @@
 <meta name="description" content="Untitled">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="I_002fO-Streams.html#I_002fO-Streams" title="I/O Streams">
+<link rel="prev" href="Cell-Arrays.html#Cell-Arrays" title="Cell Arrays">
 <link rel="next" href="Expressions.html#Expressions" title="Expressions">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -19,168 +19,21 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Variables"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Expressions.html#Expressions">Expressions</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="I_002fO-Streams.html#I_002fO-Streams">I/O Streams</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Cell-Arrays.html#Cell-Arrays">Cell Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr>
 </div>
 
-<h2 class="chapter">9 Variables</h2>
+<h2 class="chapter">8 Variables</h2>
 
-<p><a name="index-variables_002c-user_002ddefined-252"></a><a name="index-user_002ddefined-variables-253"></a>
+<p><a name="index-variables_002c-user_002ddefined-343"></a><a name="index-user_002ddefined-variables-344"></a>
 Variables let you give names to values and refer to them later.  You have
 already seen variables in many of the examples.  The name of a variable
 must be a sequence of letters, digits and underscores, but it may not begin
@@ -188,7 +41,7 @@ with a digit.  Octave does not enforce a limit on the length of variable
 names, but it is seldom useful to have variables with names longer than
 about 30 characters.  The following are all valid variable names
 
-   <p><a name="index-job-hunting-254"></a><a name="index-getting-a-good-job-255"></a><a name="index-flying-high-and-fast-256"></a>
+   <p><a name="index-job-hunting-345"></a><a name="index-getting-a-good-job-346"></a><a name="index-flying-high-and-fast-347"></a>
 <pre class="example">     x
      x15
      __foo_bar_baz__
@@ -218,6 +71,13 @@ are also used or changed automatically by Octave.
 store a numeric value in a variable and then to later use the same name
 to hold a string value in the same program.  Variables may not be used
 before they have been given a value.  Doing so results in an error.
+
+   <p><a name="doc_002disvarname"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>isvarname</b> (<var>name</var>)<var><a name="index-isvarname-348"></a></var><br>
+<blockquote><p>Return true if <var>name</var> is a valid variable name
+</p></blockquote></div>
 
 <ul class="menu">
 <li><a accesskey="1" href="Global-Variables.html#Global-Variables">Global Variables</a>

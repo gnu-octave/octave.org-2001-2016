@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -181,9 +34,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting-Started">G
 
 <h3 class="section">2.3 Commands for Getting Help</h3>
 
-<p><a name="index-on_002dline-help-72"></a><a name="index-help_002c-on_002dline-73"></a>
+<p><a name="index-on_002dline-help-74"></a><a name="index-help_002c-on_002dline-75"></a>
 The entire text of this manual is available from the Octave prompt
-via the command <kbd>help -i</kbd>.  In addition, the documentation for
+via the command <kbd>doc</kbd>.  In addition, the documentation for
 individual user-written functions and variables is also available via
 the <kbd>help</kbd> command.  This section describes the commands used for
 reading the manual and the documentation strings for user-supplied
@@ -193,67 +46,133 @@ about how to document the functions you write.
    <p><a name="doc_002dhelp"></a>
 
 <div class="defun">
-&mdash; Command: <b>help</b><var><a name="index-help-74"></a></var><br>
-<blockquote><p>Octave's <code>help</code> command can be used to print brief usage-style
-messages, or to display information directly from an on-line version of
-the printed manual, using the GNU Info browser.  If invoked without any
-arguments, <code>help</code> prints a list of all the available operators,
-functions, and built-in variables.  If the first argument is <code>-i</code>,
-the <code>help</code> command searches the index of the on-line version of
-this manual for the given topics.
+&mdash; Command: <b>help</b><var> name<a name="index-help-76"></a></var><br>
+<blockquote><p>Display the help text for <var>name</var>. 
+If invoked without any arguments, <code>help</code> prints a list
+of all the available operators and functions.
 
         <p>For example, the command <kbd>help help</kbd> prints a short message
-describing the <code>help</code> command, and <kbd>help -i help</kbd> starts the
-GNU Info browser at this node in the on-line version of the manual.
+describing the <code>help</code> command.
 
-        <p>Once the GNU Info browser is running, help for using it is available
-using the command <kbd>C-h</kbd>. 
-</p></blockquote></div>
-
-   <p>The help command can give you information about operators, but not the
+        <p>The help command can give you information about operators, but not the
 comma and semicolons that are used as command separators.  To get help
 for those, you must type <kbd>help comma</kbd> or <kbd>help semicolon</kbd>.
-
-   <p><a name="doc_002dINFO_005fFILE"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>INFO_FILE</b><var><a name="index-INFO_005fFILE-75"></a></var><br>
-<blockquote><p>The variable <code>INFO_FILE</code> names the location of the Octave info file. 
-The default value is <code>"</code><var>octave-home</var><code>/info/octave.info"</code>, in
-which <var>octave-home</var> is the directory where all of Octave is installed. 
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> doc, which, lookfor. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dINFO_005fPROGRAM"></a>
+   <p><a name="doc_002ddoc"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>INFO_PROGRAM</b><var><a name="index-INFO_005fPROGRAM-76"></a></var><br>
-<blockquote><p>The variable <code>INFO_PROGRAM</code> names the info program to run.  Its
-default initial value is
+&mdash; Command: doc <var>function_name</var><var><a name="index-g_t_0040var_007bfunction_005fname_007d-77"></a></var><br>
+<blockquote><p>Display documentation for the function <var>function_name</var>
+directly from an on-line version of
+the printed manual, using the GNU Info browser.  If invoked without
+any arguments, the manual is shown from the beginning.
+
+        <p>For example, the command <kbd>doc rand</kbd> starts the GNU Info browser
+at this node in the on-line version of the manual.
+
+        <p>Once the GNU Info browser is running, help for using it is available
+using the command <kbd>C-h</kbd>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> help. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dlookfor"></a>
+
+<div class="defun">
+&mdash; Command: <b>lookfor</b><var> str<a name="index-lookfor-78"></a></var><br>
+&mdash; Command: <b>lookfor</b><var> -all str<a name="index-lookfor-79"></a></var><br>
+&mdash; Function: <b>[</b><var>fun</var><b>, </b><var>helpstring</var><b>] = </b><var> lookfor </var>(<var>str</var>)<var><a name="index-g_t_005b_0040var_007bfun_007d_002c-_0040var_007bhelpstring_007d_005d-_003d-80"></a></var><br>
+&mdash; Function: <b>[</b><var>fun</var><b>, </b><var>helpstring</var><b>] = </b><var> lookfor </var>(<var>'-all', str</var>)<var><a name="index-g_t_005b_0040var_007bfun_007d_002c-_0040var_007bhelpstring_007d_005d-_003d-81"></a></var><br>
+<blockquote><p>Search for the string <var>str</var> in all of the functions found in the
+function search path.  By default <code>lookfor</code> searchs for <var>str</var>
+in the first sentence of the help string of each function found. The entire
+help string of each function found in the path can be search if
+the '-all' argument is supplied. All searches are case insensitive.
+
+        <p>Called with no output arguments, <code>lookfor</code> prints the list of matching
+functions to the terminal. Otherwise the output arguments <var>fun</var> and
+<var>helpstring</var> define the matching functions and the first sentence of
+each of their help strings.
+
+        <p>Note that the ability of <code>lookfor</code> to correctly identify the first
+sentence of the help of the functions is dependent on the format of the
+functions help. All of the functions in Octave itself will correctly
+find the first sentence, but the same can not be guaranteed for other
+functions. Therefore the use of the '-all' argument might be necessary
+to find related functions that are not part of Octave.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> help, which. 
+</p></blockquote></div>
+
+   <p>The following function can be used to change which programs are used
+for displaying the documentation, and where the documentation can be
+found.
+
+   <p><a name="doc_002dinfo_005ffile"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>info_file</b> ()<var><a name="index-info_005ffile-82"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>info_file</b> (<var>new_val</var>)<var><a name="index-info_005ffile-83"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the name of the
+Octave info file.  The default value is
+<code>"</code><var>octave-home</var><code>/info/octave.info"</code>, in
+which <var>octave-home</var> is the directory where all of Octave is installed.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> info_program, doc, help, makeinfo_program. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dinfo_005fprogram"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>info_program</b> ()<var><a name="index-info_005fprogram-84"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>info_program</b> (<var>new_val</var>)<var><a name="index-info_005fprogram-85"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the name of the
+info program to run.  The default initial value is
 <code>"</code><var>octave-home</var><code>/libexec/octave/</code><var>version</var><code>/exec/</code><var>arch</var><code>/info"</code>
 in which <var>octave-home</var> is the directory where all of Octave is
 installed, <var>version</var> is the Octave version number, and <var>arch</var>
 is the system type (for example, <code>i686-pc-linux-gnu</code>).  The
 default initial value may be overridden by the environment variable
 <code>OCTAVE_INFO_PROGRAM</code>, or the command line argument
-<code>--info-program NAME</code>, or by setting the value of
-<code>INFO_PROGRAM</code> in a startup script
+<code>--info-program NAME</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> info_file, doc, help, makeinfo_program. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dMAKEINFO_005fPROGRAM"></a>
+   <p><a name="doc_002dmakeinfo_005fprogram"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>MAKEINFO_PROGRAM</b><var><a name="index-MAKEINFO_005fPROGRAM-77"></a></var><br>
-<blockquote><p>The variable <code>MAKEINFO_PROGRAM</code> names the makeinfo program that
-Octave runs to format help text that contains Texinfo markup commands. 
-Its default initial value is <code>"makeinfo"</code>. 
+&mdash; Built-in Function: <var>val</var> = <b>makeinfo_program</b> ()<var><a name="index-makeinfo_005fprogram-86"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>makeinfo_program</b> (<var>new_val</var>)<var><a name="index-makeinfo_005fprogram-87"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the name of the
+makeinfo program that Octave runs to format help text containing
+Texinfo markup commands.  The default initial value is <code>"makeinfo"</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> info_file, info_program, doc, help. 
 </p></blockquote></div>
 
    <p><a name="doc_002dsuppress_005fverbose_005fhelp_005fmessage"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>suppress_verbose_help_message</b><var><a name="index-suppress_005fverbose_005fhelp_005fmessage-78"></a></var><br>
-<blockquote><p>If the value of <code>suppress_verbose_help_message</code> is nonzero, Octave
-will not add additional help information to the end of the output from
+&mdash; Built-in Function: <var>val</var> = <b>suppress_verbose_help_message</b> ()<var><a name="index-suppress_005fverbose_005fhelp_005fmessage-88"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>suppress_verbose_help_message</b> (<var>new_val</var>)<var><a name="index-suppress_005fverbose_005fhelp_005fmessage-89"></a></var><br>
+<blockquote><p>Query or set the internal vaiable that controls whether Octave
+will add additional help information to the end of the output from
 the <code>help</code> command and usage messages for built-in commands. 
 </p></blockquote></div>
 

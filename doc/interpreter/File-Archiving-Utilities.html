@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+<title>File Archiving Utilities - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
+<link rel="prev" href="Filesystem-Utilities.html#Filesystem-Utilities" title="Filesystem Utilities">
+<link rel="next" href="Networking-Utilities.html#Networking-Utilities" title="Networking Utilities">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="File-Archiving-Utilities"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Networking-Utilities.html#Networking-Utilities">Networking Utilities</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Filesystem-Utilities.html#Filesystem-Utilities">Filesystem Utilities</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities">System Utilities</a>
+<hr>
+</div>
+
+<h3 class="section">37.3 File Archiving Utilities</h3>
+
+<p><a name="doc_002dbunzip2"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>bunzip2</b> (<var>bzfile, dir</var>)<var><a name="index-bunzip2-1851"></a></var><br>
+<blockquote><p>Unpack the bzip2 archive <var>bzfile</var> to the directory <var>dir</var>. If
+<var>dir</var> is not specified, it defaults to the current directory.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unpack, bzip2, tar, untar, gzip, gunzip, zip, unzip. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgunzip"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gunzip</b> (<var>gzfile, dir</var>)<var><a name="index-gunzip-1852"></a></var><br>
+<blockquote><p>Unpack the gzip archive <var>gzfile</var> to the directory <var>dir</var>. If
+<var>dir</var> is not specified, it defaults to the current directory. If
+the <var>gzfile</var> is a directory, all files in the directory will be
+recursively gunzipped.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unpack, bzip2, bunzip2, tar, untar, gzip, gunzip, zip, unzip. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dtar"></a>
+
+<div class="defun">
+&mdash; Function File: <var>entries</var> = <b>tar</b> (<var>tarfile, files, root</var>)<var><a name="index-tar-1853"></a></var><br>
+<blockquote><p>Pack <var>files</var> <var>files</var> into the TAR archive <var>tarfile</var>.  The
+list of files must be a string or a cell array of strings.
+
+        <p>The optional argument <var>root</var> changes the relative path of <var>files</var>
+from the current directory.
+
+        <p>If an output argument is requested the entries in the archive are
+returned in a cell array.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> untar, gzip, gunzip, zip, unzip. 
+</p></blockquote></div>
+
+   <p><a name="doc_002duntar"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>untar</b> (<var>tarfile, dir</var>)<var><a name="index-untar-1854"></a></var><br>
+<blockquote><p>Unpack the TAR archive <var>tarfile</var> to the directory <var>dir</var>. 
+If <var>dir</var> is not specified, it defaults to the current directory.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unpack, bzip2, bunzip2, tar, gzip, gunzip, zip, unzip. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dzip"></a>
+
+<div class="defun">
+&mdash; Function File: <var>entries</var> = <b>zip</b> (<var>zipfile, files</var>)<var><a name="index-zip-1855"></a></var><br>
+&mdash; Function File: <var>entries</var> = <b>zip</b> (<var>zipfile, files, rootdir</var>)<var><a name="index-zip-1856"></a></var><br>
+<blockquote><p>Compress the list of files and/or directories specified in <var>files</var>
+into the archive <var>zipfiles</var> in the same directory. If <var>rootdir</var>
+is defined the <var>files</var> is located relative to <var>rootdir</var> rather
+than the current directory
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unzip,tar. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunzip"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>unzip</b> (<var>zipfile, dir</var>)<var><a name="index-unzip-1857"></a></var><br>
+<blockquote><p>Unpack the ZIP archive <var>zipfile</var> to the directory <var>dir</var>. 
+If <var>dir</var> is not specified, it defaults to the current directory.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unpack, bzip2, bunzip2, tar, untar, gzip, gunzip, zip. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpack"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>pack</b> ()<var><a name="index-pack-1858"></a></var><br>
+<blockquote><p>This function is provided for compatibility with <span class="sc">Matlab</span>, but it
+doesn't actually do anything. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunpack"></a>
+
+<div class="defun">
+&mdash; Function File: <var>files</var> = <b>unpack</b> (<var>file, dir</var>)<var><a name="index-unpack-1859"></a></var><br>
+&mdash; Function File: <var>files</var> = <b>unpack</b> (<var>file, dir, filetype</var>)<var><a name="index-unpack-1860"></a></var><br>
+<blockquote><p>Unpack the archive <var>file</var> based on its extension to the directory
+<var>dir</var>.  If <var>file</var> is a cellstr, then all files will be
+handled individually.  If <var>dir</var> is not specified, it defaults to
+the current directory.  It returns a list of <var>files</var>
+unpacked. If a directory is in the file list, then the
+<var>filetype</var> to unpack must also be specified.
+
+        <p>The <var>files</var> includes the entire path to the output files.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bzip2,bunzip2,tar,untar,gzip,gunzip,zip,unzip. 
+</p></blockquote></div>
+
+   </body></html>
+

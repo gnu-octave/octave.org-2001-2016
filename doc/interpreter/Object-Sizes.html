@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -185,41 +38,61 @@ expression.  These functions are defined for all objects.  They return
 data structure type doesn't have rows or columns, so the <code>rows</code> and
 <code>columns</code> functions return &minus;1 for structure arguments.
 
+   <p><a name="doc_002dndims"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>ndims</b> (<var>a</var>)<var><a name="index-ndims-170"></a></var><br>
+<blockquote><p>Returns the number of dimensions of array <var>a</var>. 
+For any array, the result will always be larger than or equal to 2. 
+Trailing singleton dimensions are not counted. 
+</p></blockquote></div>
+
    <p><a name="doc_002dcolumns"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>columns</b> (<var>a</var>)<var><a name="index-columns-141"></a></var><br>
+&mdash; Built-in Function:  <b>columns</b> (<var>a</var>)<var><a name="index-columns-171"></a></var><br>
 <blockquote><p>Return the number of columns of <var>a</var>.
         <pre class="sp">
      
      </pre>
-     See also: size, rows, length, isscalar, isvector, ismatrix. 
+     <strong>See also:</strong> size, numel, rows, length, isscalar, isvector, and ismatrix. 
 </p></blockquote></div>
 
    <p><a name="doc_002drows"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rows</b> (<var>a</var>)<var><a name="index-rows-142"></a></var><br>
+&mdash; Built-in Function:  <b>rows</b> (<var>a</var>)<var><a name="index-rows-172"></a></var><br>
 <blockquote><p>Return the number of rows of <var>a</var>.
         <pre class="sp">
      
      </pre>
-     See also: size, columns, length, isscalar, isvector, ismatrix. 
+     <strong>See also:</strong> size, numel, columns, length, isscalar, isvector, ismatrix. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnumel"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>numel</b> (<var>a</var>)<var><a name="index-numel-173"></a></var><br>
+<blockquote><p>Returns the number of elements in the object <var>a</var>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> size. 
 </p></blockquote></div>
 
    <p><a name="doc_002dlength"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>length</b> (<var>a</var>)<var><a name="index-length-143"></a></var><br>
+&mdash; Built-in Function:  <b>length</b> (<var>a</var>)<var><a name="index-length-174"></a></var><br>
 <blockquote><p>Return the `length' of the object <var>a</var>.  For matrix objects, the
 length is the number of rows or columns, whichever is greater (this
-odd definition is used for compatibility with Matlab). 
+odd definition is used for compatibility with <span class="sc">Matlab</span>). 
 </p></blockquote></div>
 
    <p><a name="doc_002dsize"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>size</b> (<var>a, n</var>)<var><a name="index-size-144"></a></var><br>
+&mdash; Built-in Function:  <b>size</b> (<var>a, n</var>)<var><a name="index-size-175"></a></var><br>
 <blockquote><p>Return the number rows and columns of <var>a</var>.
 
         <p>With one input argument and one output argument, the result is returned
@@ -240,15 +113,45 @@ corresponding dimension.  For example
      <pre class="example">          size ([1, 2; 3, 4; 5, 6], 2)
                =&gt; 2
      </pre>
-        <p class="noindent">returns the number of columns in the given matrix. 
+        <p class="noindent">returns the number of columns in the given matrix.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> numel. 
 </p></blockquote></div>
 
    <p><a name="doc_002disempty"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isempty</b> (<var>a</var>)<var><a name="index-isempty-145"></a></var><br>
+&mdash; Built-in Function:  <b>isempty</b> (<var>a</var>)<var><a name="index-isempty-176"></a></var><br>
 <blockquote><p>Return 1 if <var>a</var> is an empty matrix (either the number of rows, or
 the number of columns, or both are zero).  Otherwise, return 0. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsizeof"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>sizeof</b> (<var>val</var>)<var><a name="index-sizeof-177"></a></var><br>
+<blockquote><p>Return the size of <var>val</var> in bytes
+</p></blockquote></div>
+
+   <p><a name="doc_002dsize_005fequal"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>size_equal</b> (<var>a, b, <small class="dots">...</small></var>)<var><a name="index-size_005fequal-178"></a></var><br>
+<blockquote><p>Return true if the dimensions of all arguments agree. 
+Trailing singleton dimensions are ignored.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> size, numel. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsqueeze"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>squeeze</b> (<var>x</var>)<var><a name="index-squeeze-179"></a></var><br>
+<blockquote><p>Remove singleton dimensions from <var>x</var> and return the result. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->

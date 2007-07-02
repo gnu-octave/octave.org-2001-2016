@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,16 +32,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic<
 <hr>
 </div>
 
-<h3 class="section">19.5 Special Functions</h3>
+<h3 class="section">18.5 Special Functions</h3>
 
 <p><a name="doc_002dbesselj"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>j</var>, <var>ierr</var>] = <b>besselj</b> (<var>alpha, x, opt</var>)<var><a name="index-besselj-781"></a></var><br>
-&mdash; Loadable Function: [<var>y</var>, <var>ierr</var>] = <b>bessely</b> (<var>alpha, x, opt</var>)<var><a name="index-bessely-782"></a></var><br>
-&mdash; Loadable Function: [<var>i</var>, <var>ierr</var>] = <b>besseli</b> (<var>alpha, x, opt</var>)<var><a name="index-besseli-783"></a></var><br>
-&mdash; Loadable Function: [<var>k</var>, <var>ierr</var>] = <b>besselk</b> (<var>alpha, x, opt</var>)<var><a name="index-besselk-784"></a></var><br>
-&mdash; Loadable Function: [<var>h</var>, <var>ierr</var>] = <b>besselh</b> (<var>alpha, k, x, opt</var>)<var><a name="index-besselh-785"></a></var><br>
+&mdash; Loadable Function: [<var>j</var>, <var>ierr</var>] = <b>besselj</b> (<var>alpha, x, opt</var>)<var><a name="index-besselj-993"></a></var><br>
+&mdash; Loadable Function: [<var>y</var>, <var>ierr</var>] = <b>bessely</b> (<var>alpha, x, opt</var>)<var><a name="index-bessely-994"></a></var><br>
+&mdash; Loadable Function: [<var>i</var>, <var>ierr</var>] = <b>besseli</b> (<var>alpha, x, opt</var>)<var><a name="index-besseli-995"></a></var><br>
+&mdash; Loadable Function: [<var>k</var>, <var>ierr</var>] = <b>besselk</b> (<var>alpha, x, opt</var>)<var><a name="index-besselk-996"></a></var><br>
+&mdash; Loadable Function: [<var>h</var>, <var>ierr</var>] = <b>besselh</b> (<var>alpha, k, x, opt</var>)<var><a name="index-besselh-997"></a></var><br>
 <blockquote><p>Compute Bessel or Hankel functions of various kinds:
 
           <dl>
@@ -232,7 +85,7 @@ return <code>NaN</code>.
    <p><a name="doc_002dairy"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>a</var>, <var>ierr</var>] = <b>airy</b> (<var>k, z, opt</var>)<var><a name="index-airy-786"></a></var><br>
+&mdash; Loadable Function: [<var>a</var>, <var>ierr</var>] = <b>airy</b> (<var>k, z, opt</var>)<var><a name="index-airy-998"></a></var><br>
 <blockquote><p>Compute Airy functions of the first and second kind, and their
 derivatives.
 
@@ -266,7 +119,7 @@ return <code>NaN</code>.
    <p><a name="doc_002dbeta"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>beta</b> (<var>a, b</var>)<var><a name="index-beta-787"></a></var><br>
+&mdash; Mapping Function:  <b>beta</b> (<var>a, b</var>)<var><a name="index-beta-999"></a></var><br>
 <blockquote><p>Return the Beta function,
 
      <pre class="example">          beta (a, b) = gamma (a) * gamma (b) / gamma (a + b).
@@ -276,7 +129,7 @@ return <code>NaN</code>.
    <p><a name="doc_002dbetainc"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>betainc</b> (<var>x, a, b</var>)<var><a name="index-betainc-788"></a></var><br>
+&mdash; Mapping Function:  <b>betainc</b> (<var>x, a, b</var>)<var><a name="index-betainc-1000"></a></var><br>
 <blockquote><p>Return the incomplete Beta function,
 
      <pre class="smallexample">                                                x
@@ -290,10 +143,24 @@ scalars.  If <var>x</var> is a scalar, <var>a</var> and <var>b</var> must be of
 compatible dimensions. 
 </p></blockquote></div>
 
+   <p><a name="doc_002dbetaln"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>betaln</b> (<var>a, b</var>)<var><a name="index-betaln-1001"></a></var><br>
+<blockquote><p>Return the log of the Beta function,
+
+     <pre class="example">          betaln (a, b) = gammaln (a) + gammaln (b) - gammaln (a + b)
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> beta, betai, gammaln. 
+</p></blockquote></div>
+
    <p><a name="doc_002dbincoeff"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>bincoeff</b> (<var>n, k</var>)<var><a name="index-bincoeff-789"></a></var><br>
+&mdash; Mapping Function:  <b>bincoeff</b> (<var>n, k</var>)<var><a name="index-bincoeff-1002"></a></var><br>
 <blockquote><p>Return the binomial coefficient of <var>n</var> and <var>k</var>, defined as
 
      <pre class="example">           /   \
@@ -312,7 +179,7 @@ compatible dimensions.
    <p><a name="doc_002derf"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>erf</b> (<var>z</var>)<var><a name="index-erf-790"></a></var><br>
+&mdash; Mapping Function:  <b>erf</b> (<var>z</var>)<var><a name="index-erf-1003"></a></var><br>
 <blockquote><p>Computes the error function,
 
      <pre class="smallexample">                                   z
@@ -324,36 +191,36 @@ compatible dimensions.
         <pre class="sp">
      
      </pre>
-     See also: erfc, erfinv. 
+     <strong>See also:</strong> erfc, erfinv. 
 </p></blockquote></div>
 
    <p><a name="doc_002derfc"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>erfc</b> (<var>z</var>)<var><a name="index-erfc-791"></a></var><br>
+&mdash; Mapping Function:  <b>erfc</b> (<var>z</var>)<var><a name="index-erfc-1004"></a></var><br>
 <blockquote><p>Computes the complementary error function,
 <code>1 - erf (</code><var>z</var><code>)</code>.
         <pre class="sp">
      
      </pre>
-     See also: erf, erfinv. 
+     <strong>See also:</strong> erf, erfinv. 
 </p></blockquote></div>
 
    <p><a name="doc_002derfinv"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>erfinv</b> (<var>z</var>)<var><a name="index-erfinv-792"></a></var><br>
+&mdash; Mapping Function:  <b>erfinv</b> (<var>z</var>)<var><a name="index-erfinv-1005"></a></var><br>
 <blockquote><p>Computes the inverse of the error function.
         <pre class="sp">
      
      </pre>
-     See also: erf, erfc. 
+     <strong>See also:</strong> erf, erfc. 
 </p></blockquote></div>
 
    <p><a name="doc_002dgamma"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>gamma</b> (<var>z</var>)<var><a name="index-gamma-793"></a></var><br>
+&mdash; Mapping Function:  <b>gamma</b> (<var>z</var>)<var><a name="index-gamma-1006"></a></var><br>
 <blockquote><p>Computes the Gamma function,
 
      <pre class="example">                      infinity
@@ -365,13 +232,13 @@ compatible dimensions.
         <pre class="sp">
      
      </pre>
-     See also: gammai, lgamma. 
+     <strong>See also:</strong> gammai, lgamma. 
 </p></blockquote></div>
 
    <p><a name="doc_002dgammainc"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a</var>)<var><a name="index-gammainc-794"></a></var><br>
+&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a</var>)<var><a name="index-gammainc-1007"></a></var><br>
 <blockquote><p>Compute the normalized incomplete gamma function,
 
      <pre class="smallexample">                                          x
@@ -391,25 +258,59 @@ for each element of <var>x</var> and vice versa.
         <pre class="sp">
      
      </pre>
-     See also: gamma, lgamma. 
+     <strong>See also:</strong> gamma, lgamma. 
 </p></blockquote></div>
+
+   <p><a name="doc_002dlegendre"></a>
+
+<div class="defun">
+&mdash; Function File: <var>L</var> = <b>legendre</b> (<var>n, X</var>)<var><a name="index-legendre-1008"></a></var><br>
+<blockquote>
+<p>Legendre Function of degree n and order m
+where all values for m = 0..<var>n</var> are returned. 
+<var>n</var> must be a scalar in the range [0..255]. 
+The return value has one dimension more than <var>x</var>.
+
+     <pre class="example">          The Legendre Function of degree n and order m
+          
+           m        m       2  m/2   d^m
+          P(x) = (-1) * (1-x  )    * ----  P (x)
+           n                         dx^m   n
+          
+          with:
+          Legendre Polynom of degree n
+          
+                    1     d^n   2    n
+          P (x) = ------ [----(x - 1)  ]
+           n      2^n n!  dx^n
+          
+          legendre(3,[-1.0 -0.9 -0.8]) returns the matrix
+          
+           x  |   -1.0   |   -0.9   |  -0.8
+          ------------------------------------
+          m=0 | -1.00000 | -0.47250 | -0.08000
+          m=1 |  0.00000 | -1.99420 | -1.98000
+          m=2 |  0.00000 | -2.56500 | -4.32000
+          m=3 |  0.00000 | -1.24229 | -3.24000
+     </pre>
+        </blockquote></div>
 
    <p><a name="doc_002dlgamma"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>lgamma</b> (<var>x</var>)<var><a name="index-lgamma-795"></a></var><br>
-&mdash; Mapping Function:  <b>gammaln</b> (<var>x</var>)<var><a name="index-gammaln-796"></a></var><br>
+&mdash; Mapping Function:  <b>lgamma</b> (<var>x</var>)<var><a name="index-lgamma-1009"></a></var><br>
+&mdash; Mapping Function:  <b>gammaln</b> (<var>x</var>)<var><a name="index-gammaln-1010"></a></var><br>
 <blockquote><p>Return the natural logarithm of the gamma function.
         <pre class="sp">
      
      </pre>
-     See also: gamma, gammai. 
+     <strong>See also:</strong> gamma, gammai. 
 </p></blockquote></div>
 
    <p><a name="doc_002dcross"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cross</b> (<var>x, y, dim</var>)<var><a name="index-cross-797"></a></var><br>
+&mdash; Function File:  <b>cross</b> (<var>x, y, dim</var>)<var><a name="index-cross-1011"></a></var><br>
 <blockquote><p>Computes the vector cross product of the two 3-dimensional vectors
 <var>x</var> and <var>y</var>.
 
@@ -425,7 +326,7 @@ the dimension defined by <var>dim</var>.
    <p><a name="doc_002dcommutation_005fmatrix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>commutation_matrix</b> (<var>m, n</var>)<var><a name="index-commutation_005fmatrix-798"></a></var><br>
+&mdash; Function File:  <b>commutation_matrix</b> (<var>m, n</var>)<var><a name="index-commutation_005fmatrix-1012"></a></var><br>
 <blockquote><p>Return the commutation matrix
  K(m,n)
  which is the unique
@@ -448,7 +349,7 @@ applications in statistics and econometrics.
    <p><a name="doc_002dduplication_005fmatrix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>duplication_matrix</b> (<var>n</var>)<var><a name="index-duplication_005fmatrix-799"></a></var><br>
+&mdash; Function File:  <b>duplication_matrix</b> (<var>n</var>)<var><a name="index-duplication_005fmatrix-1013"></a></var><br>
 <blockquote><p>Return the duplication matrix
 Dn
  which is the unique

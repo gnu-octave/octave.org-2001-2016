@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,12 +32,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Con
 <hr>
 </div>
 
-<h3 class="section">30.9 Controller Design</h3>
+<h3 class="section">32.9 Controller Design</h3>
 
 <p><a name="doc_002ddgkfdemo"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dgkfdemo</b> ()<var><a name="index-dgkfdemo-1303"></a></var><br>
+&mdash; Function File:  <b>dgkfdemo</b> ()<var><a name="index-dgkfdemo-1639"></a></var><br>
 <blockquote><p>Octave Controls toolbox demo:
 H-2/H-infinity
 options demos. 
@@ -193,7 +46,7 @@ options demos.
    <p><a name="doc_002dhinfdemo"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hinfdemo</b> ()<var><a name="index-hinfdemo-1304"></a></var><br>
+&mdash; Function File:  <b>hinfdemo</b> ()<var><a name="index-hinfdemo-1640"></a></var><br>
 <blockquote>
 <p>H-infinity
 design demos for continuous <acronym>SISO</acronym> and <acronym>MIMO</acronym> systems and a
@@ -301,7 +154,7 @@ functions.
    <p><a name="doc_002ddlqe"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>l</var>, <var>m</var>, <var>p</var>, <var>e</var>] = <b>dlqe</b> (<var>a, g, c, sigw, sigv, z</var>)<var><a name="index-dlqe-1305"></a></var><br>
+&mdash; Function File: [<var>l</var>, <var>m</var>, <var>p</var>, <var>e</var>] = <b>dlqe</b> (<var>a, g, c, sigw, sigv, z</var>)<var><a name="index-dlqe-1641"></a></var><br>
 <blockquote><p>Construct the linear quadratic estimator (Kalman filter) for the
 discrete time system
 
@@ -339,7 +192,7 @@ is stable.
    <p><a name="doc_002ddlqr"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>k</var>, <var>p</var>, <var>e</var>] = <b>dlqr</b> (<var>a, b, q, r, z</var>)<var><a name="index-dlqr-1306"></a></var><br>
+&mdash; Function File: [<var>k</var>, <var>p</var>, <var>e</var>] = <b>dlqr</b> (<var>a, b, q, r, z</var>)<var><a name="index-dlqr-1642"></a></var><br>
 <blockquote><p>Construct the linear quadratic regulator for the discrete time system
 
      <pre class="example">          x[k+1] = A x[k] + B u[k]
@@ -371,7 +224,7 @@ is stable.
    <p><a name="doc_002ddkalman"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>Lp</var>, <var>Lf</var>, <var>P</var>, <var>Z</var>] = <b>dkalman</b> (<var>A, G, C, Qw, Rv, S</var>)<var><a name="index-dkalman-1307"></a></var><br>
+&mdash; Function File: [<var>Lp</var>, <var>Lf</var>, <var>P</var>, <var>Z</var>] = <b>dkalman</b> (<var>A, G, C, Qw, Rv, S</var>)<var><a name="index-dkalman-1643"></a></var><br>
 <blockquote><p>Construct the linear quadratic estimator (Kalman predictor) for the
 discrete time system
 
@@ -412,7 +265,7 @@ is stable.
    <p><a name="doc_002dh2syn"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>K</var>, <var>gain</var>, <var>kc</var>, <var>kf</var>, <var>pc</var>, <var>pf</var>] = <b>h2syn</b> (<var>asys, nu, ny, tol</var>)<var><a name="index-h2syn-1308"></a></var><br>
+&mdash; Function File: [<var>K</var>, <var>gain</var>, <var>kc</var>, <var>kf</var>, <var>pc</var>, <var>pf</var>] = <b>h2syn</b> (<var>asys, nu, ny, tol</var>)<var><a name="index-h2syn-1644"></a></var><br>
 <blockquote><p>Design
 H-2
 optimal controller per procedure in
@@ -448,7 +301,7 @@ Doyle, Glover, Khargonekar, Francis, <cite>State-Space Solutions to Standard</ci
    <p><a name="doc_002dhinf_005fctr"></a>
 
 <div class="defun">
-&mdash; Function File: <var>K</var> = <b>hinf_ctr</b> (<var>dgs, f, h, z, g</var>)<var><a name="index-hinf_005fctr-1309"></a></var><br>
+&mdash; Function File: <var>K</var> = <b>hinf_ctr</b> (<var>dgs, f, h, z, g</var>)<var><a name="index-hinf_005fctr-1645"></a></var><br>
 <blockquote><p>Called by <code>hinfsyn</code> to compute the
 H-infinity
 optimal controller.
@@ -470,7 +323,7 @@ optimal controller.
    <p><a name="doc_002dhinfsyn"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>k</var>, <var>g</var>, <var>gw</var>, <var>xinf</var>, <var>yinf</var>] = <b>hinfsyn</b> (<var>asys, nu, ny, gmin, gmax, gtol, ptol, tol</var>)<var><a name="index-hinfsyn-1310"></a></var><br>
+&mdash; Function File: [<var>k</var>, <var>g</var>, <var>gw</var>, <var>xinf</var>, <var>yinf</var>] = <b>hinfsyn</b> (<var>asys, nu, ny, gmin, gmax, gtol, ptol, tol</var>)<var><a name="index-hinfsyn-1646"></a></var><br>
 <blockquote>
 <p><strong>Inputs</strong> input system is passed as either
           <dl>
@@ -528,7 +381,7 @@ Systems &amp; Control Letters 11, Oct. 1988, pp 167&ndash;172.
    <p><a name="doc_002dhinfsyn_005fchk"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>retval</var>, <var>pc</var>, <var>pf</var>] = <b>hinfsyn_chk</b> (<var>a, b1, b2, c1, c2, d12, d21, g, ptol</var>)<var><a name="index-hinfsyn_005fchk-1311"></a></var><br>
+&mdash; Function File: [<var>retval</var>, <var>pc</var>, <var>pf</var>] = <b>hinfsyn_chk</b> (<var>a, b1, b2, c1, c2, d12, d21, g, ptol</var>)<var><a name="index-hinfsyn_005fchk-1647"></a></var><br>
 <blockquote><p>Called by <code>hinfsyn</code> to see if gain <var>g</var> satisfies conditions in
 Theorem 3 of
 Doyle, Glover, Khargonekar, Francis, <cite>State Space Solutions to Standard</cite>
@@ -562,7 +415,7 @@ H-infinity
    <p><a name="doc_002dhinfsyn_005fric"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>xinf</var>, <var>x_ha_err</var>] = <b>hinfsyn_ric</b> (<var>a, bb, c1, d1dot, r, ptol</var>)<var><a name="index-hinfsyn_005fric-1312"></a></var><br>
+&mdash; Function File: [<var>xinf</var>, <var>x_ha_err</var>] = <b>hinfsyn_ric</b> (<var>a, bb, c1, d1dot, r, ptol</var>)<var><a name="index-hinfsyn_005fric-1648"></a></var><br>
 <blockquote><p>Forms
      <pre class="example">          xx = ([bb; -c1'*d1dot]/r) * [d1dot'*c1 bb'];
           Ha = [a 0*a; -c1'*c1 - a'] - xx;
@@ -584,7 +437,7 @@ conditions:
    <p><a name="doc_002dlqe"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>k</var>, <var>p</var>, <var>e</var>] = <b>lqe</b> (<var>a, g, c, sigw, sigv, z</var>)<var><a name="index-lqe-1313"></a></var><br>
+&mdash; Function File: [<var>k</var>, <var>p</var>, <var>e</var>] = <b>lqe</b> (<var>a, g, c, sigw, sigv, z</var>)<var><a name="index-lqe-1649"></a></var><br>
 <blockquote><p>Construct the linear quadratic estimator (Kalman filter) for the
 continuous time system
 
@@ -623,7 +476,7 @@ is stable.
    <p><a name="doc_002dlqg"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>k</var>, <var>q1</var>, <var>p1</var>, <var>ee</var>, <var>er</var>] = <b>lqg</b> (<var>sys, sigw, sigv, q, r, in_idx</var>)<var><a name="index-lqg-1314"></a></var><br>
+&mdash; Function File: [<var>k</var>, <var>q1</var>, <var>p1</var>, <var>ee</var>, <var>er</var>] = <b>lqg</b> (<var>sys, sigw, sigv, q, r, in_idx</var>)<var><a name="index-lqg-1650"></a></var><br>
 <blockquote><p>Design a linear-quadratic-gaussian optimal controller for the system
      <pre class="example">          dx/dt = A x + B u + G w       [w]=N(0,[Sigw 0    ])
               y = C x + v               [v]  (    0   Sigv ])
@@ -656,13 +509,13 @@ appropriate).
         <pre class="sp">
      
      </pre>
-     See also: h2syn, lqe, lqr. 
+     <strong>See also:</strong> h2syn, lqe, lqr. 
 </p></blockquote></div>
 
    <p><a name="doc_002dlqr"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>k</var>, <var>p</var>, <var>e</var>] = <b>lqr</b> (<var>a, b, q, r, z</var>)<var><a name="index-lqr-1315"></a></var><br>
+&mdash; Function File: [<var>k</var>, <var>p</var>, <var>e</var>] = <b>lqr</b> (<var>a, b, q, r, z</var>)<var><a name="index-lqr-1651"></a></var><br>
 <blockquote><p>construct the linear quadratic regulator for the continuous time system
 
      <pre class="example">          dx
@@ -708,7 +561,7 @@ Prentice-Hall, 1990, pp. 56&ndash;58.
    <p><a name="doc_002dlsim"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>y</var>, <var>x</var>] = <b>lsim</b> (<var>sys, u, t, x0</var>)<var><a name="index-lsim-1316"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>x</var>] = <b>lsim</b> (<var>sys, u, t, x0</var>)<var><a name="index-lsim-1652"></a></var><br>
 <blockquote><p>Produce output for a linear simulation of a system; produces
 a plot for the output of the system, <var>sys</var>.
 
@@ -726,7 +579,7 @@ and <var>x</var> (system states).
    <p><a name="doc_002dplace"></a>
 
 <div class="defun">
-&mdash; Function File: <var>K</var> = <b>place</b> (<var>sys, p</var>)<var><a name="index-place-1317"></a></var><br>
+&mdash; Function File: <var>K</var> = <b>place</b> (<var>sys, p</var>)<var><a name="index-place-1653"></a></var><br>
 <blockquote><p>Computes the matrix <var>K</var> such that if the state
 is feedback with gain <var>K</var>, then the eigenvalues  of the closed loop
 system (i.e. A-BK) are those specified in the vector <var>p</var>.

@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -177,89 +30,142 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Ty
 <hr>
 </div>
 
-<h3 class="section">4.4 Predicates for Numeric Objects</h3>
+<h3 class="section">4.5 Predicates for Numeric Objects</h3>
 
-<p><a name="doc_002disnumeric"></a>
+<p>Since the type of a variable may change during the execution of a
+program, it can be necessary to type checking at run-time. Doing this
+also allows you to change the behaviour of a function depending on the
+type of the input. As an example, this naive implementation of <code>abs</code>
+return the absolute value of the input if it is a real number, and the
+length of the input if it is a complex number.
+
+<pre class="example">     function a = abs (x)
+       if (isreal (x))
+         a = sign (x) .* x;
+       elseif (iscomplex (x))
+         a = sqrt (real(x).^2 + imag(x).^2);
+       endif
+     endfunction
+</pre>
+   <p>The following functions are available for determining the type of a
+variable.
+
+   <p><a name="doc_002disnumeric"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isnumeric</b> (<var>x</var>)<var><a name="index-isnumeric-165"></a></var><br>
+&mdash; Built-in Function:  <b>isnumeric</b> (<var>x</var>)<var><a name="index-isnumeric-222"></a></var><br>
 <blockquote><p>Return nonzero if <var>x</var> is a numeric object. 
 </p></blockquote></div>
 
    <p><a name="doc_002disreal"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isreal</b> (<var>x</var>)<var><a name="index-isreal-166"></a></var><br>
+&mdash; Built-in Function:  <b>isreal</b> (<var>x</var>)<var><a name="index-isreal-223"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a real-valued numeric object. 
 </p></blockquote></div>
 
    <p><a name="doc_002discomplex"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>iscomplex</b> (<var>x</var>)<var><a name="index-iscomplex-167"></a></var><br>
+&mdash; Built-in Function:  <b>iscomplex</b> (<var>x</var>)<var><a name="index-iscomplex-224"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a complex-valued numeric object. 
 </p></blockquote></div>
 
    <p><a name="doc_002dismatrix"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ismatrix</b> (<var>a</var>)<var><a name="index-ismatrix-168"></a></var><br>
+&mdash; Built-in Function:  <b>ismatrix</b> (<var>a</var>)<var><a name="index-ismatrix-225"></a></var><br>
 <blockquote><p>Return 1 if <var>a</var> is a matrix.  Otherwise, return 0. 
 </p></blockquote></div>
 
    <p><a name="doc_002disvector"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>isvector</b> (<var>a</var>)<var><a name="index-isvector-169"></a></var><br>
+&mdash; Function File:  <b>isvector</b> (<var>a</var>)<var><a name="index-isvector-226"></a></var><br>
 <blockquote><p>Return 1 if <var>a</var> is a vector.  Otherwise, return 0.
         <pre class="sp">
      
      </pre>
-     See also: size, rows, columns, length, isscalar, ismatrix. 
+     <strong>See also:</strong> size, rows, columns, length, isscalar, ismatrix. 
 </p></blockquote></div>
 
    <p><a name="doc_002disscalar"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>isscalar</b> (<var>a</var>)<var><a name="index-isscalar-170"></a></var><br>
+&mdash; Function File:  <b>isscalar</b> (<var>a</var>)<var><a name="index-isscalar-227"></a></var><br>
 <blockquote><p>Return 1 if <var>a</var> is a scalar.  Otherwise, return 0.
         <pre class="sp">
      
      </pre>
-     See also: size, rows, columns, length, isscalar, ismatrix. 
+     <strong>See also:</strong> size, rows, columns, length, isscalar, ismatrix. 
 </p></blockquote></div>
 
    <p><a name="doc_002dissquare"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>issquare</b> (<var>x</var>)<var><a name="index-issquare-171"></a></var><br>
+&mdash; Function File:  <b>issquare</b> (<var>x</var>)<var><a name="index-issquare-228"></a></var><br>
 <blockquote><p>If <var>x</var> is a square matrix, then return the dimension of <var>x</var>. 
 Otherwise, return 0.
         <pre class="sp">
      
      </pre>
-     See also: size, rows, columns, length, ismatrix, isscalar, isvector. 
+     <strong>See also:</strong> size, rows, columns, length, ismatrix, isscalar, isvector. 
 </p></blockquote></div>
 
    <p><a name="doc_002dissymmetric"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>issymmetric</b> (<var>x, tol</var>)<var><a name="index-issymmetric-172"></a></var><br>
+&mdash; Function File:  <b>issymmetric</b> (<var>x, tol</var>)<var><a name="index-issymmetric-229"></a></var><br>
 <blockquote><p>If <var>x</var> is symmetric within the tolerance specified by <var>tol</var>,
 then return the dimension of <var>x</var>.  Otherwise, return 0.  If
 <var>tol</var> is omitted, use a tolerance equal to the machine precision.
         <pre class="sp">
      
      </pre>
-     See also: size, rows, columns, length, ismatrix, isscalar,
+     <strong>See also:</strong> size, rows, columns, length, ismatrix, isscalar,
 issquare, isvector. 
 </p></blockquote></div>
 
-   <p><a name="doc_002disbool"></a>
+   <p><a name="doc_002disdefinite"></a>
 
 <div class="defun">
-&mdash; Built-in Functio:  <b>isbool</b> (<var>x</var>)<var><a name="index-isbool-173"></a></var><br>
-<blockquote><p>Return true if <var>x</var> is a boolean object. 
+&mdash; Function File:  <b>isdefinite</b> (<var>x, tol</var>)<var><a name="index-isdefinite-230"></a></var><br>
+<blockquote><p>Return 1 if <var>x</var> is symmetric positive definite within the
+tolerance specified by <var>tol</var> or 0 if <var>x</var> is symmetric
+positive semidefinite.  Otherwise, return -1.  If <var>tol</var>
+is omitted, use a tolerance equal to 100 times the machine precision.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> issymmetric. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dislogical"></a>
+
+<div class="defun">
+&mdash; Built-in Functio:  <b>islogical</b> (<var>x</var>)<var><a name="index-islogical-231"></a></var><br>
+<blockquote><p>Return true if <var>x</var> is a logical object. 
+</p></blockquote></div>
+
+   <p><a name="doc_002disprime"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>isprime</b> (<var>n</var>)<var><a name="index-isprime-232"></a></var><br>
+<blockquote>
+<p>Return true if <var>n</var> is a prime number, false otherwise.
+
+        <p>Something like the following is much faster if you need to test a lot
+of small numbers:
+
+     <pre class="example">          <var>t</var> = ismember (<var>n</var>, primes (max (<var>n</var> (:))));
+     </pre>
+        <p>If max(n) is very large, then you should be using special purpose
+factorization code.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> primes, factor, gcd, lcm. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->

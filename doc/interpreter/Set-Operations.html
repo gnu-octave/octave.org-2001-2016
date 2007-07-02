@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+<title>Set Operations - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Sets.html#Sets" title="Sets">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Set-Operations"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Sets.html#Sets">Sets</a>
+<hr>
+</div>
+
+<h3 class="section">28.1 Set Operations</h3>
+
+<p>Octave supports the basic set operations.  That is, Octave can compute
+the union, intersection, complement, and difference of two sets. 
+Octave can also supports the <em>Exclusive Or</em> set operation, and
+membership determination.  The functions for set operations all work in
+pretty much the same way.  As an example, assume that <code>x</code> and
+<code>y</code> contains two sets, then
+
+<pre class="example">     union(x, y)
+</pre>
+   <p class="noindent">computes the union of the two sets.
+
+   <p><a name="doc_002dismember"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ismember</b> (<var>A, S</var>)<var><a name="index-ismember-1466"></a></var><br>
+<blockquote><p>Return a matrix the same shape as <var>A</var> which has 1 if
+<code>A(i,j)</code> is in <var>S</var> or 0 if it isn't.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unique, union, intersection, setxor, setdiff. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunion"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>union</b> (<var>x, y</var>)<var><a name="index-union-1467"></a></var><br>
+<blockquote><p>Return the set of elements that are in either of the sets <var>x</var> and
+<var>y</var>.  For example,
+
+     <pre class="example">          union ([ 1, 2, 4 ], [ 2, 3, 5 ])
+          =&gt; [ 1, 2, 3, 4, 5 ]
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> create_set, intersection, complement. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dintersect"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>intersect</b> (<var>a, b</var>)<var><a name="index-intersect-1468"></a></var><br>
+&mdash; Function File: [<var>c</var>, <var>ia</var>, <var>ib</var>] = <b>intersect</b> (<var>a, b</var>)<var><a name="index-intersect-1469"></a></var><br>
+<blockquote>
+<p>Return the elements in both <var>a</var> and <var>b</var>, sorted in ascending
+order. If <var>a</var> and <var>b</var> are both column vectors return a column
+vector, otherwise return a row vector.
+
+        <p>Return index vectors <var>ia</var> and <var>ib</var> such that <code>a(ia)==c</code> and
+<code>b(ib)==c</code>.
+
+        </blockquote></div>
+
+   <pre class="sp">
+
+</pre>
+<strong>See also:</strong> unique, union, setxor, setdiff, ismember.
+
+   <p><a name="doc_002dcomplement"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>complement</b> (<var>x, y</var>)<var><a name="index-complement-1470"></a></var><br>
+<blockquote><p>Return the elements of set <var>y</var> that are not in set <var>x</var>.  For
+example,
+
+     <pre class="example">          complement ([ 1, 2, 3 ], [ 2, 3, 5 ])
+          =&gt; 5
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> create_set, union, intersection. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsetdiff"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>setdiff</b> (<var>a, b</var>)<var><a name="index-setdiff-1471"></a></var><br>
+&mdash; Function File:  <b>setdiff</b> (<var>a, b, "rows"</var>)<var><a name="index-setdiff-1472"></a></var><br>
+<blockquote><p>Return the elements in <var>a</var> that are not in <var>b</var>, sorted in
+ascending order.  If <var>a</var> and <var>b</var> are both column vectors
+return a column vector, otherwise return a row vector.
+
+        <p>Given the optional third argument `<samp><span class="samp">"rows"</span></samp>', return the rows in
+<var>a</var> that are not in <var>b</var>, sorted in ascending order by rows.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unique, union, intersect, setxor, ismember. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsetxor"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>setxor</b> (<var>a, b</var>)<var><a name="index-setxor-1473"></a></var><br>
+<blockquote>
+<p>Return the elements exclusive to <var>a</var> or <var>b</var>, sorted in ascending
+order. If <var>a</var> and <var>b</var> are both column vectors return a column
+vector, otherwise return a row vector.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unique, union, intersect, setdiff, ismember. 
+</p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

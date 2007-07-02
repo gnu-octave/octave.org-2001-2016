@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+<title>Breakpoints - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Debugging.html#Debugging" title="Debugging">
+<link rel="prev" href="Entering-Debug-Mode.html#Entering-Debug-Mode" title="Entering Debug Mode">
+<link rel="next" href="Debug-Mode.html#Debug-Mode" title="Debug Mode">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Breakpoints"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Debug-Mode.html#Debug-Mode">Debug Mode</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Entering-Debug-Mode.html#Entering-Debug-Mode">Entering Debug Mode</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
+<hr>
+</div>
+
+<h3 class="section">14.2 Breakpoints</h3>
+
+<p>Breakpoints can be set in any Octave function, using the <code>dbstop</code>
+function.
+
+   <p><a name="doc_002ddbstop"></a>
+
+<div class="defun">
+&mdash; Loadable Function: rline = <b>dbstop</b> (<var>func, line, <small class="dots">...</small></var>)<var><a name="index-dbstop-633"></a></var><br>
+<blockquote><p>Set a breakpoint in a function
+          <dl>
+<dt><code>func</code><dd>String representing the function name.  When already in debug
+mode this should be left out and only the line should be given. 
+<br><dt><code>line</code><dd>Line you would like the breakpoint to be set on. Multiple
+lines might be given as seperate arguments or as a vector. 
+</dl>
+
+        <p>The rline returned is the real line that the breakpoint was set at.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> dbclear, dbstatus, dbnext. 
+</p></blockquote></div>
+
+<p class="noindent">Note that breakpoints can not be set in built-in functions
+(eg. <code>sin</code>, etc) or dynamically loaded function (ie. oct-files). To
+set a breakpoint immediately on entering a function, the breakpoint
+should be set to line 1. The leading comment block will be ignored and
+the breakpoint will be set to the first executable statement in the
+function. For example
+
+<pre class="example">     dbstop ("asind", 1)
+     =&gt; 27
+</pre>
+   <p class="noindent">Note that the return value of <code>27</code> means that the breakpoint was
+effectively set to line 27. The status of breakpoints in a function can
+be queried with the <code>dbstatus</code> function.
+
+   <p><a name="doc_002ddbstatus"></a>
+
+<div class="defun">
+&mdash; Loadable Function: lst = <b>dbstatus</b> ([<var>func</var>])<var><a name="index-dbstatus-634"></a></var><br>
+<blockquote><p>Return a vector containing the lines on which a function has
+breakpoints set.
+          <dl>
+<dt><code>func</code><dd>String representing the function name.  When already in debug
+mode this should be left out. 
+</dl>
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> dbclear, dbwhere. 
+</p></blockquote></div>
+
+<p class="noindent">Taking the above as an example, <code>dbstatus ("asind")</code> should return
+27. The breakpoints can then be cleared with the <code>dbclear</code> function
+
+   <p><a name="doc_002ddbclear"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>dbclear</b> (<var>func, line, <small class="dots">...</small></var>)<var><a name="index-dbclear-635"></a></var><br>
+<blockquote><p>Delete a breakpoint in a function
+          <dl>
+<dt><code>func</code><dd>String representing the function name.  When already in debug
+mode this should be left out and only the line should be given. 
+<br><dt><code>line</code><dd>Line where you would like to remove the breakpoint. Multiple
+lines might be given as seperate arguments or as a vector. 
+</dl>
+        No checking is done to make sure that the line you requested is really
+a breakpoint. If you get the wrong line nothing will happen.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> dbstop, dbstatus, dbwhere. 
+</p></blockquote></div>
+
+<p class="noindent">To clear all of the breakpoints in a function the recommended means,
+following the above example, is then
+
+<pre class="example">     dbclear ("asind", dbstatus ("asind"));
+</pre>
+   <p>Another simple means of setting a breakpoint in an Octave script is the
+use of the <code>keyboard</code> function.
+
+   <p><a name="doc_002dkeyboard"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>keyboard</b> (<var>prompt</var>)<var><a name="index-keyboard-636"></a></var><br>
+<blockquote><p>This function is normally used for simple debugging.  When the
+<code>keyboard</code> function is executed, Octave prints a prompt and waits
+for user input.  The input strings are then evaluated and the results
+are printed.  This makes it possible to examine the values of variables
+within a function, and to assign new values to variables.  No value is
+returned from the <code>keyboard</code> function, and it continues to prompt
+for input until the user types `<samp><span class="samp">quit</span></samp>', or `<samp><span class="samp">exit</span></samp>'.
+
+        <p>If <code>keyboard</code> is invoked without any arguments, a default prompt of
+`<samp><span class="samp">debug&gt; </span></samp>' is used. 
+</p></blockquote></div>
+
+<p class="noindent">The <code>keyboard</code> function is typically placed in a script at the
+point where the user desires that the execution is stopped. It
+automatically sets the running script into the debug mode.
+
+   </body></html>
+

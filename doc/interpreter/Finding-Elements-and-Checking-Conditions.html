@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -177,7 +30,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Matrix-Manipulation.html#Matrix-Manipul
 <hr>
 </div>
 
-<h3 class="section">18.1 Finding Elements and Checking Conditions</h3>
+<h3 class="section">17.1 Finding Elements and Checking Conditions</h3>
 
 <p>The functions <code>any</code> and <code>all</code> are useful for determining
 whether any or all of the elements of a matrix satisfy some condition. 
@@ -187,7 +40,7 @@ a matrix meet a specified condition.
    <p><a name="doc_002dany"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>any</b> (<var>x, dim</var>)<var><a name="index-any-651"></a></var><br>
+&mdash; Built-in Function:  <b>any</b> (<var>x, dim</var>)<var><a name="index-any-811"></a></var><br>
 <blockquote><p>For a vector argument, return 1 if any element of the vector is
 nonzero.
 
@@ -209,7 +62,7 @@ corresponding column of the matrix are nonzero.  For example,
    <p><a name="doc_002dall"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>all</b> (<var>x, dim</var>)<var><a name="index-all-652"></a></var><br>
+&mdash; Built-in Function:  <b>all</b> (<var>x, dim</var>)<var><a name="index-all-812"></a></var><br>
 <blockquote><p>The function <code>all</code> behaves like the function <code>any</code>, except
 that it returns true only if all the elements of a vector, or all the
 elements along dimension <var>dim</var> of a matrix, are nonzero. 
@@ -232,7 +85,7 @@ than 0.9.
    <p><a name="doc_002dxor"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>xor</b> (<var>x, y</var>)<var><a name="index-xor-653"></a></var><br>
+&mdash; Mapping Function:  <b>xor</b> (<var>x, y</var>)<var><a name="index-xor-813"></a></var><br>
 <blockquote><p>Return the `exclusive or' of the entries of <var>x</var> and <var>y</var>. 
 For boolean expressions <var>x</var> and <var>y</var>,
 <code>xor (</code><var>x</var><code>, </code><var>y</var><code>)</code> is true if and only if <var>x</var> or <var>y</var>
@@ -242,7 +95,7 @@ is true, but not if both <var>x</var> and <var>y</var> are true.
    <p><a name="doc_002dis_005fduplicate_005fentry"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>is_duplicate_entry</b> (<var>x</var>)<var><a name="index-is_005fduplicate_005fentry-654"></a></var><br>
+&mdash; Function File:  <b>is_duplicate_entry</b> (<var>x</var>)<var><a name="index-is_005fduplicate_005fentry-814"></a></var><br>
 <blockquote><p>Return non-zero if any entries in <var>x</var> are duplicates of one
 another. 
 </p></blockquote></div>
@@ -250,7 +103,7 @@ another.
    <p><a name="doc_002ddiff"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>diff</b> (<var>x, k, dim</var>)<var><a name="index-diff-655"></a></var><br>
+&mdash; Function File:  <b>diff</b> (<var>x, k, dim</var>)<var><a name="index-diff-815"></a></var><br>
 <blockquote><p>If <var>x</var> is a vector of length <var>n</var>, <code>diff (</code><var>x</var><code>)</code> is the
 vector of first differences
 <var>x</var>(2) - <var>x</var>(1), <small class="dots">...</small>, <var>x</var>(n) - <var>x</var>(n-1).
@@ -275,7 +128,7 @@ then an empty matrix is returned.
    <p><a name="doc_002disinf"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>isinf</b> (<var>x</var>)<var><a name="index-isinf-656"></a></var><br>
+&mdash; Mapping Function:  <b>isinf</b> (<var>x</var>)<var><a name="index-isinf-816"></a></var><br>
 <blockquote><p>Return 1 for elements of <var>x</var> that are infinite and zero
 otherwise. For example,
 
@@ -287,7 +140,7 @@ otherwise. For example,
    <p><a name="doc_002disnan"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>isnan</b> (<var>x</var>)<var><a name="index-isnan-657"></a></var><br>
+&mdash; Mapping Function:  <b>isnan</b> (<var>x</var>)<var><a name="index-isnan-817"></a></var><br>
 <blockquote><p>Return 1 for elements of <var>x</var> that are NaN values and zero
 otherwise.  NA values are also considered NaN values.  For example,
 
@@ -299,7 +152,7 @@ otherwise.  NA values are also considered NaN values.  For example,
    <p><a name="doc_002dfinite"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>finite</b> (<var>x</var>)<var><a name="index-finite-658"></a></var><br>
+&mdash; Mapping Function:  <b>finite</b> (<var>x</var>)<var><a name="index-finite-818"></a></var><br>
 <blockquote><p>Return 1 for elements of <var>x</var> that are finite values and zero
 otherwise. For example,
 
@@ -311,11 +164,13 @@ otherwise. For example,
    <p><a name="doc_002dfind"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>find</b> (<var>x</var>)<var><a name="index-find-659"></a></var><br>
-<blockquote><p>Return a vector of indices of nonzero elements of a matrix.  To obtain a
-single index for each matrix element, Octave pretends that the columns
-of a matrix form one long vector (like Fortran arrays are stored).  For
-example,
+&mdash; Loadable Function:  <b>find</b> (<var>x</var>)<var><a name="index-find-819"></a></var><br>
+&mdash; Loadable Function:  <b>find</b> (<var>x, n</var>)<var><a name="index-find-820"></a></var><br>
+&mdash; Loadable Function:  <b>find</b> (<var>x, n, direction</var>)<var><a name="index-find-821"></a></var><br>
+<blockquote><p>Return a vector of indices of nonzero elements of a matrix, as a row if
+<var>x</var> is a row or as a column otherwise.  To obtain a single index for
+each matrix element, Octave pretends that the columns of a matrix form one
+long vector (like Fortran arrays are stored).  For example,
 
      <pre class="example">          find (eye (2))
                =&gt; [ 1; 4 ]
@@ -335,12 +190,18 @@ containing the nonzero values.  For example,
                =&gt; j = [ 1; 2 ]
                =&gt; v = [ 3; 3 ]
      </pre>
-        </blockquote></div>
+        <p>If two inputs are given, <var>n</var> indicates the number of elements to
+find from the beginning of the matrix or vector.
+
+        <p>If three inputs are given, <var>direction</var> should be one of "first" or
+"last" indicating that it should start counting found elements from the
+first or last element. 
+</p></blockquote></div>
 
    <p><a name="doc_002dcommon_005fsize"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>err</var>, <var>y1</var>, ...] = <b>common_size</b> (<var>x1, ...</var>)<var><a name="index-common_005fsize-660"></a></var><br>
+&mdash; Function File: [<var>err</var>, <var>y1</var>, <small class="dots">...</small>] = <b>common_size</b> (<var>x1, <small class="dots">...</small></var>)<var><a name="index-common_005fsize-822"></a></var><br>
 <blockquote><p>Determine if all input arguments are either scalar or of common
 size.  If so, <var>err</var> is zero, and <var>yi</var> is a matrix of the
 common size with all entries equal to <var>xi</var> if this is a scalar or

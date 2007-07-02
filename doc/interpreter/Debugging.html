@@ -5,7 +5,7 @@
 <meta name="description" content="Untitled">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="Error-Handling.html#Error-Handling" title="Error Handling">
+<link rel="prev" href="Errors-and-Warnings.html#Errors-and-Warnings" title="Errors and Warnings">
 <link rel="next" href="Input-and-Output.html#Input-and-Output" title="Input and Output">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -19,275 +19,45 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Debugging"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Input-and-Output.html#Input-and-Output">Input and Output</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Error-Handling.html#Error-Handling">Error Handling</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Errors-and-Warnings.html#Errors-and-Warnings">Errors and Warnings</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr>
 </div>
 
-<h2 class="chapter">15 Debugging</h2>
+<h2 class="chapter">14 Debugging</h2>
 
-<p><a name="doc_002ddbstop"></a>
+<p>Octave includes a built-in debugger to aid in the development of
+scripts. This can be used to interrupt the execution of an Octave script
+at a certain point, or when certain conditions are met. Once execution
+has stopped, and debug mode is entered, the symbol table at the point
+where execution has stopped can be examined and modified to check for
+errors.
 
-<div class="defun">
-&mdash; Loadable Function: rline = <b>dbstop</b> (<var>func, line</var>)<var><a name="index-dbstop-514"></a></var><br>
-<blockquote><p>Set a breakpoint in a function
-          <dl>
-<dt><code>func</code><dd>String representing the function name.  When already in debug
-mode this should be left out and only the line should be given. 
-<br><dt><code>line</code><dd>Line you would like the breakpoint to be set on
-</dl>
+   <p>The normal commandline editing and history functions are available in
+debug mode. However, one limitation on the debug mode is that
+commands entered at the debug prompt are evaluated as strings, rather
+than being handled by the Octave parser. This means that all commands in
+debug mode must be contained on a single line. That is, it is alright to
+write
 
-        <p>The rline returned is the real line that the breakpoint was set at.
-        <pre class="sp">
-     
-     </pre>
-     See also: dbclear, dbstatus, dbnext. 
-</p></blockquote></div>
+<pre class="example">     debug&gt; for i = 1:n, foo(i); endfor
+</pre>
+   <p class="noindent">in debug mode. However, writing the above in three lines will not be
+correctly evaluated. To leave the debug mode, you should simply type
+either <code>quit</code>, <code>exit</code>, <code>return</code> or <code>dbcont</code>.
 
-   <p><a name="doc_002ddbclear"></a>
+<ul class="menu">
+<li><a accesskey="1" href="Entering-Debug-Mode.html#Entering-Debug-Mode">Entering Debug Mode</a>
+<li><a accesskey="2" href="Breakpoints.html#Breakpoints">Breakpoints</a>
+<li><a accesskey="3" href="Debug-Mode.html#Debug-Mode">Debug Mode</a>
+</ul>
 
-<div class="defun">
-&mdash; Loadable Function:  <b>dbclear</b> (<var>func, line</var>)<var><a name="index-dbclear-515"></a></var><br>
-<blockquote><p>Delete a breakpoint in a function
-          <dl>
-<dt><code>func</code><dd>String representing the function name.  When already in debug
-mode this should be left out and only the line should be given. 
-<br><dt><code>line</code><dd>Line where you would like to remove the the breakpoint
-</dl>
-        No checking is done to make sure that the line you requested is really
-a breakpoint.   If you get the wrong line nothing will happen.
-        <pre class="sp">
-     
-     </pre>
-     See also: dbstop, dbstatus, dbwhere. 
-</p></blockquote></div>
-
-   <p><a name="doc_002ddbstatus"></a>
-
-<div class="defun">
-&mdash; Loadable Function: lst = <b>dbstatus</b> ([<var>func</var>])<var><a name="index-dbstatus-516"></a></var><br>
-<blockquote><p>Return a vector containing the lines on which a function has
-breakpoints set.
-          <dl>
-<dt><code>func</code><dd>String representing the function name.  When already in debug
-mode this should be left out. 
-</dl>
-
-        <pre class="sp">
-     
-     </pre>
-     See also: dbclear, dbwhere. 
-</p></blockquote></div>
-
-   <p><a name="doc_002ddbwhere"></a>
-
-<div class="defun">
-&mdash; Loadable Function:  <b>dbwhere</b> ()<var><a name="index-dbwhere-517"></a></var><br>
-<blockquote><p>Show where we are in the code
-        <pre class="sp">
-     
-     </pre>
-     See also: dbclear, dbstatus, dbstop. 
-</p></blockquote></div>
-
-   <p><a name="doc_002ddbtype"></a>
-
-<div class="defun">
-&mdash; Loadable Function:  <b>dbtype</b> ()<var><a name="index-dbtype-518"></a></var><br>
-<blockquote><p>List script file with line numbers.
-        <pre class="sp">
-     
-     </pre>
-     See also: dbclear, dbstatus, dbstop. 
-</p></blockquote></div>
-
-   <p><a name="doc_002ddebug_005fon_005finterrupt"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>debug_on_interrupt</b><var><a name="index-debug_005fon_005finterrupt-519"></a></var><br>
-<blockquote><p>If <code>debug_on_interrupt</code> is nonzero, Octave will try to enter
-debugging mode when it receives an interrupt signal (typically
-generated with <kbd>C-c</kbd>).  If a second interrupt signal is received
-before reaching the debugging mode, a normal interrupt will occur. 
-The default value is 0. 
-</p></blockquote></div>
-
-   <p><a name="doc_002ddebug_005fon_005fwarning"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>debug_on_warning</b><var><a name="index-debug_005fon_005fwarning-520"></a></var><br>
-<blockquote><p>If the value of <code>debug_on_warning</code> is nonzero, Octave will try
-to enter the debugger when a warning is encountered.  The default
-value is 0. 
-</p></blockquote></div>
-
-   <p><a name="doc_002ddebug_005fon_005ferror"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>debug_on_error</b><var><a name="index-debug_005fon_005ferror-521"></a></var><br>
-<blockquote><p>If the value of <code>debug_on_error</code> is nonzero, Octave will try
-to enter the debugger when an error is encountered.  This will also
-inhibit printing of the normal traceback message (you will only see
-the top-level error message).  The default value is 0. 
-</p></blockquote></div>
-
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+   </body></html>
 

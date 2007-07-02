@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Plotting.html#Plotting" title="Plotting">
-<link rel="prev" href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting" title="Three-Dimensional Plotting">
+<link rel="prev" href="Manipulating-Existing-Plots.html#Manipulating-Existing-Plots" title="Manipulating Existing Plots">
 <link rel="next" href="Multiple-Plots-on-One-Page.html#Multiple-Plots-on-One-Page" title="Multiple Plots on One Page">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -20,215 +20,128 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Plot-Annotations"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Multiple-Plots-on-One-Page.html#Multiple-Plots-on-One-Page">Multiple Plots on One Page</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">Three-Dimensional Plotting</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Manipulating-Existing-Plots.html#Manipulating-Existing-Plots">Manipulating Existing Plots</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Plotting.html#Plotting">Plotting</a>
 <hr>
 </div>
 
-<h3 class="section">17.4 Plot Annotations</h3>
+<h3 class="section">16.5 Plot Annotations</h3>
 
-<p><a name="doc_002dgrid"></a>
+<p><a name="doc_002dtitle"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>grid</b> (<var>arg</var>)<var><a name="index-grid-621"></a></var><br>
-<blockquote><p>For two-dimensional plotting, force the display of a grid on the plot. 
-The argument may be either <code>"on"</code> or <code>"off"</code>.  If it is
-omitted, <code>"on"</code> is assumed.
-        <pre class="sp">
-     
-     </pre>
-     See also: plot, semilogx, semilogy, loglog, polar, mesh, contour,
-bar, stairs, replot, xlabel, ylabel, title. 
+&mdash; Function File:  <b>title</b> (<var>title</var>)<var><a name="index-title-785"></a></var><br>
+<blockquote><p>Create a title object and return a handle to it. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dtitle"></a>
+   <p><a name="doc_002dlegend"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>title</b> (<var>string</var>)<var><a name="index-title-622"></a></var><br>
-<blockquote><p>Specify a title for a plot.
-        <pre class="sp">
-     
-     </pre>
-     See also: plot, semilogx, semilogy, loglog, polar, mesh, contour,
-bar, stairs, replot, xlabel, ylabel. 
+&mdash; Function File:  <b>legend</b> (<var>st1, st2, <small class="dots">...</small></var>)<var><a name="index-legend-786"></a></var><br>
+&mdash; Function File:  <b>legend</b> (<var>st1, st2, <small class="dots">...</small>, pos</var>)<var><a name="index-legend-787"></a></var><br>
+&mdash; Function File:  <b>legend</b> (<var>matstr</var>)<var><a name="index-legend-788"></a></var><br>
+&mdash; Function File:  <b>legend</b> (<var>matstr, pos</var>)<var><a name="index-legend-789"></a></var><br>
+&mdash; Function File:  <b>legend</b> (<var>cell</var>)<var><a name="index-legend-790"></a></var><br>
+&mdash; Function File:  <b>legend</b> (<var>cell, pos</var>)<var><a name="index-legend-791"></a></var><br>
+&mdash; Function File:  <b>legend</b> (<var>'func'</var>)<var><a name="index-legend-792"></a></var><br>
+<blockquote>
+<p>Legend puts a legend on the current plot using the specified strings
+as labels. Use independant strings (<var>st1</var>, <var>st2</var>, <small class="dots">...</small>), a
+matrix of strings (<var>matstr</var>), or a cell array of strings (<var>cell</var>) to
+specify legends. Legend works on line graphs, bar graphs, etc. 
+Be sure to call plot before calling legend.
+
+        <p><var>pos</var> optionally  places the legend in the specified location:
+
+        <p><table summary=""><tr align="left"><td valign="top" width="10%"></td><td valign="top" width="10%">-1 </td><td valign="top" width="80%">
+  To the top right of the plot
+<br></td></tr><tr align="left"><td valign="top" width="10%"></td><td valign="top" width="10%">0 </td><td valign="top" width="80%">
+  Don't move the legend box (default)
+<br></td></tr><tr align="left"><td valign="top" width="10%"></td><td valign="top" width="10%">1 </td><td valign="top" width="80%">
+  Upper right-hand corner
+<br></td></tr><tr align="left"><td valign="top" width="10%"></td><td valign="top" width="10%">2 </td><td valign="top" width="80%">
+  Upper left-hand corner
+<br></td></tr><tr align="left"><td valign="top" width="10%"></td><td valign="top" width="10%">3 </td><td valign="top" width="80%">
+  Lower left-hand corner
+<br></td></tr><tr align="left"><td valign="top" width="10%"></td><td valign="top" width="10%">4 </td><td valign="top" width="80%">
+  Lower right-hand corner
+        <br></td></tr></table>
+
+        <p>Some specific functions are directely avaliable using <var>func</var>:
+
+          <dl>
+<dt><code>show</code><dd>  Show legends from the plot
+<br><dt><code>hide</code><dt><code>off</code><dd>  Hide legends from the plot
+<br><dt><code>boxon</code><dd>  Draw a box around legends
+<br><dt><code>boxoff</code><dd>  Withdraw the box around legends
+<br><dt><code>left</code><dd>  Text is to the left of the keys
+<br><dt><code>right</code><dd>  Text is to the right of the keys
+</dl>
+        </p></blockquote></div>
+
+   <p><a name="doc_002dtext"></a>
+
+<div class="defun">
+&mdash; Function File: <var>h</var> = <b>text</b> (<var>x, y, label</var>)<var><a name="index-text-793"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>text</b> (<var>x, y, z, label</var>)<var><a name="index-text-794"></a></var><br>
+<blockquote><p>Create a text object with text <var>label</var> at position <var>x</var>,
+<var>y</var>, <var>z</var> on the current axes.  The label may be followed by
+property-value pairs. 
 </p></blockquote></div>
 
    <p><a name="doc_002dxlabel"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>xlabel</b> (<var>string</var>)<var><a name="index-xlabel-623"></a></var><br>
-&mdash; Function File:  <b>ylabel</b> (<var>string</var>)<var><a name="index-ylabel-624"></a></var><br>
-&mdash; Function File:  <b>zlabel</b> (<var>string</var>)<var><a name="index-zlabel-625"></a></var><br>
-<blockquote><p>Specify x, y, and z axis labels for the plot.  If you already have a plot
-displayed, use the command <code>replot</code> to redisplay it with the new
-labels.
+&mdash; Function File:  <b>xlabel</b> (<var>string</var>)<var><a name="index-xlabel-795"></a></var><br>
+&mdash; Function File:  <b>ylabel</b> (<var>string</var>)<var><a name="index-ylabel-796"></a></var><br>
+&mdash; Function File:  <b>zlabel</b> (<var>string</var>)<var><a name="index-zlabel-797"></a></var><br>
+<blockquote><p>Specify x, y, and z axis labels for the plot.
         <pre class="sp">
      
      </pre>
-     See also: plot, semilogx, semilogy, loglog, polar, mesh, contour,
-bar, stairs, replot, ylabel, title. 
+     <strong>See also:</strong> plot, semilogx, semilogy, loglog, polar, mesh, contour,
+bar, stairs,  ylabel, title. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dtop_005ftitle"></a>
+   <p><a name="doc_002dbox"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>top_title</b> (<var>string</var>)<var><a name="index-top_005ftitle-626"></a></var><br>
-&mdash; Function File:  <b>bottom_title</b> (<var>string</var>)<var><a name="index-bottom_005ftitle-627"></a></var><br>
-<blockquote><p>Makes a title with text <var>string</var> at the top (bottom) of the plot. 
+&mdash; Function File:  <b>box</b> (<var>arg</var>)<var><a name="index-box-798"></a></var><br>
+&mdash; Function File:  <b>grid</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-grid-799"></a></var><br>
+<blockquote><p>Control the display of a border around the plot. 
+The argument may be either <code>"on"</code> or <code>"off"</code>.  If it is
+omitted, the current box state is toggled.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> grid. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgrid"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>grid</b> (<var>arg</var>)<var><a name="index-grid-800"></a></var><br>
+&mdash; Function File:  <b>grid</b> (<var>"minor", arg2</var>)<var><a name="index-grid-801"></a></var><br>
+<blockquote><p>Force the display of a grid on the plot. 
+The argument may be either <code>"on"</code> or <code>"off"</code>.  If it is
+omitted, the current grid state is toggled.
+
+        <p>If <var>arg</var> is <code>"minor"</code> then the minor grid is toggled. When
+using a minor grid a second argument <var>arg2</var> is allowed, which can
+be either <code>"on"</code> or <code>"off"</code> to explicitly set the state of
+the minor grid.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> plot, semilogx, semilogy, loglog, polar, mesh, contour,
+bar, stairs, xlabel, ylabel, title. 
 </p></blockquote></div>
 
    </body></html>

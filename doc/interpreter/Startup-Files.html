@@ -5,7 +5,7 @@
 <meta name="description" content="Untitled">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Invoking-Octave.html#Invoking-Octave" title="Invoking Octave">
+<link rel="up" href="Invoking-Octave-from-the-Command-Line.html#Invoking-Octave-from-the-Command-Line" title="Invoking Octave from the Command Line">
 <link rel="prev" href="Command-Line-Options.html#Command-Line-Options" title="Command Line Options">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -19,191 +19,45 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Startup-Files"></a>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Command-Line-Options.html#Command-Line-Options">Command Line Options</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-Octave.html#Invoking-Octave">Invoking Octave</a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-Octave-from-the-Command-Line.html#Invoking-Octave-from-the-Command-Line">Invoking Octave from the Command Line</a>
 <hr>
 </div>
 
 <h4 class="subsection">2.1.2 Startup Files</h4>
 
-<p><a name="index-initialization-62"></a><a name="index-startup-63"></a>
-When Octave starts, it looks for commands to execute from the following
-files:
+<p><a name="index-initialization-63"></a><a name="index-startup-64"></a>
+When Octave starts, it looks for commands to execute from the files in
+the following list. These files may contain any valid Octave commands,
+including function definitions.
 
-   <p><a name="index-startup-files-64"></a>
+   <p><a name="index-startup-files-65"></a>
      <dl>
 <dt><var>octave-home</var><code>/share/octave/site/m/startup/octaverc</code><dd>Where <var>octave-home</var> is the directory in which all of Octave is
-installed (the default is <samp><span class="file">/usr/local</span></samp>).  This file is
+installed (the default is <samp><span class="file">/usr/local/octave/cvs</span></samp>).  This file is
 provided so that changes to the default Octave environment can be made
 globally for all users at your site for all versions of Octave you have
 installed.  Some care should be taken when making changes to this file,
 since all users of Octave at your site will be affected.
 
      <br><dt><var>octave-home</var><code>/share/octave/</code><var>version</var><code>/m/startup/octaverc</code><dd>Where <var>octave-home</var> is the directory in which all of Octave is
-installed (the default is <samp><span class="file">/usr/local</span></samp>), and <var>version</var>
+installed (the default is <samp><span class="file">/usr/local/octave/cvs</span></samp>), and <var>version</var>
 is the version number of Octave.  This file is provided so that changes
 to the default Octave environment can be made globally for all users for
 a particular version of Octave.  Some care should be taken when making
 changes to this file, since all users of Octave at your site will be
 affected.
 
-     <br><dt><code>~/.octaverc</code><dd><a name="index-g_t_0040code_007b_007e_002f_002eoctaverc_007d-65"></a>This file is normally used to make personal changes to the default
+     <br><dt><code>~/.octaverc</code><dd><a name="index-g_t_0040code_007b_007e_002f_002eoctaverc_007d-66"></a>This file is normally used to make personal changes to the default
 Octave environment.
 
-     <br><dt><code>.octaverc</code><dd><a name="index-g_t_0040code_007b_002eoctaverc_007d-66"></a>This file can be used to make changes to the default Octave environment
+     <br><dt><code>.octaverc</code><dd><a name="index-g_t_0040code_007b_002eoctaverc_007d-67"></a>This file can be used to make changes to the default Octave environment
 for a particular project.  Octave searches for this file in the current
 directory after it reads <samp><span class="file">~/.octaverc</span></samp>.  Any use of the <code>cd</code>
 command in the <samp><span class="file">~/.octaverc</span></samp> file will affect the directory that
@@ -216,9 +70,6 @@ Octave searches for the file <samp><span class="file">.octaverc</span></samp>.
    <p>A message will be displayed as each of the startup files is read if you
 invoke Octave with the <code>--verbose</code> option but without the
 <code>--silent</code> option.
-
-   <p>Startup files may contain any valid Octave commands, including function
-definitions.
 
    </body></html>
 

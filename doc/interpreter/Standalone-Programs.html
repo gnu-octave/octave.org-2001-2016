@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+<title>Standalone Programs - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions" title="Dynamically Linked Functions">
+<link rel="prev" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Standalone-Programs"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Dynamically Linked Functions</a>
+<hr>
+</div>
+
+<h3 class="section">A.3 Standalone Programs</h3>
+
+<p>The libraries Octave itself uses, can be utilized in standalone
+applications.  These applications then have access, for example, to the
+array and matrix classes as well as to all the Octave algorithms.  The
+following C++ program, uses class Matrix from liboctave.a or
+liboctave.so.
+
+<pre class="example">     #include &lt;iostream&gt;
+     #include &lt;octave/oct.h&gt;
+     int
+     main (void)
+     {
+       std::cout &lt;&lt; "Hello Octave world!\n";
+       int n = 2;
+       Matrix a_matrix = Matrix (n, n);
+       for (octave_idx_type i = 0; i &lt; n; i++)
+         {
+           for (octave_idx_type j = 0; j &lt; n; j++)
+             {
+               a_matrix(row,column) = (i+1)*10 + (j+1);
+             }
+         }
+       std::cout &lt;&lt; a_matrix;
+       return 0;
+     }
+</pre>
+   <p class="noindent">mkoctfile can then be used to build a standalone application with a
+command like
+
+<pre class="example">     $ mkoctfile --link-stand-alone hello.cc -o hello
+     $ ./hello
+     Hello Octave world!
+       11 12
+       21 22
+     $
+</pre>
+   <p>Note that the application <code>hello</code> will be dynamically linked
+against the octave libraries and any octave support libraries.
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 2005 David Bateman -->
+<!-- Copyright (C) 2002-2005 Paul Kienzle -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

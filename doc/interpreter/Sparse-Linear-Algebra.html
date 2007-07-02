@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sparse-Matrices.html#Sparse-Matrices" title="Sparse Matrices">
-<link rel="prev" href="Graph-Theory.html#Graph-Theory" title="Graph Theory">
+<link rel="prev" href="Basics.html#Basics" title="Basics">
 <link rel="next" href="Iterative-Techniques.html#Iterative-Techniques" title="Iterative Techniques">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -20,170 +20,23 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Sparse-Linear-Algebra"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Iterative-Techniques.html#Iterative-Techniques">Iterative Techniques</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Graph-Theory.html#Graph-Theory">Graph Theory</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Basics.html#Basics">Basics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Sparse-Matrices.html#Sparse-Matrices">Sparse Matrices</a>
 <hr>
 </div>
 
-<h3 class="section">22.3 Linear Algebra on Sparse Matrices</h3>
+<h3 class="section">22.2 Linear Algebra on Sparse Matrices</h3>
 
 <p>Octave includes a poly-morphic solver for sparse matrices, where
 the exact solver used to factorize the matrix, depends on the properties
-of the sparse matrix itself. The cost of determining the matrix type
+of the sparse matrix itself. Generally, the cost of determining the matrix type
 is small relative to the cost of factorizing the matrix itself, but in any
 case the matrix type is cached once it is calculated, so that it is not
 re-determined each time it is used in a linear equation.
@@ -191,19 +44,17 @@ re-determined each time it is used in a linear equation.
    <p>The selection tree for how the linear equation is solve is
 
      <ol type=1 start=1>
-<li>If the matrix is not square go to 9.
-
-     <li>If the matrix is diagonal, solve directly and goto 9
+<li>If the matrix is diagonal, solve directly and goto 8
 
      <li>If the matrix is a permuted diagonal, solve directly taking into
-account the permutations. Goto 9
+account the permutations. Goto 8
 
-     <li>If the matrix is banded and if the band density is less than that
-given by <code>spparms ("bandden")</code> continue, else goto 5.
+     <li>If the matrix is square, banded and if the band density is less
+than that given by <code>spparms ("bandden")</code> continue, else goto 4.
 
           <ol type=a start=1>
 <li>If the matrix is tridiagonal and the right-hand side is not sparse
-continue, else goto 4b.
+continue, else goto 3b.
 
                <ol type=1 start=1>
 <li>If the matrix is hermitian, with a positive real diagonal, attempt
@@ -211,7 +62,7 @@ continue, else goto 4b.
 
                <li>If the above failed or the matrix is not hermitian with a positive
       real diagonal use Gaussian elimination with pivoting using
-      <span class="sc">Lapack</span> xGTSV, and goto 9.
+      <span class="sc">Lapack</span> xGTSV, and goto 8.
                </ol>
 
           <li>If the matrix is hermitian with a positive real diagonal, attempt
@@ -219,27 +70,26 @@ continue, else goto 4b.
 
           <li>if the above failed or the matrix is not hermitian with a positive
       real diagonal use Gaussian elimination with pivoting using
-      <span class="sc">Lapack</span> xGBTRF, and goto 9.
+      <span class="sc">Lapack</span> xGBTRF, and goto 8.
           </ol>
 
      <li>If the matrix is upper or lower triangular perform a sparse forward
-or backward subsitution, and goto 9
+or backward substitution, and goto 8
 
      <li>If the matrix is a upper triangular matrix with column permutations
 or lower triangular matrix with row permutations, perform a sparse forward
-or backward subsitution, and goto 9
+or backward substitution, and goto 8
 
-     <li>If the matrix is hermitian with a real positive diagonal, attempt
+     <li>If the matrix is square, hermitian with a real positive diagonal, attempt
 sparse Cholesky factorization using CHOLMOD.
 
      <li>If the sparse Cholesky factorization failed or the matrix is not
-hermitian with a real positive diagonal, factorize using UMFPACK.
+hermitian with a real positive diagonal, and the matrix is square, factorize
+using UMFPACK.
 
      <li>If the matrix is not square, or any of the previous solvers flags
-a singular or near singular matrix, find a minimum norm solution
-
-     <p>FIXME: QR solvers not yet written.
-
+a singular or near singular matrix, find a minimum norm solution using
+CXSPARSE<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>.
         </ol>
 
    <p>The band density is defined as the number of non-zero values in the matrix
@@ -247,22 +97,363 @@ divided by the number of non-zero values in the matrix. The banded matrix
 solvers can be entirely disabled by using <dfn>spparms</dfn> to set <code>bandden</code>
 to 1 (i.e. <code>spparms ("bandden", 1)</code>).
 
-   <p>All of the solvers above, expect the banded solvers, calculate an
-estimate of the condition number. This can be used to detect numerical
-stability problems in the solution and force a minimum norm solution
-to be used. However, for narrow banded matrices, the cost of
-calculating the condition number is significant, and can in fact exceed
-the cost of factoring the matrix. Therefore the condition number is
-not calculated for banded matrices, and therefore unless the factorization
-is exactly singular, these numerical instabilities won't be detected. 
-In cases where, this might be a problem the user is recommended to disable
-the banded solvers as above, at a significant cost in terms of speed.
+   <p>The QR solver factorizes the problem with a Dulmage-Mendhelsohn, to
+seperate the problem into blocks that can be treated as over-determined,
+multiple well determined blocks, and a final over-determined block. For
+matrices with blocks of strongly connectted nodes this is a big win as
+LU decomposition can be used for many blocks. It also significantly
+improves the chance of finding a solution to over-determined problems
+rather than just returning a vector of <dfn>NaN</dfn>'s.
+
+   <p>All of the solvers above, can calculate an estimate of the condition
+number. This can be used to detect numerical stability problems in the
+solution and force a minimum norm solution to be used. However, for
+narrow banded, triangular or diagonal matrices, the cost of
+calculating the condition number is significant, and can in fact
+exceed the cost of factoring the matrix. Therefore the condition
+number is not calculated in these case, and Octave relies on simplier
+techniques to detect sinular matrices or the underlying LAPACK code in
+the case of banded matrices.
 
    <p>The user can force the type of the matrix with the <code>matrix_type</code>
 function. This overcomes the cost of discovering the type of the matrix. 
 However, it should be noted incorrectly identifying the type of the matrix
 will lead to unpredictable results, and so <code>matrix_type</code> should be
 used with care.
+
+   <p><a name="doc_002dnormest"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>n</var>, <var>c</var>] = <b>normest</b> (<var>a, tol</var>)<var><a name="index-normest-1200"></a></var><br>
+<blockquote><p>Estimate the 2-norm of the matrix <var>a</var> using a power series
+analysis. This is typically used for large matrices, where the cost
+of calculating the <code>norm (</code><var>a</var><code>)</code> is prohibitive and an approximation
+to the 2-norm is acceptable.
+
+        <p><var>tol</var> is the tolerance to which the 2-norm is calculated. By default
+<var>tol</var> is 1e-6. <var>c</var> returns the number of iterations needed for
+<code>normest</code> to converge. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspchol"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>r</var> = <b>spchol</b> (<var>a</var>)<var><a name="index-spchol-1201"></a></var><br>
+&mdash; Loadable Function: [<var>r</var>, <var>p</var>] = <b>spchol</b> (<var>a</var>)<var><a name="index-spchol-1202"></a></var><br>
+&mdash; Loadable Function: [<var>r</var>, <var>p</var>, <var>q</var>] = <b>spchol</b> (<var>a</var>)<var><a name="index-spchol-1203"></a></var><br>
+<blockquote><p><a name="index-Cholesky-factorization-1204"></a>Compute the Cholesky factor, <var>r</var>, of the symmetric positive definite
+sparse matrix <var>a</var>, where
+
+     <pre class="example">          r' * r = a.
+     </pre>
+        <p>If called with 2 or more outputs <var>p</var> is the 0 when <var>r</var> is positive
+definite and <var>p</var> is a positive integer otherwise.
+
+        <p>If called with 3 outputs then a sparsity preserving row/column permutation
+is applied to <var>a</var> prior to the factorization. That is <var>r</var>
+is the factorization of <var>a</var><code>(</code><var>q</var><code>,</code><var>q</var><code>)</code> such that
+
+     <pre class="example">          r' * r = q * a * q'.
+     </pre>
+        <p>Note that <code>splchol</code> factorizations is faster and use less memory.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> spcholinv, spchol2inv, splchol. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspcholinv"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>spcholinv</b> (<var>a</var>)<var><a name="index-spcholinv-1205"></a></var><br>
+<blockquote><p>Use the Cholesky factorization to compute the inverse of the
+sparse symmetric positive definite matrix <var>a</var>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> spchol, spchol2inv. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspchol2inv"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>spchol2inv</b> (<var>u</var>)<var><a name="index-spchol2inv-1206"></a></var><br>
+<blockquote><p>Invert a sparse symmetric, positive definite square matrix from its
+Cholesky decomposition, <var>u</var>.  Note that <var>u</var> should be an
+upper-triangular matrix with positive diagonal elements. 
+<code>chol2inv (</code><var>u</var><code>)</code> provides <code>inv (</code><var>u</var><code>'*</code><var>u</var><code>)</code> but
+it is much faster than using <code>inv</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> spchol, spcholinv. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspdet"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>d</var>, <var>rcond</var>] = <b>spdet</b> (<var>a</var>)<var><a name="index-spdet-1207"></a></var><br>
+<blockquote><p>Compute the determinant of sparse matrix <var>a</var> using UMFPACK.  Return
+an estimate of the reciprocal condition number if requested. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspinv"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>x</var>, <var>rcond</var>] = <b>spinv</b> (<var>a, Q</var>)<var><a name="index-spinv-1208"></a></var><br>
+<blockquote><p>Compute the inverse of the sparse square matrix <var>a</var>.  Return an estimate
+of the reciprocal condition number if requested, otherwise warn of an
+ill-conditioned matrix if the reciprocal condition number is small. 
+This function takes advantage of the sparsity of the matrix to accelerate
+the calculation of the inverse.
+
+        <p>In general <var>x</var> will be a full matrix, and so if possible forming the
+inverse of a sparse matrix should be avoided. It is significantly more
+accurate and faster to do <var>y</var><code> = </code><var>a</var><code> \ </code><var>b</var>, rather
+than <var>y</var><code> = spinv (</code><var>a</var><code>) * </code><var>b</var>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspkron"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>spkron</b> (<var>a, b</var>)<var><a name="index-spkron-1209"></a></var><br>
+<blockquote><p>Form the kronecker product of two sparse matrices. This is defined
+block by block as
+
+     <pre class="example">          x = [a(i, j) b]
+     </pre>
+        <p>For example,
+
+     <pre class="example">          kron(speye(3),spdiag([1,2,3]))
+          =&gt;
+          Compressed Column Sparse (rows = 9, cols = 9, nnz = 9)
+          
+            (1, 1) -&gt;  1
+            (2, 2) -&gt;  2
+            (3, 3) -&gt;  3
+            (4, 4) -&gt;  1
+            (5, 5) -&gt;  2
+            (6, 6) -&gt;  3
+            (7, 7) -&gt;  1
+            (8, 8) -&gt;  2
+            (9, 9) -&gt;  3
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dsplchol"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>l</var> = <b>splchol</b> (<var>a</var>)<var><a name="index-splchol-1210"></a></var><br>
+&mdash; Loadable Function: [<var>l</var>, <var>p</var>] = <b>splchol</b> (<var>a</var>)<var><a name="index-splchol-1211"></a></var><br>
+&mdash; Loadable Function: [<var>l</var>, <var>p</var>, <var>q</var>] = <b>splchol</b> (<var>a</var>)<var><a name="index-splchol-1212"></a></var><br>
+<blockquote><p><a name="index-Cholesky-factorization-1213"></a>Compute the Cholesky factor, <var>l</var>, of the symmetric positive definite
+sparse matrix <var>a</var>, where
+
+     <pre class="example">          l * l' = a.
+     </pre>
+        <p>If called with 2 or more outputs <var>p</var> is the 0 when <var>l</var> is positive
+definite and <var>l</var> is a positive integer otherwise.
+
+        <p>If called with 3 outputs that a sparsity preserving row/column permutation
+is applied to <var>a</var> prior to the factorization. That is <var>l</var>
+is the factorization of <var>a</var><code>(</code><var>q</var><code>,</code><var>q</var><code>)</code> such that
+
+     <pre class="example">          r * r' = a (q, q).
+     </pre>
+        <p>Note that <code>splchol</code> factorizations is faster and use less memory
+than <code>spchol</code>. <code>splchol(</code><var>a</var><code>)</code> is equivalent to
+<code>spchol(</code><var>a</var><code>)'</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> spcholinv, spchol2inv, splchol. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsplu"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>l</var>, <var>u</var>] = <b>splu</b> (<var>a</var>)<var><a name="index-splu-1214"></a></var><br>
+&mdash; Loadable Function: [<var>l</var>, <var>u</var>, <var>P</var>] = <b>splu</b> (<var>a</var>)<var><a name="index-splu-1215"></a></var><br>
+&mdash; Loadable Function: [<var>l</var>, <var>u</var>, <var>P</var>, <var>Q</var>] = <b>splu</b> (<var>a</var>)<var><a name="index-splu-1216"></a></var><br>
+&mdash; Loadable Function: [<var>l</var>, <var>u</var>, <var>P</var>, <var>Q</var>] = <b>splu</b> (<var><small class="dots">...</small>, thres</var>)<var><a name="index-splu-1217"></a></var><br>
+&mdash; Loadable Function: [<var>l</var>, <var>u</var>, <var>P</var>] = <b>splu</b> (<var><small class="dots">...</small>, Q</var>)<var><a name="index-splu-1218"></a></var><br>
+<blockquote><p><a name="index-LU-decomposition-1219"></a>Compute the LU decomposition of the sparse matrix <var>a</var>, using
+subroutines from UMFPACK.  The result is returned in a permuted
+form, according to the optional return values <var>P</var> and <var>Q</var>.
+
+        <p>Called with two or three output arguments and a single input argument,
+<dfn>splu</dfn> is a replacement for <dfn>lu</dfn>, and therefore the sparsity
+preserving column permutations <var>Q</var> are not performed. Called with
+a fourth output argument, the sparsity preserving column transformation
+<var>Q</var> is returned, such that <var>P</var><code> * </code><var>a</var><code> * </code><var>Q</var><code> =
+</code><var>l</var><code> * </code><var>u</var>.
+
+        <p>An additional input argument <var>thres</var>, that defines the pivoting
+threshold can be given. Alternatively, the desired sparsity preserving
+column permutations <var>Q</var> can be passed. Note that <var>Q</var> is assumed
+to be fixed if three are fewer than four output arguments. Otherwise,
+the updated column permutations are returned as the fourth argument.
+
+        <p>With two output arguments, returns the permuted forms of the upper and
+lower triangular matrices, such that <var>a</var><code> = </code><var>l</var><code> * </code><var>u</var>. 
+With two or three output arguments, if a user-defined <var>Q</var> is given,
+then <var>u</var><code> * </code><var>Q</var><code>'</code> is returned. The matrix is not required to
+be square.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> sparse, spinv, colamd, symamd. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspparms"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>spparms</b> ()<var><a name="index-spparms-1220"></a></var><br>
+&mdash; Loadable Function: <var>vals</var> = <b>spparms</b> ()<var><a name="index-spparms-1221"></a></var><br>
+&mdash; Loadable Function: [<var>keys</var>, <var>vals</var>] = <b>spparms</b> ()<var><a name="index-spparms-1222"></a></var><br>
+&mdash; Loadable Function: <var>val</var> = <b>spparms</b> (<var>key</var>)<var><a name="index-spparms-1223"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>vals</var>)<var><a name="index-spparms-1224"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>'defaults'</var>)<var><a name="index-spparms-1225"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>'tight'</var>)<var><a name="index-spparms-1226"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>key, val</var>)<var><a name="index-spparms-1227"></a></var><br>
+<blockquote><p>Sets or displays the parameters used by the sparse solvers and factorization
+functions. The first four calls above get information about the current
+settings, while the others change the current settings. The parameters are
+stored as pairs of keys and values, where the values are all floats and the
+keys are one of the strings
+
+          <ul>
+<li>spumoni
+Printing level of debugging information of the solvers (default 0)
+<li>ths_rel
+Included for compatiability. Bot used. (default 1)
+<li>ths_abs
+Included for compatiability. Bot used. (default 1)
+<li>exact_d
+Included for compatiability. Bot used. (default 0)
+<li>supernd
+Included for compatiability. Not used. (default 3)
+<li>rreduce
+Included for compatiability. Not used. (default 3)
+<li>wh_frac
+Inluded for compatiability. Not used. (default 0.5)
+<li>autommd
+Flag whether the LU/QR and the '\' and '/' operators will automatically
+use the sparsity preserving mmd functions (default 1)
+<li>autoamd
+Flag whether the LU and the '\' and '/' operators will automatically
+use the sparsity preserving amd functions (default 1)
+<li>piv_tol
+The pivot tolerance of the UMFPACK solvers (default 0.1)
+<li>bandden
+?? (default 0.5)
+<li>umfpack
+Flag whether the UMFPACK or mmd solvers are used for the LU, '\' and
+'/' operations (default 1)
+</ul>
+
+        <p>The value of individual keys can be set with <code>spparms (</code><var>key</var><code>,
+</code><var>val</var><code>)</code>. The default values can be restored with the special keyword
+'defaults'. The special keyword 'tight' can be used to set the mmd solvers
+to attempt for a sparser solution at the potetial cost of longer running
+time. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dspqr"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>r</var> = <b>spqr</b> (<var>a</var>)<var><a name="index-spqr-1228"></a></var><br>
+&mdash; Loadable Function: <var>r</var> = <b>spqr</b> (<var>a,0</var>)<var><a name="index-spqr-1229"></a></var><br>
+&mdash; Loadable Function: [<var>c</var>, <var>r</var>] = <b>spqr</b> (<var>a,b</var>)<var><a name="index-spqr-1230"></a></var><br>
+&mdash; Loadable Function: [<var>c</var>, <var>r</var>] = <b>spqr</b> (<var>a,b,0</var>)<var><a name="index-spqr-1231"></a></var><br>
+<blockquote><p><a name="index-QR-factorization-1232"></a>Compute the sparse QR factorization of <var>a</var>, using <span class="sc">CSparse</span>. 
+As the matrix <var>Q</var> is in general a full matrix, this function returns
+the <var>Q</var>-less factorization <var>r</var> of <var>a</var>, such that
+<var>r</var><code> = chol (</code><var>a</var><code>' * </code><var>a</var><code>)</code>.
+
+        <p>If the final argument is the scalar <code>0</code> and the number of rows is
+larger than the number of columns, then an economy factorization is
+returned. That is <var>r</var> will have only <code>size (</code><var>a</var><code>,1)</code> rows.
+
+        <p>If an additional matrix <var>b</var> is supplied, then <code>spqr</code> returns
+<var>c</var>, where <var>c</var><code> = </code><var>q</var><code>' * </code><var>b</var>. This allows the
+least squares approximation of <var>a</var><code> \ </code><var>b</var> to be calculated
+as
+
+     <pre class="example">          [<var>c</var>,<var>r</var>] = spqr (<var>a</var>,<var>b</var>)
+          <var>x</var> = <var>r</var> \ <var>c</var>
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> spchol, qr. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsprank"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>p</var> = <b>sprank</b> (<var>s</var>)<var><a name="index-sprank-1233"></a></var><br>
+<blockquote>
+<p><a name="index-Structural-Rank-1234"></a>Calculates the structural rank of a sparse matrix <var>s</var>. Note that
+only the structure of the matrix is used in this calculation based on
+a Dulmage-Mendelsohn to block triangular form. As such the numerical
+rank of the matrix <var>s</var> is bounded by <code>sprank (</code><var>s</var><code>) &gt;=
+rank (</code><var>s</var><code>)</code>. Ignoring floating point errors <code>sprank (</code><var>s</var><code>) ==
+rank (</code><var>s</var><code>)</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> dmperm. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsymbfact"></a>
+
+<div class="defun">
+&mdash; Loadable Function: [<var>count</var>, <var>h</var>, <var>parent</var>, <var>post</var>, <var>r</var>] = <b>symbfact</b> (<var>s, typ, mode</var>)<var><a name="index-symbfact-1235"></a></var><br>
+<blockquote>
+<p>Performs a symbolic factorization analysis on the sparse matrix <var>s</var>. 
+Where
+
+          <dl>
+<dt><var>s</var><dd><var>s</var> is a complex or real sparse matrix.
+
+          <br><dt><var>typ</var><dd>Is the type of the factorization and can be one of
+
+               <dl>
+<dt><code>sym</code><dd>Factorize <var>s</var>. This is the default.
+
+               <br><dt><code>col</code><dd>Factorize <var>s</var><code>' * </code><var>s</var>. 
+<br><dt><code>row</code><dd>Factorize <var>s</var><code> * </code><var>s</var><code>'</code>. 
+<br><dt><code>lo</code><dd>Factorize <var>s</var><code>'</code>
+</dl>
+
+          <br><dt><var>mode</var><dd>The default is to return the Cholesky factorization for <var>r</var>, and if
+<var>mode</var> is 'L', the conjugate transpose of the Choleksy factorization
+is returned. The conjugate transpose version is faster and uses less
+memory, but returns the same values for <var>count</var>, <var>h</var>, <var>parent</var>
+and <var>post</var> outputs. 
+</dl>
+
+        <p>The output variables are
+
+          <dl>
+<dt><var>count</var><dd>The row counts of the Cholesky factorization as determined by <var>typ</var>.
+
+          <br><dt><var>h</var><dd>The height of the elimination tree.
+
+          <br><dt><var>parent</var><dd>The elimination tree itself.
+
+          <br><dt><var>post</var><dd>A sparse boolean matrix whose structure is that of the Cholesky
+factorization as determined by <var>typ</var>. 
+</dl>
+        </p></blockquote></div>
+
+   <div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> CHOLMOD, UMFPACK and CXSPARSE are written by Tim Davis
+and are available at http://www.cise.ufl.edu/research/sparse/</p>
+
+   <p><hr></div>
 
    </body></html>
 

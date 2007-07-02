@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -180,16 +33,22 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Plotting.html#Plotting">Plotting</a>
 <hr>
 </div>
 
-<h3 class="section">17.2 Specialized Two-Dimensional Plots</h3>
+<h3 class="section">16.2 Specialized Two-Dimensional Plots</h3>
 
 <p><a name="doc_002dbar"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>bar</b> (<var>x, y</var>)<var><a name="index-bar-603"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>bar</b> (<var>x, y, style</var>)<var><a name="index-bar-743"></a></var><br>
+&mdash; Function File: [<var>xb</var>, <var>yb</var>] = <b>bar</b> (<var><small class="dots">...</small></var>)<var><a name="index-bar-744"></a></var><br>
 <blockquote><p>Given two vectors of x-y data, <code>bar</code> produces a bar graph.
 
         <p>If only one argument is given, it is taken as a vector of y-values
 and the x coordinates are taken to be the indices of the elements.
+
+        <p>If <var>y</var> is a matrix, then each column of <var>y</var> is taken to be a
+separate bar graph plotted on the same graph. By default the columns
+are plotted side-by-side. This behavior can be changed by the <var>style</var>
+argument, which can take the values 'group' (the default), or 'stack'.
 
         <p>If two output arguments are specified, the data are generated but
 not plotted.  For example,
@@ -205,28 +64,75 @@ not plotted.  For example,
         <pre class="sp">
      
      </pre>
-     See also: plot, semilogx, semilogy, loglog, polar, mesh, contour,
-stairs, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> hbar, plot, semilogx, semilogy, loglog, polar, mesh, contour,
+stairs, xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002dcontour"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>contour</b> (<var>z, n</var>)<var><a name="index-contour-604"></a></var><br>
-&mdash; Function File:  <b>contour</b> (<var>x, y, z, n</var>)<var><a name="index-contour-605"></a></var><br>
-<blockquote><p>Make a contour plot of the three-dimensional surface described by
-<var>z</var>.  Someone needs to improve <code>gnuplot</code>'s contour routines
-before this will be very useful.
+&mdash; Function File:  <var>c</var><b> =</b><var> contour </var>(<var>z</var>)<var><a name="index-g_t_0040var_007bc_007d-_003d-745"></a></var><br>
+&mdash; Function File:  <var>c</var><b> =</b><var> contour </var>(<var>z, vn</var>)<var><a name="index-g_t_0040var_007bc_007d-_003d-746"></a></var><br>
+&mdash; Function File:  <var>c</var><b> =</b><var> contour </var>(<var>x, y, z</var>)<var><a name="index-g_t_0040var_007bc_007d-_003d-747"></a></var><br>
+&mdash; Function File:  <var>c</var><b> =</b><var> contour </var>(<var>x, y, z, vn</var>)<var><a name="index-g_t_0040var_007bc_007d-_003d-748"></a></var><br>
+<blockquote>
+<p>Plot level curves (contour lines) of the matrix <var>z</var>, using the
+contour matrix <var>c</var> computed by <code>contourc</code> from the same
+arguments; see the latter for their interpretation.  <var>c</var> is only
+returned if requested.  For example:
+
+     <pre class="example">          x = 0:2;
+          y = x;
+          z = x' * y;
+          contour (x, y, z, 2:3)
+     </pre>
         <pre class="sp">
      
      </pre>
-     See also: plot, mesh, meshgrid. 
+     <strong>See also:</strong> contourc, line, plot. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcontourc"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>c</var>, <var>lev</var>] = <b>contourc</b> (<var>x, y, z, vn</var>)<var><a name="index-contourc-749"></a></var><br>
+<blockquote><p>Compute isolines (countour lines) of the matrix <var>z</var>. 
+Parameters <var>x</var>, <var>y</var> and <var>vn</var> are optional.
+
+        <p>The return value <var>lev</var> is a vector of the contour levels. 
+The return value <var>c</var> is a 2 by <var>n</var> matrix containing the
+contour lines in the following format
+
+     <pre class="example">          <var>c</var> = [lev1, x1, x2, ..., levn, x1, x2, ...
+               len1, y1, y2, ..., lenn, y1, y2, ...]
+     </pre>
+        <p class="noindent">in which contour line <var>n</var> has a level (height) of <var>levn</var> and
+length of <var>lenn</var>.
+
+        <p>If <var>x</var> and <var>y</var> are omitted they are taken as the row/column
+index of <var>z</var>.  <var>vn</var> is either a scalar denoting the number of lines
+to compute or a vector containing the values of the lines. If only one
+value is wanted, set <var>vn</var><code> = [val, val]</code>;
+If <var>vn</var> is omitted it defaults to 10.
+
+        <p>For example,
+     <pre class="example">          x = 0:2;
+          y = x;
+          z = x' * y;
+          contourc (x, y, z, 2:3)
+          =&gt;   2.0000   2.0000   1.0000   3.0000   1.5000   2.0000
+               2.0000   1.0000   2.0000   2.0000   2.0000   1.5000
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> contour. 
 </p></blockquote></div>
 
    <p><a name="doc_002dhist"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hist</b> (<var>y, x, norm</var>)<var><a name="index-hist-606"></a></var><br>
+&mdash; Function File:  <b>hist</b> (<var>y, x, norm</var>)<var><a name="index-hist-750"></a></var><br>
 <blockquote><p>Produce histogram counts or plots.
 
         <p>With one vector input argument, plot a histogram of the values with
@@ -249,27 +155,27 @@ that <code>bar (</code><var>xx</var><code>, </code><var>nn</var><code>)</code> w
         <pre class="sp">
      
      </pre>
-     See also: bar. 
+     <strong>See also:</strong> bar. 
 </p></blockquote></div>
 
    <p><a name="doc_002dloglog"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>loglog</b> (<var>args</var>)<var><a name="index-loglog-607"></a></var><br>
+&mdash; Function File:  <b>loglog</b> (<var>args</var>)<var><a name="index-loglog-751"></a></var><br>
 <blockquote><p>Make a two-dimensional plot using log scales for both axes.  See the
 description of <code>plot</code> for a description of the arguments that
 <code>loglog</code> will accept.
         <pre class="sp">
      
      </pre>
-     See also: plot, semilogy, loglog, polar, mesh, contour, bar, stairs,
-replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> plot, semilogy, loglog, polar, mesh, contour, bar, stairs,
+xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpolar"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polar</b> (<var>theta, rho, fmt</var>)<var><a name="index-polar-608"></a></var><br>
+&mdash; Function File:  <b>polar</b> (<var>theta, rho, fmt</var>)<var><a name="index-polar-752"></a></var><br>
 <blockquote><p>Make a two-dimensional plot given polar the coordinates <var>theta</var> and
 <var>rho</var>.
 
@@ -277,42 +183,109 @@ replot, xlabel, ylabel, title.
         <pre class="sp">
      
      </pre>
-     See also: plot, semilogx, semilogy, loglog, mesh, contour, bar,
-stairs, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> plot, semilogx, semilogy, loglog, mesh, contour, bar,
+stairs, xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002dsemilogx"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>semilogx</b> (<var>args</var>)<var><a name="index-semilogx-609"></a></var><br>
+&mdash; Function File:  <b>semilogx</b> (<var>args</var>)<var><a name="index-semilogx-753"></a></var><br>
 <blockquote><p>Make a two-dimensional plot using a log scale for the <var>x</var> axis.  See
 the description of <code>plot</code> for a description of the arguments
 that <code>semilogx</code> will accept.
         <pre class="sp">
      
      </pre>
-     See also: plot, semilogy, loglog, polar, mesh, contour, bar, stairs,
-replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> plot, semilogy, loglog, polar, mesh, contour, bar, stairs,
+xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002dsemilogy"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>semilogy</b> (<var>args</var>)<var><a name="index-semilogy-610"></a></var><br>
+&mdash; Function File:  <b>semilogy</b> (<var>args</var>)<var><a name="index-semilogy-754"></a></var><br>
 <blockquote><p>Make a two-dimensional plot using a log scale for the <var>y</var> axis.  See
 the description of <code>plot</code> for a description of the arguments
 that <code>semilogy</code> will accept.
         <pre class="sp">
      
      </pre>
-     See also: plot, semilogx, loglog, polar, mesh, contour, bar, stairs,
-replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> plot, semilogx, loglog, polar, mesh, contour, bar, stairs,
+xlabel, ylabel, title. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstem"></a>
+
+<div class="defun">
+&mdash; Function File: <var>h</var> = <b>stem</b> (<var>x, y, linespec</var>)<var><a name="index-stem-755"></a></var><br>
+<blockquote><p>Plot a stem graph and return the handles of the line and marker
+objects used to draw the stems.  The default color is <code>"r"</code>
+(red). The default line style is <code>"-"</code> and the default marker is
+<code>"o"</code>.
+
+        <p>For example,
+     <pre class="example">          x = 1:10;
+          stem (x);
+     </pre>
+        <p class="noindent">plots 10 stems with heights from 1 to 10;
+
+     <pre class="example">          x = 1:10;
+          y = ones (1, length (x))*2.*x;
+          stem (x, y);
+     </pre>
+        <p class="noindent">plots 10 stems with heights from 2 to 20;
+
+     <pre class="example">          x = 1:10;
+          y = ones (size (x))*2.*x;
+          h = stem (x, y, "b");
+     </pre>
+        <p class="noindent">plots 10 bars with heights from 2 to 20
+(the color is blue, and <var>h</var> is a 2-by-10 array of handles in
+which the first row holds the line handles and the
+the second row holds the marker handles);
+
+     <pre class="example">          x = 1:10;
+          y = ones (size (x))*2.*x;
+          h = stem (x, y, "-.k");
+     </pre>
+        <p class="noindent">plots 10 stems with heights from 2 to 20
+(the color is black, line style is <code>"-."</code>, and <var>h</var> is a 2-by-10
+array of handles in which the first row holds the line handles and
+the second rows holds the marker handles);
+
+     <pre class="example">          x = 1:10;
+          y = ones (size (x))*2.*x;
+          h = stem (x, y, "-.k.");
+     </pre>
+        <p class="noindent">plots 10 stems with heights from 2 to 20
+(the color is black, line style is <code>"-."</code> and the marker style
+is <code>"."</code>, and <var>h</var> is a 2-by-10 array of handles in which the
+first row holds the line handles and the second row holds the marker
+handles);
+
+     <pre class="example">          x = 1:10;
+          y = ones (size (x))*2.*x;
+          h = stem (x, y, "fill");
+     </pre>
+        <p class="noindent">plots 10 stems with heights from 2 to 20
+(the color is rgb-triple defined, the line style is <code>"-"</code>,
+the marker style is <code>"o"</code>, and <var>h</var> is a 2-by-10 array of
+handles in which the first row holds the line handles and the second
+row holds the marker handles).
+
+        <p>Color definitions with rgb-triples are not valid!
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bar, barh, plot. 
 </p></blockquote></div>
 
    <p><a name="doc_002dstairs"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>stairs</b> (<var>x, y</var>)<var><a name="index-stairs-611"></a></var><br>
+&mdash; Function File:  <b>stairs</b> (<var>x, y</var>)<var><a name="index-stairs-756"></a></var><br>
 <blockquote><p>Given two vectors of x-y data, bar produces a `stairstep' plot.
 
         <p>If only one argument is given, it is taken as a vector of y-values
@@ -332,14 +305,14 @@ not plotted.  For example,
         <pre class="sp">
      
      </pre>
-     See also: plot, semilogx, semilogy, loglog, polar, mesh, contour,
-bar, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> plot, semilogx, semilogy, loglog, polar, mesh, contour,
+bar, xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002derrorbar"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>errorbar</b> (<var>args</var>)<var><a name="index-errorbar-612"></a></var><br>
+&mdash; Function File:  <b>errorbar</b> (<var>args</var>)<var><a name="index-errorbar-757"></a></var><br>
 <blockquote><p>This function produces two-dimensional plots with errorbars. Many
 different combinations of arguments are possible.  The simplest form is
 
@@ -352,7 +325,7 @@ of the elements, starting with 1.
 
         <p>If more than two arguments are given, they are interpreted as
 
-     <pre class="example">          errorbar (<var>x</var>, <var>y</var>, ..., <var>fmt</var> ...)
+     <pre class="example">          errorbar (<var>x</var>, <var>y</var>, ..., <var>fmt</var>, ...)
      </pre>
         <p class="noindent">where after <var>x</var> and <var>y</var> there can be up to four error
 parameters such as <var>ey</var>, <var>ex</var>, <var>ly</var>, <var>uy</var> etc.,
@@ -407,14 +380,14 @@ from <var>y</var>-<var>ly</var> to <var>y</var>+<var>uy</var>.
         <pre class="sp">
      
      </pre>
-     See also: semilogx, semilogy, loglog, polar, mesh, contour, __pltopt__,
-bar, stairs, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> semilogx, semilogy, loglog, polar, mesh, contour, __pltopt__,
+bar, stairs, xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002dloglogerr"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>loglogerr</b> (<var>args</var>)<var><a name="index-loglogerr-613"></a></var><br>
+&mdash; Function File:  <b>loglogerr</b> (<var>args</var>)<var><a name="index-loglogerr-758"></a></var><br>
 <blockquote><p>This function produces two-dimensional plots on double logarithm axis
 with errorbars. Many different combinations of arguments are possible. 
 The most used form is
@@ -428,14 +401,14 @@ additional information.
         <pre class="sp">
      
      </pre>
-     See also: errorbar, semilogxerr, semilogyerr, polar, mesh, contour,
-__pltopt__, bar, stairs, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> errorbar, semilogxerr, semilogyerr, polar, mesh, contour,
+__pltopt__, bar, stairs, xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002dsemilogxerr"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>semilogxerr</b> (<var>args</var>)<var><a name="index-semilogxerr-614"></a></var><br>
+&mdash; Function File:  <b>semilogxerr</b> (<var>args</var>)<var><a name="index-semilogxerr-759"></a></var><br>
 <blockquote><p>This function produces two-dimensional plots on a semilogarithm axis
 with errorbars. Many different combinations of arguments are possible. 
 The most used form is
@@ -449,14 +422,14 @@ additional information.
         <pre class="sp">
      
      </pre>
-     See also: errorbar, loglogerr semilogyerr, polar, mesh, contour, __pltopt__,
-bar, stairs, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> errorbar, loglogerr semilogyerr, polar, mesh, contour, __pltopt__,
+bar, stairs, xlabel, ylabel, title. 
 </p></blockquote></div>
 
    <p><a name="doc_002dsemilogyerr"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>semilogyerr</b> (<var>args</var>)<var><a name="index-semilogyerr-615"></a></var><br>
+&mdash; Function File:  <b>semilogyerr</b> (<var>args</var>)<var><a name="index-semilogyerr-760"></a></var><br>
 <blockquote><p>This function produces two-dimensional plots on a semilogarithm axis
 with errorbars. Many different combinations of arguments are possible. 
 The most used form is
@@ -470,8 +443,8 @@ additional information.
         <pre class="sp">
      
      </pre>
-     See also: errorbar, loglogerr semilogxerr, polar, mesh, contour, __pltopt__,
-bar, stairs, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> errorbar, loglogerr semilogxerr, polar, mesh, contour, __pltopt__,
+bar, stairs,  xlabel, ylabel, title. 
 </p></blockquote></div>
 
    </body></html>

@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+<title>Integer Data Types - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Numeric-Data-Types.html#Numeric-Data-Types" title="Numeric Data Types">
+<link rel="prev" href="Ranges.html#Ranges" title="Ranges">
+<link rel="next" href="Logical-Values.html#Logical-Values" title="Logical Values">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Integer-Data-Types"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Logical-Values.html#Logical-Values">Logical Values</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Ranges.html#Ranges">Ranges</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>
+<hr>
+</div>
+
+<h3 class="section">4.3 Integer Data Types</h3>
+
+<p>Octave supports integer matrices as an alternative to using double
+precision. It is possible to use both signed and unsigned integers
+represented by 8, 16, 32, or 64 bits. It should be noted that most
+computations require floating point data, meaning that integers will
+often change type when involved in numeric computations. For this
+reason integers are most often used to store data, and not for
+calculations.
+
+   <p>In general most integer matrices are created by casting
+existing matrices to integers. The following example shows how to cast
+a matrix into 32 bit integers.
+
+<pre class="example">     float = rand (2, 2)
+          =&gt; float = 0.37569   0.92982
+                     0.11962   0.50876
+     integer = int32 (float)
+          =&gt; integer = 0  1
+                       0  1
+</pre>
+   <p class="noindent">As can be seen, floating point values are rounded to the nearest integer
+when converted.
+
+   <p><a name="doc_002disinteger"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>isinteger</b> (<var>x</var>)<var><a name="index-isinteger-204"></a></var><br>
+<blockquote><p>Return true if <var>x</var> is an integer object (int8, uint8, int16, etc.). 
+Note that <code>isinteger (14)</code> is false because numeric constants in
+are double precision floating point values.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> isreal, isnumeric, class, isa. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dint8"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>int8</b> (<var>x</var>)<var><a name="index-int8-205"></a></var><br>
+<blockquote><p>Convert <var>x</var> to 8-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002duint8"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>uint8</b> (<var>x</var>)<var><a name="index-uint8-206"></a></var><br>
+<blockquote><p>Convert <var>x</var> to unsigned 8-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dint16"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>int16</b> (<var>x</var>)<var><a name="index-int16-207"></a></var><br>
+<blockquote><p>Convert <var>x</var> to 16-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002duint16"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>uint16</b> (<var>x</var>)<var><a name="index-uint16-208"></a></var><br>
+<blockquote><p>Convert <var>x</var> to unsigned 16-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dint32"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>int32</b> (<var>x</var>)<var><a name="index-int32-209"></a></var><br>
+<blockquote><p>Convert <var>x</var> to 32-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002duint32"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>uint32</b> (<var>x</var>)<var><a name="index-uint32-210"></a></var><br>
+<blockquote><p>Convert <var>x</var> to unsigned 32-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dint64"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>int64</b> (<var>x</var>)<var><a name="index-int64-211"></a></var><br>
+<blockquote><p>Convert <var>x</var> to 64-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002duint64"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>uint64</b> (<var>x</var>)<var><a name="index-uint64-212"></a></var><br>
+<blockquote><p>Convert <var>x</var> to unsigned 64-bit integer type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dintmax"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>intmax</b> (<var>type</var>)<var><a name="index-intmax-213"></a></var><br>
+<blockquote><p>Return the largest integer that can be represented in an integer type. 
+The variable <var>type</var> can be
+
+          <dl>
+<dt><code>int8</code><dd>signed 8-bit integer. 
+<br><dt><code>int16</code><dd>signed 16-bit integer. 
+<br><dt><code>int32</code><dd>signed 32-bit integer. 
+<br><dt><code>int64</code><dd>signed 64-bit integer. 
+<br><dt><code>uint8</code><dd>unsigned 8-bit integer. 
+<br><dt><code>uint16</code><dd>unsigned 16-bit integer. 
+<br><dt><code>uint32</code><dd>unsigned 32-bit integer. 
+<br><dt><code>uint64</code><dd>unsigned 64-bit integer. 
+</dl>
+
+        <p>The default for <var>type</var> is <code>uint32</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> intmin, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dintmin"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>intmin</b> (<var>type</var>)<var><a name="index-intmin-214"></a></var><br>
+<blockquote><p>Return the smallest integer that can be represented in an integer type. 
+The variable <var>type</var> can be
+
+          <dl>
+<dt><code>int8</code><dd>signed 8-bit integer. 
+<br><dt><code>int16</code><dd>signed 16-bit integer. 
+<br><dt><code>int32</code><dd>signed 32-bit integer. 
+<br><dt><code>int64</code><dd>signed 64-bit integer. 
+<br><dt><code>uint8</code><dd>unsigned 8-bit integer. 
+<br><dt><code>uint16</code><dd>unsigned 16-bit integer. 
+<br><dt><code>uint32</code><dd>unsigned 32-bit integer. 
+<br><dt><code>uint64</code><dd>unsigned 64-bit integer. 
+</dl>
+
+        <p>The default for <var>type</var> is <code>uint32</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> intmax, bitmax. 
+</p></blockquote></div>
+
+<ul class="menu">
+<li><a accesskey="1" href="Integer-Arithmetic.html#Integer-Arithmetic">Integer Arithmetic</a>
+</ul>
+
+   </body></html>
+

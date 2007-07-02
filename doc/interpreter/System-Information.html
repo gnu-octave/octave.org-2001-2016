@@ -7,6 +7,7 @@
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
 <link rel="prev" href="Group-Database-Functions.html#Group-Database-Functions" title="Group Database Functions">
+<link rel="next" href="Hashing-Functions.html#Hashing-Functions" title="Hashing Functions">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,170 +20,24 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="System-Information"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Hashing-Functions.html#Hashing-Functions">Hashing Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Group-Database-Functions.html#Group-Database-Functions">Group Database Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities">System Utilities</a>
 <hr>
 </div>
 
-<h3 class="section">35.9 System Information</h3>
+<h3 class="section">37.11 System Information</h3>
 
 <p><a name="doc_002dcomputer"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>c</var>, <var>maxsize</var>, <var>endian</var>] = <b>computer</b> ()<var><a name="index-computer-1511"></a></var><br>
+&mdash; Function File: [<var>c</var>, <var>maxsize</var>, <var>endian</var>] = <b>computer</b> ()<var><a name="index-computer-1926"></a></var><br>
 <blockquote><p>Print or return a string of the form <var>cpu</var>-<var>vendor</var>-<var>os</var>
 that identifies the kind of computer Octave is running on.  If invoked
 with an output argument, the value is returned instead of printed.  For
@@ -202,25 +57,86 @@ of the current system as a character (<code>"B"</code> for big-endian or
 <code>"L"</code> for little-endian). 
 </p></blockquote></div>
 
+   <p><a name="doc_002duname"></a>
+
+<div class="defun">
+&mdash; Built-in Function: [<var>uts</var>, <var>err</var>, <var>msg</var>] = <b>uname</b> ()<var><a name="index-uname-1927"></a></var><br>
+<blockquote><p>Return system information in the structure.  For example,
+
+     <pre class="example">          uname ()
+               =&gt; {
+                     sysname = x86_64
+                     nodename = segfault
+                     release = 2.6.15-1-amd64-k8-smp
+                     version = Linux
+                     machine = #2 SMP Thu Feb 23 04:57:49 UTC 2006
+                   }
+     </pre>
+        <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
+Otherwise, <var>err</var> is nonzero and <var>msg</var> contains a
+system-dependent error message. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dispc"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ispc</b> ()<var><a name="index-ispc-1928"></a></var><br>
+<blockquote><p>Return 1 if Octave is running on a Windows system and 0 otherwise. 
+</p></blockquote></div>
+
+   <p><a name="doc_002disunix"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>isunix</b> ()<var><a name="index-isunix-1929"></a></var><br>
+<blockquote><p>Return 1 if Octave is running on a Unix-like system and 0 otherwise. 
+</p></blockquote></div>
+
    <p><a name="doc_002disieee"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isieee</b> ()<var><a name="index-isieee-1512"></a></var><br>
+&mdash; Built-in Function:  <b>isieee</b> ()<var><a name="index-isieee-1930"></a></var><br>
 <blockquote><p>Return 1 if your computer claims to conform to the IEEE standard for
 floating point calculations. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dOCTAVE_005fHOME"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>OCTAVE_HOME</b> ()<var><a name="index-OCTAVE_005fHOME-1931"></a></var><br>
+<blockquote><p>Return the name of the top-level Octave installation directory. 
 </p></blockquote></div>
 
    <p><a name="doc_002dOCTAVE_005fVERSION"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>OCTAVE_VERSION</b><var><a name="index-OCTAVE_005fVERSION-1513"></a></var><br>
-<blockquote><p>The version number of Octave, as a string. 
+&mdash; Built-in Function:  <b>OCTAVE_VERSION</b> ()<var><a name="index-OCTAVE_005fVERSION-1932"></a></var><br>
+<blockquote><p>Return the version number of Octave, as a string. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dversion"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>version</b> ()<var><a name="index-version-1933"></a></var><br>
+<blockquote><p>Return Octave's version number as a string.  This is also the value of
+the built-in variable <code>OCTAVE_VERSION</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dver"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ver</b> ()<var><a name="index-ver-1934"></a></var><br>
+<blockquote><p>Display a header containing the current Octave version
+number, license string and operating system.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> license, version. 
 </p></blockquote></div>
 
    <p><a name="doc_002doctave_005fconfig_005finfo"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>octave_config_info</b> (<var>option</var>)<var><a name="index-octave_005fconfig_005finfo-1514"></a></var><br>
+&mdash; Built-in Function:  <b>octave_config_info</b> (<var>option</var>)<var><a name="index-octave_005fconfig_005finfo-1935"></a></var><br>
 <blockquote><p>Return a structure containing configuration and installation
 information for Octave.
 
@@ -232,7 +148,7 @@ specified option.
    <p><a name="doc_002dgetrusage"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>getrusage</b> ()<var><a name="index-getrusage-1515"></a></var><br>
+&mdash; Loadable Function:  <b>getrusage</b> ()<var><a name="index-getrusage-1936"></a></var><br>
 <blockquote><p>Return a structure containing a number of statistics about the current
 Octave process.  Not all fields are available on all systems.  If it is
 not possible to get CPU time statistics, the CPU time slots are set to
@@ -277,17 +193,5 @@ elements <code>sec</code> (seconds) <code>usec</code> (microseconds).
 </dl>
         </p></blockquote></div>
 
-<!-- maybe add again later, if anyone every writes any really interesting -->
-<!-- fun stuff for Octave. -->
-<!-- @include amuse.texi -->
-<!-- Appendices start here.  Installation and bugs have to go before the -->
-<!-- readline and Info appendices because we want to have separate indices -->
-<!-- for them, and there appears to be no way to go back to the original -->
-<!-- set of indices once a redirection has taken place. -->
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 2005 David Bateman -->
-<!-- Copyright (C) 2002-2005 Paul Kienzle -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+   </body></html>
 

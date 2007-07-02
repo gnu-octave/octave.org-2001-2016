@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+<title>Integer Arithmetic - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Integer-Data-Types.html#Integer-Data-Types" title="Integer Data Types">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Integer-Arithmetic"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>
+<hr>
+</div>
+
+<h4 class="subsection">4.3.1 Integer Arithmetic</h4>
+
+<p>While many numerical computations can't be carried out in integers,
+Octave does support basic operations like addition and multiplication
+on integers. The operators <code>+</code>, <code>-</code>, <code>.*</code>, and <code>./</code>
+works on integers of the same type. So, it is possible to add two 32 bit
+integers, but not to add a 32 bit integer and a 16 bit integer.
+
+   <p>The arithmetic operations on integers are performed by casting the
+integer values to double precision values, performing the operation, and
+then re-casting the values back to the original integer type. As the
+double precision type of Octave is only capable of representing integers
+with up to 53 bits of precision, it is not possible to perform
+arithmetic of the 64 bit integer types.
+
+   <p>When doing integer arithmetic one should consider the possibility of
+underflow and overflow. This happens when the result of the computation
+can't be represented using the chosen integer type. As an example it is
+not possible to represent the result of 10 - 20 when using
+unsigned integers. Octave makes sure that the result of integer
+computations is the integer that is closest to the true result. So, the
+result of 10 - 20 when using unsigned integers is zero.
+
+   <p>When doing integer division Octave will round the result to the nearest
+integer. This is different from most programming languages, where the
+result is often floored to the nearest integer. So, the result of
+<code>int32(5)./int32(8)</code> is <code>1</code>.
+
+   </body></html>
+

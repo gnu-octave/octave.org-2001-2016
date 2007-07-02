@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -190,52 +43,52 @@ begin learning Octave by using it.  Lines marked with `<samp><span class="samp">
 are lines you type, ending each with a carriage return.  Octave will
 respond with an answer, or by displaying a graph.
 
-<h4 class="unnumberedsubsec">Creating a Matrix</h4>
+<h4 class="subsection">1.2.1 Creating a Matrix</h4>
 
 <p>To create a new matrix and store it in a variable so that it you can
 refer to it later, type the command
 
-<pre class="example">     octave:1&gt; a = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
+<pre class="example">     octave:1&gt; A = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
 </pre>
    <p class="noindent">Octave will respond by printing the matrix in neatly aligned columns. 
 Ending a command with a semicolon tells Octave to not print the result
 of a command.  For example
 
-<pre class="example">     octave:2&gt; b = rand (3, 2);
+<pre class="example">     octave:2&gt; B = rand (3, 2);
 </pre>
    <p class="noindent">will create a 3 row, 2 column matrix with each element set to a random
 value between zero and one.
 
    <p>To display the value of any variable, simply type the name of the
 variable.  For example, to display the value stored in the matrix
-<code>b</code>, type the command
+<code>B</code>, type the command
 
-<pre class="example">     octave:3&gt; b
+<pre class="example">     octave:3&gt; B
 </pre>
-   <h4 class="unnumberedsubsec">Matrix Arithmetic</h4>
+   <h4 class="subsection">1.2.2 Matrix Arithmetic</h4>
 
 <p>Octave has a convenient operator notation for performing matrix
 arithmetic.  For example, to multiply the matrix <code>a</code> by a scalar
 value, type the command
 
-<pre class="example">     octave:4&gt; 2 * a
+<pre class="example">     octave:4&gt; 2 * A
 </pre>
-   <p>To multiply the two matrices <code>a</code> and <code>b</code>, type the command
+   <p class="noindent">To multiply the two matrices <code>a</code> and <code>b</code>, type the command
 
-<pre class="example">     octave:5&gt; a * b
+<pre class="example">     octave:5&gt; A * B
 </pre>
-   <p>To form the matrix product
-<code>transpose (a) * a</code>,
+   <p class="noindent">and to form the matrix product
+<code>transpose (A) * A</code>,
 type the command
 
-<pre class="example">     octave:6&gt; a' * a
+<pre class="example">     octave:6&gt; A' * A
 </pre>
-   <h4 class="unnumberedsubsec">Solving Linear Equations</h4>
+   <h4 class="subsection">1.2.3 Solving Linear Equations</h4>
 
-<p>To solve the set of linear equations <code>a</code><var>x</var><code> = b</code>,
+<p>To solve the set of linear equations <code>A</code><var>x</var><code> = b</code>,
 use the left division operator, `<samp><span class="samp">\</span></samp>':
 
-<pre class="example">     octave:7&gt; a \ b
+<pre class="example">     octave:7&gt; A \ b
 </pre>
    <p class="noindent">This is conceptually equivalent to
 <code>inv (a) * b</code>,
@@ -244,7 +97,7 @@ but avoids computing the inverse of a matrix directly.
    <p>If the coefficient matrix is singular, Octave will print a warning
 message and compute a minimum norm solution.
 
-<h4 class="unnumberedsubsec">Integrating Differential Equations</h4>
+<h4 class="subsection">1.2.4 Integrating Differential Equations</h4>
 
 <p>Octave has built-in functions for solving nonlinear differential
 equations of the form
@@ -299,60 +152,44 @@ Differential Equations, described in A. C. Hindmarsh, <cite>ODEPACK, a
 Systematized Collection of ODE Solvers</cite>, in: Scientific Computing, R. S. 
 Stepleman et al. (Eds.), North-Holland, Amsterdam, 1983, pages 55&ndash;64.
 
-<h4 class="unnumberedsubsec">Producing Graphical Output</h4>
+<h4 class="subsection">1.2.5 Producing Graphical Output</h4>
 
 <p>To display the solution of the previous example graphically, use the
 command
 
 <pre class="example">     plot (t, x)
 </pre>
-   <p>If you are using the X Window System, Octave will automatically create
-a separate window to display the plot.  If you are using a terminal that
-supports some other graphics commands, you will need to tell Octave what
-kind of terminal you have.  Type the command
+   <p class="noindent">If you are using a graphical user interface, Octave will automatically create
+a separate window to display the plot.
 
-<pre class="example">     gset term
+   <p>To save a plot once it has been displayed on the screen, use the print
+command.  For example,
+
+<pre class="example">     print -deps foo.eps
 </pre>
-   <p class="noindent">to see a list of the supported terminal types.  Octave uses
-<code>gnuplot</code> to display graphics, and can display graphics on any
-terminal that is supported by <code>gnuplot</code>.
+   <p class="noindent">will create a fille called <samp><span class="file">foo.eps</span></samp> that contains a rendering of
+the current plot.  The command
 
-   <p>To capture the output of the plot command in a file rather than sending
-the output directly to your terminal, you can use a set of commands like
-this
-
-<pre class="example">     gset term postscript
-     gset output "foo.ps"
-     replot
+<pre class="example">     help print
 </pre>
-   <p class="noindent">This will work for other types of output devices as well.  Octave's
-<code>gset</code> command is really just piped to the <code>gnuplot</code>
-subprocess, so that once you have a plot on the screen that you like,
-you should be able to do something like this to create an output file
-suitable for your graphics printer.
+   <p class="noindent">explains more options for the <code>print</code> command and provides a list
+of additional output file formats.
 
-   <p>Or, you can eliminate the intermediate file by using commands like this
-
-<pre class="example">     gset term postscript
-     gset output "|lpr -Pname_of_your_graphics_printer"
-     replot
-</pre>
-   <h4 class="unnumberedsubsec">Editing What You Have Typed</h4>
+<h4 class="subsection">1.2.6 Editing What You Have Typed</h4>
 
 <p>At the Octave prompt, you can recall, edit, and reissue previous
 commands using Emacs- or vi-style editing commands.  The default
 keybindings use Emacs-style commands.  For example, to recall the
-previous command, type <kbd>Control-p</kbd> (usually written <kbd>C-p</kbd> for
-short).  <kbd>C-p</kbd> gets its name from the fact that you type it by
-holding down &lt;CTRL&gt; and then pressing &lt;p&gt;.  Doing this will
-normally bring back the previous line of input.  <kbd>C-n</kbd> will bring up
-the next line of input, <kbd>C-b</kbd> will move the cursor backward on the
-line, <kbd>C-f</kbd> will move the cursor forward on the line, etc.
+previous command, press <kbd>Control-p</kbd> (usually written <kbd>C-p</kbd> for
+short). Doing this will normally bring back the previous line of input. 
+<kbd>C-n</kbd> will bring up the next line of input, <kbd>C-b</kbd> will move
+the cursor backward on the line, <kbd>C-f</kbd> will move the cursor forward
+on the line, etc.
 
    <p>A complete description of the command line editing capability is given
 in this manual in <a href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>.
 
-<h4 class="unnumberedsubsec">Help and Documentation</h4>
+<h4 class="subsection">1.2.7 Help and Documentation</h4>
 
 <p>Octave has an extensive help facility.  The same documentation that is
 available in printed form is also available from the Octave prompt,
@@ -363,9 +200,13 @@ file.
 that you want to use.  This name of the function may not always be
 obvious, but a good place to start is to just type <code>help</code>. 
 This will show you all the operators, reserved words, functions,
-built-in variables, and function files.  You can then get more
-help on anything that is listed by simply including the name as an
-argument to help.  For example,
+built-in variables, and function files. An alternative is to search the
+documentation using the <code>lookfor</code> function. This function is
+described in <a href="Getting-Help.html#Getting-Help">Getting Help</a>.
+
+   <p>Once you know the name of the function you wish to use, you can get more
+help on the function by simply including the name as an argument to help. 
+For example,
 
 <pre class="example">     help plot
 </pre>

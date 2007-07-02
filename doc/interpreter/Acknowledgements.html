@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -180,137 +33,76 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Preface.html#Preface">Preface</a>
 <h3 class="unnumberedsec">Acknowledgements</h3>
 
 <p><a name="index-acknowledgements-3"></a>
-Many people have already contributed to Octave's development.  In
-addition to John W. Eaton, the following people have helped write parts
-of Octave or helped out in various other ways.
+Many people have already contributed to Octave's development.  The
+following people have helped write parts of Octave or helped out in
+various other ways (listed alphabetically).
 
-<!-- Once lp_solve has been added, don't forget to include the lp_solve -->
-<!-- author, and Kantor, for providing an example. -->
-<ul>
-<li>Andy Adler <a href="mailto:adler@site.uottawa.ca">adler@site.uottawa.ca</a> wrote the initial implementation of
-the sparse matrix data type.
-
-     <li>Thomas Baier <a href="mailto:baier@ci.tuwien.ac.at">baier@ci.tuwien.ac.at</a> wrote the original versions
-of <code>popen</code>, <code>pclose</code>, <code>execute</code>, <code>sync_system</code>, and
-<code>async_system</code>.
-
-     <li>David Bateman <a href="mailto:dbateman@free.fr">dbateman@free.fr</a> improved the <code>sort</code> and
-<code>min</code>/<code>max</code> functions, made many functions N-d aware,
-converted several built-in functions to use Lapack instead of Linpack,
-split the functionality of <samp><span class="file">load-save.cc</span></samp> out into the
-<code>octave_value</code> classes, provided much of the code for the sparse
-matrix data type, and has contributed in many other ways.
-
-     <li>Karl Berry <a href="mailto:karl@cs.umb.edu">karl@cs.umb.edu</a> wrote the <code>kpathsea</code> library
-that allows Octave to recursively search directory paths for function
-and script files.
-
-     <li>Georg Beyerle <a href="mailto:gbeyerle@awi-potsdam.de">gbeyerle@awi-potsdam.de</a> contributed code to save
-values in <span class="sc">Matlab</span>'s <samp><span class="file">.mat</span></samp>-file format, and has provided many
-useful bug reports and suggestions.
-
-     <li>John Campbell <a href="mailto:jcc@bevo.che.wisc.edu">jcc@bevo.che.wisc.edu</a> wrote most of the file and
-C-style input and output functions.
-
-     <li>Dirk Eddelbuettel <a href="mailto:edd@debian.org">edd@debian.org</a> made Octave easy to install
-for users of Debian GNU/Linux.
-
-     <li>Brian Fox <a href="mailto:bfox@gnu.org">bfox@gnu.org</a> wrote the <code>readline</code> library
-used for command history editing, and the portion of this manual that
-documents it.
-
-     <li>Klaus Gebhardt <a href="mailto:gebhardt@crunch.ikp.physik.th-darmstadt.de">gebhardt@crunch.ikp.physik.th-darmstadt.de</a>
-ported Octave to OS/2.
-
-     <li>Kai Habel <a href="mailto:kai.habel@gmx.de">kai.habel@gmx.de</a> implemted functions for performing
-coordinate transformations.
-
-     <li>A. Scottedward Hodel <a href="mailto:A.S.Hodel@eng.auburn.edu">A.S.Hodel@eng.auburn.edu</a> contributed a number
-of functions including <code>expm</code>, <code>qzval</code>, <code>qzhess</code>,
-<code>syl</code>, <code>lyap</code>, and <code>balance</code>.
-
-     <li>Kurt Hornik <a href="mailto:Kurt.Hornik@wu-wien.ac.at">Kurt.Hornik@wu-wien.ac.at</a> provided the
-<code>corrcoef</code>, <code>cov</code>, <code>fftconv</code>, <code>fftfilt</code>, <code>gcd</code>,
-<code>lcd</code>, <code>kurtosis</code>, <code>null</code>, <code>orth</code>, <code>poly</code>,
-<code>polyfit</code>, <code>roots</code>, and <code>skewness</code> functions, supplied
-documentation for these and numerous other functions, rewrote the Emacs
-mode for editing Octave code and provided its documentation, and has
-helped tremendously with testing.  He has also been a constant source of
-new ideas for improving Octave.
-
-     <li>Teemu Ikonen <a href="mailto:tpikonen@pcu.helsinki.fi">tpikonen@pcu.helsinki.fi</a> contributed changes to
-separate the <code>gnuplot</code> command parser from the main Octave language
-parser.
-
-     <li>Cai Jianming <a href="mailto:caijianming@yahoo.co.uk">caijianming@yahoo.co.uk</a> contributed the inital
-cell array implementation.
-
-     <li>Phil Johnson <a href="mailto:johnsonp@nicco.sscnet.ucla.edu">johnsonp@nicco.sscnet.ucla.edu</a> has helped to make
-Linux releases available.
-
-     <li>Steven G. Johnson <a href="mailto:stevenj@alum.mit.edu">stevenj@alum.mit.edu</a> added support for ATLAS,
-saving data in HDF5 files, and ported Octave's configure script to
-Autoconf 2.50.
-
-     <li>Mumit Khan <a href="mailto:khan@nanotech.wisc.edu">khan@nanotech.wisc.edu</a> helped make it possible for
-Octave to be compiled by ISO standard C++ compilers other than GCC.
-
-     <li>Paul Kienzle <a href="mailto:pkienzle@users.sf.net">pkienzle@users.sf.net</a> has provided many
-enhancements to improve Octave's compatibility with <span class="sc">Matlab</span>, and
-also maintains the collection of conributed code at
-<a href="http://octave.sf.net">http://octave.sf.net</a>.
-
-     <li>Bill Lash <a href="mailto:lash@tellabs.com">lash@tellabs.com</a> provided the <code>unwrap</code> function.
-
-     <li>Dirk Laurie <a href="mailto:dlaurie@na-net.ornl.gov">dlaurie@na-net.ornl.gov</a> rewrote <code>invhilb</code> to be
-faster and more accurate.
-
-     <li>Friedrich Leisch <a href="mailto:leisch@ci.tuwien.ac.at">leisch@ci.tuwien.ac.at</a> provided the
-<code>mahalanobis</code> function.
-
-     <li>Ken Neighbors <a href="mailto:wkn@leland.stanford.edu">wkn@leland.stanford.edu</a> has provided many useful
-bug reports and comments on <span class="sc">Matlab</span> compatibility.
-
-     <li>Rick Niles <a href="mailto:niles@axp745.gsfc.nasa.gov">niles@axp745.gsfc.nasa.gov</a> rewrote Octave's plotting
-functions to add line styles and the ability to specify an unlimited
-number of lines in a single call.  He also continues to track down odd
-incompatibilities and bugs.
-
-     <li>Mark Odegard <a href="mailto:meo@getech.com">meo@getech.com</a> provided the initial
-implementation of <code>fread</code>, <code>fwrite</code>, <code>feof</code>, and
-<code>ferror</code>.
-
-     <li>Gabriele Pannocchia  <a href="mailto:pannocchia@ing.unipi.it">pannocchia@ing.unipi.it</a> provided the
-<code>dkalman.m</code> function, added support for singular system matrices
-to <code>dlqe</code> and <code>dlqr</code>, and has made various other
-improvements to the control system functions.
-
-     <li>Tony Richardson <a href="mailto:richardson@evansville.edu">richardson@evansville.edu</a> wrote Octave's
-image processing functions as well as most of the original polynomial
-functions.
-
-     <li>Petter Risholm <a href="mailto:Petter.Risholm@idi.ntnu.no">Petter.Risholm@idi.ntnu.no</a> helped to implement
-much of Octave's N-d array functionality.
-
-     <li>Ben Sapp <a href="mailto:bsapp@lanl.gov">bsapp@lanl.gov</a> implemented the debugger functions and
-added Texinfo markup commands to the internal doc strings.
-
-     <li>R. Bruce Tenison <a href="mailto:btenison@rstc.cc.al.us">btenison@rstc.cc.al.us</a> wrote the
-<code>hess</code> and <code>schur</code> functions.
-
-     <li>Teresa Twaroch <a href="mailto:twaroch@ci.tuwien.ac.at">twaroch@ci.tuwien.ac.at</a> provided the functions
-<code>gls</code> and <code>ols</code>.
-
-     <li>James R. Van Zandt <a href="mailto:jrv@vanzandt.mv.com">jrv@vanzandt.mv.com</a> added support for
-reading and writing <span class="sc">Matlab</span> version 5 binary data files.
-
-     <li>Andreas Weingessel <a href="mailto:Andreas.Weingessel@ci.tuwien.ac.at">Andreas.Weingessel@ci.tuwien.ac.at</a> wrote the
-audio functions <code>lin2mu</code>, <code>loadaudio</code>, <code>mu2lin</code>,
-<code>playaudio</code>, <code>record</code>, <code>saveaudio</code>, and <code>setaudio</code>.
-
-     <li>Fook Fah Yap <a href="mailto:ffy@eng.cam.ac.uk">ffy@eng.cam.ac.uk</a> provided the <code>fft</code> and
-<code>ifft</code> functions and valuable bug reports for early versions. 
-</ul>
+   <p><table summary=""><tr align="left"><td valign="top" width="33%">Andy Adler </td><td valign="top" width="33%">Joel Andersson </td><td valign="top" width="33%">Muthiah Annamalai
+<br></td></tr><tr align="left"><td valign="top" width="33%">Shai Ayal </td><td valign="top" width="33%">Roger Banks </td><td valign="top" width="33%">Ben Barrowes
+<br></td></tr><tr align="left"><td valign="top" width="33%">Alexander Barth </td><td valign="top" width="33%">David Bateman </td><td valign="top" width="33%">Heinz Bauschke
+<br></td></tr><tr align="left"><td valign="top" width="33%">Karl Berry </td><td valign="top" width="33%">David Billinghurst </td><td valign="top" width="33%">Don Bindner
+<br></td></tr><tr align="left"><td valign="top" width="33%">Jakub Bogusz </td><td valign="top" width="33%">Marcus Brinkmann </td><td valign="top" width="33%">Remy Bruno
+<br></td></tr><tr align="left"><td valign="top" width="33%">Marco Caliari </td><td valign="top" width="33%">Daniel Calvelo </td><td valign="top" width="33%">John C. Campbell
+<br></td></tr><tr align="left"><td valign="top" width="33%">Jean-Francois Cardoso </td><td valign="top" width="33%">Joao Cardoso </td><td valign="top" width="33%">Larrie Carr
+<br></td></tr><tr align="left"><td valign="top" width="33%">David Castelow </td><td valign="top" width="33%">Vincent Cautaerts </td><td valign="top" width="33%">Clinton Chee
+<br></td></tr><tr align="left"><td valign="top" width="33%">Albert Chin-A-Young </td><td valign="top" width="33%">J. D. Cole </td><td valign="top" width="33%">Martin Costabel
+<br></td></tr><tr align="left"><td valign="top" width="33%">Michael Creel </td><td valign="top" width="33%">Jeff Cunningham </td><td valign="top" width="33%">Martin Dalecki
+<br></td></tr><tr align="left"><td valign="top" width="33%">Jorge Barros de Abreu </td><td valign="top" width="33%">Philippe Defert </td><td valign="top" width="33%">Bill Denney
+<br></td></tr><tr align="left"><td valign="top" width="33%">David M. Doolin </td><td valign="top" width="33%">Pascal A. Dupuis </td><td valign="top" width="33%">John W. Eaton
+<br></td></tr><tr align="left"><td valign="top" width="33%">Dirk Eddelbuettel </td><td valign="top" width="33%">Paul Eggert </td><td valign="top" width="33%">Stephen Eglen
+<br></td></tr><tr align="left"><td valign="top" width="33%">Peter Ekberg </td><td valign="top" width="33%">Rolf Fabian </td><td valign="top" width="33%">Stephen Fegan
+<br></td></tr><tr align="left"><td valign="top" width="33%">Ramon Garcia Fernandez </td><td valign="top" width="33%">Torsten Finke </td><td valign="top" width="33%">Jose Daniel Munoz Frias
+<br></td></tr><tr align="left"><td valign="top" width="33%">Castor Fu </td><td valign="top" width="33%">Eduardo Gallestey </td><td valign="top" width="33%">Walter Gautschi
+<br></td></tr><tr align="left"><td valign="top" width="33%">Klaus Gebhardt </td><td valign="top" width="33%">Driss Ghaddab </td><td valign="top" width="33%">Nicolo Giorgetti
+<br></td></tr><tr align="left"><td valign="top" width="33%">Michael Goffioul </td><td valign="top" width="33%">Glenn Golden </td><td valign="top" width="33%">Tomislav Goles
+<br></td></tr><tr align="left"><td valign="top" width="33%">Keith Goodman </td><td valign="top" width="33%">Etienne Grossmann </td><td valign="top" width="33%">Peter Gustafson
+<br></td></tr><tr align="left"><td valign="top" width="33%">Kai Habel </td><td valign="top" width="33%">William P. Y. Hadisoeseno </td><td valign="top" width="33%">Benjamin Hall
+<br></td></tr><tr align="left"><td valign="top" width="33%">Kim Hansen </td><td valign="top" width="33%">Soren Hauberg </td><td valign="top" width="33%">Daniel Heiserer
+<br></td></tr><tr align="left"><td valign="top" width="33%">Yozo Hida </td><td valign="top" width="33%">Roman Hodek </td><td valign="top" width="33%">A. Scottedward Hodel
+<br></td></tr><tr align="left"><td valign="top" width="33%">Richard Allan Holcombe </td><td valign="top" width="33%">Tom Holroyd </td><td valign="top" width="33%">David Hoover
+<br></td></tr><tr align="left"><td valign="top" width="33%">Kurt Hornik </td><td valign="top" width="33%">Christopher Hulbert </td><td valign="top" width="33%">Cyril Humbert
+<br></td></tr><tr align="left"><td valign="top" width="33%">Teemu Ikonen </td><td valign="top" width="33%">Alan W. Irwin </td><td valign="top" width="33%">Geoff Jacobsen
+<br></td></tr><tr align="left"><td valign="top" width="33%">Mats Jansson </td><td valign="top" width="33%">Cai Jianming </td><td valign="top" width="33%">Steven G. Johnson
+<br></td></tr><tr align="left"><td valign="top" width="33%">Heikki Junes </td><td valign="top" width="33%">Atsushi Kajita </td><td valign="top" width="33%">Mohamed Kamoun
+<br></td></tr><tr align="left"><td valign="top" width="33%">Lute Kamstra </td><td valign="top" width="33%">Joel Keay </td><td valign="top" width="33%">Mumit Khan
+<br></td></tr><tr align="left"><td valign="top" width="33%">Paul Kienzle </td><td valign="top" width="33%">Aaron A. King </td><td valign="top" width="33%">Arno J. Klaassen
+<br></td></tr><tr align="left"><td valign="top" width="33%">Geoffrey Knauth </td><td valign="top" width="33%">Heine Kolltveit </td><td valign="top" width="33%">Ken Kouno
+<br></td></tr><tr align="left"><td valign="top" width="33%">Oyvind Kristiansen </td><td valign="top" width="33%">Piotr Krzyzanowski </td><td valign="top" width="33%">Volker Kuhlmann
+<br></td></tr><tr align="left"><td valign="top" width="33%">Miroslaw Kwasniak </td><td valign="top" width="33%">Rafael Laboissiere </td><td valign="top" width="33%">Kai Labusch
+<br></td></tr><tr align="left"><td valign="top" width="33%">Claude Lacoursiere </td><td valign="top" width="33%">Walter Landry </td><td valign="top" width="33%">Bill Lash
+<br></td></tr><tr align="left"><td valign="top" width="33%">Dirk Laurie </td><td valign="top" width="33%">Maurice LeBrun </td><td valign="top" width="33%">Friedrich Leisch
+<br></td></tr><tr align="left"><td valign="top" width="33%">Benjamin Lindner </td><td valign="top" width="33%">Ross Lippert </td><td valign="top" width="33%">David Livings
+<br></td></tr><tr align="left"><td valign="top" width="33%">Erik de Castro Lopo </td><td valign="top" width="33%">Massimo Lorenzin </td><td valign="top" width="33%">Hoxide Ma
+<br></td></tr><tr align="left"><td valign="top" width="33%">James Macnicol </td><td valign="top" width="33%">Jens-Uwe Mager </td><td valign="top" width="33%">Ricardo Marranita
+<br></td></tr><tr align="left"><td valign="top" width="33%">Orestes Mas </td><td valign="top" width="33%">Makoto Matsumoto </td><td valign="top" width="33%">Laurent Mazet
+<br></td></tr><tr align="left"><td valign="top" width="33%">G. D. McBain </td><td valign="top" width="33%">Stefan Monnier </td><td valign="top" width="33%">Antoine Moreau
+<br></td></tr><tr align="left"><td valign="top" width="33%">Kai P. Mueller </td><td valign="top" width="33%">Victor Munoz </td><td valign="top" width="33%">Carmen Navarrete
+<br></td></tr><tr align="left"><td valign="top" width="33%">Todd Neal </td><td valign="top" width="33%">Al Niessner </td><td valign="top" width="33%">Rick Niles
+<br></td></tr><tr align="left"><td valign="top" width="33%">Takuji Nishimura </td><td valign="top" width="33%">Eric Norum </td><td valign="top" width="33%">Michael O'Brien
+<br></td></tr><tr align="left"><td valign="top" width="33%">Thorsten Ohl </td><td valign="top" width="33%">Arno Onken </td><td valign="top" width="33%">Luis F. Ortiz
+<br></td></tr><tr align="left"><td valign="top" width="33%">Scott Pakin </td><td valign="top" width="33%">Gabriele Pannocchia </td><td valign="top" width="33%">Sylvain Pelissier
+<br></td></tr><tr align="left"><td valign="top" width="33%">Per Persson </td><td valign="top" width="33%">Jim Peterson </td><td valign="top" width="33%">Danilo Piazzalunga
+<br></td></tr><tr align="left"><td valign="top" width="33%">Nicholas Piper </td><td valign="top" width="33%">Hans Ekkehard Plesser </td><td valign="top" width="33%">Tom Poage
+<br></td></tr><tr align="left"><td valign="top" width="33%">Orion Poplawski </td><td valign="top" width="33%">Ondrej Popp </td><td valign="top" width="33%">Jef Poskanzer
+<br></td></tr><tr align="left"><td valign="top" width="33%">Francesco Potorti </td><td valign="top" width="33%">James B. Rawlings </td><td valign="top" width="33%">Eric S. Raymond
+<br></td></tr><tr align="left"><td valign="top" width="33%">Balint Reczey </td><td valign="top" width="33%">Michael Reifenberger </td><td valign="top" width="33%">Petter Risholm
+<br></td></tr><tr align="left"><td valign="top" width="33%">Matthew W. Roberts </td><td valign="top" width="33%">Andrew Ross </td><td valign="top" width="33%">Mark van Rossum
+<br></td></tr><tr align="left"><td valign="top" width="33%">Kevin Ruland </td><td valign="top" width="33%">Olli Saarela </td><td valign="top" width="33%">Toni Saarela
+<br></td></tr><tr align="left"><td valign="top" width="33%">Juhani Saastamoinen </td><td valign="top" width="33%">Ben Sapp </td><td valign="top" width="33%">Alois Schloegl
+<br></td></tr><tr align="left"><td valign="top" width="33%">Michel D. Schmid </td><td valign="top" width="33%">Nicol N. Schraudolph </td><td valign="top" width="33%">Sebastian Schubert
+<br></td></tr><tr align="left"><td valign="top" width="33%">Ludwig Schwardt </td><td valign="top" width="33%">Daniel J. Sebald </td><td valign="top" width="33%">Dmitri A. Sergatskov
+<br></td></tr><tr align="left"><td valign="top" width="33%">Baylis Shanks </td><td valign="top" width="33%">Joseph P. Skudlarek </td><td valign="top" width="33%">John Smith
+<br></td></tr><tr align="left"><td valign="top" width="33%">Julius Smith </td><td valign="top" width="33%">Shan G. Smith </td><td valign="top" width="33%">Joerg Specht
+<br></td></tr><tr align="left"><td valign="top" width="33%">Quentin H. Spencer </td><td valign="top" width="33%">Christoph Spiel </td><td valign="top" width="33%">Richard Stallman
+<br></td></tr><tr align="left"><td valign="top" width="33%">Russell Standish </td><td valign="top" width="33%">Doug Stewart </td><td valign="top" width="33%">Thomas Stuart
+<br></td></tr><tr align="left"><td valign="top" width="33%">Ariel Tankus </td><td valign="top" width="33%">Georg Thimm </td><td valign="top" width="33%">Duncan Temple Lang
+<br></td></tr><tr align="left"><td valign="top" width="33%">Olaf Till </td><td valign="top" width="33%">Thomas Treichl </td><td valign="top" width="33%">Utkarsh Upadhyay
+<br></td></tr><tr align="left"><td valign="top" width="33%">Stefan van der Walt </td><td valign="top" width="33%">Peter Van Wieren </td><td valign="top" width="33%">James R. Van Zandt
+<br></td></tr><tr align="left"><td valign="top" width="33%">Gregory Vanuxem </td><td valign="top" width="33%">Ivana Varekova </td><td valign="top" width="33%">Thomas Walter
+<br></td></tr><tr align="left"><td valign="top" width="33%">Olaf Weber </td><td valign="top" width="33%">Thomas Weber </td><td valign="top" width="33%">Bob Weigel
+<br></td></tr><tr align="left"><td valign="top" width="33%">Andreas Weingessel </td><td valign="top" width="33%">Michael Weitzel </td><td valign="top" width="33%">Fook Fah Yap
+<br></td></tr><tr align="left"><td valign="top" width="33%">Michael Zeising </td><td valign="top" width="33%">Federico Zenith </td><td valign="top" width="33%">Alex Zvoleff
+   <br></td></tr></table>
 
    <p>Special thanks to the following people and organizations for
 supporting the development of Octave:
@@ -345,8 +137,11 @@ Advanced Technology Program under Grant No. 003658-078.
 
      <li>Noel Bell, Senior Engineer, Texaco Chemical Company, Austin Texas.
 
+     <li>John A. Turner, Group Leader, Continuum Dynamics (CCS-2), Los Alamos
+National Laboratory, for registering the <a href="octave.org">octave.org</a> domain name.
+
      <li>James B. Rawlings, Professor, University of Wisconsin-Madison,
-Department of Chemical Engineering.
+Department of Chemical and Biological Engineering.
 
      <li>Richard Stallman, for writing GNU. 
 </ul>

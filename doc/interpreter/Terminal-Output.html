@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -177,12 +30,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Basic-Input-and-Output.html#Basic-Input
 <hr>
 </div>
 
-<h4 class="subsection">16.1.1 Terminal Output</h4>
+<h4 class="subsection">15.1.1 Terminal Output</h4>
 
 <p>Since Octave normally prints the value of an expression as soon as it
 has been evaluated, the simplest of all I/O functions is a simple
 expression.  For example, the following expression will display the
-value of pi
+value of `<samp><span class="samp">pi</span></samp>'
 
 <pre class="example">     pi
           -| pi = 3.1416
@@ -198,37 +51,19 @@ values with <code>disp</code> and through the normal echoing mechanism.
    <p><a name="doc_002dans"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>ans</b><var><a name="index-ans-529"></a></var><br>
-<blockquote><p>This variable holds the most recently computed result that was not
+&mdash; Automatic Variable: <b>ans</b><var><a name="index-ans-639"></a></var><br>
+<blockquote><p>The the most recently computed result that was not
 explicitly assigned to a variable.  For example, after the expression
 
      <pre class="example">          3^2 + 4^2
      </pre>
-        <p class="noindent">is evaluated, the value of <code>ans</code> is 25. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dfdisp"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>fdisp</b> (<var>fid, x</var>)<var><a name="index-fdisp-530"></a></var><br>
-<blockquote><p>Display the value of <var>x</var> on the stream <var>fid</var>.  For example,
-
-     <pre class="example">          fdisp (stdout, "The value of pi is:"), fdisp (stdout, pi)
-          
-               -| the value of pi is:
-               -| 3.1416
-     </pre>
-        <p class="noindent">Note that the output from <code>fdisp</code> always ends with a newline.
-        <pre class="sp">
-     
-     </pre>
-     See also: disp. 
+        <p class="noindent">is evaluated, the value returned by <code>ans</code> is 25. 
 </p></blockquote></div>
 
    <p><a name="doc_002ddisp"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>disp</b> (<var>x</var>)<var><a name="index-disp-531"></a></var><br>
+&mdash; Built-in Function:  <b>disp</b> (<var>x</var>)<var><a name="index-disp-640"></a></var><br>
 <blockquote><p>Display the value of <var>x</var>.  For example,
 
      <pre class="example">          disp ("The value of pi is:"), disp (pi)
@@ -243,13 +78,13 @@ returns the formatted output in a string.
         <pre class="sp">
      
      </pre>
-     See also: fdisp. 
+     <strong>See also:</strong> fdisp. 
 </p></blockquote></div>
 
    <p><a name="doc_002dformat"></a>
 
 <div class="defun">
-&mdash; Command: <b>format</b><var> options<a name="index-format-532"></a></var><br>
+&mdash; Command: <b>format</b><var> options<a name="index-format-641"></a></var><br>
 <blockquote><p>Control the format of the output produced by <code>disp</code> and Octave's
 normal echoing mechanism.  Valid options are listed in the following
 table.
@@ -368,11 +203,15 @@ state is restored.
    <p><a name="doc_002dprint_005fanswer_005fid_005fname"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>print_answer_id_name</b><var><a name="index-print_005fanswer_005fid_005fname-533"></a></var><br>
-<blockquote><p>If the value of <code>print_answer_id_name</code> is nonzero, variable
-names are printed along with the result.  Otherwise, only the result
-values are printed.  The default value is 1. 
+&mdash; Built-in Function: <var>val</var> = <b>print_answer_id_name</b> ()<var><a name="index-print_005fanswer_005fid_005fname-642"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>print_answer_id_name</b> (<var>new_val</var>)<var><a name="index-print_005fanswer_005fid_005fname-643"></a></var><br>
+<blockquote><p>Query or set the internal variable that controls whether variable
+names are printed along with results produced by evaluating an expression. 
 </p></blockquote></div>
+
+<ul class="menu">
+<li><a accesskey="1" href="Paging-Screen-Output.html#Paging-Screen-Output">Paging Screen Output</a>
+</ul>
 
    </body></html>
 

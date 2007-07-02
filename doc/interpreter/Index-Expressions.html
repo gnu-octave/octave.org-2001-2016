@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -177,29 +30,29 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressio
 <hr>
 </div>
 
-<h3 class="section">10.1 Index Expressions</h3>
+<h3 class="section">9.1 Index Expressions</h3>
 
-<p><a name="index-g_t_0028-334"></a><a name="index-g_t_0029-335"></a>
+<p><a name="index-g_t_0028-405"></a><a name="index-g_t_0029-406"></a>
 An <dfn>index expression</dfn> allows you to reference or extract selected
 elements of a matrix or vector.
 
    <p>Indices may be scalars, vectors, ranges, or the special operator
 `<samp><span class="samp">:</span></samp>', which may be used to select entire rows or columns.
 
-   <p>Vectors are indexed using a single expression.  Matrices may be
-indexed using one or two indices (a warning is issued if a single
-index is used unless the value of the built-in variable
-<code>warn_fortran_indexing</code> is zero).
-
-   <p><a name="doc_002dwarn_005ffortran_005findexing"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>warn_fortran_indexing</b><var><a name="index-warn_005ffortran_005findexing-336"></a></var><br>
-<blockquote><p>If the value of <code>warn_fortran_indexing</code> is nonzero, a warning is
-printed for expressions which select elements of a two-dimensional matrix
-using a single index.  The default value is 0. 
-</p></blockquote></div>
-
+   <p>Vectors are indexed using a single index expression.  Matrices may be
+indexed using one or two indices.  When using a single index
+expression, the elements of the matrix are taken in column-first order;
+the dimensions of the output match those of the index expression.  For
+example,
+<pre class="example">     a (2)       # a scalar
+     a (1:2)     # a row vector
+     a ([1; 2])  # a column vector
+</pre>
+   <p>As a special case, when a colon is used as a single index, the output
+is a column vector containing all the elements of the vector or matrix. 
+For example
+<pre class="example">     a (:)       # a column vector
+</pre>
    <p>Given the matrix
 
 <pre class="example">     a = [1, 2; 3, 4]
@@ -235,16 +88,16 @@ use the function <code>ones</code> to generate a matrix of the appropriate
 size whose elements are all one, and then to scale it to produce the
 desired result.  See <a href="Special-Utility-Matrices.html#Special-Utility-Matrices">Special Utility Matrices</a>.
 
-   <p><a name="doc_002dwarn_005fresize_005fon_005frange_005ferror"></a>
+   <p>It is also possible to create a matrix with different values. The
+following example create a 10 dimensional row vector a containing
+the values
+a(i) = sqrt(i).
 
-<div class="defun">
-&mdash; Built-in Variable: <b>warn_resize_on_range_error</b><var><a name="index-warn_005fresize_005fon_005frange_005ferror-337"></a></var><br>
-<blockquote><p>If the value of <code>warn_resize_on_range_error</code> is nonzero, print a
-warning when a matrix is resized by an indexed assignment with
-indices outside the current bounds.  The default value is 0. 
-</p></blockquote></div>
-
-   <p>Note that it is quite inefficient to create a vector using a loop like
+<pre class="example">     for i = 1:10
+       a(i) = sqrt (i);
+     endfor
+</pre>
+   <p class="noindent">Note that it is quite inefficient to create a vector using a loop like
 the one shown in the example above.  In this particular case, it would
 have been much more efficient to use the expression
 
@@ -271,6 +124,78 @@ matrix <code>a</code>,
 </pre>
    <p class="noindent">particularly for large matrices because Octave does not have to
 repeatedly resize the result.
+
+   <p><a name="doc_002dsubsref"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>subsref</b> (<var>val, idx</var>)<var><a name="index-subsref-407"></a></var><br>
+<blockquote><p>Perform the subscripted element selection operation according to
+the subscript specified by <var>idx</var>.
+
+        <p>The subscript <var>idx</var> is expected to be a structure array with
+fields `<samp><span class="samp">type</span></samp>' and `<samp><span class="samp">subs</span></samp>'.  Valid values for `<samp><span class="samp">type</span></samp>'
+are `<samp><span class="samp">"()"</span></samp>', `<samp><span class="samp">"{}"</span></samp>', and `<samp><span class="samp">"."</span></samp>'. 
+The `<samp><span class="samp">subs</span></samp>' field may be either `<samp><span class="samp">":"</span></samp>' or a cell array
+of index values.
+
+        <p>The following example shows how to extract the two first columns of
+a matrix
+
+     <pre class="example">          val = magic(3)
+               =&gt; val = [ 8   1   6
+                          3   5   7
+                          4   9   2 ]
+          idx.type = "()";
+          idx.subs = {":", 1:2};
+          subsref(val, idx)
+               =&gt; [ 8   1
+                    3   5
+                    4   9 ]
+     </pre>
+        <p class="noindent">Note that this is the same as writing <code>val(:,1:2)</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> subsasgn, substruct. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsub2ind"></a>
+
+<div class="defun">
+&mdash; Function File: <var>ind</var> = <b>sub2ind</b> (<var>dims, i, j</var>)<var><a name="index-sub2ind-408"></a></var><br>
+&mdash; Function File: <var>ind</var> = <b>sub2ind</b> (<var>dims, s1, s2, <small class="dots">...</small>, sN</var>)<var><a name="index-sub2ind-409"></a></var><br>
+<blockquote><p>Convert subscripts into a linear index.
+
+        <p>The following example shows how to convert the two-dimensional
+index <code>(2,3)</code> of a 3-by-3 matrix to a linear index.
+
+     <pre class="example">          linear_index = sub2ind ([3, 3], 2, 3)
+          =&gt; 8
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> ind2sub. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dind2sub"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>s1</var>, <var>s2</var>, <small class="dots">...</small>, <var>sN</var>] = <b>ind2sub</b> (<var>dims, ind</var>)<var><a name="index-ind2sub-410"></a></var><br>
+<blockquote><p>Convert a linear index into subscripts.
+
+        <p>The following example shows how to convert the linear index <code>8</code>
+in a 3-by-3 matrix into a subscript.
+
+     <pre class="example">          [r, c] = ind2sub ([3, 3], 8)
+          =&gt; r =  2
+          c =  3
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> sub2ind. 
+</p></blockquote></div>
 
    </body></html>
 

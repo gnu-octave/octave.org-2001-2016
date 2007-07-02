@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,12 +32,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic<
 <hr>
 </div>
 
-<h3 class="section">19.4 Sums and Products</h3>
+<h3 class="section">18.4 Sums and Products</h3>
 
 <p><a name="doc_002dsum"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sum</b> (<var>x, dim</var>)<var><a name="index-sum-776"></a></var><br>
+&mdash; Built-in Function:  <b>sum</b> (<var>x, dim</var>)<var><a name="index-sum-988"></a></var><br>
 <blockquote><p>Sum of elements along dimension <var>dim</var>.  If <var>dim</var> is
 omitted, it defaults to 1 (column-wise sum).
 
@@ -195,7 +48,7 @@ return the sum of the elements.
    <p><a name="doc_002dprod"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>prod</b> (<var>x, dim</var>)<var><a name="index-prod-777"></a></var><br>
+&mdash; Built-in Function:  <b>prod</b> (<var>x, dim</var>)<var><a name="index-prod-989"></a></var><br>
 <blockquote><p>Product of elements along dimension <var>dim</var>.  If <var>dim</var> is
 omitted, it defaults to 1 (column-wise products).
 
@@ -206,7 +59,7 @@ return the product of the elements.
    <p><a name="doc_002dcumsum"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cumsum</b> (<var>x, dim</var>)<var><a name="index-cumsum-778"></a></var><br>
+&mdash; Built-in Function:  <b>cumsum</b> (<var>x, dim</var>)<var><a name="index-cumsum-990"></a></var><br>
 <blockquote><p>Cumulative sum of elements along dimension <var>dim</var>.  If <var>dim</var>
 is omitted, it defaults to 1 (column-wise cumulative sums).
 
@@ -218,7 +71,7 @@ same orientation as <var>x</var>.
    <p><a name="doc_002dcumprod"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cumprod</b> (<var>x, dim</var>)<var><a name="index-cumprod-779"></a></var><br>
+&mdash; Built-in Function:  <b>cumprod</b> (<var>x, dim</var>)<var><a name="index-cumprod-991"></a></var><br>
 <blockquote><p>Cumulative product of elements along dimension <var>dim</var>.  If
 <var>dim</var> is omitted, it defaults to 1 (column-wise cumulative
 products).
@@ -231,7 +84,7 @@ same orientation as <var>x</var>.
    <p><a name="doc_002dsumsq"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sumsq</b> (<var>x, dim</var>)<var><a name="index-sumsq-780"></a></var><br>
+&mdash; Built-in Function:  <b>sumsq</b> (<var>x, dim</var>)<var><a name="index-sumsq-992"></a></var><br>
 <blockquote><p>Sum of squares of elements along dimension <var>dim</var>.  If <var>dim</var>
 is omitted, it defaults to 1 (column-wise sum of squares).
 

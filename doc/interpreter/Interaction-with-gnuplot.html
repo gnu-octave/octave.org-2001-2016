@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Plotting.html#Plotting" title="Plotting">
-<link rel="prev" href="Low_002dLevel-plotting-commands.html#Low_002dLevel-plotting-commands" title="Low-Level plotting commands">
+<link rel="prev" href="Printing-Plots.html#Printing-Plots" title="Printing Plots">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,221 +19,37 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Interaction-with-gnuplot"></a>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Low_002dLevel-plotting-commands.html#Low_002dLevel-plotting-commands">Low-Level plotting commands</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Printing-Plots.html#Printing-Plots">Printing Plots</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Plotting.html#Plotting">Plotting</a>
 <hr>
 </div>
 
-<h3 class="section">17.8 Interaction with <code>gnuplot</code></h3>
+<h3 class="section">16.9 Interaction with <code>gnuplot</code></h3>
 
 <p><a name="doc_002dgnuplot_005fbinary"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_binary</b><var><a name="index-gnuplot_005fbinary-642"></a></var><br>
-<blockquote><p>The name of the program invoked by the plot command.  The default value
-is <code>"gnuplot"</code>.  See <a href="Installation.html#Installation">Installation</a>. 
+&mdash; Loadable Function: <var>val</var> = <b>gnuplot_binary</b> ()<var><a name="index-gnuplot_005fbinary-807"></a></var><br>
+&mdash; Loadable Function: <var>old_val</var> = <b>gnuplot_binary</b> (<var>new_val</var>)<var><a name="index-gnuplot_005fbinary-808"></a></var><br>
+<blockquote><p>Query or set the name of the program invoked by the plot command. 
+The default value <code>"gnuplot"</code>.  See <a href="Installation.html#Installation">Installation</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dgnuplot_005fcommand_005fplot"></a>
+   <p><a name="doc_002dgnuplot_005fuse_005ftitle_005foption"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_plot</b><var><a name="index-gnuplot_005fcommand_005fplot-643"></a></var><br>
-</div>
-
-   <p><a name="doc_002dgnuplot_005fcommand_005freplot"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_replot</b><var><a name="index-gnuplot_005fcommand_005freplot-644"></a></var><br>
-</div>
-
-   <p><a name="doc_002dgnuplot_005fcommand_005fsplot"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_splot</b><var><a name="index-gnuplot_005fcommand_005fsplot-645"></a></var><br>
-</div>
-
-   <p><a name="doc_002dgnuplot_005fcommand_005fusing"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_using</b><var><a name="index-gnuplot_005fcommand_005fusing-646"></a></var><br>
-</div>
-
-   <p><a name="doc_002dgnuplot_005fcommand_005fwith"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_with</b><var><a name="index-gnuplot_005fcommand_005fwith-647"></a></var><br>
-</div>
-
-   <p><a name="doc_002dgnuplot_005fcommand_005faxes"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_axes</b><var><a name="index-gnuplot_005fcommand_005faxes-648"></a></var><br>
-</div>
-
-   <p><a name="doc_002dgnuplot_005fcommand_005ftitle"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_title</b><var><a name="index-gnuplot_005fcommand_005ftitle-649"></a></var><br>
-</div>
-
-   <p><a name="doc_002dgnuplot_005fcommand_005fend"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>gnuplot_command_end</b><var><a name="index-gnuplot_005fcommand_005fend-650"></a></var><br>
-</div>
+&mdash; Loadable Function: <var>val</var> = <b>gnuplot_use_title_option</b> ()<var><a name="index-gnuplot_005fuse_005ftitle_005foption-809"></a></var><br>
+&mdash; Loadable Function: <var>old_val</var> = <b>gnuplot_use_title_option</b> (<var>new_val</var>)<var><a name="index-gnuplot_005fuse_005ftitle_005foption-810"></a></var><br>
+<blockquote><p>If enabled, append `<samp><span class="samp">-title "Figure NN"</span></samp>' to the gnuplot command. 
+By default, this feature is enabled if the <code>DISPLAY</code> environment
+variable is set when Octave starts. 
+</p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
 <!-- Copyright (C) 1996, 1997 John W. Eaton -->

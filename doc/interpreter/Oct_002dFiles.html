@@ -5,9 +5,8 @@
 <meta name="description" content="Untitled">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Sparse-Matrices.html#Sparse-Matrices" title="Sparse Matrices">
-<link rel="prev" href="Iterative-Techniques.html#Iterative-Techniques" title="Iterative Techniques">
-<link rel="next" href="Function-Reference.html#Function-Reference" title="Function Reference">
+<link rel="up" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions" title="Dynamically Linked Functions">
+<link rel="next" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -20,218 +19,38 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Oct-Files"></a>
 <a name="Oct_002dFiles"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Function-Reference.html#Function-Reference">Function Reference</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Iterative-Techniques.html#Iterative-Techniques">Iterative Techniques</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Sparse-Matrices.html#Sparse-Matrices">Sparse Matrices</a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Dynamically Linked Functions</a>
 <hr>
 </div>
 
-<h3 class="section">22.5 Using Sparse Matrices in Oct-files</h3>
+<h3 class="section">A.1 Oct-Files</h3>
 
-<p>An oct-file is a means of writing an Octave function in a compilable
-language like C++, rather than as a script file. This results in a
-significant acceleration in the code.  It is not the purpose of this
-section to discuss how to write an oct-file, or discuss what they
-are. There are already two <a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a> very good
-references on oct-files themselves. Users who are not familiar with
-oct-files are urged to read these references to fully understand this
-chapter. The examples discussed here assume that the oct-file is written
-entirely in C++.
-
-   <p>There are three classes of sparse objects that are of interest to the
-user.
-
-     <dl>
-<dt>SparseMatrix<dd>A double precision sparse matrix class
-<br><dt>SparseComplexMatrix<dd>A Complex sparse matrix class
-<br><dt>SparseBoolMatrix<dd>A boolen sparse matrix class
-</dl>
-
-   <p>All of these classes inherit from the <code>Sparse&lt;T&gt;</code> template class,
-and so all have similar capabilities and usage. The <code>Sparse&lt;T&gt;</code>
-class was based on Octave <code>Array&lt;T&gt;</code> class, and so users familar
-with Octave's Array classes will be comfortable with the use of
-the sparse classes.
-
-   <p>The sparse classes will not be entirely described in this section, due
-to their similar with the existing Array classes. However, there are a
-few differences due the different nature of sparse objects, and these
-will be described. Firstly, although it is fundamentally possible to
-have N-dimensional sparse objects, the Octave sparse classes do
-not allow them at this time. So all operations of the sparse classes
-must be 2-dimensional.  This means that in fact <code>SparseMatrix</code> is
-similar to Octave's <code>Matrix</code> class rather than its
-<code>NDArray</code> class.
+<p><a name="index-oct_002dfiles-1941"></a><a name="index-mkoctfile-1942"></a><a name="index-oct-1943"></a>
 
 <ul class="menu">
-<li><a accesskey="1" href="OctDifferences.html#OctDifferences">OctDifferences</a>:  The Differences between the Array and Sparse Classes
-<li><a accesskey="2" href="OctCreation.html#OctCreation">OctCreation</a>:  Creating Spare Matrices in Oct-Files
-<li><a accesskey="3" href="OctUse.html#OctUse">OctUse</a>:  Using Sparse Matrices in Oct-Files
+<li><a accesskey="1" href="Getting-Started-with-Oct_002dFiles.html#Getting-Started-with-Oct_002dFiles">Getting Started with Oct-Files</a>
+<li><a accesskey="2" href="Matrices-and-Arrays-in-Oct_002dFiles.html#Matrices-and-Arrays-in-Oct_002dFiles">Matrices and Arrays in Oct-Files</a>
+<li><a accesskey="3" href="Character-Strings-in-Oct_002dFiles.html#Character-Strings-in-Oct_002dFiles">Character Strings in Oct-Files</a>
+<li><a accesskey="4" href="Cell-Arrays-in-Oct_002dFiles.html#Cell-Arrays-in-Oct_002dFiles">Cell Arrays in Oct-Files</a>
+<li><a accesskey="5" href="Structures-in-Oct_002dFiles.html#Structures-in-Oct_002dFiles">Structures in Oct-Files</a>
+<li><a accesskey="6" href="Sparse-Matrices-in-Oct_002dFiles.html#Sparse-Matrices-in-Oct_002dFiles">Sparse Matrices in Oct-Files</a>
+<li><a accesskey="7" href="Accessing-Global-Variables-in-Oct_002dFiles.html#Accessing-Global-Variables-in-Oct_002dFiles">Accessing Global Variables in Oct-Files</a>
+<li><a accesskey="8" href="Calling-Octave-Functions-from-Oct_002dFiles.html#Calling-Octave-Functions-from-Oct_002dFiles">Calling Octave Functions from Oct-Files</a>
+<li><a accesskey="9" href="Calling-External-Code-from-Oct_002dFiles.html#Calling-External-Code-from-Oct_002dFiles">Calling External Code from Oct-Files</a>
+<li><a href="Allocating-Local-Memory-in-Oct_002dFiles.html#Allocating-Local-Memory-in-Oct_002dFiles">Allocating Local Memory in Oct-Files</a>
+<li><a href="Input-Parameter-Checking-in-Oct_002dFiles.html#Input-Parameter-Checking-in-Oct_002dFiles">Input Parameter Checking in Oct-Files</a>
+<li><a href="Exception-and-Error-Handling-in-Oct_002dFiles.html#Exception-and-Error-Handling-in-Oct_002dFiles">Exception and Error Handling in Oct-Files</a>
+<li><a href="Documentation-and-Test-of-Oct_002dFiles.html#Documentation-and-Test-of-Oct_002dFiles">Documentation and Test of Oct-Files</a>
+<!-- * Application Programming Interface for Oct-Files:: -->
 </ul>
-
-   <div class="footnote">
-<hr>
-<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Paul Thomas "Dal Segno al Coda
-- The octave dynamically linked function cookbook",
-<a href="http://perso.wanadoo.fr/prthomas/intro.html">http://perso.wanadoo.fr/prthomas/intro.html</a>, and Cristophe Spiel
-"Del Coda Al Fine - Pushing Octave's Limits",
-<a href="http://octave.sourceforge.net/coda/coda.pdf">http://octave.sourceforge.net/coda/coda.pdf</a></p>
-
-   <p><hr></div>
 
    </body></html>
 

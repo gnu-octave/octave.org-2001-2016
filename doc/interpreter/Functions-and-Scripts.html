@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Statements.html#Statements" title="Statements">
-<link rel="next" href="Error-Handling.html#Error-Handling" title="Error Handling">
+<link rel="next" href="Errors-and-Warnings.html#Errors-and-Warnings" title="Errors and Warnings">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,168 +19,21 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Functions-and-Scripts"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Error-Handling.html#Error-Handling">Error Handling</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Errors-and-Warnings.html#Errors-and-Warnings">Errors and Warnings</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Statements.html#Statements">Statements</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr>
 </div>
 
-<h2 class="chapter">13 Functions and Script Files</h2>
+<h2 class="chapter">12 Functions and Script Files</h2>
 
-<p><a name="index-defining-functions-463"></a><a name="index-user_002ddefined-functions-464"></a><a name="index-functions_002c-user_002ddefined-465"></a><a name="index-script-files-466"></a>
+<p><a name="index-defining-functions-542"></a><a name="index-user_002ddefined-functions-543"></a><a name="index-functions_002c-user_002ddefined-544"></a><a name="index-script-files-545"></a>
 Complicated Octave programs can often be simplified by defining
 functions.  Functions can be defined directly on the command line during
 interactive Octave sessions, or in external files, and can be called just
@@ -192,10 +45,11 @@ like built-in functions.
 <li><a accesskey="3" href="Variable_002dlength-Argument-Lists.html#Variable_002dlength-Argument-Lists">Variable-length Argument Lists</a>
 <li><a accesskey="4" href="Variable_002dlength-Return-Lists.html#Variable_002dlength-Return-Lists">Variable-length Return Lists</a>
 <li><a accesskey="5" href="Returning-From-a-Function.html#Returning-From-a-Function">Returning From a Function</a>
-<li><a accesskey="6" href="Function-Files.html#Function-Files">Function Files</a>
-<li><a accesskey="7" href="Script-Files.html#Script-Files">Script Files</a>
-<li><a accesskey="8" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Dynamically Linked Functions</a>
-<li><a accesskey="9" href="Function-Handles-and-Inline.html#Function-Handles-and-Inline">Function Handles and Inline</a>
+<li><a accesskey="6" href="Default-Arguments.html#Default-Arguments">Default Arguments</a>
+<li><a accesskey="7" href="Function-Files.html#Function-Files">Function Files</a>
+<li><a accesskey="8" href="Script-Files.html#Script-Files">Script Files</a>
+<li><a accesskey="9" href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions">Function Handles Inline Functions and Anonymous Functions</a>
+<li><a href="Commands.html#Commands">Commands</a>
 <li><a href="Organization-of-Functions.html#Organization-of-Functions">Organization of Functions</a>
 </ul>
 

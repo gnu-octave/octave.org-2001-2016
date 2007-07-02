@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+<title>Printing Plots - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Plotting.html#Plotting" title="Plotting">
+<link rel="prev" href="Multiple-Plot-Windows.html#Multiple-Plot-Windows" title="Multiple Plot Windows">
+<link rel="next" href="Interaction-with-gnuplot.html#Interaction-with-gnuplot" title="Interaction with gnuplot">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Printing-Plots"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Interaction-with-gnuplot.html#Interaction-with-gnuplot">Interaction with gnuplot</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">Multiple Plot Windows</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Plotting.html#Plotting">Plotting</a>
+<hr>
+</div>
+
+<h3 class="section">16.8 Printing Plots</h3>
+
+<p><a name="doc_002dprint"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>print</b> (<var>filename, options</var>)<var><a name="index-print-805"></a></var><br>
+<blockquote>
+<p>Print a graph, or save it to a file
+
+        <p><var>filename</var> defines the file name of the output file. If no
+filename is specified, output is sent to the printer.
+
+        <p><var>options</var>:
+          <dl>
+<dt><code>-P</code><var>printer</var><dd>  Set the <var>printer</var> name to which the graph is sent if no
+<var>filename</var> is specified. 
+<br><dt><code>-color</code><dt><code>-mono</code><dd>  Monochrome or colour lines. 
+<br><dt><code>-solid</code><dt><code>-dashed</code><dd>  Solid or dashed lines. 
+<br><dt><code>-portrait</code><dt><code>-landscape</code><dd>  Plot orientation, as returned by "orient". 
+<br><dt><code>-d</code><var>device</var><dd>  Output device, where <var>device</var> is one of:
+               <dl>
+<dt><code>ps</code><dt><code>ps2</code><dt><code>psc</code><dt><code>psc2</code><dd>    Postscript (level 1 and 2, mono and color)
+<br><dt><code>eps</code><dt><code>eps2</code><dt><code>epsc</code><dt><code>epsc2</code><dd>    Encapsulated postscript (level 1 and 2, mono and color)
+<br><dt><code>tex</code><dt><code>epslatex</code><dt><code>epslatexstandalone</code><dt><code>pstex</code><dt><code>pslatex</code><dd>    Generate a LaTeX (or TeX) file for labels, and eps/ps for
+    graphics.  The file produced by <code>epslatexstandalone</code> can be
+    processed directly by LaTeX.  The other formats are intended to
+    be included in a LaTeX (or TeX) document.  The <code>tex</code> device
+    is the same as the <code>epslatex</code> device. 
+<br><dt><code>ill</code><dt><code>aifm</code><dd>    Adobe Illustrator
+<br><dt><code>cdr</code><dt><code>corel</code><dd>    CorelDraw
+<br><dt><code>hpgl</code><dd>    HP plotter language
+<br><dt><code>fig</code><dd>    XFig
+<br><dt><code>dxf</code><dd>    AutoCAD
+<br><dt><code>mf</code><dd>    Metafont
+<br><dt><code>png</code><dd>    Portable network graphics
+<br><dt><code>pbm</code><dd>    PBMplus
+<br><dt><code>emf</code><dd>    Microsoft Enhanced Metafile
+</dl>
+
+          <p>Other devices are supported by "convert" from ImageMagick.  Type
+  system("convert") to see what formats are available.
+
+          <p>If the device is omitted, it is inferred from the file extension,
+  or if there is no filename it is sent to the printer as postscript.
+
+          <br><dt><code>-F</code><var>fontname</var><dt><code>-F</code><var>fontname</var><code>:</code><var>size</var><dt><code>-F:</code><var>size</var><dd><var>fontname</var> set the postscript font (for use with postscript,
+  aifm, corel and fig). By default, 'Helvetica' is set for PS/Aifm,
+  and 'SwitzerlandLight' for Corel. It can also be 'Times-Roman'. 
+<var>size</var> is given in points. <var>fontname</var> is ignored for the
+  fig device. 
+</dl>
+
+        <p>The filename and options can be given in any order. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dorient"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>orient</b> (<var>orientation</var>)<var><a name="index-orient-806"></a></var><br>
+<blockquote><p>Set default print orientation.  Valid values for <var>orientation</var>
+include <code>"landscape"</code> and <code>"portrait"</code>.  If called with no
+arguments, return the default print orientation. 
+</p></blockquote></div>
+
+   </body></html>
+

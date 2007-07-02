@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Strings.html#Strings" title="Strings">
-<link rel="next" href="Containers.html#Containers" title="Containers">
+<link rel="next" href="Cell-Arrays.html#Cell-Arrays" title="Cell Arrays">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,160 +19,13 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Data-Structures"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Containers.html#Containers">Containers</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Cell-Arrays.html#Cell-Arrays">Cell Arrays</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Strings.html#Strings">Strings</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr>
@@ -180,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h2 class="chapter">6 Data Structures</h2>
 
-<p><a name="index-structures-233"></a><a name="index-data-structures-234"></a>
+<p><a name="index-structures-306"></a><a name="index-data-structures-307"></a>
 Octave includes support for organizing data in structures.  The current
 implementation uses an associative array with indices limited to
 strings, but the syntax is more like C-style structures.  Here are some
@@ -270,9 +123,10 @@ structures.
    <p><a name="doc_002dstruct_005flevels_005fto_005fprint"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>struct_levels_to_print</b><var><a name="index-struct_005flevels_005fto_005fprint-235"></a></var><br>
-<blockquote><p>You can tell Octave how many structure levels to display by setting the
-built-in variable <code>struct_levels_to_print</code>.  The default value is 2. 
+&mdash; Built-in Function: <var>val</var> = <b>struct_levels_to_print</b> ()<var><a name="index-struct_005flevels_005fto_005fprint-308"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>struct_levels_to_print</b> (<var>new_val</var>)<var><a name="index-struct_005flevels_005fto_005fprint-309"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the number of
+structure levels to display. 
 </p></blockquote></div>
 
    <p>Functions can return structures.  For example, the following function
@@ -288,7 +142,7 @@ elements of the same structure variable.
 structure containing the real and imaginary parts of the original
 function argument.
 
-<pre class="example">     octave:2&gt; f (rand (2) + rand (2) * I);
+<pre class="example">     octave:2&gt; f (rand (2) + rand (2) * I)
      ans =
      {
        im =
@@ -329,17 +183,31 @@ a loop, using a special form of the <code>for</code> statement
    <p>The following functions are available to give you information about
 structures.
 
+   <p><a name="doc_002dstruct"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>struct</b> (<var>"field", value, "field", value, <small class="dots">...</small></var>)<var><a name="index-struct-310"></a></var><br>
+<blockquote>
+<p>Create a structure and initialize its value.
+
+        <p>If the values are cell arrays, create a structure array and initialize
+its values.  The dimensions of each cell array of values must match. 
+Singleton cells and non-cell values are repeated so that they fill
+the entire array.  If the cells are empty, create an empty structure
+array with the specified field names. 
+</p></blockquote></div>
+
    <p><a name="doc_002disstruct"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isstruct</b> (<var>expr</var>)<var><a name="index-isstruct-236"></a></var><br>
+&mdash; Built-in Function:  <b>isstruct</b> (<var>expr</var>)<var><a name="index-isstruct-311"></a></var><br>
 <blockquote><p>Return 1 if the value of the expression <var>expr</var> is a structure. 
 </p></blockquote></div>
 
    <p><a name="doc_002dfieldnames"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fieldnames</b> (<var>struct</var>)<var><a name="index-fieldnames-237"></a></var><br>
+&mdash; Built-in Function:  <b>fieldnames</b> (<var>struct</var>)<var><a name="index-fieldnames-312"></a></var><br>
 <blockquote><p>Return a cell array of strings naming the elements of the structure
 <var>struct</var>.  It is an error to call <code>fieldnames</code> with an
 argument that is not a structure. 
@@ -348,10 +216,112 @@ argument that is not a structure.
    <p><a name="doc_002disfield"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isfield</b> (<var>expr, name</var>)<var><a name="index-isfield-238"></a></var><br>
+&mdash; Built-in Function:  <b>isfield</b> (<var>expr, name</var>)<var><a name="index-isfield-313"></a></var><br>
 <blockquote><p>Return true if the expression <var>expr</var> is a structure and it includes an
 element named <var>name</var>.  The first argument must be a structure and
 the second must be a string. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgetfield"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>v1</var>, <small class="dots">...</small>] = <b>getfield</b> (<var>s, key, <small class="dots">...</small></var>)<var><a name="index-getfield-314"></a></var><br>
+<blockquote><p>Extract fields from a structure. For example
+
+     <pre class="example">          ss(1,2).fd(3).b=5;
+          getfield (ss, {1,2}, "fd", {3}, "b")
+          =&gt; ans = 5
+     </pre>
+        <p>Note that the function call in the previous example is equivalent to
+the expression
+
+     <pre class="example">                   i1= {1,2}; i2= "fd"; i3= {3}; i4= "b";
+                   ss(i1{:}).(i2)(i3{:}).(i4)
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> setfield, rmfield, isfield, isstruct, fieldnames, struct. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dorderfields"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>t</var>, <var>p</var>] = <b>orderfields</b> (<var>s1, s2</var>)<var><a name="index-orderfields-315"></a></var><br>
+<blockquote><p>Return a struct with fields arranged alphabetically or as specified
+by <var>s2</var> and a corresponding permutation vector.
+
+        <p>Given one struct, arrange field names in <var>s1</var> alphabetically.
+
+        <p>Given two structs, arrange field names in <var>s1</var> as they appear
+in <var>s2</var>.  The second argument may also specify the order in
+a permutation vector or a cell array of strings.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> getfield, rmfield, isfield, isstruct, fieldnames, struct. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drmfield"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>rmfield</b> (<var>s, f</var>)<var><a name="index-rmfield-316"></a></var><br>
+<blockquote><p>Remove field <var>f</var> from the structure <var>s</var>.  If <var>f</var> is a
+cell array of character strings or a character array, remove the
+named fields.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> cellstr, iscellstr, setfield. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsetfield"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>k1</var>, <small class="dots">...</small>, <var>v1</var>] = <b>setfield</b> (<var>s, k1, v1, <small class="dots">...</small></var>)<var><a name="index-setfield-317"></a></var><br>
+<blockquote><p>Set field members in a structure.
+
+     <pre class="example">          oo(1,1).f0= 1;
+          oo = setfield(oo,{1,2},'fd',{3},'b', 6);
+          oo(1,2).fd(3).b == 6
+          =&gt; ans = 1
+     </pre>
+        <p>Note that this function could be written
+
+     <pre class="example">                   i1= {1,2}; i2= 'fd'; i3= {3}; i4= 'b';
+                   oo( i1{:} ).( i2 )( i3{:} ).( i4 ) == 6;
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> getfield, rmfield, isfield, isstruct, fieldnames, struct. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstruct2cell"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>struct2cell</b> (<var>S</var>)<var><a name="index-struct2cell-318"></a></var><br>
+<blockquote><p>Create a new cell array from the objects stored in the struct object. 
+If <var>f</var> is the number of fields in the structure, the resulting
+cell array will have a dimension vector corresponding to
+<code>[</code><var>F</var><code> size(</code><var>S</var><code>)]</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> cell2struct, fieldnames. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsubstruct"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>substruct</b> (<var>type, subs, <small class="dots">...</small></var>)<var><a name="index-substruct-319"></a></var><br>
+<blockquote><p>Create a subscript structure for use with <code>subsref</code> or
+<code>subsasgn</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> subsref, subsasgn. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->

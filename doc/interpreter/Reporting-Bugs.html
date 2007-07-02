@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Trouble.html#Trouble">Trouble</a>
 <hr>
 </div>
 
-<h3 class="appendixsec">C.2 Reporting Bugs</h3>
+<h3 class="appendixsec">D.2 Reporting Bugs</h3>
 
-<p><a name="index-bugs-1544"></a><a name="index-reporting-bugs-1545"></a>
+<p><a name="index-bugs-1984"></a><a name="index-reporting-bugs-1985"></a>
 Your bug reports play an essential role in making Octave reliable.
 
    <p>When you encounter a problem, the first thing to do is to see if it is
@@ -196,13 +49,22 @@ better.  Bug reports are your contribution to the maintenance of Octave.
    <p>In order for a bug report to serve its purpose, you must include the
 information that makes it possible to fix the bug.
 
-   <p><a name="index-bug_005freport-1546"></a>
+   <p><a name="index-bug_005freport-1986"></a>
 If you have Octave working at all, the easiest way to prepare a complete
 bug report is to use the Octave function <code>bug_report</code>.  When you
 execute this function, Octave will prompt you for a subject and then
 invoke the editor on a file that already contains all the configuration
 information.  When you exit the editor, Octave will mail the bug report
 for you.
+
+   <p><a name="doc_002dbug_005freport"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>bug_report</b> ()<var><a name="index-bug_005freport-1987"></a></var><br>
+<blockquote><p>Have Octave create a bug report template file, invoke your favorite
+editor, and submit the report to the bug-octave mailing list when
+you are finished editing. 
+</p></blockquote></div>
 
 <ul class="menu">
 <li><a accesskey="1" href="Bug-Criteria.html#Bug-Criteria">Bug Criteria</a>

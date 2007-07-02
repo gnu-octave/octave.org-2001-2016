@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -178,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Input-and-Output.html#Input-and-Output"
 <hr>
 </div>
 
-<h3 class="section">16.2 C-Style I/O Functions</h3>
+<h3 class="section">15.2 C-Style I/O Functions</h3>
 
 <p>Octave's C-style input and output functions provide most of the
 functionality of the C programming language's standard I/O library.  The
@@ -196,39 +49,39 @@ make your programs easier to understand.
    <p><a name="doc_002dstdin"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>stdin</b><var><a name="index-stdin-550"></a></var><br>
-<blockquote><p>The standard input stream (file id 0).  When Octave is used
-interactively, this is filtered through the command line editing
-functions.
+&mdash; Built-in Function:  <b>stdin</b> ()<var><a name="index-stdin-684"></a></var><br>
+<blockquote><p>Return the numeric value corresponding to the standard input stream. 
+When Octave is used interactively, this is filtered through the command
+line editing functions.
         <pre class="sp">
      
      </pre>
-     See also: stdout, stderr. 
+     <strong>See also:</strong> stdout, stderr. 
 </p></blockquote></div>
 
    <p><a name="doc_002dstdout"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>stdout</b><var><a name="index-stdout-551"></a></var><br>
-<blockquote><p>The standard output stream (file id 1).  Data written to the
-standard output is normally filtered through the pager.
+&mdash; Built-in Function:  <b>stdout</b> ()<var><a name="index-stdout-685"></a></var><br>
+<blockquote><p>Return the numeric value corresponding to the standard output stream. 
+Data written to the standard output is normally filtered through the pager.
         <pre class="sp">
      
      </pre>
-     See also: stdin, stderr. 
+     <strong>See also:</strong> stdin, stderr. 
 </p></blockquote></div>
 
    <p><a name="doc_002dstderr"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>stderr</b><var><a name="index-stderr-552"></a></var><br>
-<blockquote><p>The standard error stream (file id 2).  Even if paging is turned on,
-the standard error is not sent to the pager.  It is useful for error
-messages and prompts.
+&mdash; Built-in Function:  <b>stderr</b> ()<var><a name="index-stderr-686"></a></var><br>
+<blockquote><p>Return the numeric value corresponding to the standard error stream. 
+Even if paging is turned on, the standard error is not sent to the
+pager.  It is useful for error messages and prompts.
         <pre class="sp">
      
      </pre>
-     See also: stdin, stdout. 
+     <strong>See also:</strong> stdin, stdout. 
 </p></blockquote></div>
 
 <ul class="menu">

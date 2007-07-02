@@ -1,0 +1,176 @@
+<html lang="en">
+<head>
+<title>Manipulating the load path - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Function-Files.html#Function-Files" title="Function Files">
+<link rel="next" href="Subfunctions.html#Subfunctions" title="Subfunctions">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Manipulating-the-load-path"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Subfunctions.html#Subfunctions">Subfunctions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Function-Files.html#Function-Files">Function Files</a>
+<hr>
+</div>
+
+<h4 class="subsection">12.7.1 Manipulating the load path</h4>
+
+<p>When a function is called Octave searches a list of directories for
+a file that contains the function declaration. This list of directories
+is known as the load path. By default the load path contains
+a list of directories distributed with Octave plus the current
+working directory. To see your current load path call the <code>path</code>
+function without any input or output arguments.
+
+   <p>It is possible to add or remove directories to or from the load path
+using the <code>addpath</code> and <code>rmpath</code>. As an example, the following
+code adds `<samp><span class="samp">~/Octave</span></samp>' to the load path.
+
+<pre class="example">     addpath("~/Octave")
+</pre>
+   <p class="noindent">After this the directory `<samp><span class="samp">~/Octave</span></samp>' will be searched for functions.
+
+   <p><a name="doc_002daddpath"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>addpath</b> (<var>dir1, <small class="dots">...</small></var>)<var><a name="index-addpath-570"></a></var><br>
+&mdash; Built-in Function:  <b>addpath</b> (<var>dir1, <small class="dots">...</small>, option</var>)<var><a name="index-addpath-571"></a></var><br>
+<blockquote><p>Add <var>dir1</var>, <small class="dots">...</small> to the current function search path.  If
+<var>option</var> is `<samp><span class="samp">"-begin"</span></samp>' or 0 (the default), prepend the
+directory name to the current path.  If <var>option</var> is `<samp><span class="samp">"-end"</span></samp>'
+or 1, append the directory name to the current path. 
+Directories added to the path must exist.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> path, rmpath, genpath, pathdef, savepath, pathsep. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgenpath"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>genpath</b> (<var>dir</var>)<var><a name="index-genpath-572"></a></var><br>
+<blockquote><p>Return a path constructed from <var>dir</var> and all its subdiretories. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drmpath"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>rmpath</b> (<var>dir1, <small class="dots">...</small></var>)<var><a name="index-rmpath-573"></a></var><br>
+<blockquote><p>Remove <var>dir1</var>, <small class="dots">...</small> from the current function search path.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> path, addpath, genpath, pathdef, savepath, pathsep. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsavepath"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>savepath</b> (<var>file</var>)<var><a name="index-savepath-574"></a></var><br>
+<blockquote><p>Save the current function search path to <var>file</var>.  If <var>file</var>
+is omitted, <samp><span class="file">~/.octaverc</span></samp> is used.  If successful,
+<code>savepath</code> returns 0.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> path, addpath, rmpath, genpath, pathdef, pathsep. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpath"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>path</b> (<var><small class="dots">...</small></var>)<var><a name="index-path-575"></a></var><br>
+<blockquote><p>Modify or display Octave's load path.
+
+        <p>If <var>nargin</var> and <var>nargout</var> are zero, display the elements of
+Octave's load path in an easy to read format.
+
+        <p>If <var>nargin</var> is zero and nargout is greater than zero, return the
+current load path.
+
+        <p>If <var>nargin</var> is greater than zero, concatenate the arguments,
+separating them with <code>pathsep()</code>.  Set the internal search path
+to the result and return it.
+
+        <p>No checks are made for duplicate elements.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> addpath, rmpath, genpath, pathdef, savepath, pathsep. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpathdef"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>pathdef</b> ()<var><a name="index-pathdef-576"></a></var><br>
+<blockquote><p>Return the default list of directories in which to search for function
+files.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> path, addpath, rmpath, genpath, savepath, pathsep. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpathsep"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>pathsep</b> ()<var><a name="index-pathsep-577"></a></var><br>
+<blockquote><p>Return the system-dependent character used to separate directories in
+a path.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> filesep, dir, ls. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drehash"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>rehash</b> ()<var><a name="index-rehash-578"></a></var><br>
+<blockquote><p>Reinitialize Octave's load path directory cache. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfile_005fin_005floadpath"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>file_in_loadpath</b> (<var>file</var>)<var><a name="index-file_005fin_005floadpath-579"></a></var><br>
+&mdash; Built-in Function:  <b>file_in_loadpath</b> (<var>file, "all"</var>)<var><a name="index-file_005fin_005floadpath-580"></a></var><br>
+<blockquote>
+<p>Return the absolute name of <var>file</var> if it can be found in
+the list of directories specified by <code>path</code>. 
+If no file is found, return an empty matrix.
+
+        <p>If the first argument is a cell array of strings, search each
+directory of the loadpath for element of the cell array and return
+the first that matches.
+
+        <p>If the second optional argument <code>"all"</code> is supplied, return
+a cell array containing the list of all files that have the same
+name in the path.  If no files are found, return an empty cell array.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> file_in_path, path. 
+</p></blockquote></div>
+
+   </body></html>
+

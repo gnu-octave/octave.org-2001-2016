@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Sets.html#Sets" title="Sets">
-<link rel="next" href="Control-Theory.html#Control-Theory" title="Control Theory">
+<link rel="next" href="Interpolation.html#Interpolation" title="Interpolation">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,160 +19,13 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Polynomial-Manipulations"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Control-Theory.html#Control-Theory">Control Theory</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Interpolation.html#Interpolation">Interpolation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Sets.html#Sets">Sets</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr>
@@ -191,7 +44,7 @@ of length
    <p><a name="doc_002dcompan"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>compan</b> (<var>c</var>)<var><a name="index-compan-1181"></a></var><br>
+&mdash; Function File:  <b>compan</b> (<var>c</var>)<var><a name="index-compan-1474"></a></var><br>
 <blockquote><p>Compute the companion matrix corresponding to polynomial coefficient
 vector <var>c</var>.
 
@@ -211,14 +64,14 @@ polynomial.
         <pre class="sp">
      
      </pre>
-     See also: poly, roots, residue, conv, deconv, polyval, polyderiv,
+     <strong>See also:</strong> poly, roots, residue, conv, deconv, polyval, polyderiv,
 polyinteg. 
 </p></blockquote></div>
 
    <p><a name="doc_002dconv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>conv</b> (<var>a, b</var>)<var><a name="index-conv-1182"></a></var><br>
+&mdash; Function File:  <b>conv</b> (<var>a, b</var>)<var><a name="index-conv-1475"></a></var><br>
 <blockquote><p>Convolve two vectors.
 
         <p><code>y = conv (a, b)</code> returns a vector of length equal to
@@ -228,13 +81,13 @@ returns the coefficients of the product polynomial.
         <pre class="sp">
      
      </pre>
-     See also: deconv, poly, roots, residue, polyval, polyderiv, polyinteg. 
+     <strong>See also:</strong> deconv, poly, roots, residue, polyval, polyderiv, polyinteg. 
 </p></blockquote></div>
 
    <p><a name="doc_002ddeconv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>deconv</b> (<var>y, a</var>)<var><a name="index-deconv-1183"></a></var><br>
+&mdash; Function File:  <b>deconv</b> (<var>y, a</var>)<var><a name="index-deconv-1476"></a></var><br>
 <blockquote><p>Deconvolve two vectors.
 
         <p><code>[b, r] = deconv (y, a)</code> solves for <var>b</var> and <var>r</var> such that
@@ -246,13 +99,33 @@ a remander polynomial of lowest order.
         <pre class="sp">
      
      </pre>
-     See also: conv, poly, roots, residue, polyval, polyderiv, polyinteg. 
+     <strong>See also:</strong> conv, poly, roots, residue, polyval, polyderiv, polyinteg. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dconv2"></a>
+
+<div class="defun">
+&mdash; Loadable Function: y = <b>conv2</b> (<var>a, b, shape</var>)<var><a name="index-conv2-1477"></a></var><br>
+&mdash; Loadable Function: y = <b>conv2</b> (<var>v1, v2, M, shape</var>)<var><a name="index-conv2-1478"></a></var><br>
+<blockquote>
+<p>Returns 2D convolution of <var>a</var> and <var>b</var> where the size
+of <var>c</var> is given by
+
+          <dl>
+<dt><var>shape</var>= 'full'<dd>returns full 2-D convolution
+<br><dt><var>shape</var>= 'same'<dd>same size as a. 'central' part of convolution
+<br><dt><var>shape</var>= 'valid'<dd>only parts which do not include zero-padded edges
+</dl>
+
+        <p>By default <var>shape</var> is 'full'. When the third argument is a matrix
+returns the convolution of the matrix <var>M</var> by the vector <var>v1</var>
+in the column direction and by vector <var>v2</var> in the row direction
 </p></blockquote></div>
 
    <p><a name="doc_002dpoly"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>poly</b> (<var>a</var>)<var><a name="index-poly-1184"></a></var><br>
+&mdash; Function File:  <b>poly</b> (<var>a</var>)<var><a name="index-poly-1479"></a></var><br>
 <blockquote><p>If <var>a</var> is a square N-by-N matrix, <code>poly (</code><var>a</var><code>)</code>
 is the row vector of the coefficients of <code>det (z * eye (N) - a)</code>,
 the characteristic polynomial of <var>a</var>.  If <var>x</var> is a vector,
@@ -263,9 +136,9 @@ whose roots are the elements of <var>x</var>.
    <p><a name="doc_002dpolyderiv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyderiv</b> (<var>c</var>)<var><a name="index-polyderiv-1185"></a></var><br>
-&mdash; Function File: [<var>q</var>] = <b>polyder</b> (<var>b, a</var>)<var><a name="index-polyder-1186"></a></var><br>
-&mdash; Function File: [<var>q</var>, <var>r</var>] = <b>polyder</b> (<var>b, a</var>)<var><a name="index-polyder-1187"></a></var><br>
+&mdash; Function File:  <b>polyderiv</b> (<var>c</var>)<var><a name="index-polyderiv-1480"></a></var><br>
+&mdash; Function File: [<var>q</var>] = <b>polyder</b> (<var>b, a</var>)<var><a name="index-polyder-1481"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>r</var>] = <b>polyder</b> (<var>b, a</var>)<var><a name="index-polyder-1482"></a></var><br>
 <blockquote><p>Return the coefficients of the derivative of the polynomial whose
 coefficients are given by vector <var>c</var>.  If a pair of polynomials
 is given <var>b</var> and <var>a</var>, the derivative of the product is
@@ -274,14 +147,23 @@ quotient denominator in <var>r</var>.
         <pre class="sp">
      
      </pre>
-     See also: poly, polyinteg, polyreduce, roots, conv, deconv, residue,
+     <strong>See also:</strong> poly, polyinteg, polyreduce, roots, conv, deconv, residue,
 filter, polygcd, polyval, polyvalm. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dpolyder"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>polyder</b> (<var>c</var>)<var><a name="index-polyder-1483"></a></var><br>
+&mdash; Function File: [<var>q</var>] = <b>polyder</b> (<var>b, a</var>)<var><a name="index-polyder-1484"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>r</var>] = <b>polyder</b> (<var>b, a</var>)<var><a name="index-polyder-1485"></a></var><br>
+<blockquote><p>See polyderiv. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpolyfit"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>p</var>, <var>s</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-1188"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>s</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-1486"></a></var><br>
 <blockquote><p>Return the coefficients of a polynomial <var>p</var>(<var>x</var>) of degree
 <var>n</var> that minimizes
 <code>sumsq (p(x(i)) - y(i))</code>,
@@ -302,10 +184,35 @@ polynomial coefficients.
 </dl>
         </p></blockquote></div>
 
+   <p><a name="doc_002dpolygcd"></a>
+
+<div class="defun">
+&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a, tol</var>)<var><a name="index-polygcd-1487"></a></var><br>
+<blockquote>
+<p>Find greatest common divisor of two polynomials.  This is equivalent
+to the polynomial found by multiplying together all the common roots. 
+Together with deconv, you can reduce a ratio of two polynomials. 
+Tolerance defaults to
+     <pre class="example">          sqrt(eps).
+     </pre>
+        <p>Note that this is an unstable
+algorithm, so don't try it on large polynomials.
+
+        <p>Example
+     <pre class="example">          polygcd (poly(1:8), poly(3:12)) - poly(3:8)
+                   deconv (poly(1:8), polygcd (poly(1:8), poly(3:12))) - poly(1:2)
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> poly, polyinteg, polyderiv, polyreduce, roots, conv, deconv,
+residue, filter, polyval, and polyvalm. 
+</p></blockquote></div>
+
    <p><a name="doc_002dpolyinteg"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyinteg</b> (<var>c</var>)<var><a name="index-polyinteg-1189"></a></var><br>
+&mdash; Function File:  <b>polyinteg</b> (<var>c</var>)<var><a name="index-polyinteg-1488"></a></var><br>
 <blockquote><p>Return the coefficients of the integral of the polynomial whose
 coefficients are represented by the vector <var>c</var>.
 
@@ -313,27 +220,27 @@ coefficients are represented by the vector <var>c</var>.
         <pre class="sp">
      
      </pre>
-     See also: poly, polyderiv, polyreduce, roots, conv, deconv, residue,
+     <strong>See also:</strong> poly, polyderiv, polyreduce, roots, conv, deconv, residue,
 filter, polyval, and polyvalm. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpolyreduce"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyreduce</b> (<var>c</var>)<var><a name="index-polyreduce-1190"></a></var><br>
+&mdash; Function File:  <b>polyreduce</b> (<var>c</var>)<var><a name="index-polyreduce-1489"></a></var><br>
 <blockquote><p>Reduces a polynomial coefficient vector to a minimum number of terms by
 stripping off any leading zeros.
         <pre class="sp">
      
      </pre>
-     See also: poly, roots, conv, deconv, residue, filter, polyval,
+     <strong>See also:</strong> poly, roots, conv, deconv, residue, filter, polyval,
 polyvalm, polyderiv, polyinteg. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpolyval"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyval</b> (<var>c, x</var>)<var><a name="index-polyval-1191"></a></var><br>
+&mdash; Function File:  <b>polyval</b> (<var>c, x</var>)<var><a name="index-polyval-1490"></a></var><br>
 <blockquote><p>Evaluate a polynomial.
 
         <p><code>polyval (</code><var>c</var><code>, </code><var>x</var><code>)</code> will evaluate the polynomial at the
@@ -344,14 +251,14 @@ the elements of <var>x</var>.
         <pre class="sp">
      
      </pre>
-     See also: polyvalm, poly, roots, conv, deconv, residue, filter,
+     <strong>See also:</strong> polyvalm, poly, roots, conv, deconv, residue, filter,
 polyderiv, polyinteg. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpolyvalm"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyvalm</b> (<var>c, x</var>)<var><a name="index-polyvalm-1192"></a></var><br>
+&mdash; Function File:  <b>polyvalm</b> (<var>c, x</var>)<var><a name="index-polyvalm-1491"></a></var><br>
 <blockquote><p>Evaluate a polynomial in the matrix sense.
 
         <p><code>polyvalm (</code><var>c</var><code>, </code><var>x</var><code>)</code> will evaluate the polynomial in the
@@ -362,18 +269,18 @@ element multiplication as is used in polyval.
         <pre class="sp">
      
      </pre>
-     See also: polyval, poly, roots, conv, deconv, residue, filter,
+     <strong>See also:</strong> polyval, poly, roots, conv, deconv, residue, filter,
 polyderiv, and polyinteg. 
 </p></blockquote></div>
 
    <p><a name="doc_002dresidue"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>residue</b> (<var>b, a, tol</var>)<var><a name="index-residue-1193"></a></var><br>
+&mdash; Function File:  <b>residue</b> (<var>b, a, tol</var>)<var><a name="index-residue-1492"></a></var><br>
 <blockquote><p>If <var>b</var> and <var>a</var> are vectors of polynomial coefficients, then
 residue calculates the partial fraction expansion corresponding to the
 ratio of the two polynomials. 
-<a name="index-partial-fraction-expansion-1194"></a>
+<a name="index-partial-fraction-expansion-1493"></a>
 The function <code>residue</code> returns <var>r</var>, <var>p</var>, <var>k</var>, and
 <var>e</var>, where the vector <var>r</var> contains the residue terms, <var>p</var>
 contains the pole values, <var>k</var> contains the coefficients of a direct
@@ -417,13 +324,13 @@ imaginary part is discarded.  If two poles are farther apart than
         <pre class="sp">
      
      </pre>
-     See also: poly, roots, conv, deconv, polyval, polyderiv, and polyinteg. 
+     <strong>See also:</strong> poly, roots, conv, deconv, polyval, polyderiv, and polyinteg. 
 </p></blockquote></div>
 
    <p><a name="doc_002droots"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>roots</b> (<var>v</var>)<var><a name="index-roots-1195"></a></var><br>
+&mdash; Function File:  <b>roots</b> (<var>v</var>)<var><a name="index-roots-1494"></a></var><br>
 <blockquote>
 <p>For a vector <var>v</var> with N components, return
 the roots of the polynomial
@@ -435,7 +342,7 @@ the roots of the polynomial
    <p><a name="doc_002dpolyout"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyout</b> (<var>c, x</var>)<var><a name="index-polyout-1196"></a></var><br>
+&mdash; Function File:  <b>polyout</b> (<var>c, x</var>)<var><a name="index-polyout-1495"></a></var><br>
 <blockquote><p>Write formatted polynomial
      <pre class="example">             c(x) = c(1) * x^n + ... + c(n) x + c(n+1)
      </pre>
@@ -445,12 +352,83 @@ the roots of the polynomial
         <pre class="sp">
      
      </pre>
-     See also: polyval, polyvalm, poly, roots, conv, deconv, residue,
+     <strong>See also:</strong> polyval, polyvalm, poly, roots, conv, deconv, residue,
 filter, polyderiv, and polyinteg. 
 </p></blockquote></div>
 
+   <p><a name="doc_002dppval"></a>
+
+<div class="defun">
+&mdash; Function File: <var>yi</var> = <b>ppval</b> (<var>pp, xi</var>)<var><a name="index-ppval-1496"></a></var><br>
+<blockquote><p>Evaluate piece-wise polynomial <var>pp</var> at the points <var>xi</var>. 
+If <var>pp</var><code>.d</code> is a scalar greater than 1, or an array,
+then the returned value <var>yi</var> will be an array that is
+<code>d1, d1, ..., dk, length (</code><var>xi</var><code>)]</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> mkpp, unmkpp, spline. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmkpp"></a>
+
+<div class="defun">
+&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>x, p</var>)<var><a name="index-mkpp-1497"></a></var><br>
+&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>x, p, d</var>)<var><a name="index-mkpp-1498"></a></var><br>
+<blockquote>
+<p>Construct a piece-wise polynomial structure from sample points
+<var>x</var> and coefficients <var>p</var>.  The ith row of <var>p</var>,
+<var>p</var><code> (</code><var>i</var><code>,:)</code>, contains the coefficients for the polynomial
+over the <var>i</var>-th interval, ordered from highest to
+lowest. There must be one row for each interval in <var>x</var>, so
+<code>rows (</code><var>p</var><code>) == length (</code><var>x</var><code>) - 1</code>.
+
+        <p>You can concatenate multiple polynomials of the same order over the
+same set of intervals using <var>p</var><code> = [ </code><var>p1</var><code>; </code><var>p2</var><code>;
+...; </code><var>pd</var><code> ]</code>.  In this case, <code>rows (</code><var>p</var><code>) == </code><var>d</var><code>
+* (length (</code><var>x</var><code>) - 1)</code>.
+
+        <p><var>d</var> specifies the shape of the matrix <var>p</var> for all except the
+last dimension. If <var>d</var> is not specified it will be computed as
+<code>round (rows (</code><var>p</var><code>) / (length (</code><var>x</var><code>) - 1))</code> instead.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unmkpp, ppval, spline. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dunmkpp"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>x</var>, <var>p</var>, <var>n</var>, <var>k</var>, <var>d</var>] = <b>unmkpp</b> (<var>pp</var>)<var><a name="index-unmkpp-1499"></a></var><br>
+<blockquote>
+<p>Extract the components of a piece-wise polynomial structure <var>pp</var>. 
+These are as follows:
+
+          <dl>
+<dt><var>x</var><dd>Samples points. 
+<br><dt><var>p</var><dd>Polynomial coefficients for points in sample interval. <var>p</var><code>
+(</code><var>i</var><code>, :)</code> contains the coefficients for the polynomial over
+interval <var>i</var> ordered from highest to lowest. If <var>d</var><code> &gt;
+1</code>, <var>p</var><code> (</code><var>r</var><code>, </code><var>i</var><code>, :)</code> contains the coeffients for
+the r-th polynomial defined on interval <var>i</var>. However, this is
+stored as a 2-D array such that <var>c</var><code> = reshape (</code><var>p</var><code> (:,
+</code><var>j</var><code>), </code><var>n</var><code>, </code><var>d</var><code>)</code> gives <var>c</var><code> (</code><var>i</var><code>,  </code><var>r</var><code>)</code>
+is the j-th coefficient of the r-th polynomial over the i-th interval. 
+<br><dt><var>n</var><dd>Number of polynomial pieces. 
+<br><dt><var>k</var><dd>Order of the polynomial plus 1. 
+<br><dt><var>d</var><dd>Number of polynomials defined for each interval. 
+</dl>
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> mkpp, ppval, spline. 
+</p></blockquote></div>
+
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- Copyright (C) 2007 John W. Eaton -->
 <!-- This is part of the Octave manual. -->
 <!-- For copying conditions, see the file gpl.texi. -->
 </body></html>

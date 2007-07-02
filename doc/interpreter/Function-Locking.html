@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+<title>Function Locking - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Function-Files.html#Function-Files" title="Function Files">
+<link rel="prev" href="Overloading-and-Autoloading.html#Overloading-and-Autoloading" title="Overloading and Autoloading">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Function-Locking"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Overloading-and-Autoloading.html#Overloading-and-Autoloading">Overloading and Autoloading</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Function-Files.html#Function-Files">Function Files</a>
+<hr>
+</div>
+
+<h4 class="subsection">12.7.4 Function Locking</h4>
+
+<p>It is sometime desirable to lock a function into memory with the
+<code>mlock</code> function. This is typically used for dynamically linked
+functions in Oct-files or mex-files, that contain some initialization,
+and it is desireable that a <code>clear</code> does not remove this
+initialization.
+
+   <p>This might equally be used to prevent changes to a function from having
+effect in Octave, though a similar effect can be had with the
+<code>ignore_function_time_stamp</code> function.
+
+   <p><a name="doc_002dmlock"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>mlock</b> (<var>name</var>)<var><a name="index-mlock-584"></a></var><br>
+<blockquote><p>Lock the named function into memory.  If no function is named
+then lock in the current function.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> munlock, mislocked, persistent. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmunlock"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>munlock</b> (<var>fcn</var>)<var><a name="index-munlock-585"></a></var><br>
+<blockquote><p>Unlock the named function.  If no function is named
+then unlock the current function.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> mlock, mislocked, persistent. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmislocked"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>mislocked</b> (<var>fcn</var>)<var><a name="index-mislocked-586"></a></var><br>
+<blockquote><p>Return true if the named function is locked.  If no function is named
+then return true if the current function is locked.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> mlock, munlock, persistent. 
+</p></blockquote></div>
+
+   </body></html>
+

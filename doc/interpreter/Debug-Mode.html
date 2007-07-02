@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+<title>Debug Mode - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Debugging.html#Debugging" title="Debugging">
+<link rel="prev" href="Breakpoints.html#Breakpoints" title="Breakpoints">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Debug-Mode"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Breakpoints.html#Breakpoints">Breakpoints</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
+<hr>
+</div>
+
+<h3 class="section">14.3 Debug Mode</h3>
+
+<p>There are two additional support functions that allow the user to
+interrogate where in the execution of a script Octave entered the debug
+mode and to print the code in the script surrounding the point where
+Octave entered debug mode.
+
+   <p><a name="doc_002ddbwhere"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>dbwhere</b> ()<var><a name="index-dbwhere-637"></a></var><br>
+<blockquote><p>Show where we are in the code
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> dbclear, dbstatus, dbstop. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddbtype"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>dbtype</b> ()<var><a name="index-dbtype-638"></a></var><br>
+<blockquote><p>List script file with line numbers.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> dbclear, dbstatus, dbstop. 
+</p></blockquote></div>
+
+   <p>Debug mode equally allows single line stepping through a function using
+the commands <code>dbstep</code> and <code>dbnext</code>.  These differ slightly in
+the way they treat the next executable line if the next line itself is a
+function defined in an m-file.  The <code>dbnext</code> command will execute
+the next line, while staying in the existing function being debugged. 
+The <code>dbstep</code> command will step in to the new function.
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

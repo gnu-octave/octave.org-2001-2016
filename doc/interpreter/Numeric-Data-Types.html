@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -180,17 +33,18 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h2 class="chapter">4 Numeric Data Types</h2>
 
-<p><a name="index-numeric-constant-146"></a><a name="index-numeric-value-147"></a>
+<p><a name="index-numeric-constant-180"></a><a name="index-numeric-value-181"></a>
 A <dfn>numeric constant</dfn> may be a scalar, a vector, or a matrix, and it
 may contain complex values.
 
    <p>The simplest form of a numeric constant, a scalar, is a single number
 that can be an integer, a decimal fraction, a number in scientific
-(exponential) notation, or a complex number.  Note that all numeric
+(exponential) notation, or a complex number.  Note that by default numeric
 constants are represented within Octave in double-precision floating
 point format (complex constants are stored as pairs of double-precision
-floating point values).  Here are some examples of real-valued numeric
-constants, which all have the same value:
+floating point values).  It is however possible to represent real
+integers as described in <a href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>. Here are some examples
+of real-valued numeric constants, which all have the same value:
 
 <pre class="example">     105
      1.05e+2
@@ -202,7 +56,7 @@ constants, which all have the same value:
      3.0 + 4.0i
      0.3e1 + 40e-1i
 </pre>
-   <p>all of which are equivalent.  The letter `<samp><span class="samp">i</span></samp>' in the previous example
+   <p class="noindent">all of which are equivalent.  The letter `<samp><span class="samp">i</span></samp>' in the previous example
 stands for the pure imaginary constant, defined as
   <code>sqrt (-1)</code>.
 
@@ -217,14 +71,41 @@ If it does, Octave will print an error message, like this:
        3 + 4 i
              ^
 </pre>
-   <p>You may also use `<samp><span class="samp">j</span></samp>', `<samp><span class="samp">I</span></samp>', or `<samp><span class="samp">J</span></samp>' in place of the
+   <p class="noindent">You may also use `<samp><span class="samp">j</span></samp>', `<samp><span class="samp">I</span></samp>', or `<samp><span class="samp">J</span></samp>' in place of the
 `<samp><span class="samp">i</span></samp>' above.  All four forms are equivalent.
+
+   <p><a name="doc_002ddouble"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>double</b> (<var>x</var>)<var><a name="index-double-182"></a></var><br>
+<blockquote><p>Convert <var>x</var> to double precision type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsingle"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>single</b> (<var>val</var>)<var><a name="index-single-183"></a></var><br>
+<blockquote><p>Convert the numeric value <var>val</var> to single precision.
+
+        <p><strong>Note</strong>: this function currently returns its argument converted
+to double precision because Octave does not yet have a single-precision
+numeric data type. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcomplex"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>complex</b> (<var>val</var>)<var><a name="index-complex-184"></a></var><br>
+&mdash; Built-in Function:  <b>complex</b> (<var>re, im</var>)<var><a name="index-complex-185"></a></var><br>
+<blockquote><p>Convert <var>x</var> to a complex value. 
+</p></blockquote></div>
 
 <ul class="menu">
 <li><a accesskey="1" href="Matrices.html#Matrices">Matrices</a>
 <li><a accesskey="2" href="Ranges.html#Ranges">Ranges</a>
-<li><a accesskey="3" href="Logical-Values.html#Logical-Values">Logical Values</a>
-<li><a accesskey="4" href="Predicates-for-Numeric-Objects.html#Predicates-for-Numeric-Objects">Predicates for Numeric Objects</a>
+<li><a accesskey="3" href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>
+<li><a accesskey="4" href="Logical-Values.html#Logical-Values">Logical Values</a>
+<li><a accesskey="5" href="Predicates-for-Numeric-Objects.html#Predicates-for-Numeric-Objects">Predicates for Numeric Objects</a>
 </ul>
 
    </body></html>

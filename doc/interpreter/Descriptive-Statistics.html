@@ -1,0 +1,260 @@
+<html lang="en">
+<head>
+<title>Descriptive Statistics - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Statistics.html#Statistics" title="Statistics">
+<link rel="next" href="Basic-Statistical-Functions.html#Basic-Statistical-Functions" title="Basic Statistical Functions">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Descriptive-Statistics"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Basic-Statistical-Functions.html#Basic-Statistical-Functions">Basic Statistical Functions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
+<hr>
+</div>
+
+<h3 class="section">26.1 Descriptive Statistics</h3>
+
+<p>Octave can compute various statistics such as the moments of a data set.
+
+   <p><a name="doc_002dmean"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>mean</b> (<var>x, dim, opt</var>)<var><a name="index-mean-1278"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the mean of the elements of <var>x</var>
+
+     <pre class="example">          mean (x) = SUM_i x(i) / N
+     </pre>
+        <p>If <var>x</var> is a matrix, compute the mean for each column and return them
+in a row vector.
+
+        <p>With the optional argument <var>opt</var>, the kind of mean computed can be
+selected.  The following options are recognized:
+
+          <dl>
+<dt><code>"a"</code><dd>Compute the (ordinary) arithmetic mean.  This is the default.
+
+          <br><dt><code>"g"</code><dd>Computer the geometric mean.
+
+          <br><dt><code>"h"</code><dd>Compute the harmonic mean. 
+</dl>
+
+        <p>If the optional argument <var>dim</var> is supplied, work along dimension
+<var>dim</var>.
+
+        <p>Both <var>dim</var> and <var>opt</var> are optional.  If both are supplied,
+either may appear first. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmedian"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>median</b> (<var>x, dim</var>)<var><a name="index-median-1279"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the median value of the elements of
+<var>x</var>. If the elements of <var>x</var> are sorted, the median is defined
+as
+
+     <pre class="example">                      x(ceil(N/2)),             N odd
+          median(x) =
+                      (x(N/2) + x((N/2)+1))/2,  N even
+     </pre>
+        <p>If <var>x</var> is a matrix, compute the median value for each
+column and return them in a row vector. If the optional <var>dim</var>
+argument is given, operate along this dimension.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> std, mean. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmeansq"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>meansq</b> (<var>x</var>)<var><a name="index-meansq-1280"></a></var><br>
+&mdash; Function File:  <b>meansq</b> (<var>x, dim</var>)<var><a name="index-meansq-1281"></a></var><br>
+<blockquote><p>For vector arguments, return the mean square of the values. 
+For matrix arguments, return a row vector contaning the mean square
+of each column. With the optional <var>dim</var> argument, returns the
+mean squared of the values along this dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstd"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>std</b> (<var>x</var>)<var><a name="index-std-1282"></a></var><br>
+&mdash; Function File:  <b>std</b> (<var>x, opt</var>)<var><a name="index-std-1283"></a></var><br>
+&mdash; Function File:  <b>std</b> (<var>x, opt, dim</var>)<var><a name="index-std-1284"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the standard deviation of the elements
+of <var>x</var>.
+
+     <pre class="example">          std (x) = sqrt (sumsq (x - mean (x)) / (n - 1))
+     </pre>
+        <p>If <var>x</var> is a matrix, compute the standard deviation for
+each column and return them in a row vector.
+
+        <p>The argument <var>opt</var> determines the type of normalization to use. Valid values
+are
+
+          <dl>
+<dt>0:<dd>  normalizes with N-1, provides the square root of best unbiased estimator of
+  the variance [default]
+<br><dt>1:<dd>  normalizes with N, this provides the square root of the second moment around
+  the mean
+</dl>
+
+        <p>The third argument <var>dim</var> determines the dimension along which the standard
+deviation is calculated.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> mean, median. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dvar"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>var</b> (<var>x</var>)<var><a name="index-var-1285"></a></var><br>
+<blockquote><p>For vector arguments, return the (real) variance of the values. 
+For matrix arguments, return a row vector contaning the variance for
+each column.
+
+        <p>The argument <var>opt</var> determines the type of normalization to use. 
+Valid values are
+
+          <dl>
+<dt>0:<dd>Normalizes with N-1, provides the best unbiased estimator of the
+variance [default]. 
+<br><dt>1:<dd>Normalizes with N, this provides the second moment around the mean. 
+</dl>
+
+        <p>The third argument <var>dim</var> determines the dimension along which the
+variance is calculated. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcov"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cov</b> (<var>x, y</var>)<var><a name="index-cov-1286"></a></var><br>
+<blockquote><p>Compute covariance.
+
+        <p>If each row of <var>x</var> and <var>y</var> is an observation and each column is
+a variable, the (<var>i</var>, <var>j</var>)-th entry of
+<code>cov (</code><var>x</var><code>, </code><var>y</var><code>)</code> is the covariance between the <var>i</var>-th
+variable in <var>x</var> and the <var>j</var>-th variable in <var>y</var>. 
+If called with one argument, compute <code>cov (</code><var>x</var><code>, </code><var>x</var><code>)</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcor"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>cor</b> (<var>x, y</var>)<var><a name="index-cor-1287"></a></var><br>
+<blockquote><p>Compute correlation.
+
+        <p>The (<var>i</var>, <var>j</var>)-th entry of <code>cor (</code><var>x</var><code>, </code><var>y</var><code>)</code> is
+the correlation between the <var>i</var>-th variable in <var>x</var> and the
+<var>j</var>-th variable in <var>y</var>.
+
+     <pre class="example">          corrcoef(x,y) = cov(x,y)/(std(x)*std(y))
+     </pre>
+        <p>For matrices, each row is an observation and each column a variable;
+vectors are always observations and may be row or column vectors.
+
+        <p><code>cor (</code><var>x</var><code>)</code> is equivalent to <code>cor (</code><var>x</var><code>, </code><var>x</var><code>)</code>.
+
+        <p>Note that the <code>corrcoef</code> function does the same as <code>cor</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcorrcoef"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>corrcoef</b> (<var>x, y</var>)<var><a name="index-corrcoef-1288"></a></var><br>
+<blockquote><p>Compute correlation.
+
+        <p>If each row of <var>x</var> and <var>y</var> is an observation and each column is
+a variable, the (<var>i</var>, <var>j</var>)-th entry of
+<code>corrcoef (</code><var>x</var><code>, </code><var>y</var><code>)</code> is the correlation between the
+<var>i</var>-th variable in <var>x</var> and the <var>j</var>-th variable in <var>y</var>.
+
+     <pre class="example">          corrcoef(x,y) = cov(x,y)/(std(x)*std(y))
+     </pre>
+        <p>If called with one argument, compute <code>corrcoef (</code><var>x</var><code>, </code><var>x</var><code>)</code>. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dkurtosis"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>kurtosis</b> (<var>x, dim</var>)<var><a name="index-kurtosis-1289"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector of length N, return the kurtosis
+
+     <pre class="example">          kurtosis (x) = N^(-1) std(x)^(-4) sum ((x - mean(x)).^4) - 3
+     </pre>
+        <p class="noindent">of <var>x</var>.  If <var>x</var> is a matrix, return the kurtosis over the
+first non-singleton dimension. The optional argument <var>dim</var>
+can be given to force the kurtosis to be given over that
+dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dskewness"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>skewness</b> (<var>x, dim</var>)<var><a name="index-skewness-1290"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector of length n, return the skewness
+
+     <pre class="example">          skewness (x) = N^(-1) std(x)^(-3) sum ((x - mean(x)).^3)
+     </pre>
+        <p class="noindent">of <var>x</var>.  If <var>x</var> is a matrix, return the skewness along the
+first non-singleton dimension of the matrix. If the optional
+<var>dim</var> argument is given, operate along this dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dstatistics"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>statistics</b> (<var>x</var>)<var><a name="index-statistics-1291"></a></var><br>
+<blockquote><p>If <var>x</var> is a matrix, return a matrix with the minimum, first
+quartile, median, third quartile, maximum, mean, standard deviation,
+skewness and kurtosis of the columns of <var>x</var> as its rows.
+
+        <p>If <var>x</var> is a vector, treat it as a column vector. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmoment"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>moment</b> (<var>x, p, opt, dim</var>)<var><a name="index-moment-1292"></a></var><br>
+<blockquote><p>If <var>x</var> is a vector, compute the <var>p</var>-th moment of <var>x</var>.
+
+        <p>If <var>x</var> is a matrix, return the row vector containing the
+<var>p</var>-th moment of each column.
+
+        <p>With the optional string opt, the kind of moment to be computed can
+be specified.  If opt contains <code>"c"</code> or <code>"a"</code>, central
+and/or absolute moments are returned.  For example,
+
+     <pre class="example">          moment (x, 3, "ac")
+     </pre>
+        <p class="noindent">computes the third central absolute moment of <var>x</var>.
+
+        <p>If the optional argument <var>dim</var> is supplied, work along dimension
+<var>dim</var>. 
+</p></blockquote></div>
+
+   </body></html>
+

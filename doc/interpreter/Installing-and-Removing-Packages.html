@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+<title>Installing and Removing Packages - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Packages.html#Packages" title="Packages">
+<link rel="next" href="Using-Packages.html#Using-Packages" title="Using Packages">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Installing-and-Removing-Packages"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Using-Packages.html#Using-Packages">Using Packages</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Packages.html#Packages">Packages</a>
+<hr>
+</div>
+
+<h3 class="section">38.1 Installing and Removing Packages</h3>
+
+<p>Assuming a package is available in the file <code>image-1.0.0.tar.gz</code>
+it can be installed from the Octave prompt by writing
+
+<pre class="example">     pkg install image-1.0.0.tar.gz
+</pre>
+   <p class="noindent">If the package is installed successfully nothing will be printed on
+the prompt, but if an error occurred during installation it will be
+reported. It is possible to install several packages at once by
+writing several package files after the <code>pkg install</code> command. 
+If a different version of the package is already installed it will
+be removed prior to installing the new package. This makes it easy to
+upgrade and downgrade the version of a package, but makes it
+impossible to have several versions of the same package installed at
+once.
+
+   <p>To see which packages are installed type
+
+<pre class="example">     pkg list
+          -| Package Name  | Version | Installation directory
+          -| --------------+---------+-----------------------
+          -|        image *|   1.0.0 | /home/jwe/octave/image-1.0.0
+</pre>
+   <p class="noindent">In this case only version 1.0.0 of the <code>image</code> package is
+installed. The '*' character next to the package name shows that the
+image package is loaded and ready for use.
+
+   <p>It is possible to remove a package from the system using the
+<code>pkg uninstall</code> command like this
+
+<pre class="example">     pkg uninstall image
+</pre>
+   <p class="noindent">If the package is removed successfully nothing will be printed in the
+prompt, but if an error occurred it will be reported. It should be
+noted that the package file used for installation is not needed for
+removal, and that only the package name as reported by <code>pkg list</code>
+should be used when removing a package. It is possible to remove
+several packages at once by writing several package names after the
+<code>pkg uninstall</code> command.
+
+   <p>To minimize the amount of code duplication between packages it is
+possible that one package depends on another one. If a package
+depends on another, it will check if that package is installed
+during installation. If it is not, an error will be reported and
+the package will not be installed. This behaviour can be disabled
+by passing the <code>-nodeps</code> flag to the <code>pkg install</code>
+command
+
+<pre class="example">     pkg install -nodeps my_package_with_dependencies.tar.gz
+</pre>
+   <p class="noindent">Since the installed package expects its dependencies to be installed
+it may not function correctly. Because of this it is not recommended
+to disable dependency checking.
+
+   </body></html>
+

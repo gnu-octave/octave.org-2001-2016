@@ -7,7 +7,7 @@
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Matrix-Manipulation.html#Matrix-Manipulation" title="Matrix Manipulation">
 <link rel="prev" href="Finding-Elements-and-Checking-Conditions.html#Finding-Elements-and-Checking-Conditions" title="Finding Elements and Checking Conditions">
-<link rel="next" href="Special-Utility-Matrices.html#Special-Utility-Matrices" title="Special Utility Matrices">
+<link rel="next" href="Applying-a-Function-to-an-Array.html#Applying-a-Function-to-an-Array" title="Applying a Function to an Array">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -20,171 +20,24 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Rearranging-Matrices"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Special-Utility-Matrices.html#Special-Utility-Matrices">Special Utility Matrices</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Applying-a-Function-to-an-Array.html#Applying-a-Function-to-an-Array">Applying a Function to an Array</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Finding-Elements-and-Checking-Conditions.html#Finding-Elements-and-Checking-Conditions">Finding Elements and Checking Conditions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Matrix-Manipulation.html#Matrix-Manipulation">Matrix Manipulation</a>
 <hr>
 </div>
 
-<h3 class="section">18.2 Rearranging Matrices</h3>
+<h3 class="section">17.2 Rearranging Matrices</h3>
 
 <p><a name="doc_002dfliplr"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fliplr</b> (<var>x</var>)<var><a name="index-fliplr-661"></a></var><br>
+&mdash; Function File:  <b>fliplr</b> (<var>x</var>)<var><a name="index-fliplr-823"></a></var><br>
 <blockquote><p>Return a copy of <var>x</var> with the order of the columns reversed.  For
 example,
 
@@ -197,13 +50,13 @@ use <code>flipdim</code> instead.
         <pre class="sp">
      
      </pre>
-     See also: flipud, flipdim, rot90, rotdim. 
+     <strong>See also:</strong> flipud, flipdim, rot90, rotdim. 
 </p></blockquote></div>
 
    <p><a name="doc_002dflipud"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>flipud</b> (<var>x</var>)<var><a name="index-flipud-662"></a></var><br>
+&mdash; Function File:  <b>flipud</b> (<var>x</var>)<var><a name="index-flipud-824"></a></var><br>
 <blockquote><p>Return a copy of <var>x</var> with the order of the rows reversed.  For
 example,
 
@@ -217,13 +70,13 @@ use <code>flipdim</code> instead.
         <pre class="sp">
      
      </pre>
-     See also: fliplr, flipdim, rot90, rotdim. 
+     <strong>See also:</strong> fliplr, flipdim, rot90, rotdim. 
 </p></blockquote></div>
 
    <p><a name="doc_002dflipdim"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>flipdim</b> (<var>x, dim</var>)<var><a name="index-flipdim-663"></a></var><br>
+&mdash; Function File:  <b>flipdim</b> (<var>x, dim</var>)<var><a name="index-flipdim-825"></a></var><br>
 <blockquote><p>Return a copy of <var>x</var> flipped about the dimension <var>dim</var>. 
 For example
 
@@ -234,13 +87,13 @@ For example
         <pre class="sp">
      
      </pre>
-     See also: fliplr, flipud, rot90, rotdim. 
+     <strong>See also:</strong> fliplr, flipud, rot90, rotdim. 
 </p></blockquote></div>
 
    <p><a name="doc_002drot90"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rot90</b> (<var>x, n</var>)<var><a name="index-rot90-664"></a></var><br>
+&mdash; Function File:  <b>rot90</b> (<var>x, n</var>)<var><a name="index-rot90-826"></a></var><br>
 <blockquote><p>Return a copy of <var>x</var> with the elements rotated counterclockwise in
 90-degree increments.  The second argument is optional, and specifies
 how many 90-degree rotations are to be applied (the default value is 1). 
@@ -264,13 +117,13 @@ use <code>rotdim</code> instead.
         <pre class="sp">
      
      </pre>
-     See also: rotdim, flipud, fliplr, flipdim. 
+     <strong>See also:</strong> rotdim, flipud, fliplr, flipdim. 
 </p></blockquote></div>
 
    <p><a name="doc_002drotdim"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rotdim</b> (<var>x, n, plane</var>)<var><a name="index-rotdim-665"></a></var><br>
+&mdash; Function File:  <b>rotdim</b> (<var>x, n, plane</var>)<var><a name="index-rotdim-827"></a></var><br>
 <blockquote><p>Return a copy of <var>x</var> with the elements rotated counterclockwise in
 90-degree increments.  The second argument is optional, and specifies
 how many 90-degree rotations are to be applied (the default value is 1). 
@@ -296,13 +149,13 @@ equivalent statements:
         <pre class="sp">
      
      </pre>
-     See also: rot90, flipud, fliplr, flipdim. 
+     <strong>See also:</strong> rot90, flipud, fliplr, flipdim. 
 </p></blockquote></div>
 
    <p><a name="doc_002dcat"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cat</b> (<var>dim, array1, array2, <small class="dots">...</small>, arrayN</var>)<var><a name="index-cat-666"></a></var><br>
+&mdash; Built-in Function:  <b>cat</b> (<var>dim, array1, array2, <small class="dots">...</small>, arrayN</var>)<var><a name="index-cat-828"></a></var><br>
 <blockquote><p>Return the concatenation of N-d array objects, <var>array1</var>,
 <var>array2</var>, <small class="dots">...</small>, <var>arrayN</var> along dimension <var>dim</var>.
 
@@ -337,50 +190,50 @@ following example shows:
         <pre class="sp">
      
      </pre>
-     See also: horzcat, vertcat. 
+     <strong>See also:</strong> horzcat, vertcat. 
 </p></blockquote></div>
 
    <p><a name="doc_002dhorzcat"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>horzcat</b> (<var>array1, array2, <small class="dots">...</small>, arrayN</var>)<var><a name="index-horzcat-667"></a></var><br>
+&mdash; Built-in Function:  <b>horzcat</b> (<var>array1, array2, <small class="dots">...</small>, arrayN</var>)<var><a name="index-horzcat-829"></a></var><br>
 <blockquote><p>Return the horizontal concatenation of N-d array objects, <var>array1</var>,
 <var>array2</var>, <small class="dots">...</small>, <var>arrayN</var> along dimension 2.
         <pre class="sp">
      
      </pre>
-     See also: cat, vertcat. 
+     <strong>See also:</strong> cat, vertcat. 
 </p></blockquote></div>
 
    <p><a name="doc_002dvertcat"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>vertcat</b> (<var>array1, array2, <small class="dots">...</small>, arrayN</var>)<var><a name="index-vertcat-668"></a></var><br>
+&mdash; Built-in Function:  <b>vertcat</b> (<var>array1, array2, <small class="dots">...</small>, arrayN</var>)<var><a name="index-vertcat-830"></a></var><br>
 <blockquote><p>Return the vertical concatenation of N-d array objects, <var>array1</var>,
 <var>array2</var>, <small class="dots">...</small>, <var>arrayN</var> along dimension 1.
         <pre class="sp">
      
      </pre>
-     See also: cat, horzcat. 
+     <strong>See also:</strong> cat, horzcat. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpermute"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>permute</b> (<var>a, perm</var>)<var><a name="index-permute-669"></a></var><br>
+&mdash; Built-in Function:  <b>permute</b> (<var>a, perm</var>)<var><a name="index-permute-831"></a></var><br>
 <blockquote><p>Return the generalized transpose for an N-d array object <var>a</var>. 
 The permutation vector <var>perm</var> must contain the elements
 <code>1:ndims(a)</code> (in any order, but each element must appear just once).
         <pre class="sp">
      
      </pre>
-     See also: ipermute. 
+     <strong>See also:</strong> ipermute. 
 </p></blockquote></div>
 
    <p><a name="doc_002dipermute"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ipermute</b> (<var>a, iperm</var>)<var><a name="index-ipermute-670"></a></var><br>
+&mdash; Built-in Function:  <b>ipermute</b> (<var>a, iperm</var>)<var><a name="index-ipermute-832"></a></var><br>
 <blockquote><p>The inverse of the <code>permute</code> function.  The expression
 
      <pre class="example">          ipermute (permute (a, perm), perm)
@@ -389,16 +242,16 @@ The permutation vector <var>perm</var> must contain the elements
         <pre class="sp">
      
      </pre>
-     See also: permute. 
+     <strong>See also:</strong> permute. 
 </p></blockquote></div>
 
    <p><a name="doc_002dreshape"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>reshape</b> (<var>a, m, n, <small class="dots">...</small></var>)<var><a name="index-reshape-671"></a></var><br>
-&mdash; Function File:  <b>reshape</b> (<var>a, siz</var>)<var><a name="index-reshape-672"></a></var><br>
+&mdash; Built-in Function:  <b>reshape</b> (<var>a, m, n, <small class="dots">...</small></var>)<var><a name="index-reshape-833"></a></var><br>
+&mdash; Built-in Function:  <b>reshape</b> (<var>a, siz</var>)<var><a name="index-reshape-834"></a></var><br>
 <blockquote><p>Return a matrix with the given dimensions whose elements are taken
-from the matrix <var>a</var>.  The elements of the matrix are access in
+from the matrix <var>a</var>.  The elements of the matrix are accessed in
 column-major order (like Fortran arrays are stored).
 
         <p>For example,
@@ -417,7 +270,7 @@ by an empty argument.
    <p><a name="doc_002dcircshift"></a>
 
 <div class="defun">
-&mdash; Function File: <var>y</var> <b>=</b><var> circshift </var>(<var>x, n</var>)<var><a name="index-g_t_003d-673"></a></var><br>
+&mdash; Function File: <var>y</var> = <b>circshift</b> (<var>x, n</var>)<var><a name="index-circshift-835"></a></var><br>
 <blockquote><p>Circularly shifts the values of the array <var>x</var>. <var>n</var> must be
 a vector of integers no longer than the number of dimensions in
 <var>x</var>. The values of <var>n</var> can be either positive or negative,
@@ -425,7 +278,7 @@ which determines the direction in which the values or <var>x</var> are
 shifted. If an element of <var>n</var> is zero, then the corresponding
 dimension of <var>x</var> will not be shifted. For example
 
-     <pre class="example">          x = [1, 2, 3; 4, 5, 6, 7, 8, 9];
+     <pre class="example">          x = [1, 2, 3; 4, 5, 6; 7, 8, 9];
           circshift (x, 1)
           =&gt;  7, 8, 9
               1, 2, 3
@@ -442,14 +295,14 @@ dimension of <var>x</var> will not be shifted. For example
         <pre class="sp">
      
      </pre>
-     See also: permute, ipermute, shiftdim. 
+     <strong>See also:</strong> permute, ipermute, shiftdim. 
 </p></blockquote></div>
 
    <p><a name="doc_002dshiftdim"></a>
 
 <div class="defun">
-&mdash; Function File: <var>y</var> <b>=</b><var> shiftdim </var>(<var>x, n</var>)<var><a name="index-g_t_003d-674"></a></var><br>
-&mdash; Function File: [<var>y</var>, <var>ns</var>] <b>=</b><var> shiftdim </var>(<var>x</var>)<var><a name="index-g_t_003d-675"></a></var><br>
+&mdash; Function File: <var>y</var> = <b>shiftdim</b> (<var>x, n</var>)<var><a name="index-shiftdim-836"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>ns</var>] = <b>shiftdim</b> (<var>x</var>)<var><a name="index-shiftdim-837"></a></var><br>
 <blockquote><p>Shifts the dimension of <var>x</var> by <var>n</var>, where <var>n</var> must be
 an integer scalar. When <var>n</var> is positive, the dimensions of
 <var>x</var> are shifted to the left, with the leading dimensions
@@ -465,9 +318,9 @@ in the second output argument <var>ns</var>.
 
      <pre class="example">          x = ones (1, 2, 3);
           size (shiftdim (x, -1))
-          =&gt; [2, 3, 1]
-          size (shiftdim (x, 1))
           =&gt; [1, 1, 2, 3]
+          size (shiftdim (x, 1))
+          =&gt; [2, 3]
           [b, ns] = shiftdim (x);
           =&gt; b =  [1, 1, 1; 1, 1, 1]
           =&gt; ns = 1
@@ -475,14 +328,14 @@ in the second output argument <var>ns</var>.
         <pre class="sp">
      
      </pre>
-     See also: reshape, permute, ipermute, circshift, squeeze. 
+     <strong>See also:</strong> reshape, permute, ipermute, circshift, squeeze. 
 </p></blockquote></div>
 
    <p><a name="doc_002dshift"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>shift</b> (<var>x, b</var>)<var><a name="index-shift-676"></a></var><br>
-&mdash; Function File:  <b>shift</b> (<var>x, b, dim</var>)<var><a name="index-shift-677"></a></var><br>
+&mdash; Function File:  <b>shift</b> (<var>x, b</var>)<var><a name="index-shift-838"></a></var><br>
+&mdash; Function File:  <b>shift</b> (<var>x, b, dim</var>)<var><a name="index-shift-839"></a></var><br>
 <blockquote><p>If <var>x</var> is a vector, perform a circular shift of length <var>b</var> of
 the elements of <var>x</var>.
 
@@ -494,10 +347,10 @@ dimension
    <p><a name="doc_002dsort"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x</var>)<var><a name="index-sort-678"></a></var><br>
-&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x, dim</var>)<var><a name="index-sort-679"></a></var><br>
-&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x, mode</var>)<var><a name="index-sort-680"></a></var><br>
-&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x, dim, mode</var>)<var><a name="index-sort-681"></a></var><br>
+&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x</var>)<var><a name="index-sort-840"></a></var><br>
+&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x, dim</var>)<var><a name="index-sort-841"></a></var><br>
+&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x, mode</var>)<var><a name="index-sort-842"></a></var><br>
+&mdash; Loadable Function: [<var>s</var>, <var>i</var>] = <b>sort</b> (<var>x, dim, mode</var>)<var><a name="index-sort-843"></a></var><br>
 <blockquote><p>Return a copy of <var>x</var> with the elements arranged in increasing
 order.  For matrices, <code>sort</code> orders the elements in each column.
 
@@ -535,6 +388,15 @@ of strings, in which case the dictionary order of the strings is used.
 ordered lists. 
 </p></blockquote></div>
 
+   <p><a name="doc_002dsortrows"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>sortrows</b> (<var>a, c</var>)<var><a name="index-sortrows-844"></a></var><br>
+<blockquote><p>Sort the rows of the matrix <var>a</var> according to the order of the
+columns specified in <var>c</var>.  If <var>c</var> is omitted, a
+lexicographical sort is used. 
+</p></blockquote></div>
+
    <p>Since the <code>sort</code> function does not allow sort keys to be specified,
 it can't be used to order the rows of a matrix according to the values
 of the elements in various columns<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>
@@ -550,12 +412,39 @@ column.
               1  2
               2  3
 </pre>
+   <p><a name="doc_002dswap"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>swap</b> (<var>inputs</var>)<var><a name="index-swap-845"></a></var><br>
+<blockquote><pre class="format">[a1,b1] = swap(a,b)
+     interchange a and b
+</pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dswapcols"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>swapcols</b> (<var>inputs</var>)<var><a name="index-swapcols-846"></a></var><br>
+<blockquote><pre class="format"> function B = swapcols(A)
+      permute columns of A into reverse order
+</pre>
+        </blockquote></div>
+
+   <p><a name="doc_002dswaprows"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>swaprows</b> (<var>inputs</var>)<var><a name="index-swaprows-847"></a></var><br>
+<blockquote><pre class="format"> function B = swaprows(A)
+      permute rows of A into reverse order
+</pre>
+        </blockquote></div>
+
    <p><a name="doc_002dtril"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>tril</b> (<var>a, k</var>)<var><a name="index-tril-682"></a></var><br>
-&mdash; Function File:  <b>triu</b> (<var>a, k</var>)<var><a name="index-triu-683"></a></var><br>
-<blockquote><p>Return a new matrix formed by extracting extract the lower (<code>tril</code>)
+&mdash; Function File:  <b>tril</b> (<var>a, k</var>)<var><a name="index-tril-848"></a></var><br>
+&mdash; Function File:  <b>triu</b> (<var>a, k</var>)<var><a name="index-triu-849"></a></var><br>
+<blockquote><p>Return a new matrix formed by extracting the lower (<code>tril</code>)
 or upper (<code>triu</code>) triangular part of the matrix <var>a</var>, and
 setting all other elements to zero.  The second argument is optional,
 and specifies how many diagonals above or below the main diagonal should
@@ -589,13 +478,13 @@ sub- or super-diagonals.
         <pre class="sp">
      
      </pre>
-     See also: triu, diag. 
+     <strong>See also:</strong> triu, diag. 
 </p></blockquote></div>
 
    <p><a name="doc_002dvec"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>vec</b> (<var>x</var>)<var><a name="index-vec-684"></a></var><br>
+&mdash; Function File:  <b>vec</b> (<var>x</var>)<var><a name="index-vec-850"></a></var><br>
 <blockquote><p>Return the vector obtained by stacking the columns of the matrix <var>x</var>
 one above the other. 
 </p></blockquote></div>
@@ -603,7 +492,7 @@ one above the other.
    <p><a name="doc_002dvech"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>vech</b> (<var>x</var>)<var><a name="index-vech-685"></a></var><br>
+&mdash; Function File:  <b>vech</b> (<var>x</var>)<var><a name="index-vech-851"></a></var><br>
 <blockquote><p>Return the vector obtained by eliminating all supradiagonal elements of
 the square matrix <var>x</var> and stacking the result one column above the
 other. 
@@ -612,9 +501,9 @@ other.
    <p><a name="doc_002dprepad"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>prepad</b> (<var>x, l, c</var>)<var><a name="index-prepad-686"></a></var><br>
-&mdash; Function File:  <b>postpad</b> (<var>x, l, c</var>)<var><a name="index-postpad-687"></a></var><br>
-&mdash; Function File:  <b>postpad</b> (<var>x, l, c, dim</var>)<var><a name="index-postpad-688"></a></var><br>
+&mdash; Function File:  <b>prepad</b> (<var>x, l, c</var>)<var><a name="index-prepad-852"></a></var><br>
+&mdash; Function File:  <b>postpad</b> (<var>x, l, c</var>)<var><a name="index-postpad-853"></a></var><br>
+&mdash; Function File:  <b>postpad</b> (<var>x, l, c, dim</var>)<var><a name="index-postpad-854"></a></var><br>
 <blockquote>
 <p>Prepends (appends) the scalar value <var>c</var> to the vector <var>x</var>
 until it is of length <var>l</var>.  If the third argument is not
@@ -627,6 +516,19 @@ supplied, a value of 0 is used.
 
         <p>If the optional <var>dim</var> argument is given, then operate along this
 dimension. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dblkdiag"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>blkdiag</b> (<var>a, b, c, <small class="dots">...</small></var>)<var><a name="index-blkdiag-855"></a></var><br>
+<blockquote><p>Build a block diagonal matrix from <var>a</var>, <var>b</var>, <var>c</var>, <small class="dots">...</small>. 
+All the arguments must be numeric and are two-dimensional matrices or
+scalars.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> diag, horzcat, vertcat. 
 </p></blockquote></div>
 
    <div class="footnote">

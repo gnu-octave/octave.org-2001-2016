@@ -5,8 +5,8 @@
 <meta name="description" content="Untitled">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Quadrature.html#Quadrature" title="Quadrature">
-<link rel="next" href="Orthogonal-Collocation.html#Orthogonal-Collocation" title="Orthogonal Collocation">
+<link rel="up" href="Numerical-Integration.html#Numerical-Integration" title="Numerical Integration">
+<link rel="next" href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables" title="Functions of Multiple Variables">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,170 +19,39 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Functions-of-One-Variable"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Orthogonal-Collocation.html#Orthogonal-Collocation">Orthogonal Collocation</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Quadrature.html#Quadrature">Quadrature</a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables">Functions of Multiple Variables</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Numerical-Integration.html#Numerical-Integration">Numerical Integration</a>
 <hr>
 </div>
 
 <h3 class="section">23.1 Functions of One Variable</h3>
 
-<p><a name="doc_002dquad"></a>
+<p>Octave supports three different algorithms for computing the integral
+of a function f over the interval from a to b. 
+These are
+
+     <dl>
+<dt><code>quad</code><dd>Numerical integration based on Gaussian quadrature.
+
+     <br><dt><code>quadl</code><dd>Numerical integration using an adaptive Lobatto rule.
+
+     <br><dt><code>trapz</code><dd>Numerical integration using the trapezodial method. 
+</dl>
+
+<p class="noindent">Besides these functions Octave also allows you to perform cumulative
+numerical integration using the trapezodial method through the
+<code>cumtrapz</code> function.
+
+   <p><a name="doc_002dquad"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>v</var>, <var>ier</var>, <var>nfun</var>, <var>err</var>] = <b>quad</b> (<var>f, a, b, tol, sing</var>)<var><a name="index-quad-973"></a></var><br>
+&mdash; Loadable Function: [<var>v</var>, <var>ier</var>, <var>nfun</var>, <var>err</var>] = <b>quad</b> (<var>f, a, b, tol, sing</var>)<var><a name="index-quad-1244"></a></var><br>
 <blockquote><p>Integrate a nonlinear function of one variable using Quadpack. 
 The first argument is the name of the  function, the function handle or
 the inline function to call to compute the value of the integrand.  It
@@ -212,13 +81,16 @@ required, and <var>err</var> contains an estimate of the error in the
 solution.
 
         <p>You can use the function <code>quad_options</code> to set optional
-parameters for <code>quad</code>. 
+parameters for <code>quad</code>.
+
+        <p>It should be noted that since <code>quad</code> is written in Fortran it
+cannot be called recursively. 
 </p></blockquote></div>
 
    <p><a name="doc_002dquad_005foptions"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>quad_options</b> (<var>opt, val</var>)<var><a name="index-quad_005foptions-974"></a></var><br>
+&mdash; Loadable Function:  <b>quad_options</b> (<var>opt, val</var>)<var><a name="index-quad_005foptions-1245"></a></var><br>
 <blockquote><p>When called with two arguments, this function
 allows you set options parameters for the function <code>quad</code>. 
 Given one argument, <code>quad_options</code> returns the value of the
@@ -266,6 +138,75 @@ function with a vector argument to produce a vector result).
    <p>Although <code>quad</code> returns a nonzero value for <var>ier</var>, the result
 is reasonably accurate (to see why, examine what happens to the result
 if you move the lower bound to 0.1, then 0.01, then 0.001, etc.).
+
+   <p><a name="doc_002dquadl"></a>
+
+<div class="defun">
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b</var>)<var><a name="index-quadl-1246"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol</var>)<var><a name="index-quadl-1247"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace</var>)<var><a name="index-quadl-1248"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace, p1, p2, <small class="dots">...</small></var>)<var><a name="index-quadl-1249"></a></var><br>
+<blockquote>
+<p>Numerically evaluate integral using adaptive Lobatto rule. 
+<code>quadl (</code><var>f</var><code>, </code><var>a</var><code>, </code><var>b</var><code>)</code> approximates the integral of
+<var>f</var><code>(</code><var>x</var><code>)</code> to machine precision. <var>f</var> is either a
+function handle, inline function or string containing the name of
+the function to evaluate. The function <var>f</var> must return a vector
+of output values if given a vector of input values.
+
+        <p>If defined, <var>tol</var> defines the relative tolerance to which to
+which to integrate <var>f</var><code>(</code><var>x</var><code>)</code>. While if <var>trace</var> is
+defined, displays the left end point of the current interval, the
+interval length, and the partial integral.
+
+        <p>Additional arguments <var>p1</var>, etc, are passed directly to <var>f</var>. 
+To use default values for <var>tol</var> and <var>trace</var>, one may pass
+empty matrices.
+
+        <p>Reference: W. Gander and W. Gautschi, 'Adaptive Quadrature -
+Revisited', BIT Vol. 40, No. 1, March 2000, pp. 84&ndash;101. 
+<a href="http://www.inf.ethz.ch/personal/gander/">http://www.inf.ethz.ch/personal/gander/</a>
+
+        </blockquote></div>
+
+   <p><a name="doc_002dtrapz"></a>
+
+<div class="defun">
+&mdash; Function File: <var>z</var> = <b>trapz</b> (<var>y</var>)<var><a name="index-trapz-1250"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>trapz</b> (<var>x, y</var>)<var><a name="index-trapz-1251"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>trapz</b> (<var><small class="dots">...</small>, dim</var>)<var><a name="index-trapz-1252"></a></var><br>
+<blockquote>
+<p>Numerical intergration using trapezodial method. <code>trapz
+(</code><var>y</var><code>)</code> computes the integral of the <var>y</var> along the first
+non singleton dimension. If the argument <var>x</var> is omitted a
+equally spaced vector is assumed. <code>trapz (</code><var>x</var><code>, </code><var>y</var><code>)</code>
+evaluates the integral with respect to <var>x</var>.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> cumtrapz. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcumtrapz"></a>
+
+<div class="defun">
+&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var>y</var>)<var><a name="index-cumtrapz-1253"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var>x, y</var>)<var><a name="index-cumtrapz-1254"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var><small class="dots">...</small>, dim</var>)<var><a name="index-cumtrapz-1255"></a></var><br>
+<blockquote>
+<p>Cumulative numerical intergration using trapezodial method. 
+<code>cumtrapz (</code><var>y</var><code>)</code> computes the cummulative integral of the
+<var>y</var> along the first non singleton dimension. If the argument
+<var>x</var> is omitted a equally spaced vector is assumed. <code>cumtrapz
+(</code><var>x</var><code>, </code><var>y</var><code>)</code> evaluates the cummulative integral with respect
+to <var>x</var>.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> trapz,cumsum. 
+</p></blockquote></div>
 
    </body></html>
 

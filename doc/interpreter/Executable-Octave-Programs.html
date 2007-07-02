@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -181,10 +34,14 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting-Started">G
 
 <h3 class="section">2.6 Executable Octave Programs</h3>
 
-<p><a name="index-executable-scripts-113"></a><a name="index-scripts-114"></a><a name="index-self-contained-programs-115"></a><a name="index-program_002c-self-contained-116"></a><a name="index-g_t_0040samp_007b_0023_0021_007d-117"></a>
+<p><a name="index-executable-scripts-135"></a><a name="index-scripts-136"></a><a name="index-self-contained-programs-137"></a><a name="index-program_002c-self-contained-138"></a><a name="index-g_t_0040samp_007b_0023_0021_007d-139"></a>
 Once you have learned Octave, you may want to write self-contained
 Octave scripts, using the `<samp><span class="samp">#!</span></samp>' script mechanism.  You can do this
-on GNU systems and on many Unix systems <a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>
+on GNU systems and on many Unix systems <a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>.
+
+   <p>Self-contained Octave scripts are useful when you want to write a
+program which users can invoke without knowing that the program is
+written in the Octave language.
 
    <p>For example, you could create a text file named <samp><span class="file">hello</span></samp>, containing
 the following lines:
@@ -194,7 +51,9 @@ the following lines:
      printf ("Hello, world!\n");
 </pre>
    <p class="noindent">(where <var>octave-interpreter-name</var> should be replaced with the full
-file name for your Octave binary).  After making this file executable
+file name for your Octave binary).  Note that this will only work if
+`<samp><span class="samp">#!</span></samp>' appears at the very beginning of the file. After making this
+file executable
 (with the <code>chmod</code> command), you can simply type:
 
 <pre class="example">     hello
@@ -214,23 +73,38 @@ options to Octave, or data files, or both.  The `<samp><span class="samp">-qf</s
 usually specified in stand-alone Octave programs to prevent them from
 printing the normal startup message, and to keep them from behaving
 differently depending on the contents of a particular user's
-<samp><span class="file">~/.octaverc</span></samp> file.  See <a href="Invoking-Octave.html#Invoking-Octave">Invoking Octave</a>.  Note that some
-operating systems may place a limit on the number of characters that are
-recognized after `<samp><span class="samp">#!</span></samp>'.
+<samp><span class="file">~/.octaverc</span></samp> file.  See <a href="Invoking-Octave-from-the-Command-Line.html#Invoking-Octave-from-the-Command-Line">Invoking Octave from the Command Line</a>.
 
-   <p>Self-contained Octave scripts are useful when you want to write a
-program which users can invoke without knowing that the program is
-written in the Octave language.
+   <p>Note that some operating systems may place a limit on the number of
+characters that are recognized after `<samp><span class="samp">#!</span></samp>'.  Also, the various
+shells/systems parse differently the arguments appearing in a `<samp><span class="samp">#!</span></samp>'
+line.  The majority of them group together all the arguments in a string
+and pass it to the interepreter as a single argument.  In this case, the
+following script:
 
-   <p>If you invoke an executable Octave script with command line arguments,
-the arguments are available in the built-in variable <code>argv</code>. 
-See <a href="Command-Line-Options.html#Command-Line-Options">Command Line Options</a>.  For example, the following program will
-reproduce the command line that is used to execute it.
+<pre class="example">     #! <var>octave-interpreter-name</var> -q -f # comment
+</pre>
+   <p class="noindent">is equivalent to type at the command line:
+
+<pre class="example">     octave "-q -f # comment"
+</pre>
+   <p class="noindent">which would obviously produce an error message.  Unfortunately, it is
+impossible for Octave to know whether it has been called from the command
+line or from a `<samp><span class="samp">#!</span></samp>' script, so some care is needed when using the
+`<samp><span class="samp">#!</span></samp>' mechanism.
+
+   <p>Note that when Octave is started from an executable script, the built-in
+function <code>argv</code> returns a cell array containing the command line
+arguments passed to an executable Octave script, not the arguments
+passed to the Octave interpreter on the `<samp><span class="samp">#!</span></samp>' line of the script. 
+For example, the following program will reproduce the command line that
+is used to execute script, not `<samp><span class="samp">-qf</span></samp>'.
 
 <pre class="example">     #! /bin/octave -qf
-     printf ("%s", program_name);
+     printf ("%s", program_name ());
+     arg_list = argv ();
      for i = 1:nargin
-       printf (" %s", argv{i});
+       printf (" %s", arg_list{i});
      endfor
      printf ("\n");
 </pre>

@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+<title>Functions of Multiple Variables - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Numerical-Integration.html#Numerical-Integration" title="Numerical Integration">
+<link rel="prev" href="Functions-of-One-Variable.html#Functions-of-One-Variable" title="Functions of One Variable">
+<link rel="next" href="Orthogonal-Collocation.html#Orthogonal-Collocation" title="Orthogonal Collocation">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Functions-of-Multiple-Variables"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Orthogonal-Collocation.html#Orthogonal-Collocation">Orthogonal Collocation</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Functions-of-One-Variable.html#Functions-of-One-Variable">Functions of One Variable</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Numerical-Integration.html#Numerical-Integration">Numerical Integration</a>
+<hr>
+</div>
+
+<h3 class="section">23.3 Functions of Multiple Variables</h3>
+
+<p>Octave does not have built-in functions for computing the integral
+of functions of multiple variables.  It is however possible to compute
+the integral of a function of multiple variables using the functions
+for one-dimensional integrals.
+
+   <p>To illustrate how the integration can be performed, we will integrate
+the function
+<pre class="example">     f(x, y) = sin(pi*x*y)*sqrt(x*y)
+</pre>
+   <p>for x and y between 0 and 1.
+
+   <p>The first approach creates a function that integrates f with
+respect to x, and then integrates that function with respect to
+y.  Since <code>quad</code> is written in Fortran it cannot be called
+recursively.  This means that <code>quad</code> cannot integrate a function
+that calls <code>quad</code>, and hence cannot be used to perform the double
+integration.  It is however possible with <code>quadl</code>, which is what
+the following code does.
+
+<pre class="example">     function I = g(y)
+       I = ones(1, length(y));
+       for i = 1:length(y)
+         f = @(x) sin(pi.*x.*y(i)).*sqrt(x.*y(i));
+         I(i) = quadl(f, 0, 1);
+       endfor
+     endfunction
+     
+     I = quadl("g", 0, 1)
+           =&gt; 0.30022
+</pre>
+   <p>The above mentioned approach works but is fairly slow, and that problem
+increases exponentially with the dimensionality the problem.  Another
+possible solution is to use Orthogonal Collocation as described in the
+previous section.  The integral of a function f(x,y) for
+x and y between 0 and 1 can be approximated using n
+points by
+the sum over <code>i=1:n</code> and <code>j=1:n</code> of <code>q(i)*q(j)*f(r(i),r(j))</code>,
+where q and r is as returned by <code>colloc(n)</code>.  The
+generalisation to more than two variables is straight forward.  The
+following code computes the studied integral using n=7 points.
+
+<pre class="example">     f = @(x,y) sin(pi*x*y').*sqrt(x*y');
+     n = 7;
+     [t, A, B, q] = colloc(n);
+     I = q'*f(t,t)*q;
+           =&gt; 0.30022
+</pre>
+   <p class="noindent">It should be noted that the number of points determines the quality
+of the approximation.  If the integration needs to be performed between
+a and b instead of 0 and 1, a change of variables is needed.
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

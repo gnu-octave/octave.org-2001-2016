@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -177,14 +30,37 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Matrix-Manipulation.html#Matrix-Manipul
 <hr>
 </div>
 
-<h3 class="section">18.4 Famous Matrices</h3>
+<h3 class="section">17.5 Famous Matrices</h3>
 
 <p>The following functions return famous matrix forms.
+
+   <p><a name="doc_002dhadamard"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>hadamard</b> (<var>n</var>)<var><a name="index-hadamard-898"></a></var><br>
+<blockquote><p>Construct a Hadamard matrix <var>Hn</var> of size <var>n</var>-by-<var>n</var>. The
+size <var>n</var> must be of the form <code>2 ^ </code><var>k</var><code> * </code><var>p</var> in which
+<var>p</var> is one of 1, 12, 20 or 28. The returned matrix is normalized,
+meaning <code>Hn(:,1) == 1</code> and <code>H(1,:) == 1</code>.
+
+        <p>Some of the properties of Hadamard matrices are:
+
+          <ul>
+<li><code>kron (</code><var>Hm</var><code>, </code><var>Hn</var><code>)</code> is a Hadamard matrix of size
+<var>m</var>-by-<var>n</var>. 
+<li><code>Hn * Hn' == </code><var>n</var><code> * eye (</code><var>n</var><code>)</code>. 
+<li>The rows of <var>Hn</var> are orthogonal. 
+<li><code>det (</code><var>A</var><code>) &lt;= det (</code><var>Hn</var><code>)</code> for all <var>A</var> with
+<code>abs (</code><var>A</var><code> (</code><var>i</var><code>, </code><var>j</var><code>)) &lt;= 1</code>. 
+<li>Multiply any row or column by -1 and still have a Hadamard matrix. 
+</ul>
+
+        </blockquote></div>
 
    <p><a name="doc_002dhankel"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hankel</b> (<var>c, r</var>)<var><a name="index-hankel-714"></a></var><br>
+&mdash; Function File:  <b>hankel</b> (<var>c, r</var>)<var><a name="index-hankel-899"></a></var><br>
 <blockquote><p>Return the Hankel matrix constructed given the first column <var>c</var>, and
 (optionally) the last row <var>r</var>.  If the last element of <var>c</var> is
 not the same as the first element of <var>r</var>, the last element of
@@ -200,13 +76,13 @@ be a vector of zeros with the same size as <var>c</var>.
         <pre class="sp">
      
      </pre>
-     See also: vander, sylvester_matrix, hilb, invhilb, toeplitz. 
+     <strong>See also:</strong> vander, sylvester_matrix, hilb, invhilb, toeplitz. 
 </p></blockquote></div>
 
    <p><a name="doc_002dhilb"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hilb</b> (<var>n</var>)<var><a name="index-hilb-715"></a></var><br>
+&mdash; Function File:  <b>hilb</b> (<var>n</var>)<var><a name="index-hilb-900"></a></var><br>
 <blockquote><p>Return the Hilbert matrix of order <var>n</var>.  The
 i, j
 element of a Hilbert matrix is defined as
@@ -216,13 +92,13 @@ element of a Hilbert matrix is defined as
         <pre class="sp">
      
      </pre>
-     See also: hankel, vander, sylvester_matrix, invhilb, toeplitz. 
+     <strong>See also:</strong> hankel, vander, sylvester_matrix, invhilb, toeplitz. 
 </p></blockquote></div>
 
    <p><a name="doc_002dinvhilb"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>invhilb</b> (<var>n</var>)<var><a name="index-invhilb-716"></a></var><br>
+&mdash; Function File:  <b>invhilb</b> (<var>n</var>)<var><a name="index-invhilb-901"></a></var><br>
 <blockquote><p>Return the inverse of a Hilbert matrix of order <var>n</var>.  This can be
 computed exactly using
      <pre class="example">          
@@ -249,25 +125,70 @@ finite precision of your computer's floating point arithmetic.
         <pre class="sp">
      
      </pre>
-     See also: hankel, vander, sylvester_matrix, hilb, toeplitz. 
+     <strong>See also:</strong> hankel, vander, sylvester_matrix, hilb, toeplitz. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dmagic"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>magic</b> (<var>n</var>)<var><a name="index-magic-902"></a></var><br>
+<blockquote>
+<p>Create an <var>n</var>-by-<var>n</var> magic square. Note that <code>magic
+(</code><var>2</var><code>)</code> is undefined since there is no 2-by-2 magic square.
+
+        </blockquote></div>
+
+   <p><a name="doc_002dpascal"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>pascal</b> (<var>n, t</var>)<var><a name="index-pascal-903"></a></var><br>
+<blockquote>
+<p>Return the Pascal matrix of order <var>n</var> if <var>t</var><code> = 0</code>. 
+<var>t</var> defaults to 0. Return lower triangular Cholesky factor of
+the Pascal matrix if <var>t</var><code> = 1</code>. This matrix is its own
+inverse, that is <code>pascal (</code><var>n</var><code>, 1) ^ 2 == eye (</code><var>n</var><code>)</code>. 
+If <var>t</var><code> = 2</code>, return a transposed and  permuted version of
+<code>pascal (</code><var>n</var><code>, 1)</code>, which is the cube-root of the identity
+matrix. That is <code>pascal (</code><var>n</var><code>, 2) ^ 3 == eye (</code><var>n</var><code>)</code>.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> hankel, vander, sylvester_matrix, hilb, invhilb, toeplitz
+          hadamard, wilkinson, compan, rosser. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drosser"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>rosser</b> ()<var><a name="index-rosser-904"></a></var><br>
+<blockquote>
+<p>Returns the Rosser matrix. This is a difficult test case used to test
+eigenvalue algorithms.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> hankel, vander, sylvester_matrix, hilb, invhilb, toeplitz
+          hadamard, wilkinson, compan, pascal. 
 </p></blockquote></div>
 
    <p><a name="doc_002dsylvester_005fmatrix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>sylvester_matrix</b> (<var>k</var>)<var><a name="index-sylvester_005fmatrix-717"></a></var><br>
+&mdash; Function File:  <b>sylvester_matrix</b> (<var>k</var>)<var><a name="index-sylvester_005fmatrix-905"></a></var><br>
 <blockquote><p>Return the Sylvester matrix of order
 n = 2^k.
         <pre class="sp">
      
      </pre>
-     See also: hankel, vander, hilb, invhilb, toeplitz. 
+     <strong>See also:</strong> hankel, vander, hilb, invhilb, toeplitz. 
 </p></blockquote></div>
 
    <p><a name="doc_002dtoeplitz"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>toeplitz</b> (<var>c, r</var>)<var><a name="index-toeplitz-718"></a></var><br>
+&mdash; Function File:  <b>toeplitz</b> (<var>c, r</var>)<var><a name="index-toeplitz-906"></a></var><br>
 <blockquote><p>Return the Toeplitz matrix constructed given the first column <var>c</var>,
 and (optionally) the first row <var>r</var>.  If the first element of <var>c</var>
 is not the same as the first element of <var>r</var>, the first element of
@@ -287,13 +208,13 @@ taken to be the same as the first column.
         <pre class="sp">
      
      </pre>
-     See also: hankel, vander, sylvester_matrix, hilb, invhib. 
+     <strong>See also:</strong> hankel, vander, sylvester_matrix, hilb, invhilb. 
 </p></blockquote></div>
 
    <p><a name="doc_002dvander"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>vander</b> (<var>c</var>)<var><a name="index-vander-719"></a></var><br>
+&mdash; Function File:  <b>vander</b> (<var>c</var>)<var><a name="index-vander-907"></a></var><br>
 <blockquote><p>Return the Vandermonde matrix whose next to last column is <var>c</var>.
 
         <p>A Vandermonde matrix has the form:
@@ -308,7 +229,21 @@ taken to be the same as the first column.
         <pre class="sp">
      
      </pre>
-     See also: hankel, sylvester_matrix, hilb, invhilb, toeplitz. 
+     <strong>See also:</strong> hankel, sylvester_matrix, hilb, invhilb, toeplitz. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dwilkinson"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>wilkinson</b> (<var>n</var>)<var><a name="index-wilkinson-908"></a></var><br>
+<blockquote>
+<p>Return the Wilkinson matrix of order <var>n</var>.
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> hankel, vander, sylvester_matrix, hilb, invhilb, toeplitz
+          hadamard, rosser, compan, pascal. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->

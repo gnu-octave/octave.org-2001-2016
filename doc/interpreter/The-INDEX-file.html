@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+<title>The INDEX file - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Creating-Packages.html#Creating-Packages" title="Creating Packages">
+<link rel="prev" href="The-DESCRIPTION-File.html#The-DESCRIPTION-File" title="The DESCRIPTION File">
+<link rel="next" href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives" title="PKG_ADD and PKG_DEL directives">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="The-INDEX-file"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="The-DESCRIPTION-File.html#The-DESCRIPTION-File">The DESCRIPTION File</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Creating-Packages.html#Creating-Packages">Creating Packages</a>
+<hr>
+</div>
+
+<h4 class="subsection">38.4.2 The INDEX file</h4>
+
+<p>The optional <code>INDEX</code> file provides an categorical view of the
+functions in the package. This file has a very simple format
+
+<p class="noindent">
+     <ul>
+<li>Lines beginning with <code>#</code> are comments.
+
+     <li>The first non-comment line should look like this
+
+     <pre class="example">          toolbox &gt;&gt; Toolbox name
+     </pre>
+     <li>Lines beginning with an alphabetical character indicates a new
+category of functions.
+
+     <li>Lines starting with a white space character indicate that the
+function names on the line belong to last mentioned category. 
+</ul>
+
+<p class="noindent">The format can be summarized with the following example
+
+<pre class="example">     # A comment
+     toolbox &gt;&gt; Toolbox name
+     Category Name 1
+      function1 function2 function3
+      function4
+     Category Name 2
+      functio2 function5
+</pre>
+   </body></html>
+

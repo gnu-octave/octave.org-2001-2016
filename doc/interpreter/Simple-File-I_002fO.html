@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -178,35 +31,51 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Basic-Input-and-Output.html#Basic-Input
 <hr>
 </div>
 
-<h4 class="subsection">16.1.3 Simple File I/O</h4>
+<h4 class="subsection">15.1.3 Simple File I/O</h4>
 
-<p><a name="index-saving-data-539"></a><a name="index-loading-data-540"></a>The <code>save</code> and <code>load</code> commands allow data to be written to and
+<p><a name="index-saving-data-660"></a><a name="index-loading-data-661"></a>The <code>save</code> and <code>load</code> commands allow data to be written to and
 read from disk files in various formats.  The default format of files
-written by the <code>save</code> command can be controlled using the built-in
-variables <code>default_save_options</code> and <code>save_precision</code>.
+written by the <code>save</code> command can be controlled using the functions
+<code>default_save_options</code> and <code>save_precision</code>.
 
-   <p>Note that Octave cannot yet save or load structure variables or any
-user-defined types.
+   <p>As an example the following code creates a 3-by-3 matrix and saves it
+to the file `<samp><span class="samp">myfile.mat</span></samp>'.
 
+<pre class="example">     A = [ 1:3; 4:6; 7:9 ];
+     save myfile.mat A
+</pre>
+   <p>Once one or more variables have been saved to a file, they can be
+read into memory using the <code>load</code> command.
+
+<pre class="example">     load myfile.mat
+     A
+          -| A =
+          -|
+          -|    1   2   3
+          -|    4   5   6
+          -|    7   8   9
+</pre>
    <p><a name="doc_002dsave"></a>
 
 <div class="defun">
-&mdash; Command: <b>save</b><var> options file v1 v2 <small class="dots">...</small><a name="index-save-541"></a></var><br>
+&mdash; Command: <b>save</b><var> options file v1 v2 <small class="dots">...</small><a name="index-save-662"></a></var><br>
 <blockquote><p>Save the named variables <var>v1</var>, <var>v2</var>, <small class="dots">...</small> in the file
 <var>file</var>.  The special filename `<samp><span class="samp">-</span></samp>' can be used to write the
 output to your terminal.  If no variable names are listed, Octave saves
 all the variables in the current scope.  Valid options for the
 <code>save</code> command are listed in the following table.  Options that
-modify the output format override the format specified by the built-in
-variable <code>default_save_options</code>.
+modify the output format override the format specified by
+<code>default_save_options</code>.
+
+        <p>If save is invoked using the functional form
+
+     <pre class="example">          save ("-text", "file.txt", "a")
+     </pre>
+        <p class="noindent">then the <var>options</var>, <var>file</var>, and variable name arguments
+(<var>vname1</var>, <small class="dots">...</small>) must be specified as character strings.
 
           <dl>
-<dt><code>-ascii</code><dd>Save the data in Octave's text data format.
-
-          <p><strong>WARNING: the meaning of this option will change in a future
-version of Octave to be compatible with </strong><span class="sc">Matlab</span><strong>.  To keep the
-meaning of your code the same across this change, use the </strong><code>-text</code><strong>
-option instead.</strong>
+<dt><code>-ascii</code><dd>Save a single matrix in a text file.
 
           <br><dt><code>-binary</code><dd>Save the data in Octave's binary data format.
 
@@ -227,9 +96,6 @@ Center for Supercomputing Applications at the University of Illinois.)
           <br><dt><code>-float-hdf5</code><dd>Save the data in HDF5 format but only using single precision. 
 You should use this format only if you know that all the
 values to be saved can be represented in single precision.
-
-          <br><dt><code>-save-builtins</code><dd>Force Octave to save the values of built-in variables too.  By default,
-Octave does not save built-in variables.
 
           <br><dt><code>-zip</code><dt><code>-z</code><dd>Use the gzip algorithm to compress the file. This works equally on files that
 are compressed with gzip outside of octave, and gzip can equally be used to
@@ -264,101 +130,10 @@ global variable.
 the file <samp><span class="file">data</span></samp> in Octave's binary format. 
 </p></blockquote></div>
 
-   <p>There are three variables that modify the behavior of <code>save</code> and
-three more that control whether variables are saved when Octave exits
-unexpectedly.
-
-   <p><a name="doc_002dcrash_005fdumps_005foctave_005fcore"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>crash_dumps_octave_core</b><var><a name="index-crash_005fdumps_005foctave_005fcore-542"></a></var><br>
-<blockquote><p>If this variable is set to a nonzero value, Octave tries to save all
-current variables the the file "octave-core" if it crashes or receives a
-hangup, terminate or similar signal.  The default value is 1.
-        <pre class="sp">
-     
-     </pre>
-     See also: octave_core_file_limit, octave_core_file_name, octave_core_file_options. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dsighup_005fdumps_005foctave_005fcore"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>sighup_dumps_octave_core</b><var><a name="index-sighup_005fdumps_005foctave_005fcore-543"></a></var><br>
-<blockquote><p>If this variable is set to a nonzero value and
-<code>crash_dumps_octave_core</code> is also nonzero, Octave tries to save all
-current variables the the file "octave-core" if it receives a
-hangup signal.  The default value is 1. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dsigterm_005fdumps_005foctave_005fcore"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>sigterm_dumps_octave_core</b><var><a name="index-sigterm_005fdumps_005foctave_005fcore-544"></a></var><br>
-<blockquote><p>If this variable is set to a nonzero value and
-<code>crash_dumps_octave_core</code> is also nonzero, Octave tries to save all
-current variables the the file "octave-core" if it receives a
-terminate signal.  The default value is 1. 
-</p></blockquote></div>
-
-   <p><a name="doc_002ddefault_005fsave_005foptions"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>default_save_options</b><var><a name="index-default_005fsave_005foptions-545"></a></var><br>
-<blockquote><p>This variable specifies the default options for the <code>save</code> command,
-and is used to define the default format. Typical values include,
-<code>"-ascii"</code>, <code>"-ascii -zip"</code>. For other possible options
-see the <code>save</code> command. The initial value of this variable is
-<code>-ascii</code>. 
-</p></blockquote></div>
-
-   <p><a name="doc_002doctave_005fcore_005ffile_005foptions"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>octave_core_file_options</b><var><a name="index-octave_005fcore_005ffile_005foptions-546"></a></var><br>
-<blockquote><p>If Octave aborts, it attempts to save the contents of the top-level
-workspace in a file using this variable to define the format. The value of
-<code>octave_core_file_options</code> should follow the same format as the options
-that may be used with <code>save</code>. The default value is Octave's binary
-format.
-        <pre class="sp">
-     
-     </pre>
-     See also: crash_dumps_octave_core, octave_core_file_name, octave_core_file_limit. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dsave_005fprecision"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>save_precision</b><var><a name="index-save_005fprecision-547"></a></var><br>
-<blockquote><p>This variable specifies the number of digits to keep when saving data in
-text format.  The default value is 17. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dsave_005fheader_005fformat_005fstring"></a>
-
-<div class="defun">
-&mdash; Built-in Variable: <b>save_header_format_string</b><var><a name="index-save_005fheader_005fformat_005fstring-548"></a></var><br>
-<blockquote><p>This variable specifies the the format string for the comment line
-that is written at the beginning of text-format data files saved by
-Octave.  The format string is passed to <code>strftime</code> and should
-begin with the character `<samp><span class="samp">#</span></samp>' and contain no newline characters. 
-If the value of <code>save_header_format_string</code> is the empty string,
-the header comment is omitted from text-format data files.  The
-default value is
-
-     <pre class="example">          "# Created by Octave VERSION, %a %b %d %H:%M:%S %Y %Z &lt;USER@HOST&gt;"
-     </pre>
-        <pre class="sp">
-     
-     </pre>
-     See also: strftime. 
-</p></blockquote></div>
-
    <p><a name="doc_002dload"></a>
 
 <div class="defun">
-&mdash; Command: <b>load</b><var> options file v1 v2 <small class="dots">...</small><a name="index-load-549"></a></var><br>
+&mdash; Command: <b>load</b><var> options file v1 v2 <small class="dots">...</small><a name="index-load-663"></a></var><br>
 <blockquote><p>Load the named variables from the file <var>file</var>.  As with <code>save</code>,
 you may specify a list of variables and <code>load</code> will only extract
 those variables with names that match.  For example, to restore the
@@ -366,6 +141,13 @@ variables saved in the file <samp><span class="file">data</span></samp>, use the
 
      <pre class="example">          load data
      </pre>
+        <p>If load is invoked using the functional form
+
+     <pre class="example">          load ("-text", "file.txt", "a")
+     </pre>
+        <p class="noindent">then the <var>options</var>, <var>file</var>, and variable name arguments
+(<var>v1</var>, <small class="dots">...</small>) must be specified as character strings.
+
         <p>If a variable that is not marked as global is loaded from a file when a
 global symbol with the same name already exists, it is loaded in the
 global symbol table.  Also, if a variable is marked as global in a file
@@ -390,15 +172,13 @@ may added in the future).
 
           <dl>
 <dt><code>-force</code><dd>The `<samp><span class="samp">-force</span></samp>' option is accepted but ignored for backward
-compatiability. Octave now overwrites variables currently in memory with
+compatibility. Octave now overwrites variables currently in memory with
 the same name as those found in the file.
 
-          <br><dt><code>-ascii</code><dd>Force Octave to assume the file is in Octave's text format.
-
-          <p><strong>WARNING: the meaning of this option will change in a future
-version of Octave to be compatible with </strong><span class="sc">Matlab</span><strong>.  To keep the
-meaning of your code the same across this change, use the </strong><code>-text</code><strong>
-option instead.</strong>
+          <br><dt><code>-ascii</code><dd>Force Octave to assume the file contains columns of numbers in text format
+without any header or other information.  Data in the file will be loaded
+as a single numeric matrix with the name of the variable derived from the
+name of the file.
 
           <br><dt><code>-binary</code><dd>Force Octave to assume the file is in Octave's binary format.
 
@@ -414,13 +194,104 @@ Center for Supercomputing Applications at the University of Illinois.)
 Note that Octave can read HDF5 files not created by itself, but may
 skip some datasets in formats that it cannot support.
 
-          <br><dt><code>-import</code><dd>The `<samp><span class="samp">-import</span></samp>' is accepted but ignored for backward compatiability. 
+          <br><dt><code>-import</code><dd>The `<samp><span class="samp">-import</span></samp>' is accepted but ignored for backward compatibility. 
 Octave can now support multi-dimensional HDF data and automatically
 modifies variable names if they are invalid Octave identifiers.
 
           <br><dt><code>-text</code><dd>Force Octave to assume the file is in Octave's text format. 
 </dl>
         </p></blockquote></div>
+
+   <p>There are three functions that modify the behavior of <code>save</code>.
+
+   <p><a name="doc_002ddefault_005fsave_005foptions"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>default_save_options</b> ()<var><a name="index-default_005fsave_005foptions-664"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>default_save_options</b> (<var>new_val</var>)<var><a name="index-default_005fsave_005foptions-665"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the default options
+for the <code>save</code> command, and defines the default format. 
+Typical values include <code>"-ascii"</code>, <code>"-ascii -zip"</code>. 
+The default value is <code>-ascii</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> save. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsave_005fprecision"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>save_precision</b> ()<var><a name="index-save_005fprecision-666"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>save_precision</b> (<var>new_val</var>)<var><a name="index-save_005fprecision-667"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the number of
+digits to keep when saving data in text format. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dsave_005fheader_005fformat_005fstring"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>save_header_format_string</b> ()<var><a name="index-save_005fheader_005fformat_005fstring-668"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>save_header_format_string</b> (<var>new_val</var>)<var><a name="index-save_005fheader_005fformat_005fstring-669"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the format
+string used for the comment line written at the beginning of
+text-format data files saved by Octave.  The format string is
+passed to <code>strftime</code> and should begin with the character
+`<samp><span class="samp">#</span></samp>' and contain no newline characters.  If the value of
+<code>save_header_format_string</code> is the empty string,
+the header comment is omitted from text-format data files.  The
+default value is
+
+     <pre class="example">          "# Created by Octave VERSION, %a %b %d %H:%M:%S %Y %Z &lt;USER@HOST&gt;"
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> strftime. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dnative_005ffloat_005fformat"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>native_float_format</b> ()<var><a name="index-native_005ffloat_005fformat-670"></a></var><br>
+<blockquote><p>Return the native floating point format as a string
+</p></blockquote></div>
+
+   <p>It is possible to write data to a file in a way much similar to the
+<code>disp</code> function for writing data to the screen.  The <code>fdisp</code>
+works just like <code>disp</code> except its first argument is a file pointer
+as created by <code>fopen</code>.  As an example, the following code writes
+to data `<samp><span class="samp">myfile.txt</span></samp>'.
+
+<pre class="example">     fid = fopen ("myfile.txt", "w");
+     fdisp (fid, "3/8 is ");
+     fdisp (fid, 3/8);
+     fclose (fid);
+</pre>
+   <p class="noindent">See <a href="Opening-and-Closing-Files.html#Opening-and-Closing-Files">Opening and Closing Files</a>, for details on how to use <code>fopen</code>
+and <code>fclose</code>.
+
+   <p><a name="doc_002dfdisp"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>fdisp</b> (<var>fid, x</var>)<var><a name="index-fdisp-671"></a></var><br>
+<blockquote><p>Display the value of <var>x</var> on the stream <var>fid</var>.  For example,
+
+     <pre class="example">          fdisp (stdout, "The value of pi is:"), fdisp (stdout, pi)
+          
+               -| the value of pi is:
+               -| 3.1416
+     </pre>
+        <p class="noindent">Note that the output from <code>fdisp</code> always ends with a newline.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> disp. 
+</p></blockquote></div>
+
+<ul class="menu">
+<li><a accesskey="1" href="Saving-Data-on-Unexpected-Exits.html#Saving-Data-on-Unexpected-Exits">Saving Data on Unexpected Exits</a>
+</ul>
 
    </body></html>
 

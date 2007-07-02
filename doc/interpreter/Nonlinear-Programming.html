@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -181,5 +34,126 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization.html#Optimization">Optimiz
 
 <h3 class="section">25.3 Nonlinear Programming</h3>
 
-</body></html>
+<p>Octave can also perform general nonlinear minimization using a
+successive quadratic programming solver.
+
+   <p><a name="doc_002dsqp"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>x</var>, <var>obj</var>, <var>info</var>, <var>iter</var>, <var>nf</var>, <var>lambda</var>] = <b>sqp</b> (<var>x, phi, g, h</var>)<var><a name="index-sqp-1275"></a></var><br>
+<blockquote><p>Solve the nonlinear program
+
+     <pre class="example">               min phi (x)
+                x
+     </pre>
+        <p>subject to
+
+     <pre class="example">               g(x)  = 0
+               h(x) &gt;= 0
+     </pre>
+        <p class="noindent">using a successive quadratic programming method.
+
+        <p>The first argument is the initial guess for the vector <var>x</var>.
+
+        <p>The second argument is a function handle pointing to the ojective
+function.  The objective function must be of the form
+
+     <pre class="example">               y = phi (x)
+     </pre>
+        <p class="noindent">in which <var>x</var> is a vector and <var>y</var> is a scalar.
+
+        <p>The second argument may also be a 2- or 3-element cell array of
+function handles.  The first element should point to the objective
+function, the second should point to a function that computes the
+gradient of the objective function, and the third should point to a
+function to compute the hessian of the objective function.  If the
+gradient function is not supplied, the gradient is computed by finite
+differences.  If the hessian function is not supplied, a BFGS update
+formula is used to approximate the hessian.
+
+        <p>If supplied, the gradient function must be of the form
+
+     <pre class="example">               g = gradient (x)
+     </pre>
+        <p class="noindent">in which <var>x</var> is a vector and <var>g</var> is a vector.
+
+        <p>If supplied, the hessian function must be of the form
+
+     <pre class="example">               h = hessian (x)
+     </pre>
+        <p class="noindent">in which <var>x</var> is a vector and <var>h</var> is a matrix.
+
+        <p>The third and fourth arguments are function handles pointing to
+functions that compute the equality constraints and the inequality
+constraints, respectively.
+
+        <p>If your problem does not have equality (or inequality) constraints,
+you may pass an empty matrix for <var>cef</var> (or <var>cif</var>).
+
+        <p>If supplied, the equality and inequality constraint functions must be
+of the form
+
+     <pre class="example">               r = f (x)
+     </pre>
+        <p class="noindent">in which <var>x</var> is a vector and <var>r</var> is a vector.
+
+        <p>The third and fourth arguments may also be 2-element cell arrays of
+function handles.  The first element should point to the constraint
+function and the second should point to a function that computes the
+gradient of the constraint function:
+
+     <pre class="example">                          [ d f(x)   d f(x)        d f(x) ]
+              transpose ( [ ------   -----   ...   ------ ] )
+                          [  dx_1     dx_2          dx_N  ]
+     </pre>
+        <p>Here is an example of calling <code>sqp</code>:
+
+     <pre class="example">               function r = g (x)
+                 r = [ sumsq(x)-10; x(2)*x(3)-5*x(4)*x(5); x(1)^3+x(2)^3+1];
+               endfunction
+          
+               function obj = phi (x)
+                 obj = exp(prod(x)) - 0.5*(x(1)^3+x(2)^3+1)^2;
+               endfunction
+          
+               x0 = [-1.8; 1.7; 1.9; -0.8; -0.8];
+          
+               [x, obj, info, iter, nf, lambda] = sqp (x0, @phi, @g, [])
+          
+               x =
+          
+                 -1.71714
+                  1.59571
+                  1.82725
+                 -0.76364
+                 -0.76364
+          
+               obj = 0.053950
+               info = 101
+               iter = 8
+               nf = 10
+               lambda =
+          
+                 -0.0401627
+                  0.0379578
+                 -0.0052227
+     </pre>
+        <p>The value returned in <var>info</var> may be one of the following:
+          <dl>
+<dt>101<dd>The algorithm terminated because the norm of the last step was less
+than <code>tol * norm (x))</code> (the value of tol is currently fixed at
+<code>sqrt (eps)</code>&mdash;edit <samp><span class="file">sqp.m</span></samp> to modify this value. 
+<br><dt>102<dd>The BFGS update failed. 
+<br><dt>103<dd>The maximum number of iterations was reached (the maximum number of
+allowed iterations is currently fixed at 100&mdash;edit <samp><span class="file">sqp.m</span></samp> to
+increase this value). 
+</dl>
+
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> qp. 
+</p></blockquote></div>
+
+   </body></html>
 

@@ -5,8 +5,8 @@
 <meta name="description" content="Untitled">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Function-Handles-and-Inline.html#Function-Handles-and-Inline" title="Function Handles and Inline">
-<link rel="prev" href="Function-Handles.html#Function-Handles" title="Function Handles">
+<link rel="up" href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions" title="Function Handles Inline Functions and Anonymous Functions">
+<link rel="prev" href="Anonymous-Functions.html#Anonymous-Functions" title="Anonymous Functions">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,172 +19,34 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Inline-Functions"></a>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Function-Handles.html#Function-Handles">Function Handles</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Function-Handles-and-Inline.html#Function-Handles-and-Inline">Function Handles and Inline</a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Anonymous-Functions.html#Anonymous-Functions">Anonymous Functions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions">Function Handles Inline Functions and Anonymous Functions</a>
 <hr>
 </div>
 
-<h4 class="subsection">13.9.2 Inline Functions</h4>
+<h4 class="subsection">12.9.3 Inline Functions</h4>
 
-<p><a name="doc_002dinline"></a>
+<p>An inline function is created from a string containing the function
+body using the <code>inline</code> function. The following code defines the
+function f(x) = x^2 + 2.
+
+<pre class="example">     f = inline("x^2 + 2");
+</pre>
+   <p class="noindent">After this it is possible to evaluate f at any x by
+writing <code>f(x)</code>.
+
+   <p><a name="doc_002dinline"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>inline</b> (<var>str</var>)<var><a name="index-inline-500"></a></var><br>
-&mdash; Built-in Function:  <b>inline</b> (<var>str, arg1, ...</var>)<var><a name="index-inline-501"></a></var><br>
-&mdash; Built-in Function:  <b>inline</b> (<var>str, n</var>)<var><a name="index-inline-502"></a></var><br>
+&mdash; Built-in Function:  <b>inline</b> (<var>str</var>)<var><a name="index-inline-594"></a></var><br>
+&mdash; Built-in Function:  <b>inline</b> (<var>str, arg1, <small class="dots">...</small></var>)<var><a name="index-inline-595"></a></var><br>
+&mdash; Built-in Function:  <b>inline</b> (<var>str, n</var>)<var><a name="index-inline-596"></a></var><br>
 <blockquote><p>Create an inline function from the character string <var>str</var>. 
 If called with a single argument, the arguments of the generated
 function are extracted from the function itself. The generated
@@ -202,38 +64,38 @@ they are the names of the arguments of the function.
         <pre class="sp">
      
      </pre>
-     See also: argnames, formula, vectorize. 
+     <strong>See also:</strong> argnames, formula, vectorize. 
 </p></blockquote></div>
 
    <p><a name="doc_002dargnames"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>argnames</b> (<var>fun</var>)<var><a name="index-argnames-503"></a></var><br>
+&mdash; Built-in Function:  <b>argnames</b> (<var>fun</var>)<var><a name="index-argnames-597"></a></var><br>
 <blockquote><p>Return a cell array of character strings containing the names of
 the arguments of the inline function <var>fun</var>.
         <pre class="sp">
      
      </pre>
-     See also: argnames, inline, formula, vectorize. 
+     <strong>See also:</strong> inline, formula, vectorize. 
 </p></blockquote></div>
 
    <p><a name="doc_002dformula"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>formula</b> (<var>fun</var>)<var><a name="index-formula-504"></a></var><br>
+&mdash; Built-in Function:  <b>formula</b> (<var>fun</var>)<var><a name="index-formula-598"></a></var><br>
 <blockquote><p>Return a character string representing the inline function <var>fun</var>. 
 Note that <code>char (</code><var>fun</var><code>)</code> is equivalent to
 <code>formula (</code><var>fun</var><code>)</code>.
         <pre class="sp">
      
      </pre>
-     See also: argnames, inline, vectorize. 
+     <strong>See also:</strong> argnames, inline, vectorize. 
 </p></blockquote></div>
 
    <p><a name="doc_002dvectorize"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>argnames</b> (<var>fun</var>)<var><a name="index-argnames-505"></a></var><br>
+&mdash; Built-in Function:  <b>vectorize</b> (<var>fun</var>)<var><a name="index-vectorize-599"></a></var><br>
 <blockquote><p>Create a vectorized version of the inline function <var>fun</var>
 by replacing all occurrences of <code>*</code>, <code>/</code>, etc., with
 <code>.*</code>, <code>./</code>, etc. 

@@ -7,6 +7,7 @@
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Tips.html#Tips" title="Tips">
 <link rel="prev" href="Comment-Tips.html#Comment-Tips" title="Comment Tips">
+<link rel="next" href="Documentation-Tips.html#Documentation-Tips" title="Documentation Tips">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,167 +20,21 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Function-Headers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Documentation-Tips.html#Documentation-Tips">Documentation Tips</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Comment-Tips.html#Comment-Tips">Comment Tips</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Tips.html#Tips">Tips</a>
 <hr>
 </div>
 
-<h3 class="section">B.5 Conventional Headers for Octave Functions</h3>
+<h3 class="section">C.4 Conventional Headers for Octave Functions</h3>
 
-<p><a name="index-header-comments-1539"></a>
+<p><a name="index-header-comments-1979"></a>
 Octave has conventions for using special comments in function files
 to give information such as who wrote them.  This section explains these
 conventions.
@@ -230,16 +85,8 @@ Here is an example:
    <p>Octave uses the first block of comments in a function file that do not
 appear to be a copyright notice as the help text for the file.  For
 Octave to recognize the first comment block as a copyright notice, it
-must match the regular expression
-
-<pre class="example">     ^ Copyright (C).*\n\n This file is part of Octave.
-</pre>
-   <p class="noindent">or
-
-<pre class="example">     ^ Copyright (C).*\n\n This program is free softwar
-</pre>
-   <p class="noindent">(after stripping the leading comment characters).  This is a fairly
-strict requirement, and may be relaxed somewhat in the future.
+must start with the word `Copyright' after stripping the leading
+comment characters.
 
    <p>After the copyright notice and help text come several <dfn>header
 comment</dfn> lines, each beginning with `<samp><span class="samp">## </span><var>header-name</var><span class="samp">:</span></samp>'.  For
@@ -255,7 +102,7 @@ example,
 <dt>`<samp><span class="samp">Author</span></samp>'<dd>This line states the name and net address of at least the principal
 author of the library.
 
-     <pre class="smallexample">          ## Author: John W. Eaton &lt;jwe@bevo.che.wisc.edu&gt;
+     <pre class="example">          ## Author: John W. Eaton &lt;jwe@bevo.che.wisc.edu&gt;
      </pre>
      <br><dt>`<samp><span class="samp">Maintainer</span></samp>'<dd>This line should contain a single name/address as in the Author line, or
 an address only, or the string `<samp><span class="samp">jwe</span></samp>'.  If there is no maintainer
@@ -291,11 +138,5 @@ commas, or both.
 appropriate.  You can also put in header lines with other header
 names&mdash;they have no standard meanings, so they can't do any harm.
 
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-<!-- The text of this file will eventually appear in the file BUGS -->
-<!-- in the Octave distribution, as well as in the Octave manual. -->
-</body></html>
+   </body></html>
 

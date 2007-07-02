@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+<title>Bit Manipulations - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Arithmetic.html#Arithmetic" title="Arithmetic">
+<link rel="next" href="Linear-Algebra.html#Linear-Algebra" title="Linear Algebra">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Bit-Manipulations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Arithmetic.html#Arithmetic">Arithmetic</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">19 Bit Manipulations</h2>
+
+<p>Octave provides the following functions for bit twiddling.
+
+   <p><a name="doc_002dbitset"></a>
+
+<div class="defun">
+&mdash; Function File: <var>x</var> = <b>bitset</b> (<var>a, n</var>)<var><a name="index-bitset-1052"></a></var><br>
+&mdash; Function File: <var>x</var> = <b>bitset</b> (<var>a, n, v</var>)<var><a name="index-bitset-1053"></a></var><br>
+<blockquote><p>Set or reset bit(s) <var>n</var> of unsigned integers in <var>a</var>. 
+<var>v</var> = 0 resets and <var>v</var> = 1 sets the bits. 
+The lowest significant bit is: <var>n</var> = 1
+
+     <pre class="example">          dec2bin (bitset (10, 1))
+          =&gt; 1011
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bitand, bitor, bitxor, bitget, bitcmp, bitshift, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbitget"></a>
+
+<div class="defun">
+&mdash; Function File: <var>X</var> = <b>bitget</b> (<var>a,n</var>)<var><a name="index-bitget-1054"></a></var><br>
+<blockquote><p>Return the status of bit(s) <var>n</var> of unsigned integers in <var>a</var>
+the lowest significant bit is <var>n</var> = 1.
+
+     <pre class="example">          bitget (100, 8:-1:1)
+          =&gt; 0  1  1  0  0  1  0  0
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bitand, bitor, bitxor, bitset, bitcmp, bitshift, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbitcmp"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>bitcmp</b> (<var>a, k</var>)<var><a name="index-bitcmp-1055"></a></var><br>
+<blockquote><p>Return the <var>k</var>-bit complement of integers in <var>a</var>.  If
+<var>k</var> is omitted <code>k = log2 (bitmax) + 1</code> is assumed.
+
+     <pre class="example">          bitcmp(7,4)
+          =&gt; 8
+          dec2bin(11)
+          =&gt; 1011
+          dec2bin(bitcmp(11, 6))
+          =&gt; 110100
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bitand, bitor, bitxor, bitset, bitget, bitcmp, bitshift, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbitshift"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>bitshift</b> (<var>a, k</var>)<var><a name="index-bitshift-1056"></a></var><br>
+&mdash; Built-in Function:  <b>bitshift</b> (<var>a, k, n</var>)<var><a name="index-bitshift-1057"></a></var><br>
+<blockquote><p>Return a <var>k</var> bit shift of <var>n</var>- digit unsigned
+integers in <var>a</var>.  A positive <var>k</var> leads to a left shift. 
+A negative value to a right shift.  If <var>n</var> is omitted it defaults
+to log2(bitmax)+1. 
+<var>n</var> must be in range [1,log2(bitmax)+1] usually [1,33]
+
+     <pre class="example">          bitshift (eye (3), 1))
+          =&gt;
+          2 0 0
+          0 2 0
+          0 0 2
+          
+          bitshift (10, [-2, -1, 0, 1, 2])
+          =&gt; 2   5  10  20  40
+          <!-- FIXME - restore this example when third arg is allowed to be an array. -->
+          <!-- bitshift ([1, 10], 2, [3,4]) -->
+          <!-- @result{} 4  8 -->
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bitand, bitor, bitxor, bitset, bitget, bitcmp, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbitand"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>bitand</b> (<var>x, y</var>)<var><a name="index-bitand-1058"></a></var><br>
+<blockquote><p>Return the bitwise AND of nonnegative integers. 
+<var>x</var>, <var>y</var> must be in range [0..bitmax]
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bitor, bitxor, bitset, bitget, bitcmp, bitshift, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbitor"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>bitor</b> (<var>x, y</var>)<var><a name="index-bitor-1059"></a></var><br>
+<blockquote><p>Return the bitwise OR of nonnegative integers. 
+<var>x</var>, <var>y</var> must be in range [0..bitmax]
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bitor, bitxor, bitset, bitget, bitcmp, bitshift, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbitxor"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>bitxor</b> (<var>x, y</var>)<var><a name="index-bitxor-1060"></a></var><br>
+<blockquote><p>Return the bitwise XOR of nonnegative integers. 
+<var>x</var>, <var>y</var> must be in range [0..bitmax]
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> bitand, bitor, bitset, bitget, bitcmp, bitshift, bitmax. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dbitmax"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>bitmax</b> ()<var><a name="index-bitmax-1061"></a></var><br>
+<blockquote><p>Return the largest integer that can be represented as a floating point
+value.  On IEEE-754 compatiable systems, <code>bitmax</code> is <code>2^53 - 1</code>. 
+</p></blockquote></div>
+
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

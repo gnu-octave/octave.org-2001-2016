@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Statements.html#Statements">Statements<
 <hr>
 </div>
 
-<h3 class="section">12.9 The <code>try</code> Statement</h3>
+<h3 class="section">11.9 The <code>try</code> Statement</h3>
 
-<p><a name="index-g_t_0040code_007btry_007d-statement-457"></a><a name="index-g_t_0040code_007bcatch_007d-458"></a><a name="index-g_t_0040code_007bend_005ftry_005fcatch_007d-459"></a>
+<p><a name="index-g_t_0040code_007btry_007d-statement-536"></a><a name="index-g_t_0040code_007bcatch_007d-537"></a><a name="index-g_t_0040code_007bend_005ftry_005fcatch_007d-538"></a>
 In addition to unwind_protect, Octave supports another limited form of
 exception handling.
 
@@ -193,7 +46,7 @@ exception handling.
        <var>cleanup</var>
      end_try_catch
 </pre>
-   <p>Where <var>body</var> and <var>cleanup</var> are both optional and may contain any
+   <p class="noindent">where <var>body</var> and <var>cleanup</var> are both optional and may contain any
 Octave expressions or commands.  The statements in <var>cleanup</var> are
 only executed if an error occurs in <var>body</var>.
 
@@ -203,16 +56,10 @@ executing.  If an error does occur during the execution of <var>body</var>,
 of the message that would have been printed.  This is the same
 as <code>eval (</code><var>try</var><code>, </code><var>catch</var><code>)</code> but it is more efficient since
 the commands do not need to be parsed each time the <var>try</var> and
-<var>catch</var> statements are evaluated.  See <a href="Error-Handling.html#Error-Handling">Error Handling</a>, for more
+<var>catch</var> statements are evaluated.  See <a href="Errors-and-Warnings.html#Errors-and-Warnings">Errors and Warnings</a>, for more
 information about the <code>lasterr</code> function.
 
-   <p>Octave's <var>try</var> block is a very limited variation on the Lisp
-condition-case form (limited because it cannot handle different classes
-of errors separately).  Perhaps at some point Octave can have some sort
-of classification of errors and try-catch can be improved to be as
-powerful as condition-case in Lisp.
-
-   <p><a name="index-continuation-lines-460"></a><a name="index-g_t_0040code_007b_002e_002e_002e_007d-continuation-marker-461"></a><a name="index-g_t_0040code_007b_005c_007d-continuation-marker-462"></a>
+   <p><a name="index-continuation-lines-539"></a><a name="index-g_t_0040code_007b_002e_002e_002e_007d-continuation-marker-540"></a><a name="index-g_t_0040code_007b_005c_007d-continuation-marker-541"></a>
 
    </body></html>
 

@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -178,15 +31,24 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Plotting.html#Plotting">Plotting</a>
 <hr>
 </div>
 
-<h3 class="section">17.1 Two-Dimensional Plotting</h3>
+<h3 class="section">16.1 Two-Dimensional Plotting</h3>
 
-<p>The <span class="sc">Matlab</span>-style two-dimensional plotting commands are:
+<p>The basic plotting commands are:
 
-   <p><a name="index-plotting-592"></a><a name="index-graphics-593"></a>
-<a name="doc_002dplot"></a>
+   <p><a name="index-plotting-726"></a><a name="index-graphics-727"></a>
+<a name="doc_002daxes"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>plot</b> (<var>args</var>)<var><a name="index-plot-594"></a></var><br>
+&mdash; Function File:  <b>axes</b> ()<var><a name="index-axes-728"></a></var><br>
+&mdash; Function File:  <b>axes</b> (<var>property, value, <small class="dots">...</small></var>)<var><a name="index-axes-729"></a></var><br>
+&mdash; Function File:  <b>axes</b> (<var>h</var>)<var><a name="index-axes-730"></a></var><br>
+<blockquote><p>Create an axes object and return a handle to it. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dplot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>plot</b> (<var>args</var>)<var><a name="index-plot-731"></a></var><br>
 <blockquote><p>This function produces two-dimensional plots.  Many different
 combinations of arguments are possible.  The simplest form is
 
@@ -196,25 +58,32 @@ combinations of arguments are possible.  The simplest form is
 <var>x</var> coordinates are taken to be the indices of the elements,
 starting with 1.
 
+        <p>To save a plot, in one of several image formats such as PostScript
+or PNG, use the <code>print</code> command.
+
         <p>If more than one argument is given, they are interpreted as
 
-     <pre class="example">          plot (<var>x</var>, <var>y</var>, <var>fmt</var> ...)
+     <pre class="example">          plot (<var>x</var>, <var>y</var>, <var>fmt</var>, ...)
      </pre>
-        <p class="noindent">where <var>y</var> and <var>fmt</var> are optional, and any number of argument
-sets may appear.  The <var>x</var> and <var>y</var> values are
-interpreted as follows:
+        <p class="noindent">or as
+
+     <pre class="example">          plot (<var>x</var>, <var>y</var>, <var>property</var>, <var>value</var>, ...)
+     </pre>
+        <p class="noindent">where <var>y</var>, <var>fmt</var>, <var>property</var> and <var>value</var> are optional,
+and any number of argument sets may appear.  The <var>x</var> and <var>y</var>
+values are interpreted as follows:
 
           <ul>
 <li>If a single data argument is supplied, it is taken as the set of <var>y</var>
 coordinates and the <var>x</var> coordinates are taken to be the indices of
 the elements, starting with 1.
 
-          <li>If the first argument is a vector and the second is a matrix, the
-the vector is plotted versus the columns (or rows) of the matrix. 
+          <li>If the <var>x</var> is a vector and <var>y</var> is a matrix, then
+the columns (or rows) of <var>y</var> are plotted versus <var>x</var>. 
 (using whichever combination matches, with columns tried first.)
 
-          <li>If the first argument is a matrix and the second is a vector, the
-the columns (or rows) of the matrix are plotted versus the vector. 
+          <li>If the <var>x</var> is a matrix and <var>y</var> is a vector,
+<var>y</var> is plotted versus the columns (or rows) of <var>x</var>. 
 (using whichever combination matches, with columns tried first.)
 
           <li>If both arguments are vectors, the elements of <var>y</var> are plotted versus
@@ -237,10 +106,6 @@ is assumed.
 
           <br><dt>`<samp><span class="samp">.</span></samp>'<dd>Set dots plot style.
 
-          <br><dt>`<samp><span class="samp">@</span></samp>'<dd>Set points plot style.
-
-          <br><dt>`<samp><span class="samp">-@</span></samp>'<dd>Set linespoints plot style.
-
           <br><dt>`<samp><span class="samp">^</span></samp>'<dd>Set impulses plot style.
 
           <br><dt>`<samp><span class="samp">L</span></samp>'<dd>Set steps plot style.
@@ -252,9 +117,9 @@ is assumed.
 range 1 to 6, <var>m</var> is interpreted as the point style.  This is only
 valid in combination with the <code>@</code> or <code>-@</code> specifiers.
 
-          <br><dt>`<samp><var>c</var></samp>'<dd>If <var>c</var> is one of <code>"k"</code>, <code>"r"</code>, <code>"g"</code>, <code>"b"</code>,
-<code>"m"</code>, <code>"c"</code>, or <code>"w"</code>, it is interpreted as the plot
-color (black, red, green, blue, magenta, cyan, or white).
+          <br><dt>`<samp><var>c</var></samp>'<dd>If <var>c</var> is one of <code>"k"</code> (black), <code>"r"</code> (red), <code>"g"</code>
+(green), <code>"b"</code> (blue), <code>"m"</code> (magenta), <code>"c"</code> (cyan),
+or <code>"w"</code> (white), it is interpreted as the line plot color.
 
           <br><dt>`<samp><span class="samp">";title;"</span></samp>'<dd>Here <code>"title"</code> is the label for the key.
 
@@ -279,6 +144,9 @@ formatting sequence described above, e.g. "+3;Key Title;"
 Note that the last semi-colon is required and will generate an error if
 it is left out.
 
+        <p>If a <var>property</var> is given it must be followed by <var>value</var>.  The
+property value pairs are applied to the lines drawn by <code>plot</code>.
+
         <p>Here are some plot examples:
 
      <pre class="example">          plot (x, y, "@12", x, y2, x, y3, "4", x, y4, "+")
@@ -287,10 +155,10 @@ it is left out.
 `<samp><span class="samp">+</span></samp>') and color 1 (red), <code>y2</code> with lines, <code>y3</code> with lines of
 color 4 (magenta) and <code>y4</code> with points displayed as `<samp><span class="samp">+</span></samp>'.
 
-     <pre class="example">          plot (b, "*")
+     <pre class="example">          plot (b, "*", "markersize", 3)
      </pre>
-        <p>This command will plot the data in the variable <code>b</code> will be plotted
-with points displayed as `<samp><span class="samp">*</span></samp>'.
+        <p>This command will plot the data in the variable <code>b</code>,
+with points displayed as `<samp><span class="samp">*</span></samp>' with a marker size of 3.
 
      <pre class="example">          t = 0:0.1:6.3;
           plot (t, cos(t), "-;cos(t);", t, sin(t), "+3;sin(t);");
@@ -300,14 +168,63 @@ in the key.
         <pre class="sp">
      
      </pre>
-     See also: semilogx, semilogy, loglog, polar, mesh, contour, __pltopt__
-bar, stairs, errorbar, replot, xlabel, ylabel, title. 
+     <strong>See also:</strong> semilogx, semilogy, loglog, polar, mesh, contour, __pltopt__
+bar, stairs, errorbar, xlabel, ylabel, title, print. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dline"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>line</b> ()<var><a name="index-line-732"></a></var><br>
+&mdash; Function File:  <b>line</b> (<var>x, y</var>)<var><a name="index-line-733"></a></var><br>
+&mdash; Function File:  <b>line</b> (<var>x, y, z</var>)<var><a name="index-line-734"></a></var><br>
+&mdash; Function File:  <b>line</b> (<var>x, y, z, opts</var>)<var><a name="index-line-735"></a></var><br>
+<blockquote><p>Create line object from <var>x</var> and <var>y</var> and insert in current
+axes object.  Return handle to line object. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dfplot"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>fplot</b> (<var>fn, limits</var>)<var><a name="index-fplot-736"></a></var><br>
+&mdash; Function File:  <b>fplot</b> (<var>fn, limits, n</var>)<var><a name="index-fplot-737"></a></var><br>
+<blockquote><p>Plot a function <var>fn</var>, within the defined limits.  <var>fn</var>
+an be either a string, a function handle or an inline function. 
+The limits of the plot are given by <var>limits</var> of the form
+<code>[</code><var>xlo</var><code>, </code><var>xhi</var><code>]</code> or <code>[</code><var>xlo</var><code>, </code><var>xhi</var><code>,
+</code><var>ylo</var><code>, </code><var>yhi</var><code>]</code>. <var>n</var> is the number of points to use and
+defaults to 100.
+
+     <pre class="example">             fplot ("cos", [0, 2*pi])
+             fplot ("[cos(x), sin(x)]", [0, 2*pi])
+     </pre>
+        </blockquote></div>
+
+   <p><a name="doc_002ddrawnow"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>drawnow</b> ()<var><a name="index-drawnow-738"></a></var><br>
+<blockquote><p>Display the current graphics. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dshg"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>shg</b><var><a name="index-shg-739"></a></var><br>
+<blockquote>
+<p>Show the graph window.  Currently, this is the same as executing
+<code>drawnow</code>.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> plot, semilogx, semilogy, loglog, polar, mesh, contour,
+bar, stairs, xlabel, ylabel. 
 </p></blockquote></div>
 
    <p><a name="doc_002dhold"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>hold</b><var> args<a name="index-hold-595"></a></var><br>
+&mdash; Function File:  <b>hold</b><var> args<a name="index-hold-740"></a></var><br>
 <blockquote><p>Tell Octave to `hold' the current data on the plot when executing
 subsequent plotting commands.  This allows you to execute a series of
 plot commands and have all the lines end up on the same figure.  The
@@ -324,129 +241,16 @@ state.
    <p><a name="doc_002dishold"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ishold</b><var><a name="index-ishold-596"></a></var><br>
+&mdash; Function File:  <b>ishold</b><var><a name="index-ishold-741"></a></var><br>
 <blockquote><p>Return 1 if the next line will be added to the current plot, or 0 if
 the plot device will be cleared before drawing the next line. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dclearplot"></a>
+   <p><a name="doc_002dnewplot"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>clearplot</b><var><a name="index-clearplot-597"></a></var><br>
-&mdash; Built-in Function:  <b>clg</b><var><a name="index-clg-598"></a></var><br>
-<blockquote><p>Clear the plot window and any titles or axis labels.  The name
-<code>clg</code> is aliased to <code>clearplot</code> for compatibility with
-<span class="sc">Matlab</span>. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dshg"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>shg</b><var><a name="index-shg-599"></a></var><br>
-<blockquote>
-<p>Show the graph window.  Currently, this is the same as executing
-replot.
-        <pre class="sp">
-     
-     </pre>
-     See also: plot, semilogx, semilogy, loglog, polar, mesh, contour,
-bar, stairs, replot, xlabel, ylabel. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dcloseplot"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>closeplot</b><var><a name="index-closeplot-600"></a></var><br>
-<blockquote><p>Close stream to the <code>gnuplot</code> subprocess.  If you are using X11,
-this will close the plot window. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dpurge_005ftmp_005ffiles"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>purge_tmp_files</b><var><a name="index-purge_005ftmp_005ffiles-601"></a></var><br>
-<blockquote><p>Delete the temporary files created by the plotting commands.
-
-        <p>Octave creates temporary data files for <code>gnuplot</code> and then sends
-commands to <code>gnuplot</code> through a pipe.  Octave will delete the
-temporary files on exit, but if you are doing a lot of plotting you may
-want to clean up in the middle of a session.
-
-        <p>A future version of Octave will eliminate the need to use temporary
-files to hold the plot data. 
-</p></blockquote></div>
-
-   <p><a name="doc_002daxis"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>axis</b> (<var>limits</var>)<var><a name="index-axis-602"></a></var><br>
-<blockquote><p>Set axis limits for plots.
-
-        <p>The argument <var>limits</var> should be a 2, 4, or 6 element vector.  The
-first and second elements specify the lower and upper limits for the x
-axis.  The third and fourth specify the limits for the y axis, and the
-fifth and sixth specify the limits for the z axis.
-
-        <p>Without any arguments, <code>axis</code> turns autoscaling on.
-
-        <p>With one output argument, <code>x=axis</code> returns the current axes
-(this is not yet implemented for automatic axes).
-
-        <p>The vector argument specifying limits is optional, and additional
-string arguments may be used to specify various axis properties.  For
-example,
-
-     <pre class="example">          axis ([1, 2, 3, 4], "square");
-     </pre>
-        <p class="noindent">forces a square aspect ratio, and
-
-     <pre class="example">          axis ("labely", "tic");
-     </pre>
-        <p class="noindent">turns tic marks on for all axes and tic mark labels on for the y-axis
-only.
-
-     <p class="noindent">The following options control the aspect ratio of the axes.
-
-          <dl>
-<dt><code>"square"</code><dd>Force a square aspect ratio. 
-<br><dt><code>"equal"</code><dd>Force x distance to equal y-distance. 
-<br><dt><code>"normal"</code><dd>Restore the balance. 
-</dl>
-
-     <p class="noindent">The following options control the way axis limits are interpreted.
-
-          <dl>
-<dt><code>"auto"</code><dd>Set the specified axes to have nice limits around the data
-or all if no axes are specified. 
-<br><dt><code>"manual"</code><dd>Fix the current axes limits. 
-<br><dt><code>"tight"</code><dd>Fix axes to the limits of the data (not implemented). 
-</dl>
-
-     <p class="noindent">The option <code>"image"</code> is equivalent to <code>"tight"</code> and
-<code>"equal"</code>.
-
-     <p class="noindent">The following options affect the appearance of tic marks.
-
-          <dl>
-<dt><code>"on"</code><dd>Turn tic marks and labels on for all axes. 
-<br><dt><code>"off"</code><dd>Turn tic marks off for all axes. 
-<br><dt><code>"tic[xyz]"</code><dd>Turn tic marks on for all axes, or turn them on for the
-specified axes and off for the remainder. 
-<br><dt><code>"label[xyz]"</code><dd>Turn tic labels on for all axes, or turn them on for the
-specified axes and off for the remainder. 
-<br><dt><code>"nolabel"</code><dd>Turn tic labels off for all axes. 
-</dl>
-        Note, if there are no tic marks for an axis, there can be no labels.
-
-     <p class="noindent">The following options affect the direction of increasing values on
-the axes.
-
-          <dl>
-<dt><code>"ij"</code><dd>Reverse y-axis, so lower values are nearer the top. 
-<br><dt><code>"xy"</code><dd>Restore y-axis, so higher values are nearer the top. 
-</dl>
-
-        </blockquote></div>
+&mdash; Function File:  <b>newplot</b> ()<var><a name="index-newplot-742"></a></var><br>
+</div>
 
    </body></html>
 

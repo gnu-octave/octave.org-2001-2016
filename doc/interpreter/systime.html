@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,13 +32,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Control-Theory.html#Control-Theory">Con
 <hr>
 </div>
 
-<h3 class="section">30.7 System Analysis-Time Domain</h3>
+<h3 class="section">32.7 System Analysis-Time Domain</h3>
 
 <p><a name="doc_002dc2d"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>c2d</b> (<var>sys, opt, t</var>)<var><a name="index-c2d-1283"></a></var><br>
-&mdash; Function File:  <b>c2d</b> (<var>sys, t</var>)<var><a name="index-c2d-1284"></a></var><br>
+&mdash; Function File:  <b>c2d</b> (<var>sys, opt, t</var>)<var><a name="index-c2d-1618"></a></var><br>
+&mdash; Function File:  <b>c2d</b> (<var>sys, t</var>)<var><a name="index-c2d-1619"></a></var><br>
 <blockquote>
 <p>Converts the system data structure describing:
      <pre class="example">          .
@@ -233,8 +86,8 @@ to the names of the new discrete states.
    <p><a name="doc_002dd2c"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>d2c</b> (<var>sys, tol</var>)<var><a name="index-d2c-1285"></a></var><br>
-&mdash; Function File:  <b>d2c</b> (<var>sys, opt</var>)<var><a name="index-d2c-1286"></a></var><br>
+&mdash; Function File:  <b>d2c</b> (<var>sys, tol</var>)<var><a name="index-d2c-1620"></a></var><br>
+&mdash; Function File:  <b>d2c</b> (<var>sys, opt</var>)<var><a name="index-d2c-1621"></a></var><br>
 <blockquote><p>Convert a discrete (sub)system into a purely continuous one. 
 The sampling time used is <code>sysgettsam(</code><var>sys</var><code>)</code>.
 
@@ -270,7 +123,7 @@ discrete
    <p><a name="doc_002ddmr2d"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>dsys</var>, <var>fidx</var>] = <b>dmr2d</b> (<var>sys, idx, sprefix, ts2, cuflg</var>)<var><a name="index-dmr2d-1287"></a></var><br>
+&mdash; Function File: [<var>dsys</var>, <var>fidx</var>] = <b>dmr2d</b> (<var>sys, idx, sprefix, ts2, cuflg</var>)<var><a name="index-dmr2d-1622"></a></var><br>
 <blockquote><p>convert a multirate digital system to a single rate digital system
 states specified by <var>idx</var>, <var>sprefix</var> are sampled at <var>ts2</var>, all
 others are assumed sampled at <var>ts1</var> = <code>sysgettsam (</code><var>sys</var><code>)</code>.
@@ -301,9 +154,9 @@ default <var>cuflg</var> = 1.
           <p>The sampling time of sys is updated to <var>ts2</var>.
 
           <p>if <var>cuflg</var>=0 then a set of additional inputs is added to
-the system with suffixes _d1, ..., _dn to indicate their
+the system with suffixes _d1, <small class="dots">...</small>, _dn to indicate their
 delay from the starting time k <var>ts2</var>, i.e. 
-u = [u_1; u_1_d1; ..., u_1_dn] where u_1_dk is the input
+u = [u_1; u_1_d1; <small class="dots">...</small>, u_1_dn] where u_1_dk is the input
 k*ts1 units of time after u_1 is sampled. (<var>ts1</var> is
 the original sampling time of the discrete time system and
 <var>ts2</var> = (n+1)*ts1)
@@ -319,7 +172,7 @@ these states are updated to the new (slower) sampling interval <var>ts2</var>.
    <p><a name="doc_002ddamp"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>damp</b> (<var>p, tsam</var>)<var><a name="index-damp-1288"></a></var><br>
+&mdash; Function File:  <b>damp</b> (<var>p, tsam</var>)<var><a name="index-damp-1623"></a></var><br>
 <blockquote><p>Displays eigenvalues, natural frequencies and damping ratios
 of the eigenvalues of a matrix <var>p</var> or the A matrix of a
 system <var>p</var>, respectively. 
@@ -329,13 +182,13 @@ of <var>p</var> are assumed to be in <var>z</var>-domain.
         <pre class="sp">
      
      </pre>
-     See also: eig. 
+     <strong>See also:</strong> eig. 
 </p></blockquote></div>
 
    <p><a name="doc_002ddcgain"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dcgain</b> (<var>sys, tol</var>)<var><a name="index-dcgain-1289"></a></var><br>
+&mdash; Function File:  <b>dcgain</b> (<var>sys, tol</var>)<var><a name="index-dcgain-1624"></a></var><br>
 <blockquote><p>Returns dc-gain matrix. If dc-gain is infinite
 an empty matrix is returned. 
 The argument <var>tol</var> is an optional tolerance for the condition
@@ -345,7 +198,7 @@ number of the A Matrix in <var>sys</var> (default <var>tol</var> = 1.0e-10)
    <p><a name="doc_002dimpulse"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>y</var>, <var>t</var>] = <b>impulse</b> (<var>sys, inp, tstop, n</var>)<var><a name="index-impulse-1290"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>t</var>] = <b>impulse</b> (<var>sys, inp, tstop, n</var>)<var><a name="index-impulse-1625"></a></var><br>
 <blockquote><p>Impulse response for a linear system. 
 The system can be discrete or multivariable (or both). 
 If no output arguments are specified, <code>impulse</code>
@@ -371,13 +224,13 @@ computed from the eigenvalues of the A Matrix.
         <pre class="sp">
      
      </pre>
-     See also: step, __stepimp__. 
+     <strong>See also:</strong> step, __stepimp__. 
 </p></blockquote></div>
 
    <p><a name="doc_002dstep"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>y</var>, <var>t</var>] = <b>step</b> (<var>sys, inp, tstop, n</var>)<var><a name="index-step-1291"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>t</var>] = <b>step</b> (<var>sys, inp, tstop, n</var>)<var><a name="index-step-1626"></a></var><br>
 <blockquote><p>Step response for a linear system. 
 The system can be discrete or multivariable (or both). 
 If no output arguments are specified, <code>step</code>
@@ -404,7 +257,7 @@ computed from the eigenvalues of the A Matrix.
         <pre class="sp">
      
      </pre>
-     See also: impulse, __stepimp__. 
+     <strong>See also:</strong> impulse, __stepimp__. 
 </p></blockquote></div>
 
    </body></html>

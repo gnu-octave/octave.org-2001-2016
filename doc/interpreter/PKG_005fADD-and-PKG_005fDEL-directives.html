@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+<title>PKG_ADD and PKG_DEL directives - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Creating-Packages.html#Creating-Packages" title="Creating Packages">
+<link rel="prev" href="The-INDEX-file.html#The-INDEX-file" title="The INDEX file">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="PKG_ADD-and-PKG_DEL-directives"></a>
+<a name="PKG_005fADD-and-PKG_005fDEL-directives"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="The-INDEX-file.html#The-INDEX-file">The INDEX file</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Creating-Packages.html#Creating-Packages">Creating Packages</a>
+<hr>
+</div>
+
+<h4 class="subsection">38.4.3 PKG_ADD and PKG_DEL directives</h4>
+
+<p>If the package contains files called <code>PKG_ADD</code> or <code>PKG_DEL</code>
+the commands in these files will be executed when the package is
+added or removed from the users path. In some situations such files
+are a bit cumbersome to maintain, so the package manager supports
+automatic creation of such files. If a source file in the package
+contains a <code>PKG_ADD</code> or <code>PKG_DEL</code> directive they will be
+added to either the <code>PKG_ADD</code> or <code>PKG_DEL</code> files.
+
+   <p>In <code>m</code>-files a <code>PKG_ADD</code> directive looks like this
+
+<pre class="example">     ## PKG_ADD: some_octave_command
+</pre>
+   <p class="noindent">Such lines should be added before the <code>function</code> keyword. 
+In C++ files a <code>PKG_ADD</code> directive looks like this
+
+<pre class="example">     // PKG_ADD: some_octave_command
+</pre>
+   <p class="noindent">In both cases <code>some_octave_command</code> should be replaced by the
+command that should be placed in the <code>PKG_ADD</code> file. 
+<code>PKG_DEL</code> directives work in the same way, except the <code>PKG_ADD</code>
+keyword is replaced with <code>PKG_DEL</code> and the commands get added
+to the <code>PKG_DEL</code> file.
+
+<!-- maybe add again later, if anyone every writes any really interesting -->
+<!-- fun stuff for Octave. -->
+<!-- @include amuse.texi -->
+<!-- Appendices start here.  Installation and bugs have to go before the -->
+<!-- readline and Info appendices because we want to have separate indices -->
+<!-- for them, and there appears to be no way to go back to the original -->
+<!-- set of indices once a redirection has taken place. -->
+<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 2007 John W. Eaton, David Bateman -->
+<!-- Copyright (C) 2007 Paul Thomas, Christoph Spiel -->
+<!-- This is part of the Octave manual. -->
+<!-- For copying conditions, see the file gpl.texi. -->
+</body></html>
+

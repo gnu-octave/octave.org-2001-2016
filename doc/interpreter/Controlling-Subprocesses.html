@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
-<link rel="prev" href="Filesystem-Utilities.html#Filesystem-Utilities" title="Filesystem Utilities">
+<link rel="prev" href="Networking-Utilities.html#Networking-Utilities" title="Networking Utilities">
 <link rel="next" href="Process-ID-Information.html#Process-ID-Information" title="Process ID Information">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -20,166 +20,19 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Controlling-Subprocesses"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Process-ID-Information.html#Process-ID-Information">Process ID Information</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Filesystem-Utilities.html#Filesystem-Utilities">Filesystem Utilities</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Networking-Utilities.html#Networking-Utilities">Networking Utilities</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities">System Utilities</a>
 <hr>
 </div>
 
-<h3 class="section">35.3 Controlling Subprocesses</h3>
+<h3 class="section">37.5 Controlling Subprocesses</h3>
 
 <p>Octave includes some high-level commands like <code>system</code> and
 <code>popen</code> for starting subprocesses.  If you want to run another
@@ -194,7 +47,7 @@ higher-level functions.
    <p><a name="doc_002dsystem"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>system</b> (<var>string, return_output, type</var>)<var><a name="index-system-1464"></a></var><br>
+&mdash; Built-in Function:  <b>system</b> (<var>string, return_output, type</var>)<var><a name="index-system-1869"></a></var><br>
 <blockquote><p>Execute a shell command specified by <var>string</var>.  The second
 argument is optional.  If <var>type</var> is <code>"async"</code>, the process
 is started in the background and the process id of the child process
@@ -217,20 +70,52 @@ with <var>system</var> through the pager, use a command like
      <pre class="example">          printf ("%s
           ", system (cmd, 1));
      </pre>
-        <p>The <code>system</code> function can return two values.  The first is any
-output from the command that was written to the standard output stream,
-and the second is the output status of the command.  For example,
+        <p>The <code>system</code> function can return two values.  The first is the
+exit status of the command and the second is any output from the
+command that was written to the standard output stream.  For example,
 
-     <pre class="example">          [output, status] = system ("echo foo; exit 2");
+     <pre class="example">          [status, output] = system ("echo foo; exit 2");
      </pre>
         <p class="noindent">will set the variable <code>output</code> to the string `<samp><span class="samp">foo</span></samp>', and the
 variable <code>status</code> to the integer `<samp><span class="samp">2</span></samp>'. 
 </p></blockquote></div>
 
+   <p><a name="doc_002dunix"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>status</var>, <var>text</var>] <b>unix</b> (<var>command</var>)<var><a name="index-unix-1870"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>text</var>] <b>unix</b> (<var>command, "-echo"</var>)<var><a name="index-unix-1871"></a></var><br>
+<blockquote><p>Execute a system command if running under a Unix-like operating
+system, otherwise do nothing.  Return the exit status of the program
+in <var>status</var> and any output sent to the standard output in
+<var>text</var>.  If the optional second argument <code>"-echo"</code> is given,
+then also send the output from the command to the standard output.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> isunix, ispc, system. 
+</p></blockquote></div>
+
+   <p><a name="doc_002ddos"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>status</var>, <var>text</var>] = <b>dos</b> (<var>command</var>)<var><a name="index-dos-1872"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>text</var>] = <b>dos</b> (<var>command, "-echo"</var>)<var><a name="index-dos-1873"></a></var><br>
+<blockquote><p>Execute a system command if running under a Windows-like operating
+system, otherwise do nothing.  Return the exit status of the program
+in <var>status</var> and any output sent to the standard output in
+<var>text</var>.  If the optional second argument <code>"-echo"</code> is given,
+then also send the output from the command to the standard output.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> unix, isunix, ispc, system. 
+</p></blockquote></div>
+
    <p><a name="doc_002dpopen"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>fid</var> = <b>popen</b> (<var>command, mode</var>)<var><a name="index-popen-1465"></a></var><br>
+&mdash; Built-in Function: <var>fid</var> = <b>popen</b> (<var>command, mode</var>)<var><a name="index-popen-1874"></a></var><br>
 <blockquote><p>Start a process and create a pipe.  The name of the command to run is
 given by <var>command</var>.  The file identifier corresponding to the input
 or output stream of the process is returned in <var>fid</var>.  The argument
@@ -259,7 +144,7 @@ open for writing.
    <p><a name="doc_002dpclose"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>pclose</b> (<var>fid</var>)<var><a name="index-pclose-1466"></a></var><br>
+&mdash; Built-in Function:  <b>pclose</b> (<var>fid</var>)<var><a name="index-pclose-1875"></a></var><br>
 <blockquote><p>Close a file identifier that was opened by <code>popen</code>.  You may also
 use <code>fclose</code> for the same purpose. 
 </p></blockquote></div>
@@ -267,7 +152,7 @@ use <code>fclose</code> for the same purpose.
    <p><a name="doc_002dpopen2"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>in</var>, <var>out</var>, <var>pid</var>] = <b>popen2</b> (<var>command, args</var>)<var><a name="index-popen2-1467"></a></var><br>
+&mdash; Built-in Function: [<var>in</var>, <var>out</var>, <var>pid</var>] = <b>popen2</b> (<var>command, args</var>)<var><a name="index-popen2-1876"></a></var><br>
 <blockquote><p>Start a subprocess with two-way communication.  The name of the process
 is given by <var>command</var>, and <var>args</var> is an array of strings
 containing options for the command.  The file identifiers for the input
@@ -295,33 +180,28 @@ contains the process ID of the subprocess.  Otherwise, <var>pid</var> is
             endif
           until (done)
           fclose (out);
-          -| are
-          -| some
-          -| strings
-          -| these
+               -| are
+               -| some
+               -| strings
+               -| these
      </pre>
         </blockquote></div>
 
    <p><a name="doc_002dEXEC_005fPATH"></a>
 
 <div class="defun">
-&mdash; Built-in Variable: <b>EXEC_PATH</b><var><a name="index-EXEC_005fPATH-1468"></a></var><br>
-<blockquote><p>The variable <code>EXEC_PATH</code> is a colon separated list of directories
-to search when executing external programs.  Its initial value is taken from
-the environment variable <code>OCTAVE_EXEC_PATH</code> (if it exists) or
-<code>PATH</code>, but that value can be overridden by the command line
-argument <code>--exec-path PATH</code>, or by setting the value of
-<code>EXEC_PATH</code> in a startup script.  If the value of <code>EXEC_PATH</code>
-begins (ends) with a colon, the directories
-
-     <pre class="example">          <var>octave-home</var>/libexec/octave/site/exec/<var>arch</var>
-          <var>octave-home</var>/libexec/octave/<var>version</var>/exec/<var>arch</var>
-     </pre>
-        <p class="noindent">are prepended (appended) to <code>EXEC_PATH</code>, where <var>octave-home</var>
-is the top-level directory where all of Octave is installed
-(the default value is <samp><span class="file">/usr/local</span></samp>).  If you don't specify
-a value for <code>EXEC_PATH</code> explicitly, these special directories are
-prepended to your shell path. 
+&mdash; Built-in Function: <var>val</var> = <b>EXEC_PATH</b> ()<var><a name="index-EXEC_005fPATH-1877"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>EXEC_PATH</b> (<var>new_val</var>)<var><a name="index-EXEC_005fPATH-1878"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies a colon separated
+list of directories to search when executing external programs. 
+Its initial value is taken from the environment variable
+<code>OCTAVE_EXEC_PATH</code> (if it exists) or <code>PATH</code>, but that
+value can be overridden by the command line argument
+<code>--exec-path PATH</code>.  At startup, an additional set of
+directories (including the shell PATH) is appended to the path
+specified in the environment or on the command line.  If you use
+the <code>EXEC_PATH</code> function to modify the path, you should take
+care to preserve these additional directories. 
 </p></blockquote></div>
 
    <p>In most cases, the following functions simply decode their arguments and
@@ -331,7 +211,7 @@ they can be used, look at the definition of the function <code>popen2</code>.
    <p><a name="doc_002dfork"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>pid</var>, <var>msg</var>] = <b>fork</b> ()<var><a name="index-fork-1469"></a></var><br>
+&mdash; Built-in Function: [<var>pid</var>, <var>msg</var>] = <b>fork</b> ()<var><a name="index-fork-1879"></a></var><br>
 <blockquote><p>Create a copy of the current process.
 
         <p>Fork can return one of the following values:
@@ -352,7 +232,7 @@ action.  A system dependent error message will be waiting in <var>msg</var>.
    <p><a name="doc_002dexec"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>exec</b> (<var>file, args</var>)<var><a name="index-exec-1470"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>exec</b> (<var>file, args</var>)<var><a name="index-exec-1880"></a></var><br>
 <blockquote><p>Replace current process with a new process.  Calling <code>exec</code> without
 first calling <code>fork</code> will terminate your current Octave process and
 replace it with the program named by <var>file</var>.  For example,
@@ -369,9 +249,9 @@ error message.
    <p><a name="doc_002dpipe"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>file_ids</var>, <var>err</var>, <var>msg</var>] = <b>pipe</b> ()<var><a name="index-pipe-1471"></a></var><br>
-<blockquote><p>Create a pipe and return the vector <var>file_ids</var>, which corresponding
-to the reading and writing ends of the pipe.
+&mdash; Built-in Function: [<var>read_fd</var>, <var>write_fd</var>, <var>err</var>, <var>msg</var>] = <b>pipe</b> ()<var><a name="index-pipe-1881"></a></var><br>
+<blockquote><p>Create a pipe and return the reading and writing ends of the pipe
+into <var>read_fd</var> and <var>write_fd</var> respectively.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
 Otherwise, <var>err</var> is nonzero and <var>msg</var> contains a
@@ -381,7 +261,7 @@ system-dependent error message.
    <p><a name="doc_002ddup2"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>dup2</b> (<var>old, new</var>)<var><a name="index-dup2-1472"></a></var><br>
+&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>dup2</b> (<var>old, new</var>)<var><a name="index-dup2-1882"></a></var><br>
 <blockquote><p>Duplicate a file descriptor.
 
         <p>If successful, <var>fid</var> is greater than zero and contains the new file
@@ -392,7 +272,7 @@ system-dependent error message.
    <p><a name="doc_002dwaitpid"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>pid</var>, <var>status</var>, <var>msg</var>] = <b>waitpid</b> (<var>pid, options</var>)<var><a name="index-waitpid-1473"></a></var><br>
+&mdash; Built-in Function: [<var>pid</var>, <var>status</var>, <var>msg</var>] = <b>waitpid</b> (<var>pid, options</var>)<var><a name="index-waitpid-1883"></a></var><br>
 <blockquote><p>Wait for process <var>pid</var> to terminate.  The <var>pid</var> argument can be:
 
           <dl>
@@ -428,45 +308,45 @@ information about the subprocess that exited.
         <pre class="sp">
      
      </pre>
-     See also: WNOHANG, WUNTRACED, WCONTINUED, WEXITSTATUS, WIFSIGNALED, WTERMSIG, WCOREDUMP, WIFSTOPPED, WSTOPSIG, WIFCONTINUED. 
+     <strong>See also:</strong> WNOHANG, WUNTRACED, WCONTINUED, WEXITSTATUS, WIFSIGNALED, WTERMSIG, WCOREDUMP, WIFSTOPPED, WSTOPSIG, WIFCONTINUED. 
 </p></blockquote></div>
 
    <p><a name="doc_002dfcntl"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>fcntl</b> (<var>fid, request, arg</var>)<var><a name="index-fcntl-1474"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>fcntl</b> (<var>fid, request, arg</var>)<var><a name="index-fcntl-1884"></a></var><br>
 <blockquote><p>Change the properties of the open file <var>fid</var>.  The following values
 may be passed as <var>request</var>:
 
           <dl>
-<dt><code>F_DUPFD</code><a name="index-F_005fDUPFD-1475"></a><dd>Return a duplicate file descriptor.
+<dt><code>F_DUPFD</code><a name="index-F_005fDUPFD-1885"></a><dd>Return a duplicate file descriptor.
 
-          <br><dt><code>F_GETFD</code><a name="index-F_005fGETFD-1476"></a><dd>Return the file descriptor flags for <var>fid</var>.
+          <br><dt><code>F_GETFD</code><a name="index-F_005fGETFD-1886"></a><dd>Return the file descriptor flags for <var>fid</var>.
 
-          <br><dt><code>F_SETFD</code><a name="index-F_005fSETFD-1477"></a><dd>Set the file descriptor flags for <var>fid</var>.
+          <br><dt><code>F_SETFD</code><a name="index-F_005fSETFD-1887"></a><dd>Set the file descriptor flags for <var>fid</var>.
 
-          <br><dt><code>F_GETFL</code><a name="index-F_005fGETFL-1478"></a><dd>Return the file status flags for <var>fid</var>.  The following codes may be
+          <br><dt><code>F_GETFL</code><a name="index-F_005fGETFL-1888"></a><dd>Return the file status flags for <var>fid</var>.  The following codes may be
 returned (some of the flags may be undefined on some systems).
 
                <dl>
-<dt><code>O_RDONLY</code><a name="index-O_005fRDONLY-1479"></a><dd>Open for reading only.
+<dt><code>O_RDONLY</code><a name="index-O_005fRDONLY-1889"></a><dd>Open for reading only.
 
-               <br><dt><code>O_WRONLY</code><a name="index-O_005fWRONLY-1480"></a><dd>Open for writing only.
+               <br><dt><code>O_WRONLY</code><a name="index-O_005fWRONLY-1890"></a><dd>Open for writing only.
 
-               <br><dt><code>O_RDWR</code><a name="index-O_005fRDWR-1481"></a><dd>Open for reading and writing.
+               <br><dt><code>O_RDWR</code><a name="index-O_005fRDWR-1891"></a><dd>Open for reading and writing.
 
-               <br><dt><code>O_APPEND</code><a name="index-O_005fAPPEND-1482"></a><dd>Append on each write.
+               <br><dt><code>O_APPEND</code><a name="index-O_005fAPPEND-1892"></a><dd>Append on each write.
 
-               <br><dt><code>O_CREAT</code><a name="index-O_005fCREAT-1483"></a><dd>Create the file if it does not exist.
+               <br><dt><code>O_CREAT</code><a name="index-O_005fCREAT-1893"></a><dd>Create the file if it does not exist.
 
-               <br><dt><code>O_NONBLOCK</code><a name="index-O_005fNONBLOCK-1484"></a><dd>Nonblocking mode.
+               <br><dt><code>O_NONBLOCK</code><a name="index-O_005fNONBLOCK-1894"></a><dd>Nonblocking mode.
 
-               <br><dt><code>O_SYNC</code><a name="index-O_005fSYNC-1485"></a><dd>Wait for writes to complete.
+               <br><dt><code>O_SYNC</code><a name="index-O_005fSYNC-1895"></a><dd>Wait for writes to complete.
 
-               <br><dt><code>O_ASYNC</code><a name="index-O_005fASYNC-1486"></a><dd>Asynchronous I/O. 
+               <br><dt><code>O_ASYNC</code><a name="index-O_005fASYNC-1896"></a><dd>Asynchronous I/O. 
 </dl>
 
-          <br><dt><code>F_SETFL</code><a name="index-F_005fSETFL-1487"></a><dd>Set the file status flags for <var>fid</var> to the value specified by
+          <br><dt><code>F_SETFL</code><a name="index-F_005fSETFL-1897"></a><dd>Set the file status flags for <var>fid</var> to the value specified by
 <var>arg</var>.  The only flags that can be changed are <code>O_APPEND</code> and
 <code>O_NONBLOCK</code>. 
 </dl>
@@ -474,6 +354,36 @@ returned (some of the flags may be undefined on some systems).
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
 Otherwise, <var>err</var> is nonzero and <var>msg</var> contains a
 system-dependent error message. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dkill"></a>
+
+<div class="defun">
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>kill</b> (<var>pid, sig</var>)<var><a name="index-kill-1898"></a></var><br>
+<blockquote><p>Send signal <var>sig</var> to process <var>pid</var>.
+
+        <p>If <var>pid</var> is positive, then signal <var>sig</var> is sent to <var>pid</var>.
+
+        <p>If <var>pid</var> is 0, then signal <var>sig</var> is sent to every process
+in the process group of the current process.
+
+        <p>If <var>pid</var> is -1, then signal <var>sig</var> is sent to every process
+except process 1.
+
+        <p>If <var>pid</var> is less than -1, then signal <var>sig</var> is sent to every
+process in the process group <var>-pid</var>.
+
+        <p>If <var>sig</var> is 0, then no signal is sent, but error checking is still
+performed.
+
+        <p>Return 0 if sucessful, otherwise return -1. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dSIG"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>SIG</b> ()<var><a name="index-SIG-1899"></a></var><br>
+<blockquote><p>Return a structure containing Unix signal names and their defined values. 
 </p></blockquote></div>
 
    </body></html>

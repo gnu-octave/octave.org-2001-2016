@@ -19,154 +19,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -177,59 +30,77 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic<
 <hr>
 </div>
 
-<h3 class="section">19.7 Mathematical Constants</h3>
+<h3 class="section">18.7 Mathematical Constants</h3>
 
 <p><a name="doc_002dI"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>I</b><var><a name="index-I-806"></a></var><br>
-&mdash; Built-in Constant: <b>J</b><var><a name="index-J-807"></a></var><br>
-&mdash; Built-in Constant: <b>i</b><var><a name="index-i-808"></a></var><br>
-&mdash; Built-in Constant: <b>j</b><var><a name="index-j-809"></a></var><br>
-<blockquote><p>A pure imaginary number, defined as
+&mdash; Built-in Function:  <b>I</b> (<var>x</var>)<var><a name="index-I-1020"></a></var><br>
+&mdash; Built-in Function:  <b>I</b> (<var>n, m</var>)<var><a name="index-I-1021"></a></var><br>
+&mdash; Built-in Function:  <b>I</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-I-1022"></a></var><br>
+&mdash; Built-in Function:  <b>I</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-I-1023"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all equal
+to the pure imaginary unit, defined as
   <code>sqrt (-1)</code>. 
-These built-in variables behave like functions so you can use the names
-for other purposes.  If you use them as variables and assign values to
-them and then clear them, they once again assume their special predefined
-values See <a href="Status-of-Variables.html#Status-of-Variables">Status of Variables</a>. 
+Since I (also i, J, and J) is a function, you can use the name(s) for
+other purposes. 
 </p></blockquote></div>
 
    <p><a name="doc_002dInf"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>Inf</b><var><a name="index-Inf-810"></a></var><br>
-&mdash; Built-in Constant: <b>inf</b><var><a name="index-inf-811"></a></var><br>
-<blockquote><p>Infinity.  This is the result of an operation like 1/0, or an operation
-that results in a floating point overflow. 
+&mdash; Built-in Function:  <b>Inf</b> (<var>x</var>)<var><a name="index-Inf-1024"></a></var><br>
+&mdash; Built-in Function:  <b>Inf</b> (<var>n, m</var>)<var><a name="index-Inf-1025"></a></var><br>
+&mdash; Built-in Function:  <b>Inf</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-Inf-1026"></a></var><br>
+&mdash; Built-in Function:  <b>Inf</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-Inf-1027"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all Infinity. 
+The arguments are handled the same as the arguments for <code>eye</code>. 
+The optional argument <var>class</var> may be either `<samp><span class="samp">"single"</span></samp>' or
+`<samp><span class="samp">"double"</span></samp>'.  The default is `<samp><span class="samp">"double"</span></samp>'. 
 </p></blockquote></div>
 
    <p><a name="doc_002dNaN"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>NaN</b><var><a name="index-NaN-812"></a></var><br>
-&mdash; Built-in Constant: <b>nan</b><var><a name="index-nan-813"></a></var><br>
-<blockquote><p>Not a number.  This is the result of an operation like
+&mdash; Built-in Function:  <b>NaN</b> (<var>x</var>)<var><a name="index-NaN-1028"></a></var><br>
+&mdash; Built-in Function:  <b>NaN</b> (<var>n, m</var>)<var><a name="index-NaN-1029"></a></var><br>
+&mdash; Built-in Function:  <b>NaN</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-NaN-1030"></a></var><br>
+&mdash; Built-in Function:  <b>NaN</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-NaN-1031"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all NaN
+(Not a Number).  The value NaN is the result of an operation like
 0/0, or `<samp><span class="samp">Inf - Inf</span></samp>',
 or any operation with a NaN.
 
         <p>Note that NaN always compares not equal to NaN.  This behavior is
 specified by the IEEE standard for floating point arithmetic.  To
-find NaN values, you must use the <code>isnan</code> function. 
+find NaN values, you must use the <code>isnan</code> function.
+
+        <p>The arguments are handled the same as the arguments for <code>eye</code>. 
+The optional argument <var>class</var> may be either `<samp><span class="samp">"single"</span></samp>' or
+`<samp><span class="samp">"double"</span></samp>'.  The default is `<samp><span class="samp">"double"</span></samp>'. 
 </p></blockquote></div>
 
    <p><a name="doc_002dpi"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>pi</b><var><a name="index-pi-814"></a></var><br>
-<blockquote><p>The ratio of the circumference of a circle to its diameter. 
+&mdash; Built-in Function:  <b>pi</b> (<var>x</var>)<var><a name="index-pi-1032"></a></var><br>
+&mdash; Built-in Function:  <b>pi</b> (<var>n, m</var>)<var><a name="index-pi-1033"></a></var><br>
+&mdash; Built-in Function:  <b>pi</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-pi-1034"></a></var><br>
+&mdash; Built-in Function:  <b>pi</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-pi-1035"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all equal
+to the ratio of the circumference of a circle to its diameter. 
 Internally, <code>pi</code> is computed as `<samp><span class="samp">4.0 * atan (1.0)</span></samp>'. 
 </p></blockquote></div>
 
    <p><a name="doc_002de"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>e</b><var><a name="index-e-815"></a></var><br>
-<blockquote><p>The base of natural logarithms.  The constant
+&mdash; Built-in Function:  <b>e</b> (<var>x</var>)<var><a name="index-e-1036"></a></var><br>
+&mdash; Built-in Function:  <b>e</b> (<var>n, m</var>)<var><a name="index-e-1037"></a></var><br>
+&mdash; Built-in Function:  <b>e</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-e-1038"></a></var><br>
+&mdash; Built-in Function:  <b>e</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-e-1039"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all equal
+to the base of natural logarithms.  The constant
  <var>e</var>
  satisfies the equation
  <code>log</code> (<var>e</var>) = 1. 
@@ -238,8 +109,12 @@ Internally, <code>pi</code> is computed as `<samp><span class="samp">4.0 * atan 
    <p><a name="doc_002deps"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>eps</b><var><a name="index-eps-816"></a></var><br>
-<blockquote><p>The machine precision.  More precisely, <code>eps</code> is the largest
+&mdash; Built-in Function:  <b>eps</b> (<var>x</var>)<var><a name="index-eps-1040"></a></var><br>
+&mdash; Built-in Function:  <b>eps</b> (<var>n, m</var>)<var><a name="index-eps-1041"></a></var><br>
+&mdash; Built-in Function:  <b>eps</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-eps-1042"></a></var><br>
+&mdash; Built-in Function:  <b>eps</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-eps-1043"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all eps,
+the machine precision.  More precisely, <code>eps</code> is the largest
 relative spacing between any two adjacent numbers in the machine's
 floating point system.  This number is obviously system-dependent.  On
 machines that support 64 bit IEEE floating point arithmetic, <code>eps</code>
@@ -250,29 +125,41 @@ is approximately
    <p><a name="doc_002drealmax"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>realmax</b><var><a name="index-realmax-817"></a></var><br>
-<blockquote><p>The largest floating point number that is representable.  The actual
+&mdash; Built-in Function:  <b>realmax</b> (<var>x</var>)<var><a name="index-realmax-1044"></a></var><br>
+&mdash; Built-in Function:  <b>realmax</b> (<var>n, m</var>)<var><a name="index-realmax-1045"></a></var><br>
+&mdash; Built-in Function:  <b>realmax</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-realmax-1046"></a></var><br>
+&mdash; Built-in Function:  <b>realmax</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-realmax-1047"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all equal
+to the largest floating point number that is representable.  The actual
 value is system-dependent.  On machines that support 64-bit IEEE
 floating point arithmetic, <code>realmax</code> is approximately
  1.7977e+308
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> realmin. 
 </p></blockquote></div>
 
    <p><a name="doc_002drealmin"></a>
 
 <div class="defun">
-&mdash; Built-in Constant: <b>realmin</b><var><a name="index-realmin-818"></a></var><br>
-<blockquote><p>The smallest normalized floating point number that is representable. 
+&mdash; Built-in Function:  <b>realmin</b> (<var>x</var>)<var><a name="index-realmin-1048"></a></var><br>
+&mdash; Built-in Function:  <b>realmin</b> (<var>n, m</var>)<var><a name="index-realmin-1049"></a></var><br>
+&mdash; Built-in Function:  <b>realmin</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-realmin-1050"></a></var><br>
+&mdash; Built-in Function:  <b>realmin</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-realmin-1051"></a></var><br>
+<blockquote><p>Return a matrix or N-dimensional array whose elements are all equal
+to the smallest normalized floating point number that is representable. 
 The actual value is system-dependent.  On machines that support
 64-bit IEEE floating point arithmetic, <code>realmin</code> is approximately
  2.2251e-308
         <pre class="sp">
      
      </pre>
-     See also: realmax. 
+     <strong>See also:</strong> realmax. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997 John W. Eaton -->
+<!-- Copyright (C) 2007 John W. Eaton -->
 <!-- This is part of the Octave manual. -->
 <!-- For copying conditions, see the file gpl.texi. -->
 </body></html>

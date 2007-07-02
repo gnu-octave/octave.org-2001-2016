@@ -20,154 +20,7 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
@@ -179,7 +32,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic<
 <hr>
 </div>
 
-<h3 class="section">19.2 Complex Arithmetic</h3>
+<h3 class="section">18.2 Complex Arithmetic</h3>
 
 <p>The following functions are available for working with complex
 numbers.  Each expects a single argument.  Given a matrix they work on
@@ -191,7 +44,7 @@ defined as <code>sqrt (-1)</code>.
    <p><a name="doc_002dabs"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>abs</b> (<var>z</var>)<var><a name="index-abs-745"></a></var><br>
+&mdash; Mapping Function:  <b>abs</b> (<var>z</var>)<var><a name="index-abs-945"></a></var><br>
 <blockquote><p>Compute the magnitude of <var>z</var>, defined as
 |<var>z</var>| = <code>sqrt (x^2 + y^2)</code>.
 
@@ -205,8 +58,8 @@ defined as <code>sqrt (-1)</code>.
    <p><a name="doc_002darg"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>arg</b> (<var>z</var>)<var><a name="index-arg-746"></a></var><br>
-&mdash; Mapping Function:  <b>angle</b> (<var>z</var>)<var><a name="index-angle-747"></a></var><br>
+&mdash; Mapping Function:  <b>arg</b> (<var>z</var>)<var><a name="index-arg-946"></a></var><br>
+&mdash; Mapping Function:  <b>angle</b> (<var>z</var>)<var><a name="index-angle-947"></a></var><br>
 <blockquote><p>Compute the argument of <var>z</var>, defined as
 <var>theta</var> = <code>atan (</code><var>y</var><code>/</code><var>x</var><code>)</code>. 
 in radians.
@@ -221,35 +74,35 @@ in radians.
    <p><a name="doc_002dconj"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>conj</b> (<var>z</var>)<var><a name="index-conj-748"></a></var><br>
+&mdash; Mapping Function:  <b>conj</b> (<var>z</var>)<var><a name="index-conj-948"></a></var><br>
 <blockquote><p>Return the complex conjugate of <var>z</var>, defined as
 <code>conj (</code><var>z</var><code>)</code> = <var>x</var> - <var>i</var><var>y</var>.
         <pre class="sp">
      
      </pre>
-     See also: real, imag. 
+     <strong>See also:</strong> real, imag. 
 </p></blockquote></div>
 
    <p><a name="doc_002dimag"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>imag</b> (<var>z</var>)<var><a name="index-imag-749"></a></var><br>
+&mdash; Mapping Function:  <b>imag</b> (<var>z</var>)<var><a name="index-imag-949"></a></var><br>
 <blockquote><p>Return the imaginary part of <var>z</var> as a real number.
         <pre class="sp">
      
      </pre>
-     See also: real, conj. 
+     <strong>See also:</strong> real, conj. 
 </p></blockquote></div>
 
    <p><a name="doc_002dreal"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>real</b> (<var>z</var>)<var><a name="index-real-750"></a></var><br>
+&mdash; Mapping Function:  <b>real</b> (<var>z</var>)<var><a name="index-real-950"></a></var><br>
 <blockquote><p>Return the real part of <var>z</var>.
         <pre class="sp">
      
      </pre>
-     See also: imag, conj. 
+     <strong>See also:</strong> imag, conj. 
 </p></blockquote></div>
 
    </body></html>

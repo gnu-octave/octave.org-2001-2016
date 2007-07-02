@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+<title>Representing Images - Untitled</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Untitled">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Image-Processing.html#Image-Processing" title="Image Processing">
+<link rel="prev" href="Displaying-Images.html#Displaying-Images" title="Displaying Images">
+<link rel="next" href="Plotting-on-top-of-Images.html#Plotting-on-top-of-Images" title="Plotting on top of Images">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Representing-Images"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Plotting-on-top-of-Images.html#Plotting-on-top-of-Images">Plotting on top of Images</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Displaying-Images.html#Displaying-Images">Displaying Images</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Image-Processing.html#Image-Processing">Image Processing</a>
+<hr>
+</div>
+
+<h3 class="section">34.3 Representing Images</h3>
+
+<p>In general Octave supports four different kinds of images, gray-scale
+images, RGB images, binary images, and indexed images. A gray-scale
+image is represented with an M-by-N matrix in which each
+element corresponds to the intensity of a pixel. An RGB image is
+represented with an M-by-N-by3 array where each
+3-vector corresponds to the red, green, and blue intensities of each
+pixel.
+
+   <p>The actual meaning of the value of a pixel in a gray-scale or RGB
+image depends on the class of the matrix. If the matrix is of class
+<code>double</code> pixel intensities are between 0 and 1, if it is of class
+<code>uint8</code> intensities are between 0 and 255, and if it is of class
+<code>uint16</code> intensities are between 0 and 65535.
+
+   <p>A binary image is a M-by-N matrix of class <code>logical</code>. 
+A pixel in a binary image is black if it is <code>false</code> and white
+if it is <code>true</code>.
+
+   <p>An indexed image consists of an M-by-N matrix of integers
+and a C-by-3 color map. Each integer corresponds to an
+index in the color map, and each row in the color map corresponds to
+a RGB color. The color map must be of class <code>double</code> with values
+between 0 and 1.
+
+   <p><a name="doc_002dgray2ind"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>img</var>, <var>map</var>] = <b>gray2ind</b> ()<var><a name="index-gray2ind-1744"></a></var><br>
+<blockquote><p>Convert a gray scale intensity image to an Octave indexed image. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dind2gray"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ind2gray</b> (<var>x, map</var>)<var><a name="index-ind2gray-1745"></a></var><br>
+<blockquote><p>Convert an Octave indexed image to a gray scale intensity image. 
+If <var>map</var> is omitted, the current colormap is used to determine the
+intensities.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> gray2ind, rgb2ntsc, image, colormap. 
+</p></blockquote></div>
+
+   <p><a name="doc_002drgb2ind"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>x</var>, <var>map</var>] = <b>rgb2ind</b> (<var>rgb</var>)<var><a name="index-rgb2ind-1746"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>map</var>] = <b>rgb2ind</b> (<var>r, g, b</var>)<var><a name="index-rgb2ind-1747"></a></var><br>
+<blockquote><p>Convert and RGB image to an Octave indexed image.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> ind2rgb, rgb2ntsc. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dind2rgb"></a>
+
+<div class="defun">
+&mdash; Function File: <var>rgb</var> = <b>ind2rgb</b> (<var>x, map</var>)<var><a name="index-ind2rgb-1748"></a></var><br>
+&mdash; Function File: [<var>r</var>, <var>g</var>, <var>b</var>] = <b>ind2rgb</b> (<var>x, map</var>)<var><a name="index-ind2rgb-1749"></a></var><br>
+<blockquote><p>Convert an indexed image to red, green, and blue color components. 
+If the colormap doesn't contain enough colors, pad it with the
+last color in the map. 
+If <var>map</var> is omitted, the current colormap is used for the conversion.
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> rgb2ind, image, imshow, ind2gray, gray2ind. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dcolormap"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>colormap</b> (<var>map</var>)<var><a name="index-colormap-1750"></a></var><br>
+&mdash; Function File:  <b>colormap</b> (<var>"default"</var>)<var><a name="index-colormap-1751"></a></var><br>
+<blockquote><p>Set the current colormap.
+
+        <p><code>colormap (</code><var>map</var><code>)</code> sets the current colormap to <var>map</var>.  The
+color map should be an <var>n</var> row by 3 column matrix.  The columns
+contain red, green, and blue intensities respectively.  All entries
+should be between 0 and 1 inclusive.  The new colormap is returned.
+
+        <p><code>colormap ("default")</code> restores the default colormap (a gray scale
+colormap with 64 entries).  The default colormap is returned.
+
+        <p>With no arguments, <code>colormap</code> returns the current color map. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dgray"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>gray</b> (<var>n</var>)<var><a name="index-gray-1752"></a></var><br>
+<blockquote><p>Return a gray colormap with <var>n</var> entries corresponding to values from
+0 to <var>n</var>-1.  The argument <var>n</var> should be a scalar.  If it is
+omitted, 64 is assumed. 
+</p></blockquote></div>
+
+   <p><a name="doc_002docean"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>ocean</b> (<var>n</var>)<var><a name="index-ocean-1753"></a></var><br>
+<blockquote><p>Create color colormap.  The argument <var>n</var> should be a scalar.  If it
+is omitted, 64 is assumed. 
+</p></blockquote></div>
+
+   </body></html>
+

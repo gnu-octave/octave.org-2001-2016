@@ -7,7 +7,7 @@
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Plotting.html#Plotting" title="Plotting">
 <link rel="prev" href="Specialized-Two_002dDimensional-Plots.html#Specialized-Two_002dDimensional-Plots" title="Specialized Two-Dimensional Plots">
-<link rel="next" href="Plot-Annotations.html#Plot-Annotations" title="Plot Annotations">
+<link rel="next" href="Manipulating-Existing-Plots.html#Manipulating-Existing-Plots" title="Manipulating Existing Plots">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -20,175 +20,88 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-body,td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: black;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #33ccff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-.nav {
-background-color: #ffffff;
-color: #000000;
-font-family: arial,sans-serif;
-text-align: center;
-}
-
-/* the title bar on non-main pages */
-
-.title {
-border-bottom: 5px solid #33ccff;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For all page footers */
-
-.footer {
-font-size: x-small;
-text-align: center;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-/* Changes for Octave Wiki */
-
-h1,h2,h3 {
-color: #ffffff;
-background-color: #10a0ff;
-padding: 2px;
-}
-
-h1 {
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-font-size: x-large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml { 
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}--></style>
+--></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Three-Dimensional-Plotting"></a>
 <a name="Three_002dDimensional-Plotting"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Plot-Annotations.html#Plot-Annotations">Plot Annotations</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Manipulating-Existing-Plots.html#Manipulating-Existing-Plots">Manipulating Existing Plots</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Specialized-Two_002dDimensional-Plots.html#Specialized-Two_002dDimensional-Plots">Specialized Two-Dimensional Plots</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Plotting.html#Plotting">Plotting</a>
 <hr>
 </div>
 
-<h3 class="section">17.3 Three-Dimensional Plotting</h3>
+<h3 class="section">16.3 Three-Dimensional Plotting</h3>
 
-<p>The <span class="sc">Matlab</span>-style three-dimensional plotting commands are:
+<p><a name="doc_002dplot3"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>plot3</b> (<var>args</var>)<var><a name="index-plot3-761"></a></var><br>
+<blockquote>
+<p>This function produces three-dimensional plots.  Many different
+combinations of arguments are possible.  The simplest form is
+
+     <pre class="example">          plot3 (<var>x</var>, <var>y</var>, <var>z</var>)
+     </pre>
+        <p class="noindent">where the arguments are taken to be the vertices of the points to be
+plotted in three dimensions. If all arguments are vectors of the same
+length, then a single continuous line is drawn. If all arguments are
+matrices, then each column of the matrices is treated as a seperate
+line. No attempt is made to transpose the arguments to make the
+number of rows match.
+
+        <p>Additionally, only two arguments can be given as
+
+     <pre class="example">          plot3 (<var>x</var>, <var>c</var>)
+     </pre>
+        <p>where the real and imaginary parts of the second argument are used as
+the <var>y</var> and <var>z</var> coordinates, respectively.
+
+        <p>If only one argument is given, as
+
+     <pre class="example">          plot3 (<var>c</var>)
+     </pre>
+        <p>the real and imaginary parts of the argument are used as the <var>y</var>
+and <var>z</var> values, and they are plotted versus their index.
+
+        <p>To save a plot, in one of several image formats such as PostScript
+or PNG, use the <code>print</code> command.
+
+        <p>See <code>__pltopt__</code> for a description of the optional format
+argument.
+
+        <p>Arguments can also be given in groups of three as
+
+     <pre class="example">          plot3 (<var>x1</var>, <var>y1</var>, <var>z1</var>, <var>x2</var>, <var>y2</var>, <var>z2</var>, ...)
+     </pre>
+        <p class="noindent">where each set of three arguments is treated as a seperate line or
+set of lines in three dimensions.
+
+        <p>To plot multiple one- or two-argument groups, separate each group with an
+empty format string, as
+
+     <pre class="example">          plot3 (<var>x1</var>, <var>c1</var>, '', <var>c2</var>, '', ...)
+     </pre>
+        <p>An example of the use of plot3 is
+
+     <pre class="example">             z = [0:0.05:5];
+             plot3(cos(2*pi*z), sin(2*pi*z), z, ";helix;");
+             plot3(z, exp(2i*pi*z), ";complex sinusoid;");
+     </pre>
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> plot, semilogx, semilogy, loglog, polar, mesh, contour, __pltopt__
+bar, stairs, errorbar, xlabel, ylabel, title, print. 
+</p></blockquote></div>
 
    <p><a name="doc_002dmesh"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>mesh</b> (<var>x, y, z</var>)<var><a name="index-mesh-616"></a></var><br>
-<blockquote><p>Plot a mesh given matrices <var>x</var>, and <var>y</var> from <code>meshdom</code> and
+&mdash; Function File:  <b>mesh</b> (<var>x, y, z</var>)<var><a name="index-mesh-762"></a></var><br>
+<blockquote><p>Plot a mesh given matrices <var>x</var>, and <var>y</var> from <code>meshgrid</code> and
 a matrix <var>z</var> corresponding to the <var>x</var> and <var>y</var> coordinates of
 the mesh.  If <var>x</var> and <var>y</var> are vectors, then a typical vertex
 is (<var>x</var>(j), <var>y</var>(i), <var>z</var>(i,j)).  Thus, columns of <var>z</var>
@@ -197,37 +110,54 @@ to different <var>y</var> values.
         <pre class="sp">
      
      </pre>
-     See also: meshgrid, contour. 
+     <strong>See also:</strong> meshgrid, contour. 
 </p></blockquote></div>
 
    <p><a name="doc_002dmeshgrid"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>xx</var>, <var>yy</var>, <var>zz</var>] = <b>meshgrid</b> (<var>x, y, z</var>)<var><a name="index-meshgrid-617"></a></var><br>
-&mdash; Function File: [<var>xx</var>, <var>yy</var>] = <b>meshgrid</b> (<var>x, y</var>)<var><a name="index-meshgrid-618"></a></var><br>
-&mdash; Function File: [<var>xx</var>, <var>yy</var>] = <b>meshgrid</b> (<var>x</var>)<var><a name="index-meshgrid-619"></a></var><br>
-<blockquote><p>Given vectors of <var>x</var>, <var>y</var>, and <var>z</var> coordinates, return
-three dimensional arrays corresponding to the <var>x</var>, <var>y</var>, and
-<var>z</var> coordinates of a mesh.  Given only <var>x</var> and <var>y</var>,
-return matrices corresponding to the <var>x</var> and <var>y</var> coordinates
-of a mesh.  The rows of <var>xx</var> are copies of <var>x</var>, and the
-columns of <var>yy</var> are copies of <var>y</var>.  If <var>y</var> is omitted,
-then it is assumed to be the same as <var>x</var>.
+&mdash; Function File: [<var>xx</var>, <var>yy</var>, <var>zz</var>] = <b>meshgrid</b> (<var>x, y, z</var>)<var><a name="index-meshgrid-763"></a></var><br>
+&mdash; Function File: [<var>xx</var>, <var>yy</var>] = <b>meshgrid</b> (<var>x, y</var>)<var><a name="index-meshgrid-764"></a></var><br>
+&mdash; Function File: [<var>xx</var>, <var>yy</var>] = <b>meshgrid</b> (<var>x</var>)<var><a name="index-meshgrid-765"></a></var><br>
+<blockquote><p>Given vectors of <var>x</var> and <var>y</var> and <var>z</var> coordinates, and
+returning 3 arguments, return three dimensional arrays corresponding
+to the <var>x</var>, <var>y</var>, and <var>z</var> coordinates of a mesh.  When
+returning only 2 arguments, return matrices corresponding to the
+<var>x</var> and <var>y</var> coordinates of a mesh.  The rows of <var>xx</var> are
+copies of <var>x</var>, and the columns of <var>yy</var> are copies of <var>y</var>. 
+If <var>y</var> is omitted, then it is assumed to be the same as <var>x</var>,
+and <var>z</var> is assumed the same as <var>y</var>.
         <pre class="sp">
      
      </pre>
-     See also: mesh, contour. 
+     <strong>See also:</strong> mesh, contour. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dmeshdom"></a>
+   <p><a name="doc_002dndgrid"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>meshdom</b> (<var>x, y</var>)<var><a name="index-meshdom-620"></a></var><br>
-<blockquote><p>Given vectors of <var>x</var> and <var>y</var> coordinates, return two matrices
-corresponding to the <var>x</var> and <var>y</var> coordinates of the mesh.
+&mdash; Function File: [<var>y1</var>, <var>y2</var>, <small class="dots">...</small>,  <var>y</var>n] = <b>ndgrid</b> (<var>x1, x2, <small class="dots">...</small>, xn</var>)<var><a name="index-ndgrid-766"></a></var><br>
+&mdash; Function File: [<var>y1</var>, <var>y2</var>, <small class="dots">...</small>,  <var>y</var>n] = <b>ndgrid</b> (<var>x</var>)<var><a name="index-ndgrid-767"></a></var><br>
+<blockquote><p>Given n vectors <var>x1</var>, <small class="dots">...</small> <var>x</var>n, ndgrid returns n arrays of dimension n. 
+The elements of the ith output argument contains the elements of the vector
+<var>x</var>i repeated over all dimensions different from the ith dimension. 
+Calling ndgrid with only one input argument <var>x</var> is equivalent of calling ndgrid with
+all n input arguments equal to <var>x</var>:
 
-        <p>Note: this function is provided for compatibility with older versions
-of <span class="sc">Matlab</span>.  You should use <code>meshgrid</code> instead. 
+        <p>[<var>y1</var>, <var>y2</var>, <small class="dots">...</small>,  <var>y</var>n] = ndgrid (<var>x</var>, <small class="dots">...</small>, <var>x</var>)
+        <pre class="sp">
+     
+     </pre>
+     <strong>See also:</strong> meshgrid. 
+</p></blockquote></div>
+
+   <p><a name="doc_002dview"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>view</b> (<var>azimuth, elevation</var>)<var><a name="index-view-768"></a></var><br>
+&mdash; Function File:  <b>view</b> (<var>dims</var>)<var><a name="index-view-769"></a></var><br>
+&mdash; Function File: [<var>azimuth</var>, <var>elevation</var>] = <b>view</b> ()<var><a name="index-view-770"></a></var><br>
+<blockquote><p>Set or get the viewpoint for the current axes. 
 </p></blockquote></div>
 
    </body></html>
