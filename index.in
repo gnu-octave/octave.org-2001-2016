@@ -18,7 +18,7 @@ __TITLE_BAR__(`Current News')
 
 <dl>
 <dt>July 25, 2007</dt>
-<dd>Version 2.9.12 is now available for ftp and is the new
+<dd>Version 2.9.13 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.13 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
