@@ -22,11 +22,11 @@ interested in up-to-the-minute changes, you may use the sources from
 the public CVS archive instead (see below for details).</dd>
 </dl>
 
-__DOWNLOAD_INFO__(`2.1.73', `27 Mar 2006', `2.9.13', `25 Jul 2007', `2.9.13', `25 Jul 2007')
+__DOWNLOAD_INFO__(`2.1.73', `27 Mar 2006', `2.9.14', `17 Sep 2007', `2.9.14', `17 Sep 2007')
 </div>
 
 <blockquote class="note">
-<strong>PLEASE NOTE: Octave 2.9.13 is a pre-release
+<strong>PLEASE NOTE: Octave 2.9.14 is a pre-release
 version of Octave 3.0.  It is significantly different from Octave
 2.1.x, particularly with regard to graphics, path handling, and
 built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
