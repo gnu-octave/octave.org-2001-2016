@@ -47,20 +47,6 @@ source software under the terms of the GNU General Public License
 </div>
 
 <div class="section">
-__TITLE_BAR__(Graphical User Interfaces)
-
-<h4>Octave Workshop</h4>
-
-<p>__HTTP__(`www.math.mcgill.ca/loisel/octave-workshop/',
-            `www.math.mcgill.ca/loisel/octave-workshop/')
-Current version 0.10</p>
-
-<p>A GUI implementation for Octave that has the goal of being
-completely cross platform (the initial and the development platform is
-Windows with MingW).</p>
-</div>
-
-<div class="section">
 __TITLE_BAR__(Other Software with Interfaces to Octave)
 
 <p>__HTTP__(`www.ime.usp.br/~egbirgin/tango/',

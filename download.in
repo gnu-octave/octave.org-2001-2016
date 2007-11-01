@@ -43,6 +43,12 @@ __HTTP__(`octave.sf.net').</p>
 <div class="section">
 __TITLE_BAR__(`Binaries')
 
+<p>Please note that all binary distributions of Octave are built by
+volunteers.  We make no promises about these binary packages.  If they
+are out of date and you would like to help keep them current, please
+contact the people who are responsible for the sites that distribute
+the various packages.</p>
+
 <h4>Linux</h4>
 
 <p>Binaries for Linux distributions are generally available with
@@ -53,9 +59,11 @@ __HTTP__(`www.redhat.com', `RedHat'), and others have packages).</p>
 <h4>Mac OS X</h4>
 
 <ul>
+<li>__HTTP__(`octave.sourceforge.net', `Octave Forge')</li>
 <li>__HTTP__(`hpc.sourceforge.net',
              `Mac OS X High Performance Computing')</li>
-<li>The __HTTP__(`fink.sourceforge.net', `Fink project')</li>
+<li>__HTTP__(`fink.sourceforge.net', `The Fink project')</li>
+<li>__HTTP__(`www.macports.org', `MacPorts')</li>
 </ul>
 
 <h4>Sun Solaris</h4>
@@ -66,15 +74,15 @@ of Octave for Sun systems.</p>
 <h4>Windows</h4>
 
 <ul>
-<li>If you have cygwin, then look in the Math category for the most
-recent Cygwin package of Octave, available from
-__HTTP__(`www.cygwin.com').</li>
+<li>The __HTTP__(`octave.sourceforge.net', `Octave Forge') project
+hosts a native Windows binary distribution of Octave built with
+MSVC.  It should also be possible to build a comparable package with
+the MinGW compiler, but we need a volunteer for that job.</li>
 
-<li>If you do not have cygwin (you will most likely know if you have
-it), download the most recent version of octave-forge-windows from
-__HTTP__(`sourceforge.net/project/showfiles.php?group_id=2888',
-`Octave-Forge Files').  WARNING: do not install this package if you
-have cygwin installed</li>
+<li>__HTTP__(`www.cygwin.com')
+The Cygwin binary package is out of date.  If you'd like to help bring
+it up to date, please start by reading the README.Cygwin file in the
+Octave sources.</li>
 </ul>
 
 <h4>OS/2 or eComStation</h4>
@@ -96,8 +104,8 @@ __FTP__(`neacm.fe.up.pt/pub/octave')</p></p>
 
 __TITLE_BAR__(`GNU Project FTP Site')
 
-<p>The latest stable release of the Octave sources may also be found on
-the official Free Software Foundation ftp site,
+<p>The latest recommended release of the Octave sources may also be
+found on the official Free Software Foundation ftp site,
 __FTP__(`ftp.gnu.org/pub/gnu', `ftp://ftp.gnu.org/pub/gnu'),
 which is also mirrored on many sites around the world.</p>
 </div>
