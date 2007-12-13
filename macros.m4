@@ -72,7 +72,7 @@ dnl
 dnl
 define(`__NAVIGATION__',
 `<div id="nav">
- __nav_button__($1, `Octave', `octave.html', `Home')
+ __nav_button__($1, `Octave', `index.html', `Home')
  __nav_button__($1, `About Octave', `about.html', `About Octave')
  __nav_button__($1, `Octave News Archive', `news.html', `News Archive')
  __nav_button__($1, `Octave Documentation', `docs.html', `Docs')
