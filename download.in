@@ -8,8 +8,8 @@ download:</p>
 
 <dl>
 <dt>stable</dt>
-<dd>This version is well tested, reliable, but also quite old and no
-longer maintained.</dd>
+<dd>This version is well tested and is the recommended version for
+most users of Octave.</dd>
 <dt>testing</dt>
 <dd>A recent snapshot of the development sources that has been selected as
 being reasonably good.  Most people who are not actively involved in
@@ -22,12 +22,11 @@ interested in up-to-the-minute changes, you may use the sources from
 the public CVS archive instead (see below for details).</dd>
 </dl>
 
-__DOWNLOAD_INFO__(`2.1.73', `27 Mar 2006', `2.9.19', `11 Dec 2007', `2.9.19', `11 Dec 2007')
+__DOWNLOAD_INFO__(`3.0.0', `21 Dec 2007', `3.0.0', `21 Dec 2007', `3.0.0', `21 Dec 2007')
 </div>
 
 <blockquote class="note">
-<strong>PLEASE NOTE: Octave 2.9.19 is a pre-release
-version of Octave 3.0.  It is significantly different from Octave
+<strong>PLEASE NOTE: Octave 3.0 is significantly different from Octave
 2.1.x, particularly with regard to graphics, path handling, and
 built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
 `NEWS') file.</strong>

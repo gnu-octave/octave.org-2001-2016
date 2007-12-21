@@ -17,6 +17,12 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>December 21, 2007</dt>
+<dd>Version 3.0.0 has been released and is now available for ftp.
+Please note that Octave 3.0 is significantly different from Octave
+2.1.x, particularly with regard to graphics, path handling, and
+built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
+`NEWS') file.</dd>
 <dt>December 11, 2007</dt>
 <dd>Version 2.9.19 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
