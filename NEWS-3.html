@@ -26,7 +26,13 @@
       different from color 1 with the PostScript terminal.  Valid RGB
       colors for gnuplot 4.0 are the eight possible combinations of 0
       and 1 for the R, G and B values. Invalid values are all mapped
-      to the same color.</li>
+      to the same color.
+<p>
+      This also affects patch objects used in the bar, countour, meshc
+      and surfc functions, where the bars and contours will be
+      monochrome. A workaround for this is to type "colormap gmap40"
+      that loads a colormap that in many cases will be adequate for
+      simple bar and contour plots.</li>
 
 <li>  You can control the width of lines using (for example):
 <pre>
@@ -41,6 +47,12 @@
       contour plots are now 2-d plots instead of special 3-d plots, and
       this allows you to plot additional 2-d data on top of a contour
       plot.</li>
+
+<li>  With the gnuplot "extended" terminals the TeX interpreter is
+      emulated. However, this means that the TeX interpreter is only
+      supported on the postscript terminals with gnuplot 4.0. Under
+      gnuplot 4.2 the terminals aqua, dumb, png, jpeg, gif, pm, windows,
+      wxt, svg and x11 are supported as well.</li>
 
 <li>  The following plot commands are now considered obsolete and will
       be removed from a future version of Octave:
@@ -69,6 +81,7 @@
       <a href="http://www.nabble.com/zooming-of-inline-data-tf4357017.html#a12416496">this thread</a> on the gnuplot development list.
 </ul></li>
 
+
 <li>The way Octave handles search paths has changed.  Instead of
     setting the built-in variable <tt>LOADPATH</tt>, you must
     use <tt>addpath</tt>, <tt>rmpath</tt>, or <tt>path</tt> to
@@ -89,6 +102,7 @@
 </pre>
     will add ~/octave and all directories below it to the head of the
     path.</li>
+
 
 <li>Previous versions of Octave had a number of built-in variables to
     control warnings (for example, <tt>warn_divide_by_zero</tt>).  These
@@ -134,6 +148,7 @@
       help warning_ids
 </pre></li>
 
+
 <li>All built-in variables have been converted to functions.  This
     change simplifies the interpreter and allows a consistent
     interface to internal variables for user-defined packages and the
@@ -160,6 +175,7 @@
       endif
 </pre></li>
 
+
 <li>For compatibility with Matlab, the output order of Octave's
     <tt>"system"</tt> function has changed from
 <pre>
@@ -170,10 +186,29 @@
       [status, output] = system (cmd);
 </pre></li>
 
+
 <li>For compatibility with Matlab, <tt>normcdf</tt>, <tt>norminv</tt>,
     <tt>normpdf</tt>, and <tt>normrnd</tt> have been modified to
     compute distributions using the standard deviation instead of the
     variance.</li>
+
+
+<li>For compatibility with Matlab, the output of Octave's fsolve
+    function has been changed from
+<pre>
+      [x, info, msg] = fsolve (...);
+</pre>
+    to
+<pre>
+      [x, fval, info] = fsolve (...);
+</pre></li>
+
+
+<li>For compatibility with Matlab, <tt>normcdf</tt>, <tt>norminv</tt>,
+    <tt>normpdf</tt>, and <tt>normrnd</tt> have been modified to
+    compute distributions using the standard deviation instead of the
+    variance.</li>
+
 
 <li>For compatibility with
     Matlab, <tt>gamcdf</tt>, <tt>gaminv</tt>, <tt>gampdf</tt>,
