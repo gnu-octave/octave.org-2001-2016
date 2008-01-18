@@ -1,26 +1,14 @@
 __HEADER__(`Octave Mailing Lists')
 
 <div class="section">
-<p>There are several mailing lists devoted to Octave.</p>
+<p>There are several active mailing lists devoted to Octave.</p>
 
 __MAILING_LIST_INFO__(`help', `help-octave',
   `General discussion about using and installing Octave.')
 __MAILING_LIST_INFO__(`bug', `bug-octave',
   `Bug reports (sometimes fixes are posted to this list).')
-__MAILING_LIST_INFO__(`sources', `octave-sources',
-  `Enhancements contributed by Octave users.')
-__MAILING_LIST_INFO__(`graphics', `octave-graphics',
-  `Discussion about future development of GUI and graphics tools for Octave.',
-  `<b>Please note: this is a mailing list for discussion of
-   future developement, not a place to ask how to use the current
-   Octave graphics features.</b>')
 __MAILING_LIST_INFO__(`maintainers', `octave-maintainers',
   `Discussion about the development and maintenance of Octave.')
-__MAILING_LIST_INFO__(`info', `info-octave',
-  `Announcements about new releases of Octave and other news.',
-  `<b>All postings to info-octave are also sent to the help-octave
-   mailing list, so you do not need to subscribe to both info-octave
-   and help-octave.</b>')
 </div>
 
 <div class="section">
@@ -29,6 +17,7 @@ __TITLE_BAR__(`Search the Mailing Lists')
 A searchable archive of the Octave mailing lists is available from
 __HTTP__(`www.nabble.com/Octave-f1895.html', `Nabble').
 </p>
+</div>
 
 <div class="section">
 __TITLE_BAR__(`Older Archives')
@@ -71,32 +60,6 @@ may be found here:
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1993', `1993')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/bug-octave/1992', `1992') ]</p>
 
-<p>sources:
-[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2006', `2006')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2005', `2005')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2004', `2004')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2003', `2003')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2002', `2002')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2001', `2001')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2000', `2000')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1999', `1999')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1998', `1998')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1997', `1997')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1996', `1996') ]</p>
-
-<p>graphics:
-[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2006', `2006')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2005', `2005')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2004', `2004')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2003', `2003')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2002', `2002')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2001', `2001')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2000', `2000')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1999', `1999')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1998', `1998')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1997', `1997')
-| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1996', `1996') ]</p>
-
 <p>maintainers:
 [ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2006', `2006')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/2005', `2005')
@@ -109,5 +72,52 @@ may be found here:
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1998', `1998')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1997', `1997')
 | __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-maintainers/1996', `1996') ]</p>
+</div>
+
+<div class="section">
+__TITLE_BAR__(`Obsolete Mailing Lists')
+<p>
+<p>There are also some older mailing lists which are no longer active.
+<dl>
+<dt><a href="http://www.cae.wisc.edu/mailman/listinfo/octave-graphics">graphics</a></dt>
+<dd>This list was used to discuss the future development of GUI and
+graphics tools for Octave.  The maintainers list is now used for
+discussions about this topic.  Recent archives may be found
+<a href="http://www.cae.wisc.edu/pipermail/octave-graphics">here</a>.</dd>
+<dt><a href="http://www.cae.wisc.edu/mailman/listinfo/octave-graphics">sources</a></dt>
+<dd>This list was used for posting enhancements to Octave.  Now,
+instead of posting code to this mailing list, you are encouraged to
+join and contribute your code to the Octave Forge project.  However,
+code to fix bugs in Octave itself, or new core functions for Octave
+should be posted to the bug or maintainers lists.  Recent archives may
+be found <a href="http://www.cae.wisc.edu/pipermail/octave-sources">here</a>.</dd>
+</dl>
+
+<p>Older archives of the graphics list may be found here:
+[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2006', `2006')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2005', `2005')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2004', `2004')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2003', `2003')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2002', `2002')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2001', `2001')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/2000', `2000')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1999', `1999')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1998', `1998')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1997', `1997')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-graphics/1996', `1996') ]</p>
+
+<p>Older archives of the sources list may be found here:
+[ __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2006', `2006')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2005', `2005')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2004', `2004')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2003', `2003')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2002', `2002')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2001', `2001')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/2000', `2000')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1999', `1999')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1998', `1998')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1997', `1997')
+| __HTTP__(`velveeta.che.wisc.edu/octave/lists/octave-sources/1996', `1996') ]</p>
+</div>
 
 __OCTAVE_TRAILER__(`archive')
