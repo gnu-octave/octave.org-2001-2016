@@ -3,12 +3,14 @@ __HEADER__(`Octave Mailing Lists')
 <div class="section">
 <p>There are several active mailing lists devoted to Octave.</p>
 
+<dl>
 __MAILING_LIST_INFO__(`help', `help-octave',
   `General discussion about using and installing Octave.')
 __MAILING_LIST_INFO__(`bug', `bug-octave',
   `Bug reports (sometimes fixes are posted to this list).')
 __MAILING_LIST_INFO__(`maintainers', `octave-maintainers',
   `Discussion about the development and maintenance of Octave.')
+</dl>
 </div>
 
 <div class="section">
