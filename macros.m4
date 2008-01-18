@@ -133,13 +133,13 @@ dnl
 dnl
 dnl
 define(`__MAILING_LIST_INFO__',
-`<dt>__HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `$1')</dt><dd><p><i>$3</i></p>
-<p>
+`<dt>__HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `$1')--<i>$3</i></dt>
+<dd>
 To see the collection of prior posting to the list, visit the
 __HTTP__(`www.cae.wisc.edu/pipermail/$2', `$1 archives').<br/>
 You can (un)subscribe to the list by following instructions on the
 __HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `list information page').<br/>
-</p></dd>')dnl
+</dd>')dnl
 dnl
 dnl
 dnl
