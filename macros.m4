@@ -133,7 +133,7 @@ dnl
 dnl
 dnl
 define(`__MAILING_LIST_INFO__',
-`<dt>__HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `$1')--<i>$3</i></dt>
+`<dt>__HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `$1'): $3</dt>
 <dd>
 To see the collection of prior posting to the list, visit the
 __HTTP__(`www.cae.wisc.edu/pipermail/$2', `$1 archives').<br/>
