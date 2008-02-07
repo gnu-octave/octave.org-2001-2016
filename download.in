@@ -19,7 +19,7 @@ Octave's development will want to use this version.</dd>
 want the latest features and it doesn't bother you that you might run
 into a few problems (if you do, please report them).  If you are
 interested in up-to-the-minute changes, you may use the sources from
-the public CVS archive instead (see below for details).</dd>
+the public Mercurial archive instead (see below for details).</dd>
 </dl>
 
 __DOWNLOAD_INFO__(`3.0.0', `21 Dec 2007', `3.0.0', `21 Dec 2007', `3.0.0', `21 Dec 2007')
@@ -110,45 +110,32 @@ which is also mirrored on many sites around the world.</p>
 </div>
 
 <div class="section">
-__TITLE_BAR__(`Anonymous CVS')
+__TITLE_BAR__(`Development Sources')
 
 <p>The latest development sources of Octave are also available via
-anonymous access to a read-only CVS archive.  There is also a web
-interface to the archive available at
-__HTTP__(`www.octave.org/cgi-bin/cvsweb.cgi/octave').</p>
+anonymous access to a read-only
+__HTTP__(`www.selenic.com/mercurial/wiki', `Mercurial') archive.
+There is also a web interface to the archive available at
+__HTTP__(`www.octave.org/hg/octave').</p>
 
-<p>If you decide to use the development sources from the CVS
+<p>If you decide to use the development sources from the Mercurial
 archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
 `ftp://ftp.octave.org/pub/octave/bleeding-edge/README').</p>
 
-<p>Assuming you have CVS and ssh installed on your machine you may check
+<p>Assuming you have Mercurial installed on your machine you may check
 out the latest development version of Octave sources with the following
-sequence of commands:</p>
+command:</p>
 
-<p>Set CVS_RSH in your environment to</p>
+<div class="code"><code>hg clone http://www.octave.org/hg/octave</code></div>
 
-<div class="code"><code>ssh</code></div>
+<p>Once you've got the repository checked out, you can resync with the
+archive by doing</p>
 
-<p>Set CVSROOT in your environment to</p>
-
-<div class="code"><code>:ext:anoncvs@www.octave.org:/cvs</code></div>
-
-<p>Or alternately add</p>
-
-<div class="code"><code>-d :ext:anoncvs@www.octave.org:/cvs</code></div>
-
-<p>in the CVS commands below (place it immediately after <code>cvs</code>,
-before any other CVS arguments).</p>
-
-<p>Issue the command</p>
-
-<div class="code"><code>cvs -z 9 checkout octave</code></div>
-
-<p>to check out the all of the current development sources for Octave.</p>
-
-<p>Once you've got the repository checked out, <code>cvs update</code>
-will sync your local copy with the repository.  See the CVS manual for
-additional information on how to use CVS.</p>
+<div class="code">
+<code>hg pull http://www.octave.org/hg/octave</code><br>
+<code>hg update</code><br>
 </div>
+
+<p>See the Mercurial manual for additional information.</p>
 
 __OCTAVE_TRAILER__(`download')
