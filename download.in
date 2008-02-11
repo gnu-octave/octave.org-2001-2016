@@ -128,7 +128,7 @@ command:</p>
 
 <div class="code"><code>hg clone http://www.octave.org/hg/octave</code></div>
 
-<p>Once you've got the repository checked out, you can resync with the
+<p>Once you have the repository checked out, you can resync with the
 archive by doing</p>
 
 <div class="code">
