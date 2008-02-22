@@ -13,7 +13,6 @@ code that produced it.
 
 <div class="section">
 __TITLE_BAR__(`2D Plots')
-<p>Collection of 2D Plots starts here. </p>
 
 __GRAPHICS_EXAMPLE__(`example1', `Damped Oscillation')
 
@@ -23,13 +22,11 @@ __GRAPHICS_EXAMPLE__(`example2', `Histogram')
 
 <div class="section">
 __TITLE_BAR__(`3D Plots')
-<p>Collection of 3D Plots starts here.. </p>
 
 </div>
 
 <div class="section">
 __TITLE_BAR__(`Other Examples')
-<p>Collection of Other Examples starts here. </p>
 
 </div>
 
