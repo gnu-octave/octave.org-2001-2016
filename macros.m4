@@ -146,3 +146,14 @@ dnl
 define(`__MAIL_THREAD__',
 `<a href="https://www.cae.wisc.edu/pipermail/octave-$1/$2-$3/$4.html"
 class="mailthread">[Mailing List Thread]</a>')dnl
+dnl
+dnl
+dnl
+define(`__GRAPHICS_EXAMPLE__',
+`<h4><a href="$1.m">$2</a></h4>
+  <div id="plot">
+    <object data="$1.svg" width="600" height="480">
+      <img src="$1.png">
+    </object>
+  </div>'
+)dnl

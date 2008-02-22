@@ -17,6 +17,11 @@ IMG_TMP := octave-logo.jpg \
 
 IMAGES := $(addprefix images/, $(IMG_TMP))
 
+GRAPHICS_M := example1.m example2.m
+GRAPHICS_EPS := $(GRAPHICS_M:.m=.eps)
+GRAPHICS_PNG := $(GRAPHICS_M:.m=.png)
+GRAPHICS_SVG := $(GRAPHICS_M:.m=.svg)
+
 HTML_SRC := about.in \
 	acknowledgments.in \
 	archive.in \
@@ -24,6 +29,7 @@ HTML_SRC := about.in \
 	docs.in \
 	download.in \
 	funding.in \
+	graphics.in \
 	help.in \
 	help-wanted.in \
 	index.in \
@@ -41,14 +47,25 @@ SOURCES = $(HTML_SRC) $(IMAGES) $(EXTRA_HTML)
 all: $(HTML_OUT)
 .PHONY: all
 
+graphics.html: $(GRAPHICS_M) $(GRAPHICS_PNG) $(GRAPHICS_SVG)
+
 $(HTML_OUT): macros.m4
 
-%.html : %.in
+$(HTML_OUT) : %.html : %.in
 	$(M4) $(MACRO_FILE) -D__FILE_NAME__=$(@F) $< > $@.t
 	$(MV) $@.t $@
 
+$(GRAPHICS_EPS) : %.eps : %.m
+	octave --quiet --eval "make_figure ('$*', 'eps')"
+
+$(GRAPHICS_PNG) : %.png : %.eps
+	convert $< $@
+
+$(GRAPHICS_SVG) : %.svg : %.m
+	octave --quiet --eval "make_figure ('$*', 'svg')"
+
 clean:
-	rm -f $(HTML_OUT)
+	rm -f $(HTML_OUT) $(GRAPHICS_EPS) $(GRAPHICS_PNG) $(GRAPHICS_SVG)
 .PHONY: clean
 
 define do-install

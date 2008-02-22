@@ -202,6 +202,14 @@ img.middle { text-align:center; margin:1em; }
 
 img.logo { float: right; clear: right; border-style:none; }
 
+div#plot {
+  background-color: #f4f4f4;
+  border: 1px solid;
+  border-color: #888888;
+  display: block;
+  margin: 0px 0px 25px 0px
+}
+
 pre {
 border: #777777 1px solid;
 padding: 0.5em;
