@@ -1,0 +1,113 @@
+__HEADER__(`Google Summer of Code 2008')
+
+<p>
+The following is a list of Octave project suggestions for
+__HTTP__(`code.google.com/soc/2008', `Google Summer of Code 2008').
+The list only contains suggestions, and students are encouraged to present ideas
+of their own (see
+__HTTP__(`www.gnu.org/software/octave/projects.html', `this page')
+for inspiration). If you want further information about the suggested projects,
+present a project suggestion of your own, or simply want to say hello, feel free
+to write to the __MAILTO__(`maintainers@octave.org', `maintainers list').
+</p>
+
+<dl>
+<dt>Enhance the set of core functions missing in Octave</dt>
+<dd>To improve compatibility with Matlab a set of core functions needs to be
+implemented. A list of missing functions can be found in
+__HTTP__(`www.cae.wisc.edu/pipermail/octave-maintainers/2008-March/006429.html', `this thread')
+on the maintainers@octave.org mailing list. The job would consist of selecting
+a non-trivial subset of these functions and implement them.<br>
+
+<i>Requires: m-file/octave programming, (possibly) a mathematical background</i>
+</dd>
+
+<dt>Implement support for transparency in OpenGL renderer</dt>
+<dd>Currently an OpenGL based plotting system is being developed. This system
+could use support for transparency. Handling this correctly is tricky, because
+it requires the transparent primitives to be rendered from back to front, after
+the opaque objects have been rendered. This includes:
+<ul>
+  <li>decomposing objects (patch, surface...) into primitives and storing them</li>
+  <li>sorting (this should fast)</li>
+  <li>rendering in order</li>
+</ul>
+A fast/smart mechanism is
+needed. __HTTP__(`octave.sourceforge.net/jhandles/index.html', `JHandles')
+provides such basic mechanism, but it's far from efficient.<br>
+
+<i>Requires: C++ programming, OpenGL knowledge, Computer Science background (you
+might have to deal with BST, sort algorithm...)</i>
+</dd>
+
+<dt>Implement an OpenGL-based backend in one existing IDE for Octave</dt>
+<dd>
+Work is going on the add an OpenGL renderer built into Octave; this
+renderer can then be used by 3rd-party graphics backends, with
+reduced effort (octave will provides a built-in FLTK-based backend).
+There exists 2 active IDE's for Octave:
+__HTTP__(`sourceforge.net/projects/octavede', `OctaveDE (GTK)')
+and __HTTP__(`qtoctave.wordpress.com/', `QtOctave').
+The job would consist of writing a backend integrated in one of
+those existing IDE's, based on the Octave built-in OpenGL renderer.
+Given the fact that OctaveDE has already a terminal emulation
+and can run octave in-process, this is probably the most suitable IDE.<br>
+
+<i>Requires: C++ programming, GTK (Qt?) knowledge, (small) OpenGL
+knowledge</i>
+</dd>
+
+<dt>Implement text rendering in OpenGL renderer</dt>
+<dd>
+Text rendering would be
+based on FreeType for glyph production and send to OpenGL, either
+through pixmaps or textures. Moreover, text processing would be needed
+to implement TeX-like interpreter for text objects. The job would includes:
+defining data structures to hold interpreted text elements, defining
+processors/visitors to perform operation on interpreted text (for instance
+to compute text bounding box, subscript offsets...), rendering text element
+with FreeType/OpenGL<br>
+
+<i>Requires: C++ programming, small FreeType/OpenGL knowledge (no deep
+knowledge is required)</i>
+</dd>
+
+<dt>Implement a 2D-only Cairo-based renderer</dt>
+<dd>
+Work is going on to add an
+OpenGL-based renderer built into Octave. However, while OpenGL is good
+for 3D rendering, it has some limitations for plain 2D rendering. A cairo-based
+renderer would provide much better results. The target would be to only
+take into account 2D rendering, such that polygon sorting or line removal
+would not be considered, simplifying the rendering code. As a side-job,
+porting the built-in FLTK backend to use cairo rendering could also be
+considered.<br>
+
+<i>Requires: C++ programming, Cairo (FLTK) knowledge.</i>
+</dd>
+
+<dt>Improve Tools for Optimisation</dt>
+<dd>
+Octave is currently lacking good general purpose algorithms for
+optimisation. A standard problem is the Non-linear Least Squares
+minimisation. The goal of the project should be to implement the
+standard algorithms, such as Gauss-Newton, and Levenberg-Marquardt.
+Alternatively, it would be nice if the functions for Quadratic Programming,
+and Sequential Quadratic Programming could be improved.<br>
+
+<i>Requires: basic knowledge about optimisation, Octave programming</i>
+</dd>
+
+<dt>Upgrade specialized plots</dt>
+<dd>
+The Octave plotting system is currently being updated to match the Matlab
+system more closely. Soon hggroup objects and listeners will be available.
+The goal of the project would be to implement specialized plots in the
+Matlab-way (errorseries, contourseries...).<br>
+
+<i>Requires: Octave/m-file programming</i>
+</dd>
+
+</dl>
+
+__OCTAVE_TRAILER__(`gsoc-2008')

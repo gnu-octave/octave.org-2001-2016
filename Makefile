@@ -30,6 +30,7 @@ HTML_SRC := about.in \
 	download.in \
 	funding.in \
 	graphics.in \
+	gsoc-2008.in \
 	help.in \
 	help-wanted.in \
 	index.in \
