@@ -10,19 +10,24 @@ download:</p>
 <dt>stable</dt>
 <dd>This version is well tested and is the recommended version for
 most users of Octave.</dd>
+<!--
 <dt>testing</dt>
 <dd>A recent snapshot of the development sources that has been selected as
 being reasonably good.  Most people who are not actively involved in
 Octave's development will want to use this version.</dd>
+-->
 <dt>development</dt>
-<dd>The most recent snapshot of the development sources.  Use this if you
-want the latest features and it doesn't bother you that you might run
-into a few problems (if you do, please report them).  If you are
-interested in up-to-the-minute changes, you may use the sources from
-the public Mercurial archive instead (see below for details).</dd>
+<dd>The most recent snapshot of the development sources (if one is
+available).  Use this if you want the latest features and it doesn't
+bother you that you might run into a few problems.  If you do find
+problems in the development snapshots, please report them, but first
+read __OCTAVE_HTTP__(`bugs.html', `the bug reporting guidelines')
+first.  If you are interested in the
+absolutely-latest-up-to-the-minute changes, you may use the sources
+from the public Mercurial archive instead (see below for details).</dd>
 </dl>
 
-__DOWNLOAD_INFO__(`3.0.0', `21 Dec 2007', `3.0.0', `21 Dec 2007', `3.0.0', `21 Dec 2007')
+__DOWNLOAD_INFO__(`3.0.1', `21 Apr 2008')
 </div>
 
 <blockquote class="note">

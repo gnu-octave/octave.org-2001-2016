@@ -113,21 +113,21 @@ __FTP__(`ftp.octave.org/pub/octave', `Stable')</td>
     (__OCTAVE_FTP__(`octave-'$1`.tar.bz2',`.tar.bz2'))
 </td>
 <td class="download">$2</td></tr>
-<tr><td class="download">
-__FTP__(`ftp.octave.org/pub/octave', `Testing')</td>
-<td class="download">$3
-    (__OCTAVE_FTP__(`octave-'$3`.tar.gz',`.tar.gz'))
-    (__OCTAVE_FTP__(`octave-'$3`.tar.bz2',`.tar.bz2'))
-</td>
-<td class="download">$4</td></tr>
-<tr><td class="download">
-__FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Development')</td>
-<td class="download">$5
-    (__OCTAVE_FTP__(`bleeding-edge/octave-'$5`.tar.gz',`.tar.gz'))
-    (__OCTAVE_FTP__(`bleeding-edge/octave-'$5`.tar.bz2',`.tar.bz2'))
-</td>
-<td class="download">$6</td></tr>
-<caption>Download links for Octave</caption>
+dnl <tr><td class="download">
+dnl __FTP__(`ftp.octave.org/pub/octave', `Testing')</td>
+dnl <td class="download">$3
+dnl     (__OCTAVE_FTP__(`octave-'$3`.tar.gz',`.tar.gz'))
+dnl     (__OCTAVE_FTP__(`octave-'$3`.tar.bz2',`.tar.bz2'))
+dnl </td>
+dnl <td class="download">$4</td></tr>
+dnl <tr><td class="download">
+dnl __FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Development')</td>
+dnl <td class="download">$5
+dnl     (__OCTAVE_FTP__(`bleeding-edge/octave-'$5`.tar.gz',`.tar.gz'))
+dnl     (__OCTAVE_FTP__(`bleeding-edge/octave-'$5`.tar.bz2',`.tar.bz2'))
+dnl </td>
+dnl <td class="download">$6</td></tr>
+dnl <caption>Download links for Octave</caption>
 </table>')dnl
 dnl
 dnl
