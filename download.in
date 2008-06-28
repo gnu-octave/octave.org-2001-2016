@@ -84,9 +84,9 @@ MSVC.  It should also be possible to build a comparable package with
 the MinGW compiler, but we need a volunteer for that job.</li>
 
 <li>__HTTP__(`www.cygwin.com')
-The Cygwin binary package is out of date.  If you'd like to help bring
-it up to date, please start by reading the README.Cygwin file in the
-Octave sources.</li>
+The __HTTP__(`cygwin.com', `Cygwin') project hosts binaries for
+Cygwin users.  Look in the math category for the Octave package when
+installing.</li>
 </ul>
 
 <h4>OS/2 or eComStation</h4>
