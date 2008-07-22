@@ -19,15 +19,20 @@ Octave's development will want to use this version.</dd>
 <dt>development</dt>
 <dd>The most recent snapshot of the development sources (if one is
 available).  Use this if you want the latest features and it doesn't
-bother you that you might run into a few problems.  If you do find
-problems in the development snapshots, please report them, but first
-read __OCTAVE_HTTP__(`bugs.html', `the bug reporting guidelines')
-first.  If you are interested in the
-absolutely-latest-up-to-the-minute changes, you may use the sources
-from the public Mercurial archive instead (see below for details).</dd>
+bother you that you might run into a few problems.  These snapshots
+are <b>not</b> regular Octave releases.  They are only provided for
+testing purposes, for people who would rather not bother with getting
+sources from the Mercurial archive.  If you do find
+problems in the development snapshots, please report them to the
+maintainers@octave.org mailing list (but first read
+__OCTAVE_HTTP__(`bugs.html', `the bug reporting guidelines')).
+If you are interested in the absolutely-latest-up-to-the-minute
+changes, you may use the sources from the public Mercurial archive
+instead (see below for details).
+</dd>
 </dl>
 
-__DOWNLOAD_INFO__(`3.0.1', `21 Apr 2008', `3.1.50', `18 Jul 2008')
+__DOWNLOAD_INFO__(`3.0.1', `21 Apr 2008', `3.1.51', `21 Jul 2008')
 </div>
 
 <blockquote class="note">
