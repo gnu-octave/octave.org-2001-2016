@@ -136,7 +136,7 @@ define(`__MAILING_LIST_INFO__',
 `<dt>__HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `$1'): $3</dt>
 <dd>
 To see the collection of prior posting to the list, visit the
-__HTTP__(`www.cae.wisc.edu/pipermail/$2', `$1 archives').<br/>
+__HTTP__(`www-old.cae.wisc.edu/pipermail/$2', `$1 archives').<br/>
 You can (un)subscribe to the list by following instructions on the
 __HTTP__(`www.cae.wisc.edu/mailman/listinfo/$2', `list information page').<br/>
 </dd>')dnl
@@ -144,7 +144,7 @@ dnl
 dnl
 dnl
 define(`__MAIL_THREAD__',
-`<a href="https://www.cae.wisc.edu/pipermail/octave-$1/$2-$3/$4.html"
+`<a href="https://www-old.cae.wisc.edu/pipermail/octave-$1/$2-$3/$4.html"
 class="mailthread">[Mailing List Thread]</a>')dnl
 dnl
 dnl
