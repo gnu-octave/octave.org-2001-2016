@@ -124,9 +124,14 @@ __TITLE_BAR__(`Development Sources')
 
 <p>The latest development sources of Octave are also available via
 anonymous access to a read-only
-__HTTP__(`www.selenic.com/mercurial/wiki', `Mercurial') archive.
-There is also a web interface to the archive available at
-__HTTP__(`www.octave.org/hg/octave').</p>
+__HTTP__(`www.selenic.com/mercurial/wiki', `Mercurial') archive.</p>
+
+<p>The primary archive address is
+__HTTP__(`http://www.octave.org/hg/octave'), which currently
+redirects to __HTTP__(`http://hg.savannah.gnu.org/hgweb/octave').</p>
+
+<p>If the primary HG archive is unavailable, a secondary site is
+__HTTP__(`http://velveeta.che.wisc.edu/cgi-bin/hgwebdir.cgi/octave').</p>
 
 <p>If you decide to use the development sources from the Mercurial
 archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
