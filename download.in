@@ -101,14 +101,14 @@ installing.</li>
 </div>
 
 <div class="section">
-__TITLE_BAR__(`FTP Mirror Sites')
+__TITLE_BAR__(`Mirror Sites')
 
 <p>If you have trouble transferring Octave from this site, you might try
 one of those listed below.  They mirror the files from
 __OCTAVE_FTP__(`', `ftp://ftp.octave.org/pub/octave').</p>
 
-<p>__FTP__(`ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave')<br />
-__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')<br />
+<p>__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')<br />
+__HTTP__(`neacm.fe.up.pt/pub/octave/')<br />
 __FTP__(`neacm.fe.up.pt/pub/octave')</p></p>
 
 __TITLE_BAR__(`GNU Project FTP Site')

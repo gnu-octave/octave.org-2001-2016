@@ -19,7 +19,7 @@ define(`__HTTP__',
 define(`__MAILTO__',
        ``<a href="mailto:$1">'__DEFAULT_LINK_TEXT__(`http', $*)`</a>'')dnl
 define(`__FTP__',
-       ``<a href="ftp://$1">'__DEFAULT_LINK_TEXT__(`http', $*)`</a>'')dnl
+       ``<a href="ftp://$1">'__DEFAULT_LINK_TEXT__(`ftp', $*)`</a>'')dnl
 dnl
 define(`__OCTAVE_IMAGE__',
        ``<img src="'__IMAGE_DIR__`$1" alt="[$2]"'ifelse($#, 3, ` $3')` />'')dnl
