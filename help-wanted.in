@@ -13,7 +13,7 @@ requests.</p>
 
 <p>If you have modifications to the core Octave distribution (bug
 fixes or enhancements), please post the changes to the
-__OCTAVE_MAILTO__(`bug@octave.org') mailing list.</p>
+__MAILTO__(`bug@octave.org') mailing list.</p>
 
 <p>If you've written a useful function for Octave that you would like
 to make available for others to use, please consider contributing it
@@ -31,6 +31,7 @@ find and by offering suggestions for ways to improve Octave.  But
 before sending a bug report, please read __OCTAVE_HTTP__(`bugs.html',
 `the bug reporting guidelines') so that you'll know what information
 is useful to include in your report.</p>
+
 </div>
 
 __OCTAVE_TRAILER__(`help-wanted')
