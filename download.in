@@ -139,7 +139,7 @@ archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
 
 <p>Bugfixes for the Octave 3.0 series are maintained in a seperate
 repository, accessible at 
-__HTTP__(`hg.tw-math.de/release-3-0-x','http://hg.tw-math.de/release-3-0-x').</p>
+__HTTP__(`hg.tw-math.de/release-3-0-x',`http://hg.tw-math.de/release-3-0-x').</p>
 
 <p>Assuming you have Mercurial installed on your machine you may check
 out the latest development version of Octave sources with the following
