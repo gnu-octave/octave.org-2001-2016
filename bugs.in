@@ -8,7 +8,7 @@ already known.  Octave's
 __OCTAVE_HTTP__(`docs.html', `manual') contains a list of known causes
 of trouble.  Another place to look to see if your problem has been
 reported (and perhaps already solved) is the 
-__OCTAVE_HTTP__(`archive.html', `archive of bug repots') for Octave.
+__OCTAVE_HTTP__(`archive.html', `archive of bug reports') for Octave.
 If you your problem does not appear to be known, then you should
 report the problem.</p>
 
