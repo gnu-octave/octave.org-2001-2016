@@ -4,7 +4,7 @@ __HEADER__(`Octave Projects')
 
 <p>
 The latest version of the PROJECTS file for Octave is available from
-the __HTTP__(`http://hg.savannah.gnu.org/hgweb/octave',
+the __HTTP__(`hg.savannah.gnu.org/hgweb/octave',
 `Octave source archive on Savannah').
 </p>
 
