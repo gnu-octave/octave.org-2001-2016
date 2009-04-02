@@ -2,6 +2,14 @@ __HEADER__(`Octave News Archive')
 
 <div class="section">
 <dl>
+<dt>April 2, 2009</dt>
+<dd>Version 3.0.4 has been released and is now available for ftp.
+Octave 3.0.4 is a bug-fixing release.  Most bugs reported since the
+release of version 3.0.3 have been fixed.
+Please note that Octave 3.0 is significantly different from Octave
+2.1.x, particularly with regard to graphics, path handling, and
+built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
+`NEWS') file.</dd>
 <dt>March 26, 2009</dt>
 <dd>A new snapshot of the current development version of Octave is
 available for ftp (3.1.55).  You should only be using this version if you are
