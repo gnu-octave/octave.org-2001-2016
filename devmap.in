@@ -28,7 +28,7 @@ function Contributor (name, address, role) {
 
 function getContributorsList() {
   list = [
-    new Contributor("John W. Eaton", "Madison, US-WI", "founder, developer"),
+    new Contributor("John W. Eaton", "Sharon, UA-PA", "original author, developer"),
     new Contributor("David Bateman", "Boulogne-Billancourt, FR", "developer"),
     new Contributor("Jaroslav Hájek", "Prague, CZ", "developer, release manager")
     ];
