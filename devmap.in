@@ -16,24 +16,12 @@
     </script>
     -->
 
+    <script type "text/javascript" src="devlist.js">
+    </script>
+
     <script type="text/javascript">
 
     //<![CDATA[
-
-function Contributor (name, address, role) {
-  this.name = name;
-  this.address = address;
-  this.role = role;
-}
-
-function getContributorsList() {
-  list = [
-    new Contributor("John W. Eaton", "Sharon, PA", "original author, developer"),
-    new Contributor("David Bateman", "Boulogne-Billancourt, FR", "developer"),
-    new Contributor("Jaroslav Hájek", "Prague, CZ", "developer, release manager")
-    ];
-  return list;
-}
 
 function describeContributorHtml(contributor) {
   return contributor.name.bold() + "<br>"
@@ -45,18 +33,12 @@ function showContributors (map, list) {
   var geocoder = new GClientGeocoder();
 
   function showContributor (contributor) {
-    geocoder.getLatLng(
-	contributor.address,
-	function (point) {
-	  if (point) {
-	    var marker = new GMarker(point);
-	    GEvent.addListener(marker, "click", function () { 
-	      map.openInfoWindowHtml(point, describeContributorHtml (contributor));
-	      });
-	    map.addOverlay (marker);
-	  }
-	}
-    );
+    var point = new GLatLng(contributor.lat, contributor.lon);
+    var marker = new GMarker(point);
+    GEvent.addListener(marker, "click", function () { 
+	map.openInfoWindowHtml(point, describeContributorHtml (contributor));
+	});
+    map.addOverlay (marker);
   }
 
   for (i in list) showContributor (list[i]);
@@ -87,7 +69,7 @@ function load() {
 </head>
 <body onload="load()" onunload="GUnload()">
 <div id="title"><h1>Octave Developers Map</h1></div>
-__NAVIGATION__(`Octave Developers Map')
+__NAVIGATION__(`Developers Map')
 <div id="content">
 
 <div class="section">

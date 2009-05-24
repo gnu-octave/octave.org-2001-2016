@@ -86,6 +86,7 @@ define(`__NAVIGATION__',
  __nav_button__($1, `Octave Mailing Lists', `archive.html', `Mailing Lists')
  __nav_button__($1, `Octave Funding', `funding.html', `Funding')
  __nav_button__($1, `Acknowledgments', `acknowledgments.html', `Contributors')
+ __nav_button__($1, `Developers Map', `devmap.html', `Developers Map')
  __nav_button__($1, `Octave Projects', `help-wanted.html', `Help Wanted')
 </div>
 ')dnl
