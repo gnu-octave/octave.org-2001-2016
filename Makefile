@@ -59,6 +59,8 @@ graphics.html: $(GRAPHICS_M) $(GRAPHICS_PNG) $(GRAPHICS_SVG)
 
 $(HTML_OUT): macros.m4
 
+devmap.html: devlist.js
+
 $(HTML_OUT) : %.html : %.in
 	$(M4) $(MACRO_FILE) -D__FILE_NAME__=$(@F) $< > $@.t
 	$(MV) $@.t $@

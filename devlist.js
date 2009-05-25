@@ -21,5 +21,6 @@ function getContributorsList() {
     new Contributor("Ben Abbott", "Longwood, FL", "developer", 28.6977650,-81.3461990),
     new Contributor("Jason Riedy", "Lebanon, VA USA", "developer", 36.9012920,-82.0768350),
     new Contributor("Francesco Potortì", "Pisa, IT", "developer", 43.7161354,10.3965843),
-    new Contributor("Thorsten Meyer", "Munich, DE", "developer", 48.1391265,11.5801863)  ];
+    new Contributor("Thorsten Meyer", "Munich, DE", "developer", 48.1391265,11.5801863),
+    new Contributor("Marco Caliari", "Verona, IT", "sporadic contributor", 45.4420061,10.9954850)  ];
 }
