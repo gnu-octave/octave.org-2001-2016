@@ -1,6 +1,6 @@
 __HEADER__(`Octave')
 
-<div class="section">
+n<div class="section">
 <div><p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `class="left"')
 __OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor', `class="right"')
 GNU Octave is a high-level language, primarily intended for numerical
@@ -17,6 +17,11 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>June 6, 2009</dt>
+<dd>Version 3.2.0 has been released and is now available for ftp.
+Octave 3.2.0 is a major new release.  See the
+__OCTAVE_HTTP__('NEWS-3.2.html', 'NEWS') file for a list of
+user-visible changes.</dd>
 <dt>April 8, 2009</dt>
 <dd>Version 3.0.5 has been released and is now available for ftp.
 Octave 3.0.5 fixes a serious file reading bug that was discovered just
