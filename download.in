@@ -35,13 +35,6 @@ instead (see below for details).
 __DOWNLOAD_INFO__(`3.2.0', `25 May 2009', `3.1.55', `26 Mar 2009')
 </div>
 
-<blockquote class="note">
-<strong>PLEASE NOTE: Octave 3.0 is significantly different from Octave
-2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
-`NEWS') file.</strong>
-</blockquote>
-
 <div class="section">
 __TITLE_BAR__(`Contributed Packages')
 
