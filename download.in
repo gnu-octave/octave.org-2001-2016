@@ -130,9 +130,9 @@ __HTTP__(`velveeta.che.wisc.edu/cgi-bin/hgwebdir.cgi/octave').</p>
 archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
 `ftp://ftp.octave.org/pub/octave/bleeding-edge/README').</p>
 
-<p>Bugfixes for the Octave 3.0 series are maintained in a seperate
+<p>Bugfixes for the Octave 3.2 series are maintained in a separate
 repository, accessible at 
-__HTTP__(`hg.tw-math.de/release-3-0-x',`http://hg.tw-math.de/release-3-0-x').</p>
+__HTTP__(`hg.tw-math.de/release-3-2-x',`http://hg.tw-math.de/release-3-2-x').</p>
 
 <p>Assuming you have Mercurial installed on your machine you may check
 out the latest development version of Octave sources with the following
