@@ -17,6 +17,11 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>September 12, 2009</dt>
+<dd>A new snapshot of the current development version of Octave is
+available for ftp (3.3.50).  You should only be using this version if you are
+interested in testing the latest features and don't mind hitting the
+occasional bug.</dd>
 <dt>July 22, 2009</dt>
 <dd>Version 3.2.2 has been released and is now available for ftp.
 Octave 3.2.2 is a bug-fixing release
@@ -27,63 +32,6 @@ user-visible changes in the 3.2.x series.</dd>
 Octave 3.2.0 is a major new release.  See the
 __OCTAVE_HTTP__(`NEWS-3.2.html', `NEWS') file for a list of
 user-visible changes.</dd>
-<dt>April 8, 2009</dt>
-<dd>Version 3.0.5 has been released and is now available for ftp.
-Octave 3.0.5 fixes a serious file reading bug that was discovered just
-after the 3.0.4 release.</dd>
-<dt>April 2, 2009</dt>
-<dd>Version 3.0.4 has been released and is now available for ftp.
-Octave 3.0.4 is a bug-fixing release.  Most bugs reported since the
-release of version 3.0.3 have been fixed.
-Please note that Octave 3.0 is significantly different from Octave
-2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
-`NEWS') file.</dd>
-<dt>March 26, 2009</dt>
-<dd>A new snapshot of the current development version of Octave is
-available for ftp (3.1.55).  You should only be using this version if you are
-interested in testing the latest features and don't mind hitting the
-occasional bug.</dd>
-<dt>March 7, 2009</dt>
-<dd>A new snapshot of the current development version of Octave is
-available for ftp (3.1.54).  You should only be using this version if you are
-interested in testing the latest features and don't mind hitting the
-occasional bug.</dd>
-<dt>February 9, 2009</dt>
-<dd>A new snapshot of the current development version of Octave is
-available for ftp.  You should only be using this version if you are
-interested in testing the latest features and don't mind hitting the
-occasional bug.</dd>
-<dt>October 10, 2008</dt>
-<dd>Version 3.0.3 has been released and is now available for ftp.
-Octave 3.0.3 is a bug-fixing release.  Most bugs reported since the
-release of version 3.0.2 have been fixed.
-Please note that Octave 3.0 is significantly different from Octave
-2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
-`NEWS') file.</dd>
-<dt>August 14, 2008</dt>
-<dd>Version 3.0.2 has been released and is now available for ftp.
-Octave 3.0.2 is a bug-fixing release.  Most bugs reported since the
-release of version 3.0.1 have been fixed.
-Please note that Octave 3.0 is significantly different from Octave
-2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
-`NEWS') file.</dd>
-<dt>April 21, 2008</dt>
-<dd>Version 3.0.1 has been released and is now available for ftp.
-Octave 3.0.1 is a bug-fixing release.  Most bugs reported since the
-release of version 3.0.0 have been fixed.
-Please note that Octave 3.0 is significantly different from Octave
-2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
-`NEWS') file.</dd>
-<dt>December 21, 2007</dt>
-<dd>Version 3.0.0 has been released and is now available for ftp.
-Please note that Octave 3.0 is significantly different from Octave
-2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
-`NEWS') file.</dd>
 </dl>
 
 <p>For older news, see the
