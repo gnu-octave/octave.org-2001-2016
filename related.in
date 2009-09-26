@@ -51,13 +51,12 @@ __TITLE_BAR__(Other Software with Interfaces to Octave)
 
 <h4>pMatlab</h4>
 
-<p>__HTTP__(`http://www.ll.mit.edu/mission/isr/pmatlab/pmatlab.html',
-            `pMatlab')
+<p>__HTTP__(`www.ll.mit.edu/mission/isr/pmatlab/pmatlab.html', `pMatlab')
 provides a set of data structures and functions that implement
 distributed arrays.</p>
 
 <p>pMatlab uses
-__HTTP__(`http://www.ll.mit.edu/MatlabMPI/index.html', `MatlabMPI')
+__HTTP__(`www.ll.mit.edu/MatlabMPI/index.html', `MatlabMPI')
 for launching programs and communicating between processors.</p>
 
 <h4>TANGO</h4>
