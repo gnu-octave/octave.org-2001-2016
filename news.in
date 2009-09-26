@@ -2,6 +2,11 @@ __HEADER__(`Octave News Archive')
 
 <div class="section">
 <dl>
+<dt>September 21, 2009</dt>
+<dd>Version 3.2.3 has been released and is now available for ftp.
+Octave 3.2.3 is a bug-fixing release
+__OCTAVE_HTTP__(`NEWS-3.2.html', `NEWS') file for a list of
+user-visible changes in the 3.2.x series.</dd>
 <dt>September 12, 2009</dt>
 <dd>A new snapshot of the current development version of Octave is
 available for ftp (3.3.50).  You should only be using this version if you are
