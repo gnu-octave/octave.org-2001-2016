@@ -49,6 +49,26 @@ source software under the terms of the GNU General Public License
 <div class="section">
 __TITLE_BAR__(Other Software with Interfaces to Octave)
 
+<h4>pMatlab</h4>
+
+<p>__HTTP__(`pMatlab',
+            `http://www.ll.mit.edu/mission/isr/pmatlab/pmatlab.html')
+provides a set of data structures and functions that implement
+distributed arrays.</p>
+
+<p>pMatlab uses
+__HTTP__(`MatlabMPI',
+         `http://www.ll.mit.edu/MatlabMPI/index.html')
+for launching programs and communicating between processors.</p>
+
+<h4>TANGO</h4>
+
+<p>Trustable Algorithms for Nonlinear General Optimization (TANGO) is
+a set of Fortran routines for Optimization developed at the Department
+of Applied Mathematics of the State University of Campinas and at the
+Department of Computer Science of the University of S&atilde;o Paulo, under
+the coordination of Professor J. M. Mart&iacute;nez.</p>
+
 <p>__HTTP__(`www.ime.usp.br/~egbirgin/tango/',
 	    `www.ime.usp.br/~egbirgin/tango/')</p>
 
@@ -57,5 +77,6 @@ a set of Fortran routines for Optimization developed at the Department
 of Applied Mathematics of the State University of Campinas and at the
 Department of Computer Science of the University of S&atilde;o Paulo, under
 the coordination of Professor J. M. Mart&iacute;nez.</p>
+</div>
 
 __OCTAVE_TRAILER__(`related')
