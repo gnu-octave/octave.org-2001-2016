@@ -78,8 +78,7 @@ of Octave for Sun systems.</p>
 <ul>
 <li>The __HTTP__(`octave.sourceforge.net', `Octave Forge') project
 hosts a native Windows binary distribution of Octave built with
-MSVC.  It should also be possible to build a comparable package with
-the MinGW compiler, but we need a volunteer for that job.</li>
+the MinGW compiler.</li>
 
 <li>__HTTP__(`www.cygwin.com')
 The __HTTP__(`cygwin.com', `Cygwin') project hosts binaries for
