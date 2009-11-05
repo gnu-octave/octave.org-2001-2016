@@ -29,51 +29,51 @@ may be found here:
 </p>
 
 <p>help:
-[ __OCTAVE_HTTP__(`octave/lists/help-octave/2006', `2006')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/2005', `2005')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/2004', `2004')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/2003', `2003')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/2002', `2002')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/2001', `2001')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/2000', `2000')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1999', `1999')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1998', `1998')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1997', `1997')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1996', `1996')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1995', `1995')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1994', `1994')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1993', `1993')
-| __OCTAVE_HTTP__(`octave/lists/help-octave/1992', `1992') ]</p>
+[ __HTTP__(`www.octave.org/octave/lists/help-octave/2006', `2006')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/2005', `2005')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/2004', `2004')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/2003', `2003')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/2002', `2002')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/2001', `2001')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/2000', `2000')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1999', `1999')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1998', `1998')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1997', `1997')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1996', `1996')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1995', `1995')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1994', `1994')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1993', `1993')
+| __HTTP__(`www.octave.org/octave/lists/help-octave/1992', `1992') ]</p>
 
 <p>bug:
-[ __OCTAVE_HTTP__(`octave/lists/bug-octave/2006', `2006')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/2005', `2005')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/2004', `2004')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/2003', `2003')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/2002', `2002')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/2001', `2001')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/2000', `2000')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1999', `1999')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1998', `1998')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1997', `1997')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1996', `1996')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1995', `1995')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1994', `1994')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1993', `1993')
-| __OCTAVE_HTTP__(`octave/lists/bug-octave/1992', `1992') ]</p>
+[ __HTTP__(`www.octave.org/octave/lists/bug-octave/2006', `2006')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/2005', `2005')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/2004', `2004')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/2003', `2003')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/2002', `2002')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/2001', `2001')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/2000', `2000')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1999', `1999')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1998', `1998')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1997', `1997')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1996', `1996')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1995', `1995')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1994', `1994')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1993', `1993')
+| __HTTP__(`www.octave.org/octave/lists/bug-octave/1992', `1992') ]</p>
 
 <p>maintainers:
-[ __OCTAVE_HTTP__(`octave/lists/octave-maintainers/2006', `2006')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/2005', `2005')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/2004', `2004')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/2003', `2003')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/2002', `2002')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/2001', `2001')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/2000', `2000')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/1999', `1999')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/1998', `1998')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/1997', `1997')
-| __OCTAVE_HTTP__(`octave/lists/octave-maintainers/1996', `1996') ]</p>
+[ __HTTP__(`www.octave.org/octave/lists/octave-maintainers/2006', `2006')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/2005', `2005')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/2004', `2004')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/2003', `2003')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/2002', `2002')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/2001', `2001')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/2000', `2000')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/1999', `1999')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/1998', `1998')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/1997', `1997')
+| __HTTP__(`www.octave.org/octave/lists/octave-maintainers/1996', `1996') ]</p>
 </div>
 
 <div class="section">
@@ -96,30 +96,30 @@ be found <a href="http://www.cae.wisc.edu/pipermail/octave-sources">here</a>.</d
 </dl>
 
 <p>Older archives of the graphics list may be found here:
-[ __OCTAVE_HTTP__(`octave/lists/octave-graphics/2006', `2006')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/2005', `2005')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/2004', `2004')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/2003', `2003')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/2002', `2002')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/2001', `2001')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/2000', `2000')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/1999', `1999')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/1998', `1998')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/1997', `1997')
-| __OCTAVE_HTTP__(`octave/lists/octave-graphics/1996', `1996') ]</p>
+[ __HTTP__(`www.octave.org/octave/lists/octave-graphics/2006', `2006')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/2005', `2005')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/2004', `2004')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/2003', `2003')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/2002', `2002')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/2001', `2001')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/2000', `2000')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/1999', `1999')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/1998', `1998')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/1997', `1997')
+| __HTTP__(`www.octave.org/octave/lists/octave-graphics/1996', `1996') ]</p>
 
 <p>Older archives of the sources list may be found here:
-[ __OCTAVE_HTTP__(`octave/lists/octave-sources/2006', `2006')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/2005', `2005')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/2004', `2004')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/2003', `2003')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/2002', `2002')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/2001', `2001')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/2000', `2000')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/1999', `1999')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/1998', `1998')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/1997', `1997')
-| __OCTAVE_HTTP__(`octave/lists/octave-sources/1996', `1996') ]</p>
+[ __HTTP__(`www.octave.org/octave/lists/octave-sources/2006', `2006')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/2005', `2005')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/2004', `2004')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/2003', `2003')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/2002', `2002')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/2001', `2001')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/2000', `2000')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/1999', `1999')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/1998', `1998')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/1997', `1997')
+| __HTTP__(`www.octave.org/octave/lists/octave-sources/1996', `1996') ]</p>
 </div>
 
 __OCTAVE_TRAILER__(`archive')
