@@ -64,8 +64,8 @@ __TITLE_BAR__(`Obsolete Mailing Lists')
 <dl>
 <dt><a href="http://www.cae.wisc.edu/mailman/listinfo/bug-octave">bug</a></dt>
 <dd>This list was used to report bugs but is now obsolete because we
-are using the __HTTP__(`savannah.gnu.org/bugs/?group=octave',
-`bug tracker on Savannah').  Recent archives may be found
+are using the __HTTP__(`bugs.octave.org', `bug tracker').  Recent
+archives may be found
 <a href="http://www.cae.wisc.edu/pipermail/bug-octave">here</a>.</dd>
 <dt><a href="http://www.cae.wisc.edu/mailman/listinfo/octave-graphics">graphics</a></dt>
 <dd>This list was used to discuss the future development of GUI and

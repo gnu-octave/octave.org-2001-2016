@@ -3,8 +3,8 @@ __HEADER__(`Octave News Archive')
 <div class="section">
 <dl>
 <dt>March 24, 2010</dt>
-<dd>We are now using the __HTTP__(`savannah.gnu.org/bugs/?group=octave',
-`bug tracker on Savannah') instead of the bug@octave.org mailing
+<dd>We are now using the __HTTP__(`bugs.octave.org', `a bug tracker')
+to manage bug reports instead of the bug@octave.org mailing
 list.  Fow now, the list will continue to function, but you are
 strongly encouraged to use the tracker instead.</dd>
 <dt>January 28, 2010</dt>

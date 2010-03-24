@@ -16,9 +16,9 @@ itself.</p>
 
 <p>If you think you have found a bug in Octave or in the installation
 procedure, however, you should submit a complete bug report to
-__HTTP__(`savannah.gnu.org/bugs/?group=octave', `the Octave bug
-tracker on Savannah').  But before you submit a bug report, please
-__OCTAVE_HTTP__(`bugs.html', `learn how to submit a useful bug report').
+__HTTP__(`bugs.octave.org', `the Octave bug tracker').  But before you
+submit a bug report, please __OCTAVE_HTTP__(`bugs.html', `learn how to
+submit a useful bug report').
 </p>
 </div>
 

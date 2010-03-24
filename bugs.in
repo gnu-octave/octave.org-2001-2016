@@ -8,17 +8,16 @@ already known.  The two best places to look for reported problems are
 </p>
 
 <ul>
-<li>__HTTP__(`savannah.gnu.org/bugs/?group=octave', `The Octave bug
-tracker on Savannah').
+<li>__HTTP__(`bugs.octave.org', `The Octave bug tracker').
 </li>
 <li>__OCTAVE_HTTP__(`archive.html', `The archive of bug reports sent
 to the bug-octave mailing list').
 </li>
 </ul>
 
-<p>
-Note you should use the bug reporting system on Savannah to file new
-bug reports.  We are transitioning away from using the mailing list to
+<p>Note that we strongly prefer that you use
+__HTTP__(`bugs.octave.org', `the bug tracker') to file new bug
+reports.  We are transitioning away from using the mailing list to
 report bugs.</p>
 <p>The Octave __OCTAVE_HTTP__(`docs.html', `manual') also contains a
 list of known causes of trouble.</p>
@@ -69,10 +68,8 @@ suggestions for improvement are welcome in any case.</li>
 __TITLE_BAR__(`Where and How to Send Bug Reports')
 
 <p>To report a bug in Octave, 
-__HTTP__(`savannah.gnu.org/bugs/?func=additem&group=octave', 
-         `submit a bug report') using the bug tracker on
-__HTTP__(`savannah.gnu.org', `Savannah').
-</p>
+__HTTP__(`bugs.octave.org', `submit a bug report') using the bug
+tracker.</p>
 
 <p>Please do <strong>not</strong> send bug reports to the
 <samp>help-octave</samp> mailing list.  Most users of Octave do not
