@@ -6,8 +6,6 @@ __HEADER__(`Octave Mailing Lists')
 <dl>
 __MAILING_LIST_INFO__(`help', `help-octave',
   `General discussion about using and installing Octave.')
-__MAILING_LIST_INFO__(`bug', `bug-octave',
-  `Bug reports (sometimes fixes are posted to this list).')
 __MAILING_LIST_INFO__(`maintainers', `octave-maintainers',
   `Discussion about the development and maintenance of Octave.')
 </dl>
@@ -45,23 +43,6 @@ may be found here:
 | __HTTP__(`www.octave.org/old-list-archives/help-octave/1993', `1993')
 | __HTTP__(`www.octave.org/old-list-archives/help-octave/1992', `1992') ]</p>
 
-<p>bug:
-[ __HTTP__(`www.octave.org/old-list-archives/bug-octave/2006', `2006')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2005', `2005')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2004', `2004')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2003', `2003')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2002', `2002')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2001', `2001')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2000', `2000')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1999', `1999')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1998', `1998')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1997', `1997')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1996', `1996')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1995', `1995')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1994', `1994')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1993', `1993')
-| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1992', `1992') ]</p>
-
 <p>maintainers:
 [ __HTTP__(`www.octave.org/old-list-archives/octave-maintainers/2006', `2006')
 | __HTTP__(`www.octave.org/old-list-archives/octave-maintainers/2005', `2005')
@@ -81,6 +62,11 @@ __TITLE_BAR__(`Obsolete Mailing Lists')
 <p>
 <p>There are also some older mailing lists which are no longer active.
 <dl>
+<dt><a href="http://www.cae.wisc.edu/mailman/listinfo/bug-octave">bug</a></dt>
+<dd>This list was used to report bugs but is now obsolete because we
+are using the __HTTP__(`savannah.gnu.org/bugs/?group=octave',
+`bug tracker on Savannah').  Recent archives may be found
+<a href="http://www.cae.wisc.edu/pipermail/bug-octave">here</a>.</dd>
 <dt><a href="http://www.cae.wisc.edu/mailman/listinfo/octave-graphics">graphics</a></dt>
 <dd>This list was used to discuss the future development of GUI and
 graphics tools for Octave.  The maintainers list is now used for
@@ -94,6 +80,23 @@ code to fix bugs in Octave itself or new core functions for Octave
 should be posted to the bug or maintainers lists.  Recent archives may
 be found <a href="http://www.cae.wisc.edu/pipermail/octave-sources">here</a>.</dd>
 </dl>
+
+<p>Older archives of the bug list may be found here:
+[ __HTTP__(`www.octave.org/old-list-archives/bug-octave/2006', `2006')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2005', `2005')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2004', `2004')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2003', `2003')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2002', `2002')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2001', `2001')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/2000', `2000')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1999', `1999')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1998', `1998')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1997', `1997')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1996', `1996')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1995', `1995')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1994', `1994')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1993', `1993')
+| __HTTP__(`www.octave.org/old-list-archives/bug-octave/1992', `1992') ]</p>
 
 <p>Older archives of the graphics list may be found here:
 [ __HTTP__(`www.octave.org/old-list-archives/octave-graphics/2006', `2006')
