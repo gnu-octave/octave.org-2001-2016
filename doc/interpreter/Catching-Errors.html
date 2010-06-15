@@ -3,7 +3,7 @@
 <title>Catching Errors - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Handling-Errors.html#Handling-Errors" title="Handling Errors">
 <link rel="prev" href="Raising-Errors.html#Raising-Errors" title="Raising Errors">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,10 +30,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Handling-Errors.html#Handling-Errors">H
 <hr>
 </div>
 
-<h4 class="subsection">13.1.2 Catching Errors</h4>
+<h4 class="subsection">12.1.2 Catching Errors</h4>
 
 <p>When an error occurs, it can be detected and handled using the
-<code>try</code> statement as described in <a href="The-try-Statement.html#The-try-Statement">The try Statement</a>. 
+<code>try</code> statement as described in <a href="The-_003ccode_003etry_003c_002fcode_003e-Statement.html#The-_003ccode_003etry_003c_002fcode_003e-Statement">The <code>try</code> Statement</a>. 
 As an example, the following piece of code counts the number of errors
 that occurs during a <code>for</code> loop.
 
@@ -271,7 +51,7 @@ can however be necessary to discriminate between errors, and take
 different actions depending on the error.  The <code>lasterror</code>
 function returns a structure containing information about the last
 error that occurred.  As an example, the code above could be changed
-to count the number of errors related to the `<samp><span class="samp">*</span></samp>' operator.
+to count the number of errors related to the &lsquo;<samp><span class="samp">*</span></samp>&rsquo; operator.
 
 <pre class="example">     number_of_errors = 0;
      for n = 1:100
@@ -285,33 +65,34 @@ to count the number of errors related to the `<samp><span class="samp">*</span><
        end_try_catch
      endfor
 </pre>
+   <!-- error.cc -->
    <p><a name="doc_002dlasterror"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>err</var> = <b>lasterror</b> (<var>err</var>)<var><a name="index-lasterror-612"></a></var><br>
-&mdash; Built-in Function:  <b>lasterror</b> (<var>'reset'</var>)<var><a name="index-lasterror-613"></a></var><br>
-<blockquote><p>Returns or sets the last error message. Called without any arguments
+&mdash; Built-in Function: <var>err</var> = <b>lasterror</b> (<var>err</var>)<var><a name="index-lasterror-670"></a></var><br>
+&mdash; Built-in Function:  <b>lasterror</b> (<var>'reset'</var>)<var><a name="index-lasterror-671"></a></var><br>
+<blockquote><p>Returns or sets the last error message.  Called without any arguments
 returns a structure containing the last error message, as well as other
-information related to this error. The elements of this structure are:
+information related to this error.  The elements of this structure are:
 
           <dl>
 <dt>'message'<dd>The text of the last error message
 <br><dt>'identifier'<dd>The message identifier of this error message
-<br><dt>'stack'<dd>A structure containing information on where the message occured. This might
-be an empty structure if this in the case where this information can not
-be obtained. The fields of this structure are:
+<br><dt>'stack'<dd>A structure containing information on where the message occurred.  This might
+be an empty structure if this in the case where this information cannot
+be obtained.  The fields of this structure are:
 
                <dl>
 <dt>'file'<dd>The name of the file where the error occurred
-<br><dt>'name'<dd>The name of function in which the error occured
-<br><dt>'line'<dd>The line number at which the error occured
+<br><dt>'name'<dd>The name of function in which the error occurred
+<br><dt>'line'<dd>The line number at which the error occurred
 <br><dt>'column'<dd>An optional field with the column number at which the error occurred
 </dl>
           </dl>
 
         <p>The <var>err</var> structure may also be passed to <code>lasterror</code> to set the
-information about the last error. The only constraint on <var>err</var> in that
-case is that it is a scalar structure. Any fields of <var>err</var> that match
+information about the last error.  The only constraint on <var>err</var> in that
+case is that it is a scalar structure.  Any fields of <var>err</var> that match
 the above are set to the value passed in <var>err</var>, while other fields are
 set to their default values.
 
@@ -319,10 +100,11 @@ set to their default values.
 their default values. 
 </p></blockquote></div>
 
+<!-- error.cc -->
    <p><a name="doc_002dlasterr"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lasterr</b> (<var>msg, msgid</var>)<var><a name="index-lasterr-614"></a></var><br>
+&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lasterr</b> (<var>msg, msgid</var>)<var><a name="index-lasterr-672"></a></var><br>
 <blockquote><p>Without any arguments, return the last error message.  With one
 argument, set the last error message to <var>msg</var>.  With two arguments,
 also set the last message identifier. 
@@ -332,7 +114,7 @@ also set the last message identifier.
 can be useful when an error needs to be detected, but the program should
 still abort.  This is possible using the <code>rethrow</code> function.  The
 previous example can now be changed to count the number of errors
-related to the `<samp><span class="samp">*</span></samp>' operator, but still abort of another kind of
+related to the &lsquo;<samp><span class="samp">*</span></samp>&rsquo; operator, but still abort if another kind of
 error occurs.
 
 <pre class="example">     number_of_errors = 0;
@@ -349,38 +131,42 @@ error occurs.
        end_try_catch
      endfor
 </pre>
+   <!-- error.cc -->
    <p><a name="doc_002drethrow"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>rethrow</b> (<var>err</var>)<var><a name="index-rethrow-615"></a></var><br>
-<blockquote><p>Reissues a previous error as defined by <var>err</var>. <var>err</var> is a structure
-that must contain at least the 'message' and 'identifier' fields. <var>err</var>
+&mdash; Built-in Function:  <b>rethrow</b> (<var>err</var>)<var><a name="index-rethrow-673"></a></var><br>
+<blockquote><p>Reissues a previous error as defined by <var>err</var>.  <var>err</var> is a structure
+that must contain at least the 'message' and 'identifier' fields.  <var>err</var>
 can also contain a field 'stack' that gives information on the assumed
-location of the error. Typically <var>err</var> is returned from
-<code>lasterror</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> lasterror, lasterr, error. 
+location of the error.  Typically <var>err</var> is returned from
+<code>lasterror</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dlasterror.html#doc_002dlasterror">lasterror</a>, <a href="doc_002dlasterr.html#doc_002dlasterr">lasterr</a>, <a href="doc_002derror.html#doc_002derror">error</a>. 
 </p></blockquote></div>
 
-<!-- XXX: I have no idea what the rest of the functions are used for... -->
-<p><a name="doc_002derrno"></a>
+<!-- FIXME: I have no idea what the rest of the functions are used for... -->
+<!-- utils.cc -->
+   <p><a name="doc_002derrno"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>err</var> = <b>errno</b> ()<var><a name="index-errno-616"></a></var><br>
-&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>val</var>)<var><a name="index-errno-617"></a></var><br>
-&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>name</var>)<var><a name="index-errno-618"></a></var><br>
+&mdash; Built-in Function: <var>err</var> = <b>errno</b> ()<var><a name="index-errno-674"></a></var><br>
+&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>val</var>)<var><a name="index-errno-675"></a></var><br>
+&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>name</var>)<var><a name="index-errno-676"></a></var><br>
 <blockquote><p>Return the current value of the system-dependent variable errno,
 set its value to <var>val</var> and return the previous value, or return
 the named error code given <var>name</var> as a character string, or -1
 if <var>name</var> is not found. 
 </p></blockquote></div>
 
+<!-- utils.cc -->
    <p><a name="doc_002derrno_005flist"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>errno_list</b> ()<var><a name="index-errno_005flist-619"></a></var><br>
+&mdash; Built-in Function:  <b>errno_list</b> ()<var><a name="index-errno_005flist-677"></a></var><br>
 <blockquote><p>Return a structure containing the system-dependent errno values. 
 </p></blockquote></div>
 

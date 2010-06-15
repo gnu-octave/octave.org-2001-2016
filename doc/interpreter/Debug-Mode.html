@@ -3,10 +3,11 @@
 <title>Debug Mode - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Debugging.html#Debugging" title="Debugging">
 <link rel="prev" href="Breakpoints.html#Breakpoints" title="Breakpoints">
+<link rel="next" href="Call-Stack.html#Call-Stack" title="Call Stack">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,276 +20,90 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Debug-Mode"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Call-Stack.html#Call-Stack">Call Stack</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Breakpoints.html#Breakpoints">Breakpoints</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
 <hr>
 </div>
 
-<h3 class="section">14.3 Debug Mode</h3>
+<h3 class="section">13.4 Debug Mode</h3>
 
 <p>There are two additional support functions that allow the user to
 interrogate where in the execution of a script Octave entered the debug
 mode and to print the code in the script surrounding the point where
 Octave entered debug mode.
 
+<!-- debug.cc -->
    <p><a name="doc_002ddbwhere"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbwhere</b> ()<var><a name="index-dbwhere-637"></a></var><br>
+&mdash; Loadable Function:  <b>dbwhere</b> ()<var><a name="index-dbwhere-698"></a></var><br>
 <blockquote><p>Show where we are in the code
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> dbclear, dbstatus, dbstop. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>. 
 </p></blockquote></div>
 
+<!-- debug.cc -->
    <p><a name="doc_002ddbtype"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbtype</b> ()<var><a name="index-dbtype-638"></a></var><br>
-<blockquote><p>List script file with line numbers.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> dbclear, dbstatus, dbstop. 
+&mdash; Loadable Function:  <b>dbtype</b> ()<var><a name="index-dbtype-699"></a></var><br>
+<blockquote><p>List script file with line numbers. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>. 
 </p></blockquote></div>
 
-   <p>Debug mode equally allows single line stepping through a function using
-the commands <code>dbstep</code> and <code>dbnext</code>.  These differ slightly in
-the way they treat the next executable line if the next line itself is a
-function defined in an m-file.  The <code>dbnext</code> command will execute
-the next line, while staying in the existing function being debugged. 
-The <code>dbstep</code> command will step in to the new function.
+   <p>You may also use <code>isdebugmode</code> to determine whether the debugger is
+currently active.
 
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+<!-- debug.cc -->
+   <p><a name="doc_002disdebugmode"></a>
+
+<div class="defun">
+&mdash; Command:  <b>isdebugmode</b> ()<var><a name="index-isdebugmode-700"></a></var><br>
+<blockquote><p>Return true if debug mode is on, otherwise false. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>, <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>. 
+</p></blockquote></div>
+
+   <p>Debug mode also allows single line stepping through a function using
+the commands <code>dbstep</code>.
+
+<!-- debug.cc -->
+   <p><a name="doc_002ddbstep"></a>
+
+<div class="defun">
+&mdash; Command:  <b>dbstep</b><var> n<a name="index-dbstep-701"></a></var><br>
+&mdash; Command:  <b>dbstep</b><var> in<a name="index-dbstep-702"></a></var><br>
+&mdash; Command:  <b>dbstep</b><var> out<a name="index-dbstep-703"></a></var><br>
+<blockquote><p>In debugging mode, execute the next <var>n</var> lines of code.  If <var>n</var> is
+omitted execute the next line of code.  If the next line of code is itself
+defined in terms of an m-file remain in the existing function.
+
+        <p>Using <code>dbstep in</code> will cause execution of the next line to step into
+any m-files defined on the next line.  Using <code>dbstep out</code> with cause
+execution to continue until the current function returns. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbcont.html#doc_002ddbcont">dbcont</a>, <a href="doc_002ddbquit.html#doc_002ddbquit">dbquit</a>. 
+</p></blockquote></div>
+
+   </body></html>
 

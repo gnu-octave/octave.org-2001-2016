@@ -3,7 +3,7 @@
 <title>String Conversions - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Strings.html#Strings" title="Strings">
 <link rel="prev" href="Manipulating-Strings.html#Manipulating-Strings" title="Manipulating Strings">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,105 +32,114 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.4 String Conversions</h3>
+<h3 class="section">5.6 String Conversions</h3>
 
 <p>Octave supports various kinds of conversions between strings and
-numbers. As an example, it is possible to convert a string containing
+numbers.  As an example, it is possible to convert a string containing
 a hexadecimal number to a floating point number.
 
 <pre class="example">     hex2dec ("FF")
-          =&gt; ans = 255
+           ans = 255
 </pre>
+   <!-- ./strings/bin2dec.m -->
    <p><a name="doc_002dbin2dec"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>bin2dec</b> (<var>s</var>)<var><a name="index-bin2dec-278"></a></var><br>
+&mdash; Function File:  <b>bin2dec</b> (<var>s</var>)<var><a name="index-bin2dec-335"></a></var><br>
 <blockquote><p>Return the decimal number corresponding to the binary number stored
 in the string <var>s</var>.  For example,
 
      <pre class="example">          bin2dec ("1110")
-          =&gt; 14
-     </pre>
+                14
+</pre>
         <p>If <var>s</var> is a string matrix, returns a column vector of converted
-numbers, one per row of <var>s</var>.  Invalid rows evaluate to NaN.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> dec2hex, base2dec, dec2base, hex2dec, dec2bin. 
+numbers, one per row of <var>s</var>.  Invalid rows evaluate to NaN. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddec2hex.html#doc_002ddec2hex">dec2hex</a>, <a href="doc_002dbase2dec.html#doc_002dbase2dec">base2dec</a>, <a href="doc_002ddec2base.html#doc_002ddec2base">dec2base</a>, <a href="doc_002dhex2dec.html#doc_002dhex2dec">hex2dec</a>, <a href="doc_002ddec2bin.html#doc_002ddec2bin">dec2bin</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/dec2bin.m -->
    <p><a name="doc_002ddec2bin"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dec2bin</b> (<var>n, len</var>)<var><a name="index-dec2bin-279"></a></var><br>
-<blockquote><p>Return a binary number corresponding the nonnegative decimal number
+&mdash; Function File:  <b>dec2bin</b> (<var>n, len</var>)<var><a name="index-dec2bin-336"></a></var><br>
+<blockquote><p>Return a binary number corresponding to the non-negative decimal number
 <var>n</var>, as a string of ones and zeros.  For example,
 
      <pre class="example">          dec2bin (14)
-          =&gt; "1110"
-     </pre>
+                "1110"
+</pre>
         <p>If <var>n</var> is a vector, returns a string matrix, one row per value,
 padded with leading zeros to the width of the largest value.
 
         <p>The optional second argument, <var>len</var>, specifies the minimum
-number of digits in the result.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> bin2dec, dec2base, base2dec, hex2dec, dec2hex. 
+number of digits in the result. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dbin2dec.html#doc_002dbin2dec">bin2dec</a>, <a href="doc_002ddec2base.html#doc_002ddec2base">dec2base</a>, <a href="doc_002dbase2dec.html#doc_002dbase2dec">base2dec</a>, <a href="doc_002dhex2dec.html#doc_002dhex2dec">hex2dec</a>, <a href="doc_002ddec2hex.html#doc_002ddec2hex">dec2hex</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/dec2hex.m -->
    <p><a name="doc_002ddec2hex"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dec2hex</b> (<var>n, len</var>)<var><a name="index-dec2hex-280"></a></var><br>
-<blockquote><p>Return the hexadecimal string corresponding to the nonnegative
+&mdash; Function File:  <b>dec2hex</b> (<var>n, len</var>)<var><a name="index-dec2hex-337"></a></var><br>
+<blockquote><p>Return the hexadecimal string corresponding to the non-negative
 integer <var>n</var>.  For example,
 
      <pre class="example">          dec2hex (2748)
-          =&gt; "ABC"
-     </pre>
+                "ABC"
+</pre>
         <p>If <var>n</var> is a vector, returns a string matrix, one row per value,
 padded with leading zeros to the width of the largest value.
 
         <p>The optional second argument, <var>len</var>, specifies the minimum
-number of digits in the result.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> hex2dec, dec2base, base2dec, bin2dec, dec2bin. 
+number of digits in the result. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dhex2dec.html#doc_002dhex2dec">hex2dec</a>, <a href="doc_002ddec2base.html#doc_002ddec2base">dec2base</a>, <a href="doc_002dbase2dec.html#doc_002dbase2dec">base2dec</a>, <a href="doc_002dbin2dec.html#doc_002dbin2dec">bin2dec</a>, <a href="doc_002ddec2bin.html#doc_002ddec2bin">dec2bin</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/hex2dec.m -->
    <p><a name="doc_002dhex2dec"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hex2dec</b> (<var>s</var>)<var><a name="index-hex2dec-281"></a></var><br>
+&mdash; Function File:  <b>hex2dec</b> (<var>s</var>)<var><a name="index-hex2dec-338"></a></var><br>
 <blockquote><p>Return the integer corresponding to the hexadecimal number stored
 in the string <var>s</var>.  For example,
 
      <pre class="example">          hex2dec ("12B")
-          =&gt; 299
+                299
           hex2dec ("12b")
-          =&gt; 299
-     </pre>
+                299
+</pre>
         <p>If <var>s</var> is a string matrix, returns a column vector of converted
-numbers, one per row of <var>s</var>.  Invalid rows evaluate to NaN.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> dec2hex, base2dec, dec2base, bin2dec, dec2bin. 
+numbers, one per row of <var>s</var>.  Invalid rows evaluate to NaN. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddec2hex.html#doc_002ddec2hex">dec2hex</a>, <a href="doc_002dbase2dec.html#doc_002dbase2dec">base2dec</a>, <a href="doc_002ddec2base.html#doc_002ddec2base">dec2base</a>, <a href="doc_002dbin2dec.html#doc_002dbin2dec">bin2dec</a>, <a href="doc_002ddec2bin.html#doc_002ddec2bin">dec2bin</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/dec2base.m -->
    <p><a name="doc_002ddec2base"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dec2base</b> (<var>n, b, len</var>)<var><a name="index-dec2base-282"></a></var><br>
-<blockquote><p>Return a string of symbols in base <var>b</var> corresponding to the
-the nonnegative integer <var>n</var>.
+&mdash; Function File:  <b>dec2base</b> (<var>n, b, len</var>)<var><a name="index-dec2base-339"></a></var><br>
+<blockquote><p>Return a string of symbols in base <var>b</var> corresponding to
+the non-negative integer <var>n</var>.
 
      <pre class="example">          dec2base (123, 3)
-          =&gt; "11120"
-     </pre>
+                "11120"
+</pre>
         <p>If <var>n</var> is a vector, return a string matrix with one row per value,
 padded with leading zeros to the width of the largest value.
 
@@ -359,55 +148,101 @@ the symbols for the digits of <var>n</var>.  Space (' ') may not be used
 as a symbol.
 
      <pre class="example">          dec2base (123, "aei")
-          =&gt; "eeeia"
-     </pre>
+                "eeeia"
+</pre>
         <p>The optional third argument, <var>len</var>, specifies the minimum
-number of digits in the result.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> base2dec, dec2bin, bin2dec, hex2dec, dec2hex. 
+number of digits in the result. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dbase2dec.html#doc_002dbase2dec">base2dec</a>, <a href="doc_002ddec2bin.html#doc_002ddec2bin">dec2bin</a>, <a href="doc_002dbin2dec.html#doc_002dbin2dec">bin2dec</a>, <a href="doc_002dhex2dec.html#doc_002dhex2dec">hex2dec</a>, <a href="doc_002ddec2hex.html#doc_002ddec2hex">dec2hex</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/base2dec.m -->
    <p><a name="doc_002dbase2dec"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>base2dec</b> (<var>s, b</var>)<var><a name="index-base2dec-283"></a></var><br>
+&mdash; Function File:  <b>base2dec</b> (<var>s, b</var>)<var><a name="index-base2dec-340"></a></var><br>
 <blockquote><p>Convert <var>s</var> from a string of digits of base <var>b</var> into an
 integer.
 
      <pre class="example">          base2dec ("11120", 3)
-          =&gt; 123
-     </pre>
+                123
+</pre>
         <p>If <var>s</var> is a matrix, returns a column vector with one value per
 row of <var>s</var>.  If a row contains invalid symbols then the
 corresponding value will be NaN.  Rows are right-justified before
 converting so that trailing spaces are ignored.
 
         <p>If <var>b</var> is a string, the characters of <var>b</var> are used as the
-symbols for the digits of <var>s</var>. Space (' ') may not be used as a
+symbols for the digits of <var>s</var>.  Space (' ') may not be used as a
 symbol.
 
      <pre class="example">          base2dec ("yyyzx", "xyz")
-          =&gt; 123
-     </pre>
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> dec2base, dec2bin, bin2dec, hex2dec, dec2hex. 
+                123
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddec2base.html#doc_002ddec2base">dec2base</a>, <a href="doc_002ddec2bin.html#doc_002ddec2bin">dec2bin</a>, <a href="doc_002dbin2dec.html#doc_002dbin2dec">bin2dec</a>, <a href="doc_002dhex2dec.html#doc_002dhex2dec">hex2dec</a>, <a href="doc_002ddec2hex.html#doc_002ddec2hex">dec2hex</a>. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/hex2num.cc -->
+   <p><a name="doc_002dnum2hex"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>s</var> = <b>num2hex</b> (<var>n</var>)<var><a name="index-num2hex-341"></a></var><br>
+<blockquote><p>Typecast a double precision number or vector to a 16 character hexadecimal
+string of the IEEE 754 representation of the number.  For example
+
+     <pre class="example">          num2hex ([-1, 1, e, Inf, NaN, NA]);
+           "bff0000000000000
+              3ff0000000000000
+              4005bf0a8b145769
+              7ff0000000000000
+              fff8000000000000
+              7ff00000000007a2"
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dhex2num.html#doc_002dhex2num">hex2num</a>, <a href="doc_002dhex2dec.html#doc_002dhex2dec">hex2dec</a>, <a href="doc_002ddec2hex.html#doc_002ddec2hex">dec2hex</a>. 
+</p></blockquote></div>
+
+<!-- ./DLD-FUNCTIONS/hex2num.cc -->
+   <p><a name="doc_002dhex2num"></a>
+
+<div class="defun">
+&mdash; Loadable Function: <var>n</var> = <b>hex2num</b> (<var>s</var>)<var><a name="index-hex2num-342"></a></var><br>
+<blockquote><p>Typecast the 16 character hexadecimal character matrix to an IEEE 754
+double precision number.  If fewer than 16 characters are given the
+strings are right padded with '0' characters.
+
+        <p>Given a string matrix, <code>hex2num</code> treats each row as a separate
+number.
+
+     <pre class="example">          hex2num (["4005bf0a8b145769";"4024000000000000"])
+           [2.7183; 10.000]
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnum2hex.html#doc_002dnum2hex">num2hex</a>, <a href="doc_002dhex2dec.html#doc_002dhex2dec">hex2dec</a>, <a href="doc_002ddec2hex.html#doc_002ddec2hex">dec2hex</a>. 
+</p></blockquote></div>
+
+<!-- ./strings/str2double.m -->
    <p><a name="doc_002dstr2double"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>num</var>, <var>status</var>, <var>strarray</var>] = <b>str2double</b> (<var>str, cdelim, rdelim, ddelim</var>)<var><a name="index-str2double-284"></a></var><br>
+&mdash; Function File: [<var>num</var>, <var>status</var>, <var>strarray</var>] = <b>str2double</b> (<var>str, cdelim, rdelim, ddelim</var>)<var><a name="index-str2double-343"></a></var><br>
 <blockquote><p>Convert strings into numeric values.
 
         <p><code>str2double</code> can replace <code>str2num</code>, but avoids the use of
 <code>eval</code> on unknown data.
 
-        <p><var>str</var> can be the form `<samp><span class="samp">[+-]d[.]dd[[eE][+-]ddd]</span></samp>' in which
-`<samp><span class="samp">d</span></samp>' can be any of digit from 0 to 9, and `<samp><span class="samp">[]</span></samp>' indicate
+        <p><var>str</var> can be the form &lsquo;<samp><span class="samp">[+-]d[.]dd[[eE][+-]ddd]</span></samp>&rsquo; in which
+&lsquo;<samp><span class="samp">d</span></samp>&rsquo; can be any of digit from 0 to 9, and &lsquo;<samp><span class="samp">[]</span></samp>&rsquo; indicate
 optional elements.
 
         <p><var>num</var> is the corresponding numeric value.  If the conversion
@@ -432,103 +267,155 @@ optional column, row, and decimal delimiters.
         <p>The default row-delimiters are newline, carriage return and semicolon
 (ASCII 10, 13 and 59).  The default column-delimiters are tab, space
 and comma (ASCII 9, 32, and 44).  The default decimal delimiter is
-`<samp><span class="samp">.</span></samp>' (ASCII 46).
+&lsquo;<samp><span class="samp">.</span></samp>&rsquo; (ASCII 46).
 
         <p><var>cdelim</var>, <var>rdelim</var>, and <var>ddelim</var> must contain only nul,
 newline, carriage return, semicolon, colon, slash, tab, space, comma,
-or `<samp><span class="samp">()[]{}</span></samp>' (ASCII 0, 9, 10, 11, 12, 13, 14, 32, 33, 34, 40,
+or &lsquo;<samp><span class="samp">()[]{}</span></samp>&rsquo; (ASCII 0, 9, 10, 11, 12, 13, 14, 32, 33, 34, 40,
 41, 44, 47, 58, 59, 91, 93, 123, 124, 125).
 
         <p>Examples:
 
      <pre class="example">          str2double ("-.1e-5")
-          =&gt; -1.0000e-006
+           -1.0000e-006
           
           str2double (".314e1, 44.44e-1, .7; -1e+1")
-          =&gt;
+          
              3.1400    4.4440    0.7000
            -10.0000       NaN       NaN
           
-          line = "200,300,400,NaN,-inf,cd,yes,no,999,maybe,NaN";
+          line = "200, 300, NaN, -inf, yes, no, 999, maybe, NaN";
           [x, status] = str2double (line)
-          x =
-             200   300   400   NaN  -Inf   NaN   NaN   NaN   999   NaN   NaN
-          status =
-              0     0     0     0     0    -1    -1    -1     0    -1     0
-     </pre>
-        </blockquote></div>
+           x =
+              200   300   NaN  -Inf   NaN   NaN   999   NaN   NaN
+           status =
+                0     0     0     0    -1    -1     0    -1     0
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstr2num.html#doc_002dstr2num">str2num</a>. 
+</p></blockquote></div>
 
+<!-- ./strings/strjust.m -->
    <p><a name="doc_002dstrjust"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>strjust</b> (<var>s, </var>[<var>"left"|"right"|"center"</var>])<var><a name="index-strjust-285"></a></var><br>
+&mdash; Function File:  <b>strjust</b> (<var>s, </var>[<var>"left"|"right"|"center"</var>])<var><a name="index-strjust-344"></a></var><br>
 <blockquote><p>Shift the non-blank text of <var>s</var> to the left, right or center of
 the string.  If <var>s</var> is a string array, justify each string in the
 array.  Null characters are replaced by blanks.  If no justification
-is specified, then all rows are right-justified. 
-</p></blockquote></div>
+is specified, then all rows are right-justified.  For example:
 
+     <pre class="example">          strjust (["a"; "ab"; "abc"; "abcd"])
+                ans =
+                     a
+                    ab
+                   abc
+                  abcd
+</pre>
+        </blockquote></div>
+
+<!-- ./strings/str2num.m -->
    <p><a name="doc_002dstr2num"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>str2num</b> (<var>s</var>)<var><a name="index-str2num-286"></a></var><br>
-<blockquote><p>Convert the string <var>s</var> to a number. 
+&mdash; Function File:  <b>str2num</b> (<var>s</var>)<var><a name="index-str2num-345"></a></var><br>
+<blockquote><p>Convert the string (or character array) <var>s</var> to a number (or an
+array).  Examples:
+
+     <pre class="example">          str2num("3.141596")
+                3.141596
+          
+          str2num(["1, 2, 3"; "4, 5, 6"]);
+                ans =
+                  1  2  3
+                  4  5  6
+</pre>
+        <p><strong>Caution:</strong> As <code>str2num</code> uses the <code>eval</code> function
+to do the conversion, <code>str2num</code> will execute any code contained
+in the string <var>s</var>.  Use <code>str2double</code> instead if you want to
+avoid the use of <code>eval</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstr2double.html#doc_002dstr2double">str2double</a>, <a href="doc_002deval.html#doc_002deval">eval</a>. 
 </p></blockquote></div>
 
+<!-- mappers.cc -->
    <p><a name="doc_002dtoascii"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>toascii</b> (<var>s</var>)<var><a name="index-toascii-287"></a></var><br>
+&mdash; Mapping Function:  <b>toascii</b> (<var>s</var>)<var><a name="index-toascii-346"></a></var><br>
 <blockquote><p>Return ASCII representation of <var>s</var> in a matrix.  For example,
 
      <pre class="example">          toascii ("ASCII")
-               =&gt; [ 65, 83, 67, 73, 73 ]
+                [ 65, 83, 67, 73, 73 ]
           
-     </pre>
-        </blockquote></div>
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dchar.html#doc_002dchar">char</a>. 
+</p></blockquote></div>
 
+<!-- mappers.cc -->
    <p><a name="doc_002dtolower"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>tolower</b> (<var>s</var>)<var><a name="index-tolower-288"></a></var><br>
-<blockquote><p>Return a copy of the string <var>s</var>, with each upper-case character
-replaced by the corresponding lower-case one; nonalphabetic characters
-are left unchanged.  For example,
+&mdash; Mapping Function:  <b>tolower</b> (<var>s</var>)<var><a name="index-tolower-347"></a></var><br>
+&mdash; Mapping Function:  <b>lower</b> (<var>s</var>)<var><a name="index-lower-348"></a></var><br>
+<blockquote><p>Return a copy of the string or cell string <var>s</var>, with each upper-case
+character replaced by the corresponding lower-case one; non-alphabetic
+characters are left unchanged.  For example,
 
      <pre class="example">          tolower ("MiXeD cAsE 123")
-               =&gt; "mixed case 123"
-     </pre>
-        </blockquote></div>
+                "mixed case 123"
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtoupper.html#doc_002dtoupper">toupper</a>. 
+</p></blockquote></div>
 
+<!-- mappers.cc -->
    <p><a name="doc_002dtoupper"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>toupper</b> (<var>s</var>)<var><a name="index-toupper-289"></a></var><br>
-<blockquote><p>Return a copy of the string <var>s</var>, with each  lower-case character
-replaced by the corresponding upper-case one; nonalphabetic characters
-are left unchanged.  For example,
+&mdash; Built-in Function:  <b>toupper</b> (<var>s</var>)<var><a name="index-toupper-349"></a></var><br>
+&mdash; Built-in Function:  <b>upper</b> (<var>s</var>)<var><a name="index-upper-350"></a></var><br>
+<blockquote><p>Return a copy of the string or cell string <var>s</var>, with each lower-case
+character replaced by the corresponding upper-case one; non-alphabetic
+characters are left unchanged.  For example,
 
      <pre class="example">          toupper ("MiXeD cAsE 123")
-               =&gt; "MIXED CASE 123"
-     </pre>
-        </blockquote></div>
+                "MIXED CASE 123"
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtolower.html#doc_002dtolower">tolower</a>. 
+</p></blockquote></div>
 
+<!-- utils.cc -->
    <p><a name="doc_002ddo_005fstring_005fescapes"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>do_string_escapes</b> (<var>string</var>)<var><a name="index-do_005fstring_005fescapes-290"></a></var><br>
+&mdash; Built-in Function:  <b>do_string_escapes</b> (<var>string</var>)<var><a name="index-do_005fstring_005fescapes-351"></a></var><br>
 <blockquote><p>Convert special characters in <var>string</var> to their escaped forms. 
 </p></blockquote></div>
 
+<!-- utils.cc -->
    <p><a name="doc_002dundo_005fstring_005fescapes"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>undo_string_escapes</b> (<var>s</var>)<var><a name="index-undo_005fstring_005fescapes-291"></a></var><br>
+&mdash; Built-in Function:  <b>undo_string_escapes</b> (<var>s</var>)<var><a name="index-undo_005fstring_005fescapes-352"></a></var><br>
 <blockquote><p>Converts special characters in strings back to their escaped forms.  For
 example, the expression
 
      <pre class="example">          bell = "\a";
-     </pre>
+</pre>
         <p class="noindent">assigns the value of the alert character (control-g, ASCII code 7) to
 the string variable <code>bell</code>.  If this string is printed, the
 system will ring the terminal bell (if it is possible).  This is
@@ -538,7 +425,7 @@ special characters replaced by their escape sequences.  For example,
 
      <pre class="example">          octave:13&gt; undo_string_escapes (bell)
           ans = \a
-     </pre>
+</pre>
         <p class="noindent">replaces the unprintable alert character with its printable
 representation. 
 </p></blockquote></div>

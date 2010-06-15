@@ -3,10 +3,10 @@
 <title>Strings - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Numeric-Data-Types.html#Numeric-Data-Types" title="Numeric Data Types">
-<link rel="next" href="Data-Structures.html#Data-Structures" title="Data Structures">
+<link rel="next" href="Data-Containers.html#Data-Containers" title="Data Containers">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,233 +19,13 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Strings"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Data-Structures.html#Data-Structures">Data Structures</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Data-Containers.html#Data-Containers">Data Containers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr>
@@ -253,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h2 class="chapter">5 Strings</h2>
 
-<p><a name="index-strings-233"></a><a name="index-character-strings-234"></a><a name="index-g_t_0022-235"></a><a name="index-g_t_0027-236"></a>
+<p><a name="index-strings-279"></a><a name="index-character-strings-280"></a><a name="index-g_t_0022-281"></a><a name="index-g_t_0027-282"></a>
 A <dfn>string constant</dfn> consists of a sequence of characters enclosed in
 either double-quote or single-quote marks.  For example, both of the
 following expressions
@@ -261,87 +41,28 @@ following expressions
 <pre class="example">     "parrot"
      'parrot'
 </pre>
-   <p class="noindent">represent the string whose contents are `<samp><span class="samp">parrot</span></samp>'.  Strings in
+   <p class="noindent">represent the string whose contents are &lsquo;<samp><span class="samp">parrot</span></samp>&rsquo;.  Strings in
 Octave can be of any length.
 
    <p>Since the single-quote mark is also used for the transpose operator
-(see <a href="Arithmetic-Ops.html#Arithmetic-Ops">Arithmetic Ops</a>) but double-quote marks have no other purpose in
-Octave, it is best to use double-quote marks to denote strings.
+(see <a href="Arithmetic-Ops.html#Arithmetic-Ops">Arithmetic Ops</a>) but double-quote marks have no other purpose in Octave,
+it is best to use double-quote marks to denote strings.
 
-   <p><a name="index-escape-sequence-notation-237"></a>In double-quoted strings, the backslash character is used to introduce
-<dfn>escape sequences</dfn> that represent other characters.  For example,
-`<samp><span class="samp">\n</span></samp>' embeds a newline character in a double-quoted string and
-`<samp><span class="samp">\"</span></samp>' embeds a double quote character.
-
-   <p>In single-quoted strings, backslash is not a special character.
-
-   <p>Here is an example showing the difference
-
-<pre class="example">     toascii ("\n")
-         =&gt; 10
-     toascii ('\n')
-         =&gt; [ 92 110 ]
-</pre>
-   <p>You may also insert a single quote character in a single-quoted string
-by using two single quote characters in succession.  For example,
-
-<pre class="example">     'I can''t escape'
-         =&gt; I can't escape
-</pre>
-   <p>Here is a table of all the escape sequences used in Octave.  They are
-the same as those used in the C programming language.
-
-     <dl>
-<dt><code>\\</code><dd>Represents a literal backslash, `<samp><span class="samp">\</span></samp>'.
-
-     <br><dt><code>\"</code><dd>Represents a literal double-quote character, `<samp><span class="samp">"</span></samp>'.
-
-     <br><dt><code>\'</code><dd>Represents a literal single-quote character, `<samp><span class="samp">'</span></samp>'.
-
-     <br><dt><code>\0</code><dd>Represents the &ldquo;nul&rdquo; character, control-@, ASCII code 0.
-
-     <br><dt><code>\a</code><dd>Represents the &ldquo;alert&rdquo; character, control-g, ASCII code 7.
-
-     <br><dt><code>\b</code><dd>Represents a backspace, control-h, ASCII code 8.
-
-     <br><dt><code>\f</code><dd>Represents a formfeed, control-l, ASCII code 12.
-
-     <br><dt><code>\n</code><dd>Represents a newline, control-j, ASCII code 10.
-
-     <br><dt><code>\r</code><dd>Represents a carriage return, control-m, ASCII code 13.
-
-     <br><dt><code>\t</code><dd>Represents a horizontal tab, control-i, ASCII code 9.
-
-     <br><dt><code>\v</code><dd>Represents a vertical tab, control-k, ASCII code 11.
-
-     <!-- We don't do octal or hex this way yet. -->
-<!-- @item \@var{nnn} -->
-<!-- Represents the octal value @var{nnn}, where @var{nnn} are one to three -->
-<!-- digits between 0 and 7.  For example, the code for the ASCII ESC -->
-<!-- (escape) character is @samp{\033}.@refill -->
-<!-- @item \x@var{hh}@dots{} -->
-<!-- Represents the hexadecimal value @var{hh}, where @var{hh} are hexadecimal -->
-<!-- digits (@samp{0} through @samp{9} and either @samp{A} through @samp{F} or -->
-<!-- @samp{a} through @samp{f}).  Like the same construct in @sc{ansi} C, -->
-<!-- the escape -->
-<!-- sequence continues until the first non-hexadecimal digit is seen.  However, -->
-<!-- using more than two hexadecimal digits produces undefined results.  (The -->
-<!-- @samp{\x} escape sequence is not allowed in @sc{posix} @code{awk}.)@refill -->
-</dl>
-
-   <p>Strings may be concatenated using the notation for defining matrices. 
-For example, the expression
+   <p>Strings can be concatenated using the notation for defining matrices.  For
+example, the expression
 
 <pre class="example">     [ "foo" , "bar" , "baz" ]
 </pre>
-   <p class="noindent">produces the string whose contents are `<samp><span class="samp">foobarbaz</span></samp>'.  See <a href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>, for more information about creating matrices.
+   <p class="noindent">produces the string whose contents are &lsquo;<samp><span class="samp">foobarbaz</span></samp>&rsquo;.  See <a href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>, for more information about creating matrices.
 
 <ul class="menu">
-<li><a accesskey="1" href="Creating-Strings.html#Creating-Strings">Creating Strings</a>
-<li><a accesskey="2" href="Comparing-Strings.html#Comparing-Strings">Comparing Strings</a>
-<li><a accesskey="3" href="Manipulating-Strings.html#Manipulating-Strings">Manipulating Strings</a>
-<li><a accesskey="4" href="String-Conversions.html#String-Conversions">String Conversions</a>
-<li><a accesskey="5" href="Character-Class-Functions.html#Character-Class-Functions">Character Class Functions</a>
+<li><a accesskey="1" href="Escape-Sequences-in-string-constants.html#Escape-Sequences-in-string-constants">Escape Sequences in string constants</a>
+<li><a accesskey="2" href="Character-Arrays.html#Character-Arrays">Character Arrays</a>
+<li><a accesskey="3" href="Creating-Strings.html#Creating-Strings">Creating Strings</a>
+<li><a accesskey="4" href="Comparing-Strings.html#Comparing-Strings">Comparing Strings</a>
+<li><a accesskey="5" href="Manipulating-Strings.html#Manipulating-Strings">Manipulating Strings</a>
+<li><a accesskey="6" href="String-Conversions.html#String-Conversions">String Conversions</a>
+<li><a accesskey="7" href="Character-Class-Functions.html#Character-Class-Functions">Character Class Functions</a>
 </ul>
 
    </body></html>

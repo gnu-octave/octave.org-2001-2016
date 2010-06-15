@@ -3,7 +3,7 @@
 <title>Manipulating Strings - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Strings.html#Strings" title="Strings">
 <link rel="prev" href="Comparing-Strings.html#Comparing-Strings" title="Comparing Strings">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,94 +32,156 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.3 Manipulating Strings</h3>
+<h3 class="section">5.5 Manipulating Strings</h3>
 
 <p>Octave supports a wide range of functions for manipulating strings. 
 Since a string is just a matrix, simple manipulations can be accomplished
-using standard operators. The following example shows how to replace
+using standard operators.  The following example shows how to replace
 all blank characters with underscores.
 
-<pre class="example">     quote = "First things first, but not necessarily in that order";
+<pre class="example">     quote = ...
+       "First things first, but not necessarily in that order";
      quote( quote == " " ) = "_"
-          -| quote = First_things_first,_but_not_necessarily_in_that_order
+      quote =
+         First_things_first,_but_not_necessarily_in_that_order
 </pre>
    <p>For more complex manipulations, such as searching, replacing, and
-general regular expressions, the following function come with Octave.
+general regular expressions, the following functions come with Octave.
 
+<!-- ./strings/deblank.m -->
    <p><a name="doc_002ddeblank"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>deblank</b> (<var>s</var>)<var><a name="index-deblank-261"></a></var><br>
+&mdash; Function File:  <b>deblank</b> (<var>s</var>)<var><a name="index-deblank-312"></a></var><br>
 <blockquote><p>Remove trailing blanks and nulls from <var>s</var>.  If <var>s</var>
 is a matrix, <var>deblank</var> trims each row to the length of longest
 string.  If <var>s</var> is a cell array, operate recursively on each
 element of the cell array. 
 </p></blockquote></div>
 
+<!-- ./strings/strtrim.m -->
+   <p><a name="doc_002dstrtrim"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>strtrim</b> (<var>s</var>)<var><a name="index-strtrim-313"></a></var><br>
+<blockquote><p>Remove leading and trailing blanks and nulls from <var>s</var>.  If
+<var>s</var> is a matrix, <var>strtrim</var> trims each row to the length of
+longest string.  If <var>s</var> is a cell array, operate recursively on
+each element of the cell array.  For example:
+
+     <pre class="example">          strtrim ("    abc  ")
+                "abc"
+          
+          strtrim ([" abc   "; "   def   "])
+                ["abc  "; "  def"]
+</pre>
+        </blockquote></div>
+
+<!-- ./strings/strtrunc.m -->
+   <p><a name="doc_002dstrtrunc"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>strtrunc</b> (<var>s, n</var>)<var><a name="index-strtrunc-314"></a></var><br>
+<blockquote><p>Truncate the character string <var>s</var> to length <var>n</var>.  If <var>s</var>
+is a char matrix, then the number of columns is adjusted.
+
+        <p>If <var>s</var> is a cell array of strings, then the operation is performed
+on its members and the new cell array is returned. 
+</p></blockquote></div>
+
+<!-- ./strings/findstr.m -->
    <p><a name="doc_002dfindstr"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>findstr</b> (<var>s, t, overlap</var>)<var><a name="index-findstr-262"></a></var><br>
+&mdash; Function File:  <b>findstr</b> (<var>s, t, overlap</var>)<var><a name="index-findstr-315"></a></var><br>
 <blockquote><p>Return the vector of all positions in the longer of the two strings
 <var>s</var> and <var>t</var> where an occurrence of the shorter of the two starts. 
 If the optional argument <var>overlap</var> is nonzero, the returned vector
 can include overlapping positions (this is the default).  For example,
 
      <pre class="example">          findstr ("ababab", "a")
-          =&gt; [ 1, 3, 5 ]
+                [1, 3, 5]
           findstr ("abababa", "aba", 0)
-          =&gt; [ 1, 5 ]
-     </pre>
-        </blockquote></div>
+                [1, 5]
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrfind.html#doc_002dstrfind">strfind</a>, <a href="doc_002dstrmatch.html#doc_002dstrmatch">strmatch</a>, <a href="doc_002dstrcmp.html#doc_002dstrcmp">strcmp</a>, <a href="doc_002dstrncmp.html#doc_002dstrncmp">strncmp</a>, <a href="doc_002dstrcmpi.html#doc_002dstrcmpi">strcmpi</a>, <a href="doc_002dstrncmpi.html#doc_002dstrncmpi">strncmpi</a>, <a href="doc_002dfind.html#doc_002dfind">find</a>. 
+</p></blockquote></div>
 
+<!-- ./strings/strchr.m -->
+   <p><a name="doc_002dstrchr"></a>
+
+<div class="defun">
+&mdash; Function File: <var>idx</var> = <b>strchr</b> (<var>str, chars</var>)<var><a name="index-strchr-316"></a></var><br>
+&mdash; Function File: <var>idx</var> = <b>strchr</b> (<var>str, chars, n</var>)<var><a name="index-strchr-317"></a></var><br>
+&mdash; Function File: <var>idx</var> = <b>strchr</b> (<var>str, chars, n, direction</var>)<var><a name="index-strchr-318"></a></var><br>
+<blockquote><p>Search for the string <var>str</var> for occurrences of characters from the set <var>chars</var>. 
+The return value, as well as the <var>n</var> and <var>direction</var> arguments behave
+identically as in <code>find</code>.
+
+        <p>This will be faster than using regexp in most cases.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfind.html#doc_002dfind">find</a>. 
+</p></blockquote></div>
+
+<!-- ./strings/index.m -->
    <p><a name="doc_002dindex"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>index</b> (<var>s, t</var>)<var><a name="index-index-263"></a></var><br>
-&mdash; Function File:  <b>index</b> (<var>s, t, direction</var>)<var><a name="index-index-264"></a></var><br>
+&mdash; Function File:  <b>index</b> (<var>s, t</var>)<var><a name="index-index-319"></a></var><br>
+&mdash; Function File:  <b>index</b> (<var>s, t, direction</var>)<var><a name="index-index-320"></a></var><br>
 <blockquote><p>Return the position of the first occurrence of the string <var>t</var> in the
 string <var>s</var>, or 0 if no occurrence is found.  For example,
 
      <pre class="example">          index ("Teststring", "t")
-          =&gt; 4
-     </pre>
-        <p>If <var>direction</var> is `<samp><span class="samp">"first"</span></samp>', return the first element found. 
-If <var>direction</var> is `<samp><span class="samp">"last"</span></samp>', return the last element found. 
+                4
+</pre>
+        <p>If <var>direction</var> is &lsquo;<samp><span class="samp">"first"</span></samp>&rsquo;, return the first element found. 
+If <var>direction</var> is &lsquo;<samp><span class="samp">"last"</span></samp>&rsquo;, return the last element found. 
 The <code>rindex</code> function is equivalent to <code>index</code> with
-<var>direction</var> set to `<samp><span class="samp">"last"</span></samp>'.
+<var>direction</var> set to &lsquo;<samp><span class="samp">"last"</span></samp>&rsquo;.
 
         <p><strong>Caution:</strong>  This function does not work for arrays of
-character strings.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> find, rindex. 
+character strings. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfind.html#doc_002dfind">find</a>, <a href="doc_002drindex.html#doc_002drindex">rindex</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/rindex.m -->
    <p><a name="doc_002drindex"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rindex</b> (<var>s, t</var>)<var><a name="index-rindex-265"></a></var><br>
+&mdash; Function File:  <b>rindex</b> (<var>s, t</var>)<var><a name="index-rindex-321"></a></var><br>
 <blockquote><p>Return the position of the last occurrence of the character string
 <var>t</var> in the character string <var>s</var>, or 0 if no occurrence is
 found.  For example,
 
      <pre class="example">          rindex ("Teststring", "t")
-          =&gt; 6
-     </pre>
+                6
+</pre>
         <p><strong>Caution:</strong>  This function does not work for arrays of
-character strings.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> find, index. 
+character strings. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfind.html#doc_002dfind">find</a>, <a href="doc_002dindex.html#doc_002dindex">index</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/strfind.m -->
    <p><a name="doc_002dstrfind"></a>
 
 <div class="defun">
-&mdash; Function File: <var>idx</var> = <b>strfind</b> (<var>str, pattern</var>)<var><a name="index-strfind-266"></a></var><br>
-&mdash; Function File: <var>idx</var> = <b>strfind</b> (<var>cellstr, pattern</var>)<var><a name="index-strfind-267"></a></var><br>
+&mdash; Function File: <var>idx</var> = <b>strfind</b> (<var>str, pattern</var>)<var><a name="index-strfind-322"></a></var><br>
+&mdash; Function File: <var>idx</var> = <b>strfind</b> (<var>cellstr, pattern</var>)<var><a name="index-strfind-323"></a></var><br>
 <blockquote><p>Search for <var>pattern</var> in the string <var>str</var> and return the
 starting index of every such occurrence in the vector <var>idx</var>. 
 If there is no such occurrence, or if <var>pattern</var> is longer
@@ -347,74 +189,119 @@ than <var>str</var>, then <var>idx</var> is the empty array <code>[]</code>.
 
         <p>If the cell array of strings <var>cellstr</var> is specified instead of the
 string <var>str</var>, then <var>idx</var> is a cell array of vectors, as specified
-above.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> findstr, strmatch, strcmp, strncmp, strcmpi, strncmpi. 
+above.  Examples:
+
+     <pre class="example">          strfind ("abababa", "aba")
+                [1, 3, 5]
+          
+          strfind ({"abababa", "bebebe", "ab"}, "aba")
+                ans =
+                  {
+                    [1,1] =
+          
+                       1   3   5
+          
+                    [1,2] = [](1x0)
+                    [1,3] = [](1x0)
+                  }
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfindstr.html#doc_002dfindstr">findstr</a>, <a href="doc_002dstrmatch.html#doc_002dstrmatch">strmatch</a>, <a href="doc_002dstrcmp.html#doc_002dstrcmp">strcmp</a>, <a href="doc_002dstrncmp.html#doc_002dstrncmp">strncmp</a>, <a href="doc_002dstrcmpi.html#doc_002dstrcmpi">strcmpi</a>, <a href="doc_002dstrncmpi.html#doc_002dstrncmpi">strncmpi</a>, <a href="doc_002dfind.html#doc_002dfind">find</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/strmatch.m -->
    <p><a name="doc_002dstrmatch"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>strmatch</b> (<var>s, a, "exact"</var>)<var><a name="index-strmatch-268"></a></var><br>
+&mdash; Function File:  <b>strmatch</b> (<var>s, a, "exact"</var>)<var><a name="index-strmatch-324"></a></var><br>
 <blockquote><p>Return indices of entries of <var>a</var> that match the string <var>s</var>. 
 The second argument <var>a</var> may be a string matrix or a cell array of
 strings.  If the third argument <code>"exact"</code> is not given, then
 <var>s</var> only needs to match <var>a</var> up to the length of <var>s</var>.  Nul
 characters match blanks.  Results are returned as a column vector. 
+For example:
+
+     <pre class="example">          strmatch ("apple", "apple juice")
+                1
+          
+          strmatch ("apple", ["apple pie"; "apple juice"; "an apple"])
+                [1; 2]
+          
+          strmatch ("apple", {"apple pie"; "apple juice"; "tomato"})
+                [1; 2]
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrfind.html#doc_002dstrfind">strfind</a>, <a href="doc_002dfindstr.html#doc_002dfindstr">findstr</a>, <a href="doc_002dstrcmp.html#doc_002dstrcmp">strcmp</a>, <a href="doc_002dstrncmp.html#doc_002dstrncmp">strncmp</a>, <a href="doc_002dstrcmpi.html#doc_002dstrcmpi">strcmpi</a>, <a href="doc_002dstrncmpi.html#doc_002dstrncmpi">strncmpi</a>, <a href="doc_002dfind.html#doc_002dfind">find</a>. 
 </p></blockquote></div>
 
+<!-- ./strings/strtok.m -->
    <p><a name="doc_002dstrtok"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>tok</var>, <var>rem</var>] = <b>strtok</b> (<var>str, delim</var>)<var><a name="index-strtok-269"></a></var><br>
+&mdash; Function File: [<var>tok</var>, <var>rem</var>] = <b>strtok</b> (<var>str, delim</var>)<var><a name="index-strtok-325"></a></var><br>
 <blockquote>
-<p>Find all characters up to but not including the first character which
+        <p>Find all characters up to but not including the first character which
 is in the string delim.  If <var>rem</var> is requested, it contains the
-remainder of the string, starting at the first deliminator. Leading
-delimiters are ignored.  If <var>delim</var> is not specified, space is assumed.
+remainder of the string, starting at the first delimiter.  Leading
+delimiters are ignored.  If <var>delim</var> is not specified, space is
+assumed.  For example:
 
-        </blockquote></div>
+     <pre class="example">          strtok ("this is the life")
+                "this"
+          
+          [tok, rem] = strtok ("14*27+31", "+-*/")
+               
+                  tok = 14
+                  rem = *27+31
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dindex.html#doc_002dindex">index</a>, <a href="doc_002dstrsplit.html#doc_002dstrsplit">strsplit</a>. 
+</p></blockquote></div>
 
-   <p><a name="doc_002dsplit"></a>
+<!-- ./strings/strsplit.m -->
+   <p><a name="doc_002dstrsplit"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>split</b> (<var>s, t, n</var>)<var><a name="index-split-270"></a></var><br>
-<blockquote><p>Divides the string <var>s</var> into pieces separated by <var>t</var>, returning
-the result in a string array (padded with blanks to form a valid
-matrix).  If the optional input <var>n</var> is supplied, split <var>s</var>
-into at most <var>n</var> different pieces.
+&mdash; Function File: [<var>s</var>] = <b>strsplit</b> (<var>p, sep, strip_empty</var>)<var><a name="index-strsplit-326"></a></var><br>
+<blockquote><p>Split a single string using one or more delimiters and return a cell
+array of strings.  Consecutive delimiters and delimiters at
+boundaries result in empty strings, unless <var>strip_empty</var> is true. 
+The default value of <var>strip_empty</var> is false. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-        <p>For example,
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrtok.html#doc_002dstrtok">strtok</a>. 
+</p></blockquote></div>
 
-     <pre class="example">          split ("Test string", "t")
-          =&gt; "Tes "
-                  " s  "
-                  "ring"
-     </pre>
-        <pre class="example">          split ("Test string", "t", 2)
-          =&gt; "Tes    "
-                  " string"
-     </pre>
-        </blockquote></div>
-
+<!-- ./strings/strrep.m -->
    <p><a name="doc_002dstrrep"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>strrep</b> (<var>s, x, y</var>)<var><a name="index-strrep-271"></a></var><br>
-<blockquote><p>Replaces all occurrences of the substring <var>x</var> of the string <var>s</var>
-with the string <var>y</var>.  For example,
+&mdash; Function File:  <b>strrep</b> (<var>s, x, y</var>)<var><a name="index-strrep-327"></a></var><br>
+<blockquote><p>Replace all occurrences of the substring <var>x</var> of the string <var>s</var>
+with the string <var>y</var> and return the result.  For example,
 
      <pre class="example">          strrep ("This is a test string", "is", "&amp;%$")
-          =&gt; "Th&amp;%$ &amp;%$ a test string"
-     </pre>
-        </blockquote></div>
+                "Th&amp;%$ &amp;%$ a test string"
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dregexprep.html#doc_002dregexprep">regexprep</a>, <a href="doc_002dstrfind.html#doc_002dstrfind">strfind</a>, <a href="doc_002dfindstr.html#doc_002dfindstr">findstr</a>. 
+</p></blockquote></div>
 
+<!-- ./strings/substr.m -->
    <p><a name="doc_002dsubstr"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>substr</b> (<var>s, offset, len</var>)<var><a name="index-substr-272"></a></var><br>
+&mdash; Function File:  <b>substr</b> (<var>s, offset, len</var>)<var><a name="index-substr-328"></a></var><br>
 <blockquote><p>Return the substring of <var>s</var> which starts at character number
 <var>offset</var> and is <var>len</var> characters long.
 
@@ -425,19 +312,20 @@ of S.
         <p>For example,
 
      <pre class="example">          substr ("This is a test string", 6, 9)
-          =&gt; "is a test"
-     </pre>
+                "is a test"
+</pre>
         <p>This function is patterned after AWK.  You can get the same result by
-<var>s</var><code> (</code><var>offset</var><code> : (</code><var>offset</var><code> + </code><var>len</var><code> - 1))</code>. 
+<var>s</var><code>(</code><var>offset</var><code> : (</code><var>offset</var><code> + </code><var>len</var><code> - 1))</code>. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/regexp.cc -->
    <p><a name="doc_002dregexp"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>s</var>, <var>e</var>, <var>te</var>, <var>m</var>, <var>t</var>, <var>nm</var>] = <b>regexp</b> (<var>str, pat</var>)<var><a name="index-regexp-273"></a></var><br>
-&mdash; Loadable Function: [<small class="dots">...</small>] = <b>regexp</b> (<var>str, pat, opts, <small class="dots">...</small></var>)<var><a name="index-regexp-274"></a></var><br>
+&mdash; Loadable Function: [<var>s</var>, <var>e</var>, <var>te</var>, <var>m</var>, <var>t</var>, <var>nm</var>] = <b>regexp</b> (<var>str, pat</var>)<var><a name="index-regexp-329"></a></var><br>
+&mdash; Loadable Function: [<small class="dots">...</small>] = <b>regexp</b> (<var>str, pat, opts, <small class="dots">...</small></var>)<var><a name="index-regexp-330"></a></var><br>
 <blockquote>
-<p>Regular expression string matching. Matches <var>pat</var> in <var>str</var> and
+        <p>Regular expression string matching.  Matches <var>pat</var> in <var>str</var> and
 returns the position and matching substrings or empty values if there are
 none.
 
@@ -457,15 +345,15 @@ operators, including:
 </dl>
           <br><dt><code>[...] [^...]</code><dd>List operators, where for example <code>[ab]c</code> matches <code>ac</code> and <code>bc</code>
 <br><dt><code>()</code><dd>Grouping operator
-<br><dt><code>|</code><dd>Alternation operator. Match one of a choice of regular expressions. The
-alternatives must be delimited by the grouoing operator <code>()</code> above
-<br><dt><code>^ $</code><dd>Anchoring operator. <code>^</code> matches the start of the string <var>str</var> and
+<br><dt><code>|</code><dd>Alternation operator.  Match one of a choice of regular expressions.  The
+alternatives must be delimited by the grouping operator <code>()</code> above
+<br><dt><code>^ $</code><dd>Anchoring operator.  <code>^</code> matches the start of the string <var>str</var> and
 <code>$</code> the end
 </dl>
 
-        <p>In addition the following escaped characters have special meaning. It should
+        <p>In addition the following escaped characters have special meaning.  It should
 be noted that it is recommended to quote <var>pat</var> in single quotes rather
-than double quotes, to avoid the escape sequences being interpreted by octave
+than double quotes, to avoid the escape sequences being interpreted by Octave
 before being passed to <code>regexp</code>.
 
           <dl>
@@ -496,12 +384,12 @@ before being passed to <code>regexp</code>.
           <br><dt><var>t</var><dd>A cell array of the text of each token matched.
 
           <br><dt><var>nm</var><dd>A structure containing the text of each matched named token, with the name
-being used as the fieldname. A named token is denoted as
+being used as the fieldname.  A named token is denoted as
 <code>(?&lt;name&gt;...)</code>
 </dl>
 
         <p>Particular output arguments or the order of the output arguments can be
-selected by additional <var>opts</var> arguments. These are strings and the
+selected by additional <var>opts</var> arguments.  These are strings and the
 correspondence between the output arguments and the optional argument
 are
 
@@ -514,7 +402,7 @@ are
         <br></td></tr></table>
 
         <p>A further optional argument is 'once', that limits the number of returned
-matches to the first match. Additional arguments are
+matches to the first match.  Additional arguments are
 
           <dl>
 <dt>matchcase<dd>Make the matching case sensitive. 
@@ -527,57 +415,93 @@ matches to the first match. Additional arguments are
 <code>#</code>. 
 <br><dt>literalspacing<dd>The pattern is taken literally. 
 </dl>
-        </p></blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dregexpi.html#doc_002dregexpi">regexpi</a>, <a href="doc_002dregexprep.html#doc_002dregexprep">regexprep</a>. 
+</p></blockquote></div>
+
+<!-- ./DLD-FUNCTIONS/regexp.cc -->
    <p><a name="doc_002dregexpi"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>s</var>, <var>e</var>, <var>te</var>, <var>m</var>, <var>t</var>, <var>nm</var>] = <b>regexpi</b> (<var>str, pat</var>)<var><a name="index-regexpi-275"></a></var><br>
-&mdash; Loadable Function: [<small class="dots">...</small>] = <b>regexpi</b> (<var>str, pat, opts, <small class="dots">...</small></var>)<var><a name="index-regexpi-276"></a></var><br>
+&mdash; Loadable Function: [<var>s</var>, <var>e</var>, <var>te</var>, <var>m</var>, <var>t</var>, <var>nm</var>] = <b>regexpi</b> (<var>str, pat</var>)<var><a name="index-regexpi-331"></a></var><br>
+&mdash; Loadable Function: [<small class="dots">...</small>] = <b>regexpi</b> (<var>str, pat, opts, <small class="dots">...</small></var>)<var><a name="index-regexpi-332"></a></var><br>
 <blockquote>
-<p>Case insensitive regular expression string matching. Matches <var>pat</var> in
+        <p>Case insensitive regular expression string matching.  Matches <var>pat</var> in
 <var>str</var> and returns the position and matching substrings or empty values
-if there are none. See <code>regexp</code> for more details
+if there are none.  See <a href="doc_002dregexp.html#doc_002dregexp">regexp</a>, for more details
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/regexp.cc -->
    <p><a name="doc_002dregexprep"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>string</var> = <b>regexprep</b> (<var>string, pat, repstr, options</var>)<var><a name="index-regexprep-277"></a></var><br>
+&mdash; Loadable Function: <var>string</var> = <b>regexprep</b> (<var>string, pat, repstr, options</var>)<var><a name="index-regexprep-333"></a></var><br>
 <blockquote><p>Replace matches of <var>pat</var> in  <var>string</var> with <var>repstr</var>.
 
-        <p>The replacement can contain <code>$i</code>, which subsubstitutes
+        <p>The replacement can contain <code>$i</code>, which substitutes
 for the ith set of parentheses in the match string.  E.g.,
      <pre class="example">          
              regexprep("Bill Dunn",'(\w+) (\w+)','$2, $1')
-          
-     </pre>
+</pre>
         <p>returns "Dunn, Bill"
 
         <p><var>options</var> may be zero or more of
           <dl>
-<dt>`<samp><span class="samp">once</span></samp>'<dd>Replace only the first occurance of <var>pat</var> in the result.
+<dt>&lsquo;<samp><span class="samp">once</span></samp>&rsquo;<dd>Replace only the first occurrence of <var>pat</var> in the result.
 
-          <br><dt>`<samp><span class="samp">warnings</span></samp>'<dd>This option is present for compatibility but is ignored.
+          <br><dt>&lsquo;<samp><span class="samp">warnings</span></samp>&rsquo;<dd>This option is present for compatibility but is ignored.
 
-          <br><dt>`<samp><span class="samp">ignorecase or matchcase</span></samp>'<dd>Ignore case for the pattern matching (see <code>regexpi</code>). 
+          <br><dt>&lsquo;<samp><span class="samp">ignorecase or matchcase</span></samp>&rsquo;<dd>Ignore case for the pattern matching (see <code>regexpi</code>). 
 Alternatively, use (?i) or (?-i) in the pattern.
 
-          <br><dt>`<samp><span class="samp">lineanchors and stringanchors</span></samp>'<dd>Whether characters ^ and $ match the beginning and ending of lines. 
+          <br><dt>&lsquo;<samp><span class="samp">lineanchors and stringanchors</span></samp>&rsquo;<dd>Whether characters ^ and $ match the beginning and ending of lines. 
 Alternatively, use (?m) or (?-m) in the pattern.
 
-          <br><dt>`<samp><span class="samp">dotexceptnewline and dotall</span></samp>'<dd>Whether . matches newlines in the string. 
+          <br><dt>&lsquo;<samp><span class="samp">dotexceptnewline and dotall</span></samp>&rsquo;<dd>Whether . matches newlines in the string. 
 Alternatively, use (?s) or (?-s) in the pattern.
 
-          <br><dt>`<samp><span class="samp">freespacing or literalspacing</span></samp>'<dd>Whether whitespace and # comments can be used to make the regular expression more readable. 
+          <br><dt>&lsquo;<samp><span class="samp">freespacing or literalspacing</span></samp>&rsquo;<dd>Whether whitespace and # comments can be used to make the regular expression more readable. 
 Alternatively, use (?x) or (?-x) in the pattern.
 
         </dl>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> regexp,regexpi. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dregexp.html#doc_002dregexp">regexp</a>, <a href="doc_002dregexpi.html#doc_002dregexpi">regexpi</a>, <a href="doc_002dstrrep.html#doc_002dstrrep">strrep</a>. 
+</p></blockquote></div>
+
+<!-- ./strings/regexptranslate.m -->
+   <p><a name="doc_002dregexptranslate"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>regexptranslate</b> (<var>op, s</var>)<var><a name="index-regexptranslate-334"></a></var><br>
+<blockquote><p>Translate a string for use in a regular expression.  This might
+include either wildcard replacement or special character escaping. 
+The behavior can be controlled by the <var>op</var> that can have the
+values
+
+          <dl>
+<dt>"wildcard"<dd>The wildcard characters <code>.</code>, <code>*</code> and <code>?</code> are replaced
+with wildcards that are appropriate for a regular expression. 
+For example:
+          <pre class="example">               regexptranslate ("wildcard", "*.m")
+                     ".*\.m"
+</pre>
+          <br><dt>"escape"<dd>The characters <code>$.?[]</code>, that have special meaning for regular
+expressions are escaped so that they are treated literally.  For example:
+          <pre class="example">               regexptranslate ("escape", "12.5")
+                     "12\.5"
+</pre>
+          </dl>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dregexp.html#doc_002dregexp">regexp</a>, <a href="doc_002dregexpi.html#doc_002dregexpi">regexpi</a>, <a href="doc_002dregexprep.html#doc_002dregexprep">regexprep</a>. 
 </p></blockquote></div>
 
    </body></html>

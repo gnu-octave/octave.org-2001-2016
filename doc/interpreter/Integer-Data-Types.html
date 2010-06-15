@@ -3,11 +3,11 @@
 <title>Integer Data Types - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numeric-Data-Types.html#Numeric-Data-Types" title="Numeric Data Types">
-<link rel="prev" href="Ranges.html#Ranges" title="Ranges">
-<link rel="next" href="Logical-Values.html#Logical-Values" title="Logical Values">
+<link rel="prev" href="Single-Precision-Data-Types.html#Single-Precision-Data-Types" title="Single Precision Data Types">
+<link rel="next" href="Bit-Manipulations.html#Bit-Manipulations" title="Bit Manipulations">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -20,335 +20,126 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Integer-Data-Types"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Logical-Values.html#Logical-Values">Logical Values</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Ranges.html#Ranges">Ranges</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Bit-Manipulations.html#Bit-Manipulations">Bit Manipulations</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Single-Precision-Data-Types.html#Single-Precision-Data-Types">Single Precision Data Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>
 <hr>
 </div>
 
-<h3 class="section">4.3 Integer Data Types</h3>
+<h3 class="section">4.4 Integer Data Types</h3>
 
 <p>Octave supports integer matrices as an alternative to using double
-precision. It is possible to use both signed and unsigned integers
-represented by 8, 16, 32, or 64 bits. It should be noted that most
+precision.  It is possible to use both signed and unsigned integers
+represented by 8, 16, 32, or 64 bits.  It should be noted that most
 computations require floating point data, meaning that integers will
-often change type when involved in numeric computations. For this
+often change type when involved in numeric computations.  For this
 reason integers are most often used to store data, and not for
 calculations.
 
    <p>In general most integer matrices are created by casting
-existing matrices to integers. The following example shows how to cast
+existing matrices to integers.  The following example shows how to cast
 a matrix into 32 bit integers.
 
 <pre class="example">     float = rand (2, 2)
-          =&gt; float = 0.37569   0.92982
+           float = 0.37569   0.92982
                      0.11962   0.50876
      integer = int32 (float)
-          =&gt; integer = 0  1
+           integer = 0  1
                        0  1
 </pre>
    <p class="noindent">As can be seen, floating point values are rounded to the nearest integer
 when converted.
 
+<!-- data.cc -->
    <p><a name="doc_002disinteger"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isinteger</b> (<var>x</var>)<var><a name="index-isinteger-204"></a></var><br>
+&mdash; Built-in Function:  <b>isinteger</b> (<var>x</var>)<var><a name="index-isinteger-235"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is an integer object (int8, uint8, int16, etc.). 
 Note that <code>isinteger (14)</code> is false because numeric constants in
-are double precision floating point values.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> isreal, isnumeric, class, isa. 
+Octave are double precision floating point values. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002disreal.html#doc_002disreal">isreal</a>, <a href="doc_002disnumeric.html#doc_002disnumeric">isnumeric</a>, <a href="doc_002dclass.html#doc_002dclass">class</a>, <a href="doc_002disa.html#doc_002disa">isa</a>. 
 </p></blockquote></div>
 
+<!-- ov-int8.cc -->
    <p><a name="doc_002dint8"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>int8</b> (<var>x</var>)<var><a name="index-int8-205"></a></var><br>
+&mdash; Built-in Function:  <b>int8</b> (<var>x</var>)<var><a name="index-int8-236"></a></var><br>
 <blockquote><p>Convert <var>x</var> to 8-bit integer type. 
 </p></blockquote></div>
 
+<!-- ov-uint8.cc -->
    <p><a name="doc_002duint8"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>uint8</b> (<var>x</var>)<var><a name="index-uint8-206"></a></var><br>
+&mdash; Built-in Function:  <b>uint8</b> (<var>x</var>)<var><a name="index-uint8-237"></a></var><br>
 <blockquote><p>Convert <var>x</var> to unsigned 8-bit integer type. 
 </p></blockquote></div>
 
+<!-- ov-int16.cc -->
    <p><a name="doc_002dint16"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>int16</b> (<var>x</var>)<var><a name="index-int16-207"></a></var><br>
+&mdash; Built-in Function:  <b>int16</b> (<var>x</var>)<var><a name="index-int16-238"></a></var><br>
 <blockquote><p>Convert <var>x</var> to 16-bit integer type. 
 </p></blockquote></div>
 
+<!-- ov-uint16.cc -->
    <p><a name="doc_002duint16"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>uint16</b> (<var>x</var>)<var><a name="index-uint16-208"></a></var><br>
+&mdash; Built-in Function:  <b>uint16</b> (<var>x</var>)<var><a name="index-uint16-239"></a></var><br>
 <blockquote><p>Convert <var>x</var> to unsigned 16-bit integer type. 
 </p></blockquote></div>
 
+<!-- ov-int32.cc -->
    <p><a name="doc_002dint32"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>int32</b> (<var>x</var>)<var><a name="index-int32-209"></a></var><br>
+&mdash; Built-in Function:  <b>int32</b> (<var>x</var>)<var><a name="index-int32-240"></a></var><br>
 <blockquote><p>Convert <var>x</var> to 32-bit integer type. 
 </p></blockquote></div>
 
+<!-- ov-uint32.cc -->
    <p><a name="doc_002duint32"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>uint32</b> (<var>x</var>)<var><a name="index-uint32-210"></a></var><br>
+&mdash; Built-in Function:  <b>uint32</b> (<var>x</var>)<var><a name="index-uint32-241"></a></var><br>
 <blockquote><p>Convert <var>x</var> to unsigned 32-bit integer type. 
 </p></blockquote></div>
 
+<!-- ov-int64.cc -->
    <p><a name="doc_002dint64"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>int64</b> (<var>x</var>)<var><a name="index-int64-211"></a></var><br>
+&mdash; Built-in Function:  <b>int64</b> (<var>x</var>)<var><a name="index-int64-242"></a></var><br>
 <blockquote><p>Convert <var>x</var> to 64-bit integer type. 
 </p></blockquote></div>
 
+<!-- ov-uint64.cc -->
    <p><a name="doc_002duint64"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>uint64</b> (<var>x</var>)<var><a name="index-uint64-212"></a></var><br>
+&mdash; Built-in Function:  <b>uint64</b> (<var>x</var>)<var><a name="index-uint64-243"></a></var><br>
 <blockquote><p>Convert <var>x</var> to unsigned 64-bit integer type. 
 </p></blockquote></div>
 
+<!-- bitfcns.cc -->
    <p><a name="doc_002dintmax"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>intmax</b> (<var>type</var>)<var><a name="index-intmax-213"></a></var><br>
+&mdash; Built-in Function:  <b>intmax</b> (<var>type</var>)<var><a name="index-intmax-244"></a></var><br>
 <blockquote><p>Return the largest integer that can be represented in an integer type. 
 The variable <var>type</var> can be
 
@@ -363,17 +154,19 @@ The variable <var>type</var> can be
 <br><dt><code>uint64</code><dd>unsigned 64-bit integer. 
 </dl>
 
-        <p>The default for <var>type</var> is <code>uint32</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> intmin, bitmax. 
+        <p>The default for <var>type</var> is <code>uint32</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dintmin.html#doc_002dintmin">intmin</a>, <a href="doc_002dbitmax.html#doc_002dbitmax">bitmax</a>. 
 </p></blockquote></div>
 
+<!-- bitfcns.cc -->
    <p><a name="doc_002dintmin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>intmin</b> (<var>type</var>)<var><a name="index-intmin-214"></a></var><br>
+&mdash; Built-in Function:  <b>intmin</b> (<var>type</var>)<var><a name="index-intmin-245"></a></var><br>
 <blockquote><p>Return the smallest integer that can be represented in an integer type. 
 The variable <var>type</var> can be
 
@@ -388,11 +181,60 @@ The variable <var>type</var> can be
 <br><dt><code>uint64</code><dd>unsigned 64-bit integer. 
 </dl>
 
-        <p>The default for <var>type</var> is <code>uint32</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> intmax, bitmax. 
+        <p>The default for <var>type</var> is <code>uint32</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dintmax.html#doc_002dintmax">intmax</a>, <a href="doc_002dbitmax.html#doc_002dbitmax">bitmax</a>. 
+</p></blockquote></div>
+
+<!-- ./miscellaneous/intwarning.m -->
+   <p><a name="doc_002dintwarning"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>intwarning</b> (<var>action</var>)<var><a name="index-intwarning-246"></a></var><br>
+&mdash; Function File:  <b>intwarning</b> (<var>s</var>)<var><a name="index-intwarning-247"></a></var><br>
+&mdash; Function File: <var>s</var> = <b>intwarning</b> (<var><small class="dots">...</small></var>)<var><a name="index-intwarning-248"></a></var><br>
+<blockquote><p>Control the state of the warning for integer conversions and math
+operations.
+
+          <dl>
+<dt>"query"<dd>The state of the Octave integer conversion and math warnings is
+queried.  If there is no output argument, then the state is printed. 
+Otherwise it is returned in a structure with the fields "identifier"
+and "state".
+
+          <!-- Set example in small font to prevent overfull line -->
+          <pre class="smallexample">               intwarning ("query")
+               The state of warning "Octave:int-convert-nan" is "off"
+               The state of warning "Octave:int-convert-non-int-val" is "off"
+               The state of warning "Octave:int-convert-overflow" is "off"
+               The state of warning "Octave:int-math-overflow" is "off"
+</pre>
+          <br><dt>"on"<dd>Turn integer conversion and math warnings "on".  If there is no output
+argument, then nothing is printed.  Otherwise the original state of
+the state of the integer conversion and math warnings is returned in
+a structure array.
+
+          <br><dt>"off"<dd>Turn integer conversion and math warnings "on".  If there is no output
+argument, then nothing is printed.  Otherwise the original state of
+the state of the integer conversion and math warnings is returned in
+a structure array. 
+</dl>
+
+        <p>The original state of the integer warnings can be restored by passing
+the structure array returned by <code>intwarning</code> to a later call to
+<code>intwarning</code>.  For example
+
+     <pre class="example">          s = intwarning ("off");
+          ...
+          intwarning (s);
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dwarning.html#doc_002dwarning">warning</a>. 
 </p></blockquote></div>
 
 <ul class="menu">

@@ -3,7 +3,7 @@
 <title>Creating Packages - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Packages.html#Packages" title="Packages">
 <link rel="prev" href="Administrating-Packages.html#Administrating-Packages" title="Administrating Packages">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,10 +30,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Packages.html#Packages">Packages</a>
 <hr>
 </div>
 
-<h3 class="section">38.4 Creating Packages</h3>
+<h3 class="section">35.4 Creating Packages</h3>
 
 <p>Internally a package is simply a gzipped tar file that contains a
-top level directory of any given name. This directory will in the
+top level directory of any given name.  This directory will in the
 following be referred to as <code>package</code> and may contain the
 following files
 
@@ -262,38 +42,38 @@ following files
 <dt><code>package/DESCRIPTION</code><dd>This is a required file containing information about the package. 
 See <a href="The-DESCRIPTION-File.html#The-DESCRIPTION-File">The DESCRIPTION File</a>, for details on this file.
 
-     <br><dt><code>package/COPYING</code><dd>This is a required file containing the license of the package. No
-restrictions is made on the license in general. If however the
+     <br><dt><code>package/COPYING</code><dd>This is a required file containing the license of the package.  No
+restrictions is made on the license in general.  If however the
 package contains dynamically linked functions the license must be
 compatible with the GNU General Public License.
 
      <br><dt><code>package/INDEX</code><dd>This is an optional file describing the functions provided by the
-package. If this file is not given then one with be created
+package.  If this file is not given then one with be created
 automatically from the functions in the package and the
 <code>Categories</code> keyword in the <code>DESCRIPTION</code> file. 
 See <a href="The-INDEX-file.html#The-INDEX-file">The INDEX file</a>, for details on this file.
 
-     <br><dt><code>package/PKG_ADD</code><dd>An optional file that includes commands that are run when the package
-is added to the users path. Note that <code>PKG_ADD</code> directives in the
+     <p><a name="doc_002dPKG_005fADD"></a><br><dt><code>package/PKG_ADD</code><dd>An optional file that includes commands that are run when the package
+is added to the users path.  Note that <code>PKG_ADD</code><!-- /@w --> directives in the
 source code of the package will also be added to this file by the
-Octave package manager. Note that symbolic links are to be avoided in
+Octave package manager.  Note that symbolic links are to be avoided in
 packages, as symbolic links do not exist on some file systems, and so
 a typical use for this file is the replacement of the symbolic link
 
      <pre class="example">          ln -s foo.oct bar.oct
-     </pre>
+</pre>
      <p class="noindent">with an autoload directive like
 
      <pre class="example">          autoload ('bar', which ('foo'));
-     </pre>
-     <p class="noindent">See <a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>, for details on <code>PKG_ADD</code>
+</pre>
+     <p class="noindent">See <a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>, for details on <code>PKG_ADD</code><!-- /@w -->
 directives.
 
      <br><dt><code>package/PKG_DEL</code><dd>An optional file that includes commands that are run when the package
-is removed from the users path. Note that <code>PKG_DEL</code> directives in
+is removed from the users path.  Note that <code>PKG_DEL</code><!-- /@w --> directives in
 the source code of the package will also be added to this file by the
 Octave package manager. 
-See <a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>, for details on <code>PKG_DEL</code>
+See <a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>, for details on <code>PKG_DEL</code><!-- /@w -->
 directives.
 
      <br><dt><code>package/pre_install.m</code><dd>This is an optional script that is run prior to the installation of a
@@ -312,25 +92,25 @@ more of the following directories
 <p class="noindent">
      <dl>
 <dt><code>package/inst</code><dd>An optional directory containing any files that are directly installed
-by the package. Typically this will include any <code>m</code>-files.
+by the package.  Typically this will include any <code>m</code>-files.
 
      <br><dt><code>package/src</code><dd>An optional directory containing code that must be built prior to the
-packages installation. The Octave package manager will execute
-<code>./configure</code> in this directory if this script exists, and will
-then call <code>make</code> if a file <code>Makefile</code> exists in this
-directory. <code>make install</code> will however not be called. If a file
-called <code>FILES</code> exist all files listed there will be copied to the
-<code>inst</code> directory, so they also will be installed. If the
-<code>FILES</code> file doesn't exist, <code>src/*.m</code> and <code>src/*.oct</code>
+packages installation.  The Octave package manager will execute
+<samp><span class="file">./configure</span></samp> in this directory if this script exists, and will
+then call <code>make</code> if a file <samp><span class="file">Makefile</span></samp> exists in this
+directory.  <code>make install</code> will however not be called.  If a file
+called <code>FILES</code> exists all files listed there will be copied to the
+<code>inst</code> directory, so they also will be installed.  If the
+<code>FILES</code> file doesn't exist, <samp><span class="file">src/*.m</span></samp> and <samp><span class="file">src/*.oct</span></samp>
 will be copied to the <code>inst</code> directory.
 
-     <br><dt><code>package/doc</code><dd>An optional directory containing documentation for the package. The
+     <br><dt><code>package/doc</code><dd>An optional directory containing documentation for the package.  The
 files in this directory will be directly installed in a sub-directory
 of the installed package for future reference.
 
      <br><dt><code>package/bin</code><dd>An optional directory containing files that will be added to the
-Octave <code>EXEC_PATH</code> when the package is loaded. This might contain
-external scripts, etc, called by functions within the package. 
+Octave <code>EXEC_PATH</code><!-- /@w --> when the package is loaded.  This might contain
+external scripts, etc., called by functions within the package. 
 </dl>
 
 <ul class="menu">

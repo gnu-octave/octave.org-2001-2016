@@ -3,7 +3,7 @@
 <title>Loading and Saving Images - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Image-Processing.html#Image-Processing" title="Image Processing">
 <link rel="next" href="Displaying-Images.html#Displaying-Images" title="Displaying Images">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,67 +30,130 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Image-Processing.html#Image-Processing"
 <hr>
 </div>
 
-<h3 class="section">34.1 Loading and Saving Images</h3>
+<h3 class="section">31.1 Loading and Saving Images</h3>
 
 <p>The first step in most image processing tasks is to load an image
-into Octave. Currently Octave only support saving images in the
-Portable Pixmap Format (PPM), PostScript, and Octave's own format, and
-loading images in Octave's format. Most image processing code will
-follow the structure of this code
+into Octave.  This is done using the <code>imread</code> function, which uses the
+<code>GraphicsMagick</code> library for reading.  This means a vast number of image
+formats is supported.  The <code>imwrite</code> function is the corresponding function
+for writing images to the disk.
 
-<pre class="example">     I = loadimage ("my_input_image.img");
+   <p>In summary, most image processing code will follow the structure of this code
+
+<pre class="example">     I = imread ("my_input_image.img");
      J = process_my_image (I);
-     saveimage ("my_output_image.img", J);
+     imwrite ("my_output_image.img", J);
 </pre>
-   <p><a name="doc_002dloadimage"></a>
+   <!-- ./image/imread.m -->
+   <p><a name="doc_002dimread"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>x</var>, <var>map</var>] = <b>loadimage</b> (<var>file</var>)<var><a name="index-loadimage-1727"></a></var><br>
-<blockquote><p>Load an image file and it's associated color map from the specified
-<var>file</var>.  The image must be stored in Octave's image format.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> saveimage, load, save. 
+&mdash; Function File: [<var>img</var>, <var>map</var>, <var>alpha</var>] = <b>imread</b> (<var>filename</var>)<var><a name="index-imread-2182"></a></var><br>
+<blockquote><p>Read images from various file formats.
+
+        <p>The size and numeric class of the output depends on the
+format of the image.  A color image is returned as an
+MxNx3 matrix.  Grey-level and black-and-white images are
+of size MxN. 
+The color depth of the image determines the numeric
+class of the output: "uint8" or "uint16" for grey
+and color, and "logical" for black and white.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dimwrite.html#doc_002dimwrite">imwrite</a>, <a href="doc_002dimfinfo.html#doc_002dimfinfo">imfinfo</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dsaveimage"></a>
+<!-- ./image/imwrite.m -->
+   <p><a name="doc_002dimwrite"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>saveimage</b> (<var>file, x, fmt, map</var>)<var><a name="index-saveimage-1728"></a></var><br>
-<blockquote><p>Save the matrix <var>x</var> to <var>file</var> in image format <var>fmt</var>.  Valid
-values for <var>fmt</var> are
+&mdash; Function File:  <b>imwrite</b> (<var>img, filename, fmt, p1, v1, <small class="dots">...</small></var>)<var><a name="index-imwrite-2183"></a></var><br>
+&mdash; Function File:  <b>imwrite</b> (<var>img, map, filename, fmt, p1, v1, <small class="dots">...</small></var>)<var><a name="index-imwrite-2184"></a></var><br>
+<blockquote><p>Write images in various file formats.
+
+        <p>If <var>fmt</var> is missing, the file extension (if any) of
+<var>filename</var> is used to determine the format.
+
+        <p>The parameter-value pairs (<var>p1</var>, <var>v1</var>, <small class="dots">...</small>) are optional.  Currently
+the following options are supported for <tt>JPEG</tt> images
 
           <dl>
-<dt><code>"img"</code><dd>Octave's image format.  The current colormap is also saved in the file.
-
-          <br><dt><code>"ppm"</code><dd>Portable pixmap format.
-
-          <br><dt><code>"ps"</code><dd>PostScript format.  Note that images saved in PostScript format can not
-be read back into Octave with loadimage. 
+<dt>&lsquo;<samp><span class="samp">Quality</span></samp>&rsquo;<dd>Sets the quality of the compression.  The corresponding value should be an
+integer between 0 and 100, with larger values meaning higher visual quality
+and less compression. 
 </dl>
 
-        <p>If the fourth argument is supplied, the specified colormap will also be
-saved along with the image.
-
-        <p>Note: if the colormap contains only two entries and these entries are
-black and white, the bitmap ppm and PostScript formats are used.  If the
-image is a gray scale image (the entries within each row of the colormap
-are equal) the gray scale ppm and PostScript image formats are used,
-otherwise the full color formats are used.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> loadimage, save, load, colormap. 
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dimread.html#doc_002dimread">imread</a>, <a href="doc_002dimfinfo.html#doc_002dimfinfo">imfinfo</a>. 
 </p></blockquote></div>
 
+<!-- defaults.cc -->
    <p><a name="doc_002dIMAGE_005fPATH"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>IMAGE_PATH</b> ()<var><a name="index-IMAGE_005fPATH-1729"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>IMAGE_PATH</b> (<var>new_val</var>)<var><a name="index-IMAGE_005fPATH-1730"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>IMAGE_PATH</b> ()<var><a name="index-IMAGE_005fPATH-2185"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>IMAGE_PATH</b> (<var>new_val</var>)<var><a name="index-IMAGE_005fPATH-2186"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies a colon separated
 list of directories in which to search for image files. 
+</p></blockquote></div>
+
+   <p>It is possible to get information about an image file on disk, without actually
+reading it into Octave.  This is done using the <code>imfinfo</code> function which
+provides read access to many of the parameters stored in the header of the image
+file.
+
+<!-- ./image/imfinfo.m -->
+   <p><a name="doc_002dimfinfo"></a>
+
+<div class="defun">
+&mdash; Function File: <var>info</var> = <b>imfinfo</b> (<var>filename</var>)<var><a name="index-imfinfo-2187"></a></var><br>
+&mdash; Function File: <var>info</var> = <b>imfinfo</b> (<var>url</var>)<var><a name="index-imfinfo-2188"></a></var><br>
+<blockquote><p>Read image information from a file.
+
+        <p><code>imfinfo</code> returns a structure containing information about the image
+stored in the file <var>filename</var>.  The output structure contains the
+following fields.
+
+          <dl>
+<dt>&lsquo;<samp><span class="samp">Filename</span></samp>&rsquo;<dd>The full name of the image file. 
+<br><dt>&lsquo;<samp><span class="samp">FileSize</span></samp>&rsquo;<dd>Number of bytes of the image on disk
+<br><dt>&lsquo;<samp><span class="samp">FileModDate</span></samp>&rsquo;<dd>Date of last modification to the file. 
+<br><dt>&lsquo;<samp><span class="samp">Height</span></samp>&rsquo;<dd>Image height in pixels. 
+<br><dt>&lsquo;<samp><span class="samp">Width</span></samp>&rsquo;<dd>Image Width in pixels. 
+<br><dt>&lsquo;<samp><span class="samp">BitDepth</span></samp>&rsquo;<dd>Number of bits per channel per pixel. 
+<br><dt>&lsquo;<samp><span class="samp">Format</span></samp>&rsquo;<dd>Image format (e.g., <code>"jpeg"</code>). 
+<br><dt>&lsquo;<samp><span class="samp">LongFormat</span></samp>&rsquo;<dd>Long form image format description. 
+<br><dt>&lsquo;<samp><span class="samp">XResolution</span></samp>&rsquo;<dd>X resolution of the image. 
+<br><dt>&lsquo;<samp><span class="samp">YResolution</span></samp>&rsquo;<dd>Y resolution of the image. 
+<br><dt>&lsquo;<samp><span class="samp">TotalColors</span></samp>&rsquo;<dd>Number of unique colors in the image. 
+<br><dt>&lsquo;<samp><span class="samp">TileName</span></samp>&rsquo;<dd>Tile name. 
+<br><dt>&lsquo;<samp><span class="samp">AnimationDelay</span></samp>&rsquo;<dd>Time in 1/100ths of a second (0 to 65535) which must expire before displaying
+the next image in an animated sequence. 
+<br><dt>&lsquo;<samp><span class="samp">AnimationIterations</span></samp>&rsquo;<dd>Number of iterations to loop an animation (e.g., Netscape loop extension) for. 
+<br><dt>&lsquo;<samp><span class="samp">ByteOrder</span></samp>&rsquo;<dd>Endian option for formats that support it.  Is either <code>"little-endian"</code>,
+<code>"big-endian"</code>, or <code>"undefined"</code>. 
+<br><dt>&lsquo;<samp><span class="samp">Gamma</span></samp>&rsquo;<dd>Gamma level of the image.  The same color image displayed on two different
+workstations may look different due to differences in the display monitor. 
+<br><dt>&lsquo;<samp><span class="samp">Matte</span></samp>&rsquo;<dd><code>true</code> if the image has transparency. 
+<br><dt>&lsquo;<samp><span class="samp">ModulusDepth</span></samp>&rsquo;<dd>Image modulus depth (minimum number of bits required to support red/green/blue
+components without loss of accuracy). 
+<br><dt>&lsquo;<samp><span class="samp">Quality</span></samp>&rsquo;<dd>JPEG/MIFF/PNG compression level. 
+<br><dt>&lsquo;<samp><span class="samp">QuantizeColors</span></samp>&rsquo;<dd>Preferred number of colors in the image. 
+<br><dt>&lsquo;<samp><span class="samp">ResolutionUnits</span></samp>&rsquo;<dd>Units of image resolution.  Is either <code>"pixels per inch"</code>,
+<code>"pixels per centimeter"</code>, or <code>"undefined"</code>. 
+<br><dt>&lsquo;<samp><span class="samp">ColorType</span></samp>&rsquo;<dd>Image type.  Is either <code>"grayscale"</code>, <code>"indexed"</code>, <code>"truecolor"</code>,
+or <code>"undefined"</code>. 
+<br><dt>&lsquo;<samp><span class="samp">View</span></samp>&rsquo;<dd>FlashPix viewing parameters. 
+</dl>
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dimread.html#doc_002dimread">imread</a>, <a href="doc_002dimwrite.html#doc_002dimwrite">imwrite</a>. 
 </p></blockquote></div>
 
    </body></html>

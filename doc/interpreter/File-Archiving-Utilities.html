@@ -3,7 +3,7 @@
 <title>File Archiving Utilities - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
 <link rel="prev" href="Filesystem-Utilities.html#Filesystem-Utilities" title="Filesystem Utilities">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,38 +32,61 @@ Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities"
 <hr>
 </div>
 
-<h3 class="section">37.3 File Archiving Utilities</h3>
+<h3 class="section">34.3 File Archiving Utilities</h3>
 
+<!-- ./miscellaneous/bunzip2.m -->
 <p><a name="doc_002dbunzip2"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>bunzip2</b> (<var>bzfile, dir</var>)<var><a name="index-bunzip2-1851"></a></var><br>
-<blockquote><p>Unpack the bzip2 archive <var>bzfile</var> to the directory <var>dir</var>. If
-<var>dir</var> is not specified, it defaults to the current directory.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unpack, bzip2, tar, untar, gzip, gunzip, zip, unzip. 
+&mdash; Function File:  <b>bunzip2</b> (<var>bzfile, dir</var>)<var><a name="index-bunzip2-2349"></a></var><br>
+<blockquote><p>Unpack the bzip2 archive <var>bzfile</var> to the directory <var>dir</var>.  If
+<var>dir</var> is not specified, it defaults to the current directory. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunpack.html#doc_002dunpack">unpack</a>, <a href="doc_002dbzip2.html#doc_002dbzip2">bzip2</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>, <a href="doc_002duntar.html#doc_002duntar">untar</a>, <a href="doc_002dgzip.html#doc_002dgzip">gzip</a>, <a href="doc_002dgunzip.html#doc_002dgunzip">gunzip</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>, <a href="doc_002dunzip.html#doc_002dunzip">unzip</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/gzip.m -->
+   <p><a name="doc_002dgzip"></a>
+
+<div class="defun">
+&mdash; Function File: <var>entries</var> = <b>gzip</b> (<var>files</var>)<var><a name="index-gzip-2350"></a></var><br>
+&mdash; Function File: <var>entries</var> = <b>gzip</b> (<var>files, outdir</var>)<var><a name="index-gzip-2351"></a></var><br>
+<blockquote><p>Compress the list of files and/or directories specified in <var>files</var>. 
+Each file is compressed separately and a new file with a '.gz' extension
+is created.  The original files are not touched.  Existing compressed
+files are silently overwritten.  If <var>outdir</var> is defined the compressed
+versions of the files are placed in this directory. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgunzip.html#doc_002dgunzip">gunzip</a>, <a href="doc_002dbzip2.html#doc_002dbzip2">bzip2</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>. 
+</p></blockquote></div>
+
+<!-- ./miscellaneous/gunzip.m -->
    <p><a name="doc_002dgunzip"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>gunzip</b> (<var>gzfile, dir</var>)<var><a name="index-gunzip-1852"></a></var><br>
-<blockquote><p>Unpack the gzip archive <var>gzfile</var> to the directory <var>dir</var>. If
-<var>dir</var> is not specified, it defaults to the current directory. If
+&mdash; Function File:  <b>gunzip</b> (<var>gzfile, dir</var>)<var><a name="index-gunzip-2352"></a></var><br>
+<blockquote><p>Unpack the gzip archive <var>gzfile</var> to the directory <var>dir</var>.  If
+<var>dir</var> is not specified, it defaults to the current directory.  If
 the <var>gzfile</var> is a directory, all files in the directory will be
-recursively gunzipped.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unpack, bzip2, bunzip2, tar, untar, gzip, gunzip, zip, unzip. 
+recursively gunzipped. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunpack.html#doc_002dunpack">unpack</a>, <a href="doc_002dbunzip2.html#doc_002dbunzip2">bunzip2</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>, <a href="doc_002duntar.html#doc_002duntar">untar</a>, <a href="doc_002dgzip.html#doc_002dgzip">gzip</a>, <a href="doc_002dgunzip.html#doc_002dgunzip">gunzip</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>, <a href="doc_002dunzip.html#doc_002dunzip">unzip</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/tar.m -->
    <p><a name="doc_002dtar"></a>
 
 <div class="defun">
-&mdash; Function File: <var>entries</var> = <b>tar</b> (<var>tarfile, files, root</var>)<var><a name="index-tar-1853"></a></var><br>
+&mdash; Function File: <var>entries</var> = <b>tar</b> (<var>tarfile, files, root</var>)<var><a name="index-tar-2353"></a></var><br>
 <blockquote><p>Pack <var>files</var> <var>files</var> into the TAR archive <var>tarfile</var>.  The
 list of files must be a string or a cell array of strings.
 
@@ -291,77 +94,105 @@ list of files must be a string or a cell array of strings.
 from the current directory.
 
         <p>If an output argument is requested the entries in the archive are
-returned in a cell array.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> untar, gzip, gunzip, zip, unzip. 
+returned in a cell array. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002duntar.html#doc_002duntar">untar</a>, <a href="doc_002dgzip.html#doc_002dgzip">gzip</a>, <a href="doc_002dgunzip.html#doc_002dgunzip">gunzip</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>, <a href="doc_002dunzip.html#doc_002dunzip">unzip</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/untar.m -->
    <p><a name="doc_002duntar"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>untar</b> (<var>tarfile, dir</var>)<var><a name="index-untar-1854"></a></var><br>
+&mdash; Function File:  <b>untar</b> (<var>tarfile, dir</var>)<var><a name="index-untar-2354"></a></var><br>
 <blockquote><p>Unpack the TAR archive <var>tarfile</var> to the directory <var>dir</var>. 
-If <var>dir</var> is not specified, it defaults to the current directory.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unpack, bzip2, bunzip2, tar, gzip, gunzip, zip, unzip. 
+If <var>dir</var> is not specified, it defaults to the current directory. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunpack.html#doc_002dunpack">unpack</a>, <a href="doc_002dbunzip2.html#doc_002dbunzip2">bunzip2</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>, <a href="doc_002dgzip.html#doc_002dgzip">gzip</a>, <a href="doc_002dgunzip.html#doc_002dgunzip">gunzip</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>, <a href="doc_002dunzip.html#doc_002dunzip">unzip</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/zip.m -->
    <p><a name="doc_002dzip"></a>
 
 <div class="defun">
-&mdash; Function File: <var>entries</var> = <b>zip</b> (<var>zipfile, files</var>)<var><a name="index-zip-1855"></a></var><br>
-&mdash; Function File: <var>entries</var> = <b>zip</b> (<var>zipfile, files, rootdir</var>)<var><a name="index-zip-1856"></a></var><br>
+&mdash; Function File: <var>entries</var> = <b>zip</b> (<var>zipfile, files</var>)<var><a name="index-zip-2355"></a></var><br>
+&mdash; Function File: <var>entries</var> = <b>zip</b> (<var>zipfile, files, rootdir</var>)<var><a name="index-zip-2356"></a></var><br>
 <blockquote><p>Compress the list of files and/or directories specified in <var>files</var>
-into the archive <var>zipfiles</var> in the same directory. If <var>rootdir</var>
+into the archive <var>zipfiles</var> in the same directory.  If <var>rootdir</var>
 is defined the <var>files</var> is located relative to <var>rootdir</var> rather
 than the current directory
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unzip,tar. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunzip.html#doc_002dunzip">unzip</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/unzip.m -->
    <p><a name="doc_002dunzip"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unzip</b> (<var>zipfile, dir</var>)<var><a name="index-unzip-1857"></a></var><br>
+&mdash; Function File:  <b>unzip</b> (<var>zipfile, dir</var>)<var><a name="index-unzip-2357"></a></var><br>
 <blockquote><p>Unpack the ZIP archive <var>zipfile</var> to the directory <var>dir</var>. 
-If <var>dir</var> is not specified, it defaults to the current directory.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unpack, bzip2, bunzip2, tar, untar, gzip, gunzip, zip. 
+If <var>dir</var> is not specified, it defaults to the current directory. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunpack.html#doc_002dunpack">unpack</a>, <a href="doc_002dbunzip2.html#doc_002dbunzip2">bunzip2</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>, <a href="doc_002duntar.html#doc_002duntar">untar</a>, <a href="doc_002dgzip.html#doc_002dgzip">gzip</a>, <a href="doc_002dgunzip.html#doc_002dgunzip">gunzip</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/pack.m -->
    <p><a name="doc_002dpack"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>pack</b> ()<var><a name="index-pack-1858"></a></var><br>
-<blockquote><p>This function is provided for compatibility with <span class="sc">Matlab</span>, but it
+&mdash; Function File:  <b>pack</b> ()<var><a name="index-pack-2358"></a></var><br>
+<blockquote><p>This function is provided for compatibility with <span class="sc">matlab</span>, but it
 doesn't actually do anything. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/unpack.m -->
    <p><a name="doc_002dunpack"></a>
 
 <div class="defun">
-&mdash; Function File: <var>files</var> = <b>unpack</b> (<var>file, dir</var>)<var><a name="index-unpack-1859"></a></var><br>
-&mdash; Function File: <var>files</var> = <b>unpack</b> (<var>file, dir, filetype</var>)<var><a name="index-unpack-1860"></a></var><br>
+&mdash; Function File: <var>files</var> = <b>unpack</b> (<var>file, dir</var>)<var><a name="index-unpack-2359"></a></var><br>
+&mdash; Function File: <var>files</var> = <b>unpack</b> (<var>file, dir, filetype</var>)<var><a name="index-unpack-2360"></a></var><br>
 <blockquote><p>Unpack the archive <var>file</var> based on its extension to the directory
 <var>dir</var>.  If <var>file</var> is a cellstr, then all files will be
 handled individually.  If <var>dir</var> is not specified, it defaults to
 the current directory.  It returns a list of <var>files</var>
-unpacked. If a directory is in the file list, then the
+unpacked.  If a directory is in the file list, then the
 <var>filetype</var> to unpack must also be specified.
 
-        <p>The <var>files</var> includes the entire path to the output files.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> bzip2,bunzip2,tar,untar,gzip,gunzip,zip,unzip. 
+        <p>The <var>files</var> includes the entire path to the output files. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dbunzip2.html#doc_002dbunzip2">bunzip2</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>, <a href="doc_002duntar.html#doc_002duntar">untar</a>, <a href="doc_002dgzip.html#doc_002dgzip">gzip</a>, <a href="doc_002dgunzip.html#doc_002dgunzip">gunzip</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>, <a href="doc_002dunzip.html#doc_002dunzip">unzip</a>. 
+</p></blockquote></div>
+
+<!-- ./miscellaneous/bzip2.m -->
+   <p><a name="doc_002dbzip2"></a>
+
+<div class="defun">
+&mdash; Function File: <var>entries</var> = <b>bzip2</b> (<var>files</var>)<var><a name="index-bzip2-2361"></a></var><br>
+&mdash; Function File: <var>entries</var> = <b>bzip2</b> (<var>files, outdir</var>)<var><a name="index-bzip2-2362"></a></var><br>
+<blockquote><p>Compress the list of files specified in <var>files</var>. 
+Each file is compressed separately and a new file with a '.bz2' extension
+is created.  The original files are not touched.  Existing compressed files
+are silently overwritten.If <var>outdir</var> is defined the compressed versions
+of the files are placed in this directory. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dbunzip2.html#doc_002dbunzip2">bunzip2</a>, <a href="doc_002dgzip.html#doc_002dgzip">gzip</a>, <a href="doc_002dzip.html#doc_002dzip">zip</a>, <a href="doc_002dtar.html#doc_002dtar">tar</a>. 
 </p></blockquote></div>
 
    </body></html>

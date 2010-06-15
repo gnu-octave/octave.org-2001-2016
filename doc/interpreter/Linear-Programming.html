@@ -3,7 +3,7 @@
 <title>Linear Programming - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Optimization.html#Optimization" title="Optimization">
 <link rel="next" href="Quadratic-Programming.html#Quadratic-Programming" title="Quadratic Programming">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,7 +30,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization.html#Optimization">Optimiz
 <hr>
 </div>
 
-<h3 class="section">25.1 Linear Programming</h3>
+<h3 class="section">24.1 Linear Programming</h3>
 
 <p>Octave can solve Linear Programming problems using the <code>glpk</code>
 function.  That is, Octave can solve
@@ -262,30 +42,31 @@ A*x = b where x &gt;= 0.
 
 <p class="noindent">The <code>glpk</code> function also supports variations of this problem.
 
+<!-- ./optimization/glpk.m -->
    <p><a name="doc_002dglpk"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>xopt</var>, <var>fmin</var>, <var>status</var>, <var>extra</var>] = <b>glpk</b> (<var>c, a, b, lb, ub, ctype, vartype, sense, param</var>)<var><a name="index-glpk-1273"></a></var><br>
+&mdash; Function File: [<var>xopt</var>, <var>fmin</var>, <var>status</var>, <var>extra</var>] = <b>glpk</b> (<var>c, a, b, lb, ub, ctype, vartype, sense, param</var>)<var><a name="index-glpk-1801"></a></var><br>
 <blockquote><p>Solve a linear program using the GNU GLPK library.  Given three
 arguments, <code>glpk</code> solves the following standard LP:
 
      <pre class="example">          min C'*x
-     </pre>
+</pre>
         <p>subject to
 
      <pre class="example">          A*x  = b
             x &gt;= 0
-     </pre>
+</pre>
         <p>but may also solve problems of the form
 
      <pre class="example">          [ min | max ] C'*x
-     </pre>
+</pre>
         <p>subject to
 
      <pre class="example">          A*x [ "=" | "&lt;=" | "&gt;=" ] b
             x &gt;= LB
             x &lt;= UB
-     </pre>
+</pre>
         <p>Input arguments:
 
           <dl>
@@ -308,20 +89,18 @@ infinite.
 constraint matrix.  Each element of the array may be one of the
 following values
                <dl>
-<dt><code>"F"</code><dd>Free (unbounded) variable (the constraint is ignored). 
-<br><dt><code>"U"</code><dd>Variable with upper bound (<code>A(i,:)*x &lt;= b(i)</code>). 
-<br><dt><code>"S"</code><dd>Fixed Variable (<code>A(i,:)*x = b(i)</code>). 
-<br><dt><code>"L"</code><dd>Variable with lower bound (<code>A(i,:)*x &gt;= b(i)</code>). 
-<br><dt><code>"D"</code><dd>Double-bounded variable (<code>A(i,:)*x &gt;= -b(i)</code> <em>and</em>
-(<code>A(i,:)*x &lt;= b(i)</code>). 
+<dt><code>"F"</code><dd>A free (unbounded) constraint (the constraint is ignored). 
+<br><dt><code>"U"</code><dd>An inequality constraint with an upper bound (<code>A(i,:)*x &lt;= b(i)</code>). 
+<br><dt><code>"S"</code><dd>An equality constraint (<code>A(i,:)*x = b(i)</code>). 
+<br><dt><code>"L"</code><dd>An inequality with a lower bound (<code>A(i,:)*x &gt;= b(i)</code>). 
+<br><dt><code>"D"</code><dd>An inequality constraint with both upper and lower bounds
+(<code>A(i,:)*x &gt;= -b(i)</code> <em>and</em> (<code>A(i,:)*x &lt;= b(i)</code>). 
 </dl>
 
           <br><dt><var>vartype</var><dd>A column array containing the types of the variables.
                <dl>
-<dt><code>"F"</code><dd>"C"
-Continuous variable. 
-"I"
-Integer variable
+<dt><code>"C"</code><dd>A continuous variable. 
+<br><dt><code>"I"</code><dd>An integer variable. 
 </dl>
 
           <br><dt><var>sense</var><dd>If <var>sense</var> is 1, the problem is a minimization.  If <var>sense</var> is
@@ -345,8 +124,8 @@ from the default.
 
                <br><dt><code>scale (LPX_K_SCALE, default: 1)</code><dd>Scaling option:
                     <dl>
-<dt>0<dd>No scaling . 
-<br><dt>1<dd>Equilibration scaling . 
+<dt>0<dd>No scaling. 
+<br><dt>1<dd>Equilibration scaling. 
 <br><dt>2<dd>Geometric mean scaling, then equilibration scaling. 
 </dl>
 
@@ -400,7 +179,7 @@ will be ignored.
 <dt>1<dd>Revised simplex method. 
 <br><dt>2<dd>Interior point method. 
 </dl>
-               <br><dt><code>save (default: 0)</code><dd>If this parameter is nonzero, save a copy of the problem problem in
+               <br><dt><code>save (default: 0)</code><dd>If this parameter is nonzero, save a copy of the problem in
 CPLEX LP format to the file <samp><span class="file">"outpb.lp"</span></samp>.  There is currently no
 way to change the name of the output file. 
 </dl>
@@ -408,9 +187,9 @@ way to change the name of the output file.
           <p>Real parameters:
 
                <dl>
-<dt><code>relax (LPX_K_RELAX, default: 0.07)</code><dd>Relaxation parameter used in the ratio test. If it is zero, the textbook
-ratio test is used. If it is non-zero (should be positive), Harris'
-two-pass ratio test is used. In the latter case on the first pass of the
+<dt><code>relax (LPX_K_RELAX, default: 0.07)</code><dd>Relaxation parameter used in the ratio test.  If it is zero, the textbook
+ratio test is used.  If it is non-zero (should be positive), Harris'
+two-pass ratio test is used.  In the latter case on the first pass of the
 ratio test basic variables (in the case of primal simplex) or reduced
 costs of non-basic variables (in the case of dual simplex) are allowed
 to slightly violate their bounds, but not more than
@@ -433,18 +212,18 @@ have a detailed understanding of its purpose.
 function reaches this limit and continues decreasing, the solver stops
 the search.  This parameter is used in the dual simplex method only.
 
-               <br><dt><code>objul (LPX_K_OBJUL, default: +DBL_MAX)</code><dd>Upper limit of the objective function. If on the phase II the objective
+               <br><dt><code>objul (LPX_K_OBJUL, default: +DBL_MAX)</code><dd>Upper limit of the objective function.  If on the phase II the objective
 function reaches this limit and continues increasing, the solver stops
 the search.  This parameter is used in the dual simplex only.
 
-               <br><dt><code>tmlim (LPX_K_TMLIM, default: -1.0)</code><dd>Searching time limit, in seconds. If this value is positive, it is
+               <br><dt><code>tmlim (LPX_K_TMLIM, default: -1.0)</code><dd>Searching time limit, in seconds.  If this value is positive, it is
 decreased each time when one simplex iteration has been performed by the
 amount of time spent for the iteration, and reaching zero value signals
 the solver to stop the search.  Negative value means no time limit.
 
-               <br><dt><code>outdly (LPX_K_OUTDLY, default: 0.0)</code><dd>Output delay, in seconds. This parameter specifies how long the solver
+               <br><dt><code>outdly (LPX_K_OUTDLY, default: 0.0)</code><dd>Output delay, in seconds.  This parameter specifies how long the solver
 should delay sending information about the solution to the standard
-output. Non-positive value means no delay.
+output.  Non-positive value means no delay.
 
                <br><dt><code>tolint (LPX_K_TOLINT, default: 10e-5)</code><dd>Relative tolerance used to check if the current basic solution is integer
 feasible.  It is not recommended that you change this parameter unless
@@ -529,7 +308,7 @@ available if the version of GLPK is 4.15 or later).
           
           [xmin, fmin, status, extra] = ...
              glpk (c, a, b, lb, ub, ctype, vartype, s, param);
-     </pre>
+</pre>
         </blockquote></div>
 
    </body></html>

@@ -3,7 +3,7 @@
 <title>Saving Data on Unexpected Exits - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Simple-File-I_002fO.html#Simple-File-I_002fO" title="Simple File I/O">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -18,226 +18,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -248,96 +28,106 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Simple-File-I_002fO.html#Simple-File-I_
 <hr>
 </div>
 
-<h5 class="subsubsection">15.1.3.1 Saving Data on Unexpected Exits</h5>
+<h5 class="subsubsection">14.1.3.1 Saving Data on Unexpected Exits</h5>
 
-<p>If Octave for some reason exits unexpected it will by default save the
+<p>If Octave for some reason exits unexpectedly it will by default save the
 variables available in the workspace to a file in the current directory. 
-By default this file is named `<samp><span class="samp">octave-core</span></samp>' and can be loaded
-into memory with the <code>load</code> command.  While the default behaviour
+By default this file is named &lsquo;<samp><span class="samp">octave-core</span></samp>&rsquo; and can be loaded
+into memory with the <code>load</code> command.  While the default behavior
 most often is reasonable it can be changed through the following
 functions.
 
+<!-- load-save.cc -->
    <p><a name="doc_002dcrash_005fdumps_005foctave_005fcore"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>crash_dumps_octave_core</b> ()<var><a name="index-crash_005fdumps_005foctave_005fcore-672"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>crash_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-crash_005fdumps_005foctave_005fcore-673"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>crash_dumps_octave_core</b> ()<var><a name="index-crash_005fdumps_005foctave_005fcore-755"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>crash_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-crash_005fdumps_005foctave_005fcore-756"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave tries
 to save all current variables to the file "octave-core" if it
-crashes or receives a hangup, terminate or similar signal.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> octave_core_file_limit, octave_core_file_name, octave_core_file_options. 
+crashes or receives a hangup, terminate or similar signal. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002doctave_005fcore_005ffile_005flimit.html#doc_002doctave_005fcore_005ffile_005flimit">octave_core_file_limit</a>, <a href="doc_002doctave_005fcore_005ffile_005fname.html#doc_002doctave_005fcore_005ffile_005fname">octave_core_file_name</a>, <a href="doc_002doctave_005fcore_005ffile_005foptions.html#doc_002doctave_005fcore_005ffile_005foptions">octave_core_file_options</a>. 
 </p></blockquote></div>
 
+<!-- sighandlers.cc -->
    <p><a name="doc_002dsighup_005fdumps_005foctave_005fcore"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>sighup_dumps_octave_core</b> ()<var><a name="index-sighup_005fdumps_005foctave_005fcore-674"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>sighup_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sighup_005fdumps_005foctave_005fcore-675"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>sighup_dumps_octave_core</b> ()<var><a name="index-sighup_005fdumps_005foctave_005fcore-757"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>sighup_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sighup_005fdumps_005foctave_005fcore-758"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave tries
 to save all current variables to the file "octave-core" if it receives
 a hangup signal. 
 </p></blockquote></div>
 
+<!-- sighandlers.cc -->
    <p><a name="doc_002dsigterm_005fdumps_005foctave_005fcore"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>sigterm_dumps_octave_core</b> ()<var><a name="index-sigterm_005fdumps_005foctave_005fcore-676"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>sigterm_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sigterm_005fdumps_005foctave_005fcore-677"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>sigterm_dumps_octave_core</b> ()<var><a name="index-sigterm_005fdumps_005foctave_005fcore-759"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>sigterm_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sigterm_005fdumps_005foctave_005fcore-760"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave tries
 to save all current variables to the file "octave-core" if it receives
 a terminate signal. 
 </p></blockquote></div>
 
+<!-- load-save.cc -->
    <p><a name="doc_002doctave_005fcore_005ffile_005foptions"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_options</b> ()<var><a name="index-octave_005fcore_005ffile_005foptions-678"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_options</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005foptions-679"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_options</b> ()<var><a name="index-octave_005fcore_005ffile_005foptions-761"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_options</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005foptions-762"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the options used for
 saving the workspace data if Octave aborts.  The value of
 <code>octave_core_file_options</code> should follow the same format as the
-options for the <code>save</code> function. The default value is Octave's binary
-format.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> crash_dumps_octave_core, octave_core_file_name, octave_core_file_limit. 
+options for the <code>save</code> function.  The default value is Octave's binary
+format. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcrash_005fdumps_005foctave_005fcore.html#doc_002dcrash_005fdumps_005foctave_005fcore">crash_dumps_octave_core</a>, <a href="doc_002doctave_005fcore_005ffile_005fname.html#doc_002doctave_005fcore_005ffile_005fname">octave_core_file_name</a>, <a href="doc_002doctave_005fcore_005ffile_005flimit.html#doc_002doctave_005fcore_005ffile_005flimit">octave_core_file_limit</a>. 
 </p></blockquote></div>
 
+<!-- load-save.cc -->
    <p><a name="doc_002doctave_005fcore_005ffile_005flimit"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_limit</b> ()<var><a name="index-octave_005fcore_005ffile_005flimit-680"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_limit</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005flimit-681"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_limit</b> ()<var><a name="index-octave_005fcore_005ffile_005flimit-763"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_limit</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005flimit-764"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the maximum amount
 of memory (in kilobytes) of the top-level workspace that Octave will
 attempt to save when writing data to the crash dump file (the name of
 the file is specified by <var>octave_core_file_name</var>).  If
-<var>octave_core_file_options</var> flags specifies a binary format,
+<var>octave_core_file_options</var> flags specify a binary format,
 then <var>octave_core_file_limit</var> will be approximately the maximum
 size of the file.  If a text file format is used, then the file could
 be much larger than the limit.  The default value is -1 (unlimited)
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> crash_dumps_octave_core, octave_core_file_name, octave_core_file_options. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcrash_005fdumps_005foctave_005fcore.html#doc_002dcrash_005fdumps_005foctave_005fcore">crash_dumps_octave_core</a>, <a href="doc_002doctave_005fcore_005ffile_005fname.html#doc_002doctave_005fcore_005ffile_005fname">octave_core_file_name</a>, <a href="doc_002doctave_005fcore_005ffile_005foptions.html#doc_002doctave_005fcore_005ffile_005foptions">octave_core_file_options</a>. 
 </p></blockquote></div>
 
+<!-- load-save.cc -->
    <p><a name="doc_002doctave_005fcore_005ffile_005fname"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_name</b> ()<var><a name="index-octave_005fcore_005ffile_005fname-682"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_name</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005fname-683"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_name</b> ()<var><a name="index-octave_005fcore_005ffile_005fname-765"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_name</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005fname-766"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the name of the file
 used for saving data from the top-level workspace if Octave aborts. 
 The default value is <code>"octave-core"</code>
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> crash_dumps_octave_core, octave_core_file_name, octave_core_file_options. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcrash_005fdumps_005foctave_005fcore.html#doc_002dcrash_005fdumps_005foctave_005fcore">crash_dumps_octave_core</a>, <a href="doc_002doctave_005fcore_005ffile_005fname.html#doc_002doctave_005fcore_005ffile_005fname">octave_core_file_name</a>, <a href="doc_002doctave_005fcore_005ffile_005foptions.html#doc_002doctave_005fcore_005ffile_005foptions">octave_core_file_options</a>. 
 </p></blockquote></div>
 
    </body></html>

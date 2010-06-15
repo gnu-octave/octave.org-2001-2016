@@ -3,7 +3,7 @@
 <title>Exception and Error Handling in Oct-Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Input-Parameter-Checking-in-Oct_002dFiles.html#Input-Parameter-Checking-in-Oct_002dFiles" title="Input Parameter Checking in Oct-Files">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -260,7 +40,7 @@ typing <kbd>Control-C</kbd> even during calculations.  This ability is based on 
 C++ exception handler, where memory allocated by the C++ new/delete
 methods are automatically released when the exception is treated.  When
 writing an oct-file, to allow Octave to treat the user typing <kbd>Control-C</kbd>,
-the <code>OCTAVE_QUIT</code> macro is supplied.  For example
+the <code>OCTAVE_QUIT</code><!-- /@w --> macro is supplied.  For example
 
 <pre class="example">     for (octave_idx_type i = 0; i &lt; a.nelem (); i++)
        {
@@ -268,18 +48,18 @@ the <code>OCTAVE_QUIT</code> macro is supplied.  For example
          b.elem(i) = 2. * a.elem(i);
        }
 </pre>
-   <p>The presence of the <code>OCTAVE_QUIT</code> macro in the inner loop allows Octave to
+   <p>The presence of the <code>OCTAVE_QUIT</code><!-- /@w --> macro in the inner loop allows Octave to
 treat the user request with the <kbd>Control-C</kbd>.  Without this macro, the user
 must either wait for the function to return before the interrupt is
 processed, or press <kbd>Control-C</kbd> three times to force Octave to exit.
 
-   <p>The <code>OCTAVE_QUIT</code> macro does impose a very small speed penalty, and so for
+   <p>The <code>OCTAVE_QUIT</code><!-- /@w --> macro does impose a very small speed penalty, and so for
 loops that are known to be small it might not make sense to include
-<code>OCTAVE_QUIT</code>.
+<code>OCTAVE_QUIT</code><!-- /@w -->.
 
    <p>When creating an oct-file that uses an external libraries, the function
 might spend a significant portion of its time in the external
-library.  It is not generally possible to use the <code>OCTAVE_QUIT</code> macro in
+library.  It is not generally possible to use the <code>OCTAVE_QUIT</code><!-- /@w --> macro in
 this case.  The alternative in this case is
 
 <pre class="example">     BEGIN_INTERRUPT_IMMEDIATELY_IN_FOREIGN_CODE;
@@ -290,12 +70,12 @@ this case.  The alternative in this case is
 memory internally, then this memory might be lost during an interrupt,
 without being deallocated.  Therefore, ideally Octave itself should
 allocate any memory that is needed by the foreign code, with either the
-fortran_vec method or the <code>OCTAVE_LOCAL_BUFFER</code> macro.
+fortran_vec method or the <code>OCTAVE_LOCAL_BUFFER</code><!-- /@w --> macro.
 
-   <p>The Octave unwind_protect mechanism (<a href="The-unwind_005fprotect-Statement.html#The-unwind_005fprotect-Statement">The unwind_protect Statement</a>)
+   <p>The Octave unwind_protect mechanism (<a href="The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement.html#The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement">The <code>unwind_protect</code> Statement</a>)
 can also be used in oct-files.  In conjunction with the exception
 handling of Octave, it is important to enforce that certain code is run
-to allow variables, etc to be restored even if an exception occurs.  An
+to allow variables, etc. to be restored even if an exception occurs.  An
 example of the use of this mechanism is
 
 <pre class="example"><pre class="verbatim">     #include &lt;octave/oct.h>
@@ -321,7 +101,8 @@ example of the use of this mechanism is
            if (! error_state)
              {
                unwind_protect::begin_frame ("Funwinddemo");
-               unwind_protect_ptr (current_liboctave_warning_handler);
+               unwind_protect_ptr 
+     	    (current_liboctave_warning_handler);
                set_liboctave_warning_handler(err_hand);
                retval = octave_value (quotient (a, b));
                unwind_protect::run_frame ("Funwinddemo");
@@ -329,14 +110,13 @@ example of the use of this mechanism is
          }
        return retval;
      }
-</pre>
-</pre>
+</pre></pre>
    <p>As can be seen in the example
 
 <pre class="example">     unwinddemo (1, 0)
-     =&gt; Inf
+      Inf
      1 / 0
-     =&gt; warning: division by zero
+      warning: division by zero
         Inf
 </pre>
    <p>The division by zero (and in fact all warnings) is disabled in the

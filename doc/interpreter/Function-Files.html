@@ -3,7 +3,7 @@
 <title>Function Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
 <link rel="prev" href="Default-Arguments.html#Default-Arguments" title="Default Arguments">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-an
 <hr>
 </div>
 
-<h3 class="section">12.7 Function Files</h3>
+<h3 class="section">11.7 Function Files</h3>
 
-<p><a name="index-function-file-564"></a>
+<p><a name="index-function-file-612"></a>
 Except for simple one-shot programs, it is not practical to have to
 define all the functions you need each time you need them.  Instead, you
 will normally want to save them in a file so that you can easily edit
@@ -302,12 +82,114 @@ ignore the time stamps for all function files.  Passing
 <code>"system"</code> to this function resets the default behavior.
 
 <!-- FIXME - note about time stamps on files in NFS environments? -->
-<p><a name="doc_002dmfilename"></a>
+<!-- ./miscellaneous/edit.m -->
+   <p><a name="doc_002dedit"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>mfilename</b> ()<var><a name="index-mfilename-565"></a></var><br>
-&mdash; Built-in Function:  <b>mfilename</b> (<code>"fullpath"</code>)<var><a name="index-mfilename-566"></a></var><br>
-&mdash; Built-in Function:  <b>mfilename</b> (<code>"fullpathext"</code>)<var><a name="index-mfilename-567"></a></var><br>
+&mdash; Command: edit <var>name</var><var><a name="index-g_t_0040var_007bname_007d-613"></a></var><br>
+&mdash; Command: edit <var>field</var><var> value<a name="index-g_t_0040var_007bfield_007d-614"></a></var><br>
+&mdash; Command: <var>value</var> = <b>edit</b><var> get field<a name="index-edit-615"></a></var><br>
+<blockquote><p>Edit the named function, or change editor settings.
+
+        <p>If <code>edit</code> is called with the name of a file or function as
+its argument it will be opened in a text editor.
+
+          <ul>
+<li>If the function <var>name</var> is available in a file on your path and
+that file is modifiable, then it will be edited in place.  If it
+is a system function, then it will first be copied to the directory
+<code>HOME</code> (see further down) and then edited. 
+If no file is found, then the m-file
+variant, ending with ".m", will be considered.  If still no file
+is found, then variants with a leading "@" and then with both a
+leading "@" and trailing ".m" will be considered.
+
+          <li>If <var>name</var> is the name of a function defined in the interpreter but
+not in an m-file, then an m-file will be created in <code>HOME</code>
+to contain that function along with its current definition.
+
+          <li>If <code>name.cc</code> is specified, then it will search for <code>name.cc</code>
+in the path and try to modify it, otherwise it will create a new
+<samp><span class="file">.cc</span></samp> file in <code>HOME</code>.  If <var>name</var> happens to be an
+m-file or interpreter defined function, then the text of that
+function will be inserted into the .cc file as a comment.
+
+          <li>If <var>name.ext</var> is on your path then it will be edited, otherwise
+the editor will be started with <samp><span class="file">HOME/name.ext</span></samp> as the
+filename.  If <samp><span class="file">name.ext</span></samp> is not modifiable, it will be copied to
+<code>HOME</code> before editing.
+
+          <p><strong>WARNING!</strong> You may need to clear name before the new definition
+is available.  If you are editing a .cc file, you will need
+to mkoctfile <samp><span class="file">name.cc</span></samp> before the definition will be available. 
+</ul>
+
+        <p>If <code>edit</code> is called with <var>field</var> and <var>value</var> variables,
+the value of the control field <var>field</var> will be <var>value</var>. 
+If an output argument is requested and the first argument is <code>get</code>
+then <code>edit</code> will return the value of the control field <var>field</var>. 
+If the control field does not exist, edit will return a structure
+containing all fields and values.  Thus, <code>edit get all</code> returns
+a complete control structure. 
+The following control fields are used:
+
+          <dl>
+<dt>&lsquo;<samp><span class="samp">editor</span></samp>&rsquo;<dd>This is the editor to use to modify the functions.  By default it uses
+Octave's <code>EDITOR</code> built-in function, which comes from
+<code>getenv("EDITOR")</code> and defaults to <code>emacs</code>.  Use <code>%s</code>
+In place of the function name.  For example,
+               <dl>
+<dt>&lsquo;<samp><span class="samp">[EDITOR, " %s"]</span></samp>&rsquo;<dd>Use the editor which Octave uses for <code>bug_report</code>. 
+<br><dt>&lsquo;<samp><span class="samp">"xedit %s &amp;"</span></samp>&rsquo;<dd>pop up simple X11 editor in a separate window
+<br><dt>&lsquo;<samp><span class="samp">"gnudoit -q \"(find-file \\\"%s\\\")\""</span></samp>&rsquo;<dd>Send it to current Emacs; must have <code>(gnuserv-start)</code> in <samp><span class="file">.emacs</span></samp>. 
+</dl>
+
+          <p>See also field 'mode', which controls how the editor is run by Octave.
+
+          <p>On Cygwin, you will need to convert the Cygwin path to a Windows
+path if you are using a native Windows editor.  For example
+<!-- Set example in small font to prevent overfull line -->
+          <pre class="smallexample">               '"C:/Program Files/Good Editor/Editor.exe" "$(cygpath -wa %s)"'
+</pre>
+          <br><dt>&lsquo;<samp><span class="samp">home</span></samp>&rsquo;<dd>This is the location of user local m-files.  Be be sure it is in your
+path.  The default is <samp><span class="file">~/octave</span></samp>.
+
+          <br><dt>&lsquo;<samp><span class="samp">author</span></samp>&rsquo;<dd>This is the name to put after the "## Author:" field of new functions. 
+By default it guesses from the <code>gecos</code> field of password database.
+
+          <br><dt>&lsquo;<samp><span class="samp">email</span></samp>&rsquo;<dd>This is the e-mail address to list after the name in the author field. 
+By default it guesses <code>&lt;$LOGNAME@$HOSTNAME&gt;</code>, and if <code>$HOSTNAME</code>
+is not defined it uses <code>uname -n</code>.  You probably want to override this. 
+Be sure to use <code>&lt;user@host&gt;</code> as your format.
+
+          <br><dt>&lsquo;<samp><span class="samp">license</span></samp>&rsquo;<dd>
+               <dl>
+<dt>&lsquo;<samp><span class="samp">gpl</span></samp>&rsquo;<dd>GNU General Public License (default). 
+<br><dt>&lsquo;<samp><span class="samp">bsd</span></samp>&rsquo;<dd>BSD-style license without advertising clause. 
+<br><dt>&lsquo;<samp><span class="samp">pd</span></samp>&rsquo;<dd>Public domain. 
+<br><dt>&lsquo;<samp><span class="samp">"text"</span></samp>&rsquo;<dd>Your own default copyright and license. 
+</dl>
+
+          <p>Unless you specify &lsquo;<samp><span class="samp">pd</span></samp>&rsquo;, edit will prepend the copyright statement
+with "Copyright (C) yyyy Function Author".
+
+          <br><dt>&lsquo;<samp><span class="samp">mode</span></samp>&rsquo;<dd>This value determines whether the editor should be started in async mode
+(editor is started in the background and Octave continues) or sync mode
+(Octave waits until the editor exits).  Set it to "async" to start the editor
+in async mode.  The default is "sync" (see also "system").
+
+          <br><dt>&lsquo;<samp><span class="samp">editinplace</span></samp>&rsquo;<dd>Determines whether files should be edited in place, without regard to
+whether they are modifiable or not.  The default is <code>false</code>. 
+</dl>
+        </p></blockquote></div>
+
+<!-- parse.cc -->
+   <p><a name="doc_002dmfilename"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>mfilename</b> ()<var><a name="index-mfilename-616"></a></var><br>
+&mdash; Built-in Function:  <b>mfilename</b> (<code>"fullpath"</code>)<var><a name="index-mfilename-617"></a></var><br>
+&mdash; Built-in Function:  <b>mfilename</b> (<code>"fullpathext"</code>)<var><a name="index-mfilename-618"></a></var><br>
 <blockquote><p>Return the name of the currently executing file.  At the top-level,
 return the empty string.  Given the argument <code>"fullpath"</code>,
 include the directory part of the file name, but not the extension. 
@@ -315,11 +197,12 @@ Given the argument <code>"fullpathext"</code>, include the directory part
 of the file name and the extension. 
 </p></blockquote></div>
 
+<!-- symtab.cc -->
    <p><a name="doc_002dignore_005ffunction_005ftime_005fstamp"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>ignore_function_time_stamp</b> ()<var><a name="index-ignore_005ffunction_005ftime_005fstamp-568"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>ignore_function_time_stamp</b> (<var>new_val</var>)<var><a name="index-ignore_005ffunction_005ftime_005fstamp-569"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>ignore_function_time_stamp</b> ()<var><a name="index-ignore_005ffunction_005ftime_005fstamp-619"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>ignore_function_time_stamp</b> (<var>new_val</var>)<var><a name="index-ignore_005ffunction_005ftime_005fstamp-620"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave checks
 the time stamp on files each time it looks up functions defined in
 function files.  If the internal variable is set to <code>"system"</code>,
@@ -336,16 +219,18 @@ need to recompiled.
 <ul class="menu">
 <li><a accesskey="1" href="Manipulating-the-load-path.html#Manipulating-the-load-path">Manipulating the load path</a>
 <li><a accesskey="2" href="Subfunctions.html#Subfunctions">Subfunctions</a>
-<li><a accesskey="3" href="Overloading-and-Autoloading.html#Overloading-and-Autoloading">Overloading and Autoloading</a>
-<li><a accesskey="4" href="Function-Locking.html#Function-Locking">Function Locking</a>
+<li><a accesskey="3" href="Private-Functions.html#Private-Functions">Private Functions</a>
+<li><a accesskey="4" href="Overloading-and-Autoloading.html#Overloading-and-Autoloading">Overloading and Autoloading</a>
+<li><a accesskey="5" href="Function-Locking.html#Function-Locking">Function Locking</a>
+<li><a accesskey="6" href="Function-Precedence.html#Function-Precedence">Function Precedence</a>
 </ul>
 
    <div class="footnote">
 <hr>
-<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> The `<samp><span class="samp">.m</span></samp>' suffix was chosen for compatibility
-with <span class="sc">Matlab</span>.</p>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> The &lsquo;<samp><span class="samp">.m</span></samp>&rsquo; suffix was chosen for compatibility
+with <span class="sc">matlab</span>.</p>
 
-   <p><hr></div>
+   <hr></div>
 
    </body></html>
 

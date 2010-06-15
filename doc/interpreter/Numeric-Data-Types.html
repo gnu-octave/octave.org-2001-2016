@@ -3,7 +3,7 @@
 <title>Numeric Data Types - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Data-Types.html#Data-Types" title="Data Types">
 <link rel="next" href="Strings.html#Strings" title="Strings">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -253,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h2 class="chapter">4 Numeric Data Types</h2>
 
-<p><a name="index-numeric-constant-180"></a><a name="index-numeric-value-181"></a>
+<p><a name="index-numeric-constant-211"></a><a name="index-numeric-value-212"></a>
 A <dfn>numeric constant</dfn> may be a scalar, a vector, or a matrix, and it
 may contain complex values.
 
@@ -263,8 +43,9 @@ that can be an integer, a decimal fraction, a number in scientific
 constants are represented within Octave in double-precision floating
 point format (complex constants are stored as pairs of double-precision
 floating point values).  It is however possible to represent real
-integers as described in <a href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>. Here are some examples
-of real-valued numeric constants, which all have the same value:
+integers as described in <a href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>.  Here are some
+examples of real-valued numeric constants, which all have the same
+value:
 
 <pre class="example">     105
      1.05e+2
@@ -276,56 +57,70 @@ of real-valued numeric constants, which all have the same value:
      3.0 + 4.0i
      0.3e1 + 40e-1i
 </pre>
-   <p class="noindent">all of which are equivalent.  The letter `<samp><span class="samp">i</span></samp>' in the previous example
+   <p class="noindent">all of which are equivalent.  The letter &lsquo;<samp><span class="samp">i</span></samp>&rsquo; in the previous example
 stands for the pure imaginary constant, defined as
   <code>sqrt (-1)</code>.
 
    <p>For Octave to recognize a value as the imaginary part of a complex
-constant, a space must not appear between the number and the `<samp><span class="samp">i</span></samp>'. 
+constant, a space must not appear between the number and the &lsquo;<samp><span class="samp">i</span></samp>&rsquo;. 
 If it does, Octave will print an error message, like this:
 
 <pre class="example">     octave:13&gt; 3 + 4 i
      
      parse error:
      
-       3 + 4 i
-             ^
+       syntax error
+     
+     &gt;&gt;&gt; 3 + 4 i
+               ^
 </pre>
-   <p class="noindent">You may also use `<samp><span class="samp">j</span></samp>', `<samp><span class="samp">I</span></samp>', or `<samp><span class="samp">J</span></samp>' in place of the
-`<samp><span class="samp">i</span></samp>' above.  All four forms are equivalent.
+   <p class="noindent">You may also use &lsquo;<samp><span class="samp">j</span></samp>&rsquo;, &lsquo;<samp><span class="samp">I</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">J</span></samp>&rsquo; in place of the
+&lsquo;<samp><span class="samp">i</span></samp>&rsquo; above.  All four forms are equivalent.
 
+<!-- ov-re-mat.cc -->
    <p><a name="doc_002ddouble"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>double</b> (<var>x</var>)<var><a name="index-double-182"></a></var><br>
+&mdash; Built-in Function:  <b>double</b> (<var>x</var>)<var><a name="index-double-213"></a></var><br>
 <blockquote><p>Convert <var>x</var> to double precision type. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsingle.html#doc_002dsingle">single</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dsingle"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>single</b> (<var>val</var>)<var><a name="index-single-183"></a></var><br>
-<blockquote><p>Convert the numeric value <var>val</var> to single precision.
-
-        <p><strong>Note</strong>: this function currently returns its argument converted
-to double precision because Octave does not yet have a single-precision
-numeric data type. 
-</p></blockquote></div>
-
+<!-- data.cc -->
    <p><a name="doc_002dcomplex"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>complex</b> (<var>val</var>)<var><a name="index-complex-184"></a></var><br>
-&mdash; Built-in Function:  <b>complex</b> (<var>re, im</var>)<var><a name="index-complex-185"></a></var><br>
-<blockquote><p>Convert <var>x</var> to a complex value. 
+&mdash; Built-in Function:  <b>complex</b> (<var>x</var>)<var><a name="index-complex-214"></a></var><br>
+&mdash; Built-in Function:  <b>complex</b> (<var>re, im</var>)<var><a name="index-complex-215"></a></var><br>
+<blockquote><p>Return a complex result from real arguments.  With 1 real argument <var>x</var>,
+return the complex result <var>x</var><code> + 0i</code>.  With 2 real arguments,
+return the complex result <var>re</var><code> + </code><var>im</var>.  <code>complex</code> can
+often be more convenient than expressions such as <code>a + i*b</code>. 
+For example:
+
+     <pre class="example">          complex ([1, 2], [3, 4])
+          
+             1 + 3i   2 + 4i
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dreal.html#doc_002dreal">real</a>, <a href="doc_002dimag.html#doc_002dimag">imag</a>, <a href="doc_002discomplex.html#doc_002discomplex">iscomplex</a>. 
 </p></blockquote></div>
 
 <ul class="menu">
 <li><a accesskey="1" href="Matrices.html#Matrices">Matrices</a>
 <li><a accesskey="2" href="Ranges.html#Ranges">Ranges</a>
-<li><a accesskey="3" href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>
-<li><a accesskey="4" href="Logical-Values.html#Logical-Values">Logical Values</a>
-<li><a accesskey="5" href="Predicates-for-Numeric-Objects.html#Predicates-for-Numeric-Objects">Predicates for Numeric Objects</a>
+<li><a accesskey="3" href="Single-Precision-Data-Types.html#Single-Precision-Data-Types">Single Precision Data Types</a>
+<li><a accesskey="4" href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>
+<li><a accesskey="5" href="Bit-Manipulations.html#Bit-Manipulations">Bit Manipulations</a>
+<li><a accesskey="6" href="Logical-Values.html#Logical-Values">Logical Values</a>
+<li><a accesskey="7" href="Promotion-and-Demotion-of-Data-Types.html#Promotion-and-Demotion-of-Data-Types">Promotion and Demotion of Data Types</a>
+<li><a accesskey="8" href="Predicates-for-Numeric-Objects.html#Predicates-for-Numeric-Objects">Predicates for Numeric Objects</a>
 </ul>
 
    </body></html>

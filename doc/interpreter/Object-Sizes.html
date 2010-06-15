@@ -3,7 +3,7 @@
 <title>Object Sizes - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data-Types.html#Data-Types" title="Data Types">
 <link rel="prev" href="User_002ddefined-Data-Types.html#User_002ddefined-Data-Types" title="User-defined Data Types">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -258,61 +38,70 @@ expression.  These functions are defined for all objects.  They return
 data structure type doesn't have rows or columns, so the <code>rows</code> and
 <code>columns</code> functions return &minus;1 for structure arguments.
 
+<!-- data.cc -->
    <p><a name="doc_002dndims"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ndims</b> (<var>a</var>)<var><a name="index-ndims-170"></a></var><br>
+&mdash; Built-in Function:  <b>ndims</b> (<var>a</var>)<var><a name="index-ndims-200"></a></var><br>
 <blockquote><p>Returns the number of dimensions of array <var>a</var>. 
 For any array, the result will always be larger than or equal to 2. 
 Trailing singleton dimensions are not counted. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dcolumns"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>columns</b> (<var>a</var>)<var><a name="index-columns-171"></a></var><br>
-<blockquote><p>Return the number of columns of <var>a</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> size, numel, rows, length, isscalar, isvector, and ismatrix. 
+&mdash; Built-in Function:  <b>columns</b> (<var>a</var>)<var><a name="index-columns-201"></a></var><br>
+<blockquote><p>Return the number of columns of <var>a</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsize.html#doc_002dsize">size</a>, <a href="doc_002dnumel.html#doc_002dnumel">numel</a>, <a href="doc_002drows.html#doc_002drows">rows</a>, <a href="doc_002dlength.html#doc_002dlength">length</a>, <a href="doc_002disscalar.html#doc_002disscalar">isscalar</a>, <a href="doc_002disvector.html#doc_002disvector">isvector</a>, <a href="doc_002dismatrix.html#doc_002dismatrix">ismatrix</a>. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002drows"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>rows</b> (<var>a</var>)<var><a name="index-rows-172"></a></var><br>
-<blockquote><p>Return the number of rows of <var>a</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> size, numel, columns, length, isscalar, isvector, ismatrix. 
+&mdash; Built-in Function:  <b>rows</b> (<var>a</var>)<var><a name="index-rows-202"></a></var><br>
+<blockquote><p>Return the number of rows of <var>a</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsize.html#doc_002dsize">size</a>, <a href="doc_002dnumel.html#doc_002dnumel">numel</a>, <a href="doc_002dcolumns.html#doc_002dcolumns">columns</a>, <a href="doc_002dlength.html#doc_002dlength">length</a>, <a href="doc_002disscalar.html#doc_002disscalar">isscalar</a>, <a href="doc_002disvector.html#doc_002disvector">isvector</a>, <a href="doc_002dismatrix.html#doc_002dismatrix">ismatrix</a>. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dnumel"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>numel</b> (<var>a</var>)<var><a name="index-numel-173"></a></var><br>
-<blockquote><p>Returns the number of elements in the object <var>a</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> size. 
+&mdash; Built-in Function:  <b>numel</b> (<var>a</var>)<var><a name="index-numel-203"></a></var><br>
+<blockquote><p>Returns the number of elements in the object <var>a</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsize.html#doc_002dsize">size</a>. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dlength"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>length</b> (<var>a</var>)<var><a name="index-length-174"></a></var><br>
+&mdash; Built-in Function:  <b>length</b> (<var>a</var>)<var><a name="index-length-204"></a></var><br>
 <blockquote><p>Return the `length' of the object <var>a</var>.  For matrix objects, the
 length is the number of rows or columns, whichever is greater (this
-odd definition is used for compatibility with <span class="sc">Matlab</span>). 
+odd definition is used for compatibility with <span class="sc">matlab</span>). 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dsize"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>size</b> (<var>a, n</var>)<var><a name="index-size-175"></a></var><br>
+&mdash; Built-in Function:  <b>size</b> (<var>a, n</var>)<var><a name="index-size-205"></a></var><br>
 <blockquote><p>Return the number rows and columns of <var>a</var>.
 
         <p>With one input argument and one output argument, the result is returned
@@ -321,62 +110,96 @@ rows is assigned to the first, and the number of columns to the second,
 etc.  For example,
 
      <pre class="example">          size ([1, 2; 3, 4; 5, 6])
-               =&gt; [ 3, 2 ]
+                [ 3, 2 ]
           
           [nr, nc] = size ([1, 2; 3, 4; 5, 6])
-               =&gt; nr = 3
-               =&gt; nc = 2
-     </pre>
+                nr = 3
+                nc = 2
+</pre>
         <p>If given a second argument, <code>size</code> will return the size of the
 corresponding dimension.  For example
 
      <pre class="example">          size ([1, 2; 3, 4; 5, 6], 2)
-               =&gt; 2
-     </pre>
-        <p class="noindent">returns the number of columns in the given matrix.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> numel. 
+                2
+</pre>
+        <p class="noindent">returns the number of columns in the given matrix. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnumel.html#doc_002dnumel">numel</a>. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002disempty"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isempty</b> (<var>a</var>)<var><a name="index-isempty-176"></a></var><br>
+&mdash; Built-in Function:  <b>isempty</b> (<var>a</var>)<var><a name="index-isempty-206"></a></var><br>
 <blockquote><p>Return 1 if <var>a</var> is an empty matrix (either the number of rows, or
 the number of columns, or both are zero).  Otherwise, return 0. 
 </p></blockquote></div>
 
+<!-- ov-null-mat.cc -->
+   <p><a name="doc_002disnull"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>isnull</b> (<var>x</var>)<var><a name="index-isnull-207"></a></var><br>
+<blockquote><p>Return 1 if <var>x</var> is a special null matrix, string or single quoted string. 
+Indexed assignment with such a value as right-hand side should delete array elements. 
+This function should be used when overloading indexed assignment for user-defined
+classes instead of <code>isempty</code>, to distinguish the cases:
+          <dl>
+<dt><code>A(I) = []</code><dd>This should delete elements if <code>I</code> is nonempty. 
+<br><dt><code>X = []; A(I) = X</code><dd>This should give an error if <code>I</code> is nonempty. 
+</dl>
+        </p></blockquote></div>
+
+<!-- ov.cc -->
    <p><a name="doc_002dsizeof"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sizeof</b> (<var>val</var>)<var><a name="index-sizeof-177"></a></var><br>
+&mdash; Built-in Function:  <b>sizeof</b> (<var>val</var>)<var><a name="index-sizeof-208"></a></var><br>
 <blockquote><p>Return the size of <var>val</var> in bytes
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dsize_005fequal"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>size_equal</b> (<var>a, b, <small class="dots">...</small></var>)<var><a name="index-size_005fequal-178"></a></var><br>
+&mdash; Built-in Function:  <b>size_equal</b> (<var>a, b, <small class="dots">...</small></var>)<var><a name="index-size_005fequal-209"></a></var><br>
 <blockquote><p>Return true if the dimensions of all arguments agree. 
-Trailing singleton dimensions are ignored.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> size, numel. 
+Trailing singleton dimensions are ignored. 
+Called with a single argument, size_equal returns true. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsize.html#doc_002dsize">size</a>, <a href="doc_002dnumel.html#doc_002dnumel">numel</a>. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dsqueeze"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>squeeze</b> (<var>x</var>)<var><a name="index-squeeze-179"></a></var><br>
+&mdash; Built-in Function:  <b>squeeze</b> (<var>x</var>)<var><a name="index-squeeze-210"></a></var><br>
 <blockquote><p>Remove singleton dimensions from <var>x</var> and return the result. 
+Note that for compatibility with <span class="sc">matlab</span>, all objects have
+a minimum of two dimensions and row vectors are left unchanged. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+<!-- Copyright (C) 1996, 1997, 2007, 2008, 2009 John W. Eaton -->
+<!-- This file is part of Octave. -->
+<!-- Octave is free software; you can redistribute it and/or modify it -->
+<!-- under the terms of the GNU General Public License as published by the -->
+<!-- Free Software Foundation; either version 3 of the License, or (at -->
+<!-- your option) any later version. -->
+<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
+<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
+<!-- for more details. -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Octave; see the file COPYING.  If not, see -->
+<!-- <http://www.gnu.org/licenses/>. -->
+   </body></html>
 

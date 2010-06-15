@@ -3,7 +3,7 @@
 <title>Set Operations - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sets.html#Sets" title="Sets">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -18,226 +18,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -248,11 +28,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Sets.html#Sets">Sets</a>
 <hr>
 </div>
 
-<h3 class="section">28.1 Set Operations</h3>
+<h3 class="section">26.1 Set Operations</h3>
 
 <p>Octave supports the basic set operations.  That is, Octave can compute
 the union, intersection, complement, and difference of two sets. 
-Octave can also supports the <em>Exclusive Or</em> set operation, and
+Octave also supports the <em>Exclusive Or</em> set operation, and
 membership determination.  The functions for set operations all work in
 pretty much the same way.  As an example, assume that <code>x</code> and
 <code>y</code> contains two sets, then
@@ -261,105 +41,174 @@ pretty much the same way.  As an example, assume that <code>x</code> and
 </pre>
    <p class="noindent">computes the union of the two sets.
 
+<!-- ./set/ismember.m -->
    <p><a name="doc_002dismember"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ismember</b> (<var>A, S</var>)<var><a name="index-ismember-1466"></a></var><br>
-<blockquote><p>Return a matrix the same shape as <var>A</var> which has 1 if
-<code>A(i,j)</code> is in <var>S</var> or 0 if it isn't.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unique, union, intersection, setxor, setdiff. 
+&mdash; Function File: [<var>tf</var> = <b>ismember</b> (<var>A, S</var>)<var><a name="index-ismember-2006"></a></var><br>
+&mdash; Function File: [<var>tf</var>, <var>S_idx</var>] = <b>ismember</b> (<var>A, S</var>)<var><a name="index-ismember-2007"></a></var><br>
+&mdash; Function File: [<var>tf</var>, <var>S_idx</var>] = <b>ismember</b> (<var>A, S, "rows"</var>)<var><a name="index-ismember-2008"></a></var><br>
+<blockquote><p>Return a matrix <var>tf</var> with the same shape as <var>A</var> which has a 1 if
+<code>A(i,j)</code> is in <var>S</var> and 0 if it is not.  If a second output argument
+is requested, the index into <var>S</var> of each of the matching elements is
+also returned.
+
+     <pre class="example">          a = [3, 10, 1];
+          s = [0:9];
+          [tf, s_idx] = ismember (a, s);
+                tf = [1, 0, 1]
+                s_idx = [4, 0, 2]
+</pre>
+        <p>The inputs, <var>A</var> and <var>S</var>, may also be cell arrays.
+
+     <pre class="example">          a = {'abc'};
+          s = {'abc', 'def'};
+          [tf, s_idx] = ismember (a, s);
+                tf = [1, 0]
+                s_idx = [1, 0]
+</pre>
+        <p>With the optional third argument <code>"rows"</code>, and matrices
+<var>A</var> and <var>S</var> with the same number of columns, compare rows in
+<var>A</var> with the rows in <var>S</var>.
+
+     <pre class="example">          a = [1:3; 5:7; 4:6];
+          s = [0:2; 1:3; 2:4; 3:5; 4:6];
+          [tf, s_idx] = ismember(a, s, 'rows');
+                tf = logical ([1; 0; 1])
+                s_idx = [2; 0; 5];
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunique.html#doc_002dunique">unique</a>, <a href="doc_002dunion.html#doc_002dunion">union</a>, <a href="doc_002dintersect.html#doc_002dintersect">intersect</a>, <a href="doc_002dsetxor.html#doc_002dsetxor">setxor</a>, <a href="doc_002dsetdiff.html#doc_002dsetdiff">setdiff</a>. 
 </p></blockquote></div>
 
+<!-- ./set/union.m -->
    <p><a name="doc_002dunion"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>union</b> (<var>x, y</var>)<var><a name="index-union-1467"></a></var><br>
-<blockquote><p>Return the set of elements that are in either of the sets <var>x</var> and
-<var>y</var>.  For example,
+&mdash; Function File:  <b>union</b> (<var>a, b</var>)<var><a name="index-union-2009"></a></var><br>
+&mdash; Function File:  <b>union</b> (<var>a, b, "rows"</var>)<var><a name="index-union-2010"></a></var><br>
+<blockquote><p>Return the set of elements that are in either of the sets <var>a</var> and
+<var>b</var>.  For example,
 
-     <pre class="example">          union ([ 1, 2, 4 ], [ 2, 3, 5 ])
-          =&gt; [ 1, 2, 3, 4, 5 ]
-     </pre>
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> create_set, intersection, complement. 
+     <pre class="example">          union ([1, 2, 4], [2, 3, 5])
+                [1, 2, 3, 4, 5]
+</pre>
+        <p>If the optional third input argument is the string "rows" each row of
+the matrices <var>a</var> and <var>b</var> will be considered an element of sets. 
+For example,
+     <pre class="example">          union([1, 2; 2, 3], [1, 2; 3, 4], "rows")
+                 1   2
+              2   3
+              3   4
+</pre>
+        &mdash; Function File: [<var>c</var>, <var>ia</var>, <var>ib</var>] = <b>union</b> (<var>a, b</var>)<var><a name="index-union-2011"></a></var><br>
+<blockquote>
+        <p>Return index vectors <var>ia</var> and <var>ib</var> such that <code>a == c(ia)</code> and
+<code>b == c(ib)</code>.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dintersect.html#doc_002dintersect">intersect</a>, <a href="doc_002dcomplement.html#doc_002dcomplement">complement</a>, <a href="doc_002dunique.html#doc_002dunique">unique</a>. 
 </p></blockquote></div>
 
+<!-- ./set/intersect.m -->
    <p><a name="doc_002dintersect"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>intersect</b> (<var>a, b</var>)<var><a name="index-intersect-1468"></a></var><br>
-&mdash; Function File: [<var>c</var>, <var>ia</var>, <var>ib</var>] = <b>intersect</b> (<var>a, b</var>)<var><a name="index-intersect-1469"></a></var><br>
+&mdash; Function File:  <b>intersect</b> (<var>a, b</var>)<var><a name="index-intersect-2012"></a></var><br>
+&mdash; Function File: [<var>c</var>, <var>ia</var>, <var>ib</var>] = <b>intersect</b> (<var>a, b</var>)<var><a name="index-intersect-2013"></a></var><br>
 <blockquote>
-<p>Return the elements in both <var>a</var> and <var>b</var>, sorted in ascending
-order. If <var>a</var> and <var>b</var> are both column vectors return a column
+        <p>Return the elements in both <var>a</var> and <var>b</var>, sorted in ascending
+order.  If <var>a</var> and <var>b</var> are both column vectors return a column
 vector, otherwise return a row vector.
 
         <p>Return index vectors <var>ia</var> and <var>ib</var> such that <code>a(ia)==c</code> and
 <code>b(ib)==c</code>.
 
         </blockquote></div>
+   <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-   <pre class="sp">
+<p class="noindent"><strong>See also:</strong> <a href="doc_002dunique.html#doc_002dunique">unique</a>, <a href="doc_002dunion.html#doc_002dunion">union</a>, <a href="doc_002dsetxor.html#doc_002dsetxor">setxor</a>, <a href="doc_002dsetdiff.html#doc_002dsetdiff">setdiff</a>, <a href="doc_002dismember.html#doc_002dismember">ismember</a>.
 
-</pre>
-<strong>See also:</strong> unique, union, setxor, setdiff, ismember.
-
+<!-- ./set/complement.m -->
    <p><a name="doc_002dcomplement"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>complement</b> (<var>x, y</var>)<var><a name="index-complement-1470"></a></var><br>
+&mdash; Function File:  <b>complement</b> (<var>x, y</var>)<var><a name="index-complement-2014"></a></var><br>
 <blockquote><p>Return the elements of set <var>y</var> that are not in set <var>x</var>.  For
 example,
 
      <pre class="example">          complement ([ 1, 2, 3 ], [ 2, 3, 5 ])
-          =&gt; 5
-     </pre>
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> create_set, union, intersection. 
+                5
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunion.html#doc_002dunion">union</a>, <a href="doc_002dintersect.html#doc_002dintersect">intersect</a>, <a href="doc_002dunique.html#doc_002dunique">unique</a>. 
 </p></blockquote></div>
 
+<!-- ./set/setdiff.m -->
    <p><a name="doc_002dsetdiff"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>setdiff</b> (<var>a, b</var>)<var><a name="index-setdiff-1471"></a></var><br>
-&mdash; Function File:  <b>setdiff</b> (<var>a, b, "rows"</var>)<var><a name="index-setdiff-1472"></a></var><br>
+&mdash; Function File:  <b>setdiff</b> (<var>a, b</var>)<var><a name="index-setdiff-2015"></a></var><br>
+&mdash; Function File:  <b>setdiff</b> (<var>a, b, "rows"</var>)<var><a name="index-setdiff-2016"></a></var><br>
+&mdash; Function File: [<var>c</var>, <var>i</var>] = <b>setdiff</b> (<var>a, b</var>)<var><a name="index-setdiff-2017"></a></var><br>
 <blockquote><p>Return the elements in <var>a</var> that are not in <var>b</var>, sorted in
 ascending order.  If <var>a</var> and <var>b</var> are both column vectors
 return a column vector, otherwise return a row vector.
 
-        <p>Given the optional third argument `<samp><span class="samp">"rows"</span></samp>', return the rows in
+        <p>Given the optional third argument &lsquo;<samp><span class="samp">"rows"</span></samp>&rsquo;, return the rows in
 <var>a</var> that are not in <var>b</var>, sorted in ascending order by rows.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unique, union, intersect, setxor, ismember. 
+
+        <p>If requested, return <var>i</var> such that <code>c = a(i)</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunique.html#doc_002dunique">unique</a>, <a href="doc_002dunion.html#doc_002dunion">union</a>, <a href="doc_002dintersect.html#doc_002dintersect">intersect</a>, <a href="doc_002dsetxor.html#doc_002dsetxor">setxor</a>, <a href="doc_002dismember.html#doc_002dismember">ismember</a>. 
 </p></blockquote></div>
 
+<!-- ./set/setxor.m -->
    <p><a name="doc_002dsetxor"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>setxor</b> (<var>a, b</var>)<var><a name="index-setxor-1473"></a></var><br>
+&mdash; Function File:  <b>setxor</b> (<var>a, b</var>)<var><a name="index-setxor-2018"></a></var><br>
+&mdash; Function File:  <b>setxor</b> (<var>a, b, 'rows'</var>)<var><a name="index-setxor-2019"></a></var><br>
 <blockquote>
-<p>Return the elements exclusive to <var>a</var> or <var>b</var>, sorted in ascending
-order. If <var>a</var> and <var>b</var> are both column vectors return a column
+        <p>Return the elements exclusive to <var>a</var> or <var>b</var>, sorted in ascending
+order.  If <var>a</var> and <var>b</var> are both column vectors return a column
 vector, otherwise return a row vector.
 
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unique, union, intersect, setdiff, ismember. 
+   &mdash; Function File: [<var>c</var>, <var>ia</var>, <var>ib</var>] = <b>setxor</b> (<var>a, b</var>)<var><a name="index-setxor-2020"></a></var><br>
+<blockquote>
+        <p>Return index vectors <var>ia</var> and <var>ib</var> such that <code>a == c(ia)</code> and
+<code>b == c(ib)</code>.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunique.html#doc_002dunique">unique</a>, <a href="doc_002dunion.html#doc_002dunion">union</a>, <a href="doc_002dintersect.html#doc_002dintersect">intersect</a>, <a href="doc_002dsetdiff.html#doc_002dsetdiff">setdiff</a>, <a href="doc_002dismember.html#doc_002dismember">ismember</a>. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+<!-- Copyright (C) 1996, 1997, 1999, 2000, 2002, 2007, 2008, 2009 John W. Eaton -->
+<!-- This file is part of Octave. -->
+<!-- Octave is free software; you can redistribute it and/or modify it -->
+<!-- under the terms of the GNU General Public License as published by the -->
+<!-- Free Software Foundation; either version 3 of the License, or (at -->
+<!-- your option) any later version. -->
+<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
+<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
+<!-- for more details. -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Octave; see the file COPYING.  If not, see -->
+<!-- <http://www.gnu.org/licenses/>. -->
+   </body></html>
 

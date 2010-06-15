@@ -3,9 +3,10 @@
 <title>Creating Strings - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Strings.html#Strings" title="Strings">
+<link rel="prev" href="Character-Arrays.html#Character-Arrays" title="Character Arrays">
 <link rel="next" href="Comparing-Strings.html#Comparing-Strings" title="Comparing Strings">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -19,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -246,215 +27,43 @@ color: black;
 <p>
 <a name="Creating-Strings"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Comparing-Strings.html#Comparing-Strings">Comparing Strings</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Character-Arrays.html#Character-Arrays">Character Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.1 Creating Strings</h3>
+<h3 class="section">5.3 Creating Strings</h3>
 
 <p>The easiest way to create a string is, as illustrated in the introduction,
-to enclose a text in double-quotes or single-quotes. It is however
-possible to create a string without actually writing a text. The
+to enclose a text in double-quotes or single-quotes.  It is however
+possible to create a string without actually writing a text.  The
 function <code>blanks</code> creates a string of a given length consisting
 only of blank characters (ASCII code 32).
 
+<!-- ./strings/blanks.m -->
    <p><a name="doc_002dblanks"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>blanks</b> (<var>n</var>)<var><a name="index-blanks-238"></a></var><br>
-<blockquote><p>Return a string of <var>n</var> blanks.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> repmat. 
-</p></blockquote></div>
+&mdash; Function File:  <b>blanks</b> (<var>n</var>)<var><a name="index-blanks-287"></a></var><br>
+<blockquote><p>Return a string of <var>n</var> blanks, for example:
 
-   <p>The string representation used by Octave is an array of characters, so
-the result of <code>blanks(10)</code> is actually a row vector of length 10
-containing the value 32 in all places. This lends itself to the obvious
-generalisation to character matrices. Using a matrix of characters, it
-is possible to represent a collection of same-length strings in one
-variable. The convention used in Octave is that each row in a
-character matrix is a separate string, but letting each column represent
-a string is equally possible.
-
-   <p>The easiest way to create a character matrix is to put several strings
-together into a matrix.
-
-<pre class="example">     collection = [ "String #1"; "String #2" ];
+     <pre class="example">          blanks(10);
+          whos ans;
+               
+                Attr Name        Size                     Bytes  Class
+                ==== ====        ====                     =====  =====
+                     ans         1x10                        10  char
 </pre>
-   <p class="noindent">This creates a 2-by-9 character matrix.
-
-   <p>One relevant question is, what happens when character matrix is
-created from strings of different length. The answer is that Octave
-puts blank characters at the end of strings shorter than the longest
-string. While it is possible to use a different character than the
-blank character using the <code>string_fill_char</code> function, it shows
-a problem with character matrices. It simply isn't possible to
-represent strings of different lengths. The solution is to use a cell
-array of strings, which is described in <a href="Cell-Arrays-of-Strings.html#Cell-Arrays-of-Strings">Cell Arrays of Strings</a>.
-
-   <p><a name="doc_002dchar"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>char</b> (<var>x</var>)<var><a name="index-char-239"></a></var><br>
-&mdash; Built-in Function:  <b>char</b> (<var>cell_array</var>)<var><a name="index-char-240"></a></var><br>
-&mdash; Built-in Function:  <b>char</b> (<var>s1, s2, <small class="dots">...</small></var>)<var><a name="index-char-241"></a></var><br>
-<blockquote><p>Create a string array from a numeric matrix, cell array, or list of
-
-        <p>If the argument is a numeric matrix, each element of the matrix is
-converted to the corresponding ASCII character.  For example,
-
-     <pre class="example">          char ([97, 98, 99])
-               =&gt; "abc"
-     </pre>
-        <p>If the argument is a cell array of strings, the result is a string array
-with each element corresponding to one element of the cell array.
-
-        <p>For multiple string arguments, the result is a string array with each
-element corresponding to the arguments.
-
-        <p>The returned values are padded with blanks as needed to make each row
-of the string array have the same length. 
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002drepmat.html#doc_002drepmat">repmat</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dstrcat"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>strcat</b> (<var>s1, s2, <small class="dots">...</small></var>)<var><a name="index-strcat-242"></a></var><br>
-<blockquote><p>Return a string containing all the arguments concatenated.  For example,
-
-     <pre class="example">          s = [ "ab"; "cde" ];
-          strcat (s, s, s)
-          =&gt; "ab ab ab "
-                  "cdecdecde"
-     </pre>
-        </blockquote></div>
-
-   <p><a name="doc_002dstrvcat"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>strvcat</b> (<var>s_1, <small class="dots">...</small>, s_n</var>)<var><a name="index-strvcat-243"></a></var><br>
-<blockquote><p>Return a matrix containing the strings (and cell-strings)
-<var>s_1</var>, <small class="dots">...</small>, <var>s_n</var> as
-its rows.  Each string is padded with blanks in order to form a valid
-matrix.  Unlike <var>str2mat</var>, empty strings are ignored.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> strcat, str2mat. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dstrtrunc"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>strtrunc</b> (<var>s, n</var>)<var><a name="index-strtrunc-244"></a></var><br>
-<blockquote><p>Truncate the character string <var>s</var> to length <var>n</var>. If <var>s</var>
-is a char matrix, then the number of columns are adjusted.
-
-        <p>If <var>s</var> is a cell array of strings, then the operation is performed
-on its members and the new cell array is returned. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dstring_005ffill_005fchar"></a>
-
-<div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>string_fill_char</b> ()<var><a name="index-string_005ffill_005fchar-245"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>string_fill_char</b> (<var>new_val</var>)<var><a name="index-string_005ffill_005fchar-246"></a></var><br>
-<blockquote><p>Query or set the internal variable used to pad all rows of a character
-matrix to the same length.  It must be a single character.  The default
-value is <code>" "</code> (a single space).  For example,
-
-     <pre class="example">          string_fill_char ("X");
-          [ "these"; "are"; "strings" ]
-               =&gt; "theseXX"
-                  "areXXXX"
-                  "strings"
-     </pre>
-        </blockquote></div>
-
-   <p><a name="doc_002dstr2mat"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>str2mat</b> (<var>s_1, <small class="dots">...</small>, s_n</var>)<var><a name="index-str2mat-247"></a></var><br>
-<blockquote><p>Return a matrix containing the strings <var>s_1</var>, <small class="dots">...</small>, <var>s_n</var> as
-its rows.  Each string is padded with blanks in order to form a valid
-matrix.
-
-        <p>This function is modelled after <span class="sc">Matlab</span>.  In Octave, you can create
-a matrix of strings by <code>[</code><var>s_1</var><code>; ...; </code><var>s_n</var><code>]</code> even if
-the strings are not all the same length. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dischar"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>ischar</b> (<var>a</var>)<var><a name="index-ischar-248"></a></var><br>
-<blockquote><p>Return 1 if <var>a</var> is a string.  Otherwise, return 0. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dmat2str"></a>
-
-<div class="defun">
-&mdash; Function File: <var>s</var> = <b>mat2str</b> (<var>x, n</var>)<var><a name="index-mat2str-249"></a></var><br>
-&mdash; Function File: <var>s</var> = <b>mat2str</b> (<var><small class="dots">...</small>, 'class'</var>)<var><a name="index-mat2str-250"></a></var><br>
-<blockquote>
-<p>Format real/complex numerial matrices as strings. This function
-returns values that are suitable for the use of the <code>eval</code>
-function.
-
-        <p>The precision of the values is given by <var>n</var>. If <var>n</var> is a
-scalar then both real and imaginary parts of the matrix are printed
-to the same precision. Otherwise <var>n</var><code> (1)</code> defines the
-precision of the real part and <var>n</var><code> (2)</code> defines the
-precision of the imaginary part. The default for <var>n</var> is 17.
-
-        <p>If the argument 'class' is given, then the class of <var>x</var> is
-included in the string in such a way that the eval will result in the
-construction of a matrix of the same class.
-
-     <pre class="example">             mat2str( [ -1/3 + i/7; 1/3 - i/7 ], [4 2] )
-          =&gt; '[-0.3333+0.14i;0.3333-0.14i]'
-             mat2str( [ -1/3 +i/7; 1/3 -i/7 ], [4 2] )
-          =&gt; '[-0.3333+0i,0+0.14i;0.3333+0i,-0-0.14i]'
-             mat2str( int16([1 -1]), 'class')
-          =&gt; 'int16([1,-1])'
-     </pre>
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> sprintf, int2str. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dnum2str"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>num2str</b> (<var>n</var>)<var><a name="index-num2str-251"></a></var><br>
-&mdash; Function File:  <b>num2str</b> (<var>x, precision</var>)<var><a name="index-num2str-252"></a></var><br>
-&mdash; Function File:  <b>num2str</b> (<var>x, format</var>)<var><a name="index-num2str-253"></a></var><br>
-<blockquote><p>Convert a number to a string.  This function is not very flexible. 
-For better control over the results, use <code>sprintf</code>
-(see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>).
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> sprintf, int2str. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dint2str"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>int2str</b> (<var>n</var>)<var><a name="index-int2str-254"></a></var><br>
-&mdash; Function File:  <b>int2str</b> (<var>x, precision</var>)<var><a name="index-int2str-255"></a></var><br>
-&mdash; Function File:  <b>int2str</b> (<var>x, format</var>)<var><a name="index-int2str-256"></a></var><br>
-<blockquote><p>Convert an integer to a string.  This function is not very flexible. 
-For better control over the results, use <code>sprintf</code>
-(see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>).
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> sprintf, num2str. 
-</p></blockquote></div>
+<ul class="menu">
+<li><a accesskey="1" href="Concatenating-Strings.html#Concatenating-Strings">Concatenating Strings</a>
+<li><a accesskey="2" href="Conversion-of-Numerical-Data-to-Strings.html#Conversion-of-Numerical-Data-to-Strings">Conversion of Numerical Data to Strings</a>
+</ul>
 
    </body></html>
 

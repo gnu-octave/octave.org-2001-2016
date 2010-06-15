@@ -3,10 +3,11 @@
 <title>Functions of a Matrix - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Linear-Algebra.html#Linear-Algebra" title="Linear Algebra">
 <link rel="prev" href="Matrix-Factorizations.html#Matrix-Factorizations" title="Matrix Factorizations">
+<link rel="next" href="Specialized-Solvers.html#Specialized-Solvers" title="Specialized Solvers">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,248 +20,30 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Functions-of-a-Matrix"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Specialized-Solvers.html#Specialized-Solvers">Specialized Solvers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Matrix-Factorizations.html#Matrix-Factorizations">Matrix Factorizations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>
 <hr>
 </div>
 
-<h3 class="section">20.4 Functions of a Matrix</h3>
+<h3 class="section">18.4 Functions of a Matrix</h3>
 
+<!-- ./linear-algebra/expm.m -->
 <p><a name="doc_002dexpm"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>expm</b> (<var>a</var>)<var><a name="index-expm-1110"></a></var><br>
+&mdash; Function File:  <b>expm</b> (<var>a</var>)<var><a name="index-expm-1622"></a></var><br>
 <blockquote><p>Return the exponential of a matrix, defined as the infinite Taylor
 series
 
      <pre class="example">          expm(a) = I + a + a^2/2! + a^3/3! + ...
-     </pre>
+</pre>
         <p>The Taylor series is <em>not</em> the way to compute the matrix
 exponential; see Moler and Van Loan, <cite>Nineteen Dubious Ways to
 Compute the Exponential of a Matrix</cite>, SIAM Review, 1978.  This routine
@@ -273,7 +56,7 @@ Pade'
 
      <pre class="example">               -1
           D (a)   N (a)
-     </pre>
+</pre>
         <p>whose Taylor series matches the first
 <code>2q+1</code>
 terms of the Taylor series above; direct evaluation of the Taylor series
@@ -284,65 +67,66 @@ approximation when
 is ill-conditioned. 
 </p></blockquote></div>
 
+<!-- ./linear-algebra/logm.m -->
    <p><a name="doc_002dlogm"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logm</b> (<var>a</var>)<var><a name="index-logm-1111"></a></var><br>
+&mdash; Function File:  <b>logm</b> (<var>a</var>)<var><a name="index-logm-1623"></a></var><br>
 <blockquote><p>Compute the matrix logarithm of the square matrix <var>a</var>.  Note that
 this is currently implemented in terms of an eigenvalue expansion and
 needs to be improved to be more robust. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/sqrtm.cc -->
    <p><a name="doc_002dsqrtm"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>result</var>, <var>error_estimate</var>] = <b>sqrtm</b> (<var>a</var>)<var><a name="index-sqrtm-1112"></a></var><br>
+&mdash; Loadable Function: [<var>result</var>, <var>error_estimate</var>] = <b>sqrtm</b> (<var>a</var>)<var><a name="index-sqrtm-1624"></a></var><br>
 <blockquote><p>Compute the matrix square root of the square matrix <var>a</var>.
 
-        <p>Ref: Nicholas J. Higham. A new sqrtm for MATLAB. Numerical Analysis
+        <p>Ref: Nicholas J. Higham.  A new sqrtm for <span class="sc">matlab</span>.  Numerical Analysis
 Report No. 336, Manchester Centre for Computational Mathematics,
-Manchester, England, January 1999.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> expm, logm, funm. 
+Manchester, England, January 1999. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dexpm.html#doc_002dexpm">expm</a>, <a href="doc_002dlogm.html#doc_002dlogm">logm</a>. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/kron.cc -->
    <p><a name="doc_002dkron"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>kron</b> (<var>a, b</var>)<var><a name="index-kron-1113"></a></var><br>
+&mdash; Loadable Function:  <b>kron</b> (<var>a, b</var>)<var><a name="index-kron-1625"></a></var><br>
 <blockquote><p>Form the kronecker product of two matrices, defined block by block as
 
      <pre class="example">          x = [a(i, j) b]
-     </pre>
+</pre>
         <p>For example,
 
      <pre class="example">          kron (1:4, ones (3, 1))
-                =&gt;  1  2  3  4
+                  1  2  3  4
                     1  2  3  4
                     1  2  3  4
-     </pre>
+</pre>
         </blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/syl.cc -->
    <p><a name="doc_002dsyl"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>x</var> = <b>syl</b> (<var>a, b, c</var>)<var><a name="index-syl-1114"></a></var><br>
+&mdash; Loadable Function: <var>x</var> = <b>syl</b> (<var>a, b, c</var>)<var><a name="index-syl-1626"></a></var><br>
 <blockquote><p>Solve the Sylvester equation
 
      <pre class="example">          A X + X B + C = 0
-     </pre>
-        <p>using standard <span class="sc">Lapack</span> subroutines.  For example,
+</pre>
+        <p>using standard <span class="sc">lapack</span> subroutines.  For example,
 
      <pre class="example">          syl ([1, 2; 3, 4], [5, 6; 7, 8], [9, 10; 11, 12])
-               =&gt; [ -0.50000, -0.66667; -0.66667, -0.50000 ]
-     </pre>
+                [ -0.50000, -0.66667; -0.66667, -0.50000 ]
+</pre>
         </blockquote></div>
 
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+   </body></html>
 

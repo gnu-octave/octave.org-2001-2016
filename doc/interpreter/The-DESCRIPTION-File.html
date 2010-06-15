@@ -3,7 +3,7 @@
 <title>The DESCRIPTION File - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Creating-Packages.html#Creating-Packages" title="Creating Packages">
 <link rel="next" href="The-INDEX-file.html#The-INDEX-file" title="The INDEX file">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,15 +30,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Creating-Packages.html#Creating-Package
 <hr>
 </div>
 
-<h4 class="subsection">38.4.1 The DESCRIPTION File</h4>
+<h4 class="subsection">35.4.1 The DESCRIPTION File</h4>
 
 <p>The <code>DESCRIPTION</code> file contains various information about the
-package, such as it's name, author, and version. This file has a very
+package, such as its name, author, and version.  This file has a very
 simple format
 
 <p class="noindent">
      <ul>
-<li>Lines starting with <code>#</code> are comments.
+<li>Lines starting with &lsquo;<samp><span class="samp">#</span></samp>&rsquo; are comments.
 
      <li>Lines starting with a blank character are continuations from the
 previous line.
@@ -272,12 +52,14 @@ previous line.
      Version: 1.0.0
      Date: 2007-18-04
      Author: The name (and possibly email) of the package author.
-     Maintainer: The name (and possibly email) of the current package maintainer.
+     Maintainer: The name (and possibly email) of the current
+      package maintainer.
      Title: The title of the package
-     Description: A short description of the package. If this description
-      gets too long for one line it can continue on the next by adding a
-      space to the beginning of the following lines.
-     License: GPL version 2 or later
+     Description: A short description of the package.  If this
+      description gets too long for one line it can continue
+      on the next by adding a space to the beginning of the
+      following lines.
+     License: GPL version 3 or later
 </pre>
    <p>The package manager currently recognizes the following keywords
 
@@ -306,33 +88,33 @@ given this is mandatory).
 
      <br><dt><code>Autoload</code><dd>Optional field that sets the default loading behavior for the package. 
 If set to <code>yes</code>, <code>true</code> or <code>on</code>, then Octave will
-automatically load the package when starting. Otherwise the package
-must be manually loaded with the pkg load command. This default
+automatically load the package when starting.  Otherwise the package
+must be manually loaded with the pkg load command.  This default
 behavior can be overridden when the package is installed.
 
-     <br><dt><code>Depends</code><dd>A list of other Octave packages that this package depends on. This can
+     <br><dt><code>Depends</code><dd>A list of other Octave packages that this package depends on.  This can
 include dependencies on particular versions, with a format
 
      <pre class="example">          Depends: package (&gt;= 1.0.0)
-     </pre>
+</pre>
      <p class="noindent">Possible operators are <code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>&gt;=</code> or
-<code>&gt;</code>. If the part of the dependency in <code>()</code> is missing, any
-version of the package is acceptable. Multiple dependencies can be
+<code>&gt;</code>.  If the part of the dependency in <code>()</code> is missing, any
+version of the package is acceptable.  Multiple dependencies can be
 defined either as a comma separated list or on separate <code>Depends</code>
 lines.
 
-     <br><dt><code>License</code><dd>An optional short description of the used license (e.g. GPL version 2
-or newer). This is optional since the file <code>COPYING</code> is mandatory.
+     <br><dt><code>License</code><dd>An optional short description of the used license (e.g., GPL version 3
+or newer).  This is optional since the file <code>COPYING</code> is mandatory.
 
      <br><dt><code>SystemRequirements</code><dd>These are the external install dependencies of the package and are not
-checked by the package manager. This is here as a hint to the
-distribution packager. They follows the same conventions as the
+checked by the package manager.  This is here as a hint to the
+distribution packager.  They follow the same conventions as the
 <code>Depends</code> keyword.
 
      <br><dt><code>BuildRequires</code><dd>These are the external build dependencies of the package and are not
-checked by the package manager. This is here as a hint to the
-distribution packager. They follows the same conventions as the
-<code>Depends</code> keyword. Note that in general, packaging systems such
+checked by the package manager.  This is here as a hint to the
+distribution packager.  They follow the same conventions as the
+<code>Depends</code> keyword.  Note that in general, packaging systems such
 as <code>rpm</code> or <code>deb</code> and autoprobe the install dependencies
 from the build dependencies, and therefore the often a
 <code>BuildRequires</code> dependency removes the need for a
@@ -341,10 +123,10 @@ from the build dependencies, and therefore the often a
    </dl>
 
 <p class="noindent">The developer is free to add additional arguments to the
-<code>DESCRIPTION</code> file for their own purposes. One further detail to
-aid the packager is that the <code>SystemRequirments</code> and
-<code>BuildRequires</code> keywords can have distribution dependent section,
-and the automatic build process will use these. An example of the
+<code>DESCRIPTION</code> file for their own purposes.  One further detail to
+aid the packager is that the <code>SystemRequirements</code> and
+<code>BuildRequires</code> keywords can have a distribution dependent section,
+and the automatic build process will use these.  An example of the
 format of this is
 
 <pre class="example">     BuildRequires: libtermcap-devel [Mandriva] libtermcap2-devel

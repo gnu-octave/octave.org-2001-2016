@@ -3,7 +3,7 @@
 <title>Integer Arithmetic - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Integer-Data-Types.html#Integer-Data-Types" title="Integer Data Types">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -18,226 +18,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -248,33 +28,75 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Integer-Data-Types.html#Integer-Data-Ty
 <hr>
 </div>
 
-<h4 class="subsection">4.3.1 Integer Arithmetic</h4>
+<h4 class="subsection">4.4.1 Integer Arithmetic</h4>
 
 <p>While many numerical computations can't be carried out in integers,
 Octave does support basic operations like addition and multiplication
-on integers. The operators <code>+</code>, <code>-</code>, <code>.*</code>, and <code>./</code>
-works on integers of the same type. So, it is possible to add two 32 bit
+on integers.  The operators <code>+</code>, <code>-</code>, <code>.*</code>, and <code>./</code>
+work on integers of the same type.  So, it is possible to add two 32 bit
 integers, but not to add a 32 bit integer and a 16 bit integer.
 
    <p>The arithmetic operations on integers are performed by casting the
 integer values to double precision values, performing the operation, and
-then re-casting the values back to the original integer type. As the
+then re-casting the values back to the original integer type.  As the
 double precision type of Octave is only capable of representing integers
 with up to 53 bits of precision, it is not possible to perform
-arithmetic of the 64 bit integer types.
+arithmetic with 64 bit integer types.
 
    <p>When doing integer arithmetic one should consider the possibility of
-underflow and overflow. This happens when the result of the computation
-can't be represented using the chosen integer type. As an example it is
+underflow and overflow.  This happens when the result of the computation
+can't be represented using the chosen integer type.  As an example it is
 not possible to represent the result of 10 - 20 when using
-unsigned integers. Octave makes sure that the result of integer
-computations is the integer that is closest to the true result. So, the
+unsigned integers.  Octave makes sure that the result of integer
+computations is the integer that is closest to the true result.  So, the
 result of 10 - 20 when using unsigned integers is zero.
 
    <p>When doing integer division Octave will round the result to the nearest
-integer. This is different from most programming languages, where the
-result is often floored to the nearest integer. So, the result of
+integer.  This is different from most programming languages, where the
+result is often floored to the nearest integer.  So, the result of
 <code>int32(5)./int32(8)</code> is <code>1</code>.
+
+<!-- ./general/idivide.m -->
+   <p><a name="doc_002didivide"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>idivide</b> (<var>x, y, op</var>)<var><a name="index-idivide-249"></a></var><br>
+<blockquote><p>Integer division with different round rules.  The standard behavior of
+the an integer division such as <var>a</var><code> ./ </code><var>b</var> is to round
+the result to the nearest integer.  This is not always the desired
+behavior and <code>idivide</code> permits integer element-by-element
+division to be performed with different treatment for the fractional
+part of the division as determined by the <var>op</var> flag.  <var>op</var> is
+a string with one of the values:
+
+          <dl>
+<dt>"fix"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
+towards zero. 
+<br><dt>"round"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
+towards the nearest integer. 
+<br><dt>"floor"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
+downwards. 
+<br><dt>"ceil"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
+upwards. 
+</dl>
+
+     <p class="noindent">If <var>op</var> is not given it is assumed that it is <code>"fix"</code>. 
+An example demonstrating these rounding rules is
+
+     <pre class="example">          idivide (int8 ([-3, 3]), int8 (4), "fix")
+           int8 ([0, 0])
+          idivide (int8 ([-3, 3]), int8 (4), "round")
+           int8 ([-1, 1])
+          idivide (int8 ([-3, 3]), int8 (4), "ceil")
+           int8 ([0, 1])
+          idivide (int8 ([-3, 3]), int8 (4), "floor")
+           int8 ([-1, 0])
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dldivide.html#doc_002dldivide">ldivide</a>, <a href="doc_002drdivide.html#doc_002drdivide">rdivide</a>. 
+</p></blockquote></div>
 
    </body></html>
 

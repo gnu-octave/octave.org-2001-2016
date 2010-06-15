@@ -3,7 +3,7 @@
 <title>Functions of Multiple Variables - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numerical-Integration.html#Numerical-Integration" title="Numerical Integration">
 <link rel="prev" href="Functions-of-One-Variable.html#Functions-of-One-Variable" title="Functions of One Variable">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,12 +32,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Numerical-Integration.html#Numerical-In
 <hr>
 </div>
 
-<h3 class="section">23.3 Functions of Multiple Variables</h3>
+<h3 class="section">22.3 Functions of Multiple Variables</h3>
 
-<p>Octave does not have built-in functions for computing the integral
-of functions of multiple variables.  It is however possible to compute
-the integral of a function of multiple variables using the functions
-for one-dimensional integrals.
+<p>Octave does not have built-in functions for computing the integral of
+functions of multiple variables directly.  It is however possible to
+compute the integral of a function of multiple variables using the
+functions for one-dimensional integrals.
 
    <p>To illustrate how the integration can be performed, we will integrate
 the function
@@ -282,8 +62,62 @@ the following code does.
      endfunction
      
      I = quadl("g", 0, 1)
-           =&gt; 0.30022
+            0.30022
 </pre>
+   <p>The above process can be simplified with the <code>dblquad</code> and
+<code>triplequad</code> functions for integrals over two and three
+variables.  For example
+
+<pre class="example">     I =  dblquad (@(x, y) sin(pi.*x.*y).*sqrt(x.*y), 0, 1, 0, 1)
+            0.30022
+</pre>
+   <!-- ./general/dblquad.m -->
+   <p><a name="doc_002ddblquad"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>dblquad</b> (<var>f, xa, xb, ya, yb, tol, quadf, <small class="dots">...</small></var>)<var><a name="index-dblquad-1781"></a></var><br>
+<blockquote><p>Numerically evaluate a double integral.  The function over with to
+integrate is defined by <var>f</var>, and the interval for the
+integration is defined by <code>[</code><var>xa</var><code>, </code><var>xb</var><code>, </code><var>ya</var><code>,
+</code><var>yb</var><code>]</code>.  The function <var>f</var> must accept a vector <var>x</var> and a
+scalar <var>y</var>, and return a vector of the same length as <var>x</var>.
+
+        <p>If defined, <var>tol</var> defines the absolute tolerance to which to
+which to integrate each sub-integral.
+
+        <p>Additional arguments, are passed directly to <var>f</var>.  To use the default
+value for <var>tol</var> one may pass an empty matrix. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
+</p></blockquote></div>
+
+<!-- ./general/triplequad.m -->
+   <p><a name="doc_002dtriplequad"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>triplequad</b> (<var>f, xa, xb, ya, yb, za, zb, tol, quadf, <small class="dots">...</small></var>)<var><a name="index-triplequad-1782"></a></var><br>
+<blockquote><p>Numerically evaluate a triple integral.  The function over which to
+integrate is defined by <var>f</var>, and the interval for the
+integration is defined by <code>[</code><var>xa</var><code>, </code><var>xb</var><code>, </code><var>ya</var><code>,
+</code><var>yb</var><code>, </code><var>za</var><code>, </code><var>zb</var><code>]</code>.  The function <var>f</var> must accept a
+vector <var>x</var> and a scalar <var>y</var>, and return a vector of the same
+length as <var>x</var>.
+
+        <p>If defined, <var>tol</var> defines the absolute tolerance to which to
+which to integrate each sub-integral.
+
+        <p>Additional arguments, are passed directly to <var>f</var>.  To use the default
+value for <var>tol</var> one may pass an empty matrix. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
+</p></blockquote></div>
+
    <p>The above mentioned approach works but is fairly slow, and that problem
 increases exponentially with the dimensionality the problem.  Another
 possible solution is to use Orthogonal Collocation as described in the
@@ -292,22 +126,32 @@ x and y between 0 and 1 can be approximated using n
 points by
 the sum over <code>i=1:n</code> and <code>j=1:n</code> of <code>q(i)*q(j)*f(r(i),r(j))</code>,
 where q and r is as returned by <code>colloc(n)</code>.  The
-generalisation to more than two variables is straight forward.  The
+generalization to more than two variables is straight forward.  The
 following code computes the studied integral using n=7 points.
 
 <pre class="example">     f = @(x,y) sin(pi*x*y').*sqrt(x*y');
      n = 7;
      [t, A, B, q] = colloc(n);
      I = q'*f(t,t)*q;
-           =&gt; 0.30022
+            0.30022
 </pre>
    <p class="noindent">It should be noted that the number of points determines the quality
 of the approximation.  If the integration needs to be performed between
 a and b instead of 0 and 1, a change of variables is needed.
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+<!-- Copyright (C) 1996, 1997, 2007, 2008, 2009 John W. Eaton -->
+<!-- This file is part of Octave. -->
+<!-- Octave is free software; you can redistribute it and/or modify it -->
+<!-- under the terms of the GNU General Public License as published by the -->
+<!-- Free Software Foundation; either version 3 of the License, or (at -->
+<!-- your option) any later version. -->
+<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
+<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
+<!-- for more details. -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Octave; see the file COPYING.  If not, see -->
+<!-- <http://www.gnu.org/licenses/>. -->
+   </body></html>
 

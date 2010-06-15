@@ -3,10 +3,10 @@
 <title>Overloading and Autoloading - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Function-Files.html#Function-Files" title="Function Files">
-<link rel="prev" href="Subfunctions.html#Subfunctions" title="Subfunctions">
+<link rel="prev" href="Private-Functions.html#Private-Functions" title="Private Functions">
 <link rel="next" href="Function-Locking.html#Function-Locking" title="Function Locking">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -247,17 +27,17 @@ color: black;
 <p>
 <a name="Overloading-and-Autoloading"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Function-Locking.html#Function-Locking">Function Locking</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Subfunctions.html#Subfunctions">Subfunctions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Private-Functions.html#Private-Functions">Private Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Function-Files.html#Function-Files">Function Files</a>
 <hr>
 </div>
 
-<h4 class="subsection">12.7.3 Overloading and Autoloading</h4>
+<h4 class="subsection">11.7.4 Overloading and Autoloading</h4>
 
 <p>The <code>dispatch</code> function can be used to alias one function name to
-another. It can be used to alias all calls to a particular function name
+another.  It can be used to alias all calls to a particular function name
 to another function, or the alias can be limited to only a particular
-variable type. Consider the example
+variable type.  Consider the example
 
 <pre class="example">     function y = spsin (x)
        printf ("Calling spsin\n");
@@ -269,86 +49,93 @@ variable type. Consider the example
      y0 = sin(eye(3));
      y1 = sin(speye(3));
 </pre>
-   <p class="noindent">Which aliases the <code>spsin</code> to <code>sin</code>, but only for real sparse
-matrices. Note that the builtin <code>sin</code> already  correctly treats
+   <p class="noindent">which aliases the user-defined function <code>spsin</code> to <code>sin</code>, but only for real sparse
+matrices.  Note that the builtin <code>sin</code> already correctly treats
 sparse matrices and so this example is only illustrative.
 
+<!-- ./DLD-FUNCTIONS/dispatch.cc -->
    <p><a name="doc_002ddispatch"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dispatch</b> (<var>f, r, type</var>)<var><a name="index-dispatch-581"></a></var><br>
+&mdash; Loadable Function:  <b>dispatch</b> (<var>f, r, type</var>)<var><a name="index-dispatch-636"></a></var><br>
 <blockquote>
-<p>Replace the function <var>f</var> with a dispatch so that function <var>r</var>
+        <p>Replace the function <var>f</var> with a dispatch so that function <var>r</var>
 is called when <var>f</var> is called with the first argument of the named
-<var>type</var>. If the type is <var>any</var> then call <var>r</var> if no other type
+<var>type</var>.  If the type is <var>any</var> then call <var>r</var> if no other type
 matches.  The original function <var>f</var> is accessible using
 <code>builtin (</code><var>f</var><code>, ...)</code>.
 
         <p>If <var>r</var> is omitted, clear dispatch function associated with <var>type</var>.
 
         <p>If both <var>r</var> and <var>type</var> are omitted, list dispatch functions
-for <var>f</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> builtin. 
+for <var>f</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dbuiltin.html#doc_002dbuiltin">builtin</a>. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/dispatch.cc -->
    <p><a name="doc_002dbuiltin"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<small class="dots">...</small>] <b>builtin</b> (<var>f, <small class="dots">...</small></var>)<var><a name="index-builtin-582"></a></var><br>
+&mdash; Loadable Function: [<small class="dots">...</small>] <b>builtin</b> (<var>f, <small class="dots">...</small></var>)<var><a name="index-builtin-637"></a></var><br>
 <blockquote><p>Call the base function <var>f</var> even if <var>f</var> is overloaded to
-some other function for the given type signature.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> dispatch. 
+some other function for the given type signature. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddispatch.html#doc_002ddispatch">dispatch</a>. 
 </p></blockquote></div>
 
    <p>A single dynamically linked file might define several
-functions. However, as Octave searches for functions based on the
+functions.  However, as Octave searches for functions based on the
 functions filename, Octave needs a manner in which to find each of the
-functions in the dynamically linked file. On operating systems that
+functions in the dynamically linked file.  On operating systems that
 support symbolic links, it is possible to create a symbolic link to the
 original file for each of the functions which it contains.
 
    <p>However, there is at least one well known operating system that doesn't
-support symbolic links. Making copies of the original file for each of
-the functions is also possible, but is undesirable as it multiples the
-amount of disk space used by Octave. Instead Octave supplies the
+support symbolic links.  Making copies of the original file for each of
+the functions is undesirable as it increases the
+amount of disk space used by Octave.  Instead Octave supplies the
 <code>autoload</code> function, that permits the user to define in which
 file a certain function will be found.
 
+<!-- parse.cc -->
    <p><a name="doc_002dautoload"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>autoload</b> (<var>function, file</var>)<var><a name="index-autoload-583"></a></var><br>
+&mdash; Built-in Function:  <b>autoload</b> (<var>function, file</var>)<var><a name="index-autoload-638"></a></var><br>
 <blockquote><p>Define <var>function</var> to autoload from <var>file</var>.
 
-        <p>The second argument, <var>file</var>, should be an absolute file name and
-should not depend on the Octave load path.
+        <p>The second argument, <var>file</var>, should be an absolute file name or
+a file name in the same directory as the function or script from which
+the autoload command was run.  <var>file</var> should not depend on the
+Octave load path.
 
         <p>Normally, calls to <code>autoload</code> appear in PKG_ADD script files that
 are evaluated when a directory is added to the Octave's load path.  To
-avoid having to hardcode directory names in <var>file</var>, it is customary
-to use
+avoid having to hardcode directory names in <var>file</var>, if <var>file</var>
+is in the same directory as the PKG_ADD script then
 
-     <pre class="example">          autoload ("foo",
-                    fullfile (fileparts (mfilename ("fullpath")),
-                              "bar.oct"));
-     </pre>
-        <p>Uses like
+     <pre class="example">          autoload ("foo", "bar.oct");
+</pre>
+        <p>will load the function <code>foo</code> from the file <code>bar.oct</code>.  The above
+when <code>bar.oct</code> is not in the same directory or uses like
 
      <pre class="example">          autoload ("foo", file_in_loadpath ("bar.oct"))
-     </pre>
-        <p class="noindent">are strongly discouraged.
+</pre>
+        <p class="noindent">are strongly discouraged, as their behavior might be unpredictable.
 
-        <p>With no arguments, return a structure containing the current autoload map.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> PKG_ADD. 
+        <p>With no arguments, return a structure containing the current autoload map. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dPKG_005fADD.html#doc_002dPKG_005fADD">PKG_ADD</a>. 
 </p></blockquote></div>
 
    </body></html>

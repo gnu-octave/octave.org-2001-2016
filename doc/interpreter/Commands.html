@@ -3,7 +3,7 @@
 <title>Commands - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
 <link rel="prev" href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions" title="Function Handles Inline Functions and Anonymous Functions">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,10 +32,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-an
 <hr>
 </div>
 
-<h3 class="section">12.10 Commands</h3>
+<h3 class="section">11.10 Commands</h3>
 
 <p>Commands are a special class of functions that only accept string
-input arguments. A command can be called as an ordinary function, but
+input arguments.  A command can be called as an ordinary function, but
 it can also be called without the parentheses like the following example
 shows
 
@@ -273,7 +53,7 @@ shows
 
 <pre class="example">     <var>name</var> ("<var>arg1</var>", "<var>arg2</var>", ...)
 </pre>
-   <p>A function can be used as a command if it accept string input arguments. 
+   <p>A function can be used as a command if it accepts string input arguments. 
 To do this, the function must be marked as a command, which can be done
 with the <code>mark_as_command</code> command like this
 
@@ -282,88 +62,63 @@ with the <code>mark_as_command</code> command like this
    <p class="noindent">where <code>name</code> is the function to be marked as a command.
 
    <p>One difficulty of commands occurs when one of the string input arguments
-are stored in a variable. Since Octave can't tell the difference between
+are stored in a variable.  Since Octave can't tell the difference between
 a variable name, and an ordinary string, it is not possible to pass a
-variable as input to a command. In such a situation a command must be
+variable as input to a command.  In such a situation a command must be
 called as a function.
 
+<!-- ./deprecated/mark_as_command.m -->
    <p><a name="doc_002dmark_005fas_005fcommand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>mark_as_command</b> (<var>name</var>)<var><a name="index-mark_005fas_005fcommand-600"></a></var><br>
-<blockquote><p>Enter <var>name</var> into the list of commands.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unmark_command, iscommand. 
+&mdash; Built-in Function:  <b>mark_as_command</b> (<var>name</var>)<var><a name="index-mark_005fas_005fcommand-656"></a></var><br>
+<blockquote><p>This function is obsolete and will be removed from a future
+version of Octave. 
 </p></blockquote></div>
 
+<!-- ./deprecated/unmark_command.m -->
    <p><a name="doc_002dunmark_005fcommand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>unmark_command</b> (<var>name</var>)<var><a name="index-unmark_005fcommand-601"></a></var><br>
-<blockquote><p>Remove <var>name</var> from the list of commands.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> mark_as_command, iscommand. 
+&mdash; Built-in Function:  <b>unmark_command</b> (<var>name</var>)<var><a name="index-unmark_005fcommand-657"></a></var><br>
+<blockquote><p>This function is obsolete and will be removed from a future
+version of Octave. 
 </p></blockquote></div>
 
+<!-- ./deprecated/iscommand.m -->
    <p><a name="doc_002discommand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>iscommand</b> (<var>name</var>)<var><a name="index-iscommand-602"></a></var><br>
-<blockquote><p>Return true if <var>name</var> is a command style function.  If <var>name</var>
-is omitted, return a list of identifiers which are marked as commands with
-<code>mark_as_command</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> mark_as_command, unmark_command. 
+&mdash; Built-in Function:  <b>iscommand</b> (<var>name</var>)<var><a name="index-iscommand-658"></a></var><br>
+<blockquote><p>This function is obsolete and will be removed from a future
+version of Octave. 
 </p></blockquote></div>
 
+<!-- ./deprecated/mark_as_rawcommand.m -->
    <p><a name="doc_002dmark_005fas_005frawcommand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>mark_as_rawcommand</b> (<var>name</var>)<var><a name="index-mark_005fas_005frawcommand-603"></a></var><br>
-<blockquote><p>Enter <var>name</var> into the list of raw input commands and to the list of
-command style functions. 
-Raw input commands are like normal command style functions, but they
-receive their input unprocessed (ie. strings still contain the quotes
-and escapes they had when input). However, comments and continuations
-are handled as usual, you cannot pass a token starting with a comment
-character ('#' or '%') to your function, and the last token cannot be
-a continuation token ('\' or '...').
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> unmark_rawcommand, israwcommand, iscommand, mark_as_command. 
+&mdash; Built-in Function:  <b>mark_as_rawcommand</b> (<var>name</var>)<var><a name="index-mark_005fas_005frawcommand-659"></a></var><br>
+<blockquote><p>This function is obsolete and will be removed from a future
+version of Octave. 
 </p></blockquote></div>
 
+<!-- ./deprecated/unmark_rawcommand.m -->
    <p><a name="doc_002dunmark_005frawcommand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>unmark_rawcommand</b> (<var>name</var>)<var><a name="index-unmark_005frawcommand-604"></a></var><br>
-<blockquote><p>Remove <var>name</var> from the list of raw input commands. 
-Note that this does not remove <var>name</var> from the list of command style
-functions.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> mark_as_rawcommand, israwcommand, iscommand, unmark_command. 
+&mdash; Built-in Function:  <b>unmark_rawcommand</b> (<var>name</var>)<var><a name="index-unmark_005frawcommand-660"></a></var><br>
+<blockquote><p>This function is obsolete and will be removed from a future
+version of Octave. 
 </p></blockquote></div>
 
+<!-- ./deprecated/israwcommand.m -->
    <p><a name="doc_002disrawcommand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>israwcommand</b> (<var>name</var>)<var><a name="index-israwcommand-605"></a></var><br>
-<blockquote><p>Return true if <var>name</var> is a raw input command function. 
-If <var>name</var> is omitted, return a list of identifiers which are marked as
-raw input commands with mark_as_rawcommand.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> mark_as_rawcommand, unmark_rawcommand. 
+&mdash; Built-in Function:  <b>israwcommand</b> (<var>name</var>)<var><a name="index-israwcommand-661"></a></var><br>
+<blockquote><p>This function is obsolete and will be removed from a future
+version of Octave. 
 </p></blockquote></div>
 
    </body></html>

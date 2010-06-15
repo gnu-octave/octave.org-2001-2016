@@ -3,7 +3,7 @@
 <title>Variable-length Return Lists - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
 <link rel="prev" href="Variable_002dlength-Argument-Lists.html#Variable_002dlength-Argument-Lists" title="Variable-length Argument Lists">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -253,14 +33,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-an
 <hr>
 </div>
 
-<h3 class="section">12.4 Variable-length Return Lists</h3>
+<h3 class="section">11.4 Variable-length Return Lists</h3>
 
-<p><a name="index-variable_002dlength-return-lists-559"></a>It is possible to return a variable number of output arguments from a
+<p><a name="index-variable_002dlength-return-lists-606"></a><a name="index-g_t_0040code_007bvarargout_007d-607"></a>
+It is possible to return a variable number of output arguments from a
 function using a syntax that's similar to the one used with the
-<code>varargin</code> keyword.  To let a function return a variable number of
-output arguments the <code>varargout</code> keyword is used.  As with
-<code>varargin</code> <code>varargout</code> is a cell array that will contain the
-requested output arguments.
+special <code>varargin</code> parameter name.  To let a function return a
+variable number of output arguments the special output parameter name
+<code>varargout</code> is used.  As with <code>varargin</code>, <code>varargout</code> is
+a cell array that will contain the requested output arguments.
 
    <p>As an example the following function sets the first output argument to
 1, the second to 2, and so on.
@@ -274,38 +55,43 @@ requested output arguments.
    <p class="noindent">When called this function returns values like this
 
 <pre class="example">     [a, b, c] = one_to_n ()
-          =&gt; a =  1
-          =&gt; b =  2
-          =&gt; c =  3
+           a =  1
+           b =  2
+           c =  3
 </pre>
+   <p>If <code>varargin</code> (<code>varargout</code>) does not appear as the last
+element of the input (output) parameter list, then it is not special,
+and is handled the same as any other parameter name.
+
+<!-- ./general/deal.m -->
    <p><a name="doc_002ddeal"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a</var>)<var><a name="index-deal-560"></a></var><br>
-&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a1, a2, <small class="dots">...</small>, an</var>)<var><a name="index-deal-561"></a></var><br>
+&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a</var>)<var><a name="index-deal-608"></a></var><br>
+&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a1, a2, <small class="dots">...</small>, an</var>)<var><a name="index-deal-609"></a></var><br>
 <blockquote>
-<p>Copy the input parameters into the corresponding output parameters. 
+        <p>Copy the input parameters into the corresponding output parameters. 
 If only one input parameter is supplied, its value is copied to each
 of the outputs.
 
         <p>For example,
 
      <pre class="example">          [a, b, c] = deal (x, y, z);
-     </pre>
+</pre>
         <p class="noindent">is equivalent to
 
      <pre class="example">          a = x;
           b = y;
           c = z;
-     </pre>
+</pre>
         <p class="noindent">and
 
      <pre class="example">          [a, b, c] = deal (x);
-     </pre>
+</pre>
         <p class="noindent">is equivalent to
 
      <pre class="example">          a = b = c = x;
-     </pre>
+</pre>
         </blockquote></div>
 
    </body></html>

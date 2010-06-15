@@ -3,7 +3,7 @@
 <title>Displaying Images - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Image-Processing.html#Image-Processing" title="Image Processing">
 <link rel="prev" href="Loading-and-Saving-Images.html#Loading-and-Saving-Images" title="Loading and Saving Images">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,29 +32,28 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Image-Processing.html#Image-Processing"
 <hr>
 </div>
 
-<h3 class="section">34.2 Displaying Images</h3>
+<h3 class="section">31.2 Displaying Images</h3>
 
 <p>A natural part of image processing is visualization of an image. 
 The most basic function for this is the <code>imshow</code> function that
-shows the image given in the first input argument. This function uses
-an external program to show the image. If gnuplot 4.2 or later is
+shows the image given in the first input argument.  This function uses
+an external program to show the image.  If gnuplot 4.2 or later is
 available it will be used to display the image, otherwise the
-<code>display</code>, <code>xv</code>, or <code>xloadimage</code> program is used. The
+<code>display</code>, <code>xv</code>, or <code>xloadimage</code> program is used.  The
 actual program can be selected with the <code>image_viewer</code> function.
 
+<!-- ./image/imshow.m -->
    <p><a name="doc_002dimshow"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>imshow</b> (<var>im</var>)<var><a name="index-imshow-1731"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>im, limits</var>)<var><a name="index-imshow-1732"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>im, map</var>)<var><a name="index-imshow-1733"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>R, G, B, <small class="dots">...</small></var>)<var><a name="index-imshow-1734"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>filename</var>)<var><a name="index-imshow-1735"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var><small class="dots">...</small>, string_param1, value1, <small class="dots">...</small></var>)<var><a name="index-imshow-1736"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>im</var>)<var><a name="index-imshow-2189"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>im, limits</var>)<var><a name="index-imshow-2190"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>im, map</var>)<var><a name="index-imshow-2191"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>rgb, <small class="dots">...</small></var>)<var><a name="index-imshow-2192"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>filename</var>)<var><a name="index-imshow-2193"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var><small class="dots">...</small>, string_param1, value1, <small class="dots">...</small></var>)<var><a name="index-imshow-2194"></a></var><br>
 <blockquote><p>Display the image <var>im</var>, where <var>im</var> can be a 2-dimensional
-(gray-scale image) or a 3-dimensional (RGB image) matrix. If three matrices
-of the same size are given as arguments, they will be concatenated into
-a 3-dimensional (RGB image) matrix.
+(gray-scale image) or a 3-dimensional (RGB image) matrix.
 
         <p>If <var>limits</var> is a 2-element vector <code>[</code><var>low</var><code>, </code><var>high</var><code>]</code>,
 the image is shown using a display range between <var>low</var> and
@@ -289,25 +68,26 @@ image using the supplied color map.
 shown.
 
         <p>If given, the parameter <var>string_param1</var> has value
-<var>value1</var>. <var>string_param1</var> can be any of the following:
+<var>value1</var>.  <var>string_param1</var> can be any of the following:
           <dl>
-<dt>`<samp><span class="samp">"displayrange"</span></samp>'<dd><var>value1</var> is the display range as described above. 
+<dt>&lsquo;<samp><span class="samp">"displayrange"</span></samp>&rsquo;<dd><var>value1</var> is the display range as described above. 
 </dl>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> image, imagesc, colormap, gray2ind, rgb2ind. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dimage.html#doc_002dimage">image</a>, <a href="doc_002dimagesc.html#doc_002dimagesc">imagesc</a>, <a href="doc_002dcolormap.html#doc_002dcolormap">colormap</a>, <a href="doc_002dgray2ind.html#doc_002dgray2ind">gray2ind</a>, <a href="doc_002drgb2ind.html#doc_002drgb2ind">rgb2ind</a>. 
 </p></blockquote></div>
 
+<!-- ./image/image.m -->
    <p><a name="doc_002dimage"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>image</b> (<var>img</var>)<var><a name="index-image-1737"></a></var><br>
-&mdash; Function File:  <b>image</b> (<var>x, y, img</var>)<var><a name="index-image-1738"></a></var><br>
+&mdash; Function File:  <b>image</b> (<var>img</var>)<var><a name="index-image-2195"></a></var><br>
+&mdash; Function File:  <b>image</b> (<var>x, y, img</var>)<var><a name="index-image-2196"></a></var><br>
 <blockquote><p>Display a matrix as a color image.  The elements of <var>x</var> are indices
-into the current colormap and should have values between 1 and the
-length of the colormap.
+into the current colormap, and the colormap will be scaled so that the
+extremes of <var>x</var> are mapped to the extremes of the colormap.
 
         <p>It first tries to use <code>gnuplot</code>, then <code>display</code> from
 <code>ImageMagick</code>, then <code>xv</code>, and then <code>xloadimage</code>. 
@@ -315,83 +95,87 @@ The actual program used can be changed using the <code>image_viewer</code>
 function.
 
         <p>The axis values corresponding to the matrix elements are specified in
-<var>x</var> and <var>y</var>. If you're not using gnuplot 4.2 or later, these
-variables are ignored.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> imshow, imagesc, colormap, image_viewer. 
+<var>x</var> and <var>y</var>.  If you're not using gnuplot 4.2 or later, these
+variables are ignored. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dimshow.html#doc_002dimshow">imshow</a>, <a href="doc_002dimagesc.html#doc_002dimagesc">imagesc</a>, <a href="doc_002dcolormap.html#doc_002dcolormap">colormap</a>, <a href="doc_002dimage_005fviewer.html#doc_002dimage_005fviewer">image_viewer</a>. 
 </p></blockquote></div>
 
+<!-- ./image/imagesc.m -->
    <p><a name="doc_002dimagesc"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>imagesc</b> (<var>A</var>)<var><a name="index-imagesc-1739"></a></var><br>
-&mdash; Function File:  <b>imagesc</b> (<var>x, y, A</var>)<var><a name="index-imagesc-1740"></a></var><br>
-&mdash; Function File:  <b>imagesc</b> (<var><small class="dots">...</small>, limits</var>)<var><a name="index-imagesc-1741"></a></var><br>
-&mdash; Function File:  <var>B</var> = <b>imagesc</b> (<var><small class="dots">...</small></var>)<var><a name="index-imagesc-1742"></a></var><br>
-<blockquote><p>Display a scaled version of the matrix <var>A</var> as a color image.  The
-matrix is scaled so that its entries are indices into the current
-colormap.  The scaled matrix is returned.  If <var>limits</var> = [<var>lo</var>, <var>hi</var>] are
-given, then that range maps into the full range of the colormap rather
-than the minimum and maximum values of <var>A</var>.
+&mdash; Function File:  <b>imagesc</b> (<var>a</var>)<var><a name="index-imagesc-2197"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var>x, y, a</var>)<var><a name="index-imagesc-2198"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var><small class="dots">...</small>, limits</var>)<var><a name="index-imagesc-2199"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-imagesc-2200"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>imagesc</b> (<var><small class="dots">...</small></var>)<var><a name="index-imagesc-2201"></a></var><br>
+<blockquote><p>Display a scaled version of the matrix <var>a</var> as a color image.  The
+colormap is scaled so that the entries of the matrix occupy the entire
+colormap.  If <var>limits</var> = [<var>lo</var>, <var>hi</var>] are given, then that
+range is set to the 'clim' of the current axes.
 
         <p>The axis values corresponding to the matrix elements are specified in
 <var>x</var> and <var>y</var>, either as pairs giving the minimum and maximum
 values for the respective axes, or as values for each row and column
-of the matrix <var>A</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> image, imshow. 
+of the matrix <var>a</var>.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dimage.html#doc_002dimage">image</a>, <a href="doc_002dimshow.html#doc_002dimshow">imshow</a>, <a href="doc_002dcaxis.html#doc_002dcaxis">caxis</a>. 
 </p></blockquote></div>
 
+<!-- ./image/image_viewer.m -->
    <p><a name="doc_002dimage_005fviewer"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>fcn</var>, <var>default_zoom</var>] = <b>image_viewer</b> (<var>fcn, default_zoom</var>)<var><a name="index-image_005fviewer-1743"></a></var><br>
+&mdash; Function File: [<var>fcn</var>, <var>default_zoom</var>] = <b>image_viewer</b> (<var>fcn, default_zoom</var>)<var><a name="index-image_005fviewer-2202"></a></var><br>
 <blockquote><p>Change the program or function used for viewing images and return the
 previous values.
 
         <p>When the <code>image</code> or <code>imshow</code> function is called it will
-launch an external program to display the image.  The default behaviour
+launch an external program to display the image.  The default behavior
 is to use gnuplot if the installed version supports image viewing,
 and otherwise try the programs <code>display</code>, <code>xv</code>, and
 <code>xloadimage</code>.  Using this function it is possible to change that
-behaviour.
+behavior.
 
         <p>When called with one input argument images will be displayed by saving
-the image to a file and the system command <var>command</var> will called
+the image to a file and the system command <var>command</var> will be called
 to view the image.  The <var>command</var> must be a string containing
-<code>%s</code> and possibly <code>%f</code>. The <code>%s</code> will be replaced by
+<code>%s</code> and possibly <code>%f</code>.  The <code>%s</code> will be replaced by
 the filename of the image, and the <code>%f</code> will (if present) be
 replaced by the zoom factor given to the <code>image</code> function. 
 For example,
      <pre class="example">          image_viewer ("eog %s");
-     </pre>
+</pre>
         <p>changes the image viewer to the <code>eog</code> program.
 
         <p>With two input arguments, images will be displayed by calling
 the function <var>function_handle</var>.  For example,
      <pre class="example">          image_viewer (data, @my_image_viewer);
-     </pre>
+</pre>
         <p>sets the image viewer function to <code>my_image_viewer</code>.  The image
 viewer function is called with
      <pre class="example">          my_image_viewer (<var>x</var>, <var>y</var>, <var>im</var>, <var>zoom</var>, <var>data</var>)
-     </pre>
+</pre>
         <p>where <var>x</var> and <var>y</var> are the axis of the image, <var>im</var> is the image
 variable, and <var>data</var> is extra user-supplied data to be passed to
 the viewer function.
 
         <p>With three input arguments it is possible to change the zooming. 
 Some programs (like <code>xloadimage</code>) require the zoom factor to be
-between 0 and 100, and not 0 and 1 like Octave assumes. This is
+between 0 and 100, and not 0 and 1 like Octave assumes.  This is
 solved by setting the third argument to 100.
 
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> image, imshow, __img_gnuplot__, __img_via_file__. 
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dimage.html#doc_002dimage">image</a>, <a href="doc_002dimshow.html#doc_002dimshow">imshow</a>. 
 </p></blockquote></div>
 
    </body></html>

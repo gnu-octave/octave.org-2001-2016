@@ -3,7 +3,7 @@
 <title>Getting Started with Mex-Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
 <link rel="next" href="Working-with-Matrices-and-Arrays-in-Mex_002dFiles.html#Working-with-Matrices-and-Arrays-in-Mex_002dFiles" title="Working with Matrices and Arrays in Mex-Files">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -255,25 +35,28 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Mex_002dFiles.html#Mex_002dFiles">Mex-F
 
 <p>The basic command to build a mex-file is either <code>mkoctfile --mex</code> or
 <code>mex</code>.  The first can either be used from within Octave or from the
-commandline.  However, to avoid issues with the installation of other
+command line.  However, to avoid issues with the installation of other
 products, the use of the command <code>mex</code> is limited to within Octave.
 
+<!-- ./miscellaneous/mex.m -->
    <p><a name="doc_002dmex"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>mex</b> [<var>options</var>]<var> file <small class="dots">...</small><a name="index-mex-1954"></a></var><br>
+&mdash; Function File:  <b>mex</b> [<var>options</var>]<var> file <small class="dots">...</small><a name="index-mex-2482"></a></var><br>
 <blockquote><p>Compile source code written in C, C++, or Fortran, to a MEX file. 
-This is equivalent to <code>mkoctfile --mex [options] file</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> mkoctfile. 
+This is equivalent to <code>mkoctfile --mex [options] file</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmkoctfile.html#doc_002dmkoctfile">mkoctfile</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/mexext.m -->
    <p><a name="doc_002dmexext"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>mexext</b> ()<var><a name="index-mexext-1955"></a></var><br>
+&mdash; Function File:  <b>mexext</b> ()<var><a name="index-mexext-2483"></a></var><br>
 <blockquote><p>Return the filename extension used for MEX files. 
 </p></blockquote></div>
 
@@ -288,7 +71,8 @@ distinguish between filenames in upper and lower case
 <pre class="example"><pre class="verbatim">     #include "mex.h"
      
      void
-     mexFunction (int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+     mexFunction (int nlhs, mxArray *plhs[], int nrhs, 
+     	     const mxArray *prhs[])
      {
        mxArray *v = mxCreateDoubleMatrix (1, 1, mxREAL);
        double *data = mxGetPr (v);
@@ -311,7 +95,7 @@ file <samp><span class="file">firstmexdemo.c</span></samp>, it can be compiled w
 from Octave as
 
 <pre class="example">     firstmexdemo()
-     =&gt; 1.2346
+      1.2346
 </pre>
    <p>It should be noted that the mex-file contains no help string for the
 functions it contains.  To document mex-files, there should exist an
@@ -326,7 +110,7 @@ given by the mex-file, while the help string will come from the
 m-file.  This can also be useful to allow a sample implementation of the
 mex-file within the Octave language itself for testing purposes.
 
-   <p>Although we can not have multiple entry points into a single mex-file,
+   <p>Although we cannot have multiple entry points into a single mex-file,
 we can use the <code>mexFunctionName</code> function to determine what name
 the mex-file was called with.  This can be used to alter the behavior of
 the mex-file based on the function name.  For example if
@@ -334,7 +118,8 @@ the mex-file based on the function name.  For example if
 <pre class="example"><pre class="verbatim">     #include "mex.h"
      
      void
-     mexFunction (int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+     mexFunction (int nlhs, mxArray *plhs[], int nrhs, 
+     	     const mxArray *prhs[])
      {
        const char *nm;
        nm = mexFunctionName ();
@@ -353,16 +138,16 @@ the mex-file based on the function name.  For example if
    <p>Then as can be seen by
 
 <pre class="example">     myfunc()
-     =&gt; You called function: myfunc
+      You called function: myfunc
          This is the principal function
      myfunc2()
-     =&gt; You called function: myfunc2
+      You called function: myfunc2
 </pre>
    <p class="noindent">the behavior of the mex-file can be altered depending on the functions
 name.
 
    <p>Allow the user should only include <code>mex.h</code> in their code, Octave
-declares additional functions, typedefs, etc, available to the user to
+declares additional functions, typedefs, etc., available to the user to
 write mex-files in the headers <code>mexproto.h</code> and <code>mxarray.h</code>.
 
    </body></html>

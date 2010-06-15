@@ -3,7 +3,7 @@
 <title>Defining Functions - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
 <link rel="next" href="Multiple-Return-Values.html#Multiple-Return-Values" title="Multiple Return Values">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,9 +30,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-an
 <hr>
 </div>
 
-<h3 class="section">12.1 Defining Functions</h3>
+<h3 class="section">11.1 Defining Functions</h3>
 
-<p><a name="index-g_t_0040code_007bfunction_007d-statement-546"></a><a name="index-g_t_0040code_007bendfunction_007d-statement-547"></a>
+<p><a name="index-g_t_0040code_007bfunction_007d-statement-588"></a><a name="index-g_t_0040code_007bendfunction_007d-statement-589"></a>
 In its simplest form, the definition of a function named <var>name</var>
 looks like this:
 
@@ -276,7 +56,7 @@ on your terminal (assuming that it is possible to do so):
      endfunction
 </pre>
    <p>The <code>printf</code> statement (see <a href="Input-and-Output.html#Input-and-Output">Input and Output</a>) simply tells
-Octave to print the string <code>"\a"</code>.  The special character `<samp><span class="samp">\a</span></samp>'
+Octave to print the string <code>"\a"</code>.  The special character &lsquo;<samp><span class="samp">\a</span></samp>&rsquo;
 stands for the alert character (ASCII 7).  See <a href="Strings.html#Strings">Strings</a>.
 
    <p>Once this function is defined, you can ask Octave to evaluate it by
@@ -306,7 +86,7 @@ be empty, in which case this form is equivalent to the one shown above.
 <pre class="example">     wakeup ("Rise and shine!");
 </pre>
    <p class="noindent">will cause Octave to ring your terminal's bell and print the message
-`<samp><span class="samp">Rise and shine!</span></samp>', followed by a newline character (the `<samp><span class="samp">\n</span></samp>'
+&lsquo;<samp><span class="samp">Rise and shine!</span></samp>&rsquo;, followed by a newline character (the &lsquo;<samp><span class="samp">\n</span></samp>&rsquo;
 in the first argument to the <code>printf</code> statement).
 
    <p>In most cases, you will also want to get some information back from the
@@ -345,8 +125,7 @@ elements of a vector:
    <p class="noindent">and then called the function with a matrix instead of a vector as the
 argument, Octave would have printed an error message like this:
 
-<pre class="example">     error: `retval' undefined near line 1 column 10
-     error: evaluating index expression near line 7, column 1
+<pre class="example">     error: value on right hand side of assignment is undefined
 </pre>
    <p class="noindent">because the body of the <code>if</code> statement was never executed, and
 <code>retval</code> was never defined.  To prevent obscure errors like this,
@@ -394,34 +173,38 @@ use a variable that has not been given a value will result in an error.
 To avoid such problems and to provide useful messages, we check for both
 possibilities and issue our own error message.
 
+<!-- ov-usr-fcn.cc -->
    <p><a name="doc_002dnargin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>nargin</b> ()<var><a name="index-nargin-548"></a></var><br>
-&mdash; Built-in Function:  <b>nargin</b> (<var>fcn_name</var>)<var><a name="index-nargin-549"></a></var><br>
+&mdash; Built-in Function:  <b>nargin</b> ()<var><a name="index-nargin-590"></a></var><br>
+&mdash; Built-in Function:  <b>nargin</b> (<var>fcn_name</var>)<var><a name="index-nargin-591"></a></var><br>
 <blockquote><p>Within a function, return the number of arguments passed to the function. 
 At the top level, return the number of command line arguments passed to
 Octave.  If called with the optional argument <var>fcn_name</var>, return the
 maximum number of arguments the named function can accept, or -1 if the
-function accepts a variable number of arguments.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> nargout, varargin, varargout. 
+function accepts a variable number of arguments. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>. 
 </p></blockquote></div>
 
+<!-- ./miscellaneous/inputname.m -->
    <p><a name="doc_002dinputname"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>inputname</b> (<var>n</var>)<var><a name="index-inputname-550"></a></var><br>
+&mdash; Function File:  <b>inputname</b> (<var>n</var>)<var><a name="index-inputname-592"></a></var><br>
 <blockquote><p>Return the text defining <var>n</var>-th input to the function. 
 </p></blockquote></div>
 
+<!-- pt-eval.cc -->
    <p><a name="doc_002dsilent_005ffunctions"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>silent_functions</b> ()<var><a name="index-silent_005ffunctions-551"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>silent_functions</b> (<var>new_val</var>)<var><a name="index-silent_005ffunctions-552"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>silent_functions</b> ()<var><a name="index-silent_005ffunctions-593"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>silent_functions</b> (<var>new_val</var>)<var><a name="index-silent_005ffunctions-594"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether internal
 output from a function is suppressed.  If this option is disabled,
 Octave will display the results produced by evaluating expressions

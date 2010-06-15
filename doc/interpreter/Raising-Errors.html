@@ -3,7 +3,7 @@
 <title>Raising Errors - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Handling-Errors.html#Handling-Errors" title="Handling Errors">
 <link rel="next" href="Catching-Errors.html#Catching-Errors" title="Catching Errors">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,7 +30,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Handling-Errors.html#Handling-Errors">H
 <hr>
 </div>
 
-<h4 class="subsection">13.1.1 Raising Errors</h4>
+<h4 class="subsection">12.1.1 Raising Errors</h4>
 
 <p>The most common use of errors is for checking input arguments to
 functions.  The following example calls the <code>error</code> function if
@@ -266,15 +46,17 @@ the function <code>f</code> is called without any input arguments.
 and returns to the Octave prompt.  This means that no code following
 a call to <code>error</code> will be executed.
 
+<!-- error.cc -->
    <p><a name="doc_002derror"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>error</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-error-606"></a></var><br>
+&mdash; Built-in Function:  <b>error</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-error-662"></a></var><br>
+&mdash; Built-in Function:  <b>error</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-error-663"></a></var><br>
 <blockquote><p>Format the optional arguments under the control of the template string
 <var>template</var> using the same rules as the <code>printf</code> family of
 functions (see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>) and print the resulting message
 on the <code>stderr</code> stream.  The message is prefixed by the character
-string `<samp><span class="samp">error: </span></samp>'.
+string &lsquo;<samp><span class="samp">error: </span></samp>&rsquo;.
 
         <p>Calling <code>error</code> also sets Octave's internal error state such that
 control will return to the top level without evaluating any more
@@ -287,18 +69,18 @@ example, given the following function definitions:
      <pre class="example">          function f () g (); end
           function g () h (); end
           function h () nargin == 1 || error ("nargin != 1"); end
-     </pre>
+</pre>
         <p class="noindent">calling the function <code>f</code> will result in a list of messages that
 can help you to quickly locate the exact location of the error:
 
      <pre class="example">          f ()
           error: nargin != 1
-          error: evaluating index expression near line 1, column 30
-          error: evaluating binary operator `||' near line 1, column 27
-          error: called from `h'
-          error: called from `g'
-          error: called from `f'
-     </pre>
+          error: called from:
+          error:   error at line -1, column -1
+          error:   h at line 1, column 27
+          error:   g at line 1, column 15
+          error:   f at line 1, column 15
+</pre>
         <p>If the error message ends in a new line character, Octave will print the
 message but will not display any traceback messages as it returns
 control to the top level.  For example, modifying the error message
@@ -308,7 +90,7 @@ a single message:
      <pre class="example">          function h () nargin == 1 || error ("nargin != 1\n"); end
           f ()
           error: nargin != 1
-     </pre>
+</pre>
         </blockquote></div>
 
    <p>Since it is common to use errors when there is something wrong with
@@ -336,33 +118,42 @@ message.
 error.
 
 <pre class="example">     f ()
-          -| Invalid call to f.  Correct usage is:
-          -|
-          -|  -- Function File: f (ARG1)
-          -|
-          -|
-          -|
-          -| error: evaluating if command near line 6, column 3
-          -| error: called from `f' in file `/home/jwe/octave/f.m'
+     
+     -|  error: Invalid call to f.  Correct usage is:
+     -|
+     -|   -- Function File: f (ARG1)
+     -|
+     -|
+     -|  Additional help for built-in functions and operators is
+     -|  available in the on-line version of the manual.  Use the command
+     -|  `doc &lt;topic&gt;' to search the manual index.
+     -|
+     -|  Help and information about Octave is also available on the WWW
+     -|  at http://www.octave.org and via the help@octave.org
+     -|  mailing list.
 </pre>
+   <!-- ./help/print_usage.m -->
    <p><a name="doc_002dprint_005fusage"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>print_usage</b> ()<var><a name="index-print_005fusage-607"></a></var><br>
-<blockquote><p>Print the usage message for the currently executing function.  The
-<code>print_usage</code> function is only intended to work inside a
-user-defined function.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> help. 
+&mdash; Function File:  <b>print_usage</b> ()<var><a name="index-print_005fusage-664"></a></var><br>
+&mdash; Function File:  <b>print_usage</b> (<var>name</var>)<var><a name="index-print_005fusage-665"></a></var><br>
+<blockquote><p>Print the usage message for a function.  When called with no input arguments
+the <code>print_usage</code> function displays the usage message of the currently
+executing function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dhelp.html#doc_002dhelp">help</a>. 
 </p></blockquote></div>
 
+<!-- error.cc -->
    <p><a name="doc_002dusage"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>usage</b> (<var>msg</var>)<var><a name="index-usage-608"></a></var><br>
-<blockquote><p>Print the message <var>msg</var>, prefixed by the string `<samp><span class="samp">usage: </span></samp>', and
+&mdash; Built-in Function:  <b>usage</b> (<var>msg</var>)<var><a name="index-usage-666"></a></var><br>
+<blockquote><p>Print the message <var>msg</var>, prefixed by the string &lsquo;<samp><span class="samp">usage: </span></samp>&rsquo;, and
 set Octave's internal error state such that control will return to the
 top level without evaluating any more commands.  This is useful for
 aborting from functions.
@@ -379,26 +170,29 @@ this
      <pre class="example">          if (nargin != 2)
             usage ("foo (a, b)");
           endif
-     </pre>
+</pre>
         <p class="noindent">to check for the proper number of arguments. 
 </p></blockquote></div>
 
+<!-- ./io/beep.m -->
    <p><a name="doc_002dbeep"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>beep</b> ()<var><a name="index-beep-609"></a></var><br>
-<blockquote><p>Produce a beep from the speaker (or visual bell).
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> puts, fputs, printf, fprintf. 
+&mdash; Function File:  <b>beep</b> ()<var><a name="index-beep-667"></a></var><br>
+<blockquote><p>Produce a beep from the speaker (or visual bell). 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dputs.html#doc_002dputs">puts</a>, <a href="doc_002dfputs.html#doc_002dfputs">fputs</a>, <a href="doc_002dprintf.html#doc_002dprintf">printf</a>, <a href="doc_002dfprintf.html#doc_002dfprintf">fprintf</a>. 
 </p></blockquote></div>
 
+<!-- error.cc -->
    <p><a name="doc_002dbeep_005fon_005ferror"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>beep_on_error</b> ()<var><a name="index-beep_005fon_005ferror-610"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>beep_on_error</b> (<var>new_val</var>)<var><a name="index-beep_005fon_005ferror-611"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>beep_on_error</b> ()<var><a name="index-beep_005fon_005ferror-668"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>beep_on_error</b> (<var>new_val</var>)<var><a name="index-beep_005fon_005ferror-669"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave will try
 to ring the terminal bell before printing an error message. 
 </p></blockquote></div>

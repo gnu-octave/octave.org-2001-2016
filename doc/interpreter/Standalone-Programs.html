@@ -3,7 +3,7 @@
 <title>Standalone Programs - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions" title="Dynamically Linked Functions">
 <link rel="prev" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -258,8 +38,9 @@ array and matrix classes as well as to all the Octave algorithms.  The
 following C++ program, uses class Matrix from liboctave.a or
 liboctave.so.
 
-<pre class="example">     #include &lt;iostream&gt;
-     #include &lt;octave/oct.h&gt;
+<pre class="example"><pre class="verbatim">     #include &lt;iostream>
+     #include &lt;octave/oct.h>
+     
      int
      main (void)
      {
@@ -270,30 +51,99 @@ liboctave.so.
          {
            for (octave_idx_type j = 0; j &lt; n; j++)
              {
-               a_matrix(row,column) = (i+1)*10 + (j+1);
+               a_matrix (i, j) = (i + 1) * 10 + (j + 1);
              }
          }
        std::cout &lt;&lt; a_matrix;
        return 0;
      }
 </pre>
+</pre>
    <p class="noindent">mkoctfile can then be used to build a standalone application with a
 command like
 
-<pre class="example">     $ mkoctfile --link-stand-alone hello.cc -o hello
-     $ ./hello
+<pre class="example">     $ mkoctfile --link-stand-alone standalone.cc -o standalone
+     $ ./standalone
      Hello Octave world!
        11 12
        21 22
      $
 </pre>
    <p>Note that the application <code>hello</code> will be dynamically linked
-against the octave libraries and any octave support libraries.
+against the octave libraries and any octave support libraries.  The above
+allows the Octave math libraries to be used by an application.  It does
+not however allow the script files, oct-files or builtin functions of
+Octave to be used by the application.  To do that the Octave interpreter
+needs to be initialized first.  An example of how to do this can then be
+seen in the code
 
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 2005 David Bateman -->
-<!-- Copyright (C) 2002-2005 Paul Kienzle -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+<pre class="example"><pre class="verbatim">     #include &lt;iostream>
+     #include &lt;octave/oct.h>
+     #include &lt;octave/octave.h>
+     #include &lt;octave/parse.h>
+     
+     int
+     main (void)
+     {
+       string_vector argv (2);
+       argv(0) = "embedded";
+       argv(1) = "-q";
+     
+       octave_main (2, argv.c_str_vec(), 1);
+     
+       octave_idx_type n = 2;
+       Matrix a_matrix = Matrix (1, 2);
+     
+       std::cout &lt;&lt; "GCD of [";
+       for (octave_idx_type i = 0; i &lt; n; i++)
+         {
+           a_matrix (i) = 5 * (i + 1); 
+           if (i != 0)
+     	std::cout &lt;&lt; ", " &lt;&lt; 5 * (i + 2);
+           else
+     	std::cout &lt;&lt; 5 * (i + 2);
+         }
+       std::cout &lt;&lt; "] is ";
+     
+       octave_value_list in = octave_value (a_matrix);
+       octave_value_list out = feval ("gcd", in, 1);
+     
+       if (!error_state &amp;&amp; out.length () > 0)
+         {
+           a_matrix = out(0).matrix_value ();
+           if (a_matrix.numel () == 1)
+     	std::cout &lt;&lt; a_matrix(0) &lt;&lt; "\n";
+           else
+     	std::cout &lt;&lt; "invalid\n";
+         }
+       else
+         std::cout &lt;&lt; "invalid\n";
+     
+       return 0;
+     }
+</pre>
+</pre>
+   <p class="noindent">which is compiled and run as before as a standalone application with
+
+<pre class="example">     $ mkoctfile --link-stand-alone embedded.cc -o embedded
+     $ ./embedded
+     GCD of [10, 15] is 5
+     $
+</pre>
+   <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- Copyright (C) 2005, 2007, 2009 David Bateman -->
+<!-- Copyright (C) 2002, 2003, 2004, 2005 Paul Kienzle -->
+<!-- This file is part of Octave. -->
+<!-- Octave is free software; you can redistribute it and/or modify it -->
+<!-- under the terms of the GNU General Public License as published by the -->
+<!-- Free Software Foundation; either version 3 of the License, or (at -->
+<!-- your option) any later version. -->
+<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
+<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
+<!-- for more details. -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Octave; see the file COPYING.  If not, see -->
+<!-- <http://www.gnu.org/licenses/>. -->
+   </body></html>
 

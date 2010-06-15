@@ -3,7 +3,7 @@
 <title>Formatted Output - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions" title="C-Style I/O Functions">
 <link rel="prev" href="Line_002dOriented-Input.html#Line_002dOriented-Input" title="Line-Oriented Input">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,7 +32,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C_002dStyle-I_002fO-Functions.html#C_00
 <hr>
 </div>
 
-<h4 class="subsection">15.2.4 Formatted Output</h4>
+<h4 class="subsection">14.2.4 Formatted Output</h4>
 
 <p>This section describes how to call <code>printf</code> and related functions.
 
@@ -261,44 +41,51 @@ modelled after the C language functions of the same name, but they
 interpret the format template differently in order to improve the
 performance of printing vector and matrix values.
 
+<!-- file-io.cc -->
    <p><a name="doc_002dprintf"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>printf</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-printf-695"></a></var><br>
+&mdash; Built-in Function:  <b>printf</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-printf-781"></a></var><br>
 <blockquote><p>Print optional arguments under the control of the template string
 <var>template</var> to the stream <code>stdout</code> and return the number of
-characters printed.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> fprintf, sprintf, scanf. 
+characters printed. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfprintf.html#doc_002dfprintf">fprintf</a>, <a href="doc_002dsprintf.html#doc_002dsprintf">sprintf</a>, <a href="doc_002dscanf.html#doc_002dscanf">scanf</a>. 
 </p></blockquote></div>
 
+<!-- file-io.cc -->
    <p><a name="doc_002dfprintf"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fprintf</b> (<var>fid, template, <small class="dots">...</small></var>)<var><a name="index-fprintf-696"></a></var><br>
+&mdash; Built-in Function:  <b>fprintf</b> (<var>fid, template, <small class="dots">...</small></var>)<var><a name="index-fprintf-782"></a></var><br>
 <blockquote><p>This function is just like <code>printf</code>, except that the output is
-written to the stream <var>fid</var> instead of <code>stdout</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> printf, sprintf, fread, fscanf, fopen, fclose. 
+written to the stream <var>fid</var> instead of <code>stdout</code>. 
+If <var>fid</var> is omitted, the output is written to <code>stdout</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dprintf.html#doc_002dprintf">printf</a>, <a href="doc_002dsprintf.html#doc_002dsprintf">sprintf</a>, <a href="doc_002dfread.html#doc_002dfread">fread</a>, <a href="doc_002dfscanf.html#doc_002dfscanf">fscanf</a>, <a href="doc_002dfopen.html#doc_002dfopen">fopen</a>, <a href="doc_002dfclose.html#doc_002dfclose">fclose</a>. 
 </p></blockquote></div>
 
+<!-- file-io.cc -->
    <p><a name="doc_002dsprintf"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sprintf</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-sprintf-697"></a></var><br>
+&mdash; Built-in Function:  <b>sprintf</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-sprintf-783"></a></var><br>
 <blockquote><p>This is like <code>printf</code>, except that the output is returned as a
 string.  Unlike the C library function, which requires you to provide a
 suitably sized string as an argument, Octave's <code>sprintf</code> function
 returns the string, automatically sized to hold all of the items
-converted.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> printf, fprintf, sscanf. 
+converted. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dprintf.html#doc_002dprintf">printf</a>, <a href="doc_002dfprintf.html#doc_002dfprintf">fprintf</a>, <a href="doc_002dsscanf.html#doc_002dsscanf">sscanf</a>. 
 </p></blockquote></div>
 
    <p>The <code>printf</code> function can be used to print any number of arguments. 
@@ -308,37 +95,37 @@ about their types and what style should be used for printing them.
 
    <p>Ordinary characters in the template string are simply written to the
 output stream as-is, while <dfn>conversion specifications</dfn> introduced by
-a `<samp><span class="samp">%</span></samp>' character in the template cause subsequent arguments to be
+a &lsquo;<samp><span class="samp">%</span></samp>&rsquo; character in the template cause subsequent arguments to be
 formatted and written to the output stream.  For example,
-<a name="index-conversion-specifications-_0028_0040code_007bprintf_007d_0029-698"></a>
+<a name="index-conversion-specifications-_0028_0040code_007bprintf_007d_0029-784"></a>
 <pre class="example">     pct = 37;
      filename = "foo.txt";
-     printf ("Processing of `%s' is %d%% finished.\nPlease be patient.\n",
-             filename, pct);
+     printf ("Processed %d%% of `%s'.\nPlease be patient.\n",
+             pct, filename);
 </pre>
    <p class="noindent">produces output like
 
-<pre class="example">     Processing of `foo.txt' is 37% finished.
+<pre class="example">     Processed 37% of `foo.txt'.
      Please be patient.
 </pre>
-   <p>This example shows the use of the `<samp><span class="samp">%d</span></samp>' conversion to specify that a
-scalar argument should be printed in decimal notation, the `<samp><span class="samp">%s</span></samp>'
-conversion to specify printing of a string argument, and the `<samp><span class="samp">%%</span></samp>'
-conversion to print a literal `<samp><span class="samp">%</span></samp>' character.
+   <p>This example shows the use of the &lsquo;<samp><span class="samp">%d</span></samp>&rsquo; conversion to specify that a
+scalar argument should be printed in decimal notation, the &lsquo;<samp><span class="samp">%s</span></samp>&rsquo;
+conversion to specify printing of a string argument, and the &lsquo;<samp><span class="samp">%%</span></samp>&rsquo;
+conversion to print a literal &lsquo;<samp><span class="samp">%</span></samp>&rsquo; character.
 
    <p>There are also conversions for printing an integer argument as an
-unsigned value in octal, decimal, or hexadecimal radix (`<samp><span class="samp">%o</span></samp>',
-`<samp><span class="samp">%u</span></samp>', or `<samp><span class="samp">%x</span></samp>', respectively); or as a character value
-(`<samp><span class="samp">%c</span></samp>').
+unsigned value in octal, decimal, or hexadecimal radix (&lsquo;<samp><span class="samp">%o</span></samp>&rsquo;,
+&lsquo;<samp><span class="samp">%u</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">%x</span></samp>&rsquo;, respectively); or as a character value
+(&lsquo;<samp><span class="samp">%c</span></samp>&rsquo;).
 
    <p>Floating-point numbers can be printed in normal, fixed-point notation
-using the `<samp><span class="samp">%f</span></samp>' conversion or in exponential notation using the
-`<samp><span class="samp">%e</span></samp>' conversion.  The `<samp><span class="samp">%g</span></samp>' conversion uses either `<samp><span class="samp">%e</span></samp>'
-or `<samp><span class="samp">%f</span></samp>' format, depending on what is more appropriate for the
+using the &lsquo;<samp><span class="samp">%f</span></samp>&rsquo; conversion or in exponential notation using the
+&lsquo;<samp><span class="samp">%e</span></samp>&rsquo; conversion.  The &lsquo;<samp><span class="samp">%g</span></samp>&rsquo; conversion uses either &lsquo;<samp><span class="samp">%e</span></samp>&rsquo;
+or &lsquo;<samp><span class="samp">%f</span></samp>&rsquo; format, depending on what is more appropriate for the
 magnitude of the particular number.
 
    <p>You can control formatting more precisely by writing <dfn>modifiers</dfn>
-between the `<samp><span class="samp">%</span></samp>' and the character that indicates which conversion
+between the &lsquo;<samp><span class="samp">%</span></samp>&rsquo; and the character that indicates which conversion
 to apply.  These slightly alter the ordinary behavior of the conversion. 
 For example, most conversion specifications permit you to specify a
 minimum field width and a flag indicating whether you want the result

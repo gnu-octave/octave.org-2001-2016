@@ -3,7 +3,7 @@
 <title>Creating Sparse Matrices in Oct-Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sparse-Matrices-in-Oct_002dFiles.html#Sparse-Matrices-in-Oct_002dFiles" title="Sparse Matrices in Oct-Files">
 <link rel="prev" href="Array-and-Sparse-Differences.html#Array-and-Sparse-Differences" title="Array and Sparse Differences">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -277,9 +57,10 @@ technique
      
      SparseMatrix sm (data, ridx, cidx, nr, nc);
 </pre>
-   <p class="noindent">which creates the matrix given in section <a href="Storage.html#Storage">Storage</a>.  Note that
-the compressed matrix format is not used at the time of the creation
-of the matrix itself, however it is used internally.
+   <p class="noindent">which creates the matrix given in section
+<a href="Storage-of-Sparse-Matrices.html#Storage-of-Sparse-Matrices">Storage of Sparse Matrices</a>.  Note that the compressed matrix
+format is not used at the time of the creation of the matrix itself,
+however it is used internally.
 
    <p>As previously mentioned, the values of the sparse matrix are stored
 in increasing column-major ordering.  Although the data passed by the
@@ -331,7 +112,7 @@ sparse matrix can be removed after its creation with the
 deallocate the unused storage, but it can equally remove zero elements
 from the matrix.  The removal of zero elements from the matrix is
 controlled by setting the argument of the <dfn>maybe_compress</dfn> function
-to be `<samp><span class="samp">true</span></samp>'.  However, the cost of removing the zeros is high because it
+to be &lsquo;<samp><span class="samp">true</span></samp>&rsquo;.  However, the cost of removing the zeros is high because it
 implies resorting the elements.  Therefore, if possible it is better
 is the user doesn't add the zeros in the first place.  An example of
 the use of <dfn>maybe_compress</dfn> is
@@ -379,7 +160,8 @@ be
            }
          sm.cidx(j+1) = ii;
       }
-     sm.maybe_compress ();  // If don't know a-priori the final no of nz.
+     sm.maybe_compress ();  // If don't know a-priori
+                            // the final no of nz.
 </pre>
    <p class="noindent">which is probably the most efficient means of creating the sparse matrix.
 
@@ -415,7 +197,8 @@ The above example would then be modified as
            }
          sm.cidx(j+1) = ii;
       }
-     sm.maybe_mutate ();  // If don't know a-priori the final no of nz.
+     sm.maybe_mutate ();  // If don't know a-priori
+                          // the final no of nz.
 </pre>
    <p>Note that both increasing and decreasing the number of non-zero elements in
 a sparse matrix is expensive, as it involves memory reallocation.  Also as

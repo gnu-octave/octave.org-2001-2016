@@ -3,9 +3,10 @@
 <title>Creating Cell Arrays - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cell-Arrays.html#Cell-Arrays" title="Cell Arrays">
+<link rel="prev" href="Basic-Usage-of-Cell-Arrays.html#Basic-Usage-of-Cell-Arrays" title="Basic Usage of Cell Arrays">
 <link rel="next" href="Indexing-Cell-Arrays.html#Indexing-Cell-Arrays" title="Indexing Cell Arrays">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -19,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -246,23 +27,25 @@ color: black;
 <p>
 <a name="Creating-Cell-Arrays"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Indexing-Cell-Arrays.html#Indexing-Cell-Arrays">Indexing Cell Arrays</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Basic-Usage-of-Cell-Arrays.html#Basic-Usage-of-Cell-Arrays">Basic Usage of Cell Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cell-Arrays.html#Cell-Arrays">Cell Arrays</a>
 <hr>
 </div>
 
-<h3 class="section">7.1 Creating Cell Array</h3>
+<h4 class="subsection">6.2.2 Creating Cell Array</h4>
 
-<p>The introductory example showed how to create a cell array containing
-currently available variables. In many situations, however, it is useful
-to create a cell array and then fill it with data.
+<p>The introductory example (see <a href="Basic-Usage-of-Cell-Arrays.html#Basic-Usage-of-Cell-Arrays">Basic Usage of Cell Arrays</a>) showed
+how to create a cell array containing currently available variables. 
+In many situations, however, it is useful to create a cell array and
+then fill it with data.
 
    <p>The <code>cell</code> function returns a cell array of a given size, containing
-empty matrices. This function works very similar to the <code>zeros</code>
-function for creating new numerical arrays. The following example creates
+empty matrices.  This function is similar to the <code>zeros</code>
+function for creating new numerical arrays.  The following example creates
 a 2-by-2 cell array containing empty matrices
 
 <pre class="example">     c = cell(2,2)
-          =&gt; c =
+           c =
      
               {
                 [1,1] = [](0x0)
@@ -271,32 +54,29 @@ a 2-by-2 cell array containing empty matrices
                 [2,2] = [](0x0)
               }
 </pre>
-   <p>Just like numerical arrays, cell arrays can be multidimensional. The
+   <p>Just like numerical arrays, cell arrays can be multidimensional.  The
 <code>cell</code> function accepts any number of positive integers to describe
-the size of the returned cell array. It is also possible to set the size
-of the cell array through a vector of positive integers. In the
-following example two cell arrays of equal size is created, and the size
+the size of the returned cell array.  It is also possible to set the size
+of the cell array through a vector of positive integers.  In the
+following example two cell arrays of equal size are created, and the size
 of the first one is displayed
 
 <pre class="example">     c1 = cell(3, 4, 5);
      c2 = cell( [3, 4, 5] );
      size(c1)
-          =&gt; ans =
+           ans =
               3   4   5
 </pre>
-   <p class="noindent">As can be seen, the <code>size</code> function also work for cell arrays. As
-do the other functions describing the size of an object, such as
-<code>length</code>, <code>numel</code>, <code>rows</code>, and <code>columns</code>.
+   <p class="noindent">As can be seen, the <a href="doc_002dsize.html#doc_002dsize"><code>size</code></a> function also works
+for cell arrays.  As do other functions describing the size of an
+object, such as <a href="doc_002dlength.html#doc_002dlength"><code>length</code></a>, <a href="doc_002dnumel.html#doc_002dnumel"><code>numel</code></a>, <a href="doc_002drows.html#doc_002drows"><code>rows</code></a>, and <a href="doc_002dcolumns.html#doc_002dcolumns"><code>columns</code></a>.
 
-   <p>An alternative to creating empty cell arrays, and then filling them, it
-is possible to convert numerical arrays into cell arrays using the
-<code>num2cell</code> and <code>mat2cell</code> functions.
-
+<!-- ov-cell.cc -->
    <p><a name="doc_002dcell"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cell</b> (<var>x</var>)<var><a name="index-cell-322"></a></var><br>
-&mdash; Built-in Function:  <b>cell</b> (<var>n, m</var>)<var><a name="index-cell-323"></a></var><br>
+&mdash; Built-in Function:  <b>cell</b> (<var>x</var>)<var><a name="index-cell-390"></a></var><br>
+&mdash; Built-in Function:  <b>cell</b> (<var>n, m</var>)<var><a name="index-cell-391"></a></var><br>
 <blockquote><p>Create a new cell array object.  If invoked with a single scalar
 argument, <code>cell</code> returns a square cell array with the dimension
 specified.  If you supply two scalar arguments, <code>cell</code> takes
@@ -305,37 +85,36 @@ elements, <code>cell</code> uses the values of the elements as the number of
 rows and columns, respectively. 
 </p></blockquote></div>
 
-   <p><a name="doc_002discell"></a>
+   <p>As an alternative to creating empty cell arrays, and then filling them, it
+is possible to convert numerical arrays into cell arrays using the
+<code>num2cell</code> and <code>mat2cell</code> functions.
 
-<div class="defun">
-&mdash; Built-in Function:  <b>iscell</b> (<var>x</var>)<var><a name="index-iscell-324"></a></var><br>
-<blockquote><p>Return true if <var>x</var> is a cell array object.  Otherwise, return
-false. 
-</p></blockquote></div>
-
+<!-- ./DLD-FUNCTIONS/cellfun.cc -->
    <p><a name="doc_002dnum2cell"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>c</var> = <b>num2cell</b> (<var>m</var>)<var><a name="index-num2cell-325"></a></var><br>
-&mdash; Loadable Function: <var>c</var> = <b>num2cell</b> (<var>m, d</var>)<var><a name="index-num2cell-326"></a></var><br>
-<blockquote><p>Convert to matrix <var>m</var> into a cell array. If <var>d</var> is defined the
+&mdash; Loadable Function: <var>c</var> = <b>num2cell</b> (<var>m</var>)<var><a name="index-num2cell-392"></a></var><br>
+&mdash; Loadable Function: <var>c</var> = <b>num2cell</b> (<var>m, dim</var>)<var><a name="index-num2cell-393"></a></var><br>
+<blockquote><p>Convert the matrix <var>m</var> to a cell array.  If <var>dim</var> is defined, the
 value <var>c</var> is of dimension 1 in this dimension and the elements of
-<var>m</var> are placed in slices in <var>c</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> mat2cell. 
+<var>m</var> are placed in slices in <var>c</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmat2cell.html#doc_002dmat2cell">mat2cell</a>. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/cellfun.cc -->
    <p><a name="doc_002dmat2cell"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>b</var> = <b>mat2cell</b> (<var>a, m, n</var>)<var><a name="index-mat2cell-327"></a></var><br>
-&mdash; Loadable Function: <var>b</var> = <b>mat2cell</b> (<var>a, d1, d2, <small class="dots">...</small></var>)<var><a name="index-mat2cell-328"></a></var><br>
-&mdash; Loadable Function: <var>b</var> = <b>mat2cell</b> (<var>a, r</var>)<var><a name="index-mat2cell-329"></a></var><br>
-<blockquote><p>Converts the matrix <var>a</var> to a cell array If <var>a</var> is 2-D, then
+&mdash; Loadable Function: <var>b</var> = <b>mat2cell</b> (<var>a, m, n</var>)<var><a name="index-mat2cell-394"></a></var><br>
+&mdash; Loadable Function: <var>b</var> = <b>mat2cell</b> (<var>a, d1, d2, <small class="dots">...</small></var>)<var><a name="index-mat2cell-395"></a></var><br>
+&mdash; Loadable Function: <var>b</var> = <b>mat2cell</b> (<var>a, r</var>)<var><a name="index-mat2cell-396"></a></var><br>
+<blockquote><p>Convert the matrix <var>a</var> to a cell array.  If <var>a</var> is 2-D, then
 it is required that <code>sum (</code><var>m</var><code>) == size (</code><var>a</var><code>, 1)</code> and
-<code>sum (</code><var>n</var><code>) == size (</code><var>a</var><code>, 2)</code>. Similarly, if <var>a</var> is
+<code>sum (</code><var>n</var><code>) == size (</code><var>a</var><code>, 2)</code>.  Similarly, if <var>a</var> is
 a multi-dimensional and the number of dimensional arguments is equal
 to the dimensions of <var>a</var>, then it is required that <code>sum (</code><var>di</var><code>)
 == size (</code><var>a</var><code>, i)</code>.
@@ -346,7 +125,7 @@ arguments are assumed to equal <code>size (</code><var>a</var><code>,</code><var
         <p>An example of the use of mat2cell is
 
      <pre class="example">          mat2cell (reshape(1:16,4,4),[3,1],[3,1])
-          =&gt; {
+           {
             [1,1] =
           
                1   5   9
@@ -365,11 +144,11 @@ arguments are assumed to equal <code>size (</code><var>a</var><code>,</code><var
           
             [2,2] = 16
           }
-     </pre>
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> num2cell, cell2mat. 
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnum2cell.html#doc_002dnum2cell">num2cell</a>, <a href="doc_002dcell2mat.html#doc_002dcell2mat">cell2mat</a>. 
 </p></blockquote></div>
 
    </body></html>

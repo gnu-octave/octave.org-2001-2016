@@ -3,7 +3,7 @@
 <title>Errors - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Getting-Started.html#Getting-Started" title="Getting Started">
 <link rel="prev" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -254,32 +34,33 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting-Started">G
 
 <h3 class="section">2.5 How Octave Reports Errors</h3>
 
-<p><a name="index-error-messages-133"></a><a name="index-messages_002c-error-134"></a>
+<p><a name="index-error-messages-151"></a><a name="index-messages_002c-error-152"></a>
 Octave reports two kinds of errors for invalid programs.
 
    <p>A <dfn>parse error</dfn> occurs if Octave cannot understand something you
 have typed.  For example, if you misspell a keyword,
 
-<pre class="example">     octave:13&gt; functon y = f (x) y = x^2; endfunction
+<pre class="example">     octave:13&gt; function y = f (x) y = x***2; endfunction
 </pre>
    <p class="noindent">Octave will respond immediately with a message like this:
 
 <pre class="example">     parse error:
      
-       functon y = f (x) y = x^2; endfunction
-               ^
+       syntax error
+     
+     &gt;&gt;&gt; function y = f (x) y = x***2; endfunction
+                                   ^
 </pre>
-   <p class="noindent">For most parse errors, Octave uses a caret (`<samp><span class="samp">^</span></samp>') to mark the point
+   <p class="noindent">For most parse errors, Octave uses a caret (&lsquo;<samp><span class="samp">^</span></samp>&rsquo;) to mark the point
 on the line where it was unable to make sense of your input.  In this
-case, Octave generated an error message because the keyword
-<code>function</code> was misspelled.  Instead of seeing `<samp><span class="samp">function f</span></samp>',
-Octave saw two consecutive variable names, which is invalid in this
-context.  It marked the error at <code>y</code> because the first name by
-itself was accepted as valid input.
+case, Octave generated an error message because the keyword for
+exponentiation (<code>**</code>) was misspelled.  It marked the error at the
+third &lsquo;<samp><span class="samp">*</span></samp>&rsquo; because the code leading up to this was correct but the final
+&lsquo;<samp><span class="samp">*</span></samp>&rsquo; was not understood.
 
    <p>Another class of error message occurs at evaluation time.  These
 errors are called <dfn>run-time errors</dfn>, or sometimes
-<dfn>evaluation errors</dfn> because they occur when your program is being
+<dfn>evaluation errors</dfn>, because they occur when your program is being
 <dfn>run</dfn>, or <dfn>evaluated</dfn>.  For example, if after correcting the
 mistake in the previous function definition, you type
 
@@ -288,33 +69,30 @@ mistake in the previous function definition, you type
    <p class="noindent">Octave will respond with
 
 <pre class="example">     error: `x' undefined near line 1 column 24
-     error: evaluating expression near line 1, column 24
-     error: evaluating assignment expression near line 1, column 22
-     error: called from `f'
+     error: called from:
+     error:   f at line 1, column 22
 </pre>
-   <p class="noindent">This error message has several parts, and gives you quite a bit of
+   <p class="noindent">This error message has several parts, and gives quite a bit of
 information to help you locate the source of the error.  The messages
 are generated from the point of the innermost error, and provide a
 traceback of enclosing expressions and function calls.
 
    <p>In the example above, the first line indicates that a variable named
-`<samp><span class="samp">x</span></samp>' was found to be undefined near line 1 and column 24 of some
+&lsquo;<samp><span class="samp">x</span></samp>&rsquo; was found to be undefined near line 1 and column 24 of some
 function or expression.  For errors occurring within functions, lines
 are counted from the beginning of the file containing the function
-definition.  For errors occurring at the top level, the line number
-indicates the input line number, which is usually displayed in the
-prompt string.
+definition.  For errors occurring outside of an enclosing function,
+the line number indicates the input line number, which is usually displayed
+in the primary prompt string.
 
-   <p>The second and third lines in the example indicate that the error
-occurred within an assignment expression, and the last line of the error
-message indicates that the error occurred within the function <code>f</code>. 
-If the function <code>f</code> had been called from another function, for
-example, <code>g</code>, the list of errors would have ended with one more
-line:
+   <p>The second and third lines of the error message indicate that the error
+occurred within the function <code>f</code>.  If the function <code>f</code> had been
+called from within another function, for example, <code>g</code>, the list of
+errors would have ended with one more line:
 
-<pre class="example">     error: called from `g'
+<pre class="example">     error:   g at line 1, column 17
 </pre>
-   <p>These lists of function calls usually make it fairly easy to trace the
+   <p>These lists of function calls make it fairly easy to trace the
 path your program took before the error occurred, and to correct the
 error before trying again.
 

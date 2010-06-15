@@ -3,7 +3,7 @@
 <title>Indexing Cell Arrays - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cell-Arrays.html#Cell-Arrays" title="Cell Arrays">
 <link rel="prev" href="Creating-Cell-Arrays.html#Creating-Cell-Arrays" title="Creating Cell Arrays">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -252,81 +32,110 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Cell-Arrays.html#Cell-Arrays">Cell Arra
 <hr>
 </div>
 
-<h3 class="section">7.2 Indexing Cell Arrays</h3>
+<h4 class="subsection">6.2.3 Indexing Cell Arrays</h4>
 
-<p>As shown in the introductory example elements can be inserted from cell
-arrays using the `<samp><span class="samp">{</span></samp>' and `<samp><span class="samp">}</span></samp>' operators. Besides the change
-of operators, indexing works for cell arrays like for multidimensional
-arrays.  As an example, all the rows of the first and third column of a
-cell array can be set to <code>0</code> with the following code
+<p>As shown in see <a href="Basic-Usage-of-Cell-Arrays.html#Basic-Usage-of-Cell-Arrays">Basic Usage of Cell Arrays</a> elements can be
+extracted from cell arrays using the &lsquo;<samp><span class="samp">{</span></samp>&rsquo; and &lsquo;<samp><span class="samp">}</span></samp>&rsquo;
+operators.  If you want to extract or access subarrays which are still
+cell arrays, you need to use the &lsquo;<samp><span class="samp">(</span></samp>&rsquo; and &lsquo;<samp><span class="samp">)</span></samp>&rsquo; operators. The
+following example illustrates the difference:
 
-<pre class="example">     c{:, [1, 3]} = 0;
+<pre class="example">     c = {"1", "2", "3"; "a", "b", "c"; "4", "5", "6"};
+     c{2,3}
+           ans = c
+     
+     c(2,3)
+           ans =
+             {
+               [1,1] = c
+             }
 </pre>
-   <p>Accessing values in a cell array is, however, different from the same
-operation for numerical arrays. Accessing a single element of a cell
-array is very similar to numerical arrays, for example
+   <p class="noindent">So with &lsquo;<samp><span class="samp">{}</span></samp>&rsquo; you access elements of a cell
+array, while with &lsquo;<samp><span class="samp">()</span></samp>&rsquo; you access a sub array of a cell
+array.
 
-<pre class="example">     element = c{1, 2};
+   <p>Using the &lsquo;<samp><span class="samp">(</span></samp>&rsquo; and &lsquo;<samp><span class="samp">)</span></samp>&rsquo; operators, indexing works for cell
+arrays like for multidimensional arrays.  As an example, all the rows
+of the first and third column of a cell array can be set to <code>0</code>
+with the following command:
+
+<pre class="example">     c(:, [1, 3]) = {0}
+            =
+             {
+               [1,1] = 0
+               [2,1] = 0
+               [3,1] = 0
+               [1,2] = 2
+               [2,2] =  10
+               [3,2] =  20
+               [1,3] = 0
+               [2,3] = 0
+               [3,3] = 0
+             }
 </pre>
-   <p class="noindent">This will, however, <em>not</em> work when accessing multiple elements of
-a cell array, because it might not be possible to represent all elements
-with a single variable as is the case with numerical arrays.
+   <p>Note, that the above can also be achieved like this:
 
-   <p>Accessing multiple elements of a cell array with the `<samp><span class="samp">{</span></samp>' and
-`<samp><span class="samp">}</span></samp>' operators will result in a comma-separated list of all
-the requested elements. This list can then be used anywhere where a
-comma-separated list is used, such as in the creation of a new
-numerical array or cell array, or be passed as arguments to a
-function. If all the accessed elements of a cell array are scalars or
-column vectors, they can be concatenated into a new column vector
-containing the elements, by surrounding the list with <code>[</code> and
-<code>]</code> as in the following example
-
-<pre class="example">     a = {1, [2, 3], 4};
-     b = [a{:}]
-          =&gt; b =
-              1   2   3   4
+<pre class="example">     c(:, [1, 3]) = 0;
 </pre>
-   <p>It is also possible to pass the accessed elements directly to a
-function.  The list of elements from the cell array will be passed as an
-argument list to a given function as if it is called with the elements as
-arguments.  The two calls to <code>printf</code> in the following example are
-identical but the latter is more simple and handles more situations
+   <p class="noindent">Here, the scalar &lsquo;<samp><span class="samp">0</span></samp>&rsquo; is automatically promoted to
+cell array &lsquo;<samp><span class="samp">{0}</span></samp>&rsquo; and then assigned to the subarray of <code>c</code>.
 
-<pre class="example">     c = {"GNU", "Octave", "is", "Free", "Software"};
-     printf ("%s ", c{1}, c{2}, c{3}, c{4}, c{5});
-          -| GNU Octave is Free Software
-     printf ("%s ", c{:});
-          -| GNU Octave is Free Software
+   <p>To give another example for indexing cell arrays with &lsquo;<samp><span class="samp">()</span></samp>&rsquo;, you
+can exchange the first and the second row of a cell array as in the
+following command:
+
+<pre class="example">     c = {1, 2, 3; 4, 5, 6};
+     c([1, 2], :) = c([2, 1], :)
+           =
+             {
+               [1,1] =  4
+               [2,1] =  1
+               [1,2] =  5
+               [2,2] =  2
+               [1,3] =  6
+               [2,3] =  3
+             }
 </pre>
-   <p>Just like it is possible to create a numerical array from selected
-elements of a cell array, it is possible to create a new cell array
-containing the selected elements. By surrounding the list with
-`<samp><span class="samp">{</span></samp>' and `<samp><span class="samp">}</span></samp>' a new cell array will be created, like the
-following example illustrates
+   <p>Accessing multiple elements of a cell array with the &lsquo;<samp><span class="samp">{</span></samp>&rsquo; and
+&lsquo;<samp><span class="samp">}</span></samp>&rsquo; operators will result in a comma-separated list of all the
+requested elements (see <a href="Comma-Separated-Lists.html#Comma-Separated-Lists">Comma Separated Lists</a>). Using the
+&lsquo;<samp><span class="samp">{</span></samp>&rsquo; and &lsquo;<samp><span class="samp">}</span></samp>&rsquo; operators the first two rows in the above
+example can be swapped back like this:
 
-<pre class="example">     a = {1, rand(2, 2), "three"};
-     b = { a{ [1, 3] } }
-          =&gt; b =
-              {
-                [1,1] =  1
-                [1,2] = three
-              }
+<pre class="example">     [c{[1,2], :}] = deal(c{[2, 1], :})
+           =
+             {
+               [1,1] =  1
+               [2,1] =  4
+               [1,2] =  2
+               [2,2] =  5
+               [1,3] =  3
+               [2,3] =  6
+             }
 </pre>
-   <p class="noindent">This syntax is however a bit cumbersome, and since this is a common
-operation, it is possible to achieve the same using the `<samp><span class="samp">(</span></samp>'
-and `<samp><span class="samp">)</span></samp>' operators for indexing. When a cell array is indexed
-using the `<samp><span class="samp">(</span></samp>' and `<samp><span class="samp">)</span></samp>' operators a new cell array containing
-the selected elements. Using this syntax, the previous example can
-be simplified into the following
+   <p>As for struct arrays and numerical arrays, the empty matrix &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;
+can be used to delete elements from a cell array:
 
-<pre class="example">     a = {1, rand(2, 2), "three"};
-     b = a( [1, 3] )
-          =&gt; b =
-              {
-                [1,1] =  1
-                [1,2] = three
-              }
+<pre class="example">     x = {"1", "2"; "3", "4"};
+     x(1, :) = []
+           x =
+             {
+               [1,1] = 3
+               [1,2] = 4
+             }
+</pre>
+   <p>The following example shows how to just remove the contents of cell
+array elements but not delete the space for them:
+
+<pre class="example">     x = {"1", "2"; "3", "4"};
+     x{1, :} = []
+      x =
+           {
+             [1,1] = [](0x0)
+             [2,1] = 3
+             [1,2] = [](0x0)
+             [2,2] = 4
+           }
 </pre>
    </body></html>
 

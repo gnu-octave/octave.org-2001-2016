@@ -3,7 +3,7 @@
 <title>Short-circuit Boolean Operators - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Boolean-Expressions.html#Boolean-Expressions" title="Boolean Expressions">
 <link rel="prev" href="Element_002dby_002delement-Boolean-Operators.html#Element_002dby_002delement-Boolean-Operators" title="Element-by-element Boolean Operators">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -251,9 +31,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Boolean-Expressions.html#Boolean-Expres
 <hr>
 </div>
 
-<h4 class="subsection">9.5.2 Short-circuit Boolean Operators</h4>
+<h4 class="subsection">8.5.2 Short-circuit Boolean Operators</h4>
 
-<p><a name="index-short_002dcircuit-evaluation-482"></a>
+<p><a name="index-short_002dcircuit-evaluation-523"></a>
 Combined with the implicit conversion to scalar values in <code>if</code> and
 <code>while</code> conditions, Octave's element-by-element boolean operators
 are often sufficient for performing most logical operations.  However,
@@ -262,7 +42,7 @@ soon as the overall truth value can be determined.  Octave's
 <dfn>short-circuit</dfn> boolean operators work this way.
 
      <dl>
-<dt><var>boolean1</var><code> &amp;&amp; </code><var>boolean2</var><dd><a name="index-g_t_0026_0026-483"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
+<dt><var>boolean1</var><code> &amp;&amp; </code><var>boolean2</var><dd><a name="index-g_t_0026_0026-524"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
 using the equivalent of the operation <code>all (</code><var>boolean1</var><code>(:))</code>. 
 If it is false, the result of the overall expression is 0.  If it is
 true, the expression <var>boolean2</var> is evaluated and converted to a
@@ -272,11 +52,11 @@ is 1.  Otherwise, the result of the overall expression is 0.
 
      <p><strong>Warning:</strong> there is one exception to the rule of evaluating
 <code>all (</code><var>boolean1</var><code>(:))</code>, which is when <code>boolean1</code> is the
-empty matrix. The truth value of an empty matrix is always <code>false</code>
+empty matrix.  The truth value of an empty matrix is always <code>false</code>
 so <code>[] &amp;&amp; true</code> evaluates to <code>false</code> even though
 <code>all ([])</code> is <code>true</code>.
 
-     <br><dt><var>boolean1</var><code> || </code><var>boolean2</var><dd><a name="index-g_t_007c_007c-484"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
+     <br><dt><var>boolean1</var><code> || </code><var>boolean2</var><dd><a name="index-g_t_007c_007c-525"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
 using the equivalent of the operation <code>all (</code><var>boolean1</var><code>(:))</code>. 
 If it is true, the result of the overall expression is 1.  If it is
 false, the expression <var>boolean2</var> is evaluated and converted to a
@@ -301,7 +81,7 @@ the expression
 is possible write
 
 <pre class="example">     function f (a, b, c)
-       if (nargin &gt; 2 &amp;&amp; isstr (c))
+       if (nargin &gt; 2 &amp;&amp; ischar (c))
          ...
 </pre>
    <p class="noindent">instead of having to use two <code>if</code> statements to avoid attempting to
@@ -310,18 +90,18 @@ short-circuit feature, it would be necessary to write
 
 <pre class="example">     function f (a, b, c)
        if (nargin &gt; 2)
-         if (isstr (c))
+         if (ischar (c))
            ...
 </pre>
    <p class="noindent">Writing
 
 <pre class="example">     function f (a, b, c)
-       if (nargin &gt; 2 &amp; isstr (c))
+       if (nargin &gt; 2 &amp; ischar (c))
          ...
 </pre>
    <p class="noindent">would result in an error if <code>f</code> were called with one or two
 arguments because Octave would be forced to try to evaluate both of the
-operands for the operator `<samp><span class="samp">&amp;</span></samp>'.
+operands for the operator &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo;.
 
    </body></html>
 

@@ -3,7 +3,7 @@
 <title>C-Style I/O Functions - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Input-and-Output.html#Input-and-Output" title="Input and Output">
 <link rel="prev" href="Basic-Input-and-Output.html#Basic-Input-and-Output" title="Basic Input and Output">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -251,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Input-and-Output.html#Input-and-Output"
 <hr>
 </div>
 
-<h3 class="section">15.2 C-Style I/O Functions</h3>
+<h3 class="section">14.2 C-Style I/O Functions</h3>
 
 <p>Octave's C-style input and output functions provide most of the
 functionality of the C programming language's standard I/O library.  The
@@ -266,42 +46,48 @@ can be accessed using their corresponding numeric file ids, you should
 always use the symbolic names given in the table below, since it will
 make your programs easier to understand.
 
+<!-- file-io.cc -->
    <p><a name="doc_002dstdin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>stdin</b> ()<var><a name="index-stdin-684"></a></var><br>
+&mdash; Built-in Function:  <b>stdin</b> ()<var><a name="index-stdin-770"></a></var><br>
 <blockquote><p>Return the numeric value corresponding to the standard input stream. 
 When Octave is used interactively, this is filtered through the command
-line editing functions.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> stdout, stderr. 
+line editing functions. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstdout.html#doc_002dstdout">stdout</a>, <a href="doc_002dstderr.html#doc_002dstderr">stderr</a>. 
 </p></blockquote></div>
 
+<!-- file-io.cc -->
    <p><a name="doc_002dstdout"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>stdout</b> ()<var><a name="index-stdout-685"></a></var><br>
+&mdash; Built-in Function:  <b>stdout</b> ()<var><a name="index-stdout-771"></a></var><br>
 <blockquote><p>Return the numeric value corresponding to the standard output stream. 
-Data written to the standard output is normally filtered through the pager.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> stdin, stderr. 
+Data written to the standard output is normally filtered through the pager. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstdin.html#doc_002dstdin">stdin</a>, <a href="doc_002dstderr.html#doc_002dstderr">stderr</a>. 
 </p></blockquote></div>
 
+<!-- file-io.cc -->
    <p><a name="doc_002dstderr"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>stderr</b> ()<var><a name="index-stderr-686"></a></var><br>
+&mdash; Built-in Function:  <b>stderr</b> ()<var><a name="index-stderr-772"></a></var><br>
 <blockquote><p>Return the numeric value corresponding to the standard error stream. 
 Even if paging is turned on, the standard error is not sent to the
-pager.  It is useful for error messages and prompts.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> stdin, stdout. 
+pager.  It is useful for error messages and prompts. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstdin.html#doc_002dstdin">stdin</a>, <a href="doc_002dstdout.html#doc_002dstdout">stdout</a>. 
 </p></blockquote></div>
 
 <ul class="menu">
@@ -313,7 +99,7 @@ pager.  It is useful for error messages and prompts.
 <li><a accesskey="6" href="Output-Conversion-Syntax.html#Output-Conversion-Syntax">Output Conversion Syntax</a>
 <li><a accesskey="7" href="Table-of-Output-Conversions.html#Table-of-Output-Conversions">Table of Output Conversions</a>
 <li><a accesskey="8" href="Integer-Conversions.html#Integer-Conversions">Integer Conversions</a>
-<li><a accesskey="9" href="Floating_002dPoint-Conversions.html#Floating_002dPoint-Conversions">Floating-Point Conversions</a>:   Other Output Conversions::
+<li><a accesskey="9" href="Floating_002dPoint-Conversions.html#Floating_002dPoint-Conversions">Floating-Point Conversions</a>
 <li><a href="Other-Output-Conversions.html#Other-Output-Conversions">Other Output Conversions</a>
 <li><a href="Formatted-Input.html#Formatted-Input">Formatted Input</a>
 <li><a href="Input-Conversion-Syntax.html#Input-Conversion-Syntax">Input Conversion Syntax</a>

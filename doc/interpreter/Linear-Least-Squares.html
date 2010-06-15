@@ -3,7 +3,7 @@
 <title>Linear Least Squares - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Optimization.html#Optimization" title="Optimization">
 <link rel="prev" href="Nonlinear-Programming.html#Nonlinear-Programming" title="Nonlinear Programming">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,21 +30,22 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization.html#Optimization">Optimiz
 <hr>
 </div>
 
-<h3 class="section">25.4 Linear Least Squares</h3>
+<h3 class="section">24.4 Linear Least Squares</h3>
 
 <p>Octave also supports linear least squares minimization.  That is,
-Octave can find the parameter b such the the model
+Octave can find the parameter b such that the model
 y = x*b
-fits data (x,y) as good as possible, assuming zero-mean
+fits data (x,y) as well as possible, assuming zero-mean
 Gaussian noise.  If the noise is assumed to be isotropic the problem
-can be solved using the `<samp><span class="samp">\</span></samp>' or `<samp><span class="samp">/</span></samp>' operators, or the <code>ols</code>
+can be solved using the &lsquo;<samp><span class="samp">\</span></samp>&rsquo; or &lsquo;<samp><span class="samp">/</span></samp>&rsquo; operators, or the <code>ols</code>
 function.  In the general case where the noise is assumed to be anisotropic
 the <code>gls</code> is needed.
 
+<!-- ./statistics/base/ols.m -->
    <p><a name="doc_002dols"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>beta</var>, <var>sigma</var>, <var>r</var>] = <b>ols</b> (<var>y, x</var>)<var><a name="index-ols-1276"></a></var><br>
+&mdash; Function File: [<var>beta</var>, <var>sigma</var>, <var>r</var>] = <b>ols</b> (<var>y, x</var>)<var><a name="index-ols-1804"></a></var><br>
 <blockquote><p>Ordinary least squares estimation for the multivariate model
 y = x b + e with
 mean (e) = 0 and cov (vec (e)) = kron (s, I). 
@@ -289,16 +70,17 @@ follows.
           <pre class="example">               <var>sigma</var> = (<var>y</var>-<var>x</var>*<var>beta</var>)'
                  * (<var>y</var>-<var>x</var>*<var>beta</var>)
                  / (<var>t</var>-rank(<var>x</var>))
-          </pre>
+</pre>
           <br><dt><var>r</var><dd>The matrix of OLS residuals, <var>r</var><code> = </code><var>y</var><code> - </code><var>x</var><code> *
 </code><var>beta</var>. 
 </dl>
         </p></blockquote></div>
 
+<!-- ./statistics/base/gls.m -->
    <p><a name="doc_002dgls"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>beta</var>, <var>v</var>, <var>r</var>] = <b>gls</b> (<var>y, x, o</var>)<var><a name="index-gls-1277"></a></var><br>
+&mdash; Function File: [<var>beta</var>, <var>v</var>, <var>r</var>] = <b>gls</b> (<var>y, x, o</var>)<var><a name="index-gls-1805"></a></var><br>
 <blockquote><p>Generalized least squares estimation for the multivariate model
 y = x b + e with mean (e) = 0 and
 cov (vec (e)) = (s^2) o,
@@ -321,9 +103,90 @@ defined as follows.
 </dl>
         </p></blockquote></div>
 
+<!-- ./optimization/lsqnonneg.m -->
+   <p><a name="doc_002dlsqnonneg"></a>
+
+<div class="defun">
+&mdash; Function File: <var>x</var> = <b>lsqnonneg</b> (<var>c, d</var>)<var><a name="index-lsqnonneg-1806"></a></var><br>
+&mdash; Function File: <var>x</var> = <b>lsqnonneg</b> (<var>c, d, x0</var>)<var><a name="index-lsqnonneg-1807"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-1808"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-1809"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-1810"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>, <var>output</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-1811"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>, <var>output</var>, <var>lambda</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-1812"></a></var><br>
+<blockquote><p>Minimize <code>norm (</code><var>c</var><code>*</code><var>x</var><code>-d)</code> subject to <var>x</var><code> &gt;=
+0</code>.  <var>c</var> and <var>d</var> must be real.  <var>x0</var> is an optional
+initial guess for <var>x</var>.
+
+        <p>Outputs:
+          <ul>
+<li>resnorm
+
+          <p>The squared 2-norm of the residual: norm(<var>c</var>*<var>x</var>-<var>d</var>)^2
+<li>residual
+
+          <p>The residual: <var>d</var>-<var>c</var>*<var>x</var>
+<li>exitflag
+
+          <p>An indicator of convergence.  0 indicates that the iteration count
+was exceeded, and therefore convergence was not reached; &gt;0 indicates
+that the algorithm converged.  (The algorithm is stable and will
+converge given enough iterations.) 
+<li>output
+
+          <p>A structure with two fields:
+               <ul>
+<li>"algorithm": The algorithm used ("nnls")
+<li>"iterations": The number of iterations taken. 
+</ul>
+          <li>lambda
+
+          <p>Not implemented. 
+</ul>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002doptimset.html#doc_002doptimset">optimset</a>. 
+</p></blockquote></div>
+
+<!-- ./optimization/optimset.m -->
+   <p><a name="doc_002doptimset"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>optimset</b> ()<var><a name="index-optimset-1813"></a></var><br>
+&mdash; Function File:  <b>optimset</b> (<var>par, val, <small class="dots">...</small></var>)<var><a name="index-optimset-1814"></a></var><br>
+&mdash; Function File:  <b>optimset</b> (<var>old, par, val, <small class="dots">...</small></var>)<var><a name="index-optimset-1815"></a></var><br>
+&mdash; Function File:  <b>optimset</b> (<var>old, new</var>)<var><a name="index-optimset-1816"></a></var><br>
+<blockquote><p>Create options struct for optimization functions. 
+</p></blockquote></div>
+
+<!-- ./optimization/optimget.m -->
+   <p><a name="doc_002doptimget"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>optimget</b> (<var>options, parname</var>)<var><a name="index-optimget-1817"></a></var><br>
+&mdash; Function File:  <b>optimget</b> (<var>options, parname, default</var>)<var><a name="index-optimget-1818"></a></var><br>
+<blockquote><p>Return a specific option from a structure created by
+<code>optimset</code>.  If <var>parname</var> is not a field of the <var>options</var>
+structure, return <var>default</var> if supplied, otherwise return an
+empty matrix. 
+</p></blockquote></div>
+
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007 John W. Eaton -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+<!-- Copyright (C) 1996, 1997, 1999, 2000, 2002, 2004, 2005, 2006, -->
+<!-- 2007, 2008, 2009 John W. Eaton -->
+<!-- This file is part of Octave. -->
+<!-- Octave is free software; you can redistribute it and/or modify it -->
+<!-- under the terms of the GNU General Public License as published by the -->
+<!-- Free Software Foundation; either version 3 of the License, or (at -->
+<!-- your option) any later version. -->
+<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
+<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
+<!-- for more details. -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Octave; see the file COPYING.  If not, see -->
+<!-- <http://www.gnu.org/licenses/>. -->
+   </body></html>
 

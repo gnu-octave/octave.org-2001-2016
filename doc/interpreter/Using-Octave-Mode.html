@@ -3,9 +3,9 @@
 <title>Using Octave Mode - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Emacs.html#Emacs" title="Emacs">
+<link rel="up" href="Emacs-Octave-Support.html#Emacs-Octave-Support" title="Emacs Octave Support">
 <link rel="prev" href="Installing-EOS.html#Installing-EOS" title="Installing EOS">
 <link rel="next" href="Running-Octave-From-Within-Emacs.html#Running-Octave-From-Within-Emacs" title="Running Octave From Within Emacs">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -248,11 +28,11 @@ color: black;
 <a name="Using-Octave-Mode"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Running-Octave-From-Within-Emacs.html#Running-Octave-From-Within-Emacs">Running Octave From Within Emacs</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Installing-EOS.html#Installing-EOS">Installing EOS</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Emacs.html#Emacs">Emacs</a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Emacs-Octave-Support.html#Emacs-Octave-Support">Emacs Octave Support</a>
 <hr>
 </div>
 
-<h3 class="appendixsec">F.2 Using Octave Mode</h3>
+<h3 class="appendixsec">G.2 Using Octave Mode</h3>
 
 <p>If you are lucky, your sysadmins have already arranged everything so
 that Emacs automatically goes into Octave mode whenever you visit an
@@ -267,7 +47,7 @@ your <samp><span class="file">~/.emacs</span></samp> file:
      <pre class="lisp">          (autoload 'octave-mode "octave-mod" nil t)
           (setq auto-mode-alist
                 (cons '("\\.m$" . octave-mode) auto-mode-alist))
-     </pre>
+</pre>
      <li>Finally, to turn on the abbrevs, auto-fill and font-lock features
 automatically, also add the following lines to one of the Emacs startup
 files:
@@ -277,7 +57,7 @@ files:
                       (auto-fill-mode 1)
                       (if (eq window-system 'x)
                           (font-lock-mode 1))))
-     </pre>
+</pre>
      <p>See the Emacs manual for more information about how to customize
 Font-lock mode.
         </ol>
@@ -336,7 +116,7 @@ comment (started by one comment character) otherwise
 (<code>octave-indent-for-comment</code>). 
 Point is left after the start of the comment which is properly aligned.
 
-     <br><dt><kbd>C-c ;</kbd><dd>Puts the comment character `<samp><span class="samp">#</span></samp>' (more precisely, the string value of
+     <br><dt><kbd>C-c ;</kbd><dd>Puts the comment character &lsquo;<samp><span class="samp">#</span></samp>&rsquo; (more precisely, the string value of
 <code>octave-comment-start</code>) at the beginning of every line in the
 region (<code>octave-comment-region</code>).  With just <kbd>C-u</kbd> prefix
 argument, uncomment each line in the region.  A numeric prefix argument
@@ -357,12 +137,12 @@ move that many code lines forward (backward if <var>N</var> is negative).
 (<code>octave-beginning-of-line</code>).  If point is in an empty or comment
 line, simply go to its beginning;  otherwise, move backwards to the
 beginning of the first code line which is not inside a continuation
-statement,  i.e., which does not follow a code line ending in `<samp><span class="samp">...</span></samp>'
-or `<samp><span class="samp">\</span></samp>', or is inside an open parenthesis list.
+statement, i.e., which does not follow a code line ending in &lsquo;<samp><span class="samp">...</span></samp>&rsquo;
+or &lsquo;<samp><span class="samp">\</span></samp>&rsquo;, or is inside an open parenthesis list.
 
      <br><dt><kbd>C-c C-e</kbd><dd>Move to the `real' end of the current line (<code>octave-end-of-line</code>). 
 If point is in a code line, move forward to the end of the first Octave
-code line which does not end in `<samp><span class="samp">...</span></samp>' or `<samp><span class="samp">\</span></samp>' or is inside an
+code line which does not end in &lsquo;<samp><span class="samp">...</span></samp>&rsquo; or &lsquo;<samp><span class="samp">\</span></samp>&rsquo; or is inside an
 open parenthesis list.  Otherwise, simply go to the end of the current
 line.
 
@@ -394,21 +174,21 @@ The block marked is the one that contains point or follows point.
 An error is signaled if no block to close is found.
 
      <br><dt><kbd>C-c f</kbd><dd>Insert a function skeleton, prompting for the function's name, arguments
-and return values which have to be entered without parens
+and return values which have to be entered without parentheses
 (<code>octave-insert-defun</code>).
 
      <br><dt><kbd>C-c C-h</kbd><dd>Search the function, operator and variable indices of all info files
 with documentation for Octave for entries (<code>octave-help</code>).  If used
 interactively, the entry is prompted for with completion.  If multiple
 matches are found, one can cycle through them using the standard
-`<samp><span class="samp">,</span></samp>' (<code>Info-index-next</code>) command of the Info reader.
+&lsquo;<samp><span class="samp">,</span></samp>&rsquo; (<code>Info-index-next</code>) command of the Info reader.
 
      <p>The variable <code>octave-help-files</code> is a list of files to search
 through and defaults to <code>'("octave")</code>.  If there is also an Octave
 Local Guide with corresponding info file, say, <samp><span class="file">octave-LG</span></samp>, you can
 have <code>octave-help</code> search both files by
      <pre class="lisp">          (setq octave-help-files '("octave" "octave-LG"))
-     </pre>
+</pre>
      <p class="noindent">in one of your Emacs startup files.
 
    </dl>
@@ -437,7 +217,7 @@ solution is
 to know the particular binding of &lt;RET&gt; in that mode!).  Similar
 considerations apply for using &lt;M-RET&gt; as &lt;M-LFD&gt;.  As Barry
 A. Warsaw &lt;bwarsaw@cnri.reston.va.us&gt; says in the documentation for his
-<code>cc-mode</code>, &ldquo;This is a very common question. <code>:-)</code> If you want
+<code>cc-mode</code>, &ldquo;This is a very common question.  <code>:-)</code> If you want
 this to be the default behavior, don't lobby me, lobby RMS!&rdquo;
 
    <p>The following variables can be used to customize Octave mode.
@@ -450,7 +230,7 @@ space.  Default is <code>nil</code>.
 are typed.  The default value is <code>nil</code>.
 
      <br><dt><code>octave-blink-matching-block</code><dd>Non-<code>nil</code> means show matching begin of block when inserting a space,
-newline or `<samp><span class="samp">;</span></samp>' after an else or end keyword.  Default is <code>t</code>. 
+newline or &lsquo;<samp><span class="samp">;</span></samp>&rsquo; after an else or end keyword.  Default is <code>t</code>. 
 This is an extremely useful feature for automatically verifying that the
 keywords match&mdash;if they don't, an error message is displayed.
 
@@ -461,7 +241,7 @@ Default is 2.
 Default is 4.
 
      <br><dt><code>octave-continuation-string</code><dd>String used for Octave continuation lines. 
-Normally `<samp><span class="samp">\</span></samp>'.
+Normally &lsquo;<samp><span class="samp">\</span></samp>&rsquo;.
 
      <br><dt><code>octave-mode-startup-message</code><dd>If <code>t</code> (default), a startup message is displayed when Octave mode
 is called.
@@ -473,9 +253,9 @@ is called.
 <li>strings in <code>font-lock-string-face</code>
 <li>comments in <code>font-lock-comment-face</code>
 <li>the Octave reserved words (such as all block keywords) and the text
-functions (such as `<samp><span class="samp">cd</span></samp>' or `<samp><span class="samp">who</span></samp>') which are also reserved
+functions (such as &lsquo;<samp><span class="samp">cd</span></samp>&rsquo; or &lsquo;<samp><span class="samp">who</span></samp>&rsquo;) which are also reserved
 using <code>font-lock-keyword-face</code>
-<li>the built-in operators (`<samp><span class="samp">&amp;&amp;</span></samp>', `<samp><span class="samp">&lt;&gt;</span></samp>', <small class="dots">...</small>) using
+<li>the built-in operators (&lsquo;<samp><span class="samp">&amp;&amp;</span></samp>&rsquo;, &lsquo;<samp><span class="samp">==</span></samp>&rsquo;, <small class="dots">...</small>) using
 <code>font-lock-reference-face</code>
 <li>and the function names in function declarations in
 <code>font-lock-function-name-face</code>. 
@@ -484,7 +264,7 @@ using <code>font-lock-keyword-face</code>
    <p>There is also rudimentary support for Imenu (currently, function names
 can be indexed).
 
-   <p><a name="index-TAGS-2024"></a><a name="index-Emacs-TAGS-files-2025"></a><a name="index-g_t_0040code_007boctave_002dtags_007d-2026"></a>You can generate TAGS files for Emacs from Octave <samp><span class="file">.m</span></samp> files using
+   <p><a name="index-TAGS-2557"></a><a name="index-Emacs-TAGS-files-2558"></a><a name="index-g_t_0040code_007boctave_002dtags_007d-2559"></a>You can generate TAGS files for Emacs from Octave <samp><span class="file">.m</span></samp> files using
 the shell script <code>octave-tags</code> that is installed alongside your copy of
 Octave.
 

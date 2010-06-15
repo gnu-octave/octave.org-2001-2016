@@ -3,7 +3,7 @@
 <title>Matrices and Arrays in Oct-Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Getting-Started-with-Oct_002dFiles.html#Getting-Started-with-Oct_002dFiles" title="Getting Started with Oct-Files">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -289,7 +69,7 @@ example
 example
 
      <pre class="example">          Matrix a;
-     </pre>
+</pre>
      <p>This can be used on all matrix and array types
 <li>Define the dimensions of the matrix or array with a dim_vector.  For
 example
@@ -297,12 +77,12 @@ example
      <pre class="example">          dim_vector dv (2);
           dv(0) = 2; dv(1) = 2;
           Matrix a (dv);
-     </pre>
+</pre>
      <p>This can be used on all matrix and array types
 <li>Define the number of rows and columns in the matrix.  For example
 
      <pre class="example">          Matrix a (2, 2)
-     </pre>
+</pre>
      <p>However, this constructor can only be used with the matrix types. 
 </ul>
 
@@ -310,8 +90,8 @@ example
 selection of which include
 
 <div class="defun">
-&mdash; Method: T&amp; <b>operator ()</b> (<var>octave_idx_type</var>)<var><a name="index-operator-_0028_0029-1945"></a></var><br>
-&mdash; Method: T&amp; <b>elem</b> (<var>octave_idx_type</var>)<var><a name="index-elem-1946"></a></var><br>
+&mdash; Method: T&amp; <b>operator ()</b> (<var>octave_idx_type</var>)<var><a name="index-operator-_0028_0029-2473"></a></var><br>
+&mdash; Method: T&amp; <b>elem</b> (<var>octave_idx_type</var>)<var><a name="index-elem-2474"></a></var><br>
 <blockquote><p>The <code>()</code> operator or <code>elem</code> method allow the values of the
 matrix or array to be read or set.  These can take a single argument,
 which is of type <code>octave_idx_type</code>, that is the index into the matrix or
@@ -320,34 +100,34 @@ array.  Additionally, the matrix type allows two argument versions of the
 value to obtain or set. 
 </p></blockquote></div>
 
-   <p>Note that these function do significant error checking and so in some
-circumstances the user might prefer the access the data of the array or
+   <p>Note that these functions do significant error checking and so in some
+circumstances the user might prefer to access the data of the array or
 matrix directly through the fortran_vec method discussed below.
 
 <div class="defun">
-&mdash; Method: octave_idx_type <b>nelem</b> (<var>void</var>)<var> const<a name="index-nelem-1947"></a></var><br>
+&mdash; Method: octave_idx_type <b>nelem</b> (<var>void</var>)<var> const<a name="index-nelem-2475"></a></var><br>
 <blockquote><p>The total number of elements in the matrix or array. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: size_t <b>byte_size</b> (<var>void</var>)<var> const<a name="index-byte_005fsize-1948"></a></var><br>
+&mdash; Method: size_t <b>byte_size</b> (<var>void</var>)<var> const<a name="index-byte_005fsize-2476"></a></var><br>
 <blockquote><p>The number of bytes used to store the matrix or array. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: dim_vector <b>dims</b> (<var>void</var>)<var> const<a name="index-dims-1949"></a></var><br>
+&mdash; Method: dim_vector <b>dims</b> (<var>void</var>)<var> const<a name="index-dims-2477"></a></var><br>
 <blockquote><p>The dimensions of the matrix or array in value of type dim_vector. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: void <b>resize</b> (<var>const dim_vector&amp;</var>)<var><a name="index-resize-1950"></a></var><br>
+&mdash; Method: void <b>resize</b> (<var>const dim_vector&amp;</var>)<var><a name="index-resize-2478"></a></var><br>
 <blockquote><p>A method taking either an argument of type <code>dim_vector</code>, or in the
 case of a matrix two arguments of type <code>octave_idx_type</code> defining
 the number of rows and columns in the matrix. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: T* <b>fortran_vec</b> (<var>void</var>)<var><a name="index-fortran_005fvec-1951"></a></var><br>
+&mdash; Method: T* <b>fortran_vec</b> (<var>void</var>)<var><a name="index-fortran_005fvec-2479"></a></var><br>
 <blockquote><p>This method returns a pointer to the underlying data of the matrix or a
 array so that it can be manipulated directly, either within Octave or by
 an external library. 
@@ -359,7 +139,7 @@ that are of interest only for matrices such as <code>transpose</code>,
 <code>hermitian</code>, <code>solve</code>, etc.
 
    <p>The typical way to extract a matrix or array from the input arguments of
-<code>DEFUN_DLD</code> function is as follows
+<code>DEFUN_DLD</code><!-- /@w --> function is as follows
 
 <pre class="example"><pre class="verbatim">     #include &lt;octave/oct.h>
      
@@ -396,7 +176,7 @@ from the function.  An example of the use of this demonstration function
 is
 
 <pre class="example">     addtwomatrices (ones (2, 2), ones (2, 2))
-           =&gt;  2  2
+             2  2
                2  2
 </pre>
    <p>A list of the basic <code>Matrix</code> and <code>Array</code> types, the methods to

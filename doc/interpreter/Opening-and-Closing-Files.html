@@ -3,7 +3,7 @@
 <title>Opening and Closing Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions" title="C-Style I/O Functions">
 <link rel="next" href="Simple-Output.html#Simple-Output" title="Simple Output">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,7 +30,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C_002dStyle-I_002fO-Functions.html#C_00
 <hr>
 </div>
 
-<h4 class="subsection">15.2.1 Opening and Closing Files</h4>
+<h4 class="subsection">14.2.1 Opening and Closing Files</h4>
 
 <p>When reading data from a file it must be opened for reading first, and
 likewise when writing to a file.  The <code>fopen</code> function returns a
@@ -265,12 +45,13 @@ used when reading a file.
      # Do the actual I/O here...
      fclose (fid);
 </pre>
+   <!-- file-io.cc -->
    <p><a name="doc_002dfopen"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>fopen</b> (<var>name, mode, arch</var>)<var><a name="index-fopen-687"></a></var><br>
-&mdash; Built-in Function: <var>fid_list</var> = <b>fopen</b> (<var>"all"</var>)<var><a name="index-fopen-688"></a></var><br>
-&mdash; Built-in Function: [<var>file</var>, <var>mode</var>, <var>arch</var>] = <b>fopen</b> (<var>fid</var>)<var><a name="index-fopen-689"></a></var><br>
+&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>fopen</b> (<var>name, mode, arch</var>)<var><a name="index-fopen-773"></a></var><br>
+&mdash; Built-in Function: <var>fid_list</var> = <b>fopen</b> (<var>"all"</var>)<var><a name="index-fopen-774"></a></var><br>
+&mdash; Built-in Function: [<var>file</var>, <var>mode</var>, <var>arch</var>] = <b>fopen</b> (<var>fid</var>)<var><a name="index-fopen-775"></a></var><br>
 <blockquote><p>The first form of the <code>fopen</code> function opens the named file with
 the specified mode (read-write, read-only, etc.) and architecture
 interpretation (IEEE big endian, IEEE little endian, etc.), and returns
@@ -290,7 +71,7 @@ open file given its file id.
         <p>For example,
 
      <pre class="example">          myfile = fopen ("splat.dat", "r", "ieee-le");
-     </pre>
+</pre>
         <p class="noindent">opens the file <samp><span class="file">splat.dat</span></samp> for reading.  If necessary, binary
 numeric values will be read assuming they are stored in IEEE format with
 the least significant bit first, and then converted to the native
@@ -301,21 +82,21 @@ separate file id.  It is not an error to open a file several times,
 though writing to the same file through several different file ids may
 produce unexpected results.
 
-        <p>The possible values `<samp><span class="samp">mode</span></samp>' may have are
+        <p>The possible values &lsquo;<samp><span class="samp">mode</span></samp>&rsquo; may have are
 
           <dl>
-<dt>`<samp><span class="samp">r</span></samp>'<dd>Open a file for reading.
+<dt>&lsquo;<samp><span class="samp">r</span></samp>&rsquo;<dd>Open a file for reading.
 
-          <br><dt>`<samp><span class="samp">w</span></samp>'<dd>Open a file for writing.  The previous contents are discared.
+          <br><dt>&lsquo;<samp><span class="samp">w</span></samp>&rsquo;<dd>Open a file for writing.  The previous contents are discarded.
 
-          <br><dt>`<samp><span class="samp">a</span></samp>'<dd>Open or create a file for writing at the end of the file.
+          <br><dt>&lsquo;<samp><span class="samp">a</span></samp>&rsquo;<dd>Open or create a file for writing at the end of the file.
 
-          <br><dt>`<samp><span class="samp">r+</span></samp>'<dd>Open an existing file for reading and writing.
+          <br><dt>&lsquo;<samp><span class="samp">r+</span></samp>&rsquo;<dd>Open an existing file for reading and writing.
 
-          <br><dt>`<samp><span class="samp">w+</span></samp>'<dd>Open a file for reading or writing.  The previous contents are
+          <br><dt>&lsquo;<samp><span class="samp">w+</span></samp>&rsquo;<dd>Open a file for reading or writing.  The previous contents are
 discarded.
 
-          <br><dt>`<samp><span class="samp">a+</span></samp>'<dd>Open or create a file for reading or writing at the end of the
+          <br><dt>&lsquo;<samp><span class="samp">a+</span></samp>&rsquo;<dd>Open or create a file for reading or writing at the end of the
 file. 
 </dl>
 
@@ -334,43 +115,46 @@ must also open the file in binary mode.
 for the file.  Valid values for <var>arch</var> are:
 
           <dl>
-`<samp><span class="samp">native</span></samp>'
+&lsquo;<samp><span class="samp">native</span></samp>&rsquo;
 The format of the current machine (this is the default).
 
-          <p>`<samp><span class="samp">ieee-be</span></samp>'
+          <p>&lsquo;<samp><span class="samp">ieee-be</span></samp>&rsquo;
 IEEE big endian format.
 
-          <p>`<samp><span class="samp">ieee-le</span></samp>'
+          <p>&lsquo;<samp><span class="samp">ieee-le</span></samp>&rsquo;
 IEEE little endian format.
 
-          <p>`<samp><span class="samp">vaxd</span></samp>'
+          <p>&lsquo;<samp><span class="samp">vaxd</span></samp>&rsquo;
 VAX D floating format.
 
-          <p>`<samp><span class="samp">vaxg</span></samp>'
+          <p>&lsquo;<samp><span class="samp">vaxg</span></samp>&rsquo;
 VAX G floating format.
 
-          <p>`<samp><span class="samp">cray</span></samp>'
+          <p>&lsquo;<samp><span class="samp">cray</span></samp>&rsquo;
 Cray floating format. 
 </dl>
 
-     <p class="noindent">however, conversions are currently only supported for `<samp><span class="samp">native</span></samp>'
-`<samp><span class="samp">ieee-be</span></samp>', and `<samp><span class="samp">ieee-le</span></samp>' formats.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> fclose, fread, fseek. 
+     <p class="noindent">however, conversions are currently only supported for &lsquo;<samp><span class="samp">native</span></samp>&rsquo;
+&lsquo;<samp><span class="samp">ieee-be</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">ieee-le</span></samp>&rsquo; formats. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfclose.html#doc_002dfclose">fclose</a>, <a href="doc_002dfgets.html#doc_002dfgets">fgets</a>, <a href="doc_002dfputs.html#doc_002dfputs">fputs</a>, <a href="doc_002dfread.html#doc_002dfread">fread</a>, <a href="doc_002dfseek.html#doc_002dfseek">fseek</a>, <a href="doc_002dferror.html#doc_002dferror">ferror</a>, <a href="doc_002dfprintf.html#doc_002dfprintf">fprintf</a>, <a href="doc_002dfscanf.html#doc_002dfscanf">fscanf</a>, <a href="doc_002dftell.html#doc_002dftell">ftell</a>, <a href="doc_002dfwrite.html#doc_002dfwrite">fwrite</a>. 
 </p></blockquote></div>
 
+<!-- file-io.cc -->
    <p><a name="doc_002dfclose"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fclose</b> (<var>fid</var>)<var><a name="index-fclose-690"></a></var><br>
+&mdash; Built-in Function:  <b>fclose</b> (<var>fid</var>)<var><a name="index-fclose-776"></a></var><br>
 <blockquote><p>Closes the specified file.  If successful, <code>fclose</code> returns 0,
-otherwise, it returns -1.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> fopen, fseek, ftell. 
+otherwise, it returns -1. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfopen.html#doc_002dfopen">fopen</a>, <a href="doc_002dfseek.html#doc_002dfseek">fseek</a>, <a href="doc_002dftell.html#doc_002dftell">ftell</a>. 
 </p></blockquote></div>
 
    </body></html>

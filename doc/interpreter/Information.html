@@ -3,10 +3,10 @@
 <title>Information - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Basics.html#Basics" title="Basics">
-<link rel="prev" href="Creation.html#Creation" title="Creation">
+<link rel="prev" href="Creating-Sparse-Matrices.html#Creating-Sparse-Matrices" title="Creating Sparse Matrices">
 <link rel="next" href="Operators-and-Functions.html#Operators-and-Functions" title="Operators and Functions">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -20,226 +20,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -247,74 +27,81 @@ color: black;
 <p>
 <a name="Information"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="Operators-and-Functions.html#Operators-and-Functions">Operators and Functions</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Creation.html#Creation">Creation</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Creating-Sparse-Matrices.html#Creating-Sparse-Matrices">Creating Sparse Matrices</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Basics.html#Basics">Basics</a>
 <hr>
 </div>
 
-<h4 class="subsection">22.1.3 Finding out Information about Sparse Matrices</h4>
+<h4 class="subsection">21.1.3 Finding out Information about Sparse Matrices</h4>
 
 <p>There are a number of functions that allow information concerning
-sparse matrices to be obtained. The most basic of these is
+sparse matrices to be obtained.  The most basic of these is
 <dfn>issparse</dfn> that identifies whether a particular Octave object is
 in fact a sparse matrix.
 
    <p>Another very basic function is <dfn>nnz</dfn> that returns the number of
 non-zero entries there are in a sparse matrix, while the function
 <dfn>nzmax</dfn> returns the amount of storage allocated to the sparse
-matrix. Note that Octave tends to crop unused memory at the first
-opportunity for sparse objects. There are some cases of user created
-sparse objects where the value returned by <dfn>nzmaz</dfn> will not be
+matrix.  Note that Octave tends to crop unused memory at the first
+opportunity for sparse objects.  There are some cases of user created
+sparse objects where the value returned by <dfn>nzmax</dfn> will not be
 the same as <dfn>nnz</dfn>, but in general they will give the same
-result. The function <dfn>spstats</dfn> returns some basic statistics on
+result.  The function <dfn>spstats</dfn> returns some basic statistics on
 the columns of a sparse matrix including the number of elements, the
 mean and the variance of each column.
 
+<!-- ./DLD-FUNCTIONS/sparse.cc -->
    <p><a name="doc_002dissparse"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>issparse</b> (<var>expr</var>)<var><a name="index-issparse-1160"></a></var><br>
+&mdash; Loadable Function:  <b>issparse</b> (<var>expr</var>)<var><a name="index-issparse-1663"></a></var><br>
 <blockquote><p>Return 1 if the value of the expression <var>expr</var> is a sparse matrix. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dnnz"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>scalar</var> = <b>nnz</b> (<var>a</var>)<var><a name="index-nnz-1161"></a></var><br>
-<blockquote><p>Returns the number of non zero elements in <var>a</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> sparse. 
+&mdash; Built-in Function: <var>scalar</var> = <b>nnz</b> (<var>a</var>)<var><a name="index-nnz-1664"></a></var><br>
+<blockquote><p>Returns the number of non zero elements in <var>a</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsparse.html#doc_002dsparse">sparse</a>. 
 </p></blockquote></div>
 
+<!-- ./sparse/nonzeros.m -->
    <p><a name="doc_002dnonzeros"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>nonzeros</b> (<var>s</var>)<var><a name="index-nonzeros-1162"></a></var><br>
+&mdash; Function File:  <b>nonzeros</b> (<var>s</var>)<var><a name="index-nonzeros-1665"></a></var><br>
 <blockquote><p>Returns a vector of the non-zero values of the sparse matrix <var>s</var>. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dnzmax"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>scalar</var> = <b>nzmax</b> (<var>SM</var>)<var><a name="index-nzmax-1163"></a></var><br>
+&mdash; Built-in Function: <var>scalar</var> = <b>nzmax</b> (<var>SM</var>)<var><a name="index-nzmax-1666"></a></var><br>
 <blockquote><p>Return the amount of storage allocated to the sparse matrix <var>SM</var>. 
-Note that Octave tends to crop unused memory at the first oppurtunity
-for sparse objects. There are some cases of user created sparse objects
-where the value returned by <dfn>nzmaz</dfn> will not be the same as <dfn>nnz</dfn>,
-but in general they will give the same result.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> sparse, spalloc. 
+Note that Octave tends to crop unused memory at the first opportunity
+for sparse objects.  There are some cases of user created sparse objects
+where the value returned by <dfn>nzmax</dfn> will not be the same as <dfn>nnz</dfn>,
+but in general they will give the same result. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsparse.html#doc_002dsparse">sparse</a>, <a href="doc_002dspalloc.html#doc_002dspalloc">spalloc</a>. 
 </p></blockquote></div>
 
+<!-- ./sparse/spstats.m -->
    <p><a name="doc_002dspstats"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>count</var>, <var>mean</var>, <var>var</var>] = <b>spstats</b> (<var>s</var>)<var><a name="index-spstats-1164"></a></var><br>
-&mdash; Function File: [<var>count</var>, <var>mean</var>, <var>var</var>] = <b>spstats</b> (<var>s, j</var>)<var><a name="index-spstats-1165"></a></var><br>
+&mdash; Function File: [<var>count</var>, <var>mean</var>, <var>var</var>] = <b>spstats</b> (<var>s</var>)<var><a name="index-spstats-1667"></a></var><br>
+&mdash; Function File: [<var>count</var>, <var>mean</var>, <var>var</var>] = <b>spstats</b> (<var>s, j</var>)<var><a name="index-spstats-1668"></a></var><br>
 <blockquote><p>Return the stats for the non-zero elements of the sparse matrix <var>s</var>. 
 <var>count</var> is the number of non-zeros in each column, <var>mean</var>
 is the mean of the non-zeros in each column, and <var>var</var> is the
@@ -328,11 +115,11 @@ this case, bins can contain data values of zero, whereas with
 
    <p>When solving linear equations involving sparse matrices Octave
 determines the means to solve the equation based on the type of the
-matrix as discussed in <a href="Sparse-Linear-Algebra.html#Sparse-Linear-Algebra">Sparse Linear Algebra</a>. Octave probes the
+matrix as discussed in <a href="Sparse-Linear-Algebra.html#Sparse-Linear-Algebra">Sparse Linear Algebra</a>.  Octave probes the
 matrix type when the div (/) or ldiv (\) operator is first used with
-the matrix and then caches the type. However the <dfn>matrix_type</dfn>
+the matrix and then caches the type.  However the <dfn>matrix_type</dfn>
 function can be used to determine the type of the sparse matrix prior
-to use of the div or ldiv operators. For example
+to use of the div or ldiv operators.  For example
 
 <pre class="example">     a = tril (sprandn(1024, 1024, 0.02), -1) ...
          + speye(1024);
@@ -340,36 +127,35 @@ to use of the div or ldiv operators. For example
      ans = Lower
 </pre>
    <p>show that Octave correctly determines the matrix type for lower
-triangular matrices. <dfn>matrix_type</dfn> can also be used to force
-the type of a matrix to be a particular type. For example
+triangular matrices.  <dfn>matrix_type</dfn> can also be used to force
+the type of a matrix to be a particular type.  For example
 
 <pre class="example">     a = matrix_type (tril (sprandn (1024, ...
         1024, 0.02), -1) + speye(1024), 'Lower');
 </pre>
    <p>This allows the cost of determining the matrix type to be
-avoided. However, incorrectly defining the matrix type will result in
+avoided.  However, incorrectly defining the matrix type will result in
 incorrect results from solutions of linear equations, and so it is
 entirely the responsibility of the user to correctly identify the
 matrix type
 
    <p>There are several graphical means of finding out information about
-sparse matrices. The first is the <dfn>spy</dfn> command, which displays
+sparse matrices.  The first is the <dfn>spy</dfn> command, which displays
 the structure of the non-zero elements of the
-matrix. See <a href="fig_003aspmatrix.html#fig_003aspmatrix">fig:spmatrix</a>, for an exaple of the use of
+matrix.  See <a href="fig_003aspmatrix.html#fig_003aspmatrix">fig:spmatrix</a>, for an example of the use of
 <dfn>spy</dfn>.  More advanced graphical information can be obtained with the
 <dfn>treeplot</dfn>, <dfn>etreeplot</dfn> and <dfn>gplot</dfn> commands.
 
    <div class="float">
-<a name="fig_003aspmatrix"></a><img src="spmatrix.png" alt="spmatrix.png">
-
-   <p><strong class="float-caption">Figure 22.1: Structure of simple sparse matrix.</strong></p></div>
+<a name="fig_003aspmatrix"></a><div align="center"><img src="spmatrix.png" alt="spmatrix.png"></div>
+   <p><strong class="float-caption">Figure 21.1: Structure of simple sparse matrix.</strong></p></div>
 
    <p>One use of sparse matrices is in graph theory, where the
-interconnections between nodes is represented as an adjacency
-matrix. That is, if the i-th node in a graph is connected to the j-th
-node. Then the ij-th node (and in the case of undirected graphs the
-ji-th node) of the sparse adjacency matrix is non-zero. If each node
-is then associated with a set of co-ordinates, then the <dfn>gplot</dfn>
+interconnections between nodes are represented as an adjacency
+matrix.  That is, if the i-th node in a graph is connected to the j-th
+node.  Then the ij-th node (and in the case of undirected graphs the
+ji-th node) of the sparse adjacency matrix is non-zero.  If each node
+is then associated with a set of coordinates, then the <dfn>gplot</dfn>
 command can be used to graphically display the interconnections
 between nodes.
 
@@ -381,76 +167,81 @@ between nodes.
      gplot(A,xy)
 </pre>
    <p>which creates an adjacency matrix <code>A</code> where node 1 is connected
-to nodes 2 and 6, node 2 with nodes 1 and 3, etc. The co-ordinates of
+to nodes 2 and 6, node 2 with nodes 1 and 3, etc.  The coordinates of
 the nodes are given in the n-by-2 matrix <code>xy</code>. 
 See <a href="fig_003agplot.html#fig_003agplot">fig:gplot</a>.
 
    <div class="float">
-<a name="fig_003agplot"></a><img src="gplot.png" alt="gplot.png">
-
-   <p><strong class="float-caption">Figure 22.2: Simple use of the <dfn>gplot</dfn> command.</strong></p></div>
+<a name="fig_003agplot"></a><div align="center"><img src="gplot.png" alt="gplot.png"></div>
+   <p><strong class="float-caption">Figure 21.2: Simple use of the <dfn>gplot</dfn> command.</strong></p></div>
 
    <p>The dependencies between the nodes of a Cholesky factorization can be
 calculated in linear time without explicitly needing to calculate the
-Cholesky factorization by the <code>etree</code> command. This command
+Cholesky factorization by the <code>etree</code> command.  This command
 returns the elimination tree of the matrix and can be displayed
 graphically by the command <code>treeplot(etree(A))</code> if <code>A</code> is
 symmetric or <code>treeplot(etree(A+A'))</code> otherwise.
 
+<!-- ./sparse/spy.m -->
    <p><a name="doc_002dspy"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>spy</b> (<var>x</var>)<var><a name="index-spy-1166"></a></var><br>
-&mdash; Function File:  <b>spy</b> (<var><small class="dots">...</small>, markersize</var>)<var><a name="index-spy-1167"></a></var><br>
-&mdash; Function File:  <b>spy</b> (<var><small class="dots">...</small>, LineSpec</var>)<var><a name="index-spy-1168"></a></var><br>
-<blockquote><p>Plot the sparsity pattern of the sparse matrix <var>x</var>. If the argument
+&mdash; Function File:  <b>spy</b> (<var>x</var>)<var><a name="index-spy-1669"></a></var><br>
+&mdash; Function File:  <b>spy</b> (<var><small class="dots">...</small>, markersize</var>)<var><a name="index-spy-1670"></a></var><br>
+&mdash; Function File:  <b>spy</b> (<var><small class="dots">...</small>, line_spec</var>)<var><a name="index-spy-1671"></a></var><br>
+<blockquote><p>Plot the sparsity pattern of the sparse matrix <var>x</var>.  If the argument
 <var>markersize</var> is given as an scalar value, it is used to determine the
-point size in the plot. If the string <var>LineSpec</var> is given it is
-passed to <code>plot</code> and determines the appearance of the plot.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> plot. 
+point size in the plot.  If the string <var>line_spec</var> is given it is
+passed to <code>plot</code> and determines the appearance of the plot. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dplot.html#doc_002dplot">plot</a>. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/colamd.cc -->
    <p><a name="doc_002detree"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>etree</b> (<var>s</var>)<var><a name="index-etree-1169"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>etree</b> (<var>s, typ</var>)<var><a name="index-etree-1170"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>q</var>] = <b>etree</b> (<var>s, typ</var>)<var><a name="index-etree-1171"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>etree</b> (<var>s</var>)<var><a name="index-etree-1672"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>etree</b> (<var>s, typ</var>)<var><a name="index-etree-1673"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>q</var>] = <b>etree</b> (<var>s, typ</var>)<var><a name="index-etree-1674"></a></var><br>
 <blockquote>
-<p>Returns the elimination tree for the matrix <var>s</var>. By default <var>s</var>
+        <p>Returns the elimination tree for the matrix <var>s</var>.  By default <var>s</var>
 is assumed to be symmetric and the symmetric elimination tree is
-returned. The argument <var>typ</var> controls whether a symmetric or
-column elimination tree is returned. Valid values of <var>typ</var> are
+returned.  The argument <var>typ</var> controls whether a symmetric or
+column elimination tree is returned.  Valid values of <var>typ</var> are
 'sym' or 'col', for symmetric or column elimination tree respectively
 
         <p>Called with a second argument, <dfn>etree</dfn> also returns the postorder
 permutations on the tree. 
 </p></blockquote></div>
 
+<!-- ./sparse/etreeplot.m -->
    <p><a name="doc_002detreeplot"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>etreeplot</b> (<var>tree</var>)<var><a name="index-etreeplot-1172"></a></var><br>
-&mdash; Function File:  <b>etreeplot</b> (<var>tree, node_style, edge_style</var>)<var><a name="index-etreeplot-1173"></a></var><br>
+&mdash; Function File:  <b>etreeplot</b> (<var>tree</var>)<var><a name="index-etreeplot-1675"></a></var><br>
+&mdash; Function File:  <b>etreeplot</b> (<var>tree, node_style, edge_style</var>)<var><a name="index-etreeplot-1676"></a></var><br>
 <blockquote><p>Plot the elimination tree of the matrix <var>s</var> or
 <var>s</var><code>+</code><var>s</var><code>'</code>  if <var>s</var> in non-symmetric.  The optional
 parameters <var>line_style</var> and <var>edge_style</var> define the output
-style.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> treeplot, gplot. 
+style. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtreeplot.html#doc_002dtreeplot">treeplot</a>, <a href="doc_002dgplot.html#doc_002dgplot">gplot</a>. 
 </p></blockquote></div>
 
+<!-- ./sparse/gplot.m -->
    <p><a name="doc_002dgplot"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>gplot</b> (<var>a, xy</var>)<var><a name="index-gplot-1174"></a></var><br>
-&mdash; Function File:  <b>gplot</b> (<var>a, xy, line_style</var>)<var><a name="index-gplot-1175"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>y</var>] = <b>gplot</b> (<var>a, xy</var>)<var><a name="index-gplot-1176"></a></var><br>
+&mdash; Function File:  <b>gplot</b> (<var>a, xy</var>)<var><a name="index-gplot-1677"></a></var><br>
+&mdash; Function File:  <b>gplot</b> (<var>a, xy, line_style</var>)<var><a name="index-gplot-1678"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>y</var>] = <b>gplot</b> (<var>a, xy</var>)<var><a name="index-gplot-1679"></a></var><br>
 <blockquote><p>Plot a graph defined by <var>A</var> and <var>xy</var> in the graph theory
 sense.  <var>A</var> is the adjacency matrix of the array to be plotted
 and <var>xy</var> is an <var>n</var>-by-2 matrix containing the coordinates of
@@ -459,26 +250,46 @@ the nodes of the graph.
         <p>The optional parameter <var>line_style</var> defines the output style for
 the plot.  Called with no output arguments the graph is plotted
 directly.  Otherwise, return the coordinates of the plot in <var>x</var>
-and <var>y</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> treeplot, etreeplot, spy. 
+and <var>y</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtreeplot.html#doc_002dtreeplot">treeplot</a>, <a href="doc_002detreeplot.html#doc_002detreeplot">etreeplot</a>, <a href="doc_002dspy.html#doc_002dspy">spy</a>. 
 </p></blockquote></div>
 
+<!-- ./sparse/treeplot.m -->
    <p><a name="doc_002dtreeplot"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>treeplot</b> (<var>Tree</var>)<var><a name="index-treeplot-1177"></a></var><br>
-&mdash; Function File:  <b>treeplot</b> (<var>Tree, LineStyle, EdgeStyle</var>)<var><a name="index-treeplot-1178"></a></var><br>
-<blockquote><p>Produces a graph of tree or forest. The first argument is vector of
-predecessors, optional parametres <var>LineStyle</var> and <var>EdgeStyle</var>
-define the output style. The complexity of the algorithm is O(n) in
-terms of is time and memory requirements.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> etreeplot, gplot. 
+&mdash; Function File:  <b>treeplot</b> (<var>tree</var>)<var><a name="index-treeplot-1680"></a></var><br>
+&mdash; Function File:  <b>treeplot</b> (<var>tree, line_style, edge_style</var>)<var><a name="index-treeplot-1681"></a></var><br>
+<blockquote><p>Produces a graph of tree or forest.  The first argument is vector of
+predecessors, optional parameters <var>line_style</var> and <var>edge_style</var>
+define the output style.  The complexity of the algorithm is O(n) in
+terms of is time and memory requirements. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002detreeplot.html#doc_002detreeplot">etreeplot</a>, <a href="doc_002dgplot.html#doc_002dgplot">gplot</a>. 
+</p></blockquote></div>
+
+<!-- ./sparse/treelayout.m -->
+   <p><a name="doc_002dtreelayout"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>treelayout</b> (<var>Tree</var>)<var><a name="index-treelayout-1682"></a></var><br>
+&mdash; Function File:  <b>treelayout</b> (<var>Tree, permutation</var>)<var><a name="index-treelayout-1683"></a></var><br>
+<blockquote><p>treelayout lays out a tree or a forest.  The first argument <var>Tree</var> is a vector of
+predecessors, optional parameter <var>permutation</var> is an optional postorder permutation. 
+The complexity of the algorithm is O(n) in
+terms of time and memory requirements. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002detreeplot.html#doc_002detreeplot">etreeplot</a>, <a href="doc_002dgplot.html#doc_002dgplot">gplot</a>, <a href="doc_002dtreeplot.html#doc_002dtreeplot">treeplot</a>. 
 </p></blockquote></div>
 
    </body></html>

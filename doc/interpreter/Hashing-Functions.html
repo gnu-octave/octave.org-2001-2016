@@ -3,7 +3,7 @@
 <title>Hashing Functions - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
 <link rel="prev" href="System-Information.html#System-Information" title="System Information">
@@ -19,226 +19,6 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
@@ -250,21 +30,21 @@ Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities"
 <hr>
 </div>
 
-<h3 class="section">37.12 Hashing Functions</h3>
+<h3 class="section">34.12 Hashing Functions</h3>
 
 <p>It is often necessary to find if two strings or files are
-identical. This might be done by comparing them character by character
-and looking for differences. However, this can be slow, and so comparing
+identical.  This might be done by comparing them character by character
+and looking for differences.  However, this can be slow, and so comparing
 a hash of the string or file can be a rapid way of finding if the files
 differ.
 
-   <p>Another use of the hashing function is to check for file integrity. The
+   <p>Another use of the hashing function is to check for file integrity.  The
 user can check the hash of the file against a known value and find if
 the file they have is the same as the one that the original hash was
 produced with.
 
-   <p>Octave supplies the <code>md5sum</code> function to perfrom MD5 hashes on
-strings and files. An example of the use of <code>md5sum</code> function might
+   <p>Octave supplies the <code>md5sum</code> function to perform MD5 hashes on
+strings and files.  An example of the use of <code>md5sum</code> function might
 be
 
 <pre class="example">     if exist (file, "file")
@@ -274,19 +54,30 @@ be
        hash = md5sum (file, true);
      endif
 </pre>
+   <!-- ./DLD-FUNCTIONS/md5sum.cc -->
    <p><a name="doc_002dmd5sum"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>md5sum</b> (<var>file</var>)<var><a name="index-md5sum-1937"></a></var><br>
-&mdash; Loadable Function:  <b>md5sum</b> (<var>str, opt</var>)<var><a name="index-md5sum-1938"></a></var><br>
-<blockquote><p>Calculates the MD5 sum of the file <var>file</var>. If the second parameter
+&mdash; Loadable Function:  <b>md5sum</b> (<var>file</var>)<var><a name="index-md5sum-2463"></a></var><br>
+&mdash; Loadable Function:  <b>md5sum</b> (<var>str, opt</var>)<var><a name="index-md5sum-2464"></a></var><br>
+<blockquote><p>Calculates the MD5 sum of the file <var>file</var>.  If the second parameter
 <var>opt</var> exists and is true, then calculate the MD5 sum of the
 string <var>str</var>. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 2007 Søren Hauberg -->
-<!-- This is part of the Octave manual. -->
-<!-- For copying conditions, see the file gpl.texi. -->
-</body></html>
+<!-- Copyright (C) 2007, 2008, 2009 Sï¿½ren Hauberg -->
+<!-- This file is part of Octave. -->
+<!-- Octave is free software; you can redistribute it and/or modify it -->
+<!-- under the terms of the GNU General Public License as published by the -->
+<!-- Free Software Foundation; either version 3 of the License, or (at -->
+<!-- your option) any later version. -->
+<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
+<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
+<!-- for more details. -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Octave; see the file COPYING.  If not, see -->
+<!-- <http://www.gnu.org/licenses/>. -->
+   </body></html>
 

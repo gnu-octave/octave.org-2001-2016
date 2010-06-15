@@ -3,10 +3,11 @@
 <title>Utility Functions - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.8">
+<meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
-<link rel="next" href="Complex-Arithmetic.html#Complex-Arithmetic" title="Complex Arithmetic">
+<link rel="prev" href="Sums-and-Products.html#Sums-and-Products" title="Sums and Products">
+<link rel="next" href="Special-Functions.html#Special-Functions" title="Special Functions">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,475 +20,338 @@
   span.sc    { font-variant:small-caps }
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
-td,p {
-font-family: arial,sans-serif;
-color: #000000;
-}
-
-body {
-  background: white;
-  color: #000000;
-  font-family: arial,sans-serif;
-  font-weight: normal;
-  font-size: medium;
-  min-width: 500px;
-  max-width: 950px;
-  margin-left: 3%;
-  margin-right: 12%;
-}
-
-a:link {
-color: #0050fa;
-}
-
-a:visited {
-color: #1188ff;
-}
-
-.code {
-margin-left: 30px;
-margin-right: 30px;
-background-color: #d0d0d0;
-color: #000000;
-}
-
-/* the navigation choices at the bottom of the page. */
-
-div#nav {
-color: #000000;
-float: left;
-font-family: arial,sans-serif;
-font-size: 0.75em;
-margin: 1em 0 0 1em;
-padding: 0;
-position: fixed;
-text-align: left;
-width: 10em;
-}
-
-div#nav a {
-background-color: #dde4ff;
-border: 1px solid;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-decoration: none;
-color: #1155dd;
-}
-
-div#nav a:hover {
-background-color: #f5f5ff;
-}
-
-div#nav div#currentnav {
-background-color: #ccccdd;
-border: solid;
-border-left-width: 1px;
-border-top-width: 1px;
-border-bottom-width: 1px;
-border-right-width: 0px;
-border-color: #10a0ff;
-display: block;
-padding: 0.2em 0.5em 0.2em 0.5em ;
-text-align: right;
-}
-
-/* the page content */
-
-div#content {
-  position: relative;
-  left: 11em;
-  width: 80%;
-}
-
-div.section {
-  clear: both;
-}
-
-/* For all page footers */
-div#footer {
-clear: both;
-font-size: x-small;
-text-align: center;
-color: #606060;
-}
-
-/* the title bar */
-
-div#title {
-width: 100%;
-clear: both;
-}
-
-div#title h1 {
-background-color: #ffffff;
-border-bottom: 5px solid #33ccff;
-font-size: xx-large;
-color: #10a0ff;
-padding: 0;
-margin: 0;
-}
-
-/* The blue title bar on non-main pages */
-
-.header {
-color: #ffffff;
-background-color: #10a0ff;
-font-family: arial,sans-serif;
-padding: 0;
-font-size: medium;
-font-weight: bold;
-border: 3px solid #10a0ff;
-}
-
-/* For the download page */
-
-/* descriptions of versions available */
-dt {
-font-weight: bold;
-}
-
-dd {
-font-family: arial,sans-serif;
-}
-
-/* Highlighting the code download sections */
-.download {
-background-color: #d0e0ff;
-}
-
-caption {
-display: none;
-}
-
-th {
-text-align: left;
-}
-
-/* Changes for Octave Wiki */
-
-h1 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: xx-large;
-padding: 2em;
-margin: 8em;
-}
-
-h2 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.2em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h3 {
-background-color: #10a0ff;
-color: #ffffff;
-font-size: 1.1em;
-padding: 2px;
-margin-top: 5px;
-}
-
-h4,h5,h6 {
-color: #606060;
-font-size: large;
-padding: 2px;
-margin-top: 5px;
-}
-
-/* for links in the header */
-h1 a {
-color: #ffffff;
-}
-
-#im {
-float: right;
-margin: 10px;
-border: 2px solid #000000;
-}
-
-#iml {
-margin: 10px;
-float: right;
-border: 2px solid #000000;
-clear: right;
-}
-
-img.left { float:left; margin:1em; }
-img.right { float:right; margin:1em; }
-img.middle { text-align:center; margin:1em; }
-
-img.logo { float: right; clear: right; border-style:none; }
-
-pre {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-white-space: pre;
-background-color: #e6e6e6;
-color: black;
-}
-
-blockquote.note {
-border: #777777 1px solid;
-padding: 0.5em;
-margin-left: 1em;
-margin-right: 2em;
-background-color: #e6e6e6;
-color: black;
-}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
 <a name="Utility-Functions"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Complex-Arithmetic.html#Complex-Arithmetic">Complex Arithmetic</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Special-Functions.html#Special-Functions">Special Functions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Sums-and-Products.html#Sums-and-Products">Sums and Products</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
 <hr>
 </div>
 
-<h3 class="section">18.1 Utility Functions</h3>
+<h3 class="section">17.5 Utility Functions</h3>
 
-<p>The following functions are available for working with complex numbers. 
-Each expects a single argument.  They are called <dfn>mapping functions</dfn>
-because when given a matrix argument, they apply the given function to
-each element of the matrix.
-
-   <p><a name="doc_002dceil"></a>
+<!-- mappers.cc -->
+<p><a name="doc_002dceil"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>ceil</b> (<var>x</var>)<var><a name="index-ceil-909"></a></var><br>
-<blockquote><p>Return the smallest integer not less than <var>x</var>.  If <var>x</var> is
-complex, return <code>ceil (real (</code><var>x</var><code>)) + ceil (imag (</code><var>x</var><code>)) * I</code>. 
+&mdash; Mapping Function:  <b>ceil</b> (<var>x</var>)<var><a name="index-ceil-1436"></a></var><br>
+<blockquote><p>Return the smallest integer not less than <var>x</var>.  This is equivalent to
+rounding towards positive infinity.  If <var>x</var> is
+complex, return <code>ceil (real (</code><var>x</var><code>)) + ceil (imag (</code><var>x</var><code>)) * I</code>.
+     <pre class="example">          ceil ([-2.7, 2.7])
+               -2   3
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfloor.html#doc_002dfloor">floor</a>, <a href="doc_002dround.html#doc_002dround">round</a>, <a href="doc_002dfix.html#doc_002dfix">fix</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dcplxpair"></a>
+<!-- ./linear-algebra/cross.m -->
+   <p><a name="doc_002dcross"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cplxpair</b> (<var>z, tol, dim</var>)<var><a name="index-cplxpair-910"></a></var><br>
-<blockquote><p>Sort the numbers <var>z</var> into complex conjugate pairs ordered by
-increasing real part.  With identical real parts, order by increasing
-imaginary magnitude. Place the negative imaginary complex number
-first within each pair. Place all the real numbers after all the
-complex pairs (those with <code>abs (imag (</code><var>z</var><code>) / </code><var>z</var><code>) &lt;
-</code><var>tol</var><code>)</code>, where the default value of <var>tol</var> is <code>100 *
-</code><var>eps</var>.
+&mdash; Function File:  <b>cross</b> (<var>x, y</var>)<var><a name="index-cross-1437"></a></var><br>
+&mdash; Function File:  <b>cross</b> (<var>x, y, dim</var>)<var><a name="index-cross-1438"></a></var><br>
+<blockquote><p>Compute the vector cross product of two 3-dimensional vectors
+<var>x</var> and <var>y</var>.
 
-        <p>By default the complex pairs are sorted along the first non-singleton
-dimension of <var>z</var>. If <var>dim</var> is specified, then the complex
-pairs are sorted along this dimension.
+     <pre class="example">          cross ([1,1,0], [0,1,1])
+                [ 1; -1; 1 ]
+</pre>
+        <p>If <var>x</var> and <var>y</var> are matrices, the cross product is applied
+along the first dimension with 3 elements.  The optional argument
+<var>dim</var> forces the cross product to be calculated along
+the specified dimension. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-        <p>Signal an error if some complex numbers could not be paired. Requires
-all complex numbers to be exact conjugates within tol, or signals an
-error. Note that there are no guarantees on the order of the returned
-pairs with identical real parts but differing imaginary parts.
-
-     <pre class="example">          cplxpair (exp(2i*pi*[0:4]'/5)) == exp(2i*pi*[3; 2; 4; 1; 0]/5)
-     </pre>
-        </blockquote></div>
-
-   <p><a name="doc_002dexp"></a>
-
-<div class="defun">
-&mdash; Mapping Function:  <b>exp</b> (<var>x</var>)<var><a name="index-exp-911"></a></var><br>
-<blockquote><p>Compute the exponential of <var>x</var>.  To compute the matrix exponential,
-see <a href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddot.html#doc_002ddot">dot</a>. 
 </p></blockquote></div>
 
+<!-- ./general/del2.m -->
+   <p><a name="doc_002ddel2"></a>
+
+<div class="defun">
+&mdash; Function File: <var>d</var> = <b>del2</b> (<var>m</var>)<var><a name="index-del2-1439"></a></var><br>
+&mdash; Function File: <var>d</var> = <b>del2</b> (<var>m, h</var>)<var><a name="index-del2-1440"></a></var><br>
+&mdash; Function File: <var>d</var> = <b>del2</b> (<var>m, dx, dy, <small class="dots">...</small></var>)<var><a name="index-del2-1441"></a></var><br>
+<blockquote>
+        <p>Calculate the discrete Laplace
+operator. 
+For a 2-dimensional matrix <var>m</var> this is defined as
+
+     <pre class="example">                1    / d^2            d^2         \
+          D  = --- * | ---  M(x,y) +  ---  M(x,y) |
+                4    \ dx^2           dy^2        /
+</pre>
+        <p>For N-dimensional arrays the sum in parentheses is expanded to include second derivatives
+over the additional higher dimensions.
+
+        <p>The spacing between evaluation points may be defined by <var>h</var>, which is a
+scalar defining the equidistant spacing in all dimensions.  Alternatively,
+the spacing in each dimension may be defined separately by <var>dx</var>, <var>dy</var>,
+etc.  A scalar spacing argument defines equidistant spacing, whereas a vector
+argument can be used to specify variable spacing.  The length of the spacing vectors
+must match the respective dimension of <var>m</var>.  The default spacing value
+is 1.
+
+        <p>At least 3 data points are needed for each dimension.  Boundary points are
+calculated from the linear extrapolation of interior points.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgradient.html#doc_002dgradient">gradient</a>, <a href="doc_002ddiff.html#doc_002ddiff">diff</a>. 
+</p></blockquote></div>
+
+<!-- ./specfun/factor.m -->
    <p><a name="doc_002dfactor"></a>
 
 <div class="defun">
-&mdash; Function File: <var>p</var> = <b>factor</b> (<var>q</var>)<var><a name="index-factor-912"></a></var><br>
-&mdash; Function File: [<var>p</var>, <var>n</var>] = <b>factor</b> (<var>q</var>)<var><a name="index-factor-913"></a></var><br>
+&mdash; Function File: <var>p</var> = <b>factor</b> (<var>q</var>)<var><a name="index-factor-1442"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>n</var>] = <b>factor</b> (<var>q</var>)<var><a name="index-factor-1443"></a></var><br>
 <blockquote>
-<p>Return prime factorization of <var>q</var>. That is <code>prod (</code><var>p</var><code>)
-== </code><var>q</var>. If <var>q</var><code> == 1</code>, returns 1.
+        <p>Return prime factorization of <var>q</var>.  That is, <code>prod (</code><var>p</var><code>)
+== </code><var>q</var> and every element of <var>p</var> is a prime number.  If
+<var>q</var><code> == 1</code>, returns 1.
 
-        <p>With two output arguments, returns the uniques primes <var>p</var> and
-their mulyiplicities. That is <code>prod (</code><var>p</var><code> .^ </code><var>n</var><code>) ==
-</code><var>q</var>.
+        <p>With two output arguments, return the unique primes <var>p</var> and
+their multiplicities.  That is, <code>prod (</code><var>p</var><code> .^ </code><var>n</var><code>) ==
+</code><var>q</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-        </blockquote></div>
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgcd.html#doc_002dgcd">gcd</a>, <a href="doc_002dlcm.html#doc_002dlcm">lcm</a>. 
+</p></blockquote></div>
 
+<!-- ./specfun/factorial.m -->
    <p><a name="doc_002dfactorial"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>factorial</b> (<var>n</var>)<var><a name="index-factorial-914"></a></var><br>
-<blockquote><p>Return the factorial of <var>n</var>. If <var>n</var> is scalar, this is
-equivalent to <code>prod (1:</code><var>n</var><code>)</code>.  If <var>n</var> is an array,
-the factorial of the elements of the array are returned. 
+&mdash; Function File:  <b>factorial</b> (<var>n</var>)<var><a name="index-factorial-1444"></a></var><br>
+<blockquote><p>Return the factorial of <var>n</var> where <var>n</var> is a positive integer.  If
+<var>n</var> is a scalar, this is equivalent to <code>prod (1:</code><var>n</var><code>)</code>.  For
+vector or matrix arguments, return the factorial of each element in the
+array.  For non-integers see the generalized factorial function
+<code>gamma</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dprod.html#doc_002dprod">prod</a>, <a href="doc_002dgamma.html#doc_002dgamma">gamma</a>. 
 </p></blockquote></div>
 
+<!-- mappers.cc -->
    <p><a name="doc_002dfix"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>fix</b> (<var>x</var>)<var><a name="index-fix-915"></a></var><br>
-<blockquote><p>Truncate <var>x</var> toward zero.  If <var>x</var> is complex, return
-<code>fix (real (</code><var>x</var><code>)) + fix (imag (</code><var>x</var><code>)) * I</code>. 
+&mdash; Mapping Function:  <b>fix</b> (<var>x</var>)<var><a name="index-fix-1445"></a></var><br>
+<blockquote><p>Truncate fractional portion of <var>x</var> and return the integer portion.  This
+is equivalent to rounding towards zero.  If <var>x</var> is complex, return
+<code>fix (real (</code><var>x</var><code>)) + fix (imag (</code><var>x</var><code>)) * I</code>.
+     <pre class="example">          fix ([-2.7, 2.7])
+              -2   2
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dceil.html#doc_002dceil">ceil</a>, <a href="doc_002dfloor.html#doc_002dfloor">floor</a>, <a href="doc_002dround.html#doc_002dround">round</a>. 
 </p></blockquote></div>
 
+<!-- mappers.cc -->
    <p><a name="doc_002dfloor"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>floor</b> (<var>x</var>)<var><a name="index-floor-916"></a></var><br>
-<blockquote><p>Return the largest integer not greater than <var>x</var>.  If <var>x</var> is
-complex, return <code>floor (real (</code><var>x</var><code>)) + floor (imag (</code><var>x</var><code>)) * I</code>. 
+&mdash; Mapping Function:  <b>floor</b> (<var>x</var>)<var><a name="index-floor-1446"></a></var><br>
+<blockquote><p>Return the largest integer not greater than <var>x</var>.  This is equivalent to
+rounding towards negative infinity.  If <var>x</var> is
+complex, return <code>floor (real (</code><var>x</var><code>)) + floor (imag (</code><var>x</var><code>)) * I</code>.
+     <pre class="example">          floor ([-2.7, 2.7])
+                -3   2
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dceil.html#doc_002dceil">ceil</a>, <a href="doc_002dround.html#doc_002dround">round</a>, <a href="doc_002dfix.html#doc_002dfix">fix</a>. 
 </p></blockquote></div>
 
+<!-- data.cc -->
    <p><a name="doc_002dfmod"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>fmod</b> (<var>x, y</var>)<var><a name="index-fmod-917"></a></var><br>
+&mdash; Mapping Function:  <b>fmod</b> (<var>x, y</var>)<var><a name="index-fmod-1447"></a></var><br>
 <blockquote><p>Compute the floating point remainder of dividing <var>x</var> by <var>y</var>
 using the C library function <code>fmod</code>.  The result has the same
-sign as <var>x</var>.  If <var>y</var> is zero, the result implementation-defined. 
+sign as <var>x</var>.  If <var>y</var> is zero, the result is implementation-dependent. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmod.html#doc_002dmod">mod</a>, <a href="doc_002drem.html#doc_002drem">rem</a>. 
 </p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/gcd.cc -->
    <p><a name="doc_002dgcd"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>g</var> = <b>gcd</b> (<var>a1, <small class="dots">...</small></var>)<var><a name="index-gcd-918"></a></var><br>
-&mdash; Loadable Function: [<var>g</var>, <var>v1</var>, <small class="dots">...</small>] = <b>gcd</b> (<var>a1, <small class="dots">...</small></var>)<var><a name="index-gcd-919"></a></var><br>
+&mdash; Loadable Function: <var>g</var> = <b>gcd</b> (<var>a</var>)<var><a name="index-gcd-1448"></a></var><br>
+&mdash; Loadable Function: <var>g</var> = <b>gcd</b> (<var>a1, a2, <small class="dots">...</small></var>)<var><a name="index-gcd-1449"></a></var><br>
+&mdash; Loadable Function: [<var>g</var>, <var>v1</var>, <small class="dots">...</small>] = <b>gcd</b> (<var>a1, a2, <small class="dots">...</small></var>)<var><a name="index-gcd-1450"></a></var><br>
 <blockquote>
-<p>If a single argument is given then compute the greatest common divisor of
-the elements of this argument. Otherwise if more than one argument is
-given all arguments must be the same size or scalar. In this case the
-greatest common divisor is calculated for element individually. All
-elements must be integers. For example,
+        <p>Compute the greatest common divisor of the elements of <var>a</var>.  If more
+than one argument is given all arguments must be the same size or scalar. 
+  In this case the greatest common divisor is calculated for each element
+individually.  All elements must be integers.  For example,
 
      <pre class="example">          gcd ([15, 20])
-              =&gt;  5
-     </pre>
+                5
+</pre>
         <p class="noindent">and
 
-     <pre class="example">          gcd ([15, 9], [20 18])
-              =&gt;  5  9
-     </pre>
-        <p>Optional return arguments <var>v1</var>, etc, contain integer vectors such
+     <pre class="example">          gcd ([15, 9], [20, 18])
+                5  9
+</pre>
+        <p>Optional return arguments <var>v1</var>, etc., contain integer vectors such
 that,
 
      <pre class="example">          <var>g</var> = <var>v1</var> .* <var>a1</var> + <var>v2</var> .* <var>a2</var> + ...
-     </pre>
-        <p>For backward compatiability with previous versions of this function, when
-all arguments are scalr, a single return argument <var>v1</var> containing
-all of the values of <var>v1</var>, <small class="dots">...</small> is acceptable.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> lcm, min, max, ceil, floor. 
+</pre>
+        <p>For backward compatibility with previous versions of this function, when
+all arguments are scalar, a single return argument <var>v1</var> containing
+all of the values of <var>v1</var>, <small class="dots">...</small> is acceptable. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dlcm.html#doc_002dlcm">lcm</a>, <a href="doc_002dfactor.html#doc_002dfactor">factor</a>. 
 </p></blockquote></div>
 
+<!-- ./general/gradient.m -->
    <p><a name="doc_002dgradient"></a>
 
 <div class="defun">
-&mdash; Function File: <var>x</var> = <b>gradient</b> (<var>M</var>)<var><a name="index-gradient-920"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>y</var>, <small class="dots">...</small>] = <b>gradient</b> (<var>M</var>)<var><a name="index-gradient-921"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>gradient</b> (<var>M, s</var>)<var><a name="index-gradient-922"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>gradient</b> (<var>M, dx, dy, <small class="dots">...</small></var>)<var><a name="index-gradient-923"></a></var><br>
+&mdash; Function File: <var>dx</var> = <b>gradient</b> (<var>m</var>)<var><a name="index-gradient-1451"></a></var><br>
+&mdash; Function File: [<var>dx</var>, <var>dy</var>, <var>dz</var>, <small class="dots">...</small>] = <b>gradient</b> (<var>m</var>)<var><a name="index-gradient-1452"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>gradient</b> (<var>m, s</var>)<var><a name="index-gradient-1453"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>gradient</b> (<var>m, x, y, z, <small class="dots">...</small></var>)<var><a name="index-gradient-1454"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>gradient</b> (<var>f, x0</var>)<var><a name="index-gradient-1455"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>gradient</b> (<var>f, x0, s</var>)<var><a name="index-gradient-1456"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>gradient</b> (<var>f, x0, x, y, <small class="dots">...</small></var>)<var><a name="index-gradient-1457"></a></var><br>
 <blockquote>
-<p>Calculates the gradient. <var>x</var><code> = gradient (</code><var>M</var><code>)</code>
-calculates the one dimensional gradient if <var>M</var> is a vector. If
-<var>M</var> is a matrix the gradient is calculated for each row.
+        <p>Calculate the gradient of sampled data or a function.  If <var>m</var>
+is a vector, calculate the one-dimensional gradient of <var>m</var>.  If
+<var>m</var> is a matrix the gradient is calculated for each dimension.
 
-        <p><code>[</code><var>x</var><code>, </code><var>y</var><code>] = gradient (</code><var>M</var><code>)</code> calculates the one
-dimensional gradient for each direction if <var>M</var> if <var>M</var> is a
-matrix. Additional return arguments can be use for multi-dimensional
+        <p><code>[</code><var>dx</var><code>, </code><var>dy</var><code>] = gradient (</code><var>m</var><code>)</code> calculates the one
+dimensional gradient for <var>x</var> and <var>y</var> direction if <var>m</var> is a
+matrix.  Additional return arguments can be use for multi-dimensional
 matrices.
 
-        <p>Spacing values between two points can be provided by the
-<var>dx</var>, <var>dy</var> or <var>h</var> parameters. If <var>h</var> is supplied it
-is assumed to be the spacing in all directions. Otherwise, seperate
-values of the spacing can be supplied by the <var>dx</var>, etc variables. 
-A scalar value specifies an equidistant spacing, while a vector value
-can be used to specify a variable spacing. The length must match
-their respective dimension of <var>M</var>.
+        <p>A constant spacing between two points can be provided by the
+<var>s</var> parameter.  If <var>s</var> is a scalar, it is assumed to be the spacing
+for all dimensions. 
+Otherwise, separate values of the spacing can be supplied by
+the <var>x</var>, <small class="dots">...</small> arguments.  Scalar values specify an equidistant spacing. 
+Vector values for the <var>x</var>, <small class="dots">...</small> arguments specify the coordinate for that
+dimension.  The length must match their respective dimension of <var>m</var>.
 
-        <p>At boundary points a linear extrapolation is applied. Interior points
+        <p>At boundary points a linear extrapolation is applied.  Interior points
 are calculated with the first approximation of the numerical gradient
 
-     <pre class="example">          y'(i) = 1/(x(i+1)-x(i-1)) *(y(i-1)-y(i+1)).
-     </pre>
-        </blockquote></div>
+     <pre class="example">          y'(i) = 1/(x(i+1)-x(i-1)) * (y(i-1)-y(i+1)).
+</pre>
+        <p>If the first argument <var>f</var> is a function handle, the gradient of the
+function at the points in <var>x0</var> is approximated using central
+difference.  For example, <code>gradient (@cos, 0)</code> approximates the
+gradient of the cosine function in the point x0 = 0.  As with
+sampled data, the spacing values between the points from which the
+gradient is estimated can be set via the <var>s</var> or <var>dx</var>,
+<var>dy</var>, <small class="dots">...</small> arguments.  By default a spacing of 1 is used. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddiff.html#doc_002ddiff">diff</a>, <a href="doc_002ddel2.html#doc_002ddel2">del2</a>. 
+</p></blockquote></div>
+
+<!-- data.cc -->
+   <p><a name="doc_002dhypot"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>hypot</b> (<var>x, y</var>)<var><a name="index-hypot-1458"></a></var><br>
+<blockquote><p>Compute the element-by-element square root of the sum of the squares of
+<var>x</var> and <var>y</var>.  This is equivalent to
+<code>sqrt (</code><var>x</var><code>.^2 + </code><var>y</var><code>.^2)</code>, but calculated in a manner that
+avoids overflows for large values of <var>x</var> or <var>y</var>. 
+</p></blockquote></div>
+
+<!-- ./elfun/lcm.m -->
    <p><a name="doc_002dlcm"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>lcm</b> (<var>x, <small class="dots">...</small></var>)<var><a name="index-lcm-924"></a></var><br>
-<blockquote><p>Compute the least common multiple of the elements elements of <var>x</var>, or
-the list of all the arguments.  For example,
+&mdash; Mapping Function:  <b>lcm</b> (<var>x</var>)<var><a name="index-lcm-1459"></a></var><br>
+&mdash; Mapping Function:  <b>lcm</b> (<var>x, <small class="dots">...</small></var>)<var><a name="index-lcm-1460"></a></var><br>
+<blockquote><p>Compute the least common multiple of the elements of <var>x</var>, or
+of the list of all arguments.  For example,
 
      <pre class="example">          lcm (a1, ..., ak)
-     </pre>
+</pre>
         <p class="noindent">is the same as
 
      <pre class="example">          lcm ([a1, ..., ak]).
-     </pre>
-        <p>All elements must be the same size or scalar.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> gcd, min, max, ceil, floor. 
+</pre>
+        <p>All elements must be the same size or scalar. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfactor.html#doc_002dfactor">factor</a>, <a href="doc_002dgcd.html#doc_002dgcd">gcd</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dlog"></a>
+<!-- ./miscellaneous/list_primes.m -->
+   <p><a name="doc_002dlist_005fprimes"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>log</b> (<var>x</var>)<var><a name="index-log-925"></a></var><br>
-<blockquote><p>Compute the natural logarithm for each element of <var>x</var>.  To compute the
-matrix logarithm, see <a href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> log2, log10, logspace, exp. 
+&mdash; Function File:  <b>list_primes</b> (<var>n</var>)<var><a name="index-list_005fprimes-1461"></a></var><br>
+<blockquote><p>List the first <var>n</var> primes.  If <var>n</var> is unspecified, the first
+25 primes are listed.
+
+        <p>The algorithm used is from page 218 of the TeXbook. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dprimes.html#doc_002dprimes">primes</a>, <a href="doc_002disprime.html#doc_002disprime">isprime</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dlog10"></a>
-
-<div class="defun">
-&mdash; Mapping Function:  <b>log10</b> (<var>x</var>)<var><a name="index-log10-926"></a></var><br>
-<blockquote><p>Compute the base-10 logarithm for each element of <var>x</var>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> log, log2, logspace, exp. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dlog2"></a>
-
-<div class="defun">
-&mdash; Mapping Function:  <b>log2</b> (<var>x</var>)<var><a name="index-log2-927"></a></var><br>
-&mdash; Mapping Function: [<var>f</var>, <var>e</var>] = <b>log2</b> (<var>x</var>)<var><a name="index-log2-928"></a></var><br>
-<blockquote><p>Compute the base-2 logarithm of <var>x</var>.  With two outputs, returns
-<var>f</var> and <var>e</var> such that
- 1/2 &lt;= abs(f) &lt; 1 and x = f * 2^e.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> log, log10, logspace, exp. 
-</p></blockquote></div>
-
+<!-- ./DLD-FUNCTIONS/max.cc -->
    <p><a name="doc_002dmax"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>max</b> (<var>x, y, dim</var>)<var><a name="index-max-929"></a></var><br>
-&mdash; Mapping Function: [<var>w</var>, <var>iw</var>] = <b>max</b> (<var>x</var>)<var><a name="index-max-930"></a></var><br>
-<blockquote><p><a name="index-Utility-Functions-931"></a>For a vector argument, return the maximum value.  For a matrix
+&mdash; Loadable Function:  <b>max</b> (<var>x</var>)<var><a name="index-max-1462"></a></var><br>
+&mdash; Loadable Function:  <b>max</b> (<var>x, y</var>)<var><a name="index-max-1463"></a></var><br>
+&mdash; Loadable Function:  <b>max</b> (<var>x, y, dim</var>)<var><a name="index-max-1464"></a></var><br>
+&mdash; Loadable Function: [<var>w</var>, <var>iw</var>] = <b>max</b> (<var>x</var>)<var><a name="index-max-1465"></a></var><br>
+<blockquote><p>For a vector argument, return the maximum value.  For a matrix
 argument, return the maximum value from each column, as a row
-vector, or over the dimension <var>dim</var> if defined. For two matrices
+vector, or over the dimension <var>dim</var> if defined.  For two matrices
 (or a matrix and scalar), return the pair-wise maximum. 
 Thus,
 
      <pre class="example">          max (max (<var>x</var>))
-     </pre>
-        <p class="noindent">returns the largest element of <var>x</var>, and
+</pre>
+        <p class="noindent">returns the largest element of the matrix <var>x</var>, and
 
      <pre class="example">          max (2:5, pi)
-              =&gt;  3.1416  3.1416  4.0000  5.0000
-     </pre>
+                3.1416  3.1416  4.0000  5.0000
+</pre>
         <p class="noindent">compares each element of the range <code>2:5</code> with <code>pi</code>, and
 returns a row vector of the maximum values.
 
@@ -496,32 +360,39 @@ comparison.
 
         <p>If called with one input and two output arguments,
 <code>max</code> also returns the first index of the
-maximum value(s). Thus,
+maximum value(s).  Thus,
 
      <pre class="example">          [x, ix] = max ([1, 3, 5, 2, 5])
-              =&gt;  x = 5
+                x = 5
                   ix = 3
-     </pre>
-        </blockquote></div>
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmin.html#doc_002dmin">min</a>, <a href="doc_002dcummax.html#doc_002dcummax">cummax</a>, <a href="doc_002dcummin.html#doc_002dcummin">cummin</a>. 
+</p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/max.cc -->
    <p><a name="doc_002dmin"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>min</b> (<var>x, y, dim</var>)<var><a name="index-min-932"></a></var><br>
-&mdash; Mapping Function: [<var>w</var>, <var>iw</var>] = <b>min</b> (<var>x</var>)<var><a name="index-min-933"></a></var><br>
-<blockquote><p><a name="index-Utility-Functions-934"></a>For a vector argument, return the minimum value.  For a matrix
+&mdash; Loadable Function:  <b>min</b> (<var>x</var>)<var><a name="index-min-1466"></a></var><br>
+&mdash; Loadable Function:  <b>min</b> (<var>x, y</var>)<var><a name="index-min-1467"></a></var><br>
+&mdash; Loadable Function:  <b>min</b> (<var>x, y, dim</var>)<var><a name="index-min-1468"></a></var><br>
+&mdash; Loadable Function: [<var>w</var>, <var>iw</var>] = <b>min</b> (<var>x</var>)<var><a name="index-min-1469"></a></var><br>
+<blockquote><p>For a vector argument, return the minimum value.  For a matrix
 argument, return the minimum value from each column, as a row
-vector, or over the dimension <var>dim</var> if defined. For two matrices
+vector, or over the dimension <var>dim</var> if defined.  For two matrices
 (or a matrix and scalar), return the pair-wise minimum. 
 Thus,
 
      <pre class="example">          min (min (<var>x</var>))
-     </pre>
+</pre>
         <p class="noindent">returns the smallest element of <var>x</var>, and
 
      <pre class="example">          min (2:5, pi)
-              =&gt;  2.0000  3.0000  3.1416  3.1416
-     </pre>
+                2.0000  3.0000  3.1416  3.1416
+</pre>
         <p class="noindent">compares each element of the range <code>2:5</code> with <code>pi</code>, and
 returns a row vector of the minimum values.
 
@@ -530,142 +401,189 @@ comparison.
 
         <p>If called with one input and two output arguments,
 <code>min</code> also returns the first index of the
-minimum value(s). Thus,
+minimum value(s).  Thus,
 
-     <pre class="example">          [x, ix] = min ([1, 3, 0, 2, 5])
-              =&gt;  x = 0
+     <pre class="example">          [x, ix] = min ([1, 3, 0, 2, 0])
+                x = 0
                   ix = 3
-     </pre>
-        </blockquote></div>
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmax.html#doc_002dmax">max</a>, <a href="doc_002dcummin.html#doc_002dcummin">cummin</a>, <a href="doc_002dcummax.html#doc_002dcummax">cummax</a>. 
+</p></blockquote></div>
 
+<!-- ./DLD-FUNCTIONS/max.cc -->
+   <p><a name="doc_002dcummax"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>cummax</b> (<var>x</var>)<var><a name="index-cummax-1470"></a></var><br>
+&mdash; Loadable Function:  <b>cummax</b> (<var>x, dim</var>)<var><a name="index-cummax-1471"></a></var><br>
+&mdash; Loadable Function: [<var>w</var>, <var>iw</var>] = <b>cummax</b> (<var>x</var>)<var><a name="index-cummax-1472"></a></var><br>
+<blockquote><p>Return the cumulative maximum values along dimension <var>dim</var>.  If <var>dim</var>
+is unspecified it defaults to column-wise operation.  For example,
+
+     <pre class="example">          cummax ([1 3 2 6 4 5])
+                1  3  3  6  6  6
+</pre>
+        <p>The call
+     <pre class="example">          [w, iw] = cummax (x, dim)
+</pre>
+        <p class="noindent">is equivalent to the following code:
+     <pre class="example">          w = iw = zeros (size (x));
+          idxw = idxx = repmat ({':'}, 1, ndims (x));
+          for i = 1:size (x, dim)
+            idxw{dim} = i; idxx{dim} = 1:i;
+            [w(idxw{:}), iw(idxw{:})] = max(x(idxx{:}), [], dim);
+          endfor
+</pre>
+        <p class="noindent">but computed in a much faster manner. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcummin.html#doc_002dcummin">cummin</a>, <a href="doc_002dmax.html#doc_002dmax">max</a>, <a href="doc_002dmin.html#doc_002dmin">min</a>. 
+</p></blockquote></div>
+
+<!-- ./DLD-FUNCTIONS/max.cc -->
+   <p><a name="doc_002dcummin"></a>
+
+<div class="defun">
+&mdash; Loadable Function:  <b>cummin</b> (<var>x</var>)<var><a name="index-cummin-1473"></a></var><br>
+&mdash; Loadable Function:  <b>cummin</b> (<var>x, dim</var>)<var><a name="index-cummin-1474"></a></var><br>
+&mdash; Loadable Function: [<var>w</var>, <var>iw</var>] = <b>cummin</b> (<var>x</var>)<var><a name="index-cummin-1475"></a></var><br>
+<blockquote><p>Return the cumulative minimum values along dimension <var>dim</var>.  If <var>dim</var>
+is unspecified it defaults to column-wise operation.  For example,
+
+     <pre class="example">          cummin ([5 4 6 2 3 1])
+                5  4  4  2  2  1
+</pre>
+        <p>The call
+     <pre class="example">            [w, iw] = cummin (x, dim)
+</pre>
+        <p class="noindent">is equivalent to the following code:
+     <pre class="example">          w = iw = zeros (size (x));
+          idxw = idxx = repmat ({':'}, 1, ndims (x));
+          for i = 1:size (x, dim)
+            idxw{dim} = i; idxx{dim} = 1:i;
+            [w(idxw{:}), iw(idxw{:})] = min(x(idxx{:}), [], dim);
+          endfor
+</pre>
+        <p class="noindent">but computed in a much faster manner. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcummax.html#doc_002dcummax">cummax</a>, <a href="doc_002dmin.html#doc_002dmin">min</a>, <a href="doc_002dmax.html#doc_002dmax">max</a>. 
+</p></blockquote></div>
+
+<!-- ./general/mod.m -->
    <p><a name="doc_002dmod"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>mod</b> (<var>x, y</var>)<var><a name="index-mod-935"></a></var><br>
-<blockquote><p>Compute modulo function, using
+&mdash; Mapping Function:  <b>mod</b> (<var>x, y</var>)<var><a name="index-mod-1476"></a></var><br>
+<blockquote><p>Compute the modulo of <var>x</var> and <var>y</var>.  Conceptually this is given by
 
      <pre class="example">          x - y .* floor (x ./ y)
-     </pre>
-        <p>Note that this handles negative numbers correctly:
-<code>mod (-1, 3)</code> is 2, not -1 as <code>rem (-1, 3)</code> returns. 
-Also, <code>mod (</code><var>x</var><code>, 0)</code> returns <var>x</var>.
+</pre>
+        <p>and is written such that the correct modulus is returned for
+integer types.  This function handles negative values correctly.  That
+is, <code>mod (-1, 3)</code> is 2, not -1, as <code>rem (-1, 3)</code> returns. 
+<code>mod (</code><var>x</var><code>, 0)</code> returns <var>x</var>.
 
-        <p>An error message is printed if the dimensions of the arguments do not
-agree, or if either of the arguments is complex.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> rem, round. 
+        <p>An error results if the dimensions of the arguments do not agree, or if
+either of the arguments is complex. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002drem.html#doc_002drem">rem</a>, <a href="doc_002dfmod.html#doc_002dfmod">fmod</a>. 
 </p></blockquote></div>
 
-   <p><a name="doc_002dnextpow2"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>nextpow2</b> (<var>x</var>)<var><a name="index-nextpow2-936"></a></var><br>
-<blockquote><p>If <var>x</var> is a scalar, returns the first integer <var>n</var> such that
- 2^n &gt;= abs (x).
-
-        <p>If <var>x</var> is a vector, return <code>nextpow2 (length (</code><var>x</var><code>))</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> pow2. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dnthroot"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>nthroot</b> (<var>x, n</var>)<var><a name="index-nthroot-937"></a></var><br>
-<blockquote>
-<p>Compute the nth root of <var>x</var>, returning real results for real
-components of <var>x</var>. For example
-
-     <pre class="example">          nthroot (-1, 3)
-          =&gt; -1
-          (-1) ^ (1 / 3)
-          =&gt; 0.50000 - 0.86603i
-     </pre>
-        </blockquote></div>
-
-   <p><a name="doc_002dpow2"></a>
-
-<div class="defun">
-&mdash; Mapping Function:  <b>pow2</b> (<var>x</var>)<var><a name="index-pow2-938"></a></var><br>
-&mdash; Mapping Function:  <b>pow2</b> (<var>f, e</var>)<var><a name="index-pow2-939"></a></var><br>
-<blockquote><p>With one argument, computes
- 2 .^ x
-for each element of <var>x</var>.  With two arguments, returns
- f .* (2 .^ e).
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> nextpow2. 
-</p></blockquote></div>
-
+<!-- ./specfun/primes.m -->
    <p><a name="doc_002dprimes"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>primes</b> (<var>n</var>)<var><a name="index-primes-940"></a></var><br>
+&mdash; Function File:  <b>primes</b> (<var>n</var>)<var><a name="index-primes-1477"></a></var><br>
 <blockquote>
-<p>Return all primes up to <var>n</var>.
+        <p>Return all primes up to <var>n</var>.
 
-        <p>Note that if you need a specific number of primes, you can use the
-fact the distance from one prime to the next is on average
-proportional to the logarithm of the prime.  Integrating, you find
-that there are about k primes less than k \log ( 5 k ).
+        <p>The algorithm used is the Sieve of Erastothenes.
 
-        <p>The algorithm used is called the Sieve of Erastothenes. 
+        <p>Note that if you need a specific number of primes you can use the
+fact the distance from one prime to the next is, on average,
+proportional to the logarithm of the prime.  Integrating, one finds
+that there are about k primes less than
+k*log(5*k). 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dlist_005fprimes.html#doc_002dlist_005fprimes">list_primes</a>, <a href="doc_002disprime.html#doc_002disprime">isprime</a>. 
 </p></blockquote></div>
 
+<!-- ./general/rem.m -->
    <p><a name="doc_002drem"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>rem</b> (<var>x, y</var>)<var><a name="index-rem-941"></a></var><br>
-<blockquote><p>Return the remainder of <var>x</var><code> / </code><var>y</var>, computed using the
-expression
+&mdash; Mapping Function:  <b>rem</b> (<var>x, y</var>)<var><a name="index-rem-1478"></a></var><br>
+<blockquote><p>Return the remainder of the division <var>x</var><code> / </code><var>y</var>, computed
+using the expression
 
      <pre class="example">          x - y .* fix (x ./ y)
-     </pre>
+</pre>
         <p>An error message is printed if the dimensions of the arguments do not
-agree, or if either of the arguments is complex.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> mod, round. 
+agree, or if either of the arguments is complex. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmod.html#doc_002dmod">mod</a>, <a href="doc_002dfmod.html#doc_002dfmod">fmod</a>. 
 </p></blockquote></div>
 
+<!-- mappers.cc -->
    <p><a name="doc_002dround"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>round</b> (<var>x</var>)<var><a name="index-round-942"></a></var><br>
+&mdash; Mapping Function:  <b>round</b> (<var>x</var>)<var><a name="index-round-1479"></a></var><br>
 <blockquote><p>Return the integer nearest to <var>x</var>.  If <var>x</var> is complex, return
 <code>round (real (</code><var>x</var><code>)) + round (imag (</code><var>x</var><code>)) * I</code>.
-        <pre class="sp">
-     
-     </pre>
-     <strong>See also:</strong> rem. 
+     <pre class="example">          round ([-2.7, 2.7])
+                -3   3
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dceil.html#doc_002dceil">ceil</a>, <a href="doc_002dfloor.html#doc_002dfloor">floor</a>, <a href="doc_002dfix.html#doc_002dfix">fix</a>. 
 </p></blockquote></div>
 
+<!-- mappers.cc -->
+   <p><a name="doc_002droundb"></a>
+
+<div class="defun">
+&mdash; Mapping Function:  <b>roundb</b> (<var>x</var>)<var><a name="index-roundb-1480"></a></var><br>
+<blockquote><p>Return the integer nearest to <var>x</var>.  If there are two nearest
+integers, return the even one (banker's rounding).  If <var>x</var> is complex,
+return <code>roundb (real (</code><var>x</var><code>)) + roundb (imag (</code><var>x</var><code>)) * I</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dround.html#doc_002dround">round</a>. 
+</p></blockquote></div>
+
+<!-- mappers.cc -->
    <p><a name="doc_002dsign"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>sign</b> (<var>x</var>)<var><a name="index-sign-943"></a></var><br>
+&mdash; Mapping Function:  <b>sign</b> (<var>x</var>)<var><a name="index-sign-1481"></a></var><br>
 <blockquote><p>Compute the <dfn>signum</dfn> function, which is defined as
 
      <pre class="example">                     -1, x &lt; 0;
           sign (x) =  0, x = 0;
                       1, x &gt; 0.
-     </pre>
+</pre>
         <p>For complex arguments, <code>sign</code> returns <code>x ./ abs (</code><var>x</var><code>)</code>. 
-</p></blockquote></div>
-
-   <p><a name="doc_002dsqrt"></a>
-
-<div class="defun">
-&mdash; Mapping Function:  <b>sqrt</b> (<var>x</var>)<var><a name="index-sqrt-944"></a></var><br>
-<blockquote><p>Compute the square root of <var>x</var>.  If <var>x</var> is negative, a complex
-result is returned.  To compute the matrix square root, see
-<a href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>. 
 </p></blockquote></div>
 
    </body></html>
