@@ -115,7 +115,7 @@ __FTP__(`ftp.octave.org/pub/octave', `Stable')</td>
 </td>
 <td class="download">$2</td></tr>
 <tr><td class="download">
-__FTP__(`ftp.octave.org/pub/octave', `Testing')</td>
+__FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Testing')</td>
 <td class="download">$3
     (__OCTAVE_FTP__(`octave-'$3`.tar.gz',`.tar.gz'))
     (__OCTAVE_FTP__(`octave-'$3`.tar.bz2',`.tar.bz2'))
