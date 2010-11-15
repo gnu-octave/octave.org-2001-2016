@@ -77,5 +77,5 @@ __TITLE_BAR__(`Octave Developers All Over The World')
 </div>
 <div id="map_canvas" style="width: 100%; height: 600px"></div>
 
-__OCTAVE_TRAILER__(`Developer Map')
+__OCTAVE_TRAILER__(`devmapx')
 
