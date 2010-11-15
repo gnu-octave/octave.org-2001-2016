@@ -33,10 +33,10 @@ web browser. Just pick a nickname, fill out the captcha, and you'll be
 directed to the <tt>#octave</tt> channel. For more information about
 Freenode itself, including how to register a permanent identity within
 the Freenode servers using services like Nickserv, consult
-changecom(`')
+changecom(`')dnl
 __HTTP__(`freenode.net/faq.shtml#contents-userregistration',
 `the documentation for Freenode').
-changecom(`#')
+changecom(`#')dnl
 </p>
 
 </div>
