@@ -14,6 +14,15 @@ __OCTAVE_HTTP__(`archive.html', `archived').</p>
 from the the mailing list, or other administrative trivia to the list
 itself.</p>
 
+<p>If you prefer to use a chat program instead of email, we also have
+the __OCTAVE_HTTP__(`chat.html', `<tt>#octave</tt> IRC channel on Freenode'). You can either use <a
+href="http://webchat.freenode.net/?channels=octave&uio=MT1mYWxzZSYyPXRydWUmMTI9dHJ1ZQda">the
+Freenode web client</a> to chat (just pick a screen name and answer
+the CAPTCHA) or point your preferred <a
+href="http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients">IRC
+client</a> to <tt>irc.freenode.net</tt> and join the <tt>#octave</tt>
+channel.</p>
+
 <p>If you think you have found a bug in Octave or in the installation
 procedure, however, you should submit a complete bug report to
 __HTTP__(`bugs.octave.org', `the Octave bug tracker').  But before you

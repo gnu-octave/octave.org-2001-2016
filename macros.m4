@@ -16,6 +16,8 @@ dnl
 define(`__DEFAULT_LINK_TEXT__', `ifelse($#, 2, `$1://$2', `$3')')dnl
 define(`__HTTP__',
        ``<a href="http://$1">'__DEFAULT_LINK_TEXT__(`http', $*)`</a>'')dnl
+define(`__HTTPS__',
+       ``<a href="http://$1">'__DEFAULT_LINK_TEXT__(`https', $*)`</a>'')dnl
 define(`__MAILTO__',
        ``<a href="mailto:$1">'__DEFAULT_LINK_TEXT__(`http', $*)`</a>'')dnl
 define(`__FTP__',
@@ -48,7 +50,7 @@ __NAVIGATION__(`$1')
 dnl
 dnl
 dnl
-define(`__COPYING__', `<div id="footer"><p>Copyright &copy; 1998-2006
+define(`__COPYING__', `<div id="footer"><p>Copyright &copy; 1998-2010
 <a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
 copying and distribution is permitted in any medium, provided this
 notice is preserved.</p>
@@ -84,6 +86,7 @@ define(`__NAVIGATION__',
  __nav_button__($1, `Downloading Octave', `download.html', `Download')
  __nav_button__($1, `Related Projects', `related.html', `Related Projects')
  __nav_button__($1, `Octave Mailing Lists', `archive.html', `Mailing Lists')
+ __nav_button__($1, `Octave Chat', `chat.html', `Chat')
  __nav_button__($1, `Octave Funding', `funding.html', `Funding')
  __nav_button__($1, `Acknowledgments', `acknowledgments.html', `Contributors')
  __nav_button__($1, `Developers Map', `devmap.html', `Developers Map')

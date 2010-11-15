@@ -26,6 +26,7 @@ HTML_SRC := about.in \
 	acknowledgments.in \
 	archive.in \
 	bugs.in \
+	chat.in \
 	docs.in \
 	devmap.in \
 	download.in \

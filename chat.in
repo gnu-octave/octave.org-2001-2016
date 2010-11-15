@@ -1,0 +1,42 @@
+__HEADER__(`Octave Chat')
+
+<div class="section">
+
+<p>The Freenode <abbrev title="Internet Relay Chat">IRC</abbrev>
+service has granted the Octave project the use of the <tt>#octave</tt>
+channel for the purpose of chatting. Octave discussion for both
+developers and users takes place here. The atmosphere is relaxed and
+chat isn't restricted to matters strictly pertaining to Octave.
+</p>
+
+<p>
+To use IRC you require an IRC client.
+__HTTP__(`en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients',
+`Many options exist'), and popular choices include
+__HTTP__(`xchat.org', `Xchat'),
+__HTTP__(`irssi.org', `irssi'),
+__HTTPS__(`addons.mozilla.org/en-US/firefox/addon/16', `Chatzilla')
+and __HTTP__(`colloquy.info', `Colloquy').
+Most general-purpose chat clients like
+__HTTP__(`pidgin.im', `Pidgin') and
+__HTTP__(`kopete.kde.org', `Kopete')
+can also be configured for IRC. Usually all you need to do is choose a
+nickname or change the default, connect to <tt>irc.freenode.net</tt>
+and join the <tt>#octave</tt> channel.
+</p>
+
+<p>
+Freenode provides
+__HTTP__(`webchat.freenode.net/?channels=octave&uio=MT1mYWxzZSYyPXRydWUmMTI9dHJ1ZQda',
+`a web client') if you prefer to not use a program external to your
+web browser. Just pick a nickname, fill out the captcha, and you'll be
+directed to the <tt>#octave</tt> channel. For more information about
+Freenode itself, including how to register a permanent identity within
+the Freenode servers using services like Nickserv, consult
+__HTTP__(`freenode.net/faq.shtmlcontents-userregistration',
+`the documentation for Freenode').
+</p>
+
+</div>
+
+__OCTAVE_TRAILER__(`chat')
