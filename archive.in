@@ -15,7 +15,7 @@ __MAILING_LIST_INFO__(`maintainers', `octave-maintainers',
 __TITLE_BAR__(`Search the Mailing Lists')
 <p>
 A searchable archive of the Octave mailing lists is available from
-__HTTP__(`n4.nabble.com/Octave-f1599824.html', `Nabble').
+__HTTP__(`octave.1599824.n4.nabble.com', `Nabble').
 </p>
 </div>
 
