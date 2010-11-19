@@ -32,6 +32,10 @@ dnl
 dnl
 define(`__OCTAVE_FTP__',
        `__FTP__(ftp.octave.org/pub/octave/$1, $2)')dnl
+define(`__GNU_FTP__',
+       `__FTP__(ftp.gnu.org/gnu/octave/$1, $2)')dnl
+define(`__GNU_ALPHA_FTP__',
+       `__FTP__(alpha.gnu.org/gnu/octave/$1, $2)')dnl
 dnl
 dnl
 dnl
@@ -120,8 +124,8 @@ __FTP__(`ftp.octave.org/pub/octave', `Stable')</td>
 <tr><td class="download">
 __FTP__(`ftp.octave.org/pub/octave/bleeding-edge', `Testing')</td>
 <td class="download">$3
-    (__OCTAVE_FTP__(`bleeding-edge/octave-'$3`.tar.gz',`.tar.gz'))
-    (__OCTAVE_FTP__(`bleeding-edge/octave-'$3`.tar.bz2',`.tar.bz2'))
+    (__GNU_ALPHA_FTP__(`octave-'$3`.tar.gz',`.tar.gz'))
+    (__GNU_ALPHA_FTP__(`octave-'$3`.tar.bz2',`.tar.bz2'))
 </td>
 <td class="download">$4</td></tr>
 dnl <tr><td class="download">

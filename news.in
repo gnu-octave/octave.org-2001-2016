@@ -2,6 +2,12 @@ __HEADER__(`Octave News Archive')
 
 <div class="section">
 <dl>
+<dt>November 19, 2010</dt>
+<dd>A new snapshot of the current development version of Octave is
+available for ftp (3.3.54).  You should only be using this version if you are
+interested in testing the latest features and don't mind hitting the
+occasional bug.  Note that this snapshot is available from
+<tt>alpha.gnu.org</tt>, not <tt>ftp.octave.org</tt></dd>
 <dt>October 19, 2010</dt>
 <dd>A new snapshot of the current development version of Octave is
 available for ftp (3.3.53).  You should only be using this version if you are
