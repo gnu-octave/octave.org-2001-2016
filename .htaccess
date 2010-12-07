@@ -8,11 +8,9 @@ RewriteRule ^mailing-lists(.*) http://velveeta.che.wisc.edu/octave/lists$1
 <FilesMatch "\.(in|m4)$">
   Order allow,deny
   Deny from all
-  Satisfy All
 </FilesMatch>
 
 <FilesMatch "Makefile$">
   Order allow,deny
   Deny from all
-  Satisfy All
 </FilesMatch>
