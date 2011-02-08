@@ -8,6 +8,10 @@ solving linear and nonlinear problems numerically, and for performing
 other numerical experiments using a language that is mostly compatible
 with Matlab. It may also be used as a batch-oriented language.</p>
 
+<p>
+__OCTAVE_IMAGE__(`screenshot-small.png')
+</p>
+
 <p>For more information, see the page
 __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 </div>
