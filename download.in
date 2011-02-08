@@ -32,7 +32,7 @@ instead (see below for details).
 </dd>
 </dl>
 
-__DOWNLOAD_INFO__(`3.2.4', `28 January 2010', `3.3.54', `19 Nov 2010')
+__DOWNLOAD_INFO__(`3.4.0', `8 February 2011')
 </div>
 
 <div class="section">
@@ -97,7 +97,7 @@ __TITLE_BAR__(`Mirror Sites')
 
 <p>If you have trouble transferring Octave from this site, you might try
 one of those listed below.  They mirror the files from
-__OCTAVE_FTP__(`', `ftp://ftp.octave.org/pub/octave').</p>
+__OCTAVE_FTP__(`', `ftp://ftp.gnu.org/gnu/octave').</p>
 
 <p>__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')<br />
 __HTTP__(`neacm.fe.up.pt/pub/octave/')<br />

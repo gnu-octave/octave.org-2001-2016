@@ -2,6 +2,11 @@ __HEADER__(`Octave News Archive')
 
 <div class="section">
 <dl>
+<dt>February 8, 2011</dt>
+<dd>Version 3.4.0 has been released and is now available for ftp.
+Octave 3.4.0 is a major new release.  See the
+__OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file for a list of
+user-visible changes.</dd>
 <dt>November 19, 2010</dt>
 <dd>A new snapshot of the current development version of Octave is
 available for ftp (3.3.54).  You should only be using this version if you are
