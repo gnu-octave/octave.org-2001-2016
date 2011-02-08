@@ -54,9 +54,11 @@ the various packages.</p>
 <h4>Linux</h4>
 
 <p>Binaries for Linux distributions are generally available with
-the distribution (__HTTP__(`www.debian.org', `Debian'),
-__HTTP__(`www.novell.com/linux/suse', `SuSE'),
-__HTTP__(`www.redhat.com', `RedHat'), and others have packages).</p>
+the distribution.  __HTTP__(`www.debian.org', `Debian'),
+__HTTP__(`fedoraproject.org', `Fedora'),
+__HTTP__(`www.novell.com/linux/suse', `SuSE'), and others have
+packages.
+</p>
 
 <h4>Mac OS X</h4>
 
@@ -86,29 +88,17 @@ Cygwin users.  Look in the math category for the Octave package when
 installing.</li>
 </ul>
 
-<h4>OS/2 or eComStation</h4>
-
-<p>Dmitry Froloff has built OS/2 binaries that are available at
-<a href="http://froloff.homeip.net/">http://froloff.homeip.net/</a>.</p>
-</div>
-
 <div class="section">
 __TITLE_BAR__(`Mirror Sites')
 
-<p>If you have trouble transferring Octave from this site, you might try
-one of those listed below.  They mirror the files from
-__OCTAVE_FTP__(`', `ftp://ftp.gnu.org/gnu/octave').</p>
+<p>The primary ftp site for Octave is now __OCTAVE_FTP__(`',
+`ftp://ftp.gnu.org/gnu/octave'), which has many mirrors around the
+world.  You can find a list at __HTTP__(`www.gnu.org/prep/ftp.html').
+</p>
 
 <p>__FTP__(`ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave')<br />
 __HTTP__(`neacm.fe.up.pt/pub/octave/')<br />
 __FTP__(`neacm.fe.up.pt/pub/octave')</p></p>
-
-__TITLE_BAR__(`GNU Project FTP Site')
-
-<p>The latest recommended release of the Octave sources may also be
-found on the official Free Software Foundation ftp site,
-__FTP__(`ftp.gnu.org/pub/gnu', `ftp://ftp.gnu.org/pub/gnu'),
-which is also mirrored on many sites around the world.</p>
 </div>
 
 <div class="section">
@@ -128,10 +118,6 @@ __HTTP__(`velveeta.che.wisc.edu/cgi-bin/hgwebdir.cgi/octave').</p>
 <p>If you decide to use the development sources from the Mercurial
 archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
 `ftp://ftp.octave.org/pub/octave/bleeding-edge/README').</p>
-
-<p>Bugfixes for the Octave 3.2 series are maintained in a separate
-repository, accessible at 
-__HTTP__(`hg.tw-math.de/release-3-2-x',`http://hg.tw-math.de/release-3-2-x').</p>
 
 <p>Assuming you have Mercurial installed on your machine you may check
 out the latest development version of Octave sources with the following
