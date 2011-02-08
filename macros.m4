@@ -48,20 +48,17 @@ define(`__HEADER__', `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
 <body>
-<div id="title"><h1>$1</h1></div>
+<div id="title"><h1><img src="__IMAGE_DIR__/logo.png" alt="GNU Octave Logo" id="logo""> $1</h1></div>
 __NAVIGATION__(`$1')
 <div id="content">')dnl
 dnl
 dnl
 dnl
-define(`__COPYING__', `<div id="footer"><p>Copyright &copy; 1998-2010
+define(`__COPYING__', `<div id="footer"><p>Copyright &copy; 1998-2011
 <a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
 copying and distribution is permitted in any medium, provided this
 notice is preserved.</p>
-
-<p>University of Wisconsin<br />
-Department of Chemical Engineering<br />
-Madison WI 53719</p></div></body></html>')dnl
+</body></html>')dnl
 dnl
 dnl
 dnl
@@ -85,14 +82,14 @@ define(`__NAVIGATION__',
  __ext_nav_button__(`wiki.octave.org', `Wiki')
  __nav_button__($1, `faq', `FAQ.html', `FAQ') 
  __nav_button__($1, `Octave Help', `help.html', `Help') 
- __nav_button__($1, `Bugs!', `bugs.html', `Bugs') 
+ __nav_button__($1, `Bugs', `bugs.html', `Bugs') 
  __nav_button__($1, `Octave Copyright Information', `license.html', `License')
  __nav_button__($1, `Downloading Octave', `download.html', `Download')
  __nav_button__($1, `Related Projects', `related.html', `Related Projects')
  __nav_button__($1, `Octave Mailing Lists', `archive.html', `Mailing Lists')
  __nav_button__($1, `Octave Chat', `chat.html', `Chat')
  __nav_button__($1, `Octave Funding', `funding.html', `Funding')
- __nav_button__($1, `Acknowledgments', `acknowledgments.html', `Contributors')
+ __nav_button__($1, `Contributors to Octave', `acknowledgments.html', `Contributors')
  __nav_button__($1, `Developers Map', `devmap.html', `Developers Map')
  __nav_button__($1, `Octave Projects', `help-wanted.html', `Help Wanted')
 </div>

@@ -1,9 +1,8 @@
 __HEADER__(`Octave')
 
 <div class="section">
-<div><p>__OCTAVE_IMAGE__(`sombrero.jpg', `3D graph', `class="left"')
-__OCTAVE_IMAGE__(`lorenz.jpg', `Lorenz Attractor', `class="right"')
-GNU Octave is a high-level language, primarily intended for numerical
+<div>
+<p>GNU Octave is a high-level language, primarily intended for numerical
 computations.  It provides a convenient command line interface for
 solving linear and nonlinear problems numerically, and for performing
 other numerical experiments using a language that is mostly compatible
