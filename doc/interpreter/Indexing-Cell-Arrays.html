@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Indexing Cell Arrays - Untitled</title>
+<title>Indexing Cell Arrays - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cell-Arrays.html#Cell-Arrays" title="Cell Arrays">
 <link rel="prev" href="Creating-Cell-Arrays.html#Creating-Cell-Arrays" title="Creating Cell Arrays">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Indexing-Cell-Arrays"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Cell-Arrays-of-Strings.html#Cell-Arrays-of-Strings">Cell Arrays of Strings</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Creating-Cell-Arrays.html#Creating-Cell-Arrays">Creating Cell Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cell-Arrays.html#Cell-Arrays">Cell Arrays</a>
@@ -37,15 +38,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Cell-Arrays.html#Cell-Arrays">Cell Arra
 <p>As shown in see <a href="Basic-Usage-of-Cell-Arrays.html#Basic-Usage-of-Cell-Arrays">Basic Usage of Cell Arrays</a> elements can be
 extracted from cell arrays using the &lsquo;<samp><span class="samp">{</span></samp>&rsquo; and &lsquo;<samp><span class="samp">}</span></samp>&rsquo;
 operators.  If you want to extract or access subarrays which are still
-cell arrays, you need to use the &lsquo;<samp><span class="samp">(</span></samp>&rsquo; and &lsquo;<samp><span class="samp">)</span></samp>&rsquo; operators. The
+cell arrays, you need to use the &lsquo;<samp><span class="samp">(</span></samp>&rsquo; and &lsquo;<samp><span class="samp">)</span></samp>&rsquo; operators.  The
 following example illustrates the difference:
 
 <pre class="example">     c = {"1", "2", "3"; "a", "b", "c"; "4", "5", "6"};
      c{2,3}
-           ans = c
+          &rArr; ans = c
      
      c(2,3)
-           ans =
+          &rArr; ans =
              {
                [1,1] = c
              }
@@ -55,12 +56,12 @@ array, while with &lsquo;<samp><span class="samp">()</span></samp>&rsquo; you ac
 array.
 
    <p>Using the &lsquo;<samp><span class="samp">(</span></samp>&rsquo; and &lsquo;<samp><span class="samp">)</span></samp>&rsquo; operators, indexing works for cell
-arrays like for multidimensional arrays.  As an example, all the rows
+arrays like for multi-dimensional arrays.  As an example, all the rows
 of the first and third column of a cell array can be set to <code>0</code>
 with the following command:
 
 <pre class="example">     c(:, [1, 3]) = {0}
-            =
+          &rArr;  =
              {
                [1,1] = 0
                [2,1] = 0
@@ -86,7 +87,7 @@ following command:
 
 <pre class="example">     c = {1, 2, 3; 4, 5, 6};
      c([1, 2], :) = c([2, 1], :)
-           =
+          &rArr; =
              {
                [1,1] =  4
                [2,1] =  1
@@ -98,12 +99,12 @@ following command:
 </pre>
    <p>Accessing multiple elements of a cell array with the &lsquo;<samp><span class="samp">{</span></samp>&rsquo; and
 &lsquo;<samp><span class="samp">}</span></samp>&rsquo; operators will result in a comma-separated list of all the
-requested elements (see <a href="Comma-Separated-Lists.html#Comma-Separated-Lists">Comma Separated Lists</a>). Using the
+requested elements (see <a href="Comma-Separated-Lists.html#Comma-Separated-Lists">Comma Separated Lists</a>).  Using the
 &lsquo;<samp><span class="samp">{</span></samp>&rsquo; and &lsquo;<samp><span class="samp">}</span></samp>&rsquo; operators the first two rows in the above
 example can be swapped back like this:
 
 <pre class="example">     [c{[1,2], :}] = deal(c{[2, 1], :})
-           =
+          &rArr; =
              {
                [1,1] =  1
                [2,1] =  4
@@ -118,7 +119,7 @@ can be used to delete elements from a cell array:
 
 <pre class="example">     x = {"1", "2"; "3", "4"};
      x(1, :) = []
-           x =
+          &rArr; x =
              {
                [1,1] = 3
                [1,2] = 4
@@ -129,7 +130,7 @@ array elements but not delete the space for them:
 
 <pre class="example">     x = {"1", "2"; "3", "4"};
      x{1, :} = []
-      x =
+     &rArr; x =
            {
              [1,1] = [](0x0)
              [2,1] = 3

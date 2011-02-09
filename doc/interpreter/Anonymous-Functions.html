@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Anonymous Functions - Untitled</title>
+<title>Anonymous Functions - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions" title="Function Handles Inline Functions and Anonymous Functions">
 <link rel="prev" href="Function-Handles.html#Function-Handles" title="Function Handles">
@@ -21,18 +21,19 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Anonymous-Functions"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Inline-Functions.html#Inline-Functions">Inline Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Function-Handles.html#Function-Handles">Function Handles</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions">Function Handles Inline Functions and Anonymous Functions</a>
 <hr>
 </div>
 
-<h4 class="subsection">11.9.2 Anonymous Functions</h4>
+<h4 class="subsection">11.10.2 Anonymous Functions</h4>
 
 <p>Anonymous functions are defined using the syntax
 
@@ -46,20 +47,20 @@ example,
 
 <pre class="example">     f = @(x) x.^2;
      quad (f, 0, 10)
-          333.33
+         &rArr; 333.33
 </pre>
    <p class="noindent">creates a simple unnamed function from the expression <code>x.^2</code> and
 passes it to <code>quad</code>,
 
 <pre class="example">     quad (@(x) sin (x), 0, pi)
-          2
+         &rArr; 2
 </pre>
    <p class="noindent">wraps another function, and
 
 <pre class="example">     a = 1;
      b = 2;
      quad (@(x) betainc (x, a, b), 0, 0.4)
-          0.13867
+         &rArr; 0.13867
 </pre>
    <p class="noindent">adapts a function with several parameters to the form required by
 <code>quad</code>.  In this example, the values of <var>a</var> and <var>b</var> that

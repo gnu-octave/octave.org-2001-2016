@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Function Overloading - Untitled</title>
+<title>Function Overloading - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overloading-Objects.html#Overloading-Objects" title="Overloading Objects">
 <link rel="next" href="Operator-Overloading.html#Operator-Overloading" title="Operator Overloading">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Function-Overloading"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Operator-Overloading.html#Operator-Overloading">Operator Overloading</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overloading-Objects.html#Overloading-Objects">Overloading Objects</a>
 <hr>
@@ -32,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Overloading-Objects.html#Overloading-Ob
 
 <h4 class="subsection">33.4.1 Function Overloading</h4>
 
-<p>Any Octave function can be overloaded, and allows a object specific
+<p>Any Octave function can be overloaded, and allows an object specific
 version of this function to be called as needed.  A pertinent example
 for our polynomial class might be to overload the <code>polyval</code> function
 like
@@ -59,7 +60,8 @@ polynomial class is the <code>plot</code> function.
        else
          plot(x, p(x), varargin{:});
        endif
-     endfunction</pre>
+     endfunction
+</pre>
 </pre>
    <p class="noindent">which allows polynomials to be plotted in the domain near the region
 of the roots of the polynomial.

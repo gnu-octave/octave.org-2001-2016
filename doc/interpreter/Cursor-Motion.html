@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Cursor Motion - Untitled</title>
+<title>Cursor Motion - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
 <link rel="next" href="Killing-and-Yanking.html#Killing-and-Yanking" title="Killing and Yanking">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Cursor-Motion"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Killing-and-Yanking.html#Killing-and-Yanking">Killing and Yanking</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>
 <hr>
@@ -39,7 +40,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-
 
      <br><dt><kbd>C-f</kbd><dd>Move forward one character.
 
-     <br><dt><kbd>&lt;DEL&gt;</kbd><dd>Delete the character to the left of the cursor.
+     <br><dt><kbd>&lt;BACKSPACE&gt;</kbd><dd>Delete the character to the left of the cursor.
+
+     <br><dt><kbd>&lt;DEL&gt;</kbd><dd>Delete the character underneath the cursor.
 
      <br><dt><kbd>C-d</kbd><dd>Delete the character underneath the cursor.
 
@@ -68,16 +71,16 @@ to move forward and backward.
 forward a word.  It is a loose convention that control keystrokes
 operate on characters while meta keystrokes operate on words.
 
-   <p><a name="index-clearing-the-screen-106"></a>
+   <p><a name="index-clearing-the-screen-107"></a>
 The function <code>clc</code> will allow you to clear the screen from within
 Octave programs.
 
-<!-- sysdep.cc -->
+<!-- clc src/sysdep.cc -->
    <p><a name="doc_002dclc"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>clc</b> ()<var><a name="index-clc-107"></a></var><br>
-&mdash; Built-in Function:  <b>home</b> ()<var><a name="index-home-108"></a></var><br>
+&mdash; Built-in Function:  <b>clc</b> ()<var><a name="index-clc-108"></a></var><br>
+&mdash; Built-in Function:  <b>home</b> ()<var><a name="index-home-109"></a></var><br>
 <blockquote><p>Clear the terminal screen and move the cursor to the upper left corner. 
 </p></blockquote></div>
 

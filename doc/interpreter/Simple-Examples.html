@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Simple Examples - Untitled</title>
+<title>Simple Examples - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Introduction.html#Introduction" title="Introduction">
 <link rel="prev" href="Running-Octave.html#Running-Octave" title="Running Octave">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Simple-Examples"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Conventions.html#Conventions">Conventions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Running-Octave.html#Running-Octave">Running Octave</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Introduction.html#Introduction">Introduction</a>
@@ -39,7 +40,7 @@ before doing that, it might be helpful to give a sampling of some of its
 capabilities.
 
    <p>If you are new to Octave, I recommend that you try these examples to
-begin learning Octave by using it.  Lines marked with &lsquo;<samp><span class="samp">octave:13&gt;</span></samp>&rsquo;
+begin learning Octave by using it.  Lines marked like so, &lsquo;<samp><span class="samp">octave:13&gt;</span></samp>&rsquo;,
 are lines you type, ending each with a carriage return.  Octave will
 respond with an answer, or by displaying a graph.
 
@@ -243,11 +244,11 @@ file.
 
    <p>In order to get good help you first need to know the name of the command
 that you want to use.  This name of the function may not always be
-obvious, but a good place to start is to just type <code>help</code>. 
-This will show you all the operators, reserved words, functions,
-built-in variables, and function files.  An alternative is to search the
-documentation using the <code>lookfor</code> function.  This function is
-described in <a href="Getting-Help.html#Getting-Help">Getting Help</a>.
+obvious, but a good place to start is to just type <code>help --list</code>. 
+This will show you all the operators, keywords, built-in functions,
+and loadable functions available in the current session of Octave.  An
+alternative is to search the documentation using the <code>lookfor</code>
+function.  This function is described in <a href="Getting-Help.html#Getting-Help">Getting Help</a>.
 
    <p>Once you know the name of the function you wish to use, you can get more
 help on the function by simply including the name as an argument to help. 

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Cell Arrays of Strings - Untitled</title>
+<title>Cell Arrays of Strings - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cell-Arrays.html#Cell-Arrays" title="Cell Arrays">
 <link rel="prev" href="Indexing-Cell-Arrays.html#Indexing-Cell-Arrays" title="Indexing Cell Arrays">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Cell-Arrays-of-Strings"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Processing-Data-in-Cell-Arrays.html#Processing-Data-in-Cell-Arrays">Processing Data in Cell Arrays</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Indexing-Cell-Arrays.html#Indexing-Cell-Arrays">Indexing Cell Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cell-Arrays.html#Cell-Arrays">Cell Arrays</a>
@@ -48,17 +49,17 @@ converts a character array to a cell array of strings:
 
 <pre class="example">     a = ["hello"; "world"];
      c = cellstr (a)
-           c =
+          &rArr; c =
               {
                 [1,1] = hello
                 [2,1] = world
               }
 </pre>
-   <!-- ov-cell.cc -->
+   <!-- cellstr src/ov-cell.cc -->
    <p><a name="doc_002dcellstr"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cellstr</b> (<var>string</var>)<var><a name="index-cellstr-397"></a></var><br>
+&mdash; Built-in Function:  <b>cellstr</b> (<var>string</var>)<var><a name="index-cellstr-425"></a></var><br>
 <blockquote><p>Create a new cell array object from the elements of the string
 array <var>string</var>. 
 </p></blockquote></div>
@@ -73,7 +74,7 @@ argument:
 
 <pre class="example">     c = {"hello", "world"};
      strcmp ("hello", c)
-           ans =
+          &rArr; ans =
              1   0
 </pre>
    <p class="noindent">The following string functions support cell arrays of strings:
@@ -85,33 +86,18 @@ argument:
    <p>The function <code>iscellstr</code> can be used to test if an object is a
 cell array of strings.
 
-<!-- ov-cell.cc -->
+<!-- iscellstr src/ov-cell.cc -->
    <p><a name="doc_002discellstr"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>iscellstr</b> (<var>cell</var>)<var><a name="index-iscellstr-398"></a></var><br>
+&mdash; Built-in Function:  <b>iscellstr</b> (<var>cell</var>)<var><a name="index-iscellstr-426"></a></var><br>
 <blockquote><p>Return true if every element of the cell array <var>cell</var> is a
-character string
-</p></blockquote></div>
+character string. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-<!-- ./general/cellidx.m -->
-   <p><a name="doc_002dcellidx"></a>
-
-<div class="defun">
-&mdash; Function File: [<var>idxvec</var>, <var>errmsg</var>] = <b>cellidx</b> (<var>listvar, strlist</var>)<var><a name="index-cellidx-399"></a></var><br>
-<blockquote><p>Return indices of string entries in <var>listvar</var> that match strings
-in <var>strlist</var>.
-
-        <p>Both <var>listvar</var> and <var>strlist</var> may be passed as strings or
-string matrices.  If they are passed as string matrices, each entry
-is processed by <code>deblank</code> prior to searching for the entries.
-
-        <p>The first output is the vector of indices in <var>listvar</var>.
-
-        <p>If <var>strlist</var> contains a string not in <var>listvar</var>, then
-an error message is returned in <var>errmsg</var>.  If only one output
-argument is requested, then <var>cellidx</var> prints <var>errmsg</var> to the
-screen and exits with an error. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dischar.html#doc_002dischar">ischar</a>. 
 </p></blockquote></div>
 
    </body></html>

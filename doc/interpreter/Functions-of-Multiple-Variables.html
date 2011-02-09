@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Functions of Multiple Variables - Untitled</title>
+<title>Functions of Multiple Variables - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numerical-Integration.html#Numerical-Integration" title="Numerical Integration">
 <link rel="prev" href="Functions-of-One-Variable.html#Functions-of-One-Variable" title="Functions of One Variable">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Functions-of-Multiple-Variables"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Orthogonal-Collocation.html#Orthogonal-Collocation">Orthogonal Collocation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Functions-of-One-Variable.html#Functions-of-One-Variable">Functions of One Variable</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Numerical-Integration.html#Numerical-Integration">Numerical Integration</a>
@@ -41,6 +42,7 @@ functions for one-dimensional integrals.
 
    <p>To illustrate how the integration can be performed, we will integrate
 the function
+
 <pre class="example">     f(x, y) = sin(pi*x*y)*sqrt(x*y)
 </pre>
    <p>for x and y between 0 and 1.
@@ -62,20 +64,20 @@ the following code does.
      endfunction
      
      I = quadl("g", 0, 1)
-            0.30022
+           &rArr; 0.30022
 </pre>
    <p>The above process can be simplified with the <code>dblquad</code> and
 <code>triplequad</code> functions for integrals over two and three
-variables.  For example
+variables.  For example:
 
 <pre class="example">     I =  dblquad (@(x, y) sin(pi.*x.*y).*sqrt(x.*y), 0, 1, 0, 1)
-            0.30022
+           &rArr; 0.30022
 </pre>
-   <!-- ./general/dblquad.m -->
+   <!-- dblquad scripts/general/dblquad.m -->
    <p><a name="doc_002ddblquad"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dblquad</b> (<var>f, xa, xb, ya, yb, tol, quadf, <small class="dots">...</small></var>)<var><a name="index-dblquad-1781"></a></var><br>
+&mdash; Function File:  <b>dblquad</b> (<var>f, xa, xb, ya, yb, tol, quadf, <small class="dots">...</small></var>)<var><a name="index-dblquad-2070"></a></var><br>
 <blockquote><p>Numerically evaluate a double integral.  The function over with to
 integrate is defined by <var>f</var>, and the interval for the
 integration is defined by <code>[</code><var>xa</var><code>, </code><var>xb</var><code>, </code><var>ya</var><code>,
@@ -91,14 +93,14 @@ value for <var>tol</var> one may pass an empty matrix.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dquadcc.html#doc_002dquadcc">quadcc</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
 </p></blockquote></div>
 
-<!-- ./general/triplequad.m -->
+<!-- triplequad scripts/general/triplequad.m -->
    <p><a name="doc_002dtriplequad"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>triplequad</b> (<var>f, xa, xb, ya, yb, za, zb, tol, quadf, <small class="dots">...</small></var>)<var><a name="index-triplequad-1782"></a></var><br>
+&mdash; Function File:  <b>triplequad</b> (<var>f, xa, xb, ya, yb, za, zb, tol, quadf, <small class="dots">...</small></var>)<var><a name="index-triplequad-2071"></a></var><br>
 <blockquote><p>Numerically evaluate a triple integral.  The function over which to
 integrate is defined by <var>f</var>, and the interval for the
 integration is defined by <code>[</code><var>xa</var><code>, </code><var>xb</var><code>, </code><var>ya</var><code>,
@@ -115,7 +117,7 @@ value for <var>tol</var> one may pass an empty matrix.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dquadcc.html#doc_002dquadcc">quadcc</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
 </p></blockquote></div>
 
    <p>The above mentioned approach works but is fairly slow, and that problem
@@ -133,14 +135,14 @@ following code computes the studied integral using n=7 points.
      n = 7;
      [t, A, B, q] = colloc(n);
      I = q'*f(t,t)*q;
-            0.30022
+           &rArr; 0.30022
 </pre>
    <p class="noindent">It should be noted that the number of points determines the quality
 of the approximation.  If the integration needs to be performed between
 a and b instead of 0 and 1, a change of variables is needed.
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007, 2008, 2009 John W. Eaton -->
+<!-- Copyright (C) 1996-2011 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

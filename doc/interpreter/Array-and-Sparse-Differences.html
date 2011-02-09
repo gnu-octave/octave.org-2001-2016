@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Array and Sparse Differences - Untitled</title>
+<title>Array and Sparse Differences - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sparse-Matrices-in-Oct_002dFiles.html#Sparse-Matrices-in-Oct_002dFiles" title="Sparse Matrices in Oct-Files">
 <link rel="next" href="Creating-Sparse-Matrices-in-Oct_002dFiles.html#Creating-Sparse-Matrices-in-Oct_002dFiles" title="Creating Sparse Matrices in Oct-Files">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Array-and-Sparse-Differences"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Creating-Sparse-Matrices-in-Oct_002dFiles.html#Creating-Sparse-Matrices-in-Oct_002dFiles">Creating Sparse Matrices in Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Sparse-Matrices-in-Oct_002dFiles.html#Sparse-Matrices-in-Oct_002dFiles">Sparse Matrices in Oct-Files</a>
 <hr>
@@ -39,7 +40,7 @@ of non-zero elements rather than the product of the dimensions.  Therefore
      ...
      int nel = sm.nelem ();
 </pre>
-   <p>returns the number of non-zero elements.  If the user really requires the
+   <p class="noindent">returns the number of non-zero elements.  If the user really requires the
 number of elements in the matrix, including the non-zero elements, they
 should use <code>numel</code> rather than <code>nelem</code>.  Note that for very
 large matrices, where the product of the two dimensions is larger than
@@ -65,7 +66,7 @@ code like
          std::cerr &lt;&lt; " (" &lt;&lt; i &lt;&lt; "," &lt;&lt; j &lt;&lt; "): " &lt;&lt; sm(i,j)
                    &lt;&lt; std::endl;
 </pre>
-   <p>is a great way of turning the sparse matrix into a dense one, and a
+   <p class="noindent">is a great way of turning the sparse matrix into a dense one, and a
 very slow way at that since it reallocates the sparse object at each
 zero element in the matrix.
 

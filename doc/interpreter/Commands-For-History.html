@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Commands For History - Untitled</title>
+<title>Commands For History - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
 <link rel="prev" href="Commands-For-Completion.html#Commands-For-Completion" title="Commands For Completion">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Commands-For-History"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Customizing-readline.html#Customizing-readline">Customizing readline</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Commands-For-Completion.html#Commands-For-Completion">Commands For Completion</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>
@@ -34,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-
 
 <h4 class="subsection">2.4.5 Commands For Manipulating The History</h4>
 
-<p><a name="index-command-history-113"></a><a name="index-input-history-114"></a><a name="index-history-of-commands-115"></a>
+<p><a name="index-command-history-114"></a><a name="index-input-history-115"></a><a name="index-history-of-commands-116"></a>
 Octave normally keeps track of the commands you type so that you can
 recall previous commands to edit or execute them again.  When you exit
 Octave, the most recent commands you have typed, up to the number
@@ -72,11 +73,11 @@ of <kbd>C-p</kbd> and <kbd>C-n</kbd> to move through the history list.
 list, Octave provides three functions for viewing, editing, and
 re-running chunks of commands from the history list.
 
-<!-- oct-hist.cc -->
+<!-- history src/oct-hist.cc -->
    <p><a name="doc_002dhistory"></a>
 
 <div class="defun">
-&mdash; Command: <b>history</b><var> options<a name="index-history-116"></a></var><br>
+&mdash; Command:  <b>history</b><var> options<a name="index-history-117"></a></var><br>
 <blockquote><p>If invoked with no arguments, <code>history</code> displays a list of commands
 that you have executed.  Valid options are:
 
@@ -84,8 +85,8 @@ that you have executed.  Valid options are:
 <dt><code>-w </code><var>file</var><dd>Write the current history to the file <var>file</var>.  If the name is
 omitted, use the default history file (normally <samp><span class="file">~/.octave_hist</span></samp>).
 
-          <br><dt><code>-r </code><var>file</var><dd>Read the file <var>file</var>, replacing the current history list with its
-contents.  If the name is omitted, use the default history file
+          <br><dt><code>-r </code><var>file</var><dd>Read the file <var>file</var>, appending its contents to the current
+history list.  If the name is omitted, use the default history file
 (normally <samp><span class="file">~/.octave_hist</span></samp>).
 
           <br><dt><var>n</var><dd>Display only the most recent <var>n</var> lines of history.
@@ -99,13 +100,13 @@ typed without displaying line numbers, use the command
 <kbd>history -q 5</kbd>. 
 </p></blockquote></div>
 
-<!-- oct-hist.cc -->
+<!-- edit_history src/oct-hist.cc -->
    <p><a name="doc_002dedit_005fhistory"></a>
 
 <div class="defun">
-&mdash; Command: <b>edit_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-edit_005fhistory-117"></a></var><br>
+&mdash; Command:  <b>edit_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-edit_005fhistory-118"></a></var><br>
 <blockquote><p>If invoked with no arguments, <code>edit_history</code> allows you to edit the
-history list using the editor named by the variable <code>EDITOR</code><!-- /@w -->.  The
+history list using the editor named by the variable <samp><span class="env">EDITOR</span></samp><!-- /@w -->.  The
 commands to be edited are first copied to a temporary file.  When you
 exit the editor, Octave executes the commands that remain in the file. 
 It is often more convenient to use <code>edit_history</code> to define functions
@@ -136,11 +137,11 @@ omitted, the previous command in the history list is used.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002drun_005fhistory.html#doc_002drun_005fhistory">run_history</a>. 
 </p></blockquote></div>
 
-<!-- oct-hist.cc -->
+<!-- run_history src/oct-hist.cc -->
    <p><a name="doc_002drun_005fhistory"></a>
 
 <div class="defun">
-&mdash; Command: <b>run_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-run_005fhistory-118"></a></var><br>
+&mdash; Command:  <b>run_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-run_005fhistory-119"></a></var><br>
 <blockquote><p>Similar to <code>edit_history</code>, except that the editor is not invoked,
 and the commands are simply executed as they appear in the history list. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -153,31 +154,60 @@ and the commands are simply executed as they appear in the history list.
 <p class="noindent">Octave also allows you customize the details of when, where, and how history
 is saved.
 
-<!-- oct-hist.cc -->
+<!-- saving_history src/oct-hist.cc -->
    <p><a name="doc_002dsaving_005fhistory"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>saving_history</b> ()<var><a name="index-saving_005fhistory-119"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>saving_history</b> (<var>new_val</var>)<var><a name="index-saving_005fhistory-120"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>saving_history</b> ()<var><a name="index-saving_005fhistory-120"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>saving_history</b> (<var>new_val</var>)<var><a name="index-saving_005fhistory-121"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether commands entered
 on the command line are saved in the history file. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dhistory_005ffile.html#doc_002dhistory_005ffile">history_file</a>, <a href="doc_002dhistory_005fsize.html#doc_002dhistory_005fsize">history_size</a>, <a href="doc_002dhistory_005ftimestamp_005fformat_005fstring.html#doc_002dhistory_005ftimestamp_005fformat_005fstring">history_timestamp_format_string</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dhistory_005fcontrol.html#doc_002dhistory_005fcontrol">history_control</a>, <a href="doc_002dhistory_005ffile.html#doc_002dhistory_005ffile">history_file</a>, <a href="doc_002dhistory_005fsize.html#doc_002dhistory_005fsize">history_size</a>, <a href="doc_002dhistory_005ftimestamp_005fformat_005fstring.html#doc_002dhistory_005ftimestamp_005fformat_005fstring">history_timestamp_format_string</a>. 
 </p></blockquote></div>
 
-<!-- oct-hist.cc -->
+<!-- history_control src/oct-hist.cc -->
+   <p><a name="doc_002dhistory_005fcontrol"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>history_control</b> ()<var><a name="index-history_005fcontrol-122"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_control</b> (<var>new_val</var>)<var><a name="index-history_005fcontrol-123"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies how commands are saved
+to the history list.  The default value is an empty character string,
+but may be overridden by the environment variable
+<samp><span class="env">OCTAVE_HISTCONTROL</span></samp><!-- /@w -->.
+
+        <p>The value of <code>history_control</code> is a colon-separated list of values
+controlling how commands are saved on the history list.  If the list
+of values includes <code>ignorespace</code>, lines which begin with a space
+character are not saved in the history list.  A value of <code>ignoredups</code>
+causes lines matching the previous history entry to not be saved. 
+A value of <code>ignoreboth</code> is shorthand for <code>ignorespace</code> and
+<code>ignoredups</code>.  A value of <code>erasedups</code> causes all previous lines
+matching the current line to be removed from the history list before that
+line is saved.  Any value not in the above list is ignored.  If
+<code>history_control</code> is the empty string, all commands are saved on
+the history list, subject to the value of <code>saving_history</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dhistory_005ffile.html#doc_002dhistory_005ffile">history_file</a>, <a href="doc_002dhistory_005fsize.html#doc_002dhistory_005fsize">history_size</a>, <a href="doc_002dhistory_005ftimestamp_005fformat_005fstring.html#doc_002dhistory_005ftimestamp_005fformat_005fstring">history_timestamp_format_string</a>, <a href="doc_002dsaving_005fhistory.html#doc_002dsaving_005fhistory">saving_history</a>. 
+</p></blockquote></div>
+
+<!-- history_file src/oct-hist.cc -->
    <p><a name="doc_002dhistory_005ffile"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>history_file</b> ()<var><a name="index-history_005ffile-121"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>history_file</b> (<var>new_val</var>)<var><a name="index-history_005ffile-122"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>history_file</b> ()<var><a name="index-history_005ffile-124"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_file</b> (<var>new_val</var>)<var><a name="index-history_005ffile-125"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the name of the
 file used to store command history.  The default value is
 <samp><span class="file">~/.octave_hist</span></samp>, but may be overridden by the environment
-variable <code>OCTAVE_HISTFILE</code><!-- /@w -->. 
+variable <samp><span class="env">OCTAVE_HISTFILE</span></samp><!-- /@w -->. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -185,15 +215,15 @@ variable <code>OCTAVE_HISTFILE</code><!-- /@w -->.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dhistory_005fsize.html#doc_002dhistory_005fsize">history_size</a>, <a href="doc_002dsaving_005fhistory.html#doc_002dsaving_005fhistory">saving_history</a>, <a href="doc_002dhistory_005ftimestamp_005fformat_005fstring.html#doc_002dhistory_005ftimestamp_005fformat_005fstring">history_timestamp_format_string</a>. 
 </p></blockquote></div>
 
-<!-- oct-hist.cc -->
+<!-- history_size src/oct-hist.cc -->
    <p><a name="doc_002dhistory_005fsize"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>history_size</b> ()<var><a name="index-history_005fsize-123"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>history_size</b> (<var>new_val</var>)<var><a name="index-history_005fsize-124"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>history_size</b> ()<var><a name="index-history_005fsize-126"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_size</b> (<var>new_val</var>)<var><a name="index-history_005fsize-127"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies how many entries
 to store in the history file.  The default value is <code>1024</code>,
-but may be overridden by the environment variable <code>OCTAVE_HISTSIZE</code><!-- /@w -->. 
+but may be overridden by the environment variable <samp><span class="env">OCTAVE_HISTSIZE</span></samp><!-- /@w -->. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -201,12 +231,12 @@ but may be overridden by the environment variable <code>OCTAVE_HISTSIZE</code><!
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dhistory_005ffile.html#doc_002dhistory_005ffile">history_file</a>, <a href="doc_002dhistory_005ftimestamp_005fformat_005fstring.html#doc_002dhistory_005ftimestamp_005fformat_005fstring">history_timestamp_format_string</a>, <a href="doc_002dsaving_005fhistory.html#doc_002dsaving_005fhistory">saving_history</a>. 
 </p></blockquote></div>
 
-<!-- oct-hist.cc -->
+<!-- history_timestamp_format_string src/oct-hist.cc -->
    <p><a name="doc_002dhistory_005ftimestamp_005fformat_005fstring"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>history_timestamp_format_string</b> ()<var><a name="index-history_005ftimestamp_005fformat_005fstring-125"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>history_timestamp_format_string</b> (<var>new_val</var>)<var><a name="index-history_005ftimestamp_005fformat_005fstring-126"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>history_timestamp_format_string</b> ()<var><a name="index-history_005ftimestamp_005fformat_005fstring-128"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_timestamp_format_string</b> (<var>new_val</var>)<var><a name="index-history_005ftimestamp_005fformat_005fstring-129"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the format string
 for the comment line that is written to the history file when Octave
 exits.  The format string is passed to <code>strftime</code>.  The default
@@ -220,16 +250,16 @@ value is
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dhistory_005ffile.html#doc_002dhistory_005ffile">history_file</a>, <a href="doc_002dhistory_005fsize.html#doc_002dhistory_005fsize">history_size</a>, <a href="doc_002dsaving_005fhistory.html#doc_002dsaving_005fhistory">saving_history</a>. 
 </p></blockquote></div>
 
-<!-- defaults.cc -->
+<!-- EDITOR src/defaults.cc -->
    <p><a name="doc_002dEDITOR"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>EDITOR</b> ()<var><a name="index-EDITOR-127"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>EDITOR</b> (<var>new_val</var>)<var><a name="index-EDITOR-128"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>EDITOR</b> ()<var><a name="index-EDITOR-130"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>EDITOR</b> (<var>new_val</var>)<var><a name="index-EDITOR-131"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the editor to
 use with the <code>edit_history</code> command.  The default value is taken from
-the environment variable <code>EDITOR</code><!-- /@w --> when Octave starts.  If the
-environment variable is not initialized, <code>EDITOR</code><!-- /@w --> will be set to
+the environment variable <samp><span class="env">EDITOR</span></samp><!-- /@w --> when Octave starts.  If the
+environment variable is not initialized, <samp><span class="env">EDITOR</span></samp><!-- /@w --> will be set to
 <code>"emacs"</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->

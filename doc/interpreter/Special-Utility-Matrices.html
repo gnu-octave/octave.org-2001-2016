@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Special Utility Matrices - Untitled</title>
+<title>Special Utility Matrices - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Matrix-Manipulation.html#Matrix-Manipulation" title="Matrix Manipulation">
 <link rel="prev" href="Applying-a-Function-to-an-Array.html#Applying-a-Function-to-an-Array" title="Applying a Function to an Array">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Special-Utility-Matrices"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Famous-Matrices.html#Famous-Matrices">Famous Matrices</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Applying-a-Function-to-an-Array.html#Applying-a-Function-to-an-Array">Applying a Function to an Array</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Matrix-Manipulation.html#Matrix-Manipulation">Matrix Manipulation</a>
@@ -34,22 +35,22 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Matrix-Manipulation.html#Matrix-Manipul
 
 <h3 class="section">16.4 Special Utility Matrices</h3>
 
-<!-- data.cc -->
+<!-- eye src/data.cc -->
 <p><a name="doc_002deye"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>eye</b> (<var>x</var>)<var><a name="index-eye-1313"></a></var><br>
-&mdash; Built-in Function:  <b>eye</b> (<var>n, m</var>)<var><a name="index-eye-1314"></a></var><br>
-&mdash; Built-in Function:  <b>eye</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-eye-1315"></a></var><br>
+&mdash; Built-in Function:  <b>eye</b> (<var>x</var>)<var><a name="index-eye-1513"></a></var><br>
+&mdash; Built-in Function:  <b>eye</b> (<var>n, m</var>)<var><a name="index-eye-1514"></a></var><br>
+&mdash; Built-in Function:  <b>eye</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-eye-1515"></a></var><br>
 <blockquote><p>Return an identity matrix.  If invoked with a single scalar argument,
 <code>eye</code> returns a square matrix with the dimension specified.  If you
 supply two scalar arguments, <code>eye</code> takes them to be the number of
 rows and columns.  If given a vector with two elements, <code>eye</code> uses
 the values of the elements as the number of rows and columns,
-respectively.  For example,
+respectively.  For example:
 
      <pre class="example">          eye (3)
-                 1  0  0
+               &rArr;  1  0  0
                    0  1  0
                    0  0  1
 </pre>
@@ -71,67 +72,118 @@ with an argument of 1.  This odd definition is for compatibility
 with <span class="sc">matlab</span>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- ones src/data.cc -->
    <p><a name="doc_002dones"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ones</b> (<var>x</var>)<var><a name="index-ones-1316"></a></var><br>
-&mdash; Built-in Function:  <b>ones</b> (<var>n, m</var>)<var><a name="index-ones-1317"></a></var><br>
-&mdash; Built-in Function:  <b>ones</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-ones-1318"></a></var><br>
-&mdash; Built-in Function:  <b>ones</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-ones-1319"></a></var><br>
+&mdash; Built-in Function:  <b>ones</b> (<var>x</var>)<var><a name="index-ones-1516"></a></var><br>
+&mdash; Built-in Function:  <b>ones</b> (<var>n, m</var>)<var><a name="index-ones-1517"></a></var><br>
+&mdash; Built-in Function:  <b>ones</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-ones-1518"></a></var><br>
+&mdash; Built-in Function:  <b>ones</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-ones-1519"></a></var><br>
 <blockquote><p>Return a matrix or N-dimensional array whose elements are all 1. 
-The arguments are handled the same as the arguments for <code>eye</code>.
+If invoked with a single scalar integer argument, return a square
+matrix of the specified size.  If invoked with two or more scalar
+integer arguments, or a vector of integer values, return an array with
+given dimensions.
 
         <p>If you need to create a matrix whose values are all the same, you should
 use an expression like
 
      <pre class="example">          val_matrix = val * ones (n, m)
 </pre>
-        <p>The optional argument <var>class</var>, allows <code>ones</code> to return an array of
-the specified type, for example
+        <p>The optional argument <var>class</var> specifies the class of the return array
+and defaults to double.  For example:
 
      <pre class="example">          val = ones (n,m, "uint8")
 </pre>
-        </blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dzeros.html#doc_002dzeros">zeros</a>. 
+</p></blockquote></div>
 
-<!-- data.cc -->
+<!-- zeros src/data.cc -->
    <p><a name="doc_002dzeros"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>zeros</b> (<var>x</var>)<var><a name="index-zeros-1320"></a></var><br>
-&mdash; Built-in Function:  <b>zeros</b> (<var>n, m</var>)<var><a name="index-zeros-1321"></a></var><br>
-&mdash; Built-in Function:  <b>zeros</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-zeros-1322"></a></var><br>
-&mdash; Built-in Function:  <b>zeros</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-zeros-1323"></a></var><br>
+&mdash; Built-in Function:  <b>zeros</b> (<var>x</var>)<var><a name="index-zeros-1520"></a></var><br>
+&mdash; Built-in Function:  <b>zeros</b> (<var>n, m</var>)<var><a name="index-zeros-1521"></a></var><br>
+&mdash; Built-in Function:  <b>zeros</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-zeros-1522"></a></var><br>
+&mdash; Built-in Function:  <b>zeros</b> (<var><small class="dots">...</small>, class</var>)<var><a name="index-zeros-1523"></a></var><br>
 <blockquote><p>Return a matrix or N-dimensional array whose elements are all 0. 
-The arguments are handled the same as the arguments for <code>eye</code>.
+If invoked with a single scalar integer argument, return a square
+matrix of the specified size.  If invoked with two or more scalar
+integer arguments, or a vector of integer values, return an array with
+given dimensions.
 
-        <p>The optional argument <var>class</var>, allows <code>zeros</code> to return an array of
-the specified type, for example
+        <p>The optional argument <var>class</var> specifies the class of the return array
+and defaults to double.  For example:
 
      <pre class="example">          val = zeros (n,m, "uint8")
 </pre>
-        </blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dones.html#doc_002dones">ones</a>. 
+</p></blockquote></div>
 
-<!-- ./general/repmat.m -->
+<!-- repmat scripts/general/repmat.m -->
    <p><a name="doc_002drepmat"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>repmat</b> (<var>A, m, n</var>)<var><a name="index-repmat-1324"></a></var><br>
-&mdash; Function File:  <b>repmat</b> (<var>A, </var>[<var>m n</var>])<var><a name="index-repmat-1325"></a></var><br>
-&mdash; Function File:  <b>repmat</b> (<var>A, </var>[<var>m n p <small class="dots">...</small></var>])<var><a name="index-repmat-1326"></a></var><br>
+&mdash; Function File:  <b>repmat</b> (<var>A, m, n</var>)<var><a name="index-repmat-1524"></a></var><br>
+&mdash; Function File:  <b>repmat</b> (<var>A, </var>[<var>m n</var>])<var><a name="index-repmat-1525"></a></var><br>
+&mdash; Function File:  <b>repmat</b> (<var>A, </var>[<var>m n p <small class="dots">...</small></var>])<var><a name="index-repmat-1526"></a></var><br>
 <blockquote><p>Form a block matrix of size <var>m</var> by <var>n</var>, with a copy of matrix
 <var>A</var> as each element.  If <var>n</var> is not specified, form an
 <var>m</var> by <var>m</var> block matrix. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002drepelems.html#doc_002drepelems">repelems</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/rand.cc -->
+<!-- repelems src/data.cc -->
+   <p><a name="doc_002drepelems"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>repelems</b> (<var>x, r</var>)<var><a name="index-repelems-1527"></a></var><br>
+<blockquote><p>Construct a vector of repeated elements from <var>x</var>.  <var>r</var>
+is a 2x<var>N</var> integer matrix specifying which elements to repeat and
+how often to repeat each element.
+
+        <p>Entries in the first row, <var>r</var>(1,j), select an element to repeat. 
+The corresponding entry in the second row, <var>r</var>(2,j), specifies
+the repeat count.  If <var>x</var> is a matrix then the columns of <var>x</var> are
+imagined to be stacked on top of each other for purposes of the selection
+index.  A row vector is always returned.
+
+        <p>Conceptually the result is calculated as follows:
+
+     <pre class="example">          y = [];
+          for i = 1:columns (<var>r</var>)
+            y = [y, <var>x</var>(<var>r</var>(1,i)*ones(1, <var>r</var>(2,i)))];
+          endfor
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002drepmat.html#doc_002drepmat">repmat</a>. 
+</p></blockquote></div>
+
+<!-- rand src/DLD-FUNCTIONS/rand.cc -->
    <p><a name="doc_002drand"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>rand</b> (<var>x</var>)<var><a name="index-rand-1327"></a></var><br>
-&mdash; Loadable Function:  <b>rand</b> (<var>n, m</var>)<var><a name="index-rand-1328"></a></var><br>
-&mdash; Loadable Function:  <b>rand</b> (<var>"state", x</var>)<var><a name="index-rand-1329"></a></var><br>
-&mdash; Loadable Function:  <b>rand</b> (<var>"seed", x</var>)<var><a name="index-rand-1330"></a></var><br>
+&mdash; Loadable Function:  <b>rand</b> (<var>x</var>)<var><a name="index-rand-1528"></a></var><br>
+&mdash; Loadable Function:  <b>rand</b> (<var>n, m</var>)<var><a name="index-rand-1529"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>rand</b> (<var>"state"</var>)<var><a name="index-rand-1530"></a></var><br>
+&mdash; Loadable Function:  <b>rand</b> (<var>"state", v</var>)<var><a name="index-rand-1531"></a></var><br>
+&mdash; Loadable Function:  <b>rand</b> (<var>"state", "reset"</var>)<var><a name="index-rand-1532"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>rand</b> (<var>"seed"</var>)<var><a name="index-rand-1533"></a></var><br>
+&mdash; Loadable Function:  <b>rand</b> (<var>"seed", v</var>)<var><a name="index-rand-1534"></a></var><br>
+&mdash; Loadable Function:  <b>rand</b> (<var>"seed", "reset"</var>)<var><a name="index-rand-1535"></a></var><br>
 <blockquote><p>Return a matrix with random elements uniformly distributed on the
 interval (0, 1).  The arguments are handled the same as the arguments
 for <code>eye</code>.
@@ -148,17 +200,19 @@ using the form
      <pre class="example">          rand ("state", v)
 </pre>
         <p class="noindent">You may also initialize the state vector from an arbitrary vector of
-length &lt;= 625 for <var>v</var>.  This new state will be a hash based on the
+length &le; 625 for <var>v</var>.  This new state will be a hash based on the
 value of <var>v</var>, not <var>v</var> itself.
 
         <p>By default, the generator is initialized from <code>/dev/urandom</code> if it is
-available, otherwise from cpu time, wall clock time and the current
+available, otherwise from CPU time, wall clock time and the current
 fraction of a second.
 
         <p>To compute the pseudo-random sequence, <code>rand</code> uses the Mersenne
-Twister with a period of 2^19937-1 (See M. Matsumoto and T. Nishimura,
-<cite>Mersenne Twister: A 623-dimensionally equidistributed uniform pseudorandom number generator</cite>, ACM Trans. on
-Modeling and Computer Simulation Vol. 8, No. 1, January pp.3-30 1998,
+Twister with a period of 2^19937-1 (See M. Matsumoto and
+T. Nishimura,
+<cite>Mersenne Twister: A 623-dimensionally equidistributed uniform
+pseudorandom number generator</cite>, ACM Trans. on
+Modeling and Computer Simulation Vol. 8, No. 1, pp. 3-30, January 1998,
 <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html">http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html</a>). 
 Do <strong>not</strong> use for cryptography without securely hashing
 several returned values together, otherwise the generator state
@@ -175,7 +229,7 @@ as in
 
      <pre class="example">          rand ("seed", val)
 </pre>
-        <p>which sets the seed of the generator to <var>val</var>.  The seed of the
+        <p class="noindent">which sets the seed of the generator to <var>val</var>.  The seed of the
 generator can be queried with
 
      <pre class="example">          s = rand ("seed")
@@ -183,7 +237,10 @@ generator can be queried with
         <p>However, it should be noted that querying the seed will not cause
 <code>rand</code> to use the old generators, only setting the seed will. 
 To cause <code>rand</code> to once again use the new generators, the
-keyword "state" should be used to reset the state of the <code>rand</code>. 
+keyword "state" should be used to reset the state of the <code>rand</code>.
+
+        <p>The state or seed of the generator can be reset to a new random value
+using the "reset" keyword. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -191,21 +248,67 @@ keyword "state" should be used to reset the state of the <code>rand</code>.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002drandn.html#doc_002drandn">randn</a>, <a href="doc_002drande.html#doc_002drande">rande</a>, <a href="doc_002drandg.html#doc_002drandg">randg</a>, <a href="doc_002drandp.html#doc_002drandp">randp</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/rand.cc -->
+<!-- randi scripts/general/randi.m -->
+   <p><a name="doc_002drandi"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>randi</b> (<var>imax</var>)<var><a name="index-randi-1536"></a></var><br>
+&mdash; Function File:  <b>randi</b> (<var>imax, n</var>)<var><a name="index-randi-1537"></a></var><br>
+&mdash; Function File:  <b>randi</b> (<var>imax, m, n, <small class="dots">...</small></var>)<var><a name="index-randi-1538"></a></var><br>
+&mdash; Function File:  <b>randi</b> ([<var>imin, imax</var>]<var>, <small class="dots">...</small></var>)<var><a name="index-randi-1539"></a></var><br>
+&mdash; Function File:  <b>randi</b> (<var><small class="dots">...</small>, "class"</var>)<var><a name="index-randi-1540"></a></var><br>
+<blockquote><p>Return random integers in the range 1:<var>imax</var>.
+
+        <p>Additional arguments determine the shape of the return matrix.  When no
+arguments are specified a single random integer is returned.  If one
+argument <var>n</var> is specified then a square matrix (<var>n</var>&nbsp;x&nbsp;<var>n</var>)<!-- /@w --> is
+returned.  Two or more arguments will return a multi-dimensional
+matrix (<var>m</var>&nbsp;x&nbsp;<var>n</var>&nbsp;x&nbsp;<small class="dots">...</small>)<!-- /@w -->.
+
+        <p>The integer range may optionally be described by a two element matrix
+with a lower and upper bound in which case the returned integers will be
+on the interval [<var>imin</var>,&nbsp;<var>imax</var>]<!-- /@w -->.
+
+        <p>The optional argument "<var>class</var>" will return a matrix of the requested
+type.  The default is "double".
+
+        <p>The following example returns 150 integers in the range 1-10.
+
+     <pre class="example">          ri = randi (10, 150, 1);
+</pre>
+        <p>Implementation Note: <code>randi</code> relies internally on <code>rand</code> which
+uses class "double" to represent numbers.  This limits the maximum
+integer (<var>imax</var>) and range (<var>imax</var> - <var>imin</var>) to the value
+returned by the <code>bitmax</code> function.  For IEEE floating point numbers
+this value is <code>2^53&nbsp;-&nbsp;1</code><!-- /@w -->.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002drand.html#doc_002drand">rand</a>. 
+</p></blockquote></div>
+
+<!-- randn src/DLD-FUNCTIONS/rand.cc -->
    <p><a name="doc_002drandn"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>randn</b> (<var>x</var>)<var><a name="index-randn-1331"></a></var><br>
-&mdash; Loadable Function:  <b>randn</b> (<var>n, m</var>)<var><a name="index-randn-1332"></a></var><br>
-&mdash; Loadable Function:  <b>randn</b> (<var>"state", x</var>)<var><a name="index-randn-1333"></a></var><br>
-&mdash; Loadable Function:  <b>randn</b> (<var>"seed", x</var>)<var><a name="index-randn-1334"></a></var><br>
-<blockquote><p>Return a matrix with normally distributed pseudo-random
+&mdash; Loadable Function:  <b>randn</b> (<var>x</var>)<var><a name="index-randn-1541"></a></var><br>
+&mdash; Loadable Function:  <b>randn</b> (<var>n, m</var>)<var><a name="index-randn-1542"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>randn</b> (<var>"state"</var>)<var><a name="index-randn-1543"></a></var><br>
+&mdash; Loadable Function:  <b>randn</b> (<var>"state", v</var>)<var><a name="index-randn-1544"></a></var><br>
+&mdash; Loadable Function:  <b>randn</b> (<var>"state", "reset"</var>)<var><a name="index-randn-1545"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>randn</b> (<var>"seed"</var>)<var><a name="index-randn-1546"></a></var><br>
+&mdash; Loadable Function:  <b>randn</b> (<var>"seed", v</var>)<var><a name="index-randn-1547"></a></var><br>
+&mdash; Loadable Function:  <b>randn</b> (<var>"seed", "reset"</var>)<var><a name="index-randn-1548"></a></var><br>
+<blockquote><p>Return a matrix with normally distributed random
 elements having zero mean and variance one.  The arguments are
 handled the same as the arguments for <code>rand</code>.
 
-        <p>By default, <code>randn</code> uses the Marsaglia and Tsang &ldquo;Ziggurat technique&rdquo; to
-transform from a uniform to a normal distribution.  (G. Marsaglia and
-W.W. Tsang, <cite>Ziggurat method for generating random variables</cite>,
+        <p>By default, <code>randn</code> uses the Marsaglia and Tsang &ldquo;Ziggurat technique&rdquo;
+to transform from a uniform to a normal distribution.
+
+        <p>Reference: G. Marsaglia and W.W. Tsang,
+<cite>Ziggurat Method for Generating Random Variables</cite>,
 J. Statistical Software, vol 5, 2000,
 <a href="http://www.jstatsoft.org/v05/i08/">http://www.jstatsoft.org/v05/i08/</a>)
 
@@ -215,38 +318,49 @@ J. Statistical Software, vol 5, 2000,
      <p class="noindent"><strong>See also:</strong> <a href="doc_002drand.html#doc_002drand">rand</a>, <a href="doc_002drande.html#doc_002drande">rande</a>, <a href="doc_002drandg.html#doc_002drandg">randg</a>, <a href="doc_002drandp.html#doc_002drandp">randp</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/rand.cc -->
+<!-- rande src/DLD-FUNCTIONS/rand.cc -->
    <p><a name="doc_002drande"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>rande</b> (<var>x</var>)<var><a name="index-rande-1335"></a></var><br>
-&mdash; Loadable Function:  <b>rande</b> (<var>n, m</var>)<var><a name="index-rande-1336"></a></var><br>
-&mdash; Loadable Function:  <b>rande</b> (<var>"state", x</var>)<var><a name="index-rande-1337"></a></var><br>
-&mdash; Loadable Function:  <b>rande</b> (<var>"seed", x</var>)<var><a name="index-rande-1338"></a></var><br>
+&mdash; Loadable Function:  <b>rande</b> (<var>x</var>)<var><a name="index-rande-1549"></a></var><br>
+&mdash; Loadable Function:  <b>rande</b> (<var>n, m</var>)<var><a name="index-rande-1550"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>rande</b> (<var>"state"</var>)<var><a name="index-rande-1551"></a></var><br>
+&mdash; Loadable Function:  <b>rande</b> (<var>"state", v</var>)<var><a name="index-rande-1552"></a></var><br>
+&mdash; Loadable Function:  <b>rande</b> (<var>"state", "reset"</var>)<var><a name="index-rande-1553"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>rande</b> (<var>"seed"</var>)<var><a name="index-rande-1554"></a></var><br>
+&mdash; Loadable Function:  <b>rande</b> (<var>"seed", v</var>)<var><a name="index-rande-1555"></a></var><br>
+&mdash; Loadable Function:  <b>rande</b> (<var>"seed", "reset"</var>)<var><a name="index-rande-1556"></a></var><br>
 <blockquote><p>Return a matrix with exponentially distributed random elements.  The
 arguments are handled the same as the arguments for <code>rand</code>.
 
-        <p>By default, <code>randn</code> uses the Marsaglia and Tsang &ldquo;Ziggurat technique&rdquo; to
-transform from a uniform to a exponential distribution.  (G. Marsaglia and
-W.W. Tsang, <cite>Ziggurat method for generating random variables</cite>,
+        <p>By default, <code>randn</code> uses the Marsaglia and Tsang &ldquo;Ziggurat technique&rdquo;
+to transform from a uniform to an exponential distribution.
+
+        <p>Reference: G. Marsaglia and W.W. Tsang,
+<cite>Ziggurat Method for Generating Random Variables</cite>,
 J. Statistical Software, vol 5, 2000,
 <a href="http://www.jstatsoft.org/v05/i08/">http://www.jstatsoft.org/v05/i08/</a>)
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
 
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002drand.html#doc_002drand">rand</a>, <a href="doc_002drandn.html#doc_002drandn">randn</a>, <a href="doc_002drandg.html#doc_002drandg">randg</a>, <a href="doc_002drandp.html#doc_002drandp">randp</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/rand.cc -->
+<!-- randp src/DLD-FUNCTIONS/rand.cc -->
    <p><a name="doc_002drandp"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>randp</b> (<var>l, x</var>)<var><a name="index-randp-1339"></a></var><br>
-&mdash; Loadable Function:  <b>randp</b> (<var>l, n, m</var>)<var><a name="index-randp-1340"></a></var><br>
-&mdash; Loadable Function:  <b>randp</b> (<var>"state", x</var>)<var><a name="index-randp-1341"></a></var><br>
-&mdash; Loadable Function:  <b>randp</b> (<var>"seed", x</var>)<var><a name="index-randp-1342"></a></var><br>
-<blockquote><p>Return a matrix with Poisson distributed random elements with mean value parameter given by the first argument, <var>l</var>.  The arguments
+&mdash; Loadable Function:  <b>randp</b> (<var>l, x</var>)<var><a name="index-randp-1557"></a></var><br>
+&mdash; Loadable Function:  <b>randp</b> (<var>l, n, m</var>)<var><a name="index-randp-1558"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>randp</b> (<var>"state"</var>)<var><a name="index-randp-1559"></a></var><br>
+&mdash; Loadable Function:  <b>randp</b> (<var>"state", v</var>)<var><a name="index-randp-1560"></a></var><br>
+&mdash; Loadable Function:  <b>randp</b> (<var>"state", "reset"</var>)<var><a name="index-randp-1561"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>randp</b> (<var>"seed"</var>)<var><a name="index-randp-1562"></a></var><br>
+&mdash; Loadable Function:  <b>randp</b> (<var>"seed", v</var>)<var><a name="index-randp-1563"></a></var><br>
+&mdash; Loadable Function:  <b>randp</b> (<var>"seed", "reset"</var>)<var><a name="index-randp-1564"></a></var><br>
+<blockquote><p>Return a matrix with Poisson distributed random elements with mean value
+parameter given by the first argument, <var>l</var>.  The arguments
 are handled the same as the arguments for <code>rand</code>, except for the
 argument <var>l</var>.
 
@@ -254,15 +368,21 @@ argument <var>l</var>.
 and whether or not <var>l</var> is a scalar or a matrix.
 
           <dl>
-<dt>For scalar <var>l</var> &lt;= 12, use direct method.<dd>Press, et al., 'Numerical Recipes in C', Cambridge University Press, 1992. 
-<br><dt>For scalar <var>l</var> &gt; 12, use rejection method.[1]<dd>Press, et al., 'Numerical Recipes in C', Cambridge University Press, 1992. 
-<br><dt>For matrix <var>l</var> &lt;= 10, use inversion method.[2]<dd>Stadlober E., et al., WinRand source code, available via FTP. 
-<br><dt>For matrix <var>l</var> &gt; 10, use patchwork rejection method.<dd>Stadlober E., et al., WinRand source code, available via FTP, or
-H. Zechner, 'Efficient sampling from continuous and discrete
-unimodal distributions', Doctoral Dissertation, 156pp., Technical
-University Graz, Austria, 1994. 
-<br><dt>For <var>l</var> &gt; 1e8, use normal approximation.<dd>L. Montanet, et al., 'Review of Particle Properties', Physical Review
-D 50 p1284, 1994
+<dt>For scalar <var>l</var> &le; 12, use direct method.<dd>W.H. Press, et al., <cite>Numerical Recipes in C</cite>,
+Cambridge University Press, 1992.
+
+          <br><dt>For scalar <var>l</var> &gt; 12, use rejection method.[1]<dd>W.H. Press, et al., <cite>Numerical Recipes in C</cite>,
+Cambridge University Press, 1992.
+
+          <br><dt>For matrix <var>l</var> &le; 10, use inversion method.[2]<dd>E. Stadlober, et al., WinRand source code, available via FTP.
+
+          <br><dt>For matrix <var>l</var> &gt; 10, use patchwork rejection method.<dd>E. Stadlober, et al., WinRand source code, available via FTP, or
+H. Zechner, <cite>Efficient sampling from continuous and discrete
+unimodal distributions</cite>, Doctoral Dissertation, 156pp., Technical
+University Graz, Austria, 1994.
+
+          <br><dt>For <var>l</var> &gt; 1e8, use normal approximation.<dd>L. Montanet, et al., <cite>Review of Particle Properties</cite>, Physical Review
+D 50 p1284, 1994. 
 </dl>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -271,14 +391,18 @@ D 50 p1284, 1994
      <p class="noindent"><strong>See also:</strong> <a href="doc_002drand.html#doc_002drand">rand</a>, <a href="doc_002drandn.html#doc_002drandn">randn</a>, <a href="doc_002drande.html#doc_002drande">rande</a>, <a href="doc_002drandg.html#doc_002drandg">randg</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/rand.cc -->
+<!-- randg src/DLD-FUNCTIONS/rand.cc -->
    <p><a name="doc_002drandg"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>randg</b> (<var>a, x</var>)<var><a name="index-randg-1343"></a></var><br>
-&mdash; Loadable Function:  <b>randg</b> (<var>a, n, m</var>)<var><a name="index-randg-1344"></a></var><br>
-&mdash; Loadable Function:  <b>randg</b> (<var>"state", x</var>)<var><a name="index-randg-1345"></a></var><br>
-&mdash; Loadable Function:  <b>randg</b> (<var>"seed", x</var>)<var><a name="index-randg-1346"></a></var><br>
+&mdash; Loadable Function:  <b>randg</b> (<var>a, x</var>)<var><a name="index-randg-1565"></a></var><br>
+&mdash; Loadable Function:  <b>randg</b> (<var>a, n, m</var>)<var><a name="index-randg-1566"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>randg</b> (<var>"state"</var>)<var><a name="index-randg-1567"></a></var><br>
+&mdash; Loadable Function:  <b>randg</b> (<var>"state", v</var>)<var><a name="index-randg-1568"></a></var><br>
+&mdash; Loadable Function:  <b>randg</b> (<var>"state", "reset"</var>)<var><a name="index-randg-1569"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>randg</b> (<var>"seed"</var>)<var><a name="index-randg-1570"></a></var><br>
+&mdash; Loadable Function:  <b>randg</b> (<var>"seed", v</var>)<var><a name="index-randg-1571"></a></var><br>
+&mdash; Loadable Function:  <b>randg</b> (<var>"seed", "reset"</var>)<var><a name="index-randg-1572"></a></var><br>
 <blockquote><p>Return a matrix with <code>gamma(</code><var>a</var><code>,1)</code> distributed random elements. 
 The arguments are handled the same as the arguments for <code>rand</code>,
 except for the argument <var>a</var>.
@@ -313,6 +437,7 @@ except for the argument <var>a</var>.
           <pre class="example">               r = randp ((1 - p) / p * randg (n))
 </pre>
           <br><dt>non-central <code>chisq (df, L)</code>, for <code>df &gt;= 0</code> and <code>L &gt; 0</code><dd>(use chisq if <code>L = 0</code>)
+
           <pre class="example">               r = randp (L / 2)
                r(r &gt; 0) = 2 * randg (r(r &gt; 0))
                r(df &gt; 0) += 2 * randg (df(df &gt; 0)/2)
@@ -369,29 +494,38 @@ or seed to a specific value.
 single element of a random sequence.
 
    <p>The original <code>rand</code> and <code>randn</code> functions use Fortran code from
-<span class="sc">Ranlib</span>, a library of fortran routines for random number generation,
+<span class="sc">ranlib</span>, a library of Fortran routines for random number generation,
 compiled by Barry W. Brown and James Lovato of the Department of
 Biomathematics at The University of Texas, M.D. Anderson Cancer Center,
 Houston, TX 77030.
 
-<!-- ./general/randperm.m -->
+<!-- randperm src/DLD-FUNCTIONS/rand.cc -->
    <p><a name="doc_002drandperm"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>randperm</b> (<var>n</var>)<var><a name="index-randperm-1347"></a></var><br>
-<blockquote><p>Return a row vector containing a random permutation of the
-integers from 1 to <var>n</var>. 
+&mdash; Loadable Function:  <b>randperm</b> (<var>n</var>)<var><a name="index-randperm-1573"></a></var><br>
+&mdash; Loadable Function:  <b>randperm</b> (<var>n, m</var>)<var><a name="index-randperm-1574"></a></var><br>
+<blockquote><p>Return a row vector containing a random permutation of <code>1:</code><var>n</var>. 
+If <var>m</var> is supplied, return <var>m</var> permutations,
+one in each row of an NxM matrix.  The complexity is O(M*N) in both
+time and memory.  The randomization is performed using rand(). 
+All permutations are equally likely. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dperms.html#doc_002dperms">perms</a>. 
 </p></blockquote></div>
 
    <p>The functions <code>linspace</code> and <code>logspace</code> make it very easy to
 create vectors with evenly or logarithmically spaced elements. 
 See <a href="Ranges.html#Ranges">Ranges</a>.
 
-<!-- data.cc -->
+<!-- linspace src/data.cc -->
    <p><a name="doc_002dlinspace"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>linspace</b> (<var>base, limit, n</var>)<var><a name="index-linspace-1348"></a></var><br>
+&mdash; Built-in Function:  <b>linspace</b> (<var>base, limit, n</var>)<var><a name="index-linspace-1575"></a></var><br>
 <blockquote><p>Return a row vector with <var>n</var> linearly spaced elements between
 <var>base</var> and <var>limit</var>.  If the number of elements is greater than one,
 then the <var>base</var> and <var>limit</var> are always included in
@@ -399,17 +533,20 @@ the range.  If <var>base</var> is greater than <var>limit</var>, the elements ar
 stored in decreasing order.  If the number of points is not specified, a
 value of 100 is used.
 
-        <p>The <code>linspace</code> function always returns a row vector.
+        <p>The <code>linspace</code> function always returns a row vector if both
+<var>base</var> and <var>limit</var> are scalars.  If one of them or both are column
+vectors, <code>linspace</code> returns a matrix.
 
         <p>For compatibility with <span class="sc">matlab</span>, return the second argument if
 fewer than two values are requested. 
 </p></blockquote></div>
 
-<!-- ./general/logspace.m -->
+<!-- logspace scripts/general/logspace.m -->
    <p><a name="doc_002dlogspace"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logspace</b> (<var>base, limit, n</var>)<var><a name="index-logspace-1349"></a></var><br>
+&mdash; Function File:  <b>logspace</b> (<var>base, limit</var>)<var><a name="index-logspace-1576"></a></var><br>
+&mdash; Function File:  <b>logspace</b> (<var>base, limit, n</var>)<var><a name="index-logspace-1577"></a></var><br>
 <blockquote><p>Similar to <code>linspace</code> except that the values are logarithmically
 spaced from
 10^base to 10^limit.
@@ -421,10 +558,11 @@ the points are between
 <em>not</em>
 10^base and 10^pi,
 in order to be compatible with the corresponding <span class="sc">matlab</span>
-function.
+function. 
+If <var>n</var> is unspecified it defaults to 50.
 
-        <p>Also for compatibility, return the second argument if fewer than two
-values are requested. 
+        <p>Also for compatibility with <span class="sc">matlab</span>, return the second argument if
+fewer than two values are requested. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->

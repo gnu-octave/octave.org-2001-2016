@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Calling Other Functions in Mex-Files - Untitled</title>
+<title>Calling Other Functions in Mex-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
 <link rel="prev" href="Sparse-Matrices-with-Mex_002dFiles.html#Sparse-Matrices-with-Mex_002dFiles" title="Sparse Matrices with Mex-Files">
@@ -20,12 +20,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Calling-Other-Functions-in-Mex-Files"></a>
 <a name="Calling-Other-Functions-in-Mex_002dFiles"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Sparse-Matrices-with-Mex_002dFiles.html#Sparse-Matrices-with-Mex_002dFiles">Sparse Matrices with Mex-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>
 <hr>
@@ -41,14 +42,14 @@ using <code>mexCallMATLAB</code>.  An example of the use of
      
      void
      mexFunction (int nlhs, mxArray* plhs[], int nrhs, 
-     	     const mxArray* prhs[])
+                  const mxArray* prhs[])
      {
        char *str;
      
        mexPrintf ("Hello, World!\n");
      
        mexPrintf ("I have %d inputs and %d outputs\n", nrhs,
-     	     nlhs);
+                  nlhs);
      
        if (nrhs &lt; 1 || ! mxIsString (prhs[0])) 
          mexErrMsgTxt ("function name expected");
@@ -61,13 +62,15 @@ using <code>mexCallMATLAB</code>.  An example of the use of
      
        mxFree (str);
      }
-</pre></pre>
+</pre>
+     
+</pre>
    <p>If this code is in the file <samp><span class="file">myfeval.c</span></samp>, and is compiled to
 <samp><span class="file">myfeval.mex</span></samp>, then an example of its use is
 
 <pre class="example">     myfeval("sin", 1)
      a = myfeval("sin", 1)
-      Hello, World!
+     &rArr; Hello, World!
          I have 2 inputs and 1 outputs
          I'm going to call the interpreter function sin
          a =  0.84147

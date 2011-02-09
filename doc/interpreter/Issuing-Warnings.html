@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Issuing Warnings - Untitled</title>
+<title>Issuing Warnings - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Handling-Warnings.html#Handling-Warnings" title="Handling Warnings">
 <link rel="next" href="Enabling-and-Disabling-Warnings.html#Enabling-and-Disabling-Warnings" title="Enabling and Disabling Warnings">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Issuing-Warnings"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Enabling-and-Disabling-Warnings.html#Enabling-and-Disabling-Warnings">Enabling and Disabling Warnings</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Handling-Warnings.html#Handling-Warnings">Handling Warnings</a>
 <hr>
@@ -56,12 +57,12 @@ as will be described in the next section.  To assign an ID to a warning,
 simply call <code>warning</code> with two string arguments, where the first
 is the identification string, and the second is the actual warning.
 
-<!-- error.cc -->
+<!-- warning src/error.cc -->
    <p><a name="doc_002dwarning"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>warning</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-warning-678"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-warning-679"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-warning-765"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-warning-766"></a></var><br>
 <blockquote><p>Format the optional arguments under the control of the template string
 <var>template</var> using the same rules as the <code>printf</code> family of
 functions (see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>) and print the resulting message
@@ -75,10 +76,10 @@ to go on.
 warnings tagged by <var>id</var>.  The special identifier &lsquo;<samp><span class="samp">"all"</span></samp>&rsquo; may
 be used to set the state of all warnings.
 
-   &mdash; Built-in Function:  <b>warning</b> (<var>"on", id</var>)<var><a name="index-warning-680"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>"off", id</var>)<var><a name="index-warning-681"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>"error", id</var>)<var><a name="index-warning-682"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>"query", id</var>)<var><a name="index-warning-683"></a></var><br>
+   &mdash; Built-in Function:  <b>warning</b> (<var>"on", id</var>)<var><a name="index-warning-767"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>"off", id</var>)<var><a name="index-warning-768"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>"error", id</var>)<var><a name="index-warning-769"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>"query", id</var>)<var><a name="index-warning-770"></a></var><br>
 <blockquote><p>Set or query the state of a particular warning using the identifier
 <var>id</var>.  If the identifier is omitted, a value of &lsquo;<samp><span class="samp">"all"</span></samp>&rsquo; is
 assumed.  If you set the state of a warning to &lsquo;<samp><span class="samp">"error"</span></samp>&rsquo;, the
@@ -90,11 +91,11 @@ warning named by <var>id</var> is handled as if it were an error instead.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dwarning_005fids.html#doc_002dwarning_005fids">warning_ids</a>. 
 </p></blockquote></div>
 
-<!-- error.cc -->
+<!-- lastwarn src/error.cc -->
    <p><a name="doc_002dlastwarn"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lastwarn</b> (<var>msg, msgid</var>)<var><a name="index-lastwarn-684"></a></var><br>
+&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lastwarn</b> (<var>msg, msgid</var>)<var><a name="index-lastwarn-771"></a></var><br>
 <blockquote><p>Without any arguments, return the last warning message.  With one
 argument, set the last warning message to <var>msg</var>.  With two arguments,
 also set the last message identifier. 

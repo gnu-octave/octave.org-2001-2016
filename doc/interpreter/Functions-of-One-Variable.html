@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Functions of One Variable - Untitled</title>
+<title>Functions of One Variable - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numerical-Integration.html#Numerical-Integration" title="Numerical Integration">
 <link rel="next" href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables" title="Functions of Multiple Variables">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Functions-of-One-Variable"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables">Functions of Multiple Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Numerical-Integration.html#Numerical-Integration">Numerical Integration</a>
 <hr>
@@ -45,6 +46,8 @@ These are
 
      <br><dt><code>quadv</code><dd>Numerical integration using an adaptive vectorized Simpson's rule.
 
+     <br><dt><code>quadcc</code><dd>Numerical integration using adaptive Clenshaw-Curtis rules.
+
      <br><dt><code>trapz</code><dd>Numerical integration using the trapezoidal method. 
 </dl>
 
@@ -52,13 +55,16 @@ These are
 numerical integration using the trapezoidal method through the
 <code>cumtrapz</code> function.
 
-<!-- ./DLD-FUNCTIONS/quad.cc -->
+<!-- quad src/DLD-FUNCTIONS/quad.cc -->
    <p><a name="doc_002dquad"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>v</var>, <var>ier</var>, <var>nfun</var>, <var>err</var>] = <b>quad</b> (<var>f, a, b, tol, sing</var>)<var><a name="index-quad-1760"></a></var><br>
-<blockquote><p>Integrate a nonlinear function of one variable using Quadpack. 
-The first argument is the name of the function, the function handle or
+&mdash; Loadable Function: <var>v</var> = <b>quad</b> (<var>f, a, b</var>)<var><a name="index-quad-2044"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>quad</b> (<var>f, a, b, tol</var>)<var><a name="index-quad-2045"></a></var><br>
+&mdash; Loadable Function: <var>v</var> = <b>quad</b> (<var>f, a, b, tol, sing</var>)<var><a name="index-quad-2046"></a></var><br>
+&mdash; Loadable Function: [<var>v</var>, <var>ier</var>, <var>nfun</var>, <var>err</var>] = <b>quad</b> (<var><small class="dots">...</small></var>)<var><a name="index-quad-2047"></a></var><br>
+<blockquote><p>Integrate a nonlinear function of one variable using <span class="sc">quadpack</span>. 
+The first argument is the name of the function, the function handle, or
 the inline function to call to compute the value of the integrand.  It
 must have the form
 
@@ -79,24 +85,29 @@ tolerance to zero.
         <p>The optional argument <var>sing</var> is a vector of values at which the
 integrand is known to be singular.
 
-        <p>The result of the integration is returned in <var>v</var> and <var>ier</var>
+        <p>The result of the integration is returned in <var>v</var>.  <var>ier</var>
 contains an integer error code (0 indicates a successful integration). 
-The value of <var>nfun</var> indicates how many function evaluations were
-required, and <var>err</var> contains an estimate of the error in the
+<var>nfun</var> indicates the number of function evaluations that were
+made, and <var>err</var> contains an estimate of the error in the
 solution.
 
-        <p>You can use the function <code>quad_options</code> to set optional
+        <p>The function <code>quad_options</code> can set other optional
 parameters for <code>quad</code>.
 
-        <p>It should be noted that since <code>quad</code> is written in Fortran it
+        <p>Note: because <code>quad</code> is written in Fortran it
 cannot be called recursively. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dquad_005foptions.html#doc_002dquad_005foptions">quad_options</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dquadcc.html#doc_002dquadcc">quadcc</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>, <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/quad.cc -->
+<!-- quad_options src/DLD-FUNCTIONS/quad.cc -->
    <p><a name="doc_002dquad_005foptions"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>quad_options</b> (<var>opt, val</var>)<var><a name="index-quad_005foptions-1761"></a></var><br>
+&mdash; Loadable Function:  <b>quad_options</b> (<var>opt, val</var>)<var><a name="index-quad_005foptions-2048"></a></var><br>
 <blockquote><p>When called with two arguments, this function
 allows you set options parameters for the function <code>quad</code>. 
 Given one argument, <code>quad_options</code> returns the value of the
@@ -106,13 +117,16 @@ the available options and their current values are displayed.
         <p>Options include
 
           <dl>
-<dt><code>"absolute tolerance"</code><dd>Absolute tolerance; may be zero for pure relative error test. 
-<br><dt><code>"relative tolerance"</code><dd>Nonnegative relative tolerance.  If the absolute tolerance is zero,
+<dt><code>"absolute tolerance"</code><dd>Absolute tolerance; may be zero for pure relative error test.
+
+          <br><dt><code>"relative tolerance"</code><dd>Non-negative relative tolerance.  If the absolute tolerance is zero,
 the relative tolerance must be greater than or equal to
-<code>max (50*eps, 0.5e-28)</code>. 
-<br><dt><code>"single precision absolute tolerance"</code><dd>Absolute tolerance for single precision; may be zero for pure relative
-error test. 
-<br><dt><code>"single precision relative tolerance"</code><dd>Nonnegative relative tolerance for single precision.  If the absolute
+<code>max (50*eps, 0.5e-28)</code>.
+
+          <br><dt><code>"single precision absolute tolerance"</code><dd>Absolute tolerance for single precision; may be zero for pure relative
+error test.
+
+          <br><dt><code>"single precision relative tolerance"</code><dd>Non-negative relative tolerance for single precision.  If the absolute
 tolerance is zero, the relative tolerance must be greater than or equal to
 <code>max (50*eps, 0.5e-28)</code>. 
 </dl>
@@ -141,23 +155,23 @@ function with a vector argument to produce a vector result).
    <p>Then we simply call quad:
 
 <pre class="example">     [v, ier, nfun, err] = quad ("f", 0, 3)
-           1.9819
-           1
-           5061
-           1.1522e-07
+          &rArr; 1.9819
+          &rArr; 1
+          &rArr; 5061
+          &rArr; 1.1522e-07
 </pre>
    <p>Although <code>quad</code> returns a nonzero value for <var>ier</var>, the result
 is reasonably accurate (to see why, examine what happens to the result
 if you move the lower bound to 0.1, then 0.01, then 0.001, etc.).
 
-<!-- ./general/quadl.m -->
+<!-- quadl scripts/general/quadl.m -->
    <p><a name="doc_002dquadl"></a>
 
 <div class="defun">
-&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b</var>)<var><a name="index-quadl-1762"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol</var>)<var><a name="index-quadl-1763"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace</var>)<var><a name="index-quadl-1764"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace, p1, p2, <small class="dots">...</small></var>)<var><a name="index-quadl-1765"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b</var>)<var><a name="index-quadl-2049"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol</var>)<var><a name="index-quadl-2050"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace</var>)<var><a name="index-quadl-2051"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace, p1, p2, <small class="dots">...</small></var>)<var><a name="index-quadl-2052"></a></var><br>
 <blockquote>
         <p>Numerically evaluate integral using adaptive Lobatto rule. 
 <code>quadl (</code><var>f</var><code>, </code><var>a</var><code>, </code><var>b</var><code>)</code> approximates the integral of
@@ -175,19 +189,23 @@ interval length, and the partial integral.
 To use default values for <var>tol</var> and <var>trace</var>, one may pass
 empty matrices.
 
-        <p>Reference: W. Gander and W. Gautschi, 'Adaptive Quadrature -
-Revisited', BIT Vol. 40, No. 1, March 2000, pp. 84&ndash;101. 
+        <p>Reference: W. Gander and W. Gautschi, <cite>Adaptive Quadrature -
+Revisited</cite>, BIT Vol. 40, No. 1, March 2000, pp. 84&ndash;101. 
 <a href="http://www.inf.ethz.ch/personal/gander/">http://www.inf.ethz.ch/personal/gander/</a>
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-        </blockquote></div>
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dquadcc.html#doc_002dquadcc">quadcc</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>, <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>. 
+</p></blockquote></div>
 
-<!-- ./general/quadgk.m -->
+<!-- quadgk scripts/general/quadgk.m -->
    <p><a name="doc_002dquadgk"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>quadgk</b> (<var>f, a, b, abstol, trace</var>)<var><a name="index-quadgk-1766"></a></var><br>
-&mdash; Function File:  <b>quadgk</b> (<var>f, a, b, prop, val, <small class="dots">...</small></var>)<var><a name="index-quadgk-1767"></a></var><br>
-&mdash; Function File: [<var>q</var>, <var>err</var>] = <b>quadgk</b> (<var><small class="dots">...</small></var>)<var><a name="index-quadgk-1768"></a></var><br>
+&mdash; Function File:  <b>quadgk</b> (<var>f, a, b, abstol, trace</var>)<var><a name="index-quadgk-2053"></a></var><br>
+&mdash; Function File:  <b>quadgk</b> (<var>f, a, b, prop, val, <small class="dots">...</small></var>)<var><a name="index-quadgk-2054"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>err</var>] = <b>quadgk</b> (<var><small class="dots">...</small></var>)<var><a name="index-quadgk-2055"></a></var><br>
 <blockquote><p>Numerically evaluate integral using adaptive Gauss-Konrod quadrature. 
 The formulation is based on a proposal by L.F. Shampine,
 <cite>"Vectorized adaptive quadrature in </cite><span class="sc">matlab</span><cite>", Journal of
@@ -203,7 +221,7 @@ inline function or string.
         <p>The bounds of the quadrature <code>[</code><var>a</var><code>, </code><var>b</var><code>]</code> can be finite
 or infinite and contain weak end singularities.  Variable
 transformation will be used to treat infinite intervals and weaken
-the singularities.  For example
+the singularities.  For example:
 
      <pre class="example">          quadgk(@(x) 1 ./ (sqrt (x) .* (x + 1)), 0, Inf)
 </pre>
@@ -252,7 +270,7 @@ convergence of the quadrature at each iteration.
         <p>If any of <var>a</var>, <var>b</var> or <var>waypoints</var> is complex, then the
 quadrature is treated as a contour integral along a piecewise
 continuous path defined by the above.  In this case the integral is
-assumed to have no edge singularities.  For example
+assumed to have no edge singularities.  For example,
 
      <pre class="example">          quadgk (@(z) log (z), 1+1i, 1+1i, "WayPoints",
                   [1-1i, -1,-1i, -1+1i])
@@ -267,49 +285,119 @@ approximate bounds on the error in the integral <code>abs (</code><var>q</var><c
      <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>, <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadcc.html#doc_002dquadcc">quadcc</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>, <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>. 
 </p></blockquote></div>
 
-<!-- ./general/quadv.m -->
+<!-- quadv scripts/general/quadv.m -->
    <p><a name="doc_002dquadv"></a>
 
 <div class="defun">
-&mdash; Function File: <var>q</var> = <b>quadv</b> (<var>f, a, b</var>)<var><a name="index-quadv-1769"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol</var>)<var><a name="index-quadl-1770"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace</var>)<var><a name="index-quadl-1771"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>quadl</b> (<var>f, a, b, tol, trace, p1, p2, <small class="dots">...</small></var>)<var><a name="index-quadl-1772"></a></var><br>
-&mdash; Function File: [<var>q</var>, <var>fcnt</var>] = <b>quadl</b> (<var><small class="dots">...</small></var>)<var><a name="index-quadl-1773"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadv</b> (<var>f, a, b</var>)<var><a name="index-quadv-2056"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadv</b> (<var>f, a, b, tol</var>)<var><a name="index-quadv-2057"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadv</b> (<var>f, a, b, tol, trace</var>)<var><a name="index-quadv-2058"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>quadv</b> (<var>f, a, b, tol, trace, p1, p2, <small class="dots">...</small></var>)<var><a name="index-quadv-2059"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>fcnt</var>] = <b>quadv</b> (<var><small class="dots">...</small></var>)<var><a name="index-quadv-2060"></a></var><br>
 <blockquote>
-        <p>Numerically evaluate integral using adaptive Simpson's rule. 
-<code>quadv (</code><var>f</var><code>, </code><var>a</var><code>, </code><var>b</var><code>)</code> approximates the integral of
-<var>f</var><code>(</code><var>x</var><code>)</code> to the default absolute tolerance of <code>1e-6</code>. 
+        <p>Numerically evaluate the integral of <var>f</var> from <var>a</var> to <var>b</var>
+using adaptive Simpson's rule. 
 <var>f</var> is either a function handle, inline function or string
-containing the name of the function to evaluate.  The function <var>f</var>
-must accept a string, and can return a vector representing the
-approximation to <var>n</var> different sub-functions.
+containing the name of the function to evaluate. 
+The function defined by <var>f</var> may be a scalar, vector or array-valued.
 
-        <p>If defined, <var>tol</var> defines the absolute tolerance to which to
-which to integrate each sub-interval of <var>f</var><code>(</code><var>x</var><code>)</code>. 
-While if <var>trace</var> is defined, displays the left end point of the
-current interval, the interval length, and the partial integral.
+        <p>If a value for <var>tol</var> is given, it defines the tolerance used to stop
+the adaptation procedure, otherwise the default value of 1e-6 is used.
+
+        <p>The algorithm used by <code>quadv</code>, involves recursively subdividing the
+integration interval and applying Simpson's rule on each sub-interval. 
+If <var>trace</var> is <var>true</var>, after computing each of these partial
+integrals, display the total number of function evaluations, the left end
+of the sub-interval, the length of the sub-interval and the approximation
+of the integral over the sub-interval.
 
         <p>Additional arguments <var>p1</var>, etc., are passed directly to <var>f</var>. 
 To use default values for <var>tol</var> and <var>trace</var>, one may pass
-empty matrices. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
+empty matrices.
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>, <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>. 
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dquadcc.html#doc_002dquadcc">quadcc</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>, <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>. 
 </p></blockquote></div>
 
-<!-- ./general/trapz.m -->
+<!-- quadcc src/DLD-FUNCTIONS/quadcc.cc -->
+   <p><a name="doc_002dquadcc"></a>
+
+<div class="defun">
+&mdash; Function File: [<var>int</var>, <var>err</var>, <var>nr_points</var>] = <b>quadcc</b> (<var>f, a, b, tol</var>)<var><a name="index-quadcc-2061"></a></var><br>
+&mdash; Function File: [<var>int</var>, <var>err</var>, <var>nr_points</var>] = <b>quadcc</b> (<var>f, a, b, tol, sing</var>)<var><a name="index-quadcc-2062"></a></var><br>
+<blockquote><p>Numerically evaluates an integral using the doubly-adaptive
+quadrature described by P. Gonnet in <cite>Increasing the
+Reliability of Adaptive Quadrature Using Explicit Interpolants</cite>,
+ACM Transactions on Mathematical Software, in Press, 2010. 
+The algorithm uses Clenshaw-Curtis quadrature rules of increasing
+degree in each interval and bisects the interval if either the
+function does not appear to be smooth or a rule of maximum
+degree has been reached. The error estimate is computed from the
+L2-norm of the difference between two successive interpolations
+of the integrand over the nodes of the respective quadrature rules.
+
+        <p>For example,
+
+     <pre class="example">             int = quadcc (f, a, b, 1.0e-6);
+</pre>
+        <p class="noindent">computes the integral of a function <var>f</var> in the interval
+[<var>a</var>, <var>b</var>] to the relative precision of six
+decimal digits. 
+The integrand <var>f</var> should accept a vector argument and return a vector
+result containing the integrand evaluated at each element of the
+argument, for example:
+
+     <pre class="example">             f = @(x) x .* sin (1 ./ x) .* sqrt (abs (1 - x));
+</pre>
+        <p>If the integrand has known singularities or discontinuities
+in any of its derivatives inside the interval,
+as does the above example at x=1, these can be specified in
+the additional argument <var>sing</var> as follows
+
+     <pre class="example">             int = quadcc (f, a, b, 1.0e-6, [ 1 ]);
+</pre>
+        <p>The two additional output variables <var>err</var> and <var>nr_points</var>
+return an estimate of the absolute integration error and
+the number of points at which the integrand was evaluated
+respectively. 
+If the adaptive integration did not converge, the value of
+<var>err</var> will be larger than the requested tolerance.  It is
+therefore recommended to verify this value for difficult
+integrands.
+
+        <p>If either <var>a</var> or <var>b</var> are <code>+/-Inf</code>, <code>quadcc</code>
+integrates <var>f</var> by substituting the variable of integration
+with <code>x=tan(pi/2*u)</code>.
+
+        <p><code>quadcc</code> is capable of dealing with non-numeric
+values of the integrand such as <code>NaN</code>, <code>Inf</code>
+or <code>-Inf</code>, as in the above example at x=0. 
+If the integral diverges and <code>quadcc</code> detects this,
+a warning is issued and <code>Inf</code> or <code>-Inf</code> is returned.
+
+        <p>Note that <code>quadcc</code> is a general purpose quadrature algorithm
+and as such may be less efficient for smooth or otherwise
+well-behaved integrand than other methods such as
+<code>quadgk</code> or <code>trapz</code>.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dquad.html#doc_002dquad">quad</a>, <a href="doc_002dquadv.html#doc_002dquadv">quadv</a>, <a href="doc_002dquadl.html#doc_002dquadl">quadl</a>, <a href="doc_002dquadgk.html#doc_002dquadgk">quadgk</a>, <a href="doc_002dtrapz.html#doc_002dtrapz">trapz</a>, <a href="doc_002ddblquad.html#doc_002ddblquad">dblquad</a>, <a href="doc_002dtriplequad.html#doc_002dtriplequad">triplequad</a>. 
+</p></blockquote></div>
+
+<!-- trapz scripts/general/trapz.m -->
    <p><a name="doc_002dtrapz"></a>
 
 <div class="defun">
-&mdash; Function File: <var>z</var> = <b>trapz</b> (<var>y</var>)<var><a name="index-trapz-1774"></a></var><br>
-&mdash; Function File: <var>z</var> = <b>trapz</b> (<var>x, y</var>)<var><a name="index-trapz-1775"></a></var><br>
-&mdash; Function File: <var>z</var> = <b>trapz</b> (<var><small class="dots">...</small>, dim</var>)<var><a name="index-trapz-1776"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>trapz</b> (<var>y</var>)<var><a name="index-trapz-2063"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>trapz</b> (<var>x, y</var>)<var><a name="index-trapz-2064"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>trapz</b> (<var><small class="dots">...</small>, dim</var>)<var><a name="index-trapz-2065"></a></var><br>
 <blockquote>
         <p>Numerical integration using trapezoidal method.  <code>trapz
 (</code><var>y</var><code>)</code> computes the integral of the <var>y</var> along the first
@@ -323,18 +411,18 @@ evaluates the integral with respect to <var>x</var>.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcumtrapz.html#doc_002dcumtrapz">cumtrapz</a>. 
 </p></blockquote></div>
 
-<!-- ./general/cumtrapz.m -->
+<!-- cumtrapz scripts/general/cumtrapz.m -->
    <p><a name="doc_002dcumtrapz"></a>
 
 <div class="defun">
-&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var>y</var>)<var><a name="index-cumtrapz-1777"></a></var><br>
-&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var>x, y</var>)<var><a name="index-cumtrapz-1778"></a></var><br>
-&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var><small class="dots">...</small>, dim</var>)<var><a name="index-cumtrapz-1779"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var>y</var>)<var><a name="index-cumtrapz-2066"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var>x, y</var>)<var><a name="index-cumtrapz-2067"></a></var><br>
+&mdash; Function File: <var>z</var> = <b>cumtrapz</b> (<var><small class="dots">...</small>, dim</var>)<var><a name="index-cumtrapz-2068"></a></var><br>
 <blockquote>
         <p>Cumulative numerical integration using trapezoidal method. 
 <code>cumtrapz (</code><var>y</var><code>)</code> computes the cumulative integral of the
 <var>y</var> along the first non-singleton dimension.  If the argument
-<var>x</var> is omitted a equally spaced vector is assumed.  <code>cumtrapz
+<var>x</var> is omitted an equally spaced vector is assumed.  <code>cumtrapz
 (</code><var>x</var><code>, </code><var>y</var><code>)</code> evaluates the cumulative integral with respect
 to <var>x</var>.
 

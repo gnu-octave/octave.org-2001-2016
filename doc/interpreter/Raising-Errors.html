@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Raising Errors - Untitled</title>
+<title>Raising Errors - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Handling-Errors.html#Handling-Errors" title="Handling Errors">
 <link rel="next" href="Catching-Errors.html#Catching-Errors" title="Catching Errors">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Raising-Errors"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Catching-Errors.html#Catching-Errors">Catching Errors</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Handling-Errors.html#Handling-Errors">Handling Errors</a>
 <hr>
@@ -46,12 +47,12 @@ the function <code>f</code> is called without any input arguments.
 and returns to the Octave prompt.  This means that no code following
 a call to <code>error</code> will be executed.
 
-<!-- error.cc -->
+<!-- error src/error.cc -->
    <p><a name="doc_002derror"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>error</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-error-662"></a></var><br>
-&mdash; Built-in Function:  <b>error</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-error-663"></a></var><br>
+&mdash; Built-in Function:  <b>error</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-error-748"></a></var><br>
+&mdash; Built-in Function:  <b>error</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-error-749"></a></var><br>
 <blockquote><p>Format the optional arguments under the control of the template string
 <var>template</var> using the same rules as the <code>printf</code> family of
 functions (see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>) and print the resulting message
@@ -104,6 +105,7 @@ isn't written in Texinfo, the error message contains the entire help
 message.
 
    <p>Consider the following function.
+
 <pre class="example">     ## -*- texinfo -*-
      ## @deftypefn {Function File} f (@var{arg1})
      ## Function help text goes here...
@@ -132,12 +134,12 @@ error.
      -|  at http://www.octave.org and via the help@octave.org
      -|  mailing list.
 </pre>
-   <!-- ./help/print_usage.m -->
+   <!-- print_usage scripts/help/print_usage.m -->
    <p><a name="doc_002dprint_005fusage"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>print_usage</b> ()<var><a name="index-print_005fusage-664"></a></var><br>
-&mdash; Function File:  <b>print_usage</b> (<var>name</var>)<var><a name="index-print_005fusage-665"></a></var><br>
+&mdash; Function File:  <b>print_usage</b> ()<var><a name="index-print_005fusage-750"></a></var><br>
+&mdash; Function File:  <b>print_usage</b> (<var>name</var>)<var><a name="index-print_005fusage-751"></a></var><br>
 <blockquote><p>Print the usage message for a function.  When called with no input arguments
 the <code>print_usage</code> function displays the usage message of the currently
 executing function. 
@@ -148,11 +150,11 @@ executing function.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dhelp.html#doc_002dhelp">help</a>. 
 </p></blockquote></div>
 
-<!-- error.cc -->
+<!-- usage src/error.cc -->
    <p><a name="doc_002dusage"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>usage</b> (<var>msg</var>)<var><a name="index-usage-666"></a></var><br>
+&mdash; Built-in Function:  <b>usage</b> (<var>msg</var>)<var><a name="index-usage-752"></a></var><br>
 <blockquote><p>Print the message <var>msg</var>, prefixed by the string &lsquo;<samp><span class="samp">usage: </span></samp>&rsquo;, and
 set Octave's internal error state such that control will return to the
 top level without evaluating any more commands.  This is useful for
@@ -174,11 +176,11 @@ this
         <p class="noindent">to check for the proper number of arguments. 
 </p></blockquote></div>
 
-<!-- ./io/beep.m -->
+<!-- beep scripts/io/beep.m -->
    <p><a name="doc_002dbeep"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>beep</b> ()<var><a name="index-beep-667"></a></var><br>
+&mdash; Function File:  <b>beep</b> ()<var><a name="index-beep-753"></a></var><br>
 <blockquote><p>Produce a beep from the speaker (or visual bell). 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -187,12 +189,12 @@ this
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dputs.html#doc_002dputs">puts</a>, <a href="doc_002dfputs.html#doc_002dfputs">fputs</a>, <a href="doc_002dprintf.html#doc_002dprintf">printf</a>, <a href="doc_002dfprintf.html#doc_002dfprintf">fprintf</a>. 
 </p></blockquote></div>
 
-<!-- error.cc -->
+<!-- beep_on_error src/error.cc -->
    <p><a name="doc_002dbeep_005fon_005ferror"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>beep_on_error</b> ()<var><a name="index-beep_005fon_005ferror-668"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>beep_on_error</b> (<var>new_val</var>)<var><a name="index-beep_005fon_005ferror-669"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>beep_on_error</b> ()<var><a name="index-beep_005fon_005ferror-754"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>beep_on_error</b> (<var>new_val</var>)<var><a name="index-beep_005fon_005ferror-755"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave will try
 to ring the terminal bell before printing an error message. 
 </p></blockquote></div>

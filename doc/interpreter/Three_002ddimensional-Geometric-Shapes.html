@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Three-dimensional Geometric Shapes - Untitled</title>
+<title>Three-dimensional Geometric Shapes - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting" title="Three-Dimensional Plotting">
 <link rel="prev" href="Three_002ddimensional-Function-Plotting.html#Three_002ddimensional-Function-Plotting" title="Three-dimensional Function Plotting">
@@ -20,28 +20,29 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Three-dimensional-Geometric-Shapes"></a>
 <a name="Three_002ddimensional-Geometric-Shapes"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Three_002ddimensional-Function-Plotting.html#Three_002ddimensional-Function-Plotting">Three-dimensional Function Plotting</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">Three-Dimensional Plotting</a>
 <hr>
 </div>
 
-<h5 class="subsubsection">15.1.2.2 Three-dimensional Geometric Shapes</h5>
+<h5 class="subsubsection">15.2.2.2 Three-dimensional Geometric Shapes</h5>
 
-<!-- ./plot/cylinder.m -->
+<!-- cylinder scripts/plot/cylinder.m -->
 <p><a name="doc_002dcylinder"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cylinder</b><var><a name="index-cylinder-1050"></a></var><br>
-&mdash; Function File:  <b>cylinder</b> (<var>r</var>)<var><a name="index-cylinder-1051"></a></var><br>
-&mdash; Function File:  <b>cylinder</b> (<var>r, n</var>)<var><a name="index-cylinder-1052"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>y</var>, <var>z</var>] = <b>cylinder</b> (<var><small class="dots">...</small></var>)<var><a name="index-cylinder-1053"></a></var><br>
-&mdash; Function File:  <b>cylinder</b> (<var>ax, <small class="dots">...</small></var>)<var><a name="index-cylinder-1054"></a></var><br>
+&mdash; Function File:  <b>cylinder</b><var><a name="index-cylinder-1211"></a></var><br>
+&mdash; Function File:  <b>cylinder</b> (<var>r</var>)<var><a name="index-cylinder-1212"></a></var><br>
+&mdash; Function File:  <b>cylinder</b> (<var>r, n</var>)<var><a name="index-cylinder-1213"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>y</var>, <var>z</var>] = <b>cylinder</b> (<var><small class="dots">...</small></var>)<var><a name="index-cylinder-1214"></a></var><br>
+&mdash; Function File:  <b>cylinder</b> (<var>ax, <small class="dots">...</small></var>)<var><a name="index-cylinder-1215"></a></var><br>
 <blockquote><p>Generates three matrices in <code>meshgrid</code> format, such that
 <code>surf (</code><var>x</var><code>, </code><var>y</var><code>, </code><var>z</var><code>)</code> generates a unit cylinder. 
 The matrices are of size <var>n</var><code>+1</code>-by-<var>n</var><code>+1</code>. 
@@ -55,9 +56,10 @@ is passed as the first argument, the surface is plotted to this set
 of axes.
 
         <p>Examples:
-     <pre class="example">          disp ("plotting a cone")
-          [x, y, z] = cylinder (10:-1:0,50);
+
+     <pre class="example">          [x, y, z] = cylinder (10:-1:0,50);
           surf (x, y, z);
+          title ("a cone")
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -65,12 +67,12 @@ of axes.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dsphere.html#doc_002dsphere">sphere</a>. 
 </p></blockquote></div>
 
-<!-- ./plot/sphere.m -->
+<!-- sphere scripts/plot/sphere.m -->
    <p><a name="doc_002dsphere"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>x</var>, <var>y</var>, <var>z</var>] = <b>sphere</b> (<var>n</var>)<var><a name="index-sphere-1055"></a></var><br>
-&mdash; Function File:  <b>sphere</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-sphere-1056"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>y</var>, <var>z</var>] = <b>sphere</b> (<var>n</var>)<var><a name="index-sphere-1216"></a></var><br>
+&mdash; Function File:  <b>sphere</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-sphere-1217"></a></var><br>
 <blockquote><p>Generates three matrices in <code>meshgrid</code> format, such that
 <code>surf (</code><var>x</var><code>, </code><var>y</var><code>, </code><var>z</var><code>)</code> generates a unit sphere. 
 The matrices of <var>n</var><code>+1</code>-by-<var>n</var><code>+1</code>.  If <var>n</var> is
@@ -86,12 +88,12 @@ as the first argument, the surface is plotted to this set of axes.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dpeaks.html#doc_002dpeaks">peaks</a>. 
 </p></blockquote></div>
 
-<!-- ./plot/ellipsoid.m -->
+<!-- ellipsoid scripts/plot/ellipsoid.m -->
    <p><a name="doc_002dellipsoid"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>x</var>, <var>y</var>, <var>z</var>] = <b>ellipsoid</b> (<var>xc,yc, zc, xr, yr, zr, n</var>)<var><a name="index-ellipsoid-1057"></a></var><br>
-&mdash; Function File:  <b>ellipsoid</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ellipsoid-1058"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>y</var>, <var>z</var>] = <b>ellipsoid</b> (<var>xc, yc, zc, xr, yr, zr, n</var>)<var><a name="index-ellipsoid-1218"></a></var><br>
+&mdash; Function File:  <b>ellipsoid</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ellipsoid-1219"></a></var><br>
 <blockquote><p>Generate three matrices in <code>meshgrid</code> format that define an
 ellipsoid.  Called with no return arguments, <code>ellipsoid</code> calls
 directly <code>surf (</code><var>x</var><code>, </code><var>y</var><code>, </code><var>z</var><code>)</code>.  If an axes handle

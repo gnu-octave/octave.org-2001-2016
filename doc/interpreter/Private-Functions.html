@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Private Functions - Untitled</title>
+<title>Private Functions - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Function-Files.html#Function-Files" title="Function Files">
 <link rel="prev" href="Subfunctions.html#Subfunctions" title="Subfunctions">
@@ -21,18 +21,19 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Private-Functions"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Overloading-and-Autoloading.html#Overloading-and-Autoloading">Overloading and Autoloading</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Subfunctions.html#Subfunctions">Subfunctions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Function-Files.html#Function-Files">Function Files</a>
 <hr>
 </div>
 
-<h4 class="subsection">11.7.3 Private Functions</h4>
+<h4 class="subsection">11.8.3 Private Functions</h4>
 
 <p>In many cases one function needs to access one or more helper
 functions.  If the helper function is limited to the scope of a single
@@ -43,7 +44,7 @@ be placed in a subdirectory, called "private", of the directory in which
 the functions needing access to this helper function are found.
 
    <p>As a simple example, consider a function <code>func1</code>, that calls a helper
-function <code>func2</code> to do much of the work.  For example
+function <code>func2</code> to do much of the work.  For example:
 
 <pre class="example">     function y = func1 (x)
        y = func2 (x);

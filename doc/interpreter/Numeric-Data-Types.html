@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Numeric Data Types - Untitled</title>
+<title>Numeric Data Types - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Data-Types.html#Data-Types" title="Data Types">
 <link rel="next" href="Strings.html#Strings" title="Strings">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Numeric-Data-Types"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Strings.html#Strings">Strings</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Data-Types.html#Data-Types">Data Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
@@ -33,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h2 class="chapter">4 Numeric Data Types</h2>
 
-<p><a name="index-numeric-constant-211"></a><a name="index-numeric-value-212"></a>
+<p><a name="index-numeric-constant-218"></a><a name="index-numeric-value-219"></a>
 A <dfn>numeric constant</dfn> may be a scalar, a vector, or a matrix, and it
 may contain complex values.
 
@@ -77,11 +78,11 @@ If it does, Octave will print an error message, like this:
    <p class="noindent">You may also use &lsquo;<samp><span class="samp">j</span></samp>&rsquo;, &lsquo;<samp><span class="samp">I</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">J</span></samp>&rsquo; in place of the
 &lsquo;<samp><span class="samp">i</span></samp>&rsquo; above.  All four forms are equivalent.
 
-<!-- ov-re-mat.cc -->
+<!-- double src/ov-re-mat.cc -->
    <p><a name="doc_002ddouble"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>double</b> (<var>x</var>)<var><a name="index-double-213"></a></var><br>
+&mdash; Built-in Function:  <b>double</b> (<var>x</var>)<var><a name="index-double-220"></a></var><br>
 <blockquote><p>Convert <var>x</var> to double precision type. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -90,12 +91,12 @@ If it does, Octave will print an error message, like this:
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dsingle.html#doc_002dsingle">single</a>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- complex src/data.cc -->
    <p><a name="doc_002dcomplex"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>complex</b> (<var>x</var>)<var><a name="index-complex-214"></a></var><br>
-&mdash; Built-in Function:  <b>complex</b> (<var>re, im</var>)<var><a name="index-complex-215"></a></var><br>
+&mdash; Built-in Function:  <b>complex</b> (<var>x</var>)<var><a name="index-complex-221"></a></var><br>
+&mdash; Built-in Function:  <b>complex</b> (<var>re, im</var>)<var><a name="index-complex-222"></a></var><br>
 <blockquote><p>Return a complex result from real arguments.  With 1 real argument <var>x</var>,
 return the complex result <var>x</var><code> + 0i</code>.  With 2 real arguments,
 return the complex result <var>re</var><code> + </code><var>im</var>.  <code>complex</code> can
@@ -103,7 +104,7 @@ often be more convenient than expressions such as <code>a + i*b</code>.
 For example:
 
      <pre class="example">          complex ([1, 2], [3, 4])
-          
+          &rArr;
              1 + 3i   2 + 4i
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->

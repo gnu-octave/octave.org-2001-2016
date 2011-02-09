@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Input Parameter Checking in Oct-Files - Untitled</title>
+<title>Input Parameter Checking in Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Allocating-Local-Memory-in-Oct_002dFiles.html#Allocating-Local-Memory-in-Oct_002dFiles" title="Allocating Local Memory in Oct-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Input-Parameter-Checking-in-Oct-Files"></a>
 <a name="Input-Parameter-Checking-in-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Exception-and-Error-Handling-in-Oct_002dFiles.html#Exception-and-Error-Handling-in-Oct_002dFiles">Exception and Error Handling in Oct-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Allocating-Local-Memory-in-Oct_002dFiles.html#Allocating-Local-Memory-in-Oct_002dFiles">Allocating Local Memory in Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
@@ -52,12 +53,12 @@ need additional input parameter checking.
 purposes of parameter checking.  These include the methods of the
 octave_value class like <code>is_real_matrix</code>, etc., but equally include
 more specialized functions.  Some of the more common ones are
-demonstrated in the following example
+demonstrated in the following example.
 
 <pre class="example"><pre class="verbatim">     #include &lt;octave/oct.h>
      
-     DEFUN_DLD (paramdemo, args, nargout, 
-     	   "Parameter Check Demo.")
+     DEFUN_DLD (paramdemo, args, nargout,
+                "Parameter Check Demo.")
      {
        int nargin = args.length ();
        octave_value retval;
@@ -77,22 +78,24 @@ demonstrated in the following example
            if (m.any_element_is_inf_or_nan())
              octave_stdout &lt;&lt; "  includes Inf or NaN values\n";
            if (m.any_element_not_one_or_zero())
-             octave_stdout &lt;&lt; 
-     	  "  includes other values than 1 and 0\n";
+             octave_stdout &lt;&lt;
+               "  includes other values than 1 and 0\n";
            if (m.all_elements_are_int_or_inf_or_nan())
-             octave_stdout &lt;&lt; 
-     	  "  includes only int, Inf or NaN values\n";
+             octave_stdout &lt;&lt;
+               "  includes only int, Inf or NaN values\n";
            if (m.all_integers (min_val, max_val))
-             octave_stdout &lt;&lt; 
-     	  "  includes only integers in [-10,10]\n";
+             octave_stdout &lt;&lt;
+               "  includes only integers in [-10,10]\n";
          }
        return retval;
      }
-</pre></pre>
-   <p class="noindent">and an example of its use is
+</pre>
+     
+</pre>
+   <p class="noindent">An example of its use is:
 
 <pre class="example">     paramdemo ([1, 2, NaN, Inf])
-      Properties of input array:
+     &rArr; Properties of input array:
            includes Inf or NaN values
            includes other values than 1 and 0
            includes only int, Inf or NaN values

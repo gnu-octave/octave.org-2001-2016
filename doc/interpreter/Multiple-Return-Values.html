@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Multiple Return Values - Untitled</title>
+<title>Multiple Return Values - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
 <link rel="prev" href="Defining-Functions.html#Defining-Functions" title="Defining Functions">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Multiple-Return-Values"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Variable_002dlength-Argument-Lists.html#Variable_002dlength-Argument-Lists">Variable-length Argument Lists</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Defining-Functions.html#Defining-Functions">Defining Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>
@@ -103,12 +104,12 @@ example, calling the function
 </pre>
    <p class="noindent">along with a warning.
 
-<!-- ov-usr-fcn.cc -->
+<!-- nargout src/ov-usr-fcn.cc -->
    <p><a name="doc_002dnargout"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>nargout</b> ()<var><a name="index-nargout-595"></a></var><br>
-&mdash; Built-in Function:  <b>nargout</b> (<var>fcn_name</var>)<var><a name="index-nargout-596"></a></var><br>
+&mdash; Built-in Function:  <b>nargout</b> ()<var><a name="index-nargout-684"></a></var><br>
+&mdash; Built-in Function:  <b>nargout</b> (<var>fcn_name</var>)<var><a name="index-nargout-685"></a></var><br>
 <blockquote><p>Within a function, return the number of values the caller expects to
 receive.  If called with the optional argument <var>fcn_name</var>, return the
 maximum number of values the named function can produce, or -1 if the
@@ -133,13 +134,13 @@ function can produce a variable number of values.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>. 
 </p></blockquote></div>
 
-<!-- ./general/nargchk.m -->
+<!-- nargchk scripts/general/nargchk.m -->
    <p><a name="doc_002dnargchk"></a>
 
 <div class="defun">
-&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargchk-597"></a></var><br>
-&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargchk-598"></a></var><br>
-&mdash; Function File: <var>msgstruct</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargchk-599"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargchk-686"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargchk-687"></a></var><br>
+&mdash; Function File: <var>msgstruct</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargchk-688"></a></var><br>
 <blockquote><p>Return an appropriate error message string (or structure) if the
 number of inputs requested is invalid.
 
@@ -152,13 +153,13 @@ supplied to a function is within an acceptable range.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargoutchk.html#doc_002dnargoutchk">nargoutchk</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>. 
 </p></blockquote></div>
 
-<!-- ./general/nargoutchk.m -->
+<!-- nargoutchk scripts/general/nargoutchk.m -->
    <p><a name="doc_002dnargoutchk"></a>
 
 <div class="defun">
-&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargoutchk-600"></a></var><br>
-&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargoutchk-601"></a></var><br>
-&mdash; Function File: <var>msgstruct</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargoutchk-602"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargoutchk-689"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargoutchk-690"></a></var><br>
+&mdash; Function File: <var>msgstruct</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargoutchk-691"></a></var><br>
 <blockquote><p>Return an appropriate error message string (or structure) if the
 number of outputs requested is invalid.
 
@@ -169,6 +170,28 @@ arguments supplied to a function is within an acceptable range.
 <!-- @sp 1 -->
 
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargchk.html#doc_002dnargchk">nargchk</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>. 
+</p></blockquote></div>
+
+<!-- isargout src/ov-usr-fcn.cc -->
+   <p><a name="doc_002disargout"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>isargout</b> (<var>k</var>)<var><a name="index-isargout-692"></a></var><br>
+<blockquote><p>Within a function, return a logical value indicating whether the argument
+<var>k</var> will be assigned on output to a variable.  If the result is false,
+the argument has been ignored during the function call through the use of
+the tilde (~) special output argument.  Functions can use <code>isargout</code> to
+avoid performing unnecessary calculations for outputs which are unwanted.
+
+        <p>If <var>k</var> is outside the range <code>1:max(nargout)</code>, the function returns
+false.  <var>k</var> can also be an array, in which case the function works
+element-by-element and a logical array is returned.  At the top level,
+<code>isargout</code> returns an error. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>. 
 </p></blockquote></div>
 
    <p><a name="doc_002dvarargin"></a><a name="doc_002dvarargout"></a>

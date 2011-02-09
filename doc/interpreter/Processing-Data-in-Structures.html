@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Processing Data in Structures - Untitled</title>
+<title>Processing Data in Structures - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data-Structures.html#Data-Structures" title="Data Structures">
 <link rel="prev" href="Manipulating-Structures.html#Manipulating-Structures" title="Manipulating Structures">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Processing-Data-in-Structures"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Manipulating-Structures.html#Manipulating-Structures">Manipulating Structures</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">Data Structures</a>
 <hr>
@@ -37,17 +38,17 @@ loop (see <a href="Looping-Over-Structure-Elements.html#Looping-Over-Structure-E
 achieved with the <code>structfun</code> function, where a user defined
 function is applied to each field of the structure.
 
-<!-- ./general/structfun.m -->
+<!-- structfun scripts/general/structfun.m -->
    <p><a name="doc_002dstructfun"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>structfun</b> (<var>func, s</var>)<var><a name="index-structfun-382"></a></var><br>
-&mdash; Function File: [<var>a</var>, <var>b</var>] = <b>structfun</b> (<var><small class="dots">...</small></var>)<var><a name="index-structfun-383"></a></var><br>
-&mdash; Function File:  <b>structfun</b> (<var><small class="dots">...</small>, "ErrorHandler", errfunc</var>)<var><a name="index-structfun-384"></a></var><br>
-&mdash; Function File:  <b>structfun</b> (<var><small class="dots">...</small>, "UniformOutput", val</var>)<var><a name="index-structfun-385"></a></var><br>
+&mdash; Function File:  <b>structfun</b> (<var>func, S</var>)<var><a name="index-structfun-407"></a></var><br>
+&mdash; Function File: [<var>A</var>, <small class="dots">...</small>] = <b>structfun</b> (<var><small class="dots">...</small></var>)<var><a name="index-structfun-408"></a></var><br>
+&mdash; Function File:  <b>structfun</b> (<var><small class="dots">...</small>, "ErrorHandler", errfunc</var>)<var><a name="index-structfun-409"></a></var><br>
+&mdash; Function File:  <b>structfun</b> (<var><small class="dots">...</small>, "UniformOutput", val</var>)<var><a name="index-structfun-410"></a></var><br>
 <blockquote>
         <p>Evaluate the function named <var>name</var> on the fields of the structure
-<var>s</var>.  The fields of <var>s</var> are passed to the function <var>func</var>
+<var>S</var>.  The fields of <var>S</var> are passed to the function <var>func</var>
 individually.
 
         <p><code>structfun</code> accepts an arbitrary function <var>func</var> in the form of
@@ -57,49 +58,76 @@ function must accept a single argument named <var>x</var>, and it must return
 a string value.  If the function returns more than one argument, they are
 returned as separate output variables.
 
-        <p>If the parameter "UniformOutput" is set to true (the default), then the function
+        <p>If the parameter "UniformOutput" is set to true (the default), then the
+function
 must return a single element which will be concatenated into the
-return value.  If "UniformOutput" is false, the outputs placed in a structure
+return value.  If "UniformOutput" is false, the outputs are placed into a
+structure
 with the same fieldnames as the input structure.
 
      <pre class="example">          s.name1 = "John Smith";
           s.name2 = "Jill Jones";
           structfun (@(x) regexp (x, '(\w+)$', "matches"){1}, s,
                      "UniformOutput", false)
+              &rArr;
+             {
+               name1 = Smith
+               name2 = Jones
+             }
 </pre>
-        <p>Given the parameter "ErrorHandler", then <var>errfunc</var> defines a function to
+        <p>Given the parameter "ErrorHandler", <var>errfunc</var> defines a function to
 call in case <var>func</var> generates an error.  The form of the function is
 
      <pre class="example">          function [...] = errfunc (<var>se</var>, ...)
 </pre>
-        <p>where there is an additional input argument to <var>errfunc</var> relative to
+        <p class="noindent">where there is an additional input argument to <var>errfunc</var> relative to
 <var>func</var>, given by <var>se</var>.  This is a structure with the elements
 "identifier", "message" and "index", giving respectively the error
 identifier, the error message, and the index into the input arguments
-of the element that caused the error. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
+of the element that caused the error.  For an example on how to use
+an error handler, see <a href="doc_002dcellfun.html#doc_002dcellfun"><code>cellfun</code></a>.
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcellfun.html#doc_002dcellfun">cellfun</a>, <a href="doc_002darrayfun.html#doc_002darrayfun">arrayfun</a>. 
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcellfun.html#doc_002dcellfun">cellfun</a>, <a href="doc_002darrayfun.html#doc_002darrayfun">arrayfun</a>, <a href="doc_002dspfun.html#doc_002dspfun">spfun</a>. 
 </p></blockquote></div>
 
    <p>Alternatively, to process the data in a structure, the structure might
 be converted to another type of container before being treated.
 
-<!-- ov-cell.cc -->
+<!-- struct2cell src/ov-cell.cc -->
    <p><a name="doc_002dstruct2cell"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>struct2cell</b> (<var>S</var>)<var><a name="index-struct2cell-386"></a></var><br>
+&mdash; Built-in Function:  <b>struct2cell</b> (<var>S</var>)<var><a name="index-struct2cell-411"></a></var><br>
 <blockquote><p>Create a new cell array from the objects stored in the struct object. 
 If <var>f</var> is the number of fields in the structure, the resulting
 cell array will have a dimension vector corresponding to
-<code>[</code><var>F</var><code> size(</code><var>S</var><code>)]</code>. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
+<code>[</code><var>F</var><code> size(</code><var>S</var><code>)]</code>.  For example:
 
+     <pre class="example">            s = struct('name', {'Peter', 'Hannah', 'Robert'},
+                       'age', {23, 16, 3});
+            c = struct2cell(s)
+               &rArr; c = {1x1x3 Cell Array}
+            c(1,1,:)(:)
+               &rArr; ans =
+                  {
+                    [1,1] = Peter
+                    [2,1] = Hannah
+                    [3,1] = Robert
+                  }
+            c(2,1,:)(:)
+               &rArr; ans =
+                  {
+                    [1,1] = 23
+                    [2,1] = 16
+                    [3,1] = 3
+                  }
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcell2struct.html#doc_002dcell2struct">cell2struct</a>, <a href="doc_002dfieldnames.html#doc_002dfieldnames">fieldnames</a>. 
 </p></blockquote></div>
 

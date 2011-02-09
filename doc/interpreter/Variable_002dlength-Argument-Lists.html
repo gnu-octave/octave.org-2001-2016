@@ -1,13 +1,13 @@
 <html lang="en">
 <head>
-<title>Variable-length Argument Lists - Untitled</title>
+<title>Variable-length Argument Lists - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
 <link rel="prev" href="Multiple-Return-Values.html#Multiple-Return-Values" title="Multiple Return Values">
-<link rel="next" href="Variable_002dlength-Return-Lists.html#Variable_002dlength-Return-Lists" title="Variable-length Return Lists">
+<link rel="next" href="Ignoring-Arguments.html#Ignoring-Arguments" title="Ignoring Arguments">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -21,13 +21,14 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Variable-length-Argument-Lists"></a>
 <a name="Variable_002dlength-Argument-Lists"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Variable_002dlength-Return-Lists.html#Variable_002dlength-Return-Lists">Variable-length Return Lists</a>,
+<p>
+Next:&nbsp;<a rel="next" accesskey="n" href="Ignoring-Arguments.html#Ignoring-Arguments">Ignoring Arguments</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Multiple-Return-Values.html#Multiple-Return-Values">Multiple Return Values</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>
 <hr>
@@ -35,10 +36,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-an
 
 <h3 class="section">11.3 Variable-length Argument Lists</h3>
 
-<p><a name="index-variable_002dlength-argument-lists-603"></a><a name="index-g_t_0040code_007bvarargin_007d-604"></a>
+<p><a name="index-variable_002dlength-argument-lists-693"></a><a name="index-g_t_0040code_007bvarargin_007d-694"></a>
 Sometimes the number of input arguments is not known when the function
 is defined.  As an example think of a function that returns the smallest
-of all its input arguments.  For example,
+of all its input arguments.  For example:
 
 <pre class="example">     a = smallest (1, 2, 3);
      b = smallest (1, 2, 3, 4);
@@ -94,14 +95,15 @@ can be defined like this
           -| Input argument 2: two
           -| Input argument 3:  3
 </pre>
-   <!-- ./miscellaneous/parseparams.m -->
+   <!-- parseparams scripts/miscellaneous/parseparams.m -->
    <p><a name="doc_002dparseparams"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>reg</var>, <var>prop</var>] = <b>parseparams</b> (<var>params</var>)<var><a name="index-parseparams-605"></a></var><br>
+&mdash; Function File: [<var>reg</var>, <var>prop</var>] = <b>parseparams</b> (<var>params</var>)<var><a name="index-parseparams-695"></a></var><br>
+&mdash; Function File: [<var>reg</var>, <var>var1</var>, <small class="dots">...</small>] = <b>parseparams</b> (<var>params, name1, default1, <small class="dots">...</small></var>)<var><a name="index-parseparams-696"></a></var><br>
 <blockquote><p>Return in <var>reg</var> the cell elements of <var>param</var> up to the first
 string element and in <var>prop</var> all remaining elements beginning
-with the first string element.  For example
+with the first string element.  For example:
 
      <pre class="example">          [reg, prop] = parseparams ({1, 2, "linewidth", 10})
           reg =
@@ -117,11 +119,19 @@ with the first string element.  For example
 </pre>
         <p>The parseparams function may be used to separate 'regular'
 arguments and additional arguments given as property/value pairs of
-the <var>varargin</var> cell array. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
+the <var>varargin</var> cell array.
 
+        <p>In the second form of the call, available options are specified directly
+with their default values given as name-value pairs. 
+If <var>params</var> do not form name-value pairs, or if an option occurs
+that does not match any of the available options, an error occurs. 
+When called from a m-file function, the error is prefixed with the
+name of the caller function. 
+The matching of options is case-insensitive.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>. 
 </p></blockquote></div>
 

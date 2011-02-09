@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Integer Arithmetic - Untitled</title>
+<title>Integer Arithmetic - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Integer-Data-Types.html#Integer-Data-Types" title="Integer Data Types">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -19,11 +19,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Integer-Arithmetic"></a>
+<p>
 Up:&nbsp;<a rel="up" accesskey="u" href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>
 <hr>
 </div>
@@ -36,13 +37,6 @@ on integers.  The operators <code>+</code>, <code>-</code>, <code>.*</code>, and
 work on integers of the same type.  So, it is possible to add two 32 bit
 integers, but not to add a 32 bit integer and a 16 bit integer.
 
-   <p>The arithmetic operations on integers are performed by casting the
-integer values to double precision values, performing the operation, and
-then re-casting the values back to the original integer type.  As the
-double precision type of Octave is only capable of representing integers
-with up to 53 bits of precision, it is not possible to perform
-arithmetic with 64 bit integer types.
-
    <p>When doing integer arithmetic one should consider the possibility of
 underflow and overflow.  This happens when the result of the computation
 can't be represented using the chosen integer type.  As an example it is
@@ -54,43 +48,47 @@ result of 10 - 20 when using unsigned integers is zero.
    <p>When doing integer division Octave will round the result to the nearest
 integer.  This is different from most programming languages, where the
 result is often floored to the nearest integer.  So, the result of
-<code>int32(5)./int32(8)</code> is <code>1</code>.
+<code>int32(5) ./ int32(8)</code> is <code>1</code>.
 
-<!-- ./general/idivide.m -->
+<!-- idivide scripts/general/idivide.m -->
    <p><a name="doc_002didivide"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>idivide</b> (<var>x, y, op</var>)<var><a name="index-idivide-249"></a></var><br>
-<blockquote><p>Integer division with different round rules.  The standard behavior of
-the an integer division such as <var>a</var><code> ./ </code><var>b</var> is to round
-the result to the nearest integer.  This is not always the desired
-behavior and <code>idivide</code> permits integer element-by-element
+&mdash; Function File:  <b>idivide</b> (<var>x, y, op</var>)<var><a name="index-idivide-254"></a></var><br>
+<blockquote><p>Integer division with different rounding rules.
+
+        <p>The standard behavior of integer division such as <var>a</var><code> ./ </code><var>b</var>
+is to round the result to the nearest integer.  This is not always the
+desired behavior and <code>idivide</code> permits integer element-by-element
 division to be performed with different treatment for the fractional
 part of the division as determined by the <var>op</var> flag.  <var>op</var> is
 a string with one of the values:
 
           <dl>
 <dt>"fix"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
-towards zero. 
-<br><dt>"round"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
-towards the nearest integer. 
-<br><dt>"floor"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
-downwards. 
-<br><dt>"ceil"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
-upwards. 
+towards zero.
+
+          <br><dt>"round"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
+towards the nearest integer.
+
+          <br><dt>"floor"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
+towards negative infinity.
+
+          <br><dt>"ceil"<dd>Calculate <var>a</var><code> ./ </code><var>b</var> with the fractional part rounded
+towards positive infinity. 
 </dl>
 
-     <p class="noindent">If <var>op</var> is not given it is assumed that it is <code>"fix"</code>. 
+     <p class="noindent">If <var>op</var> is not given it defaults to <code>"fix"</code>. 
 An example demonstrating these rounding rules is
 
      <pre class="example">          idivide (int8 ([-3, 3]), int8 (4), "fix")
-           int8 ([0, 0])
+          &rArr; int8 ([0, 0])
           idivide (int8 ([-3, 3]), int8 (4), "round")
-           int8 ([-1, 1])
-          idivide (int8 ([-3, 3]), int8 (4), "ceil")
-           int8 ([0, 1])
+          &rArr; int8 ([-1, 1])
           idivide (int8 ([-3, 3]), int8 (4), "floor")
-           int8 ([-1, 0])
+          &rArr; int8 ([-1, 0])
+          idivide (int8 ([-3, 3]), int8 (4), "ceil")
+          &rArr; int8 ([0, 1])
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Terminal Input - Untitled</title>
+<title>Terminal Input - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Basic-Input-and-Output.html#Basic-Input-and-Output" title="Basic Input and Output">
 <link rel="prev" href="Terminal-Output.html#Terminal-Output" title="Terminal Output">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Terminal-Input"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Terminal-Output.html#Terminal-Output">Terminal Output</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Basic-Input-and-Output.html#Basic-Input-and-Output">Basic Input and Output</a>
@@ -39,12 +40,12 @@ input.  The <code>input</code> and <code>menu</code> functions are normally
 used for managing an interactive dialog with a user, and the
 <code>keyboard</code> function is normally used for doing simple debugging.
 
-<!-- input.cc -->
+<!-- input src/input.cc -->
    <p><a name="doc_002dinput"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>input</b> (<var>prompt</var>)<var><a name="index-input-722"></a></var><br>
-&mdash; Built-in Function:  <b>input</b> (<var>prompt, "s"</var>)<var><a name="index-input-723"></a></var><br>
+&mdash; Built-in Function:  <b>input</b> (<var>prompt</var>)<var><a name="index-input-812"></a></var><br>
+&mdash; Built-in Function:  <b>input</b> (<var>prompt, "s"</var>)<var><a name="index-input-813"></a></var><br>
 <blockquote><p>Print a prompt and wait for user input.  For example,
 
      <pre class="example">          input ("Pick a number, any number! ")
@@ -71,11 +72,11 @@ a good idea to always call <code>fflush (stdout)</code> before calling
 the screen before your prompt.  See <a href="Input-and-Output.html#Input-and-Output">Input and Output</a>. 
 </p></blockquote></div>
 
-<!-- ./miscellaneous/menu.m -->
+<!-- menu scripts/miscellaneous/menu.m -->
    <p><a name="doc_002dmenu"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>menu</b> (<var>title, opt1, <small class="dots">...</small></var>)<var><a name="index-menu-724"></a></var><br>
+&mdash; Function File:  <b>menu</b> (<var>title, opt1, <small class="dots">...</small></var>)<var><a name="index-menu-814"></a></var><br>
 <blockquote><p>Print a title string followed by a series of options.  Each option will
 be printed along with a number.  The return value is the number of the
 option selected by the user.  This function is useful for interactive
@@ -89,11 +90,11 @@ screen.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddisp.html#doc_002ddisp">disp</a>, <a href="doc_002dprintf.html#doc_002dprintf">printf</a>, <a href="doc_002dinput.html#doc_002dinput">input</a>. 
 </p></blockquote></div>
 
-<!-- input.cc -->
+<!-- yes_or_no src/input.cc -->
    <p><a name="doc_002dyes_005for_005fno"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>yes_or_no</b> (<var>prompt</var>)<var><a name="index-yes_005for_005fno-725"></a></var><br>
+&mdash; Built-in Function:  <b>yes_or_no</b> (<var>prompt</var>)<var><a name="index-yes_005for_005fno-815"></a></var><br>
 <blockquote><p>Ask the user a yes-or-no question.  Return 1 if the answer is yes. 
 Takes one argument, which is the string to display to ask the
 question.  It should end in a space; &lsquo;<samp><span class="samp">yes-or-no-p</span></samp>&rsquo; adds
@@ -108,11 +109,11 @@ are available at the prompt.
 character from the keyboard without requiring the user to type a
 carriage return.
 
-<!-- sysdep.cc -->
+<!-- kbhit src/sysdep.cc -->
    <p><a name="doc_002dkbhit"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>kbhit</b> ()<var><a name="index-kbhit-726"></a></var><br>
+&mdash; Built-in Function:  <b>kbhit</b> ()<var><a name="index-kbhit-816"></a></var><br>
 <blockquote><p>Read a single keystroke from the keyboard.  If called with one
 argument, don't wait for a keypress.  For example,
 

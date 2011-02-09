@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+<title>Derivatives / Integrals / Transforms - GNU Octave</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Polynomial-Manipulations.html#Polynomial-Manipulations" title="Polynomial Manipulations">
+<link rel="prev" href="Products-of-Polynomials.html#Products-of-Polynomials" title="Products of Polynomials">
+<link rel="next" href="Polynomial-Interpolation.html#Polynomial-Interpolation" title="Polynomial Interpolation">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
+</head>
+<body>
+<div class="node">
+<a name="Derivatives-%2f-Integrals-%2f-Transforms"></a>
+<a name="Derivatives-_002f-Integrals-_002f-Transforms"></a>
+<p>
+Next:&nbsp;<a rel="next" accesskey="n" href="Polynomial-Interpolation.html#Polynomial-Interpolation">Polynomial Interpolation</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Products-of-Polynomials.html#Products-of-Polynomials">Products of Polynomials</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Polynomial-Manipulations.html#Polynomial-Manipulations">Polynomial Manipulations</a>
+<hr>
+</div>
+
+<h3 class="section">27.4 Derivatives / Integrals / Transforms</h3>
+
+<p>Octave comes with functions for computing the derivative and the integral
+of a polynomial.  The functions <code>polyderiv</code> and <code>polyint</code>
+both return new polynomials describing the result.  As an example we'll
+compute the definite integral of p(x) = x^2 + 1 from 0 to 3.
+
+<pre class="example">     c = [1, 0, 1];
+     integral = polyint(c);
+     area = polyval(integral, 3) - polyval(integral, 0)
+     &rArr; 12
+</pre>
+   <!-- polyderiv scripts/polynomial/polyderiv.m -->
+   <p><a name="doc_002dpolyderiv"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>polyderiv</b> (<var>p</var>)<var><a name="index-polyderiv-2381"></a></var><br>
+&mdash; Function File: [<var>k</var>] = <b>polyderiv</b> (<var>a, b</var>)<var><a name="index-polyderiv-2382"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>d</var>] = <b>polyderiv</b> (<var>b, a</var>)<var><a name="index-polyderiv-2383"></a></var><br>
+<blockquote><p>Return the coefficients of the derivative of the polynomial whose
+coefficients are given by the vector <var>p</var>.  If a pair of polynomials
+is given, return the derivative of the product <var>a</var>*<var>b</var>. 
+If two inputs and two outputs are given, return the derivative of the
+polynomial quotient <var>b</var>/<var>a</var>.  The quotient numerator is
+in <var>q</var> and the denominator in <var>d</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>, <a href="doc_002dpolyreduce.html#doc_002dpolyreduce">polyreduce</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dfilter.html#doc_002dfilter">filter</a>, <a href="doc_002dpolygcd.html#doc_002dpolygcd">polygcd</a>, <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyvalm.html#doc_002dpolyvalm">polyvalm</a>. 
+</p></blockquote></div>
+
+<!-- polyder scripts/polynomial/polyder.m -->
+   <p><a name="doc_002dpolyder"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>polyderiv</b> (<var>p</var>)<var><a name="index-polyderiv-2384"></a></var><br>
+&mdash; Function File: [<var>k</var>] = <b>polyderiv</b> (<var>a, b</var>)<var><a name="index-polyderiv-2385"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>d</var>] = <b>polyderiv</b> (<var>b, a</var>)<var><a name="index-polyderiv-2386"></a></var><br>
+<blockquote><p>An alias for <code>polyderiv</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>. 
+</p></blockquote></div>
+
+<!-- polyint scripts/polynomial/polyint.m -->
+   <p><a name="doc_002dpolyint"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>polyint</b> (<var>p</var>)<var><a name="index-polyint-2387"></a></var><br>
+&mdash; Function File:  <b>polyint</b> (<var>p, k</var>)<var><a name="index-polyint-2388"></a></var><br>
+<blockquote><p>Return the coefficients of the integral of the polynomial whose
+coefficients are represented by the vector <var>p</var>.  The variable
+<var>k</var> is the constant of integration, which by default is set to zero. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyreduce.html#doc_002dpolyreduce">polyreduce</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dfilter.html#doc_002dfilter">filter</a>, <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyvalm.html#doc_002dpolyvalm">polyvalm</a>. 
+</p></blockquote></div>
+
+<!-- polyaffine scripts/polynomial/polyaffine.m -->
+   <p><a name="doc_002dpolyaffine"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>polyaffine</b> (<var>f, mu</var>)<var><a name="index-polyaffine-2389"></a></var><br>
+<blockquote><p>Return the coefficients of the polynomial vector <var>f</var> after an affine
+transformation.  If <var>f</var> is the vector representing the polynomial f(x),
+then <var>g</var><code> = polyaffine (</code><var>f</var><code>, </code><var>mu</var><code>)</code> is the vector
+representing:
+
+     <pre class="example">          g(x) = f((x-<var>mu</var>(1))/<var>mu</var>(2)).
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>. 
+</p></blockquote></div>
+
+   </body></html>
+

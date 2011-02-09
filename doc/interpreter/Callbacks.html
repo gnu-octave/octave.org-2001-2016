@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Callbacks - Untitled</title>
+<title>Callbacks - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Advanced-Plotting.html#Advanced-Plotting" title="Advanced Plotting">
 <link rel="prev" href="Marker-Styles.html#Marker-Styles" title="Marker Styles">
@@ -21,20 +21,21 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Callbacks"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Object-Groups.html#Object-Groups">Object Groups</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Marker-Styles.html#Marker-Styles">Marker Styles</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Advanced-Plotting.html#Advanced-Plotting">Advanced Plotting</a>
 <hr>
 </div>
 
-<h4 class="subsection">15.2.7 Callbacks</h4>
+<h4 class="subsection">15.4.4 Callbacks</h4>
 
-<p><a name="index-callbacks-1216"></a>
+<p><a name="index-callbacks-1396"></a>
 Callback functions can be associated with graphics objects and triggered
 after certain events occur.  The basic structure of all callback function
 is
@@ -43,10 +44,10 @@ is
      ...
      endfunction
 </pre>
-   <p>where <code>src</code> gives a handle to the source of the callback, and
+   <p class="noindent">where <code>src</code> gives a handle to the source of the callback, and
 <code>code</code> gives some event specific data.  This can then be associated
 with an object either at the objects creation or later with the
-<code>set</code> function.  For example
+<code>set</code> function.  For example,
 
 <pre class="example">     plot (x, "DeleteFcn", @(s, e) disp("Window Deleted"))
 </pre>
@@ -54,7 +55,7 @@ with an object either at the objects creation or later with the
 Deleted" will be displayed.
 
    <p>Additional user arguments can be passed to callback functions, and will
-be passed after the 2 default arguments.  For example
+be passed after the 2 default arguments.  For example:
 
 <pre class="example">     plot (x, "DeleteFcn", {@mycallback, "1"})
      ...
@@ -86,12 +87,12 @@ not respect this callback.
 callback being called can be found with the <code>gcbo</code> and <code>gcbf</code>
 functions.
 
-<!-- ./plot/gcbo.m -->
+<!-- gcbo scripts/plot/gcbo.m -->
    <p><a name="doc_002dgcbo"></a>
 
 <div class="defun">
-&mdash; Function File: <var>h</var> = <b>gcbo</b> ()<var><a name="index-gcbo-1217"></a></var><br>
-&mdash; Function File: [<var>h</var>, <var>fig</var>] = <b>gcbo</b> ()<var><a name="index-gcbo-1218"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>gcbo</b> ()<var><a name="index-gcbo-1397"></a></var><br>
+&mdash; Function File: [<var>h</var>, <var>fig</var>] = <b>gcbo</b> ()<var><a name="index-gcbo-1398"></a></var><br>
 <blockquote><p>Return a handle to the object whose callback is currently
 executing.  If no callback is executing, this function returns the
 empty matrix.  This handle is obtained from the root object property
@@ -107,11 +108,11 @@ executing, the second output is also set to the empty matrix.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dgcf.html#doc_002dgcf">gcf</a>, <a href="doc_002dgca.html#doc_002dgca">gca</a>, <a href="doc_002dgcbf.html#doc_002dgcbf">gcbf</a>. 
 </p></blockquote></div>
 
-<!-- ./plot/gcbf.m -->
+<!-- gcbf scripts/plot/gcbf.m -->
    <p><a name="doc_002dgcbf"></a>
 
 <div class="defun">
-&mdash; Function File: <var>fig</var> = <b>gcbf</b> ()<var><a name="index-gcbf-1219"></a></var><br>
+&mdash; Function File: <var>fig</var> = <b>gcbf</b> ()<var><a name="index-gcbf-1399"></a></var><br>
 <blockquote><p>Return a handle to the figure containing the object whose callback
 is currently executing.  If no callback is executing, this function
 returns the empty matrix.  The handle returned by this function is

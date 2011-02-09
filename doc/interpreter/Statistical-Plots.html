@@ -1,13 +1,13 @@
 <html lang="en">
 <head>
-<title>Statistical Plots - Untitled</title>
+<title>Statistical Plots - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Statistics.html#Statistics" title="Statistics">
 <link rel="prev" href="Basic-Statistical-Functions.html#Basic-Statistical-Functions" title="Basic Statistical Functions">
-<link rel="next" href="Tests.html#Tests" title="Tests">
+<link rel="next" href="Correlation-and-Regression-Analysis.html#Correlation-and-Regression-Analysis" title="Correlation and Regression Analysis">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Statistical-Plots"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Tests.html#Tests">Tests</a>,
+<p>
+Next:&nbsp;<a rel="next" accesskey="n" href="Correlation-and-Regression-Analysis.html#Correlation-and-Regression-Analysis">Correlation and Regression Analysis</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Basic-Statistical-Functions.html#Basic-Statistical-Functions">Basic Statistical Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics</a>
 <hr>
@@ -44,11 +45,13 @@ data set comes from a certain distribution.
 using the <code>hist</code> function as described in
 <a href="Two_002dDimensional-Plots.html#Two_002dDimensional-Plots">Two-Dimensional Plots</a>.
 
-<!-- ./statistics/base/qqplot.m -->
+<!-- qqplot scripts/statistics/base/qqplot.m -->
    <p><a name="doc_002dqqplot"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist, params</var>)<var><a name="index-qqplot-1863"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x</var>)<var><a name="index-qqplot-2179"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist</var>)<var><a name="index-qqplot-2180"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist, params</var>)<var><a name="index-qqplot-2181"></a></var><br>
 <blockquote><p>Perform a QQ-plot (quantile plot).
 
         <p>If F is the CDF of the distribution <var>dist</var> with parameters
@@ -57,7 +60,7 @@ using the <code>hist</code> function as described in
 largest element of x versus abscissa <var>q</var>(<var>i</var>f) = G((<var>i</var> -
 0.5)/<var>n</var>).
 
-        <p>If the sample comes from F except for a transformation of location
+        <p>If the sample comes from F, except for a transformation of location
 and scale, the pairs will approximately follow a straight line.
 
         <p>The default for <var>dist</var> is the standard normal distribution.  The
@@ -67,17 +70,18 @@ distribution on [2,4] and <var>x</var>, use
 
      <pre class="example">          qqplot (x, "uniform", 2, 4)
 </pre>
-        <p class="noindent"><var>dist</var> can be any string for which a function <var>dist_inv</var>
-that calculates the inverse CDF of distribution <var>dist</var> exists.
+        <p class="noindent"><var>dist</var> can be any string for which a function <var>distinv</var> or
+<var>dist_inv</var> exists that calculates the inverse CDF of distribution
+<var>dist</var>.
 
         <p>If no output arguments are given, the data are plotted directly. 
 </p></blockquote></div>
 
-<!-- ./statistics/base/ppplot.m -->
+<!-- ppplot scripts/statistics/base/ppplot.m -->
    <p><a name="doc_002dppplot"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>p</var>, <var>y</var>] = <b>ppplot</b> (<var>x, dist, params</var>)<var><a name="index-ppplot-1864"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>y</var>] = <b>ppplot</b> (<var>x, dist, params</var>)<var><a name="index-ppplot-2182"></a></var><br>
 <blockquote><p>Perform a PP-plot (probability plot).
 
         <p>If F is the CDF of the distribution <var>dist</var> with parameters

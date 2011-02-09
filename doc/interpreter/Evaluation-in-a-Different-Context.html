@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Evaluation in a Different Context - Untitled</title>
+<title>Evaluation in a Different Context - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Evaluation.html#Evaluation" title="Evaluation">
 <link rel="prev" href="Calling-a-Function-by-its-Name.html#Calling-a-Function-by-its-Name" title="Calling a Function by its Name">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Evaluation-in-a-Different-Context"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Calling-a-Function-by-its-Name.html#Calling-a-Function-by-its-Name">Calling a Function by its Name</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Evaluation.html#Evaluation">Evaluation</a>
 <hr>
@@ -48,7 +49,7 @@ which is similar to using a pointer in programming languages such
 as C.
 
    <p>Consider how you might write <code>save</code> and <code>load</code> as
-m-files.  For example,
+m-files.  For example:
 
 <pre class="example">     function create_data
        x = linspace (0, 10, 10);
@@ -98,28 +99,27 @@ the given pattern.  Other examples such as <code>save</code> and <code>load</cod
 are written in C++ where all Octave variables
 are in the &lsquo;<samp><span class="samp">caller</span></samp>&rsquo; context and <code>evalin</code> is not needed.
 
-<!-- parse.cc -->
+<!-- evalin src/oct-parse.cc -->
    <p><a name="doc_002devalin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>evalin</b> (<var>context, try, catch</var>)<var><a name="index-evalin-552"></a></var><br>
+&mdash; Built-in Function:  <b>evalin</b> (<var>context, try, catch</var>)<var><a name="index-evalin-641"></a></var><br>
 <blockquote><p>Like <code>eval</code>, except that the expressions are evaluated in the
 context <var>context</var>, which may be either <code>"caller"</code> or
 <code>"base"</code>. 
 </p></blockquote></div>
 
-<!-- parse.cc -->
+<!-- assignin src/oct-parse.cc -->
    <p><a name="doc_002dassignin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>assignin</b> (<var>context, varname, value</var>)<var><a name="index-assignin-553"></a></var><br>
+&mdash; Built-in Function:  <b>assignin</b> (<var>context, varname, value</var>)<var><a name="index-assignin-642"></a></var><br>
 <blockquote><p>Assign <var>value</var> to <var>varname</var> in context <var>context</var>, which
 may be either <code>"base"</code> or <code>"caller"</code>. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 1999, 2000, 2002, 2003, 2004, 2007, 2008, 2009 -->
-<!-- John W. Eaton -->
+<!-- Copyright (C) 1996-2011 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

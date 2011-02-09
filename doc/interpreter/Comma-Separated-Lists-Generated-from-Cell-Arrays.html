@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Comma Separated Lists Generated from Cell Arrays - Untitled</title>
+<title>Comma Separated Lists Generated from Cell Arrays - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Comma-Separated-Lists.html#Comma-Separated-Lists" title="Comma Separated Lists">
 <link rel="next" href="Comma-Separated-Lists-Generated-from-Structure-Arrays.html#Comma-Separated-Lists-Generated-from-Structure-Arrays" title="Comma Separated Lists Generated from Structure Arrays">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Comma-Separated-Lists-Generated-from-Cell-Arrays"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Comma-Separated-Lists-Generated-from-Structure-Arrays.html#Comma-Separated-Lists-Generated-from-Structure-Arrays">Comma Separated Lists Generated from Structure Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Comma-Separated-Lists.html#Comma-Separated-Lists">Comma Separated Lists</a>
 <hr>
@@ -34,12 +35,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Comma-Separated-Lists.html#Comma-Separa
 
 <p>As has been mentioned above (see <a href="Indexing-Cell-Arrays.html#Indexing-Cell-Arrays">Indexing Cell Arrays</a>), elements
 of a cell array can be extracted into a comma separated list with the
-<code>{</code> and <code>}</code> operators. By surrounding this list with
-<code>[</code> and <code>]</code>, it can be concatenated into an array. For example:
+<code>{</code> and <code>}</code> operators.  By surrounding this list with
+<code>[</code> and <code>]</code>, it can be concatenated into an array.  For example:
 
 <pre class="example">     a = {1, [2, 3], 4, 5, 6};
      b = [a{1:4}]
-           b =
+          &rArr; b =
               1   2   3   4
 </pre>
    <p>Similarly, it is possible to create a new cell array containing cell
@@ -49,7 +50,7 @@ following example illustrates:
 
 <pre class="example">     a = {1, rand(2, 2), "three"};
      b = { a{ [1, 3] } }
-           b =
+          &rArr; b =
               {
                 [1,1] =  1
                 [1,2] = three
@@ -78,7 +79,7 @@ generated with <code>{}</code> can be assigned to.  An example is
      out = cell (4, 1);
      [out{1:3}] = find (in{1 : 3});
      [out{4:6}] = find (in{[1, 2, 4]})
-           out =
+          &rArr; out =
              {
                [1,1] = 1
                [2,1] = 9

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Opening and Closing Files - Untitled</title>
+<title>Opening and Closing Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions" title="C-Style I/O Functions">
 <link rel="next" href="Simple-Output.html#Simple-Output" title="Simple Output">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Opening-and-Closing-Files"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Simple-Output.html#Simple-Output">Simple Output</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions">C-Style I/O Functions</a>
 <hr>
@@ -45,13 +46,13 @@ used when reading a file.
      # Do the actual I/O here...
      fclose (fid);
 </pre>
-   <!-- file-io.cc -->
+   <!-- fopen src/file-io.cc -->
    <p><a name="doc_002dfopen"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>fopen</b> (<var>name, mode, arch</var>)<var><a name="index-fopen-773"></a></var><br>
-&mdash; Built-in Function: <var>fid_list</var> = <b>fopen</b> (<var>"all"</var>)<var><a name="index-fopen-774"></a></var><br>
-&mdash; Built-in Function: [<var>file</var>, <var>mode</var>, <var>arch</var>] = <b>fopen</b> (<var>fid</var>)<var><a name="index-fopen-775"></a></var><br>
+&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>fopen</b> (<var>name, mode, arch</var>)<var><a name="index-fopen-872"></a></var><br>
+&mdash; Built-in Function: <var>fid_list</var> = <b>fopen</b> (<var>"all"</var>)<var><a name="index-fopen-873"></a></var><br>
+&mdash; Built-in Function: [<var>file</var>, <var>mode</var>, <var>arch</var>] = <b>fopen</b> (<var>fid</var>)<var><a name="index-fopen-874"></a></var><br>
 <blockquote><p>The first form of the <code>fopen</code> function opens the named file with
 the specified mode (read-write, read-only, etc.) and architecture
 interpretation (IEEE big endian, IEEE little endian, etc.), and returns
@@ -143,18 +144,31 @@ Cray floating format.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dfclose.html#doc_002dfclose">fclose</a>, <a href="doc_002dfgets.html#doc_002dfgets">fgets</a>, <a href="doc_002dfputs.html#doc_002dfputs">fputs</a>, <a href="doc_002dfread.html#doc_002dfread">fread</a>, <a href="doc_002dfseek.html#doc_002dfseek">fseek</a>, <a href="doc_002dferror.html#doc_002dferror">ferror</a>, <a href="doc_002dfprintf.html#doc_002dfprintf">fprintf</a>, <a href="doc_002dfscanf.html#doc_002dfscanf">fscanf</a>, <a href="doc_002dftell.html#doc_002dftell">ftell</a>, <a href="doc_002dfwrite.html#doc_002dfwrite">fwrite</a>. 
 </p></blockquote></div>
 
-<!-- file-io.cc -->
+<!-- fclose src/file-io.cc -->
    <p><a name="doc_002dfclose"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fclose</b> (<var>fid</var>)<var><a name="index-fclose-776"></a></var><br>
-<blockquote><p>Closes the specified file.  If successful, <code>fclose</code> returns 0,
+&mdash; Built-in Function:  <b>fclose</b> (<var>fid</var>)<var><a name="index-fclose-875"></a></var><br>
+<blockquote><p>Close the specified file.  If successful, <code>fclose</code> returns 0,
 otherwise, it returns -1. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dfopen.html#doc_002dfopen">fopen</a>, <a href="doc_002dfseek.html#doc_002dfseek">fseek</a>, <a href="doc_002dftell.html#doc_002dftell">ftell</a>. 
+</p></blockquote></div>
+
+<!-- is_valid_file_id scripts/io/is_valid_file_id.m -->
+   <p><a name="doc_002dis_005fvalid_005ffile_005fid"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>is_valid_file_id</b> (<var>fid</var>)<var><a name="index-is_005fvalid_005ffile_005fid-876"></a></var><br>
+<blockquote><p>Return true if <var>fid</var> refers to an open file. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfopen.html#doc_002dfopen">fopen</a>. 
 </p></blockquote></div>
 
    </body></html>

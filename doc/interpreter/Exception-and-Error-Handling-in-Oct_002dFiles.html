@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Exception and Error Handling in Oct-Files - Untitled</title>
+<title>Exception and Error Handling in Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Input-Parameter-Checking-in-Oct_002dFiles.html#Input-Parameter-Checking-in-Oct_002dFiles" title="Input Parameter Checking in Oct-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Exception-and-Error-Handling-in-Oct-Files"></a>
 <a name="Exception-and-Error-Handling-in-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Documentation-and-Test-of-Oct_002dFiles.html#Documentation-and-Test-of-Oct_002dFiles">Documentation and Test of Oct-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Input-Parameter-Checking-in-Oct_002dFiles.html#Input-Parameter-Checking-in-Oct_002dFiles">Input Parameter Checking in Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
@@ -40,7 +41,7 @@ typing <kbd>Control-C</kbd> even during calculations.  This ability is based on 
 C++ exception handler, where memory allocated by the C++ new/delete
 methods are automatically released when the exception is treated.  When
 writing an oct-file, to allow Octave to treat the user typing <kbd>Control-C</kbd>,
-the <code>OCTAVE_QUIT</code><!-- /@w --> macro is supplied.  For example
+the <code>OCTAVE_QUIT</code><!-- /@w --> macro is supplied.  For example:
 
 <pre class="example">     for (octave_idx_type i = 0; i &lt; a.nelem (); i++)
        {
@@ -48,19 +49,19 @@ the <code>OCTAVE_QUIT</code><!-- /@w --> macro is supplied.  For example
          b.elem(i) = 2. * a.elem(i);
        }
 </pre>
-   <p>The presence of the <code>OCTAVE_QUIT</code><!-- /@w --> macro in the inner loop allows Octave to
-treat the user request with the <kbd>Control-C</kbd>.  Without this macro, the user
-must either wait for the function to return before the interrupt is
+   <p>The presence of the <code>OCTAVE_QUIT</code><!-- /@w --> macro in the inner loop allows
+Octave to treat the user request with the <kbd>Control-C</kbd>.  Without this macro,
+the user must either wait for the function to return before the interrupt is
 processed, or press <kbd>Control-C</kbd> three times to force Octave to exit.
 
-   <p>The <code>OCTAVE_QUIT</code><!-- /@w --> macro does impose a very small speed penalty, and so for
-loops that are known to be small it might not make sense to include
+   <p>The <code>OCTAVE_QUIT</code><!-- /@w --> macro does impose a very small speed penalty, and so
+for loops that are known to be small it might not make sense to include
 <code>OCTAVE_QUIT</code><!-- /@w -->.
 
    <p>When creating an oct-file that uses an external libraries, the function
 might spend a significant portion of its time in the external
-library.  It is not generally possible to use the <code>OCTAVE_QUIT</code><!-- /@w --> macro in
-this case.  The alternative in this case is
+library.  It is not generally possible to use the <code>OCTAVE_QUIT</code><!-- /@w --> macro
+in this case.  The alternative in this case is
 
 <pre class="example">     BEGIN_INTERRUPT_IMMEDIATELY_IN_FOREIGN_CODE;
      ...  some code that calls a "foreign" function ...
@@ -101,8 +102,7 @@ example of the use of this mechanism is
            if (! error_state)
              {
                unwind_protect::begin_frame ("Funwinddemo");
-               unwind_protect_ptr 
-     	    (current_liboctave_warning_handler);
+               unwind_protect_ptr (current_liboctave_warning_handler);
                set_liboctave_warning_handler(err_hand);
                retval = octave_value (quotient (a, b));
                unwind_protect::run_frame ("Funwinddemo");
@@ -110,13 +110,15 @@ example of the use of this mechanism is
          }
        return retval;
      }
-</pre></pre>
-   <p>As can be seen in the example
+</pre>
+     
+</pre>
+   <p>As can be seen in the example:
 
 <pre class="example">     unwinddemo (1, 0)
-      Inf
+     &rArr; Inf
      1 / 0
-      warning: division by zero
+     &rArr; warning: division by zero
         Inf
 </pre>
    <p>The division by zero (and in fact all warnings) is disabled in the

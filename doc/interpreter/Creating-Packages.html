@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Creating Packages - Untitled</title>
+<title>Creating Packages - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Packages.html#Packages" title="Packages">
 <link rel="prev" href="Administrating-Packages.html#Administrating-Packages" title="Administrating Packages">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Creating-Packages"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Administrating-Packages.html#Administrating-Packages">Administrating Packages</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Packages.html#Packages">Packages</a>
 <hr>
@@ -51,7 +52,7 @@ compatible with the GNU General Public License.
 package.  If this file is not given then one with be created
 automatically from the functions in the package and the
 <code>Categories</code> keyword in the <code>DESCRIPTION</code> file. 
-See <a href="The-INDEX-file.html#The-INDEX-file">The INDEX file</a>, for details on this file.
+See <a href="The-INDEX-File.html#The-INDEX-File">The INDEX File</a>, for details on this file.
 
      <p><a name="doc_002dPKG_005fADD"></a><br><dt><code>package/PKG_ADD</code><dd>An optional file that includes commands that are run when the package
 is added to the users path.  Note that <code>PKG_ADD</code><!-- /@w --> directives in the
@@ -66,14 +67,14 @@ a typical use for this file is the replacement of the symbolic link
 
      <pre class="example">          autoload ('bar', which ('foo'));
 </pre>
-     <p class="noindent">See <a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>, for details on <code>PKG_ADD</code><!-- /@w -->
+     <p class="noindent">See <a href="PKG_005fADD-and-PKG_005fDEL-Directives.html#PKG_005fADD-and-PKG_005fDEL-Directives">PKG_ADD and PKG_DEL Directives</a>, for details on <code>PKG_ADD</code><!-- /@w -->
 directives.
 
      <br><dt><code>package/PKG_DEL</code><dd>An optional file that includes commands that are run when the package
 is removed from the users path.  Note that <code>PKG_DEL</code><!-- /@w --> directives in
 the source code of the package will also be added to this file by the
 Octave package manager. 
-See <a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>, for details on <code>PKG_DEL</code><!-- /@w -->
+See <a href="PKG_005fADD-and-PKG_005fDEL-Directives.html#PKG_005fADD-and-PKG_005fDEL-Directives">PKG_ADD and PKG_DEL Directives</a>, for details on <code>PKG_DEL</code><!-- /@w -->
 directives.
 
      <br><dt><code>package/pre_install.m</code><dd>This is an optional script that is run prior to the installation of a
@@ -98,25 +99,29 @@ by the package.  Typically this will include any <code>m</code>-files.
 packages installation.  The Octave package manager will execute
 <samp><span class="file">./configure</span></samp> in this directory if this script exists, and will
 then call <code>make</code> if a file <samp><span class="file">Makefile</span></samp> exists in this
-directory.  <code>make install</code> will however not be called.  If a file
-called <code>FILES</code> exists all files listed there will be copied to the
-<code>inst</code> directory, so they also will be installed.  If the
-<code>FILES</code> file doesn't exist, <samp><span class="file">src/*.m</span></samp> and <samp><span class="file">src/*.oct</span></samp>
-will be copied to the <code>inst</code> directory.
+directory.  <code>make install</code> will however not be called.  The
+environment variables <samp><span class="env">MKOCTFILE</span></samp>, <samp><span class="env">OCTAVE_CONFIG</span></samp><!-- /@w -->, and
+<samp><span class="env">OCTAVE</span></samp> will be set to the full paths of the programs
+<code>mkoctfile</code>, <code>octave-config</code>, and <code>octave</code>, respectively,
+of the correct version when <code>configure</code> and <code>make</code> are
+called.  If a file called <code>FILES</code> exists all files listed there
+will be copied to the <code>inst</code> directory, so they also will be
+installed.  If the <code>FILES</code> file doesn't exist, <samp><span class="file">src/*.m</span></samp> and
+<samp><span class="file">src/*.oct</span></samp> will be copied to the <code>inst</code> directory.
 
      <br><dt><code>package/doc</code><dd>An optional directory containing documentation for the package.  The
 files in this directory will be directly installed in a sub-directory
 of the installed package for future reference.
 
      <br><dt><code>package/bin</code><dd>An optional directory containing files that will be added to the
-Octave <code>EXEC_PATH</code><!-- /@w --> when the package is loaded.  This might contain
+Octave <samp><span class="env">EXEC_PATH</span></samp><!-- /@w --> when the package is loaded.  This might contain
 external scripts, etc., called by functions within the package. 
 </dl>
 
 <ul class="menu">
 <li><a accesskey="1" href="The-DESCRIPTION-File.html#The-DESCRIPTION-File">The DESCRIPTION File</a>
-<li><a accesskey="2" href="The-INDEX-file.html#The-INDEX-file">The INDEX file</a>
-<li><a accesskey="3" href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>
+<li><a accesskey="2" href="The-INDEX-File.html#The-INDEX-File">The INDEX File</a>
+<li><a accesskey="3" href="PKG_005fADD-and-PKG_005fDEL-Directives.html#PKG_005fADD-and-PKG_005fDEL-Directives">PKG_ADD and PKG_DEL Directives</a>
 </ul>
 
    </body></html>

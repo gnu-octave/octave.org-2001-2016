@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Logical Values - Untitled</title>
+<title>Logical Values - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numeric-Data-Types.html#Numeric-Data-Types" title="Numeric Data Types">
 <link rel="prev" href="Bit-Manipulations.html#Bit-Manipulations" title="Bit Manipulations">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Logical-Values"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Promotion-and-Demotion-of-Data-Types.html#Promotion-and-Demotion-of-Data-Types">Promotion and Demotion of Data Types</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Bit-Manipulations.html#Bit-Manipulations">Bit Manipulations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>
@@ -56,50 +57,64 @@ The following example illustrates this.
 <pre class="example">     data = [ 1, 2; 3, 4 ];
      idx = (data &lt;= 2);
      data(idx)
-           ans = [ 1; 2 ]
+          &rArr; ans = [ 1; 2 ]
 </pre>
    <p class="noindent">Instead of creating the <code>idx</code> array it is possible to replace
-<code>data(idx)</code> with <code>data( data &lt;= 2 )</code> in the above code.
+<code>data(idx)</code> with <code>data(&nbsp;data&nbsp;&lt;=&nbsp;2&nbsp;)</code><!-- /@w --> in the above code.
 
    <p>Logical values can also be constructed by
 casting numeric objects to logical values, or by using the <code>true</code>
 or <code>false</code> functions.
 
-<!-- ./general/logical.m -->
+<!-- logical src/ov-bool-mat.cc -->
    <p><a name="doc_002dlogical"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logical</b> (<var>arg</var>)<var><a name="index-logical-260"></a></var><br>
-<blockquote><p>Convert <var>arg</var> to a logical value.  For example,
+&mdash; Built-in Function:  <b>logical</b> (<var>x</var>)<var><a name="index-logical-267"></a></var><br>
+<blockquote><p>Convert <var>x</var> to logical type. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
 
-     <pre class="example">          logical ([-1, 0, 1])
-</pre>
-        <p class="noindent">is equivalent to
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddouble.html#doc_002ddouble">double</a>, <a href="doc_002dsingle.html#doc_002dsingle">single</a>, <a href="doc_002dchar.html#doc_002dchar">char</a>. 
+</p></blockquote></div>
 
-     <pre class="example">          [-1, 0, 1] != 0
-</pre>
-        </blockquote></div>
-
-<!-- data.cc -->
+<!-- true src/data.cc -->
    <p><a name="doc_002dtrue"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>true</b> (<var>x</var>)<var><a name="index-true-261"></a></var><br>
-&mdash; Built-in Function:  <b>true</b> (<var>n, m</var>)<var><a name="index-true-262"></a></var><br>
-&mdash; Built-in Function:  <b>true</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-true-263"></a></var><br>
+&mdash; Built-in Function:  <b>true</b> (<var>x</var>)<var><a name="index-true-268"></a></var><br>
+&mdash; Built-in Function:  <b>true</b> (<var>n, m</var>)<var><a name="index-true-269"></a></var><br>
+&mdash; Built-in Function:  <b>true</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-true-270"></a></var><br>
 <blockquote><p>Return a matrix or N-dimensional array whose elements are all logical 1. 
-The arguments are handled the same as the arguments for <code>eye</code>. 
+If invoked with a single scalar integer argument, return a square
+matrix of the specified size.  If invoked with two or more scalar
+integer arguments, or a vector of integer values, return an array with
+given dimensions. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfalse.html#doc_002dfalse">false</a>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- false src/data.cc -->
    <p><a name="doc_002dfalse"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>false</b> (<var>x</var>)<var><a name="index-false-264"></a></var><br>
-&mdash; Built-in Function:  <b>false</b> (<var>n, m</var>)<var><a name="index-false-265"></a></var><br>
-&mdash; Built-in Function:  <b>false</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-false-266"></a></var><br>
+&mdash; Built-in Function:  <b>false</b> (<var>x</var>)<var><a name="index-false-271"></a></var><br>
+&mdash; Built-in Function:  <b>false</b> (<var>n, m</var>)<var><a name="index-false-272"></a></var><br>
+&mdash; Built-in Function:  <b>false</b> (<var>n, m, k, <small class="dots">...</small></var>)<var><a name="index-false-273"></a></var><br>
 <blockquote><p>Return a matrix or N-dimensional array whose elements are all logical 0. 
-The arguments are handled the same as the arguments for <code>eye</code>. 
+If invoked with a single scalar integer argument, return a square
+matrix of the specified size.  If invoked with two or more scalar
+integer arguments, or a vector of integer values, return an array with
+given dimensions. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dtrue.html#doc_002dtrue">true</a>. 
 </p></blockquote></div>
 
    </body></html>

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Structures with Mex-Files - Untitled</title>
+<title>Structures with Mex-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
 <link rel="prev" href="Cell-Arrays-with-Mex_002dFiles.html#Cell-Arrays-with-Mex_002dFiles" title="Cell Arrays with Mex-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Structures-with-Mex-Files"></a>
 <a name="Structures-with-Mex_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Sparse-Matrices-with-Mex_002dFiles.html#Sparse-Matrices-with-Mex_002dFiles">Sparse Matrices with Mex-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Cell-Arrays-with-Mex_002dFiles.html#Cell-Arrays-with-Mex_002dFiles">Cell Arrays with Mex-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>
@@ -72,7 +73,7 @@ found in the file <samp><span class="file">mystruct.c</span></samp>, as seen bel
      
      void
      mexFunction (int nlhs, mxArray* plhs[], int nrhs, 
-     	     const mxArray* prhs[])
+                  const mxArray* prhs[])
      {
        int i;
        mwIndex j;
@@ -105,13 +106,15 @@ found in the file <samp><span class="file">mystruct.c</span></samp>, as seen bel
        if (nlhs)
          plhs[0] = v;
      }
-</pre></pre>
+</pre>
+     
+</pre>
    <p>An example of the behavior of this function within Octave is then
 
 <pre class="example">     a(1).f1 = "f11"; a(1).f2 = "f12";
      a(2).f1 = "f21"; a(2).f2 = "f22";
      b = mystruct(a)
-      field f1(0) = f11
+     &rArr; field f1(0) = f11
          field f1(1) = f21
          field f2(0) = f12
          field f2(1) = f22

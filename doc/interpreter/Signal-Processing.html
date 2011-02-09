@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Signal Processing - Untitled</title>
+<title>Signal Processing - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Geometry.html#Geometry" title="Geometry">
 <link rel="next" href="Image-Processing.html#Image-Processing" title="Image Processing">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Signal-Processing"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Image-Processing.html#Image-Processing">Image Processing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Geometry.html#Geometry">Geometry</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
@@ -38,11 +39,11 @@ transform functions available in Octave.  Fast Fourier transforms are
 computed with the <span class="sc">fftw</span> or <span class="sc">fftpack</span> libraries depending on how
 Octave is built.
 
-<!-- ./signal/detrend.m -->
+<!-- detrend scripts/signal/detrend.m -->
    <p><a name="doc_002ddetrend"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>detrend</b> (<var>x, p</var>)<var><a name="index-detrend-2122"></a></var><br>
+&mdash; Function File:  <b>detrend</b> (<var>x, p</var>)<var><a name="index-detrend-2475"></a></var><br>
 <blockquote><p>If <var>x</var> is a vector, <code>detrend (</code><var>x</var><code>, </code><var>p</var><code>)</code> removes the
 best fit of a polynomial of order <var>p</var> from the data <var>x</var>.
 
@@ -50,26 +51,39 @@ best fit of a polynomial of order <var>p</var> from the data <var>x</var>.
 for each column in <var>x</var>.
 
         <p>The second argument is optional.  If it is not specified, a value of 1
-is assumed.  This corresponds to removing a linear trend. 
+is assumed.  This corresponds to removing a linear trend.
+
+        <p>The order of the polynomial can also be given as a string, in which case
+<var>p</var> must be either <tt>"constant"</tt> (corresponds to <var>p</var><code>=0</code>) or
+<tt>"linear"</tt> (corresponds to <var>p</var><code>=1</code>). 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyfit.html#doc_002dpolyfit">polyfit</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/fft.cc -->
+<!-- fft src/DLD-FUNCTIONS/fft.cc -->
    <p><a name="doc_002dfft"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>fft</b> (<var>a, n, dim</var>)<var><a name="index-fft-2123"></a></var><br>
-<blockquote><p>Compute the FFT of <var>a</var> using subroutines from
-<span class="sc">fftw</span>.  The FFT is calculated along the first non-singleton dimension of the
-array.  Thus if <var>a</var> is a matrix, <code>fft (</code><var>a</var><code>)</code> computes the
-FFT for each column of <var>a</var>.
+&mdash; Loadable Function:  <b>fft</b> (<var>x</var>)<var><a name="index-fft-2476"></a></var><br>
+&mdash; Loadable Function:  <b>fft</b> (<var>x, n</var>)<var><a name="index-fft-2477"></a></var><br>
+&mdash; Loadable Function:  <b>fft</b> (<var>x, n, dim</var>)<var><a name="index-fft-2478"></a></var><br>
+<blockquote><p>Compute the discrete Fourier transform of <var>A</var> using
+a Fast Fourier Transform (FFT) algorithm.
+
+        <p>The FFT is calculated along the first non-singleton dimension of the
+array.  Thus if <var>x</var> is a matrix, <code>fft (</code><var>x</var><code>)</code> computes the
+FFT for each column of <var>x</var>.
 
         <p>If called with two arguments, <var>n</var> is expected to be an integer
-specifying the number of elements of <var>a</var> to use, or an empty
+specifying the number of elements of <var>x</var> to use, or an empty
 matrix to specify that its value should be ignored.  If <var>n</var> is
 larger than the dimension along which the FFT is calculated, then
-<var>a</var> is resized and padded with zeros.  Otherwise, if <var>n</var> is
+<var>x</var> is resized and padded with zeros.  Otherwise, if <var>n</var> is
 smaller than the dimension along which the FFT is calculated, then
-<var>a</var> is truncated.
+<var>x</var> is truncated.
 
         <p>If called with three arguments, <var>dim</var> is an integer specifying the
 dimension of the matrix along which the FFT is performed
@@ -92,40 +106,40 @@ utilities provided together with the <span class="sc">fftw</span> libraries
 (<samp><span class="command">fftw-wisdom</span></samp> on Unix systems), you can even add wisdom
 generated by Octave to the system-wide wisdom file.
 
-<!-- ./DLD-FUNCTIONS/fftw.cc -->
+<!-- fftw src/DLD-FUNCTIONS/fftw.cc -->
    <p><a name="doc_002dfftw"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>method</var> = <b>fftw</b> (<var>'planner'</var>)<var><a name="index-fftw-2124"></a></var><br>
-&mdash; Loadable Function:  <b>fftw</b> (<var>'planner', method</var>)<var><a name="index-fftw-2125"></a></var><br>
-&mdash; Loadable Function: <var>wisdom</var> = <b>fftw</b> (<var>'dwisdom'</var>)<var><a name="index-fftw-2126"></a></var><br>
-&mdash; Loadable Function: <var>wisdom</var> = <b>fftw</b> (<var>'dwisdom', wisdom</var>)<var><a name="index-fftw-2127"></a></var><br>
+&mdash; Loadable Function: <var>method</var> = <b>fftw</b> (<var>'planner'</var>)<var><a name="index-fftw-2479"></a></var><br>
+&mdash; Loadable Function:  <b>fftw</b> (<var>'planner', method</var>)<var><a name="index-fftw-2480"></a></var><br>
+&mdash; Loadable Function: <var>wisdom</var> = <b>fftw</b> (<var>'dwisdom'</var>)<var><a name="index-fftw-2481"></a></var><br>
+&mdash; Loadable Function:  <b>fftw</b> (<var>'dwisdom', wisdom</var>)<var><a name="index-fftw-2482"></a></var><br>
 <blockquote>
         <p>Manage <span class="sc">fftw</span> wisdom data.  Wisdom data can be used to significantly
-accelerate the calculation of the FFTs but implies an initial cost
+accelerate the calculation of the FFTs, but implies an initial cost
 in its calculation.  When the <span class="sc">fftw</span> libraries are initialized, they read
-a system wide wisdom file (typically in <samp><span class="file">/etc/fftw/wisdom</span></samp>), allowing wisdom
-to be shared between applications other than Octave.  Alternatively, the
-<code>fftw</code> function can be used to import wisdom.  For example
+a system wide wisdom file (typically in <samp><span class="file">/etc/fftw/wisdom</span></samp>), allowing
+wisdom to be shared between applications other than Octave.  Alternatively,
+the <code>fftw</code> function can be used to import wisdom.  For example,
 
      <pre class="example">          <var>wisdom</var> = fftw ('dwisdom')
 </pre>
-        <p>will save the existing wisdom used by Octave to the string <var>wisdom</var>. 
+        <p class="noindent">will save the existing wisdom used by Octave to the string <var>wisdom</var>. 
 This string can then be saved to a file and restored using the <code>save</code>
-and <code>load</code> commands respectively.  This existing wisdom can be reimported
-as follows
+and <code>load</code> commands respectively.  This existing wisdom can be
+reimported as follows
 
      <pre class="example">          fftw ('dwisdom', <var>wisdom</var>)
 </pre>
         <p>If <var>wisdom</var> is an empty matrix, then the wisdom used is cleared.
 
         <p>During the calculation of Fourier transforms further wisdom is generated. 
-The fashion in which this wisdom is generated is equally controlled by
+The fashion in which this wisdom is generated is also controlled by
 the <code>fftw</code> function.  There are five different manners in which the
-wisdom can be treated, these being
+wisdom can be treated:
 
           <dl>
-<dt>'estimate'<dd>This specifies that no run-time measurement of the optimal means of
+<dt>'estimate'<dd>Specifies that no run-time measurement of the optimal means of
 calculating a particular is performed, and a simple heuristic is used
 to pick a (probably sub-optimal) plan.  The advantage of this method is
 that there is little or no overhead in the generation of the plan, which
@@ -134,9 +148,9 @@ is appropriate for a Fourier transform that will be calculated once.
           <br><dt>'measure'<dd>In this case a range of algorithms to perform the transform is considered
 and the best is selected based on their execution time.
 
-          <br><dt>'patient'<dd>This is like 'measure', but a wider range of algorithms is considered.
+          <br><dt>'patient'<dd>Similar to 'measure', but a wider range of algorithms is considered.
 
-          <br><dt>'exhaustive'<dd>This is like 'measure', but all possible algorithms that may be used to
+          <br><dt>'exhaustive'<dd>Like 'measure', but all possible algorithms that may be used to
 treat the transform are considered.
 
           <br><dt>'hybrid'<dd>As run-time measurement of the algorithm can be expensive, this is a
@@ -144,12 +158,12 @@ compromise where 'measure' is used for transforms up to the size of 8192
 and beyond that the 'estimate' method is used. 
 </dl>
 
-        <p>The default method is 'estimate', and the method currently being used can
-be probed with
+        <p>The default method is 'estimate'.  The current method can
+be queried with
 
      <pre class="example">          <var>method</var> = fftw ('planner')
 </pre>
-        <p>and the method used can be set using
+        <p class="noindent">or set by using
 
      <pre class="example">          fftw ('planner', <var>method</var>)
 </pre>
@@ -164,23 +178,27 @@ they will not be efficient and the point of calculating the wisdom is lost.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dfft.html#doc_002dfft">fft</a>, <a href="doc_002difft.html#doc_002difft">ifft</a>, <a href="doc_002dfft2.html#doc_002dfft2">fft2</a>, <a href="doc_002difft2.html#doc_002difft2">ifft2</a>, <a href="doc_002dfftn.html#doc_002dfftn">fftn</a>, <a href="doc_002difftn.html#doc_002difftn">ifftn</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/fft.cc -->
+<!-- ifft src/DLD-FUNCTIONS/fft.cc -->
    <p><a name="doc_002difft"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>ifft</b> (<var>a, n, dim</var>)<var><a name="index-ifft-2128"></a></var><br>
-<blockquote><p>Compute the inverse FFT of <var>a</var> using subroutines from
-<span class="sc">fftw</span>.  The inverse FFT is calculated along the first non-singleton dimension
-of the array.  Thus if <var>a</var> is a matrix, <code>fft (</code><var>a</var><code>)</code> computes
-the inverse FFT for each column of <var>a</var>.
+&mdash; Loadable Function:  <b>ifft</b> (<var>x</var>)<var><a name="index-ifft-2483"></a></var><br>
+&mdash; Loadable Function:  <b>ifft</b> (<var>x, n</var>)<var><a name="index-ifft-2484"></a></var><br>
+&mdash; Loadable Function:  <b>ifft</b> (<var>x, n, dim</var>)<var><a name="index-ifft-2485"></a></var><br>
+<blockquote><p>Compute the inverse discrete Fourier transform of <var>A</var>
+using a Fast Fourier Transform (FFT) algorithm.
+
+        <p>The inverse FFT is calculated along the first non-singleton dimension
+of the array.  Thus if <var>x</var> is a matrix, <code>fft (</code><var>x</var><code>)</code> computes
+the inverse FFT for each column of <var>x</var>.
 
         <p>If called with two arguments, <var>n</var> is expected to be an integer
-specifying the number of elements of <var>a</var> to use, or an empty
+specifying the number of elements of <var>x</var> to use, or an empty
 matrix to specify that its value should be ignored.  If <var>n</var> is
 larger than the dimension along which the inverse FFT is calculated, then
-<var>a</var> is resized and padded with zeros.  Otherwise, if<var>n</var> is
+<var>x</var> is resized and padded with zeros.  Otherwise, if <var>n</var> is
 smaller than the dimension along which the inverse FFT is calculated,
-then <var>a</var> is truncated.
+then <var>x</var> is truncated.
 
         <p>If called with three arguments, <var>dim</var> is an integer specifying the
 dimension of the matrix along which the inverse FFT is performed
@@ -191,19 +209,22 @@ dimension of the matrix along which the inverse FFT is performed
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dfft.html#doc_002dfft">fft</a>, <a href="doc_002difft2.html#doc_002difft2">ifft2</a>, <a href="doc_002difftn.html#doc_002difftn">ifftn</a>, <a href="doc_002dfftw.html#doc_002dfftw">fftw</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/fft2.cc -->
+<!-- fft2 src/DLD-FUNCTIONS/fft2.cc -->
    <p><a name="doc_002dfft2"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>fft2</b> (<var>a, n, m</var>)<var><a name="index-fft2-2129"></a></var><br>
-<blockquote><p>Compute the two-dimensional FFT of <var>a</var> using subroutines from
-<span class="sc">fftw</span>.  The optional arguments <var>n</var> and <var>m</var> may be used specify the
-number of rows and columns of <var>a</var> to use.  If either of these is
-larger than the size of <var>a</var>, <var>a</var> is resized and padded with
+&mdash; Loadable Function:  <b>fft2</b> (<var>A</var>)<var><a name="index-fft2-2486"></a></var><br>
+&mdash; Loadable Function:  <b>fft2</b> (<var>A, m, n</var>)<var><a name="index-fft2-2487"></a></var><br>
+<blockquote><p>Compute the two-dimensional discrete Fourier transform of <var>A</var> using
+a Fast Fourier Transform (FFT) algorithm.
+
+        <p>The optional arguments <var>m</var> and <var>n</var> may be used specify the
+number of rows and columns of <var>A</var> to use.  If either of these is
+larger than the size of <var>A</var>, <var>A</var> is resized and padded with
 zeros.
 
-        <p>If <var>a</var> is a multi-dimensional matrix, each two-dimensional sub-matrix
-of <var>a</var> is treated separately
+        <p>If <var>A</var> is a multi-dimensional matrix, each two-dimensional sub-matrix
+of <var>A</var> is treated separately. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -211,19 +232,22 @@ of <var>a</var> is treated separately
      <p class="noindent"><strong>See also:</strong> ifft2, fft, fftn, fftw. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/fft2.cc -->
+<!-- ifft2 src/DLD-FUNCTIONS/fft2.cc -->
    <p><a name="doc_002difft2"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>fft2</b> (<var>a, n, m</var>)<var><a name="index-fft2-2130"></a></var><br>
-<blockquote><p>Compute the inverse two-dimensional FFT of <var>a</var> using subroutines from
-<span class="sc">fftw</span>.  The optional arguments <var>n</var> and <var>m</var> may be used specify the
-number of rows and columns of <var>a</var> to use.  If either of these is
-larger than the size of <var>a</var>, <var>a</var> is resized and padded with
+&mdash; Loadable Function:  <b>ifft2</b> (<var>A</var>)<var><a name="index-ifft2-2488"></a></var><br>
+&mdash; Loadable Function:  <b>ifft2</b> (<var>A, m, n</var>)<var><a name="index-ifft2-2489"></a></var><br>
+<blockquote><p>Compute the inverse two-dimensional discrete Fourier transform of <var>A</var>
+using a Fast Fourier Transform (FFT) algorithm.
+
+        <p>The optional arguments <var>m</var> and <var>n</var> may be used specify the
+number of rows and columns of <var>A</var> to use.  If either of these is
+larger than the size of <var>A</var>, <var>A</var> is resized and padded with
 zeros.
 
-        <p>If <var>a</var> is a multi-dimensional matrix, each two-dimensional sub-matrix
-of <var>a</var> is treated separately
+        <p>If <var>A</var> is a multi-dimensional matrix, each two-dimensional sub-matrix
+of <var>A</var> is treated separately
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -231,63 +255,77 @@ of <var>a</var> is treated separately
      <p class="noindent"><strong>See also:</strong> fft2, ifft, ifftn, fftw. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/fftn.cc -->
+<!-- fftn src/DLD-FUNCTIONS/fftn.cc -->
    <p><a name="doc_002dfftn"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>fftn</b> (<var>a, size</var>)<var><a name="index-fftn-2131"></a></var><br>
-<blockquote><p>Compute the N-dimensional FFT of <var>a</var> using subroutines from
-<span class="sc">fftw</span>.  The optional vector argument <var>size</var> may be used specify the
+&mdash; Loadable Function:  <b>fftn</b> (<var>A</var>)<var><a name="index-fftn-2490"></a></var><br>
+&mdash; Loadable Function:  <b>fftn</b> (<var>A, size</var>)<var><a name="index-fftn-2491"></a></var><br>
+<blockquote><p>Compute the N-dimensional discrete Fourier transform of <var>A</var> using
+a Fast Fourier Transform (FFT) algorithm.
+
+        <p>The optional vector argument <var>size</var> may be used specify the
 dimensions of the array to be used.  If an element of <var>size</var> is
-smaller than the corresponding dimension, then the dimension is
-truncated prior to performing the FFT.  Otherwise if an element
-of <var>size</var> is larger than the corresponding dimension <var>a</var>
+smaller than the corresponding dimension of <var>A</var>, then the dimension of
+<var>A</var> is truncated prior to performing the FFT.  Otherwise, if an element
+of <var>size</var> is larger than the corresponding dimension then <var>A</var>
 is resized and padded with zeros. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> ifftn, fft, fft2, fftw. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002difftn.html#doc_002difftn">ifftn</a>, <a href="doc_002dfft.html#doc_002dfft">fft</a>, <a href="doc_002dfft2.html#doc_002dfft2">fft2</a>, <a href="doc_002dfftw.html#doc_002dfftw">fftw</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/fftn.cc -->
+<!-- ifftn src/DLD-FUNCTIONS/fftn.cc -->
    <p><a name="doc_002difftn"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>ifftn</b> (<var>a, size</var>)<var><a name="index-ifftn-2132"></a></var><br>
-<blockquote><p>Compute the inverse N-dimensional FFT of <var>a</var> using subroutines from
-<span class="sc">fftw</span>.  The optional vector argument <var>size</var> may be used specify the
+&mdash; Loadable Function:  <b>ifftn</b> (<var>A</var>)<var><a name="index-ifftn-2492"></a></var><br>
+&mdash; Loadable Function:  <b>ifftn</b> (<var>A, size</var>)<var><a name="index-ifftn-2493"></a></var><br>
+<blockquote><p>Compute the inverse N-dimensional discrete Fourier transform of <var>A</var>
+using a Fast Fourier Transform (FFT) algorithm.
+
+        <p>The optional vector argument <var>size</var> may be used specify the
 dimensions of the array to be used.  If an element of <var>size</var> is
-smaller than the corresponding dimension, then the dimension is
-truncated prior to performing the inverse FFT.  Otherwise if an element
-of <var>size</var> is larger than the corresponding dimension <var>a</var>
+smaller than the corresponding dimension of <var>A</var>, then the dimension of
+<var>A</var> is truncated prior to performing the inverse FFT.  Otherwise, if an
+element of <var>size</var> is larger than the corresponding dimension then <var>A</var>
 is resized and padded with zeros. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> fftn, ifft, ifft2, fftw. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfftn.html#doc_002dfftn">fftn</a>, <a href="doc_002difft.html#doc_002difft">ifft</a>, <a href="doc_002difft2.html#doc_002difft2">ifft2</a>, <a href="doc_002dfftw.html#doc_002dfftw">fftw</a>. 
 </p></blockquote></div>
 
-<!-- ./signal/fftconv.m -->
+<!-- fftconv scripts/signal/fftconv.m -->
    <p><a name="doc_002dfftconv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fftconv</b> (<var>a, b, n</var>)<var><a name="index-fftconv-2133"></a></var><br>
-<blockquote><p>Return the convolution of the vectors <var>a</var> and <var>b</var>, as a vector
-with length equal to the <code>length (a) + length (b) - 1</code>.  If <var>a</var>
-and <var>b</var> are the coefficient vectors of two polynomials, the returned
-value is the coefficient vector of the product polynomial.
+&mdash; Function File:  <b>fftconv</b> (<var>x, y</var>)<var><a name="index-fftconv-2494"></a></var><br>
+&mdash; Function File:  <b>fftconv</b> (<var>x, y, n</var>)<var><a name="index-fftconv-2495"></a></var><br>
+<blockquote><p>Convolve two vectors using the FFT for computation.
+
+        <p><code>c = fftconv (</code><var>x</var><code>, </code><var>y</var><code>)</code> returns a vector of length equal to
+<code>length (</code><var>x</var><code>) + length (</code><var>y</var><code>) - 1</code>. 
+If <var>x</var> and <var>y</var> are the coefficient vectors of two polynomials, the
+returned value is the coefficient vector of the product polynomial.
 
         <p>The computation uses the FFT by calling the function <code>fftfilt</code>.  If
 the optional argument <var>n</var> is specified, an N-point FFT is used. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002dconv2.html#doc_002dconv2">conv2</a>. 
 </p></blockquote></div>
 
-<!-- ./signal/fftfilt.m -->
+<!-- fftfilt scripts/signal/fftfilt.m -->
    <p><a name="doc_002dfftfilt"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fftfilt</b> (<var>b, x, n</var>)<var><a name="index-fftfilt-2134"></a></var><br>
+&mdash; Function File:  <b>fftfilt</b> (<var>b, x, n</var>)<var><a name="index-fftfilt-2496"></a></var><br>
 <blockquote>
         <p>With two arguments, <code>fftfilt</code> filters <var>x</var> with the FIR filter
 <var>b</var> using the FFT.
@@ -298,18 +336,18 @@ overlap-add method to filter <var>x</var> with <var>b</var> using an N-point FFT
         <p>If <var>x</var> is a matrix, filter each column of the matrix. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/filter.cc -->
+<!-- filter src/DLD-FUNCTIONS/filter.cc -->
    <p><a name="doc_002dfilter"></a>
 
 <div class="defun">
-&mdash; Loadable Function: y = <b>filter</b> (<var>b, a, x</var>)<var><a name="index-filter-2135"></a></var><br>
-&mdash; Loadable Function: [<var>y</var>, <var>sf</var>] = <b>filter</b> (<var>b, a, x, si</var>)<var><a name="index-filter-2136"></a></var><br>
-&mdash; Loadable Function: [<var>y</var>, <var>sf</var>] = <b>filter</b> (<var>b, a, x, </var>[]<var>, dim</var>)<var><a name="index-filter-2137"></a></var><br>
-&mdash; Loadable Function: [<var>y</var>, <var>sf</var>] = <b>filter</b> (<var>b, a, x, si, dim</var>)<var><a name="index-filter-2138"></a></var><br>
+&mdash; Loadable Function: y = <b>filter</b> (<var>b, a, x</var>)<var><a name="index-filter-2497"></a></var><br>
+&mdash; Loadable Function: [<var>y</var>, <var>sf</var>] = <b>filter</b> (<var>b, a, x, si</var>)<var><a name="index-filter-2498"></a></var><br>
+&mdash; Loadable Function: [<var>y</var>, <var>sf</var>] = <b>filter</b> (<var>b, a, x, </var>[]<var>, dim</var>)<var><a name="index-filter-2499"></a></var><br>
+&mdash; Loadable Function: [<var>y</var>, <var>sf</var>] = <b>filter</b> (<var>b, a, x, si, dim</var>)<var><a name="index-filter-2500"></a></var><br>
 <blockquote><p>Return the solution to the following linear, time-invariant difference
 equation:
+<!-- Set example in small font to prevent overfull line -->
 
-     <!-- Set example in small font to prevent overfull line -->
      <pre class="smallexample">             N                   M
             SUM a(k+1) y(n-k) = SUM b(k+1) x(n-k)      for 1&lt;=n&lt;=length(x)
             k=0                 k=0
@@ -318,8 +356,8 @@ equation:
  N=length(a)-1 and M=length(b)-1. 
 over the first non-singleton dimension of <var>x</var> or over <var>dim</var> if
 supplied.  An equivalent form of this equation is:
+<!-- Set example in small font to prevent overfull line -->
 
-     <!-- Set example in small font to prevent overfull line -->
      <pre class="smallexample">                      N                   M
             y(n) = - SUM c(k+1) y(n-k) + SUM d(k+1) x(n-k)  for 1&lt;=n&lt;=length(x)
                      k=1                 k=0
@@ -334,7 +372,7 @@ equal to the length of the longest coefficient vector minus one.
 If <var>si</var> is not supplied, the initial state vector is set to all
 zeros.
 
-        <p>In terms of the z-transform, y is the result of passing the discrete-
+        <p>In terms of the Z Transform, y is the result of passing the discrete-
 time signal x through a system characterized by the following rational
 system function:
 
@@ -346,22 +384,28 @@ system function:
                     1 + SUM c(k+1) z^(-k)
                         k=1
 </pre>
-        </blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfilter2.html#doc_002dfilter2">filter2</a>, <a href="doc_002dfftfilt.html#doc_002dfftfilt">fftfilt</a>, <a href="doc_002dfreqz.html#doc_002dfreqz">freqz</a>. 
+</p></blockquote></div>
 
-<!-- ./signal/filter2.m -->
+<!-- filter2 scripts/signal/filter2.m -->
    <p><a name="doc_002dfilter2"></a>
 
 <div class="defun">
-&mdash; Function File: <var>y</var> = <b>filter2</b> (<var>b, x</var>)<var><a name="index-filter2-2139"></a></var><br>
-&mdash; Function File: <var>y</var> = <b>filter2</b> (<var>b, x, shape</var>)<var><a name="index-filter2-2140"></a></var><br>
+&mdash; Function File: <var>y</var> = <b>filter2</b> (<var>b, x</var>)<var><a name="index-filter2-2501"></a></var><br>
+&mdash; Function File: <var>y</var> = <b>filter2</b> (<var>b, x, shape</var>)<var><a name="index-filter2-2502"></a></var><br>
 <blockquote><p>Apply the 2-D FIR filter <var>b</var> to <var>x</var>.  If the argument
 <var>shape</var> is specified, return an array of the desired shape. 
 Possible values are:
 
           <dl>
-<dt>'full'<dd>pad <var>x</var> with zeros on all sides before filtering. 
-<br><dt>'same'<dd>unpadded <var>x</var> (default)
-<br><dt>'valid'<dd>trim <var>x</var> after filtering so edge effects are no included. 
+<dt>'full'<dd>pad <var>x</var> with zeros on all sides before filtering.
+
+          <br><dt>'same'<dd>unpadded <var>x</var> (default)
+
+          <br><dt>'valid'<dd>trim <var>x</var> after filtering so edge effects are no included. 
 </dl>
 
         <p>Note this is just a variation on convolution, with the parameters
@@ -373,11 +417,11 @@ reversed and <var>b</var> rotated 180 degrees.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dconv2.html#doc_002dconv2">conv2</a>. 
 </p></blockquote></div>
 
-<!-- ./signal/freqz.m -->
+<!-- freqz scripts/signal/freqz.m -->
    <p><a name="doc_002dfreqz"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>h</var>, <var>w</var>] = <b>freqz</b> (<var>b, a, n, "whole"</var>)<var><a name="index-freqz-2141"></a></var><br>
+&mdash; Function File: [<var>h</var>, <var>w</var>] = <b>freqz</b> (<var>b, a, n, "whole"</var>)<var><a name="index-freqz-2503"></a></var><br>
 <blockquote><p>Return the complex frequency response <var>h</var> of the rational IIR filter
 whose numerator and denominator coefficients are <var>b</var> and <var>a</var>,
 respectively.  The response is evaluated at <var>n</var> angular frequencies
@@ -398,57 +442,58 @@ corresponds to a simple FIR filter).
         <p>For fastest computation, <var>n</var> should factor into a small number of
 small primes.
 
-   &mdash; Function File: <var>h</var> = <b>freqz</b> (<var>b, a, w</var>)<var><a name="index-freqz-2142"></a></var><br>
+   &mdash; Function File: <var>h</var> = <b>freqz</b> (<var>b, a, w</var>)<var><a name="index-freqz-2504"></a></var><br>
 <blockquote><p>Evaluate the response at the specific frequencies in the vector <var>w</var>. 
 The values for <var>w</var> are measured in radians.
 
-   &mdash; Function File: [<small class="dots">...</small>] = <b>freqz</b> (<var><small class="dots">...</small>, Fs</var>)<var><a name="index-freqz-2143"></a></var><br>
+   &mdash; Function File: [<small class="dots">...</small>] = <b>freqz</b> (<var><small class="dots">...</small>, Fs</var>)<var><a name="index-freqz-2505"></a></var><br>
 <blockquote><p>Return frequencies in Hz instead of radians assuming a sampling rate
 <var>Fs</var>.  If you are evaluating the response at specific frequencies
 <var>w</var>, those frequencies should be requested in Hz rather than radians.
 
-   &mdash; Function File:  <b>freqz</b> (<var><small class="dots">...</small></var>)<var><a name="index-freqz-2144"></a></var><br>
+   &mdash; Function File:  <b>freqz</b> (<var><small class="dots">...</small></var>)<var><a name="index-freqz-2506"></a></var><br>
 <blockquote><p>Plot the pass band, stop band and phase response of <var>h</var> rather
 than returning them. 
 </p></blockquote></div>
 
-<!-- ./signal/freqz_plot.m -->
+<!-- freqz_plot scripts/signal/freqz_plot.m -->
    <p><a name="doc_002dfreqz_005fplot"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>freqz_plot</b> (<var>w, h</var>)<var><a name="index-freqz_005fplot-2145"></a></var><br>
+&mdash; Function File:  <b>freqz_plot</b> (<var>w, h</var>)<var><a name="index-freqz_005fplot-2507"></a></var><br>
 <blockquote><p>Plot the pass band, stop band and phase response of <var>h</var>. 
 </p></blockquote></div>
 
-<!-- ./signal/sinc.m -->
+<!-- sinc scripts/signal/sinc.m -->
    <p><a name="doc_002dsinc"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>sinc</b> (<var>x</var>)<var><a name="index-sinc-2146"></a></var><br>
+&mdash; Function File:  <b>sinc</b> (<var>x</var>)<var><a name="index-sinc-2508"></a></var><br>
 <blockquote><p>Return
  sin(pi*x)/(pi*x). 
 </p></blockquote></div>
 
-<!-- ./signal/unwrap.m -->
+<!-- unwrap scripts/signal/unwrap.m -->
    <p><a name="doc_002dunwrap"></a>
 
 <div class="defun">
-&mdash; Function File: <var>b</var> = <b>unwrap</b> (<var>a, tol, dim</var>)<var><a name="index-unwrap-2147"></a></var><br>
+&mdash; Function File: <var>b</var> = <b>unwrap</b> (<var>x</var>)<var><a name="index-unwrap-2509"></a></var><br>
+&mdash; Function File: <var>b</var> = <b>unwrap</b> (<var>x, tol</var>)<var><a name="index-unwrap-2510"></a></var><br>
+&mdash; Function File: <var>b</var> = <b>unwrap</b> (<var>x, tol, dim</var>)<var><a name="index-unwrap-2511"></a></var><br>
 <blockquote>
         <p>Unwrap radian phases by adding multiples of 2*pi as appropriate to
 remove jumps greater than <var>tol</var>.  <var>tol</var> defaults to pi.
 
-        <p>Unwrap will unwrap along the first non-singleton dimension of
-<var>a</var>, unless the optional argument <var>dim</var> is given, in
-which case the data will be unwrapped along this dimension
+        <p>Unwrap will work along the dimension <var>dim</var>.  If <var>dim</var>
+is unspecified it defaults to the first non-singleton dimension. 
 </p></blockquote></div>
 
 <!-- FIXME - someone needs to organize these... -->
-<!-- ./signal/arch_fit.m -->
+<!-- arch_fit scripts/signal/arch_fit.m -->
    <p><a name="doc_002darch_005ffit"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>a</var>, <var>b</var>] = <b>arch_fit</b> (<var>y, x, p, iter, gamma, a0, b0</var>)<var><a name="index-arch_005ffit-2148"></a></var><br>
+&mdash; Function File: [<var>a</var>, <var>b</var>] = <b>arch_fit</b> (<var>y, x, p, iter, gamma, a0, b0</var>)<var><a name="index-arch_005ffit-2512"></a></var><br>
 <blockquote><p>Fit an ARCH regression model to the time series <var>y</var> using the
 scoring algorithm in Engle's original ARCH paper.  The model is
 
@@ -471,31 +516,31 @@ updating factor <var>gamma</var>, and initial values a0 and
 b0 for the scoring algorithm. 
 </p></blockquote></div>
 
-<!-- ./signal/arch_rnd.m -->
+<!-- arch_rnd scripts/signal/arch_rnd.m -->
    <p><a name="doc_002darch_005frnd"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>arch_rnd</b> (<var>a, b, t</var>)<var><a name="index-arch_005frnd-2149"></a></var><br>
+&mdash; Function File:  <b>arch_rnd</b> (<var>a, b, t</var>)<var><a name="index-arch_005frnd-2513"></a></var><br>
 <blockquote><p>Simulate an ARCH sequence of length <var>t</var> with AR
 coefficients <var>b</var> and CH coefficients <var>a</var>.  I.e., the result
 y(t) follows the model
+<!-- Set example in small font to prevent overfull line -->
 
-     <!-- Set example in small font to prevent overfull line -->
      <pre class="smallexample">          y(t) = b(1) + b(2) * y(t-1) + ... + b(lb) * y(t-lb+1) + e(t),
 </pre>
         <p class="noindent">where e(t), given <var>y</var> up to time t-1, is
 N(0, h(t)), with
+<!-- Set example in small font to prevent overfull line -->
 
-     <!-- Set example in small font to prevent overfull line -->
      <pre class="smallexample">          h(t) = a(1) + a(2) * e(t-1)^2 + ... + a(la) * e(t-la+1)^2
 </pre>
         </blockquote></div>
 
-<!-- ./signal/arch_test.m -->
+<!-- arch_test scripts/signal/arch_test.m -->
    <p><a name="doc_002darch_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>lm</var>] = <b>arch_test</b> (<var>y, x, p</var>)<var><a name="index-arch_005ftest-2150"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>lm</var>] = <b>arch_test</b> (<var>y, x, p</var>)<var><a name="index-arch_005ftest-2514"></a></var><br>
 <blockquote><p>For a linear regression model
 
      <pre class="example">          y = x * b + e
@@ -528,11 +573,11 @@ minus the CDF of this distribution at LM) of the test.
         <p>If no output argument is given, the p-value is displayed. 
 </p></blockquote></div>
 
-<!-- ./signal/arma_rnd.m -->
+<!-- arma_rnd scripts/signal/arma_rnd.m -->
    <p><a name="doc_002darma_005frnd"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>arma_rnd</b> (<var>a, b, v, t, n</var>)<var><a name="index-arma_005frnd-2151"></a></var><br>
+&mdash; Function File:  <b>arma_rnd</b> (<var>a, b, v, t, n</var>)<var><a name="index-arma_005frnd-2515"></a></var><br>
 <blockquote><p>Return a simulation of the ARMA model
 
      <pre class="example">          x(n) = a(1) * x(n-1) + ... + a(k) * x(n-k)
@@ -548,33 +593,11 @@ variance <var>v</var>.  The function returns a vector of length <var>t</var>.
 is returned.  If <var>n</var> is omitted, <var>n</var> = 100 is used. 
 </p></blockquote></div>
 
-<!-- ./signal/autocor.m -->
-   <p><a name="doc_002dautocor"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>autocor</b> (<var>x, h</var>)<var><a name="index-autocor-2152"></a></var><br>
-<blockquote><p>Return the autocorrelations from lag 0 to <var>h</var> of vector <var>x</var>. 
-If <var>h</var> is omitted, all autocorrelations are computed. 
-If <var>x</var> is a matrix, the autocorrelations of each column are
-computed. 
-</p></blockquote></div>
-
-<!-- ./signal/autocov.m -->
-   <p><a name="doc_002dautocov"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>autocov</b> (<var>x, h</var>)<var><a name="index-autocov-2153"></a></var><br>
-<blockquote><p>Return the autocovariances from lag 0 to <var>h</var> of vector <var>x</var>. 
-If <var>h</var> is omitted, all autocovariances are computed. 
-If <var>x</var> is a matrix, the autocovariances of each column are
-computed. 
-</p></blockquote></div>
-
-<!-- ./signal/autoreg_matrix.m -->
+<!-- autoreg_matrix scripts/signal/autoreg_matrix.m -->
    <p><a name="doc_002dautoreg_005fmatrix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>autoreg_matrix</b> (<var>y, k</var>)<var><a name="index-autoreg_005fmatrix-2154"></a></var><br>
+&mdash; Function File:  <b>autoreg_matrix</b> (<var>y, k</var>)<var><a name="index-autoreg_005fmatrix-2516"></a></var><br>
 <blockquote><p>Given a time series (vector) <var>y</var>, return a matrix with ones in the
 first column and the first <var>k</var> lagged values of <var>y</var> in the
 other columns.  I.e., for <var>t</var> &gt; <var>k</var>, <code>[1,
@@ -583,11 +606,11 @@ of the result.  The resulting matrix may be used as a regressor matrix
 in autoregressions. 
 </p></blockquote></div>
 
-<!-- ./signal/bartlett.m -->
+<!-- bartlett scripts/signal/bartlett.m -->
    <p><a name="doc_002dbartlett"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>bartlett</b> (<var>m</var>)<var><a name="index-bartlett-2155"></a></var><br>
+&mdash; Function File:  <b>bartlett</b> (<var>m</var>)<var><a name="index-bartlett-2517"></a></var><br>
 <blockquote><p>Return the filter coefficients of a Bartlett (triangular) window of
 length <var>m</var>.
 
@@ -595,22 +618,22 @@ length <var>m</var>.
 R. W. Schafer, <cite>Discrete-Time Signal Processing</cite>. 
 </p></blockquote></div>
 
-<!-- ./signal/blackman.m -->
+<!-- blackman scripts/signal/blackman.m -->
    <p><a name="doc_002dblackman"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>blackman</b> (<var>m</var>)<var><a name="index-blackman-2156"></a></var><br>
+&mdash; Function File:  <b>blackman</b> (<var>m</var>)<var><a name="index-blackman-2518"></a></var><br>
 <blockquote><p>Return the filter coefficients of a Blackman window of length <var>m</var>.
 
         <p>For a definition of the Blackman window, see e.g., A. V. Oppenheim &amp;
 R. W. Schafer, <cite>Discrete-Time Signal Processing</cite>. 
 </p></blockquote></div>
 
-<!-- ./signal/diffpara.m -->
+<!-- diffpara scripts/signal/diffpara.m -->
    <p><a name="doc_002ddiffpara"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>d</var>, <var>dd</var>] = <b>diffpara</b> (<var>x, a, b</var>)<var><a name="index-diffpara-2157"></a></var><br>
+&mdash; Function File: [<var>d</var>, <var>dd</var>] = <b>diffpara</b> (<var>x, a, b</var>)<var><a name="index-diffpara-2519"></a></var><br>
 <blockquote><p>Return the estimator <var>d</var> for the differencing parameter of an
 integrated time series.
 
@@ -625,15 +648,15 @@ the differencing parameter of each column is estimated.
 described above is returned in <var>dd</var>.  The value of <var>d</var> is
 simply the mean of <var>dd</var>.
 
-        <p>Reference: Brockwell, Peter J. &amp; Davis, Richard A. Time Series:
-Theory and Methods Springer 1987. 
+        <p>Reference: P.J. Brockwell &amp; R.A. Davis. <cite>Time Series:
+Theory and Methods</cite>. Springer 1987. 
 </p></blockquote></div>
 
-<!-- ./signal/durbinlevinson.m -->
+<!-- durbinlevinson scripts/signal/durbinlevinson.m -->
    <p><a name="doc_002ddurbinlevinson"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>durbinlevinson</b> (<var>c, oldphi, oldv</var>)<var><a name="index-durbinlevinson-2158"></a></var><br>
+&mdash; Function File:  <b>durbinlevinson</b> (<var>c, oldphi, oldv</var>)<var><a name="index-durbinlevinson-2520"></a></var><br>
 <blockquote><p>Perform one step of the Durbin-Levinson algorithm.
 
         <p>The vector <var>c</var> specifies the autocovariances <code>[gamma_0, ...,
@@ -645,90 +668,90 @@ corresponding error.
 <var>t</var> of the algorithm are performed. 
 </p></blockquote></div>
 
-<!-- ./signal/fftshift.m -->
+<!-- fftshift scripts/signal/fftshift.m -->
    <p><a name="doc_002dfftshift"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fftshift</b> (<var>v</var>)<var><a name="index-fftshift-2159"></a></var><br>
-&mdash; Function File:  <b>fftshift</b> (<var>v, dim</var>)<var><a name="index-fftshift-2160"></a></var><br>
-<blockquote><p>Perform a shift of the vector <var>v</var>, for use with the <code>fft</code>
+&mdash; Function File:  <b>fftshift</b> (<var>x</var>)<var><a name="index-fftshift-2521"></a></var><br>
+&mdash; Function File:  <b>fftshift</b> (<var>x, dim</var>)<var><a name="index-fftshift-2522"></a></var><br>
+<blockquote><p>Perform a shift of the vector <var>x</var>, for use with the <code>fft</code>
 and <code>ifft</code> functions, in order the move the frequency 0 to the
 center of the vector or matrix.
 
-        <p>If <var>v</var> is a vector of N elements corresponding to N
+        <p>If <var>x</var> is a vector of N elements corresponding to N
 time samples spaced of Dt each, then <code>fftshift (fft
-(</code><var>v</var><code>))</code> corresponds to frequencies
+(</code><var>x</var><code>))</code> corresponds to frequencies
 
      <pre class="example">          f = ((1:N) - ceil(N/2)) / N / Dt
 </pre>
-        <p>If <var>v</var> is a matrix, the same holds for rows and columns.  If
-<var>v</var> is an array, then the same holds along each dimension.
+        <p>If <var>x</var> is a matrix, the same holds for rows and columns.  If
+<var>x</var> is an array, then the same holds along each dimension.
 
         <p>The optional <var>dim</var> argument can be used to limit the dimension
 along which the permutation occurs. 
 </p></blockquote></div>
 
-<!-- ./signal/ifftshift.m -->
+<!-- ifftshift scripts/signal/ifftshift.m -->
    <p><a name="doc_002difftshift"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ifftshift</b> (<var>v</var>)<var><a name="index-ifftshift-2161"></a></var><br>
-&mdash; Function File:  <b>ifftshift</b> (<var>v, dim</var>)<var><a name="index-ifftshift-2162"></a></var><br>
+&mdash; Function File:  <b>ifftshift</b> (<var>x</var>)<var><a name="index-ifftshift-2523"></a></var><br>
+&mdash; Function File:  <b>ifftshift</b> (<var>x, dim</var>)<var><a name="index-ifftshift-2524"></a></var><br>
 <blockquote><p>Undo the action of the <code>fftshift</code> function.  For even length
-<var>v</var>, <code>fftshift</code> is its own inverse, but odd lengths differ
+<var>x</var>, <code>fftshift</code> is its own inverse, but odd lengths differ
 slightly. 
 </p></blockquote></div>
 
-<!-- ./signal/fractdiff.m -->
+<!-- fractdiff scripts/signal/fractdiff.m -->
    <p><a name="doc_002dfractdiff"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fractdiff</b> (<var>x, d</var>)<var><a name="index-fractdiff-2163"></a></var><br>
+&mdash; Function File:  <b>fractdiff</b> (<var>x, d</var>)<var><a name="index-fractdiff-2525"></a></var><br>
 <blockquote><p>Compute the fractional differences (1-L)^d x where L
 denotes the lag-operator and d is greater than -1. 
 </p></blockquote></div>
 
-<!-- ./signal/hamming.m -->
+<!-- hamming scripts/signal/hamming.m -->
    <p><a name="doc_002dhamming"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hamming</b> (<var>m</var>)<var><a name="index-hamming-2164"></a></var><br>
+&mdash; Function File:  <b>hamming</b> (<var>m</var>)<var><a name="index-hamming-2526"></a></var><br>
 <blockquote><p>Return the filter coefficients of a Hamming window of length <var>m</var>.
 
         <p>For a definition of the Hamming window, see e.g., A. V. Oppenheim &amp;
 R. W. Schafer, <cite>Discrete-Time Signal Processing</cite>. 
 </p></blockquote></div>
 
-<!-- ./signal/hanning.m -->
+<!-- hanning scripts/signal/hanning.m -->
    <p><a name="doc_002dhanning"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hanning</b> (<var>m</var>)<var><a name="index-hanning-2165"></a></var><br>
+&mdash; Function File:  <b>hanning</b> (<var>m</var>)<var><a name="index-hanning-2527"></a></var><br>
 <blockquote><p>Return the filter coefficients of a Hanning window of length <var>m</var>.
 
         <p>For a definition of this window type, see e.g., A. V. Oppenheim &amp;
 R. W. Schafer, <cite>Discrete-Time Signal Processing</cite>. 
 </p></blockquote></div>
 
-<!-- ./signal/hurst.m -->
+<!-- hurst scripts/signal/hurst.m -->
    <p><a name="doc_002dhurst"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hurst</b> (<var>x</var>)<var><a name="index-hurst-2166"></a></var><br>
+&mdash; Function File:  <b>hurst</b> (<var>x</var>)<var><a name="index-hurst-2528"></a></var><br>
 <blockquote><p>Estimate the Hurst parameter of sample <var>x</var> via the rescaled range
 statistic.  If <var>x</var> is a matrix, the parameter is estimated for
 every single column. 
 </p></blockquote></div>
 
-<!-- ./polynomial/pchip.m -->
+<!-- pchip scripts/polynomial/pchip.m -->
    <p><a name="doc_002dpchip"></a>
 
 <div class="defun">
-&mdash; Function File: <var>pp</var> = <b>pchip</b> (<var>x, y</var>)<var><a name="index-pchip-2167"></a></var><br>
-&mdash; Function File: <var>yi</var> = <b>pchip</b> (<var>x, y, xi</var>)<var><a name="index-pchip-2168"></a></var><br>
+&mdash; Function File: <var>pp</var> = <b>pchip</b> (<var>x, y</var>)<var><a name="index-pchip-2529"></a></var><br>
+&mdash; Function File: <var>yi</var> = <b>pchip</b> (<var>x, y, xi</var>)<var><a name="index-pchip-2530"></a></var><br>
 <blockquote>
         <p>Piecewise Cubic Hermite interpolating polynomial.  Called with two
-arguments, the piece-wise polynomial <var>pp</var> is returned, that may
+arguments, the piecewise polynomial <var>pp</var> is returned, that may
 later be used with <code>ppval</code> to evaluate the polynomial at
 specific points.
 
@@ -746,7 +769,7 @@ is exactly the opposite treatment than <code>interp1</code> and is done
 for compatibility.
 
         <p>Called with a third input argument, <code>pchip</code> evaluates the
-piece-wise polynomial at the points <var>xi</var>.  There is an equivalence
+piecewise polynomial at the points <var>xi</var>.  There is an equivalence
 between <code>ppval (pchip (</code><var>x</var><code>, </code><var>y</var><code>), </code><var>xi</var><code>)</code> and
 <code>pchip (</code><var>x</var><code>, </code><var>y</var><code>, </code><var>xi</var><code>)</code>.
 
@@ -756,38 +779,71 @@ between <code>ppval (pchip (</code><var>x</var><code>, </code><var>y</var><code>
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dspline.html#doc_002dspline">spline</a>, <a href="doc_002dppval.html#doc_002dppval">ppval</a>, <a href="doc_002dmkpp.html#doc_002dmkpp">mkpp</a>, <a href="doc_002dunmkpp.html#doc_002dunmkpp">unmkpp</a>. 
 </p></blockquote></div>
 
-<!-- ./signal/periodogram.m -->
+<!-- periodogram scripts/signal/periodogram.m -->
    <p><a name="doc_002dperiodogram"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>periodogram</b> (<var>x</var>)<var><a name="index-periodogram-2169"></a></var><br>
+&mdash; Function File: [Pxx, <var>w</var>] = <b>periodogram</b> (<var>x</var>)<var><a name="index-periodogram-2531"></a></var><br>
 <blockquote><p>For a data matrix <var>x</var> from a sample of size <var>n</var>, return the
-periodogram. 
-</p></blockquote></div>
+periodogram.  The angular frequency is returned in <var>w</var>.
 
-<!-- ./signal/rectangle_lw.m -->
+        <p>[Pxx,w] = periodogram (<var>x</var>).
+
+        <p>[Pxx,w] = periodogram (<var>x</var>,win).
+
+        <p>[Pxx,w] = periodogram (<var>x</var>,win,nfft).
+
+        <p>[Pxx,f] = periodogram (<var>x</var>,win,nfft,Fs).
+
+        <p>[Pxx,f] = periodogram (<var>x</var>,win,nfft,Fs,"range").
+
+          <ul>
+<li>x: data; if real-valued a one-sided spectrum is estimated,
+if complex-valued or range indicates "twosided", the full
+spectrum is estimated.
+
+          <li>win: weight data with window, x.*win is used for further computation,
+if window is empty, a rectangular window is used.
+
+          <li>nfft: number of frequency bins, default max(256, 2.^ceil(log2(length(x)))).
+
+          <li>Fs: sampling rate, default 1.
+
+          <li>range: "onesided" computes spectrum from [0..nfft/2+1]. 
+"twosided" computes spectrum from [0..nfft-1].  These strings
+can appear at any  position in the list input arguments after window.
+
+          <li>Pxx: one-, or two-sided power spectrum.
+
+          <li>w: angular frequency [0..2*pi) (two-sided) or [0..pi] one-sided.
+
+          <li>f: frequency [0..Fs) (two-sided) or [0..Fs/2] one-sided. 
+</ul>
+        </p></blockquote></div>
+
+<!-- rectangle_lw scripts/signal/rectangle_lw.m -->
    <p><a name="doc_002drectangle_005flw"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rectangle_lw</b> (<var>n, b</var>)<var><a name="index-rectangle_005flw-2170"></a></var><br>
+&mdash; Function File:  <b>rectangle_lw</b> (<var>n, b</var>)<var><a name="index-rectangle_005flw-2532"></a></var><br>
 <blockquote><p>Rectangular lag window.  Subfunction used for spectral density
 estimation. 
 </p></blockquote></div>
 
-<!-- ./signal/rectangle_sw.m -->
+<!-- rectangle_sw scripts/signal/rectangle_sw.m -->
    <p><a name="doc_002drectangle_005fsw"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rectangle_sw</b> (<var>n, b</var>)<var><a name="index-rectangle_005fsw-2171"></a></var><br>
+&mdash; Function File:  <b>rectangle_sw</b> (<var>n, b</var>)<var><a name="index-rectangle_005fsw-2533"></a></var><br>
 <blockquote><p>Rectangular spectral window.  Subfunction used for spectral density
 estimation. 
 </p></blockquote></div>
 
-<!-- ./signal/sinetone.m -->
+<!-- sinetone scripts/signal/sinetone.m -->
    <p><a name="doc_002dsinetone"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>sinetone</b> (<var>freq, rate, sec, ampl</var>)<var><a name="index-sinetone-2172"></a></var><br>
+&mdash; Function File:  <b>sinetone</b> (<var>freq, rate, sec, ampl</var>)<var><a name="index-sinetone-2534"></a></var><br>
 <blockquote><p>Return a sinetone of frequency <var>freq</var> with length of <var>sec</var>
 seconds at sampling rate <var>rate</var> and with amplitude <var>ampl</var>. 
 The arguments <var>freq</var> and <var>ampl</var> may be vectors of common size.
@@ -795,11 +851,11 @@ The arguments <var>freq</var> and <var>ampl</var> may be vectors of common size.
         <p>Defaults are <var>rate</var> = 8000, <var>sec</var> = 1 and <var>ampl</var> = 64. 
 </p></blockquote></div>
 
-<!-- ./signal/sinewave.m -->
+<!-- sinewave scripts/signal/sinewave.m -->
    <p><a name="doc_002dsinewave"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>sinewave</b> (<var>m, n, d</var>)<var><a name="index-sinewave-2173"></a></var><br>
+&mdash; Function File:  <b>sinewave</b> (<var>m, n, d</var>)<var><a name="index-sinewave-2535"></a></var><br>
 <blockquote><p>Return an <var>m</var>-element vector with <var>i</var>-th element given by
 <code>sin (2 * pi * (</code><var>i</var><code>+</code><var>d</var><code>-1) / </code><var>n</var><code>)</code>.
 
@@ -807,11 +863,11 @@ The arguments <var>freq</var> and <var>ampl</var> may be vectors of common size.
 is <var>m</var>. 
 </p></blockquote></div>
 
-<!-- ./signal/spectral_adf.m -->
+<!-- spectral_adf scripts/signal/spectral_adf.m -->
    <p><a name="doc_002dspectral_005fadf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>spectral_adf</b> (<var>c, win, b</var>)<var><a name="index-spectral_005fadf-2174"></a></var><br>
+&mdash; Function File:  <b>spectral_adf</b> (<var>c, win, b</var>)<var><a name="index-spectral_005fadf-2536"></a></var><br>
 <blockquote><p>Return the spectral density estimator given a vector of
 autocovariances <var>c</var>, window name <var>win</var>, and bandwidth,
 <var>b</var>.
@@ -823,11 +879,11 @@ used to search for a function called <var>win</var><code>_sw</code>.
 omitted, <code>1 / sqrt (length (</code><var>x</var><code>))</code> is used. 
 </p></blockquote></div>
 
-<!-- ./signal/spectral_xdf.m -->
+<!-- spectral_xdf scripts/signal/spectral_xdf.m -->
    <p><a name="doc_002dspectral_005fxdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>spectral_xdf</b> (<var>x, win, b</var>)<var><a name="index-spectral_005fxdf-2175"></a></var><br>
+&mdash; Function File:  <b>spectral_xdf</b> (<var>x, win, b</var>)<var><a name="index-spectral_005fxdf-2537"></a></var><br>
 <blockquote><p>Return the spectral density estimator given a data vector <var>x</var>,
 window name <var>win</var>, and bandwidth, <var>b</var>.
 
@@ -838,20 +894,20 @@ used to search for a function called <var>win</var><code>_sw</code>.
 omitted, <code>1 / sqrt (length (</code><var>x</var><code>))</code> is used. 
 </p></blockquote></div>
 
-<!-- ./signal/spencer.m -->
+<!-- spencer scripts/signal/spencer.m -->
    <p><a name="doc_002dspencer"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>spencer</b> (<var>x</var>)<var><a name="index-spencer-2176"></a></var><br>
-<blockquote><p>Return Spencer's 15 point moving average of every single column of
+&mdash; Function File:  <b>spencer</b> (<var>x</var>)<var><a name="index-spencer-2538"></a></var><br>
+<blockquote><p>Return Spencer's 15 point moving average of each column of
 <var>x</var>. 
 </p></blockquote></div>
 
-<!-- ./signal/stft.m -->
+<!-- stft scripts/signal/stft.m -->
    <p><a name="doc_002dstft"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>y</var>, <var>c</var>] = <b>stft</b> (<var>x, win_size, inc, num_coef, w_type</var>)<var><a name="index-stft-2177"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>c</var>] = <b>stft</b> (<var>x, win_size, inc, num_coef, win_type</var>)<var><a name="index-stft-2539"></a></var><br>
 <blockquote><p>Compute the short-time Fourier transform of the vector <var>x</var> with
 <var>num_coef</var> coefficients by applying a window of <var>win_size</var> data
 points and an increment of <var>inc</var> points.
@@ -860,16 +916,18 @@ points and an increment of <var>inc</var> points.
 is applied:
 
           <dl>
-<dt>hanning<dd>w_type = 1
-<br><dt>hamming<dd>w_type = 2
-<br><dt>rectangle<dd>w_type = 3
+<dt>hanning<dd>win_type = 1
+
+          <br><dt>hamming<dd>win_type = 2
+
+          <br><dt>rectangle<dd>win_type = 3
 </dl>
 
-        <p>The window names can be passed as strings or by the <var>w_type</var> number.
+        <p>The window names can be passed as strings or by the <var>win_type</var> number.
 
         <p>If not all arguments are specified, the following defaults are used:
 <var>win_size</var> = 80, <var>inc</var> = 24, <var>num_coef</var> = 64, and
-<var>w_type</var> = 1.
+<var>win_type</var> = 1.
 
         <p><var>y</var><code> = stft (</code><var>x</var><code>, ...)</code> returns the absolute values
 of the Fourier coefficients according to the <var>num_coef</var> positive
@@ -881,11 +939,11 @@ the window size, increment, and window type, which is needed by the
 synthesis function. 
 </p></blockquote></div>
 
-<!-- ./signal/synthesis.m -->
+<!-- synthesis scripts/signal/synthesis.m -->
    <p><a name="doc_002dsynthesis"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>synthesis</b> (<var>y, c</var>)<var><a name="index-synthesis-2178"></a></var><br>
+&mdash; Function File:  <b>synthesis</b> (<var>y, c</var>)<var><a name="index-synthesis-2540"></a></var><br>
 <blockquote><p>Compute a signal from its short-time Fourier transform <var>y</var> and a
 3-element vector <var>c</var> specifying window size, increment, and
 window type.
@@ -896,29 +954,29 @@ window type.
 </pre>
         </blockquote></div>
 
-<!-- ./signal/triangle_lw.m -->
+<!-- triangle_lw scripts/signal/triangle_lw.m -->
    <p><a name="doc_002dtriangle_005flw"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>triangle_lw</b> (<var>n, b</var>)<var><a name="index-triangle_005flw-2179"></a></var><br>
+&mdash; Function File:  <b>triangle_lw</b> (<var>n, b</var>)<var><a name="index-triangle_005flw-2541"></a></var><br>
 <blockquote><p>Triangular lag window.  Subfunction used for spectral density
 estimation. 
 </p></blockquote></div>
 
-<!-- ./signal/triangle_sw.m -->
+<!-- triangle_sw scripts/signal/triangle_sw.m -->
    <p><a name="doc_002dtriangle_005fsw"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>triangle_sw</b> (<var>n, b</var>)<var><a name="index-triangle_005fsw-2180"></a></var><br>
+&mdash; Function File:  <b>triangle_sw</b> (<var>n, b</var>)<var><a name="index-triangle_005fsw-2542"></a></var><br>
 <blockquote><p>Triangular spectral window.  Subfunction used for spectral density
 estimation. 
 </p></blockquote></div>
 
-<!-- ./signal/yulewalker.m -->
+<!-- yulewalker scripts/signal/yulewalker.m -->
    <p><a name="doc_002dyulewalker"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>a</var>, <var>v</var>] = <b>yulewalker</b> (<var>c</var>)<var><a name="index-yulewalker-2181"></a></var><br>
+&mdash; Function File: [<var>a</var>, <var>v</var>] = <b>yulewalker</b> (<var>c</var>)<var><a name="index-yulewalker-2543"></a></var><br>
 <blockquote><p>Fit an AR (p)-model with Yule-Walker estimates given a vector <var>c</var>
 of autocovariances <code>[gamma_0, ..., gamma_p]</code>.
 
@@ -927,7 +985,7 @@ noise, <var>v</var>.
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007, 2008, 2009 John W. Eaton -->
+<!-- Copyright (C) 1996-2011 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

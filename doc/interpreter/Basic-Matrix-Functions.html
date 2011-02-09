@@ -1,12 +1,12 @@
 <html lang="en">
 <head>
-<title>Basic Matrix Functions - Untitled</title>
+<title>Basic Matrix Functions - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Linear-Algebra.html#Linear-Algebra" title="Linear Algebra">
-<link rel="prev" href="Techniques-used-for-Linear-Algebra.html#Techniques-used-for-Linear-Algebra" title="Techniques used for Linear Algebra">
+<link rel="prev" href="Techniques-Used-for-Linear-Algebra.html#Techniques-Used-for-Linear-Algebra" title="Techniques Used for Linear Algebra">
 <link rel="next" href="Matrix-Factorizations.html#Matrix-Factorizations" title="Matrix Factorizations">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -21,52 +21,54 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Basic-Matrix-Functions"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Matrix-Factorizations.html#Matrix-Factorizations">Matrix Factorizations</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Techniques-used-for-Linear-Algebra.html#Techniques-used-for-Linear-Algebra">Techniques used for Linear Algebra</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Techniques-Used-for-Linear-Algebra.html#Techniques-Used-for-Linear-Algebra">Techniques Used for Linear Algebra</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>
 <hr>
 </div>
 
 <h3 class="section">18.2 Basic Matrix Functions</h3>
 
-<!-- ./DLD-FUNCTIONS/balance.cc -->
+<!-- balance src/DLD-FUNCTIONS/balance.cc -->
 <p><a name="doc_002dbalance"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>aa</var> = <b>balance</b> (<var>a, opt</var>)<var><a name="index-balance-1549"></a></var><br>
-&mdash; Loadable Function: [<var>dd</var>, <var>aa</var>] = <b>balance</b> (<var>a, opt</var>)<var><a name="index-balance-1550"></a></var><br>
-&mdash; Loadable Function: [<var>d</var>, <var>p</var>, <var>aa</var>] = <b>balance</b> (<var>a, opt</var>)<var><a name="index-balance-1551"></a></var><br>
-&mdash; Loadable Function: [<var>cc</var>, <var>dd</var>, <var>aa</var>, <var>bb</var>] = <b>balance</b> (<var>a, b, opt</var>)<var><a name="index-balance-1552"></a></var><br>
+&mdash; Loadable Function: <var>AA</var> = <b>balance</b> (<var>A</var>)<var><a name="index-balance-1811"></a></var><br>
+&mdash; Loadable Function: <var>AA</var> = <b>balance</b> (<var>A, opt</var>)<var><a name="index-balance-1812"></a></var><br>
+&mdash; Loadable Function: [<var>DD</var>, <var>AA</var>] = <b>balance</b> (<var>A, opt</var>)<var><a name="index-balance-1813"></a></var><br>
+&mdash; Loadable Function: [<var>D</var>, <var>P</var>, <var>AA</var>] = <b>balance</b> (<var>A, opt</var>)<var><a name="index-balance-1814"></a></var><br>
+&mdash; Loadable Function: [<var>CC</var>, <var>DD</var>, <var>AA</var>, <var>BB</var>] = <b>balance</b> (<var>A, B, opt</var>)<var><a name="index-balance-1815"></a></var><br>
 <blockquote>
-        <p>Compute <code>aa = dd \ a * dd</code> in which <code>aa</code> is a matrix whose
-row and column norms are roughly equal in magnitude, and
-<code>dd</code> = <code>p * d</code>, in which <code>p</code> is a permutation
-matrix and <code>d</code> is a diagonal matrix of powers of two.  This allows
-the equilibration to be computed without roundoff.  Results of
-eigenvalue calculation are typically improved by balancing first.
+        <p>Compute <var>AA</var><code> = </code><var>DD</var><code> \ </code><var>A</var><code> * </code><var>DD</var> in which <var>AA</var>
+is a matrix whose row and column norms are roughly equal in magnitude, and
+<var>DD</var><code> = </code><var>P</var><code> * </code><var>D</var>, in which <var>P</var> is a permutation
+matrix and <var>D</var> is a diagonal matrix of powers of two.  This allows the
+equilibration to be computed without round-off.  Results of eigenvalue
+calculation are typically improved by balancing first.
 
         <p>If two output values are requested, <code>balance</code> returns
-the diagonal <code>d</code> and the permutation <code>p</code> separately as vectors. 
-In this case, <code>dd = eye(n)(:,p) * diag (d)</code>, where <code>n</code> is the matrix
-size.
+the diagonal <var>D</var> and the permutation <var>P</var> separately as vectors. 
+In this case, <var>DD</var><code> = eye(n)(:,</code><var>P</var><code>) * diag (</code><var>D</var><code>)</code>, where n
+<tt>n</tt> is the matrix size.
 
-        <p>If four output values are requested, compute <code>aa = cc*a*dd</code> and
-<code>bb = cc*b*dd)</code>, in which <code>aa</code> and <code>bb</code> have non-zero
-elements of approximately the same magnitude and <code>cc</code> and <code>dd</code>
-are permuted diagonal matrices as in <code>dd</code> for the algebraic
-eigenvalue problem.
+        <p>If four output values are requested, compute <var>AA</var><code> =
+</code><var>CC</var><code>*</code><var>A</var><code>*</code><var>DD</var> and <var>BB</var><code> = </code><var>CC</var><code>*</code><var>B</var><code>*</code><var>DD</var>,
+in which <var>AA</var> and <var>BB</var> have non-zero elements of approximately the
+same magnitude and <var>CC</var> and <var>DD</var> are permuted diagonal matrices as
+in <var>DD</var> for the algebraic eigenvalue problem.
 
-        <p>The eigenvalue balancing option <code>opt</code> may be one of:
+        <p>The eigenvalue balancing option <var>opt</var> may be one of:
 
           <dl>
-<dt><code>"noperm"</code>, <code>"S"</code><dd>Scale only; do not permute.
+<dt>"noperm", "S"<dd>Scale only; do not permute.
 
-          <br><dt><code>"noscal"</code>, <code>"P"</code><dd>Permute only; do not scale. 
+          <br><dt>"noscal", "P"<dd>Permute only; do not scale. 
 </dl>
 
         <p>Algebraic eigenvalue balancing uses standard <span class="sc">lapack</span> routines.
@@ -75,16 +77,21 @@ eigenvalue problem.
 (SIAM Journal on Scientific and Statistical Computing, 1981). 
 </p></blockquote></div>
 
-<!-- ./linear-algebra/cond.m -->
+<!-- cond scripts/linear-algebra/cond.m -->
    <p><a name="doc_002dcond"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cond</b> (<var>a,p</var>)<var><a name="index-cond-1553"></a></var><br>
-<blockquote><p>Compute the <var>p</var>-norm condition number of a matrix.  <code>cond (</code><var>a</var><code>)</code> is
-defined as <code>norm (</code><var>a</var><code>, </code><var>p</var><code>) * norm (inv (</code><var>a</var><code>), </code><var>p</var><code>)</code>. 
-By default <var>p</var><code>=2</code> is used which implies a (relatively slow)
+&mdash; Function File:  <b>cond</b> (<var>A</var>)<var><a name="index-cond-1816"></a></var><br>
+&mdash; Function File:  <b>cond</b> (<var>A, p</var>)<var><a name="index-cond-1817"></a></var><br>
+<blockquote><p>Compute the <var>p</var>-norm condition number of a matrix.  <code>cond
+(</code><var>A</var><code>)</code> is
+defined as
+<code>norm (</code><var>A</var><code>, </code><var>p</var><code>) * norm (inv (</code><var>A</var><code>), </code><var>p</var><code>)</code>.
+
+        <p>By default <var>p</var><code> = 2</code> is used which implies a (relatively slow)
 singular value decomposition.  Other possible selections are
-<var>p</var><code>= 1, Inf, inf, 'Inf', 'fro'</code> which are generally faster. 
+<var>p</var><code> = 1, Inf, "fro"</code> which are generally faster.  See
+<code>norm</code> for a full discussion of possible <var>p</var> values. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -92,81 +99,96 @@ singular value decomposition.  Other possible selections are
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcondest.html#doc_002dcondest">condest</a>, <a href="doc_002drcond.html#doc_002drcond">rcond</a>, <a href="doc_002dnorm.html#doc_002dnorm">norm</a>, <a href="doc_002dsvd.html#doc_002dsvd">svd</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/det.cc -->
+<!-- det src/DLD-FUNCTIONS/det.cc -->
    <p><a name="doc_002ddet"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>d</var>, <var>rcond</var>] = <b>det</b> (<var>a</var>)<var><a name="index-det-1554"></a></var><br>
-<blockquote><p>Compute the determinant of <var>a</var> using <span class="sc">lapack</span> for full and UMFPACK
-for sparse matrices.  Return an estimate of the reciprocal condition number
-if requested. 
+&mdash; Loadable Function:  <b>det</b> (<var>A</var>)<var><a name="index-det-1818"></a></var><br>
+&mdash; Loadable Function: [<var>d</var>, <var>rcond</var>] = <b>det</b> (<var>A</var>)<var><a name="index-det-1819"></a></var><br>
+<blockquote><p>Compute the determinant of <var>A</var>.
+
+        <p>Return an estimate of the reciprocal condition number if requested.
+
+        <p>Routines from <span class="sc">lapack</span> are used for full matrices and code from
+<span class="sc">umfpack</span> is used for sparse matrices.
+
+        <p>The determinant should not be used to check a matrix for singularity. 
+For that, use any of the condition number functions: <code>cond</code>,
+<code>condest</code>, <code>rcond</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcond.html#doc_002dcond">cond</a>, <a href="doc_002dcondest.html#doc_002dcondest">condest</a>, <a href="doc_002drcond.html#doc_002drcond">rcond</a>. 
 </p></blockquote></div>
 
-<!-- ./deprecated/dmult.m -->
-   <p><a name="doc_002ddmult"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>dmult</b> (<var>a, b</var>)<var><a name="index-dmult-1555"></a></var><br>
-<blockquote><p>This function has been deprecated.  Use the direct syntax <code>diag(A)*B</code>
-which is more readable and now also more efficient. 
-</p></blockquote></div>
-
-<!-- ./linear-algebra/dot.m -->
+<!-- dot src/DLD-FUNCTIONS/dot.cc -->
    <p><a name="doc_002ddot"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dot</b> (<var>x, y, dim</var>)<var><a name="index-dot-1556"></a></var><br>
-<blockquote><p>Computes the dot product of two vectors.  If <var>x</var> and <var>y</var>
-are matrices, calculate the dot-product along the first
+&mdash; Loadable Function:  <b>dot</b> (<var>x, y, dim</var>)<var><a name="index-dot-1820"></a></var><br>
+<blockquote><p>Compute the dot product of two vectors.  If <var>x</var> and <var>y</var>
+are matrices, calculate the dot products along the first
 non-singleton dimension.  If the optional argument <var>dim</var> is
-given, calculate the dot-product along this dimension. 
+given, calculate the dot products along this dimension.
+
+        <p>This is equivalent to
+<code>sum (conj (</code><var>X</var><code>) .* </code><var>Y</var><code>, </code><var>dim</var><code>)</code>,
+but avoids forming a temporary array and is faster.  When <var>X</var> and
+<var>Y</var> are column vectors, the result is equivalent to
+<var>X</var><code>' * </code><var>Y</var>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcross.html#doc_002dcross">cross</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/eig.cc -->
+<!-- eig src/DLD-FUNCTIONS/eig.cc -->
    <p><a name="doc_002deig"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>lambda</var> = <b>eig</b> (<var>a</var>)<var><a name="index-eig-1557"></a></var><br>
-&mdash; Loadable Function: <var>lambda</var> = <b>eig</b> (<var>a, b</var>)<var><a name="index-eig-1558"></a></var><br>
-&mdash; Loadable Function: [<var>v</var>, <var>lambda</var>] = <b>eig</b> (<var>a</var>)<var><a name="index-eig-1559"></a></var><br>
-&mdash; Loadable Function: [<var>v</var>, <var>lambda</var>] = <b>eig</b> (<var>a, b</var>)<var><a name="index-eig-1560"></a></var><br>
+&mdash; Loadable Function: <var>lambda</var> = <b>eig</b> (<var>A</var>)<var><a name="index-eig-1821"></a></var><br>
+&mdash; Loadable Function: <var>lambda</var> = <b>eig</b> (<var>A, B</var>)<var><a name="index-eig-1822"></a></var><br>
+&mdash; Loadable Function: [<var>V</var>, <var>lambda</var>] = <b>eig</b> (<var>A</var>)<var><a name="index-eig-1823"></a></var><br>
+&mdash; Loadable Function: [<var>V</var>, <var>lambda</var>] = <b>eig</b> (<var>A, B</var>)<var><a name="index-eig-1824"></a></var><br>
 <blockquote><p>The eigenvalues (and eigenvectors) of a matrix are computed in a several
 step process which begins with a Hessenberg decomposition, followed by a
-Schur decomposition, from which the eigenvalues are apparent.  The
+Schur&nbsp;decomposition, from which the eigenvalues are apparent.  The
 eigenvectors, when desired, are computed by further manipulations of the
-Schur decomposition.
+Schur&nbsp;decomposition.
 
         <p>The eigenvalues returned by <code>eig</code> are not ordered. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002deigs.html#doc_002deigs">eigs</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002deigs.html#doc_002deigs">eigs</a>, <a href="doc_002dsvd.html#doc_002dsvd">svd</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/givens.cc -->
+<!-- givens src/DLD-FUNCTIONS/givens.cc -->
    <p><a name="doc_002dgivens"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>g</var> = <b>givens</b> (<var>x, y</var>)<var><a name="index-givens-1561"></a></var><br>
-&mdash; Loadable Function: [<var>c</var>, <var>s</var>] = <b>givens</b> (<var>x, y</var>)<var><a name="index-givens-1562"></a></var><br>
+&mdash; Loadable Function: <var>g</var> = <b>givens</b> (<var>x, y</var>)<var><a name="index-givens-1825"></a></var><br>
+&mdash; Loadable Function: [<var>c</var>, <var>s</var>] = <b>givens</b> (<var>x, y</var>)<var><a name="index-givens-1826"></a></var><br>
 <blockquote><p>Return a 2 by 2 orthogonal matrix
 <var>g</var><code> = [</code><var>c</var> <var>s</var><code>; -</code><var>s</var><code>' </code><var>c</var><code>]</code> such that
 <var>g</var><code> [</code><var>x</var><code>; </code><var>y</var><code>] = [*; 0]</code> with <var>x</var> and <var>y</var> scalars.
 
-        <p>For example,
+        <p>For example:
 
      <pre class="example">          givens (1, 1)
-                  0.70711   0.70711
+               &rArr;   0.70711   0.70711
                    -0.70711   0.70711
 </pre>
         </blockquote></div>
 
-<!-- ./linear-algebra/planerot.m -->
+<!-- planerot scripts/linear-algebra/planerot.m -->
    <p><a name="doc_002dplanerot"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>g</var>, <var>y</var>] = <b>planerot</b> (<var>x</var>)<var><a name="index-planerot-1563"></a></var><br>
+&mdash; Function File: [<var>g</var>, <var>y</var>] = <b>planerot</b> (<var>x</var>)<var><a name="index-planerot-1827"></a></var><br>
 <blockquote><p>Given a two-element column vector, returns the
 2 by 2 orthogonal matrix
 <var>G</var> such that
@@ -178,92 +200,108 @@ Schur decomposition.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dgivens.html#doc_002dgivens">givens</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/inv.cc -->
+<!-- inv src/DLD-FUNCTIONS/inv.cc -->
    <p><a name="doc_002dinv"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>x</var>, <var>rcond</var>] = <b>inv</b> (<var>a</var>)<var><a name="index-inv-1564"></a></var><br>
-&mdash; Loadable Function: [<var>x</var>, <var>rcond</var>] = <b>inverse</b> (<var>a</var>)<var><a name="index-inverse-1565"></a></var><br>
-<blockquote><p>Compute the inverse of the square matrix <var>a</var>.  Return an estimate
+&mdash; Loadable Function: [<var>x</var> = <b>inv</b> (<var>A</var>)<var><a name="index-inv-1828"></a></var><br>
+&mdash; Loadable Function: [<var>x</var>, <var>rcond</var>] = <b>inv</b> (<var>A</var>)<var><a name="index-inv-1829"></a></var><br>
+<blockquote><p>Compute the inverse of the square matrix <var>A</var>.  Return an estimate
 of the reciprocal condition number if requested, otherwise warn of an
 ill-conditioned matrix if the reciprocal condition number is small.
 
+        <p>In general it is best to avoid calculating the inverse of a matrix
+directly.  For example, it is both faster and more accurate to solve
+systems of equations (<var>A</var>*x = b) with
+<var>y</var><code> = </code><var>A</var><code> \ b</code>, rather than
+<var>y</var><code> = inv (</code><var>A</var><code>) * b</code>.
+
         <p>If called with a sparse matrix, then in general <var>x</var> will be a full
-matrix, and so if possible forming the inverse of a sparse matrix should
-be avoided.  It is significantly more accurate and faster to do
-<var>y</var><code> = </code><var>a</var><code> \ </code><var>b</var>, rather than
-<var>y</var><code> = inv (</code><var>a</var><code>) * </code><var>b</var>. 
+matrix requiring significantly more storage.  Avoid forming the inverse
+of a sparse matrix if possible. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dldivide.html#doc_002dldivide">ldivide</a>, <a href="doc_002drdivide.html#doc_002drdivide">rdivide</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/matrix_type.cc -->
+<!-- matrix_type src/DLD-FUNCTIONS/matrix_type.cc -->
    <p><a name="doc_002dmatrix_005ftype"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>type</var> = <b>matrix_type</b> (<var>a</var>)<var><a name="index-matrix_005ftype-1566"></a></var><br>
-&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, type</var>)<var><a name="index-matrix_005ftype-1567"></a></var><br>
-&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, 'upper', perm</var>)<var><a name="index-matrix_005ftype-1568"></a></var><br>
-&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, 'lower', perm</var>)<var><a name="index-matrix_005ftype-1569"></a></var><br>
-&mdash; Loadable Function: <var>a</var> = <b>matrix_type</b> (<var>a, 'banded', nl, nu</var>)<var><a name="index-matrix_005ftype-1570"></a></var><br>
-<blockquote><p>Identify the matrix type or mark a matrix as a particular type.  This allows rapid
-for solutions of linear equations involving <var>a</var> to be performed.  Called with a
-single argument, <code>matrix_type</code> returns the type of the matrix and caches it for
-future use.  Called with more than one argument, <code>matrix_type</code> allows the type
-of the matrix to be defined.
+&mdash; Loadable Function: <var>type</var> = <b>matrix_type</b> (<var>A</var>)<var><a name="index-matrix_005ftype-1830"></a></var><br>
+&mdash; Loadable Function: <var>type</var> = <b>matrix_type</b> (<var>A, 'nocompute'</var>)<var><a name="index-matrix_005ftype-1831"></a></var><br>
+&mdash; Loadable Function: <var>A</var> = <b>matrix_type</b> (<var>A, type</var>)<var><a name="index-matrix_005ftype-1832"></a></var><br>
+&mdash; Loadable Function: <var>A</var> = <b>matrix_type</b> (<var>A, 'upper', perm</var>)<var><a name="index-matrix_005ftype-1833"></a></var><br>
+&mdash; Loadable Function: <var>A</var> = <b>matrix_type</b> (<var>A, 'lower', perm</var>)<var><a name="index-matrix_005ftype-1834"></a></var><br>
+&mdash; Loadable Function: <var>A</var> = <b>matrix_type</b> (<var>A, 'banded', nl, nu</var>)<var><a name="index-matrix_005ftype-1835"></a></var><br>
+<blockquote><p>Identify the matrix type or mark a matrix as a particular type.  This allows
+more rapid solutions of linear equations involving <var>A</var> to be performed. 
+Called with a single argument, <code>matrix_type</code> returns the type of the
+matrix and caches it for future use.  Called with more than one argument,
+<code>matrix_type</code> allows the type of the matrix to be defined.
 
-        <p>The possible matrix types depend on whether the matrix is full or sparse, and can be
-one of the following
+        <p>If the option 'nocompute' is given, the function will not attempt to guess
+the type if it is still unknown.  This is useful for debugging purposes.
+
+        <p>The possible matrix types depend on whether the matrix is full or sparse, and
+can be one of the following
 
           <dl>
-<dt>'unknown'<dd>Remove any previously cached matrix type, and mark type as unknown
+<dt>'unknown'<dd>Remove any previously cached matrix type, and mark type as unknown.
 
           <br><dt>'full'<dd>Mark the matrix as full.
 
           <br><dt>'positive definite'<dd>Probable full positive definite matrix.
 
-          <br><dt>'diagonal'<dd>Diagonal Matrix.  (Sparse matrices only)
+          <br><dt>'diagonal'<dd>Diagonal matrix.  (Sparse matrices only)
 
           <br><dt>'permuted diagonal'<dd>Permuted Diagonal matrix.  The permutation does not need to be specifically
-indicated, as the structure of the matrix explicitly gives this.  (Sparse matrices
-only)
+indicated, as the structure of the matrix explicitly gives this.  (Sparse
+matrices only)
 
-          <br><dt>'upper'<dd>Upper triangular.  If the optional third argument <var>perm</var> is given, the matrix is
-assumed to be a permuted upper triangular with the permutations defined by the
-vector <var>perm</var>.
+          <br><dt>'upper'<dd>Upper triangular.  If the optional third argument <var>perm</var> is given, the
+matrix is assumed to be a permuted upper triangular with the permutations
+defined by the vector <var>perm</var>.
 
-          <br><dt>'lower'<dd>Lower triangular.  If the optional third argument <var>perm</var> is given, the matrix is
-assumed to be a permuted lower triangular with the permutations defined by the
-vector <var>perm</var>.
+          <br><dt>'lower'<dd>Lower triangular.  If the optional third argument <var>perm</var> is given, the
+matrix is assumed to be a permuted lower triangular with the permutations
+defined by the vector <var>perm</var>.
 
-          <br><dt>'banded'<dt>'banded positive definite'<dd>Banded matrix with the band size of <var>nl</var> below the diagonal and <var>nu</var> above
-it.  If <var>nl</var> and <var>nu</var> are 1, then the matrix is tridiagonal and treated
-with specialized code.  In addition the matrix can be marked as probably a
-positive definite (Sparse matrices only)
+          <br><dt>'banded'<dt>'banded positive definite'<dd>Banded matrix with the band size of <var>nl</var> below the diagonal and <var>nu</var>
+above it.  If <var>nl</var> and <var>nu</var> are 1, then the matrix is tridiagonal and
+treated with specialized code.  In addition the matrix can be marked as
+probably a positive definite.  (Sparse matrices only)
 
-          <br><dt>'singular'<dd>The matrix is assumed to be singular and will be treated with a minimum norm solution
+          <br><dt>'singular'<dd>The matrix is assumed to be singular and will be treated with a minimum norm
+solution.
 
         </dl>
 
-        <p>Note that the matrix type will be discovered automatically on the first attempt to
-solve a linear equation involving <var>a</var>.  Therefore <code>matrix_type</code> is only
-useful to give Octave hints of the matrix type.  Incorrectly defining the
-matrix type will result in incorrect results from solutions of linear equations,
-and so it is entirely the responsibility of the user to correctly identify the
-matrix type.
+        <p>Note that the matrix type will be discovered automatically on the first
+attempt to solve a linear equation involving <var>A</var>.  Therefore
+<code>matrix_type</code> is only useful to give Octave hints of the matrix type. 
+Incorrectly defining the matrix type will result in incorrect results from
+solutions of linear equations; it is entirely <strong>the responsibility of
+the user</strong> to correctly identify the matrix type.
 
-        <p>Also the test for positive definiteness is a low-cost test for a hermitian
-matrix with a real positive diagonal.  This does not guarantee that the matrix
-is positive definite, but only that it is a probable candidate.  When such a
-matrix is factorized, a Cholesky factorization is first attempted, and if
-that fails the matrix is then treated with an LU factorization.  Once the
-matrix has been factorized, <code>matrix_type</code> will return the correct
-classification of the matrix. 
+        <p>Also, the test for positive definiteness is a low-cost test for a Hermitian
+matrix with a real positive diagonal.  This does not guarantee that the
+matrix is positive definite, but only that it is a probable candidate.  When
+such a matrix is factorized, a Cholesky&nbsp;factorization is first
+attempted, and if that fails the matrix is then treated with an
+LU&nbsp;factorization.  Once the matrix has been factorized,
+<code>matrix_type</code> will return the correct classification of the matrix. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- norm src/data.cc -->
    <p><a name="doc_002dnorm"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>norm</b> (<var>a, p, opt</var>)<var><a name="index-norm-1571"></a></var><br>
+&mdash; Built-in Function:  <b>norm</b> (<var>a</var>)<var><a name="index-norm-1836"></a></var><br>
+&mdash; Built-in Function:  <b>norm</b> (<var>a, p</var>)<var><a name="index-norm-1837"></a></var><br>
+&mdash; Built-in Function:  <b>norm</b> (<var>a, p, opt</var>)<var><a name="index-norm-1838"></a></var><br>
 <blockquote><p>Compute the p-norm of the matrix <var>a</var>.  If the second argument is
 missing, <code>p = 2</code> is assumed.
 
@@ -274,11 +312,11 @@ missing, <code>p = 2</code> is assumed.
 
           <br><dt><var>p</var> = <code>2</code><dd>Largest singular value of <var>a</var>.
 
-          <br><dt><var>p</var> = <code>Inf</code> or <code>"inf"</code><dd><a name="index-infinity-norm-1572"></a>Infinity norm, the largest row sum of the absolute values of <var>a</var>.
+          <br><dt><var>p</var> = <code>Inf</code> or <code>"inf"</code><dd><a name="index-infinity-norm-1839"></a>Infinity norm, the largest row sum of the absolute values of <var>a</var>.
 
-          <br><dt><var>p</var> = <code>"fro"</code><dd><a name="index-Frobenius-norm-1573"></a>Frobenius norm of <var>a</var>, <code>sqrt (sum (diag (</code><var>a</var><code>' * </code><var>a</var><code>)))</code>.
+          <br><dt><var>p</var> = <code>"fro"</code><dd><a name="index-Frobenius-norm-1840"></a>Frobenius norm of <var>a</var>, <code>sqrt (sum (diag (</code><var>a</var><code>' * </code><var>a</var><code>)))</code>.
 
-          <br><dt>other <var>p</var>, <var>p</var><code> &gt; 1</code><dd><a name="index-general-p_002dnorm-1574"></a>maximum <code>norm (A*x, p)</code> such that <code>norm (x, p) == 1</code>
+          <br><dt>other <var>p</var>, <var>p</var><code> &gt; 1</code><dd><a name="index-general-p_002dnorm-1841"></a>maximum <code>norm (A*x, p)</code> such that <code>norm (x, p) == 1</code>
 </dl>
 
         <p>If <var>a</var> is a vector or a scalar:
@@ -297,9 +335,10 @@ missing, <code>p = 2</code> is assumed.
           <br><dt>other <var>p</var> <var>p</var><code> &lt; 1</code><dd>the p-pseudonorm defined as above. 
 </dl>
 
-        <p>If <code>"rows"</code> is given as <var>opt</var>, the norms of all rows of the matrix <var>a</var> are
-returned as a column vector.  Similarly, if <code>"columns"</code> or <code>"cols"</code> is passed
-column norms are computed. 
+        <p>If <var>opt</var> is the value <code>"rows"</code>, treat each row as a vector and
+compute its norm.  The result is returned as a column vector. 
+Similarly, if <var>opt</var> is <code>"columns"</code> or <code>"cols"</code> then compute
+the norms of each column and return a row vector. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -307,41 +346,50 @@ column norms are computed.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcond.html#doc_002dcond">cond</a>, <a href="doc_002dsvd.html#doc_002dsvd">svd</a>. 
 </p></blockquote></div>
 
-<!-- ./linear-algebra/null.m -->
+<!-- null scripts/linear-algebra/null.m -->
    <p><a name="doc_002dnull"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>null</b> (<var>a, tol</var>)<var><a name="index-null-1575"></a></var><br>
-<blockquote><p>Return an orthonormal basis of the null space of <var>a</var>.
+&mdash; Function File:  <b>null</b> (<var>A, tol</var>)<var><a name="index-null-1842"></a></var><br>
+<blockquote><p>Return an orthonormal basis of the null space of <var>A</var>.
 
         <p>The dimension of the null space is taken as the number of singular
-values of <var>a</var> not greater than <var>tol</var>.  If the argument <var>tol</var>
+values of <var>A</var> not greater than <var>tol</var>.  If the argument <var>tol</var>
 is missing, it is computed as
 
-     <pre class="example">          max (size (<var>a</var>)) * max (svd (<var>a</var>)) * eps
+     <pre class="example">          max (size (<var>A</var>)) * max (svd (<var>A</var>)) * eps
 </pre>
-        </blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dorth.html#doc_002dorth">orth</a>. 
+</p></blockquote></div>
 
-<!-- ./linear-algebra/orth.m -->
+<!-- orth scripts/linear-algebra/orth.m -->
    <p><a name="doc_002dorth"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>orth</b> (<var>a, tol</var>)<var><a name="index-orth-1576"></a></var><br>
-<blockquote><p>Return an orthonormal basis of the range space of <var>a</var>.
+&mdash; Function File:  <b>orth</b> (<var>A, tol</var>)<var><a name="index-orth-1843"></a></var><br>
+<blockquote><p>Return an orthonormal basis of the range space of <var>A</var>.
 
         <p>The dimension of the range space is taken as the number of singular
-values of <var>a</var> greater than <var>tol</var>.  If the argument <var>tol</var> is
+values of <var>A</var> greater than <var>tol</var>.  If the argument <var>tol</var> is
 missing, it is computed as
 
-     <pre class="example">          max (size (<var>a</var>)) * max (svd (<var>a</var>)) * eps
+     <pre class="example">          max (size (<var>A</var>)) * max (svd (<var>A</var>)) * eps
 </pre>
-        </blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnull.html#doc_002dnull">null</a>. 
+</p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/pinv.cc -->
+<!-- pinv src/DLD-FUNCTIONS/pinv.cc -->
    <p><a name="doc_002dpinv"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>pinv</b> (<var>x, tol</var>)<var><a name="index-pinv-1577"></a></var><br>
+&mdash; Loadable Function:  <b>pinv</b> (<var>x</var>)<var><a name="index-pinv-1844"></a></var><br>
+&mdash; Loadable Function:  <b>pinv</b> (<var>x, tol</var>)<var><a name="index-pinv-1845"></a></var><br>
 <blockquote><p>Return the pseudoinverse of <var>x</var>.  Singular values less than
 <var>tol</var> are ignored.
 
@@ -352,57 +400,57 @@ missing, it is computed as
         <p class="noindent">where <code>sigma_max (</code><var>x</var><code>)</code> is the maximal singular value of <var>x</var>. 
 </p></blockquote></div>
 
-<!-- ./linear-algebra/rank.m -->
+<!-- rank scripts/linear-algebra/rank.m -->
    <p><a name="doc_002drank"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rank</b> (<var>a, tol</var>)<var><a name="index-rank-1578"></a></var><br>
-<blockquote><p>Compute the rank of <var>a</var>, using the singular value decomposition. 
-The rank is taken to be the number of singular values of <var>a</var> that
+&mdash; Function File:  <b>rank</b> (<var>A, tol</var>)<var><a name="index-rank-1846"></a></var><br>
+<blockquote><p>Compute the rank of <var>A</var>, using the singular value decomposition. 
+The rank is taken to be the number of singular values of <var>A</var> that
 are greater than the specified tolerance <var>tol</var>.  If the second
 argument is omitted, it is taken to be
 
-     <pre class="example">          tol = max (size (<var>a</var>)) * sigma(1) * eps;
+     <pre class="example">          tol = max (size (<var>A</var>)) * sigma(1) * eps;
 </pre>
         <p class="noindent">where <code>eps</code> is machine precision and <code>sigma(1)</code> is the largest
-singular value of <var>a</var>. 
+singular value of <var>A</var>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/rcond.cc -->
+<!-- rcond src/DLD-FUNCTIONS/rcond.cc -->
    <p><a name="doc_002drcond"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>c</var> = <b>rcond</b> (<var>a</var>)<var><a name="index-rcond-1579"></a></var><br>
-<blockquote><p>Compute the 1-norm estimate of the reciprocal condition as returned
+&mdash; Loadable Function: <var>c</var> = <b>rcond</b> (<var>A</var>)<var><a name="index-rcond-1847"></a></var><br>
+<blockquote><p>Compute the 1-norm estimate of the reciprocal condition number as returned
 by <span class="sc">lapack</span>.  If the matrix is well-conditioned then <var>c</var> will be near
 1 and if the matrix is poorly conditioned it will be close to zero.
 
-        <p>The matrix <var>a</var> must not be sparse.  If the matrix is sparse then
-<code>condest (</code><var>a</var><code>)</code> or <code>rcond (full (</code><var>a</var><code>))</code> should be used
+        <p>The matrix <var>A</var> must not be sparse.  If the matrix is sparse then
+<code>condest (</code><var>A</var><code>)</code> or <code>rcond (full (</code><var>A</var><code>))</code> should be used
 instead. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dinv.html#doc_002dinv">inv</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcond.html#doc_002dcond">cond</a>, <a href="doc_002dcondest.html#doc_002dcondest">condest</a>. 
 </p></blockquote></div>
 
-<!-- ./linear-algebra/trace.m -->
+<!-- trace scripts/linear-algebra/trace.m -->
    <p><a name="doc_002dtrace"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>trace</b> (<var>a</var>)<var><a name="index-trace-1580"></a></var><br>
-<blockquote><p>Compute the trace of <var>a</var>, <code>sum (diag (</code><var>a</var><code>))</code>. 
+&mdash; Function File:  <b>trace</b> (<var>A</var>)<var><a name="index-trace-1848"></a></var><br>
+<blockquote><p>Compute the trace of <var>A</var>, <code>sum (diag (</code><var>A</var><code>))</code>. 
 </p></blockquote></div>
 
-<!-- ./linear-algebra/rref.m -->
+<!-- rref scripts/linear-algebra/rref.m -->
    <p><a name="doc_002drref"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>r</var>, <var>k</var>] = <b>rref</b> (<var>a, tol</var>)<var><a name="index-rref-1581"></a></var><br>
+&mdash; Function File: [<var>r</var>, <var>k</var>] = <b>rref</b> (<var>A, tol</var>)<var><a name="index-rref-1849"></a></var><br>
 <blockquote>
-        <p>Returns the reduced row echelon form of <var>a</var>.  <var>tol</var> defaults
-to <code>eps * max (size (</code><var>a</var><code>)) * norm (</code><var>a</var><code>, inf)</code>.
+        <p>Returns the reduced row echelon form of <var>A</var>.  <var>tol</var> defaults
+to <code>eps * max (size (</code><var>A</var><code>)) * norm (</code><var>A</var><code>, inf)</code>.
 
         <p>Called with two return arguments, <var>k</var> returns the vector of
 "bound variables", which are those columns on which elimination

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Matrices and Arrays in Oct-Files - Untitled</title>
+<title>Matrices and Arrays in Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Getting-Started-with-Oct_002dFiles.html#Getting-Started-with-Oct_002dFiles" title="Getting Started with Oct-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Matrices-and-Arrays-in-Oct-Files"></a>
 <a name="Matrices-and-Arrays-in-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Character-Strings-in-Oct_002dFiles.html#Character-Strings-in-Oct_002dFiles">Character Strings in Oct-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Getting-Started-with-Oct_002dFiles.html#Getting-Started-with-Oct_002dFiles">Getting Started with Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
@@ -42,8 +43,10 @@ matrix types
 
      <dl>
 <dt><code>Matrix</code><dd>A double precision matrix class defined in dMatrix.h,
-<br><dt><code>ComplexMatrix</code><dd>A complex matrix class defined in CMatrix.h, and
-<br><dt><code>BoolMatrix</code><dd>A boolean matrix class defined in boolMatrix.h. 
+
+     <br><dt><code>ComplexMatrix</code><dd>A complex matrix class defined in CMatrix.h, and
+
+     <br><dt><code>BoolMatrix</code><dd>A boolean matrix class defined in boolMatrix.h. 
 </dl>
 
    <p>These are the basic two-dimensional matrix types of octave.  In
@@ -52,11 +55,15 @@ being
 
      <dl>
 <dt><code>NDArray</code><dd>A double precision array class defined in <samp><span class="file">dNDArray.h</span></samp>
-<br><dt><code>ComplexNDarray</code><dd>A complex array class defined in <samp><span class="file">CNDArray.h</span></samp>
-<br><dt><code>boolNDArray</code><dd>A boolean array class defined in <samp><span class="file">boolNDArray.h</span></samp>
-<br><dt><code>int8NDArray</code><dt><code>int16NDArray</code><dt><code>int32NDArray</code><dt><code>int64NDArray</code><dd>8, 16, 32 and 64-bit signed array classes defined in
-<samp><span class="file">int8NDArray.h</span></samp>, <samp><span class="file">int16NDArray.h</span></samp>, etc. 
-<br><dt><code>uint8NDArray</code><dt><code>uint16NDArray</code><dt><code>uint32NDArray</code><dt><code>uint64NDArray</code><dd>8, 16, 32 and 64-bit unsigned array classes defined in
+
+     <br><dt><code>ComplexNDarray</code><dd>A complex array class defined in <samp><span class="file">CNDArray.h</span></samp>
+
+     <br><dt><code>boolNDArray</code><dd>A boolean array class defined in <samp><span class="file">boolNDArray.h</span></samp>
+
+     <br><dt><code>int8NDArray</code><dt><code>int16NDArray</code><dt><code>int32NDArray</code><dt><code>int64NDArray</code><dd>8, 16, 32 and 64-bit signed array classes defined in
+<samp><span class="file">int8NDArray.h</span></samp>, <samp><span class="file">int16NDArray.h</span></samp>, etc.
+
+     <br><dt><code>uint8NDArray</code><dt><code>uint16NDArray</code><dt><code>uint32NDArray</code><dt><code>uint64NDArray</code><dd>8, 16, 32 and 64-bit unsigned array classes defined in
 <samp><span class="file">uint8NDArray.h</span></samp>, <samp><span class="file">uint16NDArray.h</span></samp>, etc. 
 </dl>
 
@@ -71,7 +78,8 @@ example
      <pre class="example">          Matrix a;
 </pre>
      <p>This can be used on all matrix and array types
-<li>Define the dimensions of the matrix or array with a dim_vector.  For
+
+     <li>Define the dimensions of the matrix or array with a dim_vector.  For
 example
 
      <pre class="example">          dim_vector dv (2);
@@ -79,7 +87,8 @@ example
           Matrix a (dv);
 </pre>
      <p>This can be used on all matrix and array types
-<li>Define the number of rows and columns in the matrix.  For example
+
+     <li>Define the number of rows and columns in the matrix.  For example:
 
      <pre class="example">          Matrix a (2, 2)
 </pre>
@@ -90,8 +99,8 @@ example
 selection of which include
 
 <div class="defun">
-&mdash; Method: T&amp; <b>operator ()</b> (<var>octave_idx_type</var>)<var><a name="index-operator-_0028_0029-2473"></a></var><br>
-&mdash; Method: T&amp; <b>elem</b> (<var>octave_idx_type</var>)<var><a name="index-elem-2474"></a></var><br>
+&mdash; Method: T&amp; <b>operator ()</b> (<var>octave_idx_type</var>)<var><a name="index-operator-_0028_0029-2952"></a></var><br>
+&mdash; Method: T&amp; <b>elem</b> (<var>octave_idx_type</var>)<var><a name="index-elem-2953"></a></var><br>
 <blockquote><p>The <code>()</code> operator or <code>elem</code> method allow the values of the
 matrix or array to be read or set.  These can take a single argument,
 which is of type <code>octave_idx_type</code>, that is the index into the matrix or
@@ -105,29 +114,29 @@ circumstances the user might prefer to access the data of the array or
 matrix directly through the fortran_vec method discussed below.
 
 <div class="defun">
-&mdash; Method: octave_idx_type <b>nelem</b> (<var>void</var>)<var> const<a name="index-nelem-2475"></a></var><br>
+&mdash; Method: octave_idx_type <b>nelem</b> (<var>void</var>)<var> const<a name="index-nelem-2954"></a></var><br>
 <blockquote><p>The total number of elements in the matrix or array. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: size_t <b>byte_size</b> (<var>void</var>)<var> const<a name="index-byte_005fsize-2476"></a></var><br>
+&mdash; Method: size_t <b>byte_size</b> (<var>void</var>)<var> const<a name="index-byte_005fsize-2955"></a></var><br>
 <blockquote><p>The number of bytes used to store the matrix or array. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: dim_vector <b>dims</b> (<var>void</var>)<var> const<a name="index-dims-2477"></a></var><br>
+&mdash; Method: dim_vector <b>dims</b> (<var>void</var>)<var> const<a name="index-dims-2956"></a></var><br>
 <blockquote><p>The dimensions of the matrix or array in value of type dim_vector. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: void <b>resize</b> (<var>const dim_vector&amp;</var>)<var><a name="index-resize-2478"></a></var><br>
+&mdash; Method: void <b>resize</b> (<var>const dim_vector&amp;</var>)<var><a name="index-resize-2957"></a></var><br>
 <blockquote><p>A method taking either an argument of type <code>dim_vector</code>, or in the
 case of a matrix two arguments of type <code>octave_idx_type</code> defining
 the number of rows and columns in the matrix. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: T* <b>fortran_vec</b> (<var>void</var>)<var><a name="index-fortran_005fvec-2479"></a></var><br>
+&mdash; Method: T* <b>fortran_vec</b> (<var>void</var>)<var><a name="index-fortran_005fvec-2958"></a></var><br>
 <blockquote><p>This method returns a pointer to the underlying data of the matrix or a
 array so that it can be manipulated directly, either within Octave or by
 an external library. 
@@ -176,7 +185,7 @@ from the function.  An example of the use of this demonstration function
 is
 
 <pre class="example">     addtwomatrices (ones (2, 2), ones (2, 2))
-             2  2
+           &rArr;  2  2
                2  2
 </pre>
    <p>A list of the basic <code>Matrix</code> and <code>Array</code> types, the methods to

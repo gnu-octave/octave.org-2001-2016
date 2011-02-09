@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Call Stack - Untitled</title>
+<title>Call Stack - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Debugging.html#Debugging" title="Debugging">
 <link rel="prev" href="Debug-Mode.html#Debug-Mode" title="Debug Mode">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Call-Stack"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Debug-Mode.html#Debug-Mode">Debug Mode</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
 <hr>
@@ -32,11 +33,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
 
 <h3 class="section">13.5 Call Stack</h3>
 
-<!-- debug.cc -->
+<!-- dbstack src/debug.cc -->
 <p><a name="doc_002ddbstack"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>stack</var>, <var>idx</var>] <b>dbstack</b> (<var>n</var>)<var><a name="index-dbstack-704"></a></var><br>
+&mdash; Loadable Function: [<var>stack</var>, <var>idx</var>] <b>dbstack</b> (<var>n</var>)<var><a name="index-dbstack-792"></a></var><br>
 <blockquote><p>Print or return current stack information.  With optional argument
 <var>n</var>, omit the <var>n</var> innermost stack frames. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -46,11 +47,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>. 
 </p></blockquote></div>
 
-<!-- debug.cc -->
+<!-- dbup src/debug.cc -->
    <p><a name="doc_002ddbup"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbup</b> (<var>n</var>)<var><a name="index-dbup-705"></a></var><br>
+&mdash; Loadable Function:  <b>dbup</b><var><a name="index-dbup-793"></a></var><br>
+&mdash; Loadable Function:  <b>dbup</b> (<var>n</var>)<var><a name="index-dbup-794"></a></var><br>
 <blockquote><p>In debugging mode, move up the execution stack <var>n</var> frames. 
 If <var>n</var> is omitted, move up one frame. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -60,11 +62,12 @@ If <var>n</var> is omitted, move up one frame.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>. 
 </p></blockquote></div>
 
-<!-- debug.cc -->
+<!-- dbdown src/debug.cc -->
    <p><a name="doc_002ddbdown"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbdown</b> (<var>n</var>)<var><a name="index-dbdown-706"></a></var><br>
+&mdash; Loadable Function:  <b>dbdown</b><var><a name="index-dbdown-795"></a></var><br>
+&mdash; Loadable Function:  <b>dbdown</b> (<var>n</var>)<var><a name="index-dbdown-796"></a></var><br>
 <blockquote><p>In debugging mode, move down the execution stack <var>n</var> frames. 
 If <var>n</var> is omitted, move down one frame. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -75,7 +78,7 @@ If <var>n</var> is omitted, move down one frame.
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007, 2008, 2009 John W. Eaton -->
+<!-- Copyright (C) 1996-2011 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

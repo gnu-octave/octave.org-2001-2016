@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Delaunay Triangulation - Untitled</title>
+<title>Delaunay Triangulation - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Geometry.html#Geometry" title="Geometry">
 <link rel="next" href="Voronoi-Diagrams.html#Voronoi-Diagrams" title="Voronoi Diagrams">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Delaunay-Triangulation"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Voronoi-Diagrams.html#Voronoi-Diagrams">Voronoi Diagrams</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Geometry.html#Geometry">Geometry</a>
 <hr>
@@ -43,12 +44,12 @@ circum-circle.  However, in some cases, and in particular for the
 case of a regular grid, 4 or more points can be on a single
 circum-circle.  In this case the Delaunay triangulation is not unique.
 
-<!-- ./geometry/delaunay.m -->
+<!-- delaunay scripts/geometry/delaunay.m -->
    <p><a name="doc_002ddelaunay"></a>
 
 <div class="defun">
-&mdash; Function File: <var>tri</var> = <b>delaunay</b> (<var>x, y</var>)<var><a name="index-delaunay-2084"></a></var><br>
-&mdash; Function File: <var>tri</var> = <b>delaunay</b> (<var>x, y, opt</var>)<var><a name="index-delaunay-2085"></a></var><br>
+&mdash; Function File: <var>tri</var> = <b>delaunay</b> (<var>x, y</var>)<var><a name="index-delaunay-2435"></a></var><br>
+&mdash; Function File: <var>tri</var> = <b>delaunay</b> (<var>x, y, opt</var>)<var><a name="index-delaunay-2436"></a></var><br>
 <blockquote><p>The return matrix of size [n, 3] contains a set triangles which are
 described by the indices to the data point x and y vector. 
 The triangulation satisfies the Delaunay circum-circle criterion. 
@@ -79,12 +80,12 @@ Delaunay circum-circle criteria.  Similarly, <code>delaunayn</code> returns the
 N-dimensional simplex satisfying the Delaunay circum-circle criteria. 
 The N-dimensional extension of a triangulation is called a tessellation.
 
-<!-- ./geometry/delaunay3.m -->
+<!-- delaunay3 scripts/geometry/delaunay3.m -->
    <p><a name="doc_002ddelaunay3"></a>
 
 <div class="defun">
-&mdash; Function File: <var>T</var> = <b>delaunay3</b> (<var>x, y, z</var>)<var><a name="index-delaunay3-2086"></a></var><br>
-&mdash; Function File: <var>T</var> = <b>delaunay3</b> (<var>x, y, z, opt</var>)<var><a name="index-delaunay3-2087"></a></var><br>
+&mdash; Function File: <var>T</var> = <b>delaunay3</b> (<var>x, y, z</var>)<var><a name="index-delaunay3-2437"></a></var><br>
+&mdash; Function File: <var>T</var> = <b>delaunay3</b> (<var>x, y, z, opt</var>)<var><a name="index-delaunay3-2438"></a></var><br>
 <blockquote><p>A matrix of size [n, 4] is returned.  Each row contains a
 set of tetrahedron which are
 described by the indices to the data point vectors (x,y,z).
@@ -99,21 +100,21 @@ documentation for the Qhull library for details.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddelaunay.html#doc_002ddelaunay">delaunay</a>, <a href="doc_002ddelaunayn.html#doc_002ddelaunayn">delaunayn</a>. 
 </p></blockquote></div>
 
-<!-- ./geometry/delaunayn.m -->
+<!-- delaunayn scripts/geometry/delaunayn.m -->
    <p><a name="doc_002ddelaunayn"></a>
 
 <div class="defun">
-&mdash; Function File: <var>T</var> = <b>delaunayn</b> (<var>P</var>)<var><a name="index-delaunayn-2088"></a></var><br>
-&mdash; Function File: <var>T</var> = <b>delaunayn</b> (<var>P, opt</var>)<var><a name="index-delaunayn-2089"></a></var><br>
+&mdash; Function File: <var>t</var> = <b>delaunayn</b> (<var>p</var>)<var><a name="index-delaunayn-2439"></a></var><br>
+&mdash; Function File: <var>t</var> = <b>delaunayn</b> (<var>p, opt</var>)<var><a name="index-delaunayn-2440"></a></var><br>
 <blockquote><p>Form the Delaunay triangulation for a set of points. 
 The Delaunay triangulation is a tessellation of the convex hull of the
 points such that no n-sphere defined by the n-triangles contains
 any other points from the set. 
-The input matrix <var>P</var> of size <code>[n, dim]</code> contains <var>n</var>
-points in a space of dimension dim.  The return matrix <var>T</var> has the
+The input matrix <var>p</var> of size <code>[n, dim]</code> contains n
+points in a space of dimension dim.  The return matrix <var>t</var> has the
 size <code>[m, dim+1]</code>.  It contains for each row a set of indices to
 the points, which describes a simplex of dimension dim.  For example,
-a 2d simplex is a triangle and 3d simplex is a tetrahedron.
+a 2-D simplex is a triangle and 3-D simplex is a tetrahedron.
 
         <p>Extra options for the underlying Qhull command can be specified by the
 second argument.  This argument is a cell array of strings.  The default
@@ -121,7 +122,8 @@ options depend on the dimension of the input:
 
           <ul>
 <li>2D and 3D: <var>opt</var> = <code>{"Qt", "Qbb", "Qc"}</code>
-<li>4D and higher: <var>opt</var> = <code>{"Qt", "Qbb", "Qc", "Qz"}</code>
+
+          <li>4D and higher: <var>opt</var> = <code>{"Qt", "Qbb", "Qc", "Qz"}</code>
 </ul>
 
         <p>If <var>opt</var> is [], then the default arguments are used.  If <var>opt</var>
@@ -144,9 +146,15 @@ See the Qhull documentation for the available options.
      axis ([0, 1, 0, 1]);
      plot(X, Y, "b", x, y, "r*");
 </pre>
-   <ul class="menu">
+   <p class="noindent">The result of which can be seen in <a href="fig_003adelaunay.html#fig_003adelaunay">fig:delaunay</a>.
+
+   <div class="float">
+<a name="fig_003adelaunay"></a><div align="center"><img src="delaunay.png" alt="delaunay.png"></div>
+   <p><strong class="float-caption">Figure 29.1: Delaunay triangulation of a random set of points</strong></p></div>
+
+<ul class="menu">
 <li><a accesskey="1" href="Plotting-the-Triangulation.html#Plotting-the-Triangulation">Plotting the Triangulation</a>
-<li><a accesskey="2" href="Identifying-points-in-Triangulation.html#Identifying-points-in-Triangulation">Identifying points in Triangulation</a>
+<li><a accesskey="2" href="Identifying-Points-in-Triangulation.html#Identifying-Points-in-Triangulation">Identifying Points in Triangulation</a>
 </ul>
 
    </body></html>

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Creating a Class - Untitled</title>
+<title>Creating a Class - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Object-Oriented-Programming.html#Object-Oriented-Programming" title="Object Oriented Programming">
 <link rel="next" href="Manipulating-Classes.html#Manipulating-Classes" title="Manipulating Classes">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Creating-a-Class"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Manipulating-Classes.html#Manipulating-Classes">Manipulating Classes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Object-Oriented-Programming.html#Object-Oriented-Programming">Object Oriented Programming</a>
 <hr>
@@ -116,31 +117,36 @@ at the first executable line of the display method of the polynomial
 class.
 
    <p>To check where a variable is a user class, the <code>isobject</code> and
-<code>isa</code> functions can be used. for example
+<code>isa</code> functions can be used.  For example:
 
 <pre class="example">     p = polynomial ([1, 0, 1]);
      isobject (p)
-      1
+     &rArr; 1
      isa (p, "polynomial")
-      1
+     &rArr; 1
 </pre>
-   <!-- ov-class.cc -->
+   <!-- isobject src/ov-class.cc -->
    <p><a name="doc_002disobject"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isobject</b> (<var>x</var>)<var><a name="index-isobject-2254"></a></var><br>
+&mdash; Built-in Function:  <b>isobject</b> (<var>x</var>)<var><a name="index-isobject-2642"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a class object. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dclass.html#doc_002dclass">class</a>, <a href="doc_002dtypeinfo.html#doc_002dtypeinfo">typeinfo</a>, <a href="doc_002disa.html#doc_002disa">isa</a>, <a href="doc_002dismethod.html#doc_002dismethod">ismethod</a>. 
 </p></blockquote></div>
 
 <p class="noindent">The available methods of a class can be displayed with the
 <code>methods</code> function.
 
-<!-- ov-class.cc -->
+<!-- methods src/ov-class.cc -->
    <p><a name="doc_002dmethods"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>methods</b> (<var>x</var>)<var><a name="index-methods-2255"></a></var><br>
-&mdash; Built-in Function:  <b>methods</b> (<var>"classname"</var>)<var><a name="index-methods-2256"></a></var><br>
+&mdash; Built-in Function:  <b>methods</b> (<var>x</var>)<var><a name="index-methods-2643"></a></var><br>
+&mdash; Built-in Function:  <b>methods</b> (<var>"classname"</var>)<var><a name="index-methods-2644"></a></var><br>
 <blockquote><p>Return a cell array containing the names of the methods for the
 object <var>x</var> or the named class. 
 </p></blockquote></div>
@@ -148,20 +154,25 @@ object <var>x</var> or the named class.
 <p class="noindent">To inquire whether a particular method is available to a user class, the
 <code>ismethod</code> function can be used.
 
-<!-- ov-class.cc -->
+<!-- ismethod src/ov-class.cc -->
    <p><a name="doc_002dismethod"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ismethod</b> (<var>x, method</var>)<var><a name="index-ismethod-2257"></a></var><br>
+&mdash; Built-in Function:  <b>ismethod</b> (<var>x, method</var>)<var><a name="index-ismethod-2645"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a class object and the string <var>method</var>
 is a method of this class. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002disobject.html#doc_002disobject">isobject</a>. 
 </p></blockquote></div>
 
-<p class="noindent">For example
+<p class="noindent">For example:
 
 <pre class="example">     p = polynomial ([1, 0, 1]);
      ismethod (p, "roots")
-      1
+     &rArr; 1
 </pre>
    </body></html>
 

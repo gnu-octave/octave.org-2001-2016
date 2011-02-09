@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Assignment Ops - Untitled</title>
+<title>Assignment Ops - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Expressions.html#Expressions" title="Expressions">
 <link rel="prev" href="Boolean-Expressions.html#Boolean-Expressions" title="Boolean Expressions">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Assignment-Ops"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Increment-Ops.html#Increment-Ops">Increment Ops</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Boolean-Expressions.html#Boolean-Expressions">Boolean Expressions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressions</a>
@@ -34,8 +35,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressio
 
 <h3 class="section">8.6 Assignment Expressions</h3>
 
-<p><a name="index-assignment-expressions-526"></a><a name="index-assignment-operators-527"></a><a name="index-operators_002c-assignment-528"></a><a name="index-expressions_002c-assignment-529"></a>
-<a name="index-g_t_003d-530"></a>
+<p><a name="index-assignment-expressions-615"></a><a name="index-assignment-operators-616"></a><a name="index-operators_002c-assignment-617"></a><a name="index-expressions_002c-assignment-618"></a>
+<a name="index-g_t_003d-619"></a>
 An <dfn>assignment</dfn> is an expression that stores a new value into a
 variable.  For example, the following expression assigns the value 1 to
 the variable <code>z</code>:
@@ -56,14 +57,14 @@ variable <code>message</code>:
 </pre>
    <p class="noindent">(This also illustrates concatenation of strings.)
 
-   <p><a name="index-side-effect-531"></a>Most operators (addition, concatenation, and so on) have no effect
+   <p><a name="index-side-effect-620"></a>Most operators (addition, concatenation, and so on) have no effect
 except to compute a value.  If you ignore the value, you might as well
 not use the operator.  An assignment operator is different.  It does
 produce a value, but even if you ignore the value, the assignment still
 makes itself felt through the alteration of the variable.  We call this
 a <dfn>side effect</dfn>.
 
-   <p><a name="index-lvalue-532"></a>The left-hand operand of an assignment need not be a variable
+   <p><a name="index-lvalue-621"></a>The left-hand operand of an assignment need not be a variable
 (see <a href="Variables.html#Variables">Variables</a>).  It can also be an element of a matrix
 (see <a href="Index-Expressions.html#Index-Expressions">Index Expressions</a>) or a list of return values
 (see <a href="Calling-Functions.html#Calling-Functions">Calling Functions</a>).  These are all called <dfn>lvalues</dfn>, which
@@ -145,7 +146,18 @@ following will produce an error.
 <pre class="example">     [a, b, c, d] = [u, s, v] = svd (a);
      -| error: element number 4 undefined in return list
 </pre>
-   <p><a name="index-g_t_002b_003d-533"></a>A very common programming pattern is to increment an existing variable
+   <p>The symbol <code>~</code> may be used as a placeholder in the list of lvalues,
+indicating that the corresponding return value should be ignored and not stored
+anywhere:
+
+<pre class="example">     [~, s, v] = svd (a);
+</pre>
+   <p>This is cleaner and more memory efficient than using a dummy variable. 
+The <code>nargout</code> value for the right-hand side expression is not affected. 
+If the assignment is used as an expression, the return value is a
+comma-separated list with the ignored values dropped.
+
+   <p><a name="index-g_t_002b_003d-622"></a>A very common programming pattern is to increment an existing variable
 with a given value, like this
 
 <pre class="example">     a = a + 2;
@@ -155,7 +167,7 @@ with a given value, like this
 
 <pre class="example">     a += 2;
 </pre>
-   <p class="noindent"><a name="index-g_t_002d_003d-534"></a><a name="index-g_t_002a_003d-535"></a><a name="index-g_t_002f_003d-536"></a>Similar operators also exist for subtraction (<code>-=</code>),
+   <p class="noindent"><a name="index-g_t_002d_003d-623"></a><a name="index-g_t_002a_003d-624"></a><a name="index-g_t_002f_003d-625"></a>Similar operators also exist for subtraction (<code>-=</code>),
 multiplication (<code>*=</code>), and division (<code>/=</code>).  An expression
 of the form
 
@@ -184,7 +196,7 @@ and then test whether <code>x</code> equals 1.  But this style tends to make
 programs hard to read.  Except in a one-shot program, you should rewrite
 it to get rid of such nesting of assignments.  This is never very hard.
 
-   <p><a name="index-increment-operator-537"></a><a name="index-decrement-operator-538"></a><a name="index-operators_002c-increment-539"></a><a name="index-operators_002c-decrement-540"></a>
+   <p><a name="index-increment-operator-626"></a><a name="index-decrement-operator-627"></a><a name="index-operators_002c-increment-628"></a><a name="index-operators_002c-decrement-629"></a>
 
    </body></html>
 

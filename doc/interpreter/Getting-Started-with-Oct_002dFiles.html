@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Getting Started with Oct-Files - Untitled</title>
+<title>Getting Started with Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="next" href="Matrices-and-Arrays-in-Oct_002dFiles.html#Matrices-and-Arrays-in-Oct_002dFiles" title="Matrices and Arrays in Oct-Files">
@@ -20,12 +20,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Getting-Started-with-Oct-Files"></a>
 <a name="Getting-Started-with-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Matrices-and-Arrays-in-Oct_002dFiles.html#Matrices-and-Arrays-in-Oct_002dFiles">Matrices and Arrays in Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
 <hr>
@@ -36,11 +37,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-F
 <p>The basic command to build oct-files is <code>mkoctfile</code> and it can be
 call from within octave or from the command line.
 
-<!-- ./miscellaneous/mkoctfile.m -->
+<!-- mkoctfile scripts/miscellaneous/mkoctfile.m -->
    <p><a name="doc_002dmkoctfile"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>mkoctfile</b> [<var>-options</var>]<var> file <small class="dots">...</small><a name="index-mkoctfile-2472"></a></var><br>
+&mdash; Command:  <b>mkoctfile</b> [<var>-options</var>]<var> file <small class="dots">...</small><a name="index-mkoctfile-2951"></a></var><br>
 <blockquote>
         <p>The <code>mkoctfile</code> function compiles source code written in C,
 C++, or Fortran.  Depending on the options used with <code>mkoctfile</code>, the
@@ -64,12 +65,20 @@ except for the file name of the code you wish to compile:
 
           <br><dt>&lsquo;<samp><span class="samp">-M</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">--depend</span></samp>&rsquo;<dd>Generate dependency files (.d) for C and C++ source files.
 
+          <br><dt>&lsquo;<samp><span class="samp">-R DIR</span></samp>&rsquo;<dd>Add the run-time path to the link command.
+
+          <br><dt>&lsquo;<samp><span class="samp">-Wl,...</span></samp>&rsquo;<dd>Pass flags though the linker like "-Wl,-rpath=<small class="dots">...</small>". 
+The quotes are needed since commas are interpreted as command
+separators.
+
+          <br><dt>&lsquo;<samp><span class="samp">-W...</span></samp>&rsquo;<dd>Pass flags though the compiler like "-Wa,OPTION".
+
           <br><dt>&lsquo;<samp><span class="samp">-c</span></samp>&rsquo;<dd>Compile but do not link.
 
           <br><dt>&lsquo;<samp><span class="samp">-g</span></samp>&rsquo;<dd>Enable debugging options for compilers.
 
           <br><dt>&lsquo;<samp><span class="samp">-o FILE</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">--output FILE</span></samp>&rsquo;<dd>Output file name.  Default extension is .oct
-(or .mex if &ndash;mex is specified) unless linking
+(or .mex if &lsquo;<samp><span class="samp">--mex</span></samp>&rsquo; is specified) unless linking
 a stand-alone executable.
 
           <br><dt>&lsquo;<samp><span class="samp">-p VAR</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">--print VAR</span></samp>&rsquo;<dd>Print the configuration variable VAR.  Recognized variables are:
@@ -110,14 +119,17 @@ to ".mex".
                                  .cc   C++ source
                                  .C    C++ source
                                  .cpp  C++ source
-                                 .f    Fortran source
-                                 .F    Fortran source
+                                 .f    Fortran source (fixed form)
+                                 .F    Fortran source (fixed form)
+                                 .f90  Fortran source (free form)
+                                 .F90  Fortran source (free form)
                                  .o    object file
+                                 .a    library file
 </pre>
           </dl>
         </p></blockquote></div>
 
-   <p>Consider the short example
+   <p>Consider the short example:
 
 <pre class="example"><pre class="verbatim">     #include &lt;octave/oct.h>
      
@@ -125,7 +137,7 @@ to ".mex".
        "Hello World Help String")
      {
        int nargin = args.length ();
-       octave_stdout &lt;&lt; "Hello World has " &lt;&lt; nargin 
+       octave_stdout &lt;&lt; "Hello World has " &lt;&lt; nargin
              &lt;&lt; " input arguments and "
              &lt;&lt; nargout &lt;&lt; " output arguments.\n";
        return octave_value_list ();
@@ -143,10 +155,13 @@ function is <code>DEFUN_DLD</code><!-- /@w -->.  This macro takes four arguments
 
      <ol type=1 start=1>
 <li>The function name as it will be seen in Octave,
-<li>The list of arguments to the function of type <code>octave_value_list</code>,
-<li>The number of output arguments, which can and often is omitted if
+
+     <li>The list of arguments to the function of type <code>octave_value_list</code>,
+
+     <li>The number of output arguments, which can and often is omitted if
 not used, and
-<li>The string that will be seen as the help text of the function.
+
+     <li>The string that will be seen as the help text of the function.
         </ol>
 
    <p>The return type of functions defined with <code>DEFUN_DLD</code><!-- /@w --> is always
@@ -156,9 +171,9 @@ not used, and
 name.  Firstly, it must be a valid Octave function name and so must be a
 sequence of letters, digits and underscores, not starting with a
 digit.  Secondly, as Octave uses the function name to define the filename
-it attempts to find the function in, the function name in the <code>DEFUN_DLD</code><!-- /@w -->
-macro must match the filename of the oct-file.  Therefore, the above
-function should be in a file <samp><span class="file">helloworld.cc</span></samp>, and it should be
+it attempts to find the function in, the function name in the
+<code>DEFUN_DLD</code><!-- /@w --> macro must match the filename of the oct-file.  Therefore,
+the above function should be in a file <samp><span class="file">helloworld.cc</span></samp>, and it should be
 compiled to an oct-file using the command
 
 <pre class="example">     mkoctfile helloworld.cc

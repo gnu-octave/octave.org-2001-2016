@@ -1,13 +1,12 @@
 <html lang="en">
 <head>
-<title>Managing Default Properties - Untitled</title>
+<title>Managing Default Properties - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Advanced-Plotting.html#Advanced-Plotting" title="Advanced Plotting">
-<link rel="prev" href="Graphics-Object-Properties.html#Graphics-Object-Properties" title="Graphics Object Properties">
-<link rel="next" href="Colors.html#Colors" title="Colors">
+<link rel="up" href="Graphics-Data-Structures.html#Graphics-Data-Structures" title="Graphics Data Structures">
+<link rel="prev" href="Searching-Properties.html#Searching-Properties" title="Searching Properties">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -21,20 +20,20 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Managing-Default-Properties"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Colors.html#Colors">Colors</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Graphics-Object-Properties.html#Graphics-Object-Properties">Graphics Object Properties</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Advanced-Plotting.html#Advanced-Plotting">Advanced Plotting</a>
+<p>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Searching-Properties.html#Searching-Properties">Searching Properties</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Graphics-Data-Structures.html#Graphics-Data-Structures">Graphics Data Structures</a>
 <hr>
 </div>
 
-<h4 class="subsection">15.2.3 Managing Default Properties</h4>
+<h4 class="subsection">15.3.5 Managing Default Properties</h4>
 
-<p><a name="index-default-graphics-properties-1208"></a><a name="index-graphics-properties_002c-default-1209"></a>
+<p><a name="index-default-graphics-properties-1387"></a><a name="index-graphics-properties_002c-default-1388"></a>
 Object properties have two classes of default values, <dfn>factory
 defaults</dfn> (the initial values) and <dfn>user-defined defaults</dfn>, which
 may override the factory defaults.
@@ -82,7 +81,19 @@ the value <code>"remove"</code>.  For example,
 <pre class="example">     set (gca (), "defaultlinecolor", "remove");
 </pre>
    <p class="noindent">removes the user-defined default line color setting from the current axes
-object.
+object.  To quickly remove all user-defined defaults use the <code>reset</code>
+function.
+
+<!-- reset src/graphics.cc -->
+   <p><a name="doc_002dreset"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>reset</b> (<var>h, property</var>)<var><a name="index-reset-1389"></a></var><br>
+<blockquote><p>Remove any defaults set for the handle <var>h</var>.  The default figure
+properties of "position", "units", "windowstyle" and
+"paperunits" and the default axes properties of "position" and "units"
+are not reset. 
+</p></blockquote></div>
 
    <p>Getting the <code>"default"</code> property of an object returns a list of
 user-defined defaults set for the object.  For example,

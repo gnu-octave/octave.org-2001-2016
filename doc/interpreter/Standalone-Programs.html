@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Standalone Programs - Untitled</title>
+<title>Standalone Programs - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions" title="Dynamically Linked Functions">
 <link rel="prev" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Standalone-Programs"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Dynamically Linked Functions</a>
 <hr>
@@ -35,8 +36,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Dynamically-Linked-Functions.html#Dynam
 <p>The libraries Octave itself uses, can be utilized in standalone
 applications.  These applications then have access, for example, to the
 array and matrix classes as well as to all the Octave algorithms.  The
-following C++ program, uses class Matrix from liboctave.a or
-liboctave.so.
+following C++ program, uses class Matrix from <samp><span class="file">liboctave.a</span></samp> or
+<samp><span class="file">liboctave.so</span></samp>.
 
 <pre class="example"><pre class="verbatim">     #include &lt;iostream>
      #include &lt;octave/oct.h>
@@ -97,11 +98,11 @@ seen in the code
        std::cout &lt;&lt; "GCD of [";
        for (octave_idx_type i = 0; i &lt; n; i++)
          {
-           a_matrix (i) = 5 * (i + 1); 
+           a_matrix (i) = 5 * (i + 1);
            if (i != 0)
-     	std::cout &lt;&lt; ", " &lt;&lt; 5 * (i + 2);
+             std::cout &lt;&lt; ", " &lt;&lt; 5 * (i + 2);
            else
-     	std::cout &lt;&lt; 5 * (i + 2);
+             std::cout &lt;&lt; 5 * (i + 2);
          }
        std::cout &lt;&lt; "] is ";
      
@@ -112,9 +113,9 @@ seen in the code
          {
            a_matrix = out(0).matrix_value ();
            if (a_matrix.numel () == 1)
-     	std::cout &lt;&lt; a_matrix(0) &lt;&lt; "\n";
+             std::cout &lt;&lt; a_matrix(0) &lt;&lt; "\n";
            else
-     	std::cout &lt;&lt; "invalid\n";
+             std::cout &lt;&lt; "invalid\n";
          }
        else
          std::cout &lt;&lt; "invalid\n";
@@ -131,8 +132,8 @@ seen in the code
      $
 </pre>
    <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 2005, 2007, 2009 David Bateman -->
-<!-- Copyright (C) 2002, 2003, 2004, 2005 Paul Kienzle -->
+<!-- Copyright (C) 2005-2011 David Bateman -->
+<!-- Copyright (C) 2002-2005 Paul Kienzle -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

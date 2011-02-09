@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Matrices - Untitled</title>
+<title>Matrices - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numeric-Data-Types.html#Numeric-Data-Types" title="Numeric Data Types">
 <link rel="next" href="Ranges.html#Ranges" title="Ranges">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Matrices"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Ranges.html#Ranges">Ranges</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>
 <hr>
@@ -32,8 +33,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Ty
 
 <h3 class="section">4.1 Matrices</h3>
 
-<p><a name="index-matrices-216"></a>
-<a name="index-g_t_005b-217"></a><a name="index-g_t_005d-218"></a><a name="index-g_t_003b-219"></a><a name="index-g_t_002c-220"></a>
+<p><a name="index-matrices-223"></a>
+<a name="index-g_t_005b-224"></a><a name="index-g_t_005d-225"></a><a name="index-g_t_003b-226"></a><a name="index-g_t_002c-227"></a>
 It is easy to define a matrix of values in Octave.  The size of the
 matrix is determined automatically, so it is not necessary to explicitly
 state the dimensions.  The expression
@@ -135,6 +136,28 @@ expression
    <p>For clarity, it is probably best to always use commas and semicolons to
 separate matrix elements and rows.
 
+   <p>The maximum number of elements in a matrix is fixed when Octave is compiled. 
+The allowable number can be queried with the function <code>sizemax</code>.  Note
+that other factors, such as the amount of memory available on your machine,
+may limit the maximum size of matrices to something smaller.
+
+<!-- sizemax src/bitfcns.cc -->
+   <p><a name="doc_002dsizemax"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>sizemax</b> ()<var><a name="index-sizemax-228"></a></var><br>
+<blockquote><p>Return the largest value allowed for the size of an array. 
+If Octave is compiled with 64-bit indexing, the result is of class int64,
+otherwise it is of class int32.  The maximum array size is slightly
+smaller than the maximum value allowable for the relevant class as reported
+by <code>intmax</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dintmax.html#doc_002dintmax">intmax</a>. 
+</p></blockquote></div>
+
    <p>When you type a matrix or the name of a variable whose value is a
 matrix, Octave responds by printing the matrix in with neatly aligned
 rows and columns.  If the rows of the matrix are too large to fit on the
@@ -142,34 +165,34 @@ screen, Octave splits the matrix and displays a header before each
 section to indicate which columns are being displayed.  You can use the
 following variables to control the format of the output.
 
-<!-- pr-output.cc -->
+<!-- output_max_field_width src/pr-output.cc -->
    <p><a name="doc_002doutput_005fmax_005ffield_005fwidth"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>output_max_field_width</b> ()<var><a name="index-output_005fmax_005ffield_005fwidth-221"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>output_max_field_width</b> (<var>new_val</var>)<var><a name="index-output_005fmax_005ffield_005fwidth-222"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>output_max_field_width</b> ()<var><a name="index-output_005fmax_005ffield_005fwidth-229"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>output_max_field_width</b> (<var>new_val</var>)<var><a name="index-output_005fmax_005ffield_005fwidth-230"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the maximum width
 of a numeric output field. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>, <a href="doc_002doutput_005fprecision.html#doc_002doutput_005fprecision">output_precision</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>, <a href="doc_002dfixed_005fpoint_005fformat.html#doc_002dfixed_005fpoint_005fformat">fixed_point_format</a>, <a href="doc_002doutput_005fprecision.html#doc_002doutput_005fprecision">output_precision</a>. 
 </p></blockquote></div>
 
-<!-- pr-output.cc -->
+<!-- output_precision src/pr-output.cc -->
    <p><a name="doc_002doutput_005fprecision"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>output_precision</b> ()<var><a name="index-output_005fprecision-223"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>output_precision</b> (<var>new_val</var>)<var><a name="index-output_005fprecision-224"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>output_precision</b> ()<var><a name="index-output_005fprecision-231"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>output_precision</b> (<var>new_val</var>)<var><a name="index-output_005fprecision-232"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the minimum number of
 significant figures to display for numeric output. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>, <a href="doc_002doutput_005fmax_005ffield_005fwidth.html#doc_002doutput_005fmax_005ffield_005fwidth">output_max_field_width</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>, <a href="doc_002dfixed_005fpoint_005fformat.html#doc_002dfixed_005fpoint_005fformat">fixed_point_format</a>, <a href="doc_002doutput_005fmax_005ffield_005fwidth.html#doc_002doutput_005fmax_005ffield_005fwidth">output_max_field_width</a>. 
 </p></blockquote></div>
 
    <p>It is possible to achieve a wide range of output styles by using
@@ -177,12 +200,12 @@ different values of <code>output_precision</code> and
 <code>output_max_field_width</code>.  Reasonable combinations can be set using
 the <code>format</code> function.  See <a href="Basic-Input-and-Output.html#Basic-Input-and-Output">Basic Input and Output</a>.
 
-<!-- pr-output.cc -->
+<!-- split_long_rows src/pr-output.cc -->
    <p><a name="doc_002dsplit_005flong_005frows"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>split_long_rows</b> ()<var><a name="index-split_005flong_005frows-225"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>split_long_rows</b> (<var>new_val</var>)<var><a name="index-split_005flong_005frows-226"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>split_long_rows</b> ()<var><a name="index-split_005flong_005frows-233"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>split_long_rows</b> (<var>new_val</var>)<var><a name="index-split_005flong_005frows-234"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether rows of a matrix
 may be split when displayed to a terminal window.  If the rows are split,
 Octave will display the matrix in a series of smaller pieces, each of
@@ -203,7 +226,11 @@ being displayed.  For example:
             0.90174  0.11854  0.72313  0.73326
             0.44672  0.94303  0.56564  0.82150
 </pre>
-        </blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>. 
+</p></blockquote></div>
 
    <p>Octave automatically switches to scientific notation when values become
 very large or very small.  This guarantees that you will see several
@@ -213,16 +240,16 @@ the built-in variable <code>fixed_point_format</code> to a nonzero value.  But
 doing so is not recommended, because it can produce output that can
 easily be misinterpreted.
 
-<!-- pr-output.cc -->
+<!-- fixed_point_format src/pr-output.cc -->
    <p><a name="doc_002dfixed_005fpoint_005fformat"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>fixed_point_format</b> ()<var><a name="index-fixed_005fpoint_005fformat-227"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>fixed_point_format</b> (<var>new_val</var>)<var><a name="index-fixed_005fpoint_005fformat-228"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>fixed_point_format</b> ()<var><a name="index-fixed_005fpoint_005fformat-235"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>fixed_point_format</b> (<var>new_val</var>)<var><a name="index-fixed_005fpoint_005fformat-236"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave will
 use a scaled format to print matrix values such that the largest
 element may be written with a single leading digit with the scaling
-factor is printed on the first line of output.  For example,
+factor is printed on the first line of output.  For example:
 
      <pre class="example">          octave:1&gt; logspace (1, 7, 5)'
           ans =
@@ -238,6 +265,11 @@ factor is printed on the first line of output.  For example,
         <p class="noindent">Notice that first value appears to be zero when it is actually 1.  For
 this reason, you should be careful when setting
 <code>fixed_point_format</code> to a nonzero value. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>, <a href="doc_002doutput_005fmax_005ffield_005fwidth.html#doc_002doutput_005fmax_005ffield_005fwidth">output_max_field_width</a>, <a href="doc_002doutput_005fprecision.html#doc_002doutput_005fprecision">output_precision</a>. 
 </p></blockquote></div>
 
 <ul class="menu">

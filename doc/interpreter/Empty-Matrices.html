@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Empty Matrices - Untitled</title>
+<title>Empty Matrices - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Matrices.html#Matrices" title="Matrices">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -19,11 +19,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Empty-Matrices"></a>
+<p>
 Up:&nbsp;<a rel="up" accesskey="u" href="Matrices.html#Matrices">Matrices</a>
 <hr>
 </div>
@@ -55,12 +56,12 @@ following are true:
 empty matrix symbol, &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;.  The built-in variable
 <code>print_empty_dimensions</code> controls this behavior.
 
-<!-- pr-output.cc -->
+<!-- print_empty_dimensions src/pr-output.cc -->
    <p><a name="doc_002dprint_005fempty_005fdimensions"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>print_empty_dimensions</b> ()<var><a name="index-print_005fempty_005fdimensions-229"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>print_empty_dimensions</b> (<var>new_val</var>)<var><a name="index-print_005fempty_005fdimensions-230"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>print_empty_dimensions</b> ()<var><a name="index-print_005fempty_005fdimensions-237"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>print_empty_dimensions</b> (<var>new_val</var>)<var><a name="index-print_005fempty_005fdimensions-238"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether the
 dimensions of empty matrices are printed along with the empty matrix
 symbol, &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;.  For example, the expression
@@ -71,7 +72,11 @@ symbol, &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;.  For example, t
 
      <pre class="example">          ans = [](3x0)
 </pre>
-        </blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>. 
+</p></blockquote></div>
 
    <p>Empty matrices may also be used in assignment statements as a convenient
 way to delete rows or columns of matrices. 

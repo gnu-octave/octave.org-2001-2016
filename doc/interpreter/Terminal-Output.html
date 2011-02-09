@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Terminal Output - Untitled</title>
+<title>Terminal Output - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Basic-Input-and-Output.html#Basic-Input-and-Output" title="Basic Input and Output">
 <link rel="next" href="Terminal-Input.html#Terminal-Input" title="Terminal Input">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Terminal-Output"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Terminal-Input.html#Terminal-Input">Terminal Input</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Basic-Input-and-Output.html#Basic-Input-and-Output">Basic Input and Output</a>
 <hr>
@@ -48,12 +49,12 @@ value of a variable without printing its name, use the function
    <p>The <code>format</code> command offers some control over the way Octave prints
 values with <code>disp</code> and through the normal echoing mechanism.
 
-<!-- pr-output.cc -->
+<!-- disp src/pr-output.cc -->
    <p><a name="doc_002ddisp"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>disp</b> (<var>x</var>)<var><a name="index-disp-707"></a></var><br>
-<blockquote><p>Display the value of <var>x</var>.  For example,
+&mdash; Built-in Function:  <b>disp</b> (<var>x</var>)<var><a name="index-disp-797"></a></var><br>
+<blockquote><p>Display the value of <var>x</var>.  For example:
 
      <pre class="example">          disp ("The value of pi is:"), disp (pi)
           
@@ -71,12 +72,12 @@ returns the formatted output in a string.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dfdisp.html#doc_002dfdisp">fdisp</a>. 
 </p></blockquote></div>
 
-<!-- pr-output.cc -->
+<!-- format src/pr-output.cc -->
    <p><a name="doc_002dformat"></a>
 
 <div class="defun">
-&mdash; Command: <b>format</b><var><a name="index-format-708"></a></var><br>
-&mdash; Command: <b>format</b><var> options<a name="index-format-709"></a></var><br>
+&mdash; Command:  <b>format</b><var><a name="index-format-798"></a></var><br>
+&mdash; Command:  <b>format</b><var> options<a name="index-format-799"></a></var><br>
 <blockquote><p>Reset or specify the format of the output produced by <code>disp</code> and
 Octave's normal echoing mechanism.  This command only affects the display
 of numbers but not how they are stored or computed.  To change the internal
@@ -130,6 +131,11 @@ For example, with the &lsquo;<samp><span class="samp">short g</span></samp>&rsqu
                  9.0032e+07
                  8.1058e+15
 </pre>
+          <br><dt><code>short eng</code><dt><code>long eng</code><dd>Identical to &lsquo;<samp><span class="samp">short e</span></samp>&rsquo; or &lsquo;<samp><span class="samp">long e</span></samp>&rsquo; but displays the value
+using an engineering format, where the exponent is divisible by 3. For
+example, with the &lsquo;<samp><span class="samp">short eng</span></samp>&rsquo; format, <code>10 * pi</code> is displayed as
+<code>31.4159e+00</code>.
+
           <br><dt><code>long G</code><dt><code>short G</code><dd>Identical to &lsquo;<samp><span class="samp">short g</span></samp>&rsquo; or &lsquo;<samp><span class="samp">long g</span></samp>&rsquo; but displays an uppercase
 &lsquo;<samp><span class="samp">E</span></samp>&rsquo; to indicate the exponent.
 
@@ -163,11 +169,13 @@ point.
           <br><dt><code>native-hex</code><dd>Print the hexadecimal representation of numbers as they are stored in
 memory.  For example, on a workstation which stores 8 byte real values
 in IEEE format with the least significant byte first, the value of
-<code>pi</code> when printed in <code>native-hex</code> format is <code>400921fb54442d18</code>.
+<code>pi</code> when printed in <code>native-hex</code> format is
+<code>400921fb54442d18</code>.
 
           <br><dt><code>hex</code><dd>The same as <code>native-hex</code>, but always print the most significant
-byte first. 
-<br><dt><code>native-bit</code><dd>Print the bit representation of numbers as stored in memory. 
+byte first.
+
+          <br><dt><code>native-bit</code><dd>Print the bit representation of numbers as stored in memory. 
 For example, the value of <code>pi</code> is
 
           <pre class="example">               01000000000010010010000111111011
@@ -175,8 +183,9 @@ For example, the value of <code>pi</code> is
 </pre>
           <p>(shown here in two 32 bit sections for typesetting purposes) when
 printed in native-bit format on a workstation which stores 8 byte real values
-in IEEE format with the least significant byte first. 
-<br><dt><code>bit</code><dd>The same as <code>native-bit</code>, but always print the most significant
+in IEEE format with the least significant byte first.
+
+          <br><dt><code>bit</code><dd>The same as <code>native-bit</code>, but always print the most significant
 bits first.
 
           <br><dt><code>rat</code><dd>Print a rational approximation, i.e., values are approximated
@@ -189,11 +198,17 @@ For example, with the &lsquo;<samp><span class="samp">rat</span></samp>&rsquo; f
 
           <dl>
 <dt><code>compact</code><dd>Remove extra blank space around column number labels producing more compact
-output with more data per page. 
-<br><dt><code>loose</code><dd>Insert blank lines above and below column number labels to produce a more
+output with more data per page.
+
+          <br><dt><code>loose</code><dd>Insert blank lines above and below column number labels to produce a more
 readable output with less data per page.  (default). 
 </dl>
-        </p></blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfixed_005fpoint_005fformat.html#doc_002dfixed_005fpoint_005fformat">fixed_point_format</a>, <a href="doc_002doutput_005fmax_005ffield_005fwidth.html#doc_002doutput_005fmax_005ffield_005fwidth">output_max_field_width</a>, <a href="doc_002doutput_005fprecision.html#doc_002doutput_005fprecision">output_precision</a>, <a href="doc_002dsplit_005flong_005frows.html#doc_002dsplit_005flong_005frows">split_long_rows</a>, <a href="doc_002drats.html#doc_002drats">rats</a>. 
+</p></blockquote></div>
 
 <ul class="menu">
 <li><a accesskey="1" href="Paging-Screen-Output.html#Paging-Screen-Output">Paging Screen Output</a>

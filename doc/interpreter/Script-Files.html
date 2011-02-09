@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Script Files - Untitled</title>
+<title>Script Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
 <link rel="prev" href="Function-Files.html#Function-Files" title="Function Files">
@@ -21,18 +21,19 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Script-Files"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions">Function Handles Inline Functions and Anonymous Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Function-Files.html#Function-Files">Function Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>
 <hr>
 </div>
 
-<h3 class="section">11.8 Script Files</h3>
+<h3 class="section">11.9 Script Files</h3>
 
 <p>A script file is a file containing (almost) any sequence of Octave
 commands.  It is read and evaluated just as if you had typed each
@@ -120,11 +121,11 @@ known until the function is evaluated).
 the name <samp><var>file</var><span class="file">.m</span></samp>, you can use the function <code>source</code> to
 execute commands from any file.
 
-<!-- parse.cc -->
+<!-- source src/oct-parse.cc -->
    <p><a name="doc_002dsource"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>source</b> (<var>file</var>)<var><a name="index-source-642"></a></var><br>
+&mdash; Built-in Function:  <b>source</b> (<var>file</var>)<var><a name="index-source-733"></a></var><br>
 <blockquote><p>Parse and execute the contents of <var>file</var>.  This is equivalent to
 executing commands from a script file, but without requiring the file to
 be named <samp><var>file</var><span class="file">.m</span></samp>. 

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Accessing Global Variables in Oct-Files - Untitled</title>
+<title>Accessing Global Variables in Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Sparse-Matrices-in-Oct_002dFiles.html#Sparse-Matrices-in-Oct_002dFiles" title="Sparse Matrices in Oct-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Accessing-Global-Variables-in-Oct-Files"></a>
 <a name="Accessing-Global-Variables-in-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Calling-Octave-Functions-from-Oct_002dFiles.html#Calling-Octave-Functions-from-Oct_002dFiles">Calling Octave Functions from Oct-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Sparse-Matrices-in-Oct_002dFiles.html#Sparse-Matrices-in-Oct_002dFiles">Sparse Matrices in Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
@@ -69,17 +70,19 @@ use of these two functions is
          }
        return retval;
      }
-</pre></pre>
+</pre>
+     
+</pre>
    <p>An example of its use is
 
 <pre class="example">     global a b
      b = 10;
      globaldemo ("b")
-      10
+     &rArr; 10
      globaldemo ("c")
-      "Global variable not found"
+     &rArr; "Global variable not found"
      num2str (a)
-      42
+     &rArr; 42
 </pre>
    </body></html>
 

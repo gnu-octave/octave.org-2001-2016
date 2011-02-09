@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Manipulating Classes - Untitled</title>
+<title>Manipulating Classes - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Object-Oriented-Programming.html#Object-Oriented-Programming" title="Object Oriented Programming">
 <link rel="prev" href="Creating-a-Class.html#Creating-a-Class" title="Creating a Class">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Manipulating-Classes"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Indexing-Objects.html#Indexing-Objects">Indexing Objects</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Creating-a-Class.html#Creating-a-Class">Creating a Class</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Object-Oriented-Programming.html#Object-Oriented-Programming">Object Oriented Programming</a>
@@ -41,11 +42,11 @@ by Octave when displaying a class on the screen, due to an expression
 that is not terminated with a semicolon.  If this method is not defined,
 then Octave will printed nothing when displaying the contents of a class.
 
-<!-- ./general/display.m -->
+<!-- display scripts/general/display.m -->
    <p><a name="doc_002ddisplay"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>display</b> (<var>a</var>)<var><a name="index-display-2258"></a></var><br>
+&mdash; Function File:  <b>display</b> (<var>a</var>)<var><a name="index-display-2646"></a></var><br>
 <blockquote><p>Display the contents of an object.  If <var>a</var> is an object of the
 class "myclass", then <code>display</code> is called in a case like
 
@@ -105,7 +106,7 @@ when displaying the class.
 should also define the <code>get</code> and <code>set</code> methods.  The
 <code>get</code> method should accept one or two arguments, and given one
 argument of the appropriate class it should return a structure with
-all of the properties of the class.  For example
+all of the properties of the class.  For example:
 
 <pre class="example"><pre class="verbatim">     function s = get (p, f)
        if (nargin == 1)
@@ -164,7 +165,7 @@ is discussed in the next section.
 
    <p>Finally, user classes can be considered as a special type of a
 structure, and so they can be saved to a file in the same manner as a
-structure.  For example
+structure.  For example:
 
 <pre class="example">     p = polynomial ([1, 0, 1]);
      save userclass.mat p
@@ -177,17 +178,17 @@ a field that it makes no sense to save or a field that needs to be
 initialized before it is saved.  This can be done with the
 <code>saveobj</code> method of the class
 
-<!-- ./general/saveobj.m -->
+<!-- saveobj scripts/general/saveobj.m -->
    <p><a name="doc_002dsaveobj"></a>
 
 <div class="defun">
-&mdash; Function File: <var>b</var> = <b>saveobj</b> (<var>a</var>)<var><a name="index-saveobj-2259"></a></var><br>
+&mdash; Function File: <var>b</var> = <b>saveobj</b> (<var>a</var>)<var><a name="index-saveobj-2647"></a></var><br>
 <blockquote><p>Method of a class to manipulate an object prior to saving it to a file. 
 The function <code>saveobj</code> is called when the object <var>a</var> is saved
 using the <code>save</code> function.  An example of the use of <code>saveobj</code>
 might be to remove fields of the object that don't make sense to be saved
 or it might be used to ensure that certain fields of the object are
-initialized before the object is saved.  For example
+initialized before the object is saved.  For example:
 
      <pre class="example">          function b = saveobj (a)
             b = a;
@@ -207,16 +208,16 @@ file.  Likely, the <code>loadobj</code> method is called just after a class
 is loaded from a file, and can be used to ensure that any removed
 fields are reinserted into the user object.
 
-<!-- ./general/loadobj.m -->
+<!-- loadobj scripts/general/loadobj.m -->
    <p><a name="doc_002dloadobj"></a>
 
 <div class="defun">
-&mdash; Function File: <var>b</var> = <b>loadobj</b> (<var>a</var>)<var><a name="index-loadobj-2260"></a></var><br>
+&mdash; Function File: <var>b</var> = <b>loadobj</b> (<var>a</var>)<var><a name="index-loadobj-2648"></a></var><br>
 <blockquote><p>Method of a class to manipulate an object after loading it from a file. 
 The function <code>loadobj</code> is called when the object <var>a</var> is loaded
 using the <code>load</code> function.  An example of the use of <code>saveobj</code>
 might be to add fields to an object that don't make sense to be saved. 
-For example
+For example:
 
      <pre class="example">          function b = loadobj (a)
             b = a;

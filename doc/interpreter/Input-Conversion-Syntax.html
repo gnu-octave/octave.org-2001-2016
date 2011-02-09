@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Input Conversion Syntax - Untitled</title>
+<title>Input Conversion Syntax - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions" title="C-Style I/O Functions">
 <link rel="prev" href="Formatted-Input.html#Formatted-Input" title="Formatted Input">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Input-Conversion-Syntax"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Table-of-Input-Conversions.html#Table-of-Input-Conversions">Table of Input Conversions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Formatted-Input.html#Formatted-Input">Formatted Input</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions">C-Style I/O Functions</a>
@@ -64,7 +65,7 @@ specification that uses this flag, it reads input as directed by the
 rest of the conversion specification, but it discards this input, does
 not return any value, and does not increment the count of
 successful assignments. 
-<a name="index-flag-character-_0028_0040code_007bscanf_007d_0029-797"></a>
+<a name="index-flag-character-_0028_0040code_007bscanf_007d_0029-898"></a>
 <li>An optional decimal integer that specifies the <dfn>maximum field
 width</dfn>.  Reading of characters from the input stream stops either when
 this maximum is reached or when a non-matching character is found,
@@ -72,7 +73,7 @@ whichever happens first.  Most conversions discard initial whitespace
 characters, and these discarded characters don't count towards the
 maximum field width.  Conversions that do not discard initial whitespace
 are explicitly documented. 
-<a name="index-maximum-field-width-_0028_0040code_007bscanf_007d_0029-798"></a>
+<a name="index-maximum-field-width-_0028_0040code_007bscanf_007d_0029-899"></a>
 <li>An optional type modifier character.  This character is ignored by
 Octave's <code>scanf</code> function, but is recognized to provide
 compatibility with the C language <code>scanf</code>.

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Sparse Matrices with Mex-Files - Untitled</title>
+<title>Sparse Matrices with Mex-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
 <link rel="prev" href="Structures-with-Mex_002dFiles.html#Structures-with-Mex_002dFiles" title="Structures with Mex-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Sparse-Matrices-with-Mex-Files"></a>
 <a name="Sparse-Matrices-with-Mex_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Calling-Other-Functions-in-Mex_002dFiles.html#Calling-Other-Functions-in-Mex_002dFiles">Calling Other Functions in Mex-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Structures-with-Mex_002dFiles.html#Structures-with-Mex_002dFiles">Structures with Mex-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>
@@ -80,7 +81,7 @@ mex-files is given by the file <samp><span class="file">mysparse.c</span></samp>
      
      void
      mexFunction (int nlhs, mxArray *plhs[], int nrhs, 
-     	     const mxArray *prhs[])
+                  const mxArray *prhs[])
      {
        mwSize n, m, nz;
        mxArray *v;
@@ -100,7 +101,7 @@ mex-files is given by the file <samp><span class="file">mysparse.c</span></samp>
        if (mxIsComplex (prhs[0]))
          {
            mexPrintf ("Matrix is %d-by-%d complex",
-     		 " sparse matrix", m, n);
+                      " sparse matrix", m, n);
            mexPrintf (" with %d elements\n", nz);
      
            pr = mxGetPr (prhs[0]);
@@ -111,7 +112,7 @@ mex-files is given by the file <samp><span class="file">mysparse.c</span></samp>
            i = n;
            while (jc[i] == jc[i-1] &amp;&amp; i != 0) i--;
            mexPrintf ("last non-zero element (%d, %d) =", 
-     		 ir[nz-1]+ 1, i);
+                      ir[nz-1]+ 1, i);
            mexPrintf (" (%g, %g)\n", pr[nz-1], pi[nz-1]);
      
            v = mxCreateSparse (m, n, nz, mxCOMPLEX);
@@ -136,7 +137,7 @@ mex-files is given by the file <samp><span class="file">mysparse.c</span></samp>
          {
            bool *pbr, *pbr2;
            mexPrintf ("Matrix is %d-by-%d logical",
-     		 " sparse matrix", m, n);
+                      " sparse matrix", m, n);
            mexPrintf (" with %d elements\n", nz);
      
            pbr = mxGetLogicals (prhs[0]);
@@ -167,7 +168,7 @@ mex-files is given by the file <samp><span class="file">mysparse.c</span></samp>
        else
          {
            mexPrintf ("Matrix is %d-by-%d real",
-     		 " sparse matrix", m, n);
+                      " sparse matrix", m, n);
            mexPrintf (" with %d elements\n", nz);
      
            pr = mxGetPr (prhs[0]);
@@ -196,6 +197,8 @@ mex-files is given by the file <samp><span class="file">mysparse.c</span></samp>
              plhs[0] = v;
          }
      }
-</pre></pre>
+</pre>
+     
+</pre>
    </body></html>
 

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Working with Matrices and Arrays in Mex-Files - Untitled</title>
+<title>Working with Matrices and Arrays in Mex-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
 <link rel="prev" href="Getting-Started-with-Mex_002dFiles.html#Getting-Started-with-Mex_002dFiles" title="Getting Started with Mex-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Working-with-Matrices-and-Arrays-in-Mex-Files"></a>
 <a name="Working-with-Matrices-and-Arrays-in-Mex_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Character-Strings-in-Mex_002dFiles.html#Character-Strings-in-Mex_002dFiles">Character Strings in Mex-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Getting-Started-with-Mex_002dFiles.html#Getting-Started-with-Mex_002dFiles">Getting Started with Mex-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>
@@ -55,7 +56,7 @@ parts of a complex array are stored separately, there is an equivalent
 function <code>mxGetPi</code> that get the imaginary part.  Both of these
 functions are for use only with double precision matrices.  There also
 exists the generic function <code>mxGetData</code> and <code>mxGetImagData</code>
-that perform the same operation on all matrix types.  For example
+that perform the same operation on all matrix types.  For example:
 
 <pre class="example">     mxArray *m;
      mwSize *dims;
@@ -86,7 +87,7 @@ below.
      
      void
      mexFunction (int nlhs, mxArray* plhs[], int nrhs, 
-     	     const mxArray* prhs[])
+                  const mxArray* prhs[])
      {
        mwIndex i;
        mwSize n;
@@ -110,23 +111,25 @@ below.
            vio = mxGetPi (plhs[0]);
      
            for (i = 0; i &lt; n; i++)
-     	{
-     	  vro [i] = vri [i] * vri [i] - vii [i] * vii [i];
-     	  vio [i] = 2 * vri [i] * vii [i];
-     	}
+             {
+               vro [i] = vri [i] * vri [i] - vii [i] * vii [i];
+               vio [i] = 2 * vri [i] * vii [i];
+             }
          }
        else
          {
            for (i = 0; i &lt; n; i++)
-     	vro [i] = vri [i] * vri [i];
+             vro [i] = vri [i] * vri [i];
          }
      }
-</pre></pre>
+</pre>
+     
+</pre>
    <p class="noindent">with an example of its use
 
 <pre class="example">     b = randn(4,1) + 1i * randn(4,1);
      all(b.^2 == mypow2(b))
-      1
+     &rArr; 1
 </pre>
    <p>The example above uses the functions <code>mxGetDimensions</code>,
 <code>mxGetNumberOfElements</code>, and <code>mxGetNumberOfDimensions</code> to work

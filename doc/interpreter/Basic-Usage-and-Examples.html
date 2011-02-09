@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Basic Usage and Examples - Untitled</title>
+<title>Basic Usage and Examples - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data-Structures.html#Data-Structures" title="Data Structures">
 <link rel="next" href="Structure-Arrays.html#Structure-Arrays" title="Structure Arrays">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Basic-Usage-and-Examples"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Structure-Arrays.html#Structure-Arrays">Structure Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">Data Structures</a>
 <hr>
@@ -41,11 +42,13 @@ expressions
      x.b = [1, 2; 3, 4];
      x.c = "string";
 </pre>
-   <p class="noindent">create a structure with three elements.  To print the value of the
-structure, you can type its name, just as for any other variable:
+   <p><a name="index-g_t_002e-391"></a>create a structure with three elements.  The &lsquo;<samp><span class="samp">.</span></samp>&rsquo; character separates
+the structure name from the field name and indicates to Octave that this
+variable is a structure.  To print the value of the
+structure you can type its name, just as for any other variable:
 
 <pre class="example">     x
-           x =
+          &rArr; x =
              {
                a = 1
                b =
@@ -61,7 +64,7 @@ structure, you can type its name, just as for any other variable:
    <p>Structures may be copied just like any other variable:
 
 <pre class="example">     y = x
-           y =
+          &rArr; y =
              {
                a = 1
                b =
@@ -79,13 +82,13 @@ containing the single element <code>d</code>, which has a value of 3.
 
 <pre class="example">     x.b.d = 3;
      x.b
-           ans =
+          &rArr; ans =
              {
                d = 3
              }
      
      x
-           x =
+          &rArr; x =
              {
                a = 1
                b =
@@ -97,11 +100,11 @@ containing the single element <code>d</code>, which has a value of 3.
              }
 </pre>
    <p>Note that when Octave prints the value of a structure that contains
-other structures, only a few levels are displayed.  For example,
+other structures, only a few levels are displayed.  For example:
 
 <pre class="example">     a.b.c.d.e = 1;
      a
-           a =
+          &rArr; a =
              {
                b =
                {
@@ -115,17 +118,32 @@ other structures, only a few levels are displayed.  For example,
              }
 </pre>
    <p class="noindent">This prevents long and confusing output from large deeply nested
-structures. The number of levels to print for nested structures can be
-set with the function <code>struct_levels_to_print</code>:
+structures.  The number of levels to print for nested structures may be
+set with the function <code>struct_levels_to_print</code>, and the function
+<code>print_struct_array_contents</code> may be used to enable printing of the
+contents of structure arrays.
 
-<!-- pr-output.cc -->
+<!-- struct_levels_to_print src/ov-struct.cc -->
    <p><a name="doc_002dstruct_005flevels_005fto_005fprint"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>struct_levels_to_print</b> ()<var><a name="index-struct_005flevels_005fto_005fprint-371"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>struct_levels_to_print</b> (<var>new_val</var>)<var><a name="index-struct_005flevels_005fto_005fprint-372"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>struct_levels_to_print</b> ()<var><a name="index-struct_005flevels_005fto_005fprint-392"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>struct_levels_to_print</b> (<var>new_val</var>)<var><a name="index-struct_005flevels_005fto_005fprint-393"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the number of
 structure levels to display. 
+</p></blockquote></div>
+
+<!-- print_struct_array_contents src/ov-struct.cc -->
+   <p><a name="doc_002dprint_005fstruct_005farray_005fcontents"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>print_struct_array_contents</b> ()<var><a name="index-print_005fstruct_005farray_005fcontents-394"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>print_struct_array_contents</b> (<var>new_val</var>)<var><a name="index-print_005fstruct_005farray_005fcontents-395"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies whether to print struct
+array contents.  If true, values of struct array elements are printed. 
+This variable does not affect scalar structures.  Their elements
+are always printed.  In both cases, however, printing will be limited to
+the number of levels specified by <var>struct_levels_to_print</var>. 
 </p></blockquote></div>
 
    <p>Functions can return structures.  For example, the following function
@@ -142,7 +160,7 @@ structure containing the real and imaginary parts of the original
 function argument.
 
 <pre class="example">     f (rand (2) + rand (2) * I)
-           ans =
+          &rArr; ans =
              {
                im =
      
@@ -157,11 +175,11 @@ function argument.
              }
 </pre>
    <p>Function return lists can include structure elements, and they may be
-indexed like any other variable.  For example,
+indexed like any other variable.  For example:
 
 <pre class="example">     [ x.u, x.s(2:3,2:3), x.v ] = svd ([1, 2; 3, 4]);
      x
-           x =
+          &rArr; x =
              {
                u =
      

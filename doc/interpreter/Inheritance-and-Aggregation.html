@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Inheritance and Aggregation - Untitled</title>
+<title>Inheritance and Aggregation - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Object-Oriented-Programming.html#Object-Oriented-Programming" title="Object Oriented Programming">
 <link rel="prev" href="Overloading-Objects.html#Overloading-Objects" title="Overloading Objects">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Inheritance-and-Aggregation"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Overloading-Objects.html#Overloading-Objects">Overloading Objects</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Object-Oriented-Programming.html#Object-Oriented-Programming">Object Oriented Programming</a>
 <hr>
@@ -45,7 +46,7 @@ parent class and providing that object as the third argument of the
 class function.
 
    <p>This is easily demonstrated by example.  Suppose the programmer needs
-an FIR filter, i.e. a filter with a numerator polynomial but a unity
+an FIR filter, i.e., a filter with a numerator polynomial but a unity
 denominator polynomial.  In traditional octave programming, this would
 be performed as follows.
 
@@ -94,7 +95,7 @@ This dummy element will be overwritten by the class function.
 
    <p>Note further that all our examples provide for the case in which no
 arguments are supplied.  This is important since octave will call the
-constructor with no arguments when loading ojects from save files to
+constructor with no arguments when loading objects from save files to
 determine the inheritance structure.
 
    <p>A class may be a child of more than one class (see the documentation
@@ -179,7 +180,7 @@ to the constructor.
 </pre>
    <p>In order to change the contents of the object, we need to define a
 <code>subsasgn</code> method.  For example, we may make the polynomial field
-publicly writeable.
+publicly writable.
 
 <pre class="example"><pre class="verbatim">     function out = subsasgn (f, index, val)
        switch (index.type)
@@ -238,7 +239,7 @@ constructor for this case might be
    <p>For our example, the remaining class methods remain unchanged.
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 1999, 2000, 2002, 2007, 2008, 2009 John W. Eaton -->
+<!-- Copyright (C) 1996-2011 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

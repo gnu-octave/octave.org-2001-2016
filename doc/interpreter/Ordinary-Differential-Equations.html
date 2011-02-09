@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Ordinary Differential Equations - Untitled</title>
+<title>Ordinary Differential Equations - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Differential-Equations.html#Differential-Equations" title="Differential Equations">
 <link rel="next" href="Differential_002dAlgebraic-Equations.html#Differential_002dAlgebraic-Equations" title="Differential-Algebraic Equations">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Ordinary-Differential-Equations"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Differential_002dAlgebraic-Equations.html#Differential_002dAlgebraic-Equations">Differential-Algebraic Equations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Differential-Equations.html#Differential-Equations">Differential Equations</a>
 <hr>
@@ -38,20 +39,21 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Differential-Equations.html#Differentia
      -- = f (x, t)
      dt
 </pre>
-   <p class="noindent">using Hindmarsh's ODE solver <span class="sc">Lsode</span>.
+   <p class="noindent">using Hindmarsh's ODE solver <span class="sc">lsode</span>.
 
-<!-- ./DLD-FUNCTIONS/lsode.cc -->
+<!-- lsode src/DLD-FUNCTIONS/lsode.cc -->
    <p><a name="doc_002dlsode"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>x</var>, <var>istate</var>, <var>msg</var>] = <b>lsode</b> (<var>fcn, x_0, t, t_crit</var>)<var><a name="index-lsode-1786"></a></var><br>
+&mdash; Loadable Function: [<var>x</var>, <var>istate</var>, <var>msg</var>] = <b>lsode</b> (<var>fcn, x_0, t</var>)<var><a name="index-lsode-2075"></a></var><br>
+&mdash; Loadable Function: [<var>x</var>, <var>istate</var>, <var>msg</var>] = <b>lsode</b> (<var>fcn, x_0, t, t_crit</var>)<var><a name="index-lsode-2076"></a></var><br>
 <blockquote><p>Solve the set of differential equations
 
      <pre class="example">          dx
           -- = f(x, t)
           dt
 </pre>
-        <p>with
+        <p class="noindent">with
 
      <pre class="example">          x(t_0) = x_0
 </pre>
@@ -77,7 +79,7 @@ must have the form
 
      <pre class="example">          <var>jac</var> = j (<var>x</var>, <var>t</var>)
 </pre>
-        <p>in which <var>jac</var> is the matrix of partial derivatives
+        <p class="noindent">in which <var>jac</var> is the matrix of partial derivatives
 
      <pre class="example">                       | df_1  df_1       df_1 |
                        | ----  ----  ...  ---- |
@@ -104,7 +106,7 @@ avoiding difficulties with singularities and points where there is a
 discontinuity in the derivative.
 
         <p>After a successful computation, the value of <var>istate</var> will be 2
-(consistent with the Fortran version of <span class="sc">Lsode</span>).
+(consistent with the Fortran version of <span class="sc">lsode</span>).
 
         <p>If the computation is not successful, <var>istate</var> will be something
 other than 2 and <var>msg</var> will contain additional information.
@@ -118,11 +120,11 @@ parameters for <code>lsode</code>.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddaspk.html#doc_002ddaspk">daspk</a>, <a href="doc_002ddassl.html#doc_002ddassl">dassl</a>, <a href="doc_002ddasrt.html#doc_002ddasrt">dasrt</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/lsode.cc -->
+<!-- lsode_options src/DLD-FUNCTIONS/lsode.cc -->
    <p><a name="doc_002dlsode_005foptions"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>lsode_options</b> (<var>opt, val</var>)<var><a name="index-lsode_005foptions-1787"></a></var><br>
+&mdash; Loadable Function:  <b>lsode_options</b> (<var>opt, val</var>)<var><a name="index-lsode_005foptions-2077"></a></var><br>
 <blockquote><p>When called with two arguments, this function
 allows you set options parameters for the function <code>lsode</code>. 
 Given one argument, <code>lsode_options</code> returns the value of the
@@ -133,8 +135,9 @@ the available options and their current values are displayed.
 
           <dl>
 <dt><code>"absolute tolerance"</code><dd>Absolute tolerance.  May be either vector or scalar.  If a vector, it
-must match the dimension of the state vector. 
-<br><dt><code>"relative tolerance"</code><dd>Relative tolerance parameter.  Unlike the absolute tolerance, this
+must match the dimension of the state vector.
+
+          <br><dt><code>"relative tolerance"</code><dd>Relative tolerance parameter.  Unlike the absolute tolerance, this
 parameter may only be a scalar.
 
           <p>The local error test applied at each integration step is
@@ -146,27 +149,33 @@ parameter may only be a scalar.
 system.  Valid values are
 
                <dl>
-<dt>"adams"<dt>"non-stiff"<dd>No Jacobian used (even if it is available). 
-<br><dt>"bdf"<br><dt>"stiff"<dd>Use stiff backward differentiation formula (BDF) method.  If a
+<dt>"adams"<dt>"non-stiff"<dd>No Jacobian used (even if it is available).
+
+               <br><dt>"bdf"<dt>"stiff"<dd>Use stiff backward differentiation formula (BDF) method.  If a
 function to compute the Jacobian is not supplied, <code>lsode</code> will
 compute a finite difference approximation of the Jacobian matrix. 
 </dl>
+
           <br><dt><code>"initial step size"</code><dd>The step size to be attempted on the first step (default is determined
-automatically). 
-<br><dt><code>"maximum order"</code><dd>Restrict the maximum order of the solution method.  If using the Adams
+automatically).
+
+          <br><dt><code>"maximum order"</code><dd>Restrict the maximum order of the solution method.  If using the Adams
 method, this option must be between 1 and 12.  Otherwise, it must be
-between 1 and 5, inclusive. 
-<br><dt><code>"maximum step size"</code><dd>Setting the maximum stepsize will avoid passing over very large
-regions  (default is not specified). 
-<br><dt><code>"minimum step size"</code><dd>The minimum absolute step size allowed (default is 0). 
-<br><dt><code>"step limit"</code><dd>Maximum number of steps allowed (default is 100000). 
+between 1 and 5, inclusive.
+
+          <br><dt><code>"maximum step size"</code><dd>Setting the maximum stepsize will avoid passing over very large
+regions  (default is not specified).
+
+          <br><dt><code>"minimum step size"</code><dd>The minimum absolute step size allowed (default is 0).
+
+          <br><dt><code>"step limit"</code><dd>Maximum number of steps allowed (default is 100000). 
 </dl>
         </p></blockquote></div>
 
    <p>Here is an example of solving a set of three differential equations using
 <code>lsode</code>.  Given the function
 
-   <p><a name="index-oregonator-1788"></a>
+   <p><a name="index-oregonator-2078"></a>
 <pre class="example">     function xdot = f (x, t)
      
        xdot = zeros (3,1);

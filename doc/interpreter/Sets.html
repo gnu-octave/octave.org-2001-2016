@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Sets - Untitled</title>
+<title>Sets - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Statistics.html#Statistics" title="Statistics">
 <link rel="next" href="Polynomial-Manipulations.html#Polynomial-Manipulations" title="Polynomial Manipulations">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Sets"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Polynomial-Manipulations.html#Polynomial-Manipulations">Polynomial Manipulations</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Statistics.html#Statistics">Statistics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
@@ -37,18 +38,20 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 set is defined as a collection of unique elements.  In Octave a set is
 represented as a vector of numbers.
 
-<!-- ./set/unique.m -->
+<!-- unique scripts/set/unique.m -->
    <p><a name="doc_002dunique"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unique</b> (<var>x</var>)<var><a name="index-unique-2001"></a></var><br>
-&mdash; Function File:  <b>unique</b> (<var>x, "rows"</var>)<var><a name="index-unique-2002"></a></var><br>
-&mdash; Function File:  <b>unique</b> (<var><small class="dots">...</small>, "first"</var>)<var><a name="index-unique-2003"></a></var><br>
-&mdash; Function File:  <b>unique</b> (<var><small class="dots">...</small>, "last"</var>)<var><a name="index-unique-2004"></a></var><br>
-&mdash; Function File: [<var>y</var>, <var>i</var>, <var>j</var>] = <b>unique</b> (<var><small class="dots">...</small></var>)<var><a name="index-unique-2005"></a></var><br>
+&mdash; Function File:  <b>unique</b> (<var>x</var>)<var><a name="index-unique-2338"></a></var><br>
+&mdash; Function File:  <b>unique</b> (<var>x, "rows"</var>)<var><a name="index-unique-2339"></a></var><br>
+&mdash; Function File:  <b>unique</b> (<var><small class="dots">...</small>, "first"</var>)<var><a name="index-unique-2340"></a></var><br>
+&mdash; Function File:  <b>unique</b> (<var><small class="dots">...</small>, "last"</var>)<var><a name="index-unique-2341"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>i</var>, <var>j</var>] = <b>unique</b> (<var><small class="dots">...</small></var>)<var><a name="index-unique-2342"></a></var><br>
 <blockquote><p>Return the unique elements of <var>x</var>, sorted in ascending order. 
-If <var>x</var> is a row vector, return a row vector, but if <var>x</var>
-is a column vector or a matrix return a column vector.
+If the input <var>x</var> is a vector then the output is also a vector with the
+same orientation (row or column) as the input.  For a matrix input the
+output is always a column vector.  <var>x</var> may also be a cell array of
+strings.
 
         <p>If the optional argument <code>"rows"</code> is supplied, return the unique
 rows of <var>x</var>, sorted in ascending order.
@@ -56,10 +59,10 @@ rows of <var>x</var>, sorted in ascending order.
         <p>If requested, return index vectors <var>i</var> and <var>j</var> such that
 <code>x(i)==y</code> and <code>y(j)==x</code>.
 
-        <p>Additionally, one of <code>"first"</code> or <code>"last"</code> may be given as
-an argument.  If <code>"last"</code> is specified, return the highest
-possible indices in <var>i</var>, otherwise, if <code>"first"</code> is
-specified, return the lowest.  The default is <code>"last"</code>. 
+        <p>Additionally, if <var>i</var> is a requested output then one of <code>"first"</code> or
+<code>"last"</code> may be given as an input.  If <code>"last"</code> is specified,
+return the highest possible indices in <var>i</var>, otherwise, if <code>"first"</code>
+is specified, return the lowest.  The default is <code>"last"</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Timing Utilities - Untitled</title>
+<title>Timing Utilities - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Utilities.html#System-Utilities" title="System Utilities">
 <link rel="next" href="Filesystem-Utilities.html#Filesystem-Utilities" title="Filesystem Utilities">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Timing-Utilities"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Filesystem-Utilities.html#Filesystem-Utilities">Filesystem Utilities</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities">System Utilities</a>
 <hr>
@@ -65,11 +66,11 @@ for leap seconds.
 <p class="noindent">In the descriptions of the following functions, this structure is
 referred to as a <var>tm_struct</var>.
 
-<!-- ./DLD-FUNCTIONS/time.cc -->
+<!-- time src/DLD-FUNCTIONS/time.cc -->
    <p><a name="doc_002dtime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>time</b> ()<var><a name="index-time-2268"></a></var><br>
+&mdash; Loadable Function: <var>seconds</var> = <b>time</b> ()<var><a name="index-time-2715"></a></var><br>
 <blockquote><p>Return the current time as the number of seconds since the epoch.  The
 epoch is referenced to 00:00:00 CUT (Coordinated Universal Time) 1 Jan
 1970.  For example, on Monday February 17, 1997 at 07:15:06 CUT, the
@@ -81,11 +82,11 @@ value returned by <code>time</code> was 856163706.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dstrptime.html#doc_002dstrptime">strptime</a>, <a href="doc_002dlocaltime.html#doc_002dlocaltime">localtime</a>, <a href="doc_002dgmtime.html#doc_002dgmtime">gmtime</a>, <a href="doc_002dmktime.html#doc_002dmktime">mktime</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatestr.html#doc_002ddatestr">datestr</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002dcalendar.html#doc_002dcalendar">calendar</a>, <a href="doc_002dweekday.html#doc_002dweekday">weekday</a>. 
 </p></blockquote></div>
 
-<!-- ./time/now.m -->
+<!-- now scripts/time/now.m -->
    <p><a name="doc_002dnow"></a>
 
 <div class="defun">
-&mdash; Function File: t = <b>now</b> ()<var><a name="index-now-2269"></a></var><br>
+&mdash; Function File: t = <b>now</b> ()<var><a name="index-now-2716"></a></var><br>
 <blockquote><p>Returns the current local time as the number of days since Jan 1, 0000. 
 By this reckoning, Jan 1, 1970 is day number 719529.
 
@@ -103,42 +104,43 @@ time on Jan 1, 0000.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>. 
 </p></blockquote></div>
 
-<!-- ./time/ctime.m -->
+<!-- ctime scripts/time/ctime.m -->
    <p><a name="doc_002dctime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ctime</b> (<var>t</var>)<var><a name="index-ctime-2270"></a></var><br>
+&mdash; Function File:  <b>ctime</b> (<var>t</var>)<var><a name="index-ctime-2717"></a></var><br>
 <blockquote><p>Convert a value returned from <code>time</code> (or any other non-negative
 integer), to the local time and return a string of the same form as
 <code>asctime</code>.  The function <code>ctime (time)</code> is equivalent to
-<code>asctime (localtime (time))</code>.  For example,
+<code>asctime (localtime (time))</code>.  For example:
 
      <pre class="example">          ctime (time ())
-                "Mon Feb 17 01:15:06 1997\n"
+               &rArr; "Mon Feb 17 01:15:06 1997\n"
 </pre>
         </blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/time.cc -->
+<!-- gmtime src/DLD-FUNCTIONS/time.cc -->
    <p><a name="doc_002dgmtime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>gmtime</b> (<var>t</var>)<var><a name="index-gmtime-2271"></a></var><br>
-<blockquote><p>Given a value returned from time (or any non-negative integer),
-return a time structure corresponding to CUT.  For example,
+&mdash; Loadable Function: <var>tm_struct</var> = <b>gmtime</b> (<var>t</var>)<var><a name="index-gmtime-2718"></a></var><br>
+<blockquote><p>Given a value returned from <code>time</code>, or any non-negative integer,
+return a time structure corresponding to CUT (Coordinated Universal Time). 
+For example:
 
      <pre class="example">          gmtime (time ())
-                {
+               &rArr; {
                      usec = 0
-                     year = 97
-                     mon = 1
-                     mday = 17
                      sec = 6
-                     zone = CST
                      min = 15
-                     wday = 1
                      hour = 7
-                     isdst = 0
+                     mday = 17
+                     mon = 1
+                     year = 97
+                     wday = 1
                      yday = 47
+                     isdst = 0
+                     zone = CST
                    }
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -147,27 +149,27 @@ return a time structure corresponding to CUT.  For example,
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dstrptime.html#doc_002dstrptime">strptime</a>, <a href="doc_002dlocaltime.html#doc_002dlocaltime">localtime</a>, <a href="doc_002dmktime.html#doc_002dmktime">mktime</a>, <a href="doc_002dtime.html#doc_002dtime">time</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatestr.html#doc_002ddatestr">datestr</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002dcalendar.html#doc_002dcalendar">calendar</a>, <a href="doc_002dweekday.html#doc_002dweekday">weekday</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/time.cc -->
+<!-- localtime src/DLD-FUNCTIONS/time.cc -->
    <p><a name="doc_002dlocaltime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>localtime</b> (<var>t</var>)<var><a name="index-localtime-2272"></a></var><br>
-<blockquote><p>Given a value returned from time (or any non-negative integer),
+&mdash; Loadable Function: <var>tm_struct</var> = <b>localtime</b> (<var>t</var>)<var><a name="index-localtime-2719"></a></var><br>
+<blockquote><p>Given a value returned from <code>time</code>, or any non-negative integer,
 return a time structure corresponding to the local time zone.
 
      <pre class="example">          localtime (time ())
-                {
+               &rArr; {
                      usec = 0
-                     year = 97
-                     mon = 1
-                     mday = 17
                      sec = 6
-                     zone = CST
                      min = 15
-                     wday = 1
                      hour = 1
-                     isdst = 0
+                     mday = 17
+                     mon = 1
+                     year = 97
+                     wday = 1
                      yday = 47
+                     isdst = 0
+                     zone = CST
                    }
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -176,16 +178,16 @@ return a time structure corresponding to the local time zone.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dstrptime.html#doc_002dstrptime">strptime</a>, <a href="doc_002dgmtime.html#doc_002dgmtime">gmtime</a>, <a href="doc_002dmktime.html#doc_002dmktime">mktime</a>, <a href="doc_002dtime.html#doc_002dtime">time</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatestr.html#doc_002ddatestr">datestr</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002dcalendar.html#doc_002dcalendar">calendar</a>, <a href="doc_002dweekday.html#doc_002dweekday">weekday</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/time.cc -->
+<!-- mktime src/DLD-FUNCTIONS/time.cc -->
    <p><a name="doc_002dmktime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>mktime</b> (<var>tm_struct</var>)<var><a name="index-mktime-2273"></a></var><br>
+&mdash; Loadable Function: <var>seconds</var> = <b>mktime</b> (<var>tm_struct</var>)<var><a name="index-mktime-2720"></a></var><br>
 <blockquote><p>Convert a time structure corresponding to the local time to the number
-of seconds since the epoch.  For example,
+of seconds since the epoch.  For example:
 
      <pre class="example">          mktime (localtime (time ()))
-                856163706
+               &rArr; 856163706
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -193,25 +195,25 @@ of seconds since the epoch.  For example,
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dstrptime.html#doc_002dstrptime">strptime</a>, <a href="doc_002dlocaltime.html#doc_002dlocaltime">localtime</a>, <a href="doc_002dgmtime.html#doc_002dgmtime">gmtime</a>, <a href="doc_002dtime.html#doc_002dtime">time</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatestr.html#doc_002ddatestr">datestr</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002dcalendar.html#doc_002dcalendar">calendar</a>, <a href="doc_002dweekday.html#doc_002dweekday">weekday</a>. 
 </p></blockquote></div>
 
-<!-- ./time/asctime.m -->
+<!-- asctime scripts/time/asctime.m -->
    <p><a name="doc_002dasctime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>asctime</b> (<var>tm_struct</var>)<var><a name="index-asctime-2274"></a></var><br>
+&mdash; Function File:  <b>asctime</b> (<var>tm_struct</var>)<var><a name="index-asctime-2721"></a></var><br>
 <blockquote><p>Convert a time structure to a string using the following five-field
-format: Thu Mar 28 08:40:14 1996.  For example,
+format: Thu Mar 28 08:40:14 1996.  For example:
 
      <pre class="example">          asctime (localtime (time ()))
-                "Mon Feb 17 01:15:06 1997\n"
+               &rArr; "Mon Feb 17 01:15:06 1997\n"
 </pre>
         <p>This is equivalent to <code>ctime (time ())</code>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/time.cc -->
+<!-- strftime src/DLD-FUNCTIONS/time.cc -->
    <p><a name="doc_002dstrftime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>strftime</b> (<var>fmt, tm_struct</var>)<var><a name="index-strftime-2275"></a></var><br>
+&mdash; Loadable Function:  <b>strftime</b> (<var>fmt, tm_struct</var>)<var><a name="index-strftime-2722"></a></var><br>
 <blockquote><p>Format the time structure <var>tm_struct</var> in a flexible way using the
 format string <var>fmt</var> that contains &lsquo;<samp><span class="samp">%</span></samp>&rsquo; substitutions
 similar to those in <code>printf</code>.  Except where noted, substituted
@@ -220,10 +222,10 @@ Padding is with zeros by default; for fields that display a single
 number, padding can be changed or inhibited by following the &lsquo;<samp><span class="samp">%</span></samp>&rsquo;
 with one of the modifiers described below.  Unknown field specifiers are
 copied as normal characters.  All other characters are copied to the
-output without change.  For example,
+output without change.  For example:
 
      <pre class="example">          strftime ("%r (%Z) %A %e %B %Y", localtime (time ()))
-                "01:15:06 AM (CST) Monday 17 February 1997"
+               &rArr; "01:15:06 AM (CST) Monday 17 February 1997"
 </pre>
         <p>Octave's <code>strftime</code> function supports a superset of the ANSI C
 field specifiers.
@@ -322,15 +324,15 @@ field specifiers.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrptime.html#doc_002dstrptime">strptime</a>, <a href="doc_002dlocaltime.html#doc_002dlocaltime">localtime</a>, <a href="doc_002dgmtime.html#doc_002dgmtime">gmtime</a>, <a href="doc_002dmktime.html#doc_002dmktime">mktime</a>, <a href="doc_002dtime.html#doc_002dtime">time</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatestr.html#doc_002ddatestr">datestr</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002dcalendar.html#doc_002dcalendar">calendar</a>, <a href="doc_002dweekday.html#doc_002dweekday">weekday</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/time.cc -->
+<!-- strptime src/DLD-FUNCTIONS/time.cc -->
    <p><a name="doc_002dstrptime"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>tm_struct</var>, <var>nchars</var>] = <b>strptime</b> (<var>str, fmt</var>)<var><a name="index-strptime-2276"></a></var><br>
+&mdash; Loadable Function: [<var>tm_struct</var>, <var>nchars</var>] = <b>strptime</b> (<var>str, fmt</var>)<var><a name="index-strptime-2723"></a></var><br>
 <blockquote><p>Convert the string <var>str</var> to the time structure <var>tm_struct</var> under
 the control of the format string <var>fmt</var>.
 
-        <p>If <var>fmt</var> fails to match, <var>nchars</var> is 0; otherwise it is set to the
+        <p>If <var>fmt</var> fails to match, <var>nchars</var> is 0; otherwise, it is set to the
 position of last matched character plus 1. Always check for this unless
 you're absolutely sure the date string will be parsed correctly. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -345,41 +347,41 @@ patterned after the standard C library.  Some are available for
 compatibility with <span class="sc">matlab</span> and others are provided because they are
 useful.
 
-<!-- ./time/clock.m -->
+<!-- clock scripts/time/clock.m -->
    <p><a name="doc_002dclock"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>clock</b> ()<var><a name="index-clock-2277"></a></var><br>
+&mdash; Function File:  <b>clock</b> ()<var><a name="index-clock-2724"></a></var><br>
 <blockquote><p>Return a vector containing the current year, month (1-12), day (1-31),
-hour (0-23), minute (0-59) and second (0-61).  For example,
+hour (0-23), minute (0-59) and second (0-61).  For example:
 
      <pre class="example">          clock ()
-                [ 1993, 8, 20, 4, 56, 1 ]
+               &rArr; [ 1993, 8, 20, 4, 56, 1 ]
 </pre>
         <p>The function clock is more accurate on systems that have the
 <code>gettimeofday</code> function. 
 </p></blockquote></div>
 
-<!-- ./time/date.m -->
+<!-- date scripts/time/date.m -->
    <p><a name="doc_002ddate"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>date</b> ()<var><a name="index-date-2278"></a></var><br>
+&mdash; Function File:  <b>date</b> ()<var><a name="index-date-2725"></a></var><br>
 <blockquote><p>Return the date as a character string in the form DD-MMM-YY.  For
-example,
+example:
 
      <pre class="example">          date ()
-                "20-Aug-93"
+               &rArr; "20-Aug-93"
 </pre>
         </blockquote></div>
 
-<!-- ./time/etime.m -->
+<!-- etime scripts/time/etime.m -->
    <p><a name="doc_002detime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>etime</b> (<var>t1, t2</var>)<var><a name="index-etime-2279"></a></var><br>
-<blockquote><p>Return the difference (in seconds) between two time values returned from
-<code>clock</code>.  For example:
+&mdash; Function File:  <b>etime</b> (<var>t2, t1</var>)<var><a name="index-etime-2726"></a></var><br>
+<blockquote><p>Return the difference in seconds between two time values returned from
+<code>clock</code> (<var>t2</var> - <var>t1</var>).  For example:
 
      <pre class="example">          t0 = clock ();
            many computations later...
@@ -394,11 +396,11 @@ the variable <code>t0</code> was set.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dtic.html#doc_002dtic">tic</a>, <a href="doc_002dtoc.html#doc_002dtoc">toc</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002dcputime.html#doc_002dcputime">cputime</a>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- cputime src/data.cc -->
    <p><a name="doc_002dcputime"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>total</var>, <var>user</var>, <var>system</var>] = <b>cputime</b> ()<var>;<a name="index-cputime-2280"></a></var><br>
+&mdash; Built-in Function: [<var>total</var>, <var>user</var>, <var>system</var>] = <b>cputime</b> ()<var>;<a name="index-cputime-2727"></a></var><br>
 <blockquote><p>Return the CPU time used by your Octave session.  The first output is
 the total time spent executing your process and is equal to the sum of
 second and third outputs, which are the number of CPU seconds spent
@@ -410,26 +412,27 @@ to check to see if <code>cputime</code> works by checking to see if the total
 CPU time used is nonzero. 
 </p></blockquote></div>
 
-<!-- ./time/is_leap_year.m -->
+<!-- is_leap_year scripts/time/is_leap_year.m -->
    <p><a name="doc_002dis_005fleap_005fyear"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>is_leap_year</b> (<var>year</var>)<var><a name="index-is_005fleap_005fyear-2281"></a></var><br>
-<blockquote><p>Return 1 if the given year is a leap year and 0 otherwise.  If no
-arguments are provided, <code>is_leap_year</code> will use the current year. 
-For example,
+&mdash; Function File:  <b>is_leap_year</b> ()<var><a name="index-is_005fleap_005fyear-2728"></a></var><br>
+&mdash; Function File:  <b>is_leap_year</b> (<var>year</var>)<var><a name="index-is_005fleap_005fyear-2729"></a></var><br>
+<blockquote><p>Return true if the given year is a leap year and false otherwise.  If no
+year is provided, <code>is_leap_year</code> will use the current year. 
+For example:
 
      <pre class="example">          is_leap_year (2000)
-                1
+               &rArr; 1
 </pre>
         </blockquote></div>
 
-   <p><a name="doc_002dtoc"></a><!-- data.cc -->
+   <p><a name="doc_002dtoc"></a><!-- tic src/data.cc -->
 <a name="doc_002dtic"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>tic</b> ()<var><a name="index-tic-2282"></a></var><br>
-&mdash; Built-in Function:  <b>toc</b> ()<var><a name="index-toc-2283"></a></var><br>
+&mdash; Built-in Function:  <b>tic</b> ()<var><a name="index-tic-2730"></a></var><br>
+&mdash; Built-in Function:  <b>toc</b> ()<var><a name="index-toc-2731"></a></var><br>
 <blockquote><p>Set or check a wall-clock timer.  Calling <code>tic</code> without an
 output argument sets the timer.  Subsequent calls to <code>toc</code>
 return the number of seconds since the timer was set.  For example,
@@ -445,7 +448,7 @@ the most recent call to the function <code>tic</code>.
 of type <code>uint64</code> and the wall-clock timer is not started.
 
      <pre class="example">          t = tic; sleep (5); (double (tic ()) - double (t)) * 1e-6
-                5
+               &rArr; 5
 </pre>
         <p>Nested timing with <code>tic</code> and <code>toc</code> is not supported. 
 Therefore <code>toc</code> will always return the elapsed time from the most
@@ -455,22 +458,22 @@ recent call to <code>tic</code>.
 should use the <code>cputime</code> function instead.  The <code>tic</code> and
 <code>toc</code> functions report the actual wall clock time that elapsed
 between the calls.  This may include time spent processing other jobs or
-doing nothing at all.  For example,
+doing nothing at all.  For example:
 
      <pre class="example">          tic (); sleep (5); toc ()
-                5
+               &rArr; 5
           t = cputime (); sleep (5); cputime () - t
-                0
+               &rArr; 0
 </pre>
         <p class="noindent">(This example also illustrates that the CPU timer may have a fairly
 coarse resolution.) 
 </p></blockquote></div>
 
-<!-- sysdep.cc -->
+<!-- pause src/sysdep.cc -->
    <p><a name="doc_002dpause"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>pause</b> (<var>seconds</var>)<var><a name="index-pause-2284"></a></var><br>
+&mdash; Built-in Function:  <b>pause</b> (<var>seconds</var>)<var><a name="index-pause-2732"></a></var><br>
 <blockquote><p>Suspend the execution of the program.  If invoked without any arguments,
 Octave waits until you type a character.  With a numeric argument, it
 pauses for the given number of seconds.  For example, the following
@@ -483,35 +486,35 @@ screen.
 </pre>
         </blockquote></div>
 
-<!-- sysdep.cc -->
+<!-- sleep src/sysdep.cc -->
    <p><a name="doc_002dsleep"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sleep</b> (<var>seconds</var>)<var><a name="index-sleep-2285"></a></var><br>
+&mdash; Built-in Function:  <b>sleep</b> (<var>seconds</var>)<var><a name="index-sleep-2733"></a></var><br>
 <blockquote><p>Suspend the execution of the program for the given number of seconds. 
 </p></blockquote></div>
 
-<!-- sysdep.cc -->
+<!-- usleep src/sysdep.cc -->
    <p><a name="doc_002dusleep"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>usleep</b> (<var>microseconds</var>)<var><a name="index-usleep-2286"></a></var><br>
+&mdash; Built-in Function:  <b>usleep</b> (<var>microseconds</var>)<var><a name="index-usleep-2734"></a></var><br>
 <blockquote><p>Suspend the execution of the program for the given number of
 microseconds.  On systems where it is not possible to sleep for periods
 of time less than one second, <code>usleep</code> will pause the execution for
 <code>round (</code><var>microseconds</var><code> / 1e6)</code> seconds. 
 </p></blockquote></div>
 
-<!-- ./time/datenum.m -->
+<!-- datenum scripts/time/datenum.m -->
    <p><a name="doc_002ddatenum"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>datenum</b> (<var>year, month, day</var>)<var><a name="index-datenum-2287"></a></var><br>
-&mdash; Function File:  <b>datenum</b> (<var>year, month, day, hour</var>)<var><a name="index-datenum-2288"></a></var><br>
-&mdash; Function File:  <b>datenum</b> (<var>year, month, day, hour, minute</var>)<var><a name="index-datenum-2289"></a></var><br>
-&mdash; Function File:  <b>datenum</b> (<var>year, month, day, hour, minute, second</var>)<var><a name="index-datenum-2290"></a></var><br>
-&mdash; Function File:  <b>datenum</b> (<code>"date"</code>)<var><a name="index-datenum-2291"></a></var><br>
-&mdash; Function File:  <b>datenum</b> (<code>"date"</code><var>, p</var>)<var><a name="index-datenum-2292"></a></var><br>
+&mdash; Function File:  <b>datenum</b> (<var>year, month, day</var>)<var><a name="index-datenum-2735"></a></var><br>
+&mdash; Function File:  <b>datenum</b> (<var>year, month, day, hour</var>)<var><a name="index-datenum-2736"></a></var><br>
+&mdash; Function File:  <b>datenum</b> (<var>year, month, day, hour, minute</var>)<var><a name="index-datenum-2737"></a></var><br>
+&mdash; Function File:  <b>datenum</b> (<var>year, month, day, hour, minute, second</var>)<var><a name="index-datenum-2738"></a></var><br>
+&mdash; Function File:  <b>datenum</b> (<code>"date"</code>)<var><a name="index-datenum-2739"></a></var><br>
+&mdash; Function File:  <b>datenum</b> (<code>"date"</code><var>, p</var>)<var><a name="index-datenum-2740"></a></var><br>
 <blockquote><p>Returns the specified local time as a day number, with Jan 1, 0000
 being day 1.  By this reckoning, Jan 1, 1970 is day number 719529. 
 The fractional portion, <var>p</var>, corresponds to the portion of the
@@ -520,12 +523,17 @@ specified day.
         <p>Notes:
 
           <ul>
-<li>Years can be negative and/or fractional. 
-<li>Months below 1 are considered to be January. 
-<li>Days of the month start at 1. 
-<li>Days beyond the end of the month go into subsequent months. 
-<li>Days before the beginning of the month go to the previous month. 
-<li>Days can be fractional. 
+<li>Years can be negative and/or fractional.
+
+          <li>Months below 1 are considered to be January.
+
+          <li>Days of the month start at 1.
+
+          <li>Days beyond the end of the month go into subsequent months.
+
+          <li>Days before the beginning of the month go to the previous month.
+
+          <li>Days can be fractional. 
 </ul>
 
         <p><strong>Warning:</strong> this function does not attempt to handle Julian
@@ -544,11 +552,13 @@ is available on the Wikipedia entry for leap seconds.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>, <a href="doc_002ddatestr.html#doc_002ddatestr">datestr</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002dcalendar.html#doc_002dcalendar">calendar</a>, <a href="doc_002dweekday.html#doc_002dweekday">weekday</a>. 
 </p></blockquote></div>
 
-<!-- ./time/datestr.m -->
+<!-- datestr scripts/time/datestr.m -->
    <p><a name="doc_002ddatestr"></a>
 
 <div class="defun">
-&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, </var>[<var>f, </var>[<var>p</var>]])<var><a name="index-datestr-2293"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date</var>)<var><a name="index-datestr-2741"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, f</var>)<var><a name="index-datestr-2742"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, f, p</var>)<var><a name="index-datestr-2743"></a></var><br>
 <blockquote><p>Format the given date/time according to the format <code>f</code> and return
 the result in <var>str</var>.  <var>date</var> is a serial date number (see
 <code>datenum</code>) or a date vector (see <code>datevec</code>).  The value of
@@ -634,15 +644,15 @@ returned.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>, <a href="doc_002ddatetick.html#doc_002ddatetick">datetick</a>. 
 </p></blockquote></div>
 
-<!-- ./time/datevec.m -->
+<!-- datevec scripts/time/datevec.m -->
    <p><a name="doc_002ddatevec"></a>
 
 <div class="defun">
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date</var>)<var><a name="index-datevec-2294"></a></var><br>
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f</var>)<var><a name="index-datevec-2295"></a></var><br>
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, p</var>)<var><a name="index-datevec-2296"></a></var><br>
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f, p</var>)<var><a name="index-datevec-2297"></a></var><br>
-&mdash; Function File: [<var>y</var>, <var>m</var>, <var>d</var>, <var>h</var>, <var>mi</var>, <var>s</var>] = <b>datevec</b> (<var><small class="dots">...</small></var>)<var><a name="index-datevec-2298"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date</var>)<var><a name="index-datevec-2744"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f</var>)<var><a name="index-datevec-2745"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, p</var>)<var><a name="index-datevec-2746"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f, p</var>)<var><a name="index-datevec-2747"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>m</var>, <var>d</var>, <var>h</var>, <var>mi</var>, <var>s</var>] = <b>datevec</b> (<var><small class="dots">...</small></var>)<var><a name="index-datevec-2748"></a></var><br>
 <blockquote><p>Convert a serial date number (see <code>datenum</code>) or date string (see
 <code>datestr</code>) into a date vector.
 
@@ -662,11 +672,11 @@ year minus 50.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatestr.html#doc_002ddatestr">datestr</a>, <a href="doc_002ddate.html#doc_002ddate">date</a>, <a href="doc_002dclock.html#doc_002dclock">clock</a>, <a href="doc_002dnow.html#doc_002dnow">now</a>. 
 </p></blockquote></div>
 
-<!-- ./time/addtodate.m -->
+<!-- addtodate scripts/time/addtodate.m -->
    <p><a name="doc_002daddtodate"></a>
 
 <div class="defun">
-&mdash; Function File: <var>d</var> = <b>addtodate</b> (<var>d, q, f</var>)<var><a name="index-addtodate-2299"></a></var><br>
+&mdash; Function File: <var>d</var> = <b>addtodate</b> (<var>d, q, f</var>)<var><a name="index-addtodate-2749"></a></var><br>
 <blockquote><p>Add <var>q</var> amount of time (with units <var>f</var>) to the datenum, <var>d</var>.
 
         <p><var>f</var> must be one of "year", "month", "day", "hour", "minute", or
@@ -678,14 +688,14 @@ year minus 50.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>. 
 </p></blockquote></div>
 
-<!-- ./time/calendar.m -->
+<!-- calendar scripts/time/calendar.m -->
    <p><a name="doc_002dcalendar"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>calendar</b> (<var><small class="dots">...</small></var>)<var><a name="index-calendar-2300"></a></var><br>
-&mdash; Function File: <var>c</var> = <b>calendar</b> ()<var><a name="index-calendar-2301"></a></var><br>
-&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>d</var>)<var><a name="index-calendar-2302"></a></var><br>
-&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>y, m</var>)<var><a name="index-calendar-2303"></a></var><br>
+&mdash; Function File:  <b>calendar</b> (<var><small class="dots">...</small></var>)<var><a name="index-calendar-2750"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> ()<var><a name="index-calendar-2751"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>d</var>)<var><a name="index-calendar-2752"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>y, m</var>)<var><a name="index-calendar-2753"></a></var><br>
 <blockquote><p>If called with no arguments, return the current monthly calendar in
 a 6x7 matrix.
 
@@ -704,19 +714,20 @@ instead of returning a matrix.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>. 
 </p></blockquote></div>
 
-<!-- ./time/weekday.m -->
+<!-- weekday scripts/time/weekday.m -->
    <p><a name="doc_002dweekday"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d, </var>[<var>form</var>])<var><a name="index-weekday-2304"></a></var><br>
+&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d</var>)<var><a name="index-weekday-2754"></a></var><br>
+&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d, format</var>)<var><a name="index-weekday-2755"></a></var><br>
 <blockquote><p>Return the day of week as a number in <var>n</var> and a string in <var>s</var>,
 for example <code>[1, "Sun"]</code>, <code>[2, "Mon"]</code>, <small class="dots">...</small>, or
 <code>[7, "Sat"]</code>.
 
         <p><var>d</var> is a serial date number or a date string.
 
-        <p>If the string <var>form</var> is given and is <code>"long"</code>, <var>s</var> will
-contain the full name of the weekday; otherwise (or if <var>form</var> is
+        <p>If the string <var>format</var> is given and is <code>"long"</code>, <var>s</var> will
+contain the full name of the weekday; otherwise (or if <var>format</var> is
 <code>"short"</code>), <var>s</var> will contain the abbreviated name of the weekday. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -725,11 +736,11 @@ contain the full name of the weekday; otherwise (or if <var>form</var> is
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002deomday.html#doc_002deomday">eomday</a>. 
 </p></blockquote></div>
 
-<!-- ./time/eomday.m -->
+<!-- eomday scripts/time/eomday.m -->
    <p><a name="doc_002deomday"></a>
 
 <div class="defun">
-&mdash; Function File: <var>e</var> = <b>eomday</b> (<var>y, m</var>)<var><a name="index-eomday-2305"></a></var><br>
+&mdash; Function File: <var>e</var> = <b>eomday</b> (<var>y, m</var>)<var><a name="index-eomday-2756"></a></var><br>
 <blockquote><p>Return the last day of the month <var>m</var> for the year <var>y</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -738,15 +749,16 @@ contain the full name of the weekday; otherwise (or if <var>form</var> is
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddatenum.html#doc_002ddatenum">datenum</a>, <a href="doc_002ddatevec.html#doc_002ddatevec">datevec</a>, <a href="doc_002dweekday.html#doc_002dweekday">weekday</a>. 
 </p></blockquote></div>
 
-<!-- ./time/datetick.m -->
+<!-- datetick scripts/time/datetick.m -->
    <p><a name="doc_002ddatetick"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>datetick</b> (<var>form</var>)<var><a name="index-datetick-2306"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var>axis, form</var>)<var><a name="index-datetick-2307"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keeplimits"</var>)<var><a name="index-datetick-2308"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keepticks"</var>)<var><a name="index-datetick-2309"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>ax, <small class="dots">...</small></var>)<var><a name="index-datetick-2310"></a></var><br>
+&mdash; Function File:  <b>datetick</b> ()<var><a name="index-datetick-2757"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var>form</var>)<var><a name="index-datetick-2758"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var>axis, form</var>)<var><a name="index-datetick-2759"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keeplimits"</var>)<var><a name="index-datetick-2760"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keepticks"</var>)<var><a name="index-datetick-2761"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>ax, <small class="dots">...</small></var>)<var><a name="index-datetick-2762"></a></var><br>
 <blockquote><p>Adds date formatted tick labels to an axis.  The axis the apply the
 ticks to is determined by <var>axis</var> that can take the values "x",
 "y" or "z".  The default value is "x".  The formatting of the labels is

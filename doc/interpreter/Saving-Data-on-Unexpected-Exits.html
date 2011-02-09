@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Saving Data on Unexpected Exits - Untitled</title>
+<title>Saving Data on Unexpected Exits - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Simple-File-I_002fO.html#Simple-File-I_002fO" title="Simple File I/O">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -19,11 +19,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Saving-Data-on-Unexpected-Exits"></a>
+<p>
 Up:&nbsp;<a rel="up" accesskey="u" href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>
 <hr>
 </div>
@@ -37,12 +38,12 @@ into memory with the <code>load</code> command.  While the default behavior
 most often is reasonable it can be changed through the following
 functions.
 
-<!-- load-save.cc -->
+<!-- crash_dumps_octave_core src/load-save.cc -->
    <p><a name="doc_002dcrash_005fdumps_005foctave_005fcore"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>crash_dumps_octave_core</b> ()<var><a name="index-crash_005fdumps_005foctave_005fcore-755"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>crash_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-crash_005fdumps_005foctave_005fcore-756"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>crash_dumps_octave_core</b> ()<var><a name="index-crash_005fdumps_005foctave_005fcore-857"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>crash_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-crash_005fdumps_005foctave_005fcore-858"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave tries
 to save all current variables to the file "octave-core" if it
 crashes or receives a hangup, terminate or similar signal. 
@@ -53,34 +54,34 @@ crashes or receives a hangup, terminate or similar signal.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002doctave_005fcore_005ffile_005flimit.html#doc_002doctave_005fcore_005ffile_005flimit">octave_core_file_limit</a>, <a href="doc_002doctave_005fcore_005ffile_005fname.html#doc_002doctave_005fcore_005ffile_005fname">octave_core_file_name</a>, <a href="doc_002doctave_005fcore_005ffile_005foptions.html#doc_002doctave_005fcore_005ffile_005foptions">octave_core_file_options</a>. 
 </p></blockquote></div>
 
-<!-- sighandlers.cc -->
+<!-- sighup_dumps_octave_core src/sighandlers.cc -->
    <p><a name="doc_002dsighup_005fdumps_005foctave_005fcore"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>sighup_dumps_octave_core</b> ()<var><a name="index-sighup_005fdumps_005foctave_005fcore-757"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>sighup_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sighup_005fdumps_005foctave_005fcore-758"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>sighup_dumps_octave_core</b> ()<var><a name="index-sighup_005fdumps_005foctave_005fcore-859"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>sighup_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sighup_005fdumps_005foctave_005fcore-860"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave tries
 to save all current variables to the file "octave-core" if it receives
 a hangup signal. 
 </p></blockquote></div>
 
-<!-- sighandlers.cc -->
+<!-- sigterm_dumps_octave_core src/sighandlers.cc -->
    <p><a name="doc_002dsigterm_005fdumps_005foctave_005fcore"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>sigterm_dumps_octave_core</b> ()<var><a name="index-sigterm_005fdumps_005foctave_005fcore-759"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>sigterm_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sigterm_005fdumps_005foctave_005fcore-760"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>sigterm_dumps_octave_core</b> ()<var><a name="index-sigterm_005fdumps_005foctave_005fcore-861"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>sigterm_dumps_octave_core</b> (<var>new_val</var>)<var><a name="index-sigterm_005fdumps_005foctave_005fcore-862"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave tries
 to save all current variables to the file "octave-core" if it receives
 a terminate signal. 
 </p></blockquote></div>
 
-<!-- load-save.cc -->
+<!-- octave_core_file_options src/load-save.cc -->
    <p><a name="doc_002doctave_005fcore_005ffile_005foptions"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_options</b> ()<var><a name="index-octave_005fcore_005ffile_005foptions-761"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_options</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005foptions-762"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_options</b> ()<var><a name="index-octave_005fcore_005ffile_005foptions-863"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_options</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005foptions-864"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the options used for
 saving the workspace data if Octave aborts.  The value of
 <code>octave_core_file_options</code> should follow the same format as the
@@ -93,12 +94,12 @@ format.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcrash_005fdumps_005foctave_005fcore.html#doc_002dcrash_005fdumps_005foctave_005fcore">crash_dumps_octave_core</a>, <a href="doc_002doctave_005fcore_005ffile_005fname.html#doc_002doctave_005fcore_005ffile_005fname">octave_core_file_name</a>, <a href="doc_002doctave_005fcore_005ffile_005flimit.html#doc_002doctave_005fcore_005ffile_005flimit">octave_core_file_limit</a>. 
 </p></blockquote></div>
 
-<!-- load-save.cc -->
+<!-- octave_core_file_limit src/load-save.cc -->
    <p><a name="doc_002doctave_005fcore_005ffile_005flimit"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_limit</b> ()<var><a name="index-octave_005fcore_005ffile_005flimit-763"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_limit</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005flimit-764"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_limit</b> ()<var><a name="index-octave_005fcore_005ffile_005flimit-865"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_limit</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005flimit-866"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the maximum amount
 of memory (in kilobytes) of the top-level workspace that Octave will
 attempt to save when writing data to the crash dump file (the name of
@@ -114,12 +115,12 @@ be much larger than the limit.  The default value is -1 (unlimited)
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcrash_005fdumps_005foctave_005fcore.html#doc_002dcrash_005fdumps_005foctave_005fcore">crash_dumps_octave_core</a>, <a href="doc_002doctave_005fcore_005ffile_005fname.html#doc_002doctave_005fcore_005ffile_005fname">octave_core_file_name</a>, <a href="doc_002doctave_005fcore_005ffile_005foptions.html#doc_002doctave_005fcore_005ffile_005foptions">octave_core_file_options</a>. 
 </p></blockquote></div>
 
-<!-- load-save.cc -->
+<!-- octave_core_file_name src/load-save.cc -->
    <p><a name="doc_002doctave_005fcore_005ffile_005fname"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_name</b> ()<var><a name="index-octave_005fcore_005ffile_005fname-765"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_name</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005fname-766"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>octave_core_file_name</b> ()<var><a name="index-octave_005fcore_005ffile_005fname-867"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>octave_core_file_name</b> (<var>new_val</var>)<var><a name="index-octave_005fcore_005ffile_005fname-868"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the name of the file
 used for saving data from the top-level workspace if Octave aborts. 
 The default value is <code>"octave-core"</code>

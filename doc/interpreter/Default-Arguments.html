@@ -1,12 +1,12 @@
 <html lang="en">
 <head>
-<title>Default Arguments - Untitled</title>
+<title>Default Arguments - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
-<link rel="prev" href="Returning-From-a-Function.html#Returning-From-a-Function" title="Returning From a Function">
+<link rel="prev" href="Returning-from-a-Function.html#Returning-from-a-Function" title="Returning from a Function">
 <link rel="next" href="Function-Files.html#Function-Files" title="Function Files">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -21,20 +21,21 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Default-Arguments"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Function-Files.html#Function-Files">Function Files</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Returning-From-a-Function.html#Returning-From-a-Function">Returning From a Function</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Returning-from-a-Function.html#Returning-from-a-Function">Returning from a Function</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>
 <hr>
 </div>
 
-<h3 class="section">11.6 Default Arguments</h3>
+<h3 class="section">11.7 Default Arguments</h3>
 
-<p><a name="index-default-arguments-611"></a>
+<p><a name="index-default-arguments-702"></a>
 Since Octave supports variable number of input arguments, it is very useful
 to assign default values to some input arguments.  When an input argument
 is declared in the argument list it is possible to assign a default
@@ -49,21 +50,25 @@ value <var>val1</var>.
 
    <p>As an example, the following function implements a variant of the classic
 &ldquo;Hello, World&rdquo; program.
+
 <pre class="example">     function hello (who = "World")
        printf ("Hello, %s!\n", who);
      endfunction
 </pre>
    <p class="noindent">When called without an input argument the function prints the following
+
 <pre class="example">     hello ();
           -| Hello, World!
 </pre>
    <p class="noindent">and when it's called with an input argument it prints the following
+
 <pre class="example">     hello ("Beautiful World of Free Software");
           -| Hello, Beautiful World of Free Software!
 </pre>
    <p>Sometimes it is useful to explicitly tell Octave to use the default value
 of an input argument.  This can be done writing a &lsquo;<samp><span class="samp">:</span></samp>&rsquo; as the value
 of the input argument when calling the function.
+
 <pre class="example">     hello (:);
           -| Hello, World!
 </pre>

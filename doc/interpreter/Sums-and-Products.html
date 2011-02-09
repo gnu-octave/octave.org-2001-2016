@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Sums and Products - Untitled</title>
+<title>Sums and Products - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
 <link rel="prev" href="Trigonometry.html#Trigonometry" title="Trigonometry">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Sums-and-Products"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Utility-Functions.html#Utility-Functions">Utility Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Trigonometry.html#Trigonometry">Trigonometry</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
@@ -34,45 +35,48 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic<
 
 <h3 class="section">17.4 Sums and Products</h3>
 
-<!-- data.cc -->
+<!-- sum src/data.cc -->
 <p><a name="doc_002dsum"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sum</b> (<var>x</var>)<var><a name="index-sum-1422"></a></var><br>
-&mdash; Built-in Function:  <b>sum</b> (<var>x, dim</var>)<var><a name="index-sum-1423"></a></var><br>
-&mdash; Built-in Function:  <b>sum</b> (<var><small class="dots">...</small>, 'native'</var>)<var><a name="index-sum-1424"></a></var><br>
+&mdash; Built-in Function:  <b>sum</b> (<var>x</var>)<var><a name="index-sum-1655"></a></var><br>
+&mdash; Built-in Function:  <b>sum</b> (<var>x, dim</var>)<var><a name="index-sum-1656"></a></var><br>
+&mdash; Built-in Function:  <b>sum</b> (<var><small class="dots">...</small>, 'native'</var>)<var><a name="index-sum-1657"></a></var><br>
+&mdash; Built-in Function:  <b>sum</b> (<var><small class="dots">...</small>, 'double'</var>)<var><a name="index-sum-1658"></a></var><br>
+&mdash; Built-in Function:  <b>sum</b> (<var><small class="dots">...</small>, 'extra'</var>)<var><a name="index-sum-1659"></a></var><br>
 <blockquote><p>Sum of elements along dimension <var>dim</var>.  If <var>dim</var> is
-omitted, it defaults to 1 (column-wise sum).
-
-        <p>As a special case, if <var>x</var> is a vector and <var>dim</var> is omitted,
-return the sum of the elements.
+omitted, it defaults to the first non-singleton dimension.
 
         <p>If the optional argument 'native' is given, then the sum is performed
 in the same type as the original argument, rather than in the default
-double type.  For example
+double type.  For example:
 
      <pre class="example">          sum ([true, true])
-             2
+            &rArr; 2
           sum ([true, true], 'native')
-             true
+            &rArr; true
 </pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
+        <p>On the contrary, if 'double' is given, the sum is performed in double
+precision even for single precision inputs.
+
+        <p>For double precision inputs, 'extra' indicates that a more accurate algorithm
+than straightforward summation is to be used.  For single precision inputs,
+'extra' is the same as 'double'.  Otherwise, 'extra' has no effect. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcumsum.html#doc_002dcumsum">cumsum</a>, <a href="doc_002dsumsq.html#doc_002dsumsq">sumsq</a>, <a href="doc_002dprod.html#doc_002dprod">prod</a>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- prod src/data.cc -->
    <p><a name="doc_002dprod"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>prod</b> (<var>x</var>)<var><a name="index-prod-1425"></a></var><br>
-&mdash; Built-in Function:  <b>prod</b> (<var>x, dim</var>)<var><a name="index-prod-1426"></a></var><br>
+&mdash; Built-in Function:  <b>prod</b> (<var>x</var>)<var><a name="index-prod-1660"></a></var><br>
+&mdash; Built-in Function:  <b>prod</b> (<var>x, dim</var>)<var><a name="index-prod-1661"></a></var><br>
 <blockquote><p>Product of elements along dimension <var>dim</var>.  If <var>dim</var> is
-omitted, it defaults to 1 (column-wise products).
-
-        <p>As a special case, if <var>x</var> is a vector and <var>dim</var> is omitted,
-return the product of the elements. 
+omitted, it defaults to the first non-singleton dimension. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -80,19 +84,15 @@ return the product of the elements.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dcumprod.html#doc_002dcumprod">cumprod</a>, <a href="doc_002dsum.html#doc_002dsum">sum</a>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- cumsum src/data.cc -->
    <p><a name="doc_002dcumsum"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cumsum</b> (<var>x</var>)<var><a name="index-cumsum-1427"></a></var><br>
-&mdash; Built-in Function:  <b>cumsum</b> (<var>x, dim</var>)<var><a name="index-cumsum-1428"></a></var><br>
-&mdash; Built-in Function:  <b>cumsum</b> (<var><small class="dots">...</small>, 'native'</var>)<var><a name="index-cumsum-1429"></a></var><br>
+&mdash; Built-in Function:  <b>cumsum</b> (<var>x</var>)<var><a name="index-cumsum-1662"></a></var><br>
+&mdash; Built-in Function:  <b>cumsum</b> (<var>x, dim</var>)<var><a name="index-cumsum-1663"></a></var><br>
+&mdash; Built-in Function:  <b>cumsum</b> (<var><small class="dots">...</small>, 'native'</var>)<var><a name="index-cumsum-1664"></a></var><br>
 <blockquote><p>Cumulative sum of elements along dimension <var>dim</var>.  If <var>dim</var>
-is omitted, it defaults to 1 (column-wise cumulative sums).
-
-        <p>As a special case, if <var>x</var> is a vector and <var>dim</var> is omitted,
-return the cumulative sum of the elements as a vector with the
-same orientation as <var>x</var>.
+is omitted, it defaults to the first non-singleton dimension.
 
         <p>The "native" argument implies the summation is performed in native type. 
  See <code>sum</code> for a complete description and example of the use of
@@ -104,42 +104,35 @@ same orientation as <var>x</var>.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dsum.html#doc_002dsum">sum</a>, <a href="doc_002dcumprod.html#doc_002dcumprod">cumprod</a>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- cumprod src/data.cc -->
    <p><a name="doc_002dcumprod"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cumprod</b> (<var>x</var>)<var><a name="index-cumprod-1430"></a></var><br>
-&mdash; Built-in Function:  <b>cumprod</b> (<var>x, dim</var>)<var><a name="index-cumprod-1431"></a></var><br>
+&mdash; Built-in Function:  <b>cumprod</b> (<var>x</var>)<var><a name="index-cumprod-1665"></a></var><br>
+&mdash; Built-in Function:  <b>cumprod</b> (<var>x, dim</var>)<var><a name="index-cumprod-1666"></a></var><br>
 <blockquote><p>Cumulative product of elements along dimension <var>dim</var>.  If
-<var>dim</var> is omitted, it defaults to 1 (column-wise cumulative
-products).
+<var>dim</var> is omitted, it defaults to the first non-singleton dimension.
 
-        <p>As a special case, if <var>x</var> is a vector and <var>dim</var> is omitted,
-return the cumulative product of the elements as a vector with the
-same orientation as <var>x</var>. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dprod.html#doc_002dprod">prod</a>, <a href="doc_002dcumsum.html#doc_002dcumsum">cumsum</a>. 
 </p></blockquote></div>
 
-<!-- data.cc -->
+<!-- sumsq src/data.cc -->
    <p><a name="doc_002dsumsq"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sumsq</b> (<var>x</var>)<var><a name="index-sumsq-1432"></a></var><br>
-&mdash; Built-in Function:  <b>sumsq</b> (<var>x, dim</var>)<var><a name="index-sumsq-1433"></a></var><br>
+&mdash; Built-in Function:  <b>sumsq</b> (<var>x</var>)<var><a name="index-sumsq-1667"></a></var><br>
+&mdash; Built-in Function:  <b>sumsq</b> (<var>x, dim</var>)<var><a name="index-sumsq-1668"></a></var><br>
 <blockquote><p>Sum of squares of elements along dimension <var>dim</var>.  If <var>dim</var>
-is omitted, it defaults to 1 (column-wise sum of squares).
-
-        <p>As a special case, if <var>x</var> is a vector and <var>dim</var> is omitted,
-return the sum of squares of the elements.
+is omitted, it defaults to the first non-singleton dimension.
 
         <p>This function is conceptually equivalent to computing
+
      <pre class="example">          sum (x .* conj (x), dim)
 </pre>
-        <p>but it uses less memory and avoids calling <code>conj</code> if <var>x</var> is real. 
+        <p class="noindent">but it uses less memory and avoids calling <code>conj</code> if <var>x</var> is real. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -147,12 +140,12 @@ return the sum of squares of the elements.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dsum.html#doc_002dsum">sum</a>. 
 </p></blockquote></div>
 
-<!-- ./general/accumarray.m -->
+<!-- accumarray scripts/general/accumarray.m -->
    <p><a name="doc_002daccumarray"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>accumarray</b> (<var>subs, vals, sz, func, fillval, issparse</var>)<var><a name="index-accumarray-1434"></a></var><br>
-&mdash; Function File:  <b>accumarray</b> (<var>csubs, vals, <small class="dots">...</small></var>)<var><a name="index-accumarray-1435"></a></var><br>
+&mdash; Function File:  <b>accumarray</b> (<var>subs, vals, sz, func, fillval, issparse</var>)<var><a name="index-accumarray-1669"></a></var><br>
+&mdash; Function File:  <b>accumarray</b> (<var>csubs, vals, <small class="dots">...</small></var>)<var><a name="index-accumarray-1670"></a></var><br>
 <blockquote>
         <p>Create an array by accumulating the elements of a vector into the
 positions defined by their subscripts.  The subscripts are defined by
@@ -179,10 +172,62 @@ logically true, then a sparse matrix is returned instead.
         <p>An example of the use of <code>accumarray</code> is:
 
      <pre class="example">          accumarray ([1,1,1;2,1,2;2,3,2;2,1,2;2,3,2], 101:105)
-           ans(:,:,1) = [101, 0, 0; 0, 0, 0]
+          &rArr; ans(:,:,1) = [101, 0, 0; 0, 0, 0]
              ans(:,:,2) = [0, 0, 0; 206, 0, 208]
 </pre>
-        </blockquote></div>
+        <p>The complexity in the non-sparse case is generally O(M+N), where N is the
+number of
+subscripts and M is the maximum subscript (linearized in multi-dimensional
+case). 
+If <var>func</var> is one of <code>@sum</code> (default), <code>@max</code>, <code>@min</code>
+or <code>@(x) {x}</code>, an optimized code path is used. 
+Note that for general reduction function the interpreter overhead can play a
+major part and it may be more efficient to do multiple accumarray calls and
+compute the results in a vectorized manner. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002daccumdim.html#doc_002daccumdim">accumdim</a>. 
+</p></blockquote></div>
+
+<!-- accumdim scripts/general/accumdim.m -->
+   <p><a name="doc_002daccumdim"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>accumdim</b> (<var>subs, vals, dim, n, func, fillval</var>)<var><a name="index-accumdim-1671"></a></var><br>
+<blockquote><p>Create an array by accumulating the slices of an array into the
+positions defined by their subscripts along a specified dimension. 
+The subscripts are defined by the index vector <var>subs</var>. 
+The dimension is specified by <var>dim</var>.  If not given, it defaults
+to the first non-singleton dimension.
+
+        <p>The extent of the result matrix in the working dimension will be determined
+by the subscripts themselves. 
+However, if <var>n</var> is defined it determines this extent.
+
+        <p>The default action of <code>accumdim</code> is to sum the subarrays with the
+same subscripts.  This behavior can be modified by defining the <var>func</var>
+function.  This should be a function or function handle that accepts an
+array and a dimension, and reduces the array along this dimension. 
+As a special exception, the built-in <code>min</code> and <code>max</code> functions
+can be used directly, and <code>accumdim</code> accounts for the middle empty
+argument that is used in their calling.
+
+        <p>The slices of the returned array that have no subscripts associated with
+them are set to zero.  Defining <var>fillval</var> to some other value allows
+these values to be defined.
+
+        <p>An example of the use of <code>accumdim</code> is:
+
+     <pre class="example">          accumdim ([1, 2, 1, 2, 1], [7,-10,4;-5,-12,8;-12,2,8;-10,9,-3;-5,-3,-13])
+          &rArr; ans = [-10,-11,-1;-15,-3,5]
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002daccumarray.html#doc_002daccumarray">accumarray</a>. 
+</p></blockquote></div>
 
    </body></html>
 

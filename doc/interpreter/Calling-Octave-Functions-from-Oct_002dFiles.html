@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Calling Octave Functions from Oct-Files - Untitled</title>
+<title>Calling Octave Functions from Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Accessing-Global-Variables-in-Oct_002dFiles.html#Accessing-Global-Variables-in-Oct_002dFiles" title="Accessing Global Variables in Oct-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Calling-Octave-Functions-from-Oct-Files"></a>
 <a name="Calling-Octave-Functions-from-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Calling-External-Code-from-Oct_002dFiles.html#Calling-External-Code-from-Oct_002dFiles">Calling External Code from Oct-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Accessing-Global-Variables-in-Oct_002dFiles.html#Accessing-Global-Variables-in-Oct_002dFiles">Accessing Global Variables in Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
@@ -46,9 +47,12 @@ be passed as one of
 
      <ol type=1 start=1>
 <li>Function Handle
-<li>Anonymous Function Handle
-<li>Inline Function
-<li>String
+
+     <li>Anonymous Function Handle
+
+     <li>Inline Function
+
+     <li>String
         </ol>
 
    <p>The example below demonstrates an example that accepts all four means of
@@ -84,24 +88,26 @@ passing a function to an oct-file.
              }
            else
              error ("funcdemo: expected string,",
-     	       " inline or function handle");
+                    " inline or function handle");
          }
        return retval;
      }
-</pre></pre>
+</pre>
+     
+</pre>
    <p>The first argument to this demonstration is the user supplied function
 and the following arguments are all passed to the user function.
 
 <pre class="example">     funcdemo (@sin,1)
-      0.84147
+     &rArr; 0.84147
      funcdemo (@(x) sin(x), 1)
-      0.84147
+     &rArr; 0.84147
      funcdemo (inline ("sin(x)"), 1)
-      0.84147
+     &rArr; 0.84147
      funcdemo ("sin",1)
-      0.84147
+     &rArr; 0.84147
      funcdemo (@atan2, 1, 1)
-      0.78540
+     &rArr; 0.78540
 </pre>
    <p>When the user function is passed as a string, the treatment of the
 function is different.  In some cases it is necessary to always have the

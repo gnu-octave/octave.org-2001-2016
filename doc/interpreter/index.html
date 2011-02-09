@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Untitled</title>
+<title>GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="#Top">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -18,34 +18,11 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
-<pre class="format">START-INFO-DIR-ENTRY
-* Octave: (octave).	Interactive language for numerical computations.
-END-INFO-DIR-ENTRY
-</pre>
-   <!-- Settings for printing on 8-1/2 by 11 inch paper: -->
-<!--  -->
-<!-- Settings for small book format: -->
-<!--  -->
-<!-- Things like the Octave version number are defined in conf.texi. -->
-<!-- This file doesn't include a chapter, so it must not be included -->
-<!-- if you want to run the Emacs function texinfo-multiple-files-update. -->
-<!-- Copyright (C) 1996, 1997, 2006, 2007 John W. Eaton -->
-<!-- This file is part of Octave. -->
-<!-- Octave is free software; you can redistribute it and/or modify it -->
-<!-- under the terms of the GNU General Public License as published by the -->
-<!-- Free Software Foundation; either version 3 of the License, or (at -->
-<!-- your option) any later version. -->
-<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
-<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
-<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
-<!-- for more details. -->
-<!-- You should have received a copy of the GNU General Public License -->
-<!-- along with Octave; see the file COPYING.  If not, see -->
-<!-- <http://www.gnu.org/licenses/>. -->
-   <p>Copyright &copy; 1996, 1997, 1999, 2000, 2001, 2002, 2005, 2006,
-2007 John W. Eaton.
+Copyright &copy; 1996, 1997, 1999, 2000, 2001, 2002, 2005, 2006,
+2007, 2011 John W. Eaton.
 
    <p>Permission is granted to make and distribute verbatim copies of
 this manual provided the copyright notice and this permission notice
@@ -159,7 +136,7 @@ modified versions.
 </li></ul>
 <li><a name="toc_Strings" href="Strings.html#Strings">5 Strings</a>
 <ul>
-<li><a href="Escape-Sequences-in-string-constants.html#Escape-Sequences-in-string-constants">5.1 Escape Sequences in string constants</a>
+<li><a href="Escape-Sequences-in-String-Constants.html#Escape-Sequences-in-String-Constants">5.1 Escape Sequences in String Constants</a>
 <li><a href="Character-Arrays.html#Character-Arrays">5.2 Character Arrays</a>
 <li><a href="Creating-Strings.html#Creating-Strings">5.3 Creating Strings</a>
 <ul>
@@ -230,7 +207,7 @@ modified versions.
 <li><a href="The-_003ccode_003eif_003c_002fcode_003e-Statement.html#The-_003ccode_003eif_003c_002fcode_003e-Statement">10.1 The <code>if</code> Statement</a>
 <li><a href="The-_003ccode_003eswitch_003c_002fcode_003e-Statement.html#The-_003ccode_003eswitch_003c_002fcode_003e-Statement">10.2 The <code>switch</code> Statement</a>
 <ul>
-<li><a href="Notes-for-the-C-programmer.html#Notes-for-the-C-programmer">10.2.1 Notes for the C programmer</a>
+<li><a href="Notes-for-the-C-Programmer.html#Notes-for-the-C-Programmer">10.2.1 Notes for the C Programmer</a>
 </li></ul>
 <li><a href="The-_003ccode_003ewhile_003c_002fcode_003e-Statement.html#The-_003ccode_003ewhile_003c_002fcode_003e-Statement">10.3 The <code>while</code> Statement</a>
 <li><a href="The-_003ccode_003edo_002duntil_003c_002fcode_003e-Statement.html#The-_003ccode_003edo_002duntil_003c_002fcode_003e-Statement">10.4 The <code>do-until</code> Statement</a>
@@ -249,27 +226,28 @@ modified versions.
 <li><a href="Defining-Functions.html#Defining-Functions">11.1 Defining Functions</a>
 <li><a href="Multiple-Return-Values.html#Multiple-Return-Values">11.2 Multiple Return Values</a>
 <li><a href="Variable_002dlength-Argument-Lists.html#Variable_002dlength-Argument-Lists">11.3 Variable-length Argument Lists</a>
-<li><a href="Variable_002dlength-Return-Lists.html#Variable_002dlength-Return-Lists">11.4 Variable-length Return Lists</a>
-<li><a href="Returning-From-a-Function.html#Returning-From-a-Function">11.5 Returning From a Function</a>
-<li><a href="Default-Arguments.html#Default-Arguments">11.6 Default Arguments</a>
-<li><a href="Function-Files.html#Function-Files">11.7 Function Files</a>
+<li><a href="Ignoring-Arguments.html#Ignoring-Arguments">11.4 Ignoring Arguments</a>
+<li><a href="Variable_002dlength-Return-Lists.html#Variable_002dlength-Return-Lists">11.5 Variable-length Return Lists</a>
+<li><a href="Returning-from-a-Function.html#Returning-from-a-Function">11.6 Returning from a Function</a>
+<li><a href="Default-Arguments.html#Default-Arguments">11.7 Default Arguments</a>
+<li><a href="Function-Files.html#Function-Files">11.8 Function Files</a>
 <ul>
-<li><a href="Manipulating-the-load-path.html#Manipulating-the-load-path">11.7.1 Manipulating the load path</a>
-<li><a href="Subfunctions.html#Subfunctions">11.7.2 Subfunctions</a>
-<li><a href="Private-Functions.html#Private-Functions">11.7.3 Private Functions</a>
-<li><a href="Overloading-and-Autoloading.html#Overloading-and-Autoloading">11.7.4 Overloading and Autoloading</a>
-<li><a href="Function-Locking.html#Function-Locking">11.7.5 Function Locking</a>
-<li><a href="Function-Precedence.html#Function-Precedence">11.7.6 Function Precedence</a>
+<li><a href="Manipulating-the-Load-Path.html#Manipulating-the-Load-Path">11.8.1 Manipulating the Load Path</a>
+<li><a href="Subfunctions.html#Subfunctions">11.8.2 Subfunctions</a>
+<li><a href="Private-Functions.html#Private-Functions">11.8.3 Private Functions</a>
+<li><a href="Overloading-and-Autoloading.html#Overloading-and-Autoloading">11.8.4 Overloading and Autoloading</a>
+<li><a href="Function-Locking.html#Function-Locking">11.8.5 Function Locking</a>
+<li><a href="Function-Precedence.html#Function-Precedence">11.8.6 Function Precedence</a>
 </li></ul>
-<li><a href="Script-Files.html#Script-Files">11.8 Script Files</a>
-<li><a href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions">11.9 Function Handles, Inline Functions, and Anonymous Functions</a>
+<li><a href="Script-Files.html#Script-Files">11.9 Script Files</a>
+<li><a href="Function-Handles-Inline-Functions-and-Anonymous-Functions.html#Function-Handles-Inline-Functions-and-Anonymous-Functions">11.10 Function Handles, Inline Functions, and Anonymous Functions</a>
 <ul>
-<li><a href="Function-Handles.html#Function-Handles">11.9.1 Function Handles</a>
-<li><a href="Anonymous-Functions.html#Anonymous-Functions">11.9.2 Anonymous Functions</a>
-<li><a href="Inline-Functions.html#Inline-Functions">11.9.3 Inline Functions</a>
+<li><a href="Function-Handles.html#Function-Handles">11.10.1 Function Handles</a>
+<li><a href="Anonymous-Functions.html#Anonymous-Functions">11.10.2 Anonymous Functions</a>
+<li><a href="Inline-Functions.html#Inline-Functions">11.10.3 Inline Functions</a>
 </li></ul>
-<li><a href="Commands.html#Commands">11.10 Commands</a>
-<li><a href="Organization-of-Functions.html#Organization-of-Functions">11.11 Organization of Functions Distributed with Octave</a>
+<li><a href="Commands.html#Commands">11.11 Commands</a>
+<li><a href="Organization-of-Functions.html#Organization-of-Functions">11.12 Organization of Functions Distributed with Octave</a>
 </li></ul>
 <li><a name="toc_Errors-and-Warnings" href="Errors-and-Warnings.html#Errors-and-Warnings">12 Errors and Warnings</a>
 <ul>
@@ -287,7 +265,7 @@ modified versions.
 <li><a name="toc_Debugging" href="Debugging.html#Debugging">13 Debugging</a>
 <ul>
 <li><a href="Entering-Debug-Mode.html#Entering-Debug-Mode">13.1 Entering Debug Mode</a>
-<li><a href="Leaving-Debug-Mode.html#Leaving-Debug-Mode">13.2 Leavinging Debug Mode</a>
+<li><a href="Leaving-Debug-Mode.html#Leaving-Debug-Mode">13.2 Leaving Debug Mode</a>
 <li><a href="Breakpoints.html#Breakpoints">13.3 Breakpoints</a>
 <li><a href="Debug-Mode.html#Debug-Mode">13.4 Debug Mode</a>
 <li><a href="Call-Stack.html#Call-Stack">13.5 Call Stack</a>
@@ -305,7 +283,6 @@ modified versions.
 <ul>
 <li><a href="Saving-Data-on-Unexpected-Exits.html#Saving-Data-on-Unexpected-Exits">14.1.3.1 Saving Data on Unexpected Exits</a>
 </li></ul>
-<li><a href="Rational-Approximations.html#Rational-Approximations">14.1.4 Rational Approximations</a>
 </li></ul>
 <li><a href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions">14.2 C-Style I/O Functions</a>
 <ul>
@@ -332,61 +309,72 @@ modified versions.
 </li></ul>
 <li><a name="toc_Plotting" href="Plotting.html#Plotting">15 Plotting</a>
 <ul>
-<li><a href="Plotting-Basics.html#Plotting-Basics">15.1 Plotting Basics</a>
+<li><a href="Introduction-to-Plotting.html#Introduction-to-Plotting">15.1 Introduction to Plotting</a>
+<li><a href="High_002dLevel-Plotting.html#High_002dLevel-Plotting">15.2 High-Level Plotting</a>
 <ul>
-<li><a href="Two_002dDimensional-Plots.html#Two_002dDimensional-Plots">15.1.1 Two-Dimensional Plots</a>
+<li><a href="Two_002dDimensional-Plots.html#Two_002dDimensional-Plots">15.2.1 Two-Dimensional Plots</a>
 <ul>
-<li><a href="Two_002ddimensional-Function-Plotting.html#Two_002ddimensional-Function-Plotting">15.1.1.1 Two-dimensional Function Plotting</a>
+<li><a href="Two_002ddimensional-Function-Plotting.html#Two_002ddimensional-Function-Plotting">15.2.1.1 Two-dimensional Function Plotting</a>
 </li></ul>
-<li><a href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">15.1.2 Three-Dimensional Plotting</a>
+<li><a href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">15.2.2 Three-Dimensional Plotting</a>
 <ul>
-<li><a href="Three_002ddimensional-Function-Plotting.html#Three_002ddimensional-Function-Plotting">15.1.2.1 Three-dimensional Function Plotting</a>
-<li><a href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes">15.1.2.2 Three-dimensional Geometric Shapes</a>
+<li><a href="Three_002ddimensional-Function-Plotting.html#Three_002ddimensional-Function-Plotting">15.2.2.1 Three-dimensional Function Plotting</a>
+<li><a href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes">15.2.2.2 Three-dimensional Geometric Shapes</a>
 </li></ul>
-<li><a href="Plot-Annotations.html#Plot-Annotations">15.1.3 Plot Annotations</a>
-<li><a href="Multiple-Plots-on-One-Page.html#Multiple-Plots-on-One-Page">15.1.4 Multiple Plots on One Page</a>
-<li><a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">15.1.5 Multiple Plot Windows</a>
-<li><a href="Printing-Plots.html#Printing-Plots">15.1.6 Printing Plots</a>
-<li><a href="Interacting-with-plots.html#Interacting-with-plots">15.1.7 Interacting with plots</a>
-<li><a href="Test-Plotting-Functions.html#Test-Plotting-Functions">15.1.8 Test Plotting Functions</a>
+<li><a href="Plot-Annotations.html#Plot-Annotations">15.2.3 Plot Annotations</a>
+<li><a href="Multiple-Plots-on-One-Page.html#Multiple-Plots-on-One-Page">15.2.4 Multiple Plots on One Page</a>
+<li><a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">15.2.5 Multiple Plot Windows</a>
+<li><a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">15.2.6 Use of <code>axis</code>,  <code>line</code>, and <code>patch</code> functions</a>
+<li><a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">15.2.7 Manipulation of plot windows</a>
+<li><a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">15.2.8 Use of the <code>interpreter</code> Property</a>
+<li><a href="Printing-and-Saving-Plots.html#Printing-and-Saving-Plots">15.2.9 Printing and Saving Plots</a>
+<li><a href="Interacting-with-Plots.html#Interacting-with-Plots">15.2.10 Interacting with Plots</a>
+<li><a href="Test-Plotting-Functions.html#Test-Plotting-Functions">15.2.11 Test Plotting Functions</a>
 </li></ul>
-<li><a href="Advanced-Plotting.html#Advanced-Plotting">15.2 Advanced Plotting</a>
+<li><a href="Graphics-Data-Structures.html#Graphics-Data-Structures">15.3 Graphics Data Structures</a>
 <ul>
-<li><a href="Graphics-Objects.html#Graphics-Objects">15.2.1 Graphics Objects</a>
-<li><a href="Graphics-Object-Properties.html#Graphics-Object-Properties">15.2.2 Graphics Object Properties</a>
+<li><a href="Introduction-to-Graphics-Structures.html#Introduction-to-Graphics-Structures">15.3.1 Introduction to Graphics Structures</a>
+<li><a href="Graphics-Objects.html#Graphics-Objects">15.3.2 Graphics Objects</a>
 <ul>
-<li><a href="Root-Figure-Properties.html#Root-Figure-Properties">15.2.2.1 Root Figure Properties</a>
-<li><a href="Figure-Properties.html#Figure-Properties">15.2.2.2 Figure Properties</a>
-<li><a href="Axes-Properties.html#Axes-Properties">15.2.2.3 Axes Properties</a>
-<li><a href="Line-Properties.html#Line-Properties">15.2.2.4 Line Properties</a>
-<li><a href="Text-Properties.html#Text-Properties">15.2.2.5 Text Properties</a>
-<li><a href="Image-Properties.html#Image-Properties">15.2.2.6 Image Properties</a>
-<li><a href="Patch-Properties.html#Patch-Properties">15.2.2.7 Patch Properties</a>
-<li><a href="Surface-Properties.html#Surface-Properties">15.2.2.8 Surface Properties</a>
-<li><a href="Searching-Properties.html#Searching-Properties">15.2.2.9 Searching Properties</a>
+<li><a href="Graphics-Objects.html#Graphics-Objects">15.3.2.1 Handle Functions</a>
 </li></ul>
-<li><a href="Managing-Default-Properties.html#Managing-Default-Properties">15.2.3 Managing Default Properties</a>
-<li><a href="Colors.html#Colors">15.2.4 Colors</a>
-<li><a href="Line-Styles.html#Line-Styles">15.2.5 Line Styles</a>
-<li><a href="Marker-Styles.html#Marker-Styles">15.2.6 Marker Styles</a>
-<li><a href="Callbacks.html#Callbacks">15.2.7 Callbacks</a>
-<li><a href="Object-Groups.html#Object-Groups">15.2.8 Object Groups</a>
+<li><a href="Graphics-Object-Properties.html#Graphics-Object-Properties">15.3.3 Graphics Object Properties</a>
 <ul>
-<li><a href="Data-sources-in-object-groups.html#Data-sources-in-object-groups">15.2.8.1 Data sources in object groups</a>
-<li><a href="Area-series.html#Area-series">15.2.8.2 Area series</a>
-<li><a href="Bar-series.html#Bar-series">15.2.8.3 Bar series</a>
-<li><a href="Contour-groups.html#Contour-groups">15.2.8.4 Contour groups</a>
-<li><a href="Error-bar-series.html#Error-bar-series">15.2.8.5 Error bar series</a>
-<li><a href="Line-series.html#Line-series">15.2.8.6 Line series</a>
-<li><a href="Quiver-group.html#Quiver-group">15.2.8.7 Quiver group</a>
-<li><a href="Scatter-group.html#Scatter-group">15.2.8.8 Scatter group</a>
-<li><a href="Stair-group.html#Stair-group">15.2.8.9 Stair group</a>
-<li><a href="Stem-Series.html#Stem-Series">15.2.8.10 Stem Series</a>
-<li><a href="Surface-group.html#Surface-group">15.2.8.11 Surface group</a>
+<li><a href="Root-Figure-Properties.html#Root-Figure-Properties">15.3.3.1 Root Figure Properties</a>
+<li><a href="Figure-Properties.html#Figure-Properties">15.3.3.2 Figure Properties</a>
+<li><a href="Axes-Properties.html#Axes-Properties">15.3.3.3 Axes Properties</a>
+<li><a href="Line-Properties.html#Line-Properties">15.3.3.4 Line Properties</a>
+<li><a href="Text-Properties.html#Text-Properties">15.3.3.5 Text Properties</a>
+<li><a href="Image-Properties.html#Image-Properties">15.3.3.6 Image Properties</a>
+<li><a href="Patch-Properties.html#Patch-Properties">15.3.3.7 Patch Properties</a>
+<li><a href="Surface-Properties.html#Surface-Properties">15.3.3.8 Surface Properties</a>
 </li></ul>
-<li><a href="Graphics-backends.html#Graphics-backends">15.2.9 Graphics backends</a>
+<li><a href="Searching-Properties.html#Searching-Properties">15.3.4 Searching Properties</a>
+<li><a href="Managing-Default-Properties.html#Managing-Default-Properties">15.3.5 Managing Default Properties</a>
+</li></ul>
+<li><a href="Advanced-Plotting.html#Advanced-Plotting">15.4 Advanced Plotting</a>
 <ul>
-<li><a href="Interaction-with-gnuplot.html#Interaction-with-gnuplot">15.2.9.1 Interaction with <code>gnuplot</code></a>
+<li><a href="Colors.html#Colors">15.4.1 Colors</a>
+<li><a href="Line-Styles.html#Line-Styles">15.4.2 Line Styles</a>
+<li><a href="Marker-Styles.html#Marker-Styles">15.4.3 Marker Styles</a>
+<li><a href="Callbacks.html#Callbacks">15.4.4 Callbacks</a>
+<li><a href="Object-Groups.html#Object-Groups">15.4.5 Object Groups</a>
+<ul>
+<li><a href="Data-Sources-in-Object-Groups.html#Data-Sources-in-Object-Groups">15.4.5.1 Data Sources in Object Groups</a>
+<li><a href="Area-Series.html#Area-Series">15.4.5.2 Area Series</a>
+<li><a href="Bar-Series.html#Bar-Series">15.4.5.3 Bar Series</a>
+<li><a href="Contour-Groups.html#Contour-Groups">15.4.5.4 Contour Groups</a>
+<li><a href="Error-Bar-Series.html#Error-Bar-Series">15.4.5.5 Error Bar Series</a>
+<li><a href="Line-Series.html#Line-Series">15.4.5.6 Line Series</a>
+<li><a href="Quiver-Group.html#Quiver-Group">15.4.5.7 Quiver Group</a>
+<li><a href="Scatter-Group.html#Scatter-Group">15.4.5.8 Scatter Group</a>
+<li><a href="Stair-Group.html#Stair-Group">15.4.5.9 Stair Group</a>
+<li><a href="Stem-Series.html#Stem-Series">15.4.5.10 Stem Series</a>
+<li><a href="Surface-Group.html#Surface-Group">15.4.5.11 Surface Group</a>
+</li></ul>
+<li><a href="Graphics-Toolkits.html#Graphics-Toolkits">15.4.6 Graphics Toolkits</a>
+<ul>
+<li><a href="Customizing-Toolkit-Behavior.html#Customizing-Toolkit-Behavior">15.4.6.1 Customizing Toolkit Behavior</a>
 </li></ul>
 </li></ul>
 </li></ul>
@@ -406,12 +394,13 @@ modified versions.
 <li><a href="Sums-and-Products.html#Sums-and-Products">17.4 Sums and Products</a>
 <li><a href="Utility-Functions.html#Utility-Functions">17.5 Utility Functions</a>
 <li><a href="Special-Functions.html#Special-Functions">17.6 Special Functions</a>
-<li><a href="Coordinate-Transformations.html#Coordinate-Transformations">17.7 Coordinate Transformations</a>
-<li><a href="Mathematical-Constants.html#Mathematical-Constants">17.8 Mathematical Constants</a>
+<li><a href="Rational-Approximations.html#Rational-Approximations">17.7 Rational Approximations</a>
+<li><a href="Coordinate-Transformations.html#Coordinate-Transformations">17.8 Coordinate Transformations</a>
+<li><a href="Mathematical-Constants.html#Mathematical-Constants">17.9 Mathematical Constants</a>
 </li></ul>
 <li><a name="toc_Linear-Algebra" href="Linear-Algebra.html#Linear-Algebra">18 Linear Algebra</a>
 <ul>
-<li><a href="Techniques-used-for-Linear-Algebra.html#Techniques-used-for-Linear-Algebra">18.1 Techniques used for Linear Algebra</a>
+<li><a href="Techniques-Used-for-Linear-Algebra.html#Techniques-Used-for-Linear-Algebra">18.1 Techniques Used for Linear Algebra</a>
 <li><a href="Basic-Matrix-Functions.html#Basic-Matrix-Functions">18.2 Basic Matrix Functions</a>
 <li><a href="Matrix-Factorizations.html#Matrix-Factorizations">18.3 Matrix Factorizations</a>
 <li><a href="Functions-of-a-Matrix.html#Functions-of-a-Matrix">18.4 Functions of a Matrix</a>
@@ -480,9 +469,9 @@ modified versions.
 <li><a href="Descriptive-Statistics.html#Descriptive-Statistics">25.1 Descriptive Statistics</a>
 <li><a href="Basic-Statistical-Functions.html#Basic-Statistical-Functions">25.2 Basic Statistical Functions</a>
 <li><a href="Statistical-Plots.html#Statistical-Plots">25.3 Statistical Plots</a>
-<li><a href="Tests.html#Tests">25.4 Tests</a>
-<li><a href="Models.html#Models">25.5 Models</a>
-<li><a href="Distributions.html#Distributions">25.6 Distributions</a>
+<li><a href="Correlation-and-Regression-Analysis.html#Correlation-and-Regression-Analysis">25.4 Correlation and Regression Analysis</a>
+<li><a href="Distributions.html#Distributions">25.5 Distributions</a>
+<li><a href="Tests.html#Tests">25.6 Tests</a>
 <li><a href="Random-Number-Generation.html#Random-Number-Generation">25.7 Random Number Generation</a>
 </li></ul>
 <li><a name="toc_Sets" href="Sets.html#Sets">26 Sets</a>
@@ -494,7 +483,7 @@ modified versions.
 <li><a href="Evaluating-Polynomials.html#Evaluating-Polynomials">27.1 Evaluating Polynomials</a>
 <li><a href="Finding-Roots.html#Finding-Roots">27.2 Finding Roots</a>
 <li><a href="Products-of-Polynomials.html#Products-of-Polynomials">27.3 Products of Polynomials</a>
-<li><a href="Derivatives-and-Integrals.html#Derivatives-and-Integrals">27.4 Derivatives and Integrals</a>
+<li><a href="Derivatives-_002f-Integrals-_002f-Transforms.html#Derivatives-_002f-Integrals-_002f-Transforms">27.4 Derivatives / Integrals / Transforms</a>
 <li><a href="Polynomial-Interpolation.html#Polynomial-Interpolation">27.5 Polynomial Interpolation</a>
 <li><a href="Miscellaneous-Functions.html#Miscellaneous-Functions">27.6 Miscellaneous Functions</a>
 </li></ul>
@@ -508,7 +497,7 @@ modified versions.
 <li><a href="Delaunay-Triangulation.html#Delaunay-Triangulation">29.1 Delaunay Triangulation</a>
 <ul>
 <li><a href="Plotting-the-Triangulation.html#Plotting-the-Triangulation">29.1.1 Plotting the Triangulation</a>
-<li><a href="Identifying-points-in-Triangulation.html#Identifying-points-in-Triangulation">29.1.2 Identifying points in Triangulation</a>
+<li><a href="Identifying-Points-in-Triangulation.html#Identifying-Points-in-Triangulation">29.1.2 Identifying Points in Triangulation</a>
 </li></ul>
 <li><a href="Voronoi-Diagrams.html#Voronoi-Diagrams">29.2 Voronoi Diagrams</a>
 <li><a href="Convex-Hull.html#Convex-Hull">29.3 Convex Hull</a>
@@ -529,6 +518,10 @@ modified versions.
 <li><a href="Creating-a-Class.html#Creating-a-Class">33.1 Creating a Class</a>
 <li><a href="Manipulating-Classes.html#Manipulating-Classes">33.2 Manipulating Classes</a>
 <li><a href="Indexing-Objects.html#Indexing-Objects">33.3 Indexing Objects</a>
+<ul>
+<li><a href="Defining-Indexing-And-Indexed-Assignment.html#Defining-Indexing-And-Indexed-Assignment">33.3.1 Defining Indexing And Indexed Assignment</a>
+<li><a href="Indexed-Assignment-Optimization.html#Indexed-Assignment-Optimization">33.3.2 Indexed Assignment Optimization</a>
+</li></ul>
 <li><a href="Overloading-Objects.html#Overloading-Objects">33.4 Overloading Objects</a>
 <ul>
 <li><a href="Function-Overloading.html#Function-Overloading">33.4.1 Function Overloading</a>
@@ -543,6 +536,10 @@ modified versions.
 <li><a href="Filesystem-Utilities.html#Filesystem-Utilities">34.2 Filesystem Utilities</a>
 <li><a href="File-Archiving-Utilities.html#File-Archiving-Utilities">34.3 File Archiving Utilities</a>
 <li><a href="Networking-Utilities.html#Networking-Utilities">34.4 Networking Utilities</a>
+<ul>
+<li><a href="FTP-Objects.html#FTP-Objects">34.4.1 FTP Objects</a>
+<li><a href="URL-Manipulation.html#URL-Manipulation">34.4.2 URL Manipulation</a>
+</li></ul>
 <li><a href="Controlling-Subprocesses.html#Controlling-Subprocesses">34.5 Controlling Subprocesses</a>
 <li><a href="Process-ID-Information.html#Process-ID-Information">34.6 Process, Group, and User IDs</a>
 <li><a href="Environment-Variables.html#Environment-Variables">34.7 Environment Variables</a>
@@ -560,8 +557,8 @@ modified versions.
 <li><a href="Creating-Packages.html#Creating-Packages">35.4 Creating Packages</a>
 <ul>
 <li><a href="The-DESCRIPTION-File.html#The-DESCRIPTION-File">35.4.1 The DESCRIPTION File</a>
-<li><a href="The-INDEX-file.html#The-INDEX-file">35.4.2 The INDEX file</a>
-<li><a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">35.4.3 PKG_ADD and PKG_DEL directives</a>
+<li><a href="The-INDEX-File.html#The-INDEX-File">35.4.2 The INDEX File</a>
+<li><a href="PKG_005fADD-and-PKG_005fDEL-Directives.html#PKG_005fADD-and-PKG_005fDEL-Directives">35.4.3 PKG_ADD and PKG_DEL Directives</a>
 </li></ul>
 </li></ul>
 <li><a name="toc_Dynamically-Linked-Functions" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Appendix A Dynamically Linked Functions</a>
@@ -620,28 +617,32 @@ modified versions.
 <li><a href="C_002b_002b-Sources.html#C_002b_002b-Sources">D.4 C++ Sources</a>
 <li><a href="Other-Sources.html#Other-Sources">D.5 Other Sources</a>
 </li></ul>
-<li><a name="toc_Trouble" href="Trouble.html#Trouble">Appendix E Known Causes of Trouble</a>
+<li><a name="toc_Obsolete-Functions" href="Obsolete-Functions.html#Obsolete-Functions">Appendix E Obsolete Functions</a>
+<li><a name="toc_Trouble" href="Trouble.html#Trouble">Appendix F Known Causes of Trouble</a>
 <ul>
-<li><a href="Actual-Bugs.html#Actual-Bugs">E.1 Actual Bugs We Haven't Fixed Yet</a>
-<li><a href="Reporting-Bugs.html#Reporting-Bugs">E.2 Reporting Bugs</a>
-<li><a href="Bug-Criteria.html#Bug-Criteria">E.3 Have You Found a Bug?</a>
-<li><a href="Bug-Lists.html#Bug-Lists">E.4 Where to Report Bugs</a>
-<li><a href="Bug-Reporting.html#Bug-Reporting">E.5 How to Report Bugs</a>
-<li><a href="Sending-Patches.html#Sending-Patches">E.6 Sending Patches for Octave</a>
-<li><a href="Service.html#Service">E.7 How To Get Help with Octave</a>
-</li></ul>
-<li><a name="toc_Installation" href="Installation.html#Installation">Appendix F Installing Octave</a>
+<li><a href="Actual-Bugs.html#Actual-Bugs">F.1 Actual Bugs We Haven't Fixed Yet</a>
+<li><a href="Reporting-Bugs.html#Reporting-Bugs">F.2 Reporting Bugs</a>
 <ul>
-<li><a href="Installation-Problems.html#Installation-Problems">F.1 Installation Problems</a>
+<li><a href="Bug-Criteria.html#Bug-Criteria">F.2.1 Have You Found a Bug?</a>
+<li><a href="Bug-Tracker.html#Bug-Tracker">F.2.2 Where to Report Bugs</a>
+<li><a href="Bug-Reporting.html#Bug-Reporting">F.2.3 How to Report Bugs</a>
+<li><a href="Sending-Patches.html#Sending-Patches">F.2.4 Sending Patches for Octave</a>
 </li></ul>
-<li><a name="toc_Emacs-Octave-Support" href="Emacs-Octave-Support.html#Emacs-Octave-Support">Appendix G Emacs Octave Support</a>
+<li><a href="Service.html#Service">F.3 How To Get Help with Octave</a>
+</li></ul>
+<li><a name="toc_Installation" href="Installation.html#Installation">Appendix G Installing Octave</a>
 <ul>
-<li><a href="Installing-EOS.html#Installing-EOS">G.1 Installing EOS</a>
-<li><a href="Using-Octave-Mode.html#Using-Octave-Mode">G.2 Using Octave Mode</a>
-<li><a href="Running-Octave-From-Within-Emacs.html#Running-Octave-From-Within-Emacs">G.3 Running Octave From Within Emacs</a>
-<li><a href="Using-the-Emacs-Info-Reader-for-Octave.html#Using-the-Emacs-Info-Reader-for-Octave">G.4 Using the Emacs Info Reader for Octave</a>
+<li><a href="Compiling-Octave-with-64_002dbit-Indexing.html#Compiling-Octave-with-64_002dbit-Indexing">G.1 Compiling Octave with 64-bit Indexing</a>
+<li><a href="Installation-Problems.html#Installation-Problems">G.2 Installation Problems</a>
 </li></ul>
-<li><a name="toc_Copying" href="Copying.html#Copying">Appendix H GNU GENERAL PUBLIC LICENSE</a>
+<li><a name="toc_Emacs-Octave-Support" href="Emacs-Octave-Support.html#Emacs-Octave-Support">Appendix H Emacs Octave Support</a>
+<ul>
+<li><a href="Installing-EOS.html#Installing-EOS">H.1 Installing EOS</a>
+<li><a href="Using-Octave-Mode.html#Using-Octave-Mode">H.2 Using Octave Mode</a>
+<li><a href="Running-Octave-from-Within-Emacs.html#Running-Octave-from-Within-Emacs">H.3 Running Octave from Within Emacs</a>
+<li><a href="Using-the-Emacs-Info-Reader-for-Octave.html#Using-the-Emacs-Info-Reader-for-Octave">H.4 Using the Emacs Info Reader for Octave</a>
+</li></ul>
+<li><a name="toc_Copying" href="Copying.html#Copying">Appendix I GNU GENERAL PUBLIC LICENSE</a>
 <li><a name="toc_Concept-Index" href="Concept-Index.html#Concept-Index">Concept Index</a>
 <li><a name="toc_Function-Index" href="Function-Index.html#Function-Index">Function Index</a>
 <li><a name="toc_Operator-Index" href="Operator-Index.html#Operator-Index">Operator Index</a>
@@ -649,8 +650,8 @@ modified versions.
 </div>
 
 <div class="node">
-<p>
 <a name="Top"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Preface.html#Preface">Preface</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
 <hr>
@@ -660,7 +661,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
 
 <p>This manual documents how to run, install and port GNU Octave, as well
 as its new features and incompatibilities, and how to report bugs. 
-It corresponds to GNU Octave version 3.2.4.
+It corresponds to GNU Octave version 3.4.0.
 
 <!--  -->
 <ul class="menu">
@@ -704,6 +705,7 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Test-and-Demo-Functions.html#Test-and-Demo-Functions">Test and Demo Functions</a>
 <li><a href="Tips-and-Standards.html#Tips-and-Standards">Tips and Standards</a>
 <li><a href="Contributing-Guidelines.html#Contributing-Guidelines">Contributing Guidelines</a>
+<li><a href="Obsolete-Functions.html#Obsolete-Functions">Obsolete Functions</a>
 <li><a href="Trouble.html#Trouble">Trouble</a>:                      If you have trouble installing Octave. 
 <li><a href="Installation.html#Installation">Installation</a>:                 How to configure, compile and install Octave. 
 <li><a href="Emacs-Octave-Support.html#Emacs-Octave-Support">Emacs Octave Support</a>
@@ -850,7 +852,7 @@ It corresponds to GNU Octave version 3.2.4.
 
 </p>
 <ul class="menu">
-<li><a href="Escape-Sequences-in-string-constants.html#Escape-Sequences-in-string-constants">Escape Sequences in string constants</a>
+<li><a href="Escape-Sequences-in-String-Constants.html#Escape-Sequences-in-String-Constants">Escape Sequences in String Constants</a>
 <li><a href="Character-Arrays.html#Character-Arrays">Character Arrays</a>
 <li><a href="Creating-Strings.html#Creating-Strings">Creating Strings</a>
 <li><a href="Comparing-Strings.html#Comparing-Strings">Comparing Strings</a>
@@ -880,6 +882,7 @@ It corresponds to GNU Octave version 3.2.4.
 
 </p>
 <ul class="menu">
+<li><a href="Basic-Usage-and-Examples.html#Basic-Usage-and-Examples">Basic Usage and Examples</a>
 <li><a href="Structure-Arrays.html#Structure-Arrays">Structure Arrays</a>
 <li><a href="Creating-Structures.html#Creating-Structures">Creating Structures</a>
 <li><a href="Manipulating-Structures.html#Manipulating-Structures">Manipulating Structures</a>
@@ -890,10 +893,19 @@ It corresponds to GNU Octave version 3.2.4.
 
 </p>
 <ul class="menu">
+<li><a href="Basic-Usage-of-Cell-Arrays.html#Basic-Usage-of-Cell-Arrays">Basic Usage of Cell Arrays</a>
 <li><a href="Creating-Cell-Arrays.html#Creating-Cell-Arrays">Creating Cell Arrays</a>
 <li><a href="Indexing-Cell-Arrays.html#Indexing-Cell-Arrays">Indexing Cell Arrays</a>
 <li><a href="Cell-Arrays-of-Strings.html#Cell-Arrays-of-Strings">Cell Arrays of Strings</a>
 <li><a href="Processing-Data-in-Cell-Arrays.html#Processing-Data-in-Cell-Arrays">Processing Data in Cell Arrays</a>
+
+</li></ul>
+<p>Comma Separated Lists
+
+</p>
+<ul class="menu">
+<li><a href="Comma-Separated-Lists-Generated-from-Cell-Arrays.html#Comma-Separated-Lists-Generated-from-Cell-Arrays">Comma Separated Lists Generated from Cell Arrays</a>
+<li><a href="Comma-Separated-Lists-Generated-from-Structure-Arrays.html#Comma-Separated-Lists-Generated-from-Structure-Arrays">Comma Separated Lists Generated from Structure Arrays</a>
 
 </li></ul>
 <p>Variables
@@ -963,7 +975,7 @@ It corresponds to GNU Octave version 3.2.4.
 
 </p>
 <ul class="menu">
-<li><a href="Notes-for-the-C-programmer.html#Notes-for-the-C-programmer">Notes for the C programmer</a>
+<li><a href="Notes-for-the-C-Programmer.html#Notes-for-the-C-Programmer">Notes for the C Programmer</a>
 
 </li></ul>
 <p>The <code>for</code> Statement
@@ -980,8 +992,9 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Defining-Functions.html#Defining-Functions">Defining Functions</a>
 <li><a href="Multiple-Return-Values.html#Multiple-Return-Values">Multiple Return Values</a>
 <li><a href="Variable_002dlength-Argument-Lists.html#Variable_002dlength-Argument-Lists">Variable-length Argument Lists</a>
+<li><a href="Ignoring-Arguments.html#Ignoring-Arguments">Ignoring Arguments</a>
 <li><a href="Variable_002dlength-Return-Lists.html#Variable_002dlength-Return-Lists">Variable-length Return Lists</a>
-<li><a href="Returning-From-a-Function.html#Returning-From-a-Function">Returning From a Function</a>
+<li><a href="Returning-from-a-Function.html#Returning-from-a-Function">Returning from a Function</a>
 <li><a href="Default-Arguments.html#Default-Arguments">Default Arguments</a>
 <li><a href="Function-Files.html#Function-Files">Function Files</a>
 <li><a href="Script-Files.html#Script-Files">Script Files</a>
@@ -994,7 +1007,7 @@ It corresponds to GNU Octave version 3.2.4.
 
 </p>
 <ul class="menu">
-<li><a href="Manipulating-the-load-path.html#Manipulating-the-load-path">Manipulating the load path</a>
+<li><a href="Manipulating-the-Load-Path.html#Manipulating-the-Load-Path">Manipulating the Load Path</a>
 <li><a href="Subfunctions.html#Subfunctions">Subfunctions</a>
 <li><a href="Private-Functions.html#Private-Functions">Private Functions</a>
 <li><a href="Overloading-and-Autoloading.html#Overloading-and-Autoloading">Overloading and Autoloading</a>
@@ -1107,11 +1120,13 @@ It corresponds to GNU Octave version 3.2.4.
 
 </p>
 <ul class="menu">
-<li><a href="Plotting-Basics.html#Plotting-Basics">Plotting Basics</a>
+<li><a href="Introduction-to-Plotting.html#Introduction-to-Plotting">Introduction to Plotting</a>
+<li><a href="High_002dLevel-Plotting.html#High_002dLevel-Plotting">High-Level Plotting</a>
+<li><a href="Graphics-Data-Structures.html#Graphics-Data-Structures">Graphics Data Structures</a>
 <li><a href="Advanced-Plotting.html#Advanced-Plotting">Advanced Plotting</a>
 
 </li></ul>
-<p>Plotting Basics
+<p>High-Level Plotting
 
 </p>
 <ul class="menu">
@@ -1120,8 +1135,8 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Plot-Annotations.html#Plot-Annotations">Plot Annotations</a>
 <li><a href="Multiple-Plots-on-One-Page.html#Multiple-Plots-on-One-Page">Multiple Plots on One Page</a>
 <li><a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">Multiple Plot Windows</a>
-<li><a href="Printing-Plots.html#Printing-Plots">Printing Plots</a>
-<li><a href="Interacting-with-plots.html#Interacting-with-plots">Interacting with plots</a>
+<li><a href="Printing-and-Saving-Plots.html#Printing-and-Saving-Plots">Printing and Saving Plots</a>
+<li><a href="Interacting-with-Plots.html#Interacting-with-Plots">Interacting with Plots</a>
 <li><a href="Test-Plotting-Functions.html#Test-Plotting-Functions">Test Plotting Functions</a>
 
 </li></ul>
@@ -1140,19 +1155,15 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes">Three-dimensional Geometric Shapes</a>
 
 </li></ul>
-<p>Advanced Plotting
+<p>Graphics Data Structures
 
 </p>
 <ul class="menu">
+<li><a href="Introduction-to-Graphics-Structures.html#Introduction-to-Graphics-Structures">Introduction to Graphics Structures</a>
 <li><a href="Graphics-Objects.html#Graphics-Objects">Graphics Objects</a>
 <li><a href="Graphics-Object-Properties.html#Graphics-Object-Properties">Graphics Object Properties</a>
+<li><a href="Searching-Properties.html#Searching-Properties">Searching Properties</a>
 <li><a href="Managing-Default-Properties.html#Managing-Default-Properties">Managing Default Properties</a>
-<li><a href="Colors.html#Colors">Colors</a>
-<li><a href="Line-Styles.html#Line-Styles">Line Styles</a>
-<li><a href="Marker-Styles.html#Marker-Styles">Marker Styles</a>
-<li><a href="Callbacks.html#Callbacks">Callbacks</a>
-<li><a href="Object-Groups.html#Object-Groups">Object Groups</a>
-<li><a href="Graphics-backends.html#Graphics-backends">Graphics backends</a>
 
 </li></ul>
 <p>Graphics Object Properties
@@ -1167,31 +1178,42 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Image-Properties.html#Image-Properties">Image Properties</a>
 <li><a href="Patch-Properties.html#Patch-Properties">Patch Properties</a>
 <li><a href="Surface-Properties.html#Surface-Properties">Surface Properties</a>
-<li><a href="Searching-Properties.html#Searching-Properties">Searching Properties</a>
+
+</li></ul>
+<p>Advanced Plotting
+
+</p>
+<ul class="menu">
+<li><a href="Colors.html#Colors">Colors</a>
+<li><a href="Line-Styles.html#Line-Styles">Line Styles</a>
+<li><a href="Marker-Styles.html#Marker-Styles">Marker Styles</a>
+<li><a href="Callbacks.html#Callbacks">Callbacks</a>
+<li><a href="Object-Groups.html#Object-Groups">Object Groups</a>
+<li><a href="Graphics-Toolkits.html#Graphics-Toolkits">Graphics Toolkits</a>
 
 </li></ul>
 <p>Object Groups
 
 </p>
 <ul class="menu">
-<li><a href="Data-sources-in-object-groups.html#Data-sources-in-object-groups">Data sources in object groups</a>
-<li><a href="Area-series.html#Area-series">Area series</a>
-<li><a href="Bar-series.html#Bar-series">Bar series</a>
-<li><a href="Contour-groups.html#Contour-groups">Contour groups</a>
-<li><a href="Error-bar-series.html#Error-bar-series">Error bar series</a>
-<li><a href="Line-series.html#Line-series">Line series</a>
-<li><a href="Quiver-group.html#Quiver-group">Quiver group</a>
-<li><a href="Scatter-group.html#Scatter-group">Scatter group</a>
-<li><a href="Stair-group.html#Stair-group">Stair group</a>
+<li><a href="Data-Sources-in-Object-Groups.html#Data-Sources-in-Object-Groups">Data Sources in Object Groups</a>
+<li><a href="Area-Series.html#Area-Series">Area Series</a>
+<li><a href="Bar-Series.html#Bar-Series">Bar Series</a>
+<li><a href="Contour-Groups.html#Contour-Groups">Contour Groups</a>
+<li><a href="Error-Bar-Series.html#Error-Bar-Series">Error Bar Series</a>
+<li><a href="Line-Series.html#Line-Series">Line Series</a>
+<li><a href="Quiver-Group.html#Quiver-Group">Quiver Group</a>
+<li><a href="Scatter-Group.html#Scatter-Group">Scatter Group</a>
+<li><a href="Stair-Group.html#Stair-Group">Stair Group</a>
 <li><a href="Stem-Series.html#Stem-Series">Stem Series</a>
-<li><a href="Surface-group.html#Surface-group">Surface group</a>
+<li><a href="Surface-Group.html#Surface-Group">Surface Group</a>
 
 </li></ul>
-<p>Graphics backends
+<p>Graphics Toolkits
 
 </p>
 <ul class="menu">
-<li><a href="Interaction-with-gnuplot.html#Interaction-with-gnuplot">Interaction with gnuplot</a>
+<li><a href="Customizing-Toolkit-Behavior.html#Customizing-Toolkit-Behavior">Customizing Toolkit Behavior</a>
 
 </li></ul>
 <p>Matrix Manipulation
@@ -1215,6 +1237,7 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Sums-and-Products.html#Sums-and-Products">Sums and Products</a>
 <li><a href="Utility-Functions.html#Utility-Functions">Utility Functions</a>
 <li><a href="Special-Functions.html#Special-Functions">Special Functions</a>
+<li><a href="Rational-Approximations.html#Rational-Approximations">Rational Approximations</a>
 <li><a href="Coordinate-Transformations.html#Coordinate-Transformations">Coordinate Transformations</a>
 <li><a href="Mathematical-Constants.html#Mathematical-Constants">Mathematical Constants</a>
 
@@ -1223,7 +1246,7 @@ It corresponds to GNU Octave version 3.2.4.
 
 </p>
 <ul class="menu">
-<li><a href="Techniques-used-for-Linear-Algebra.html#Techniques-used-for-Linear-Algebra">Techniques used for Linear Algebra</a>
+<li><a href="Techniques-Used-for-Linear-Algebra.html#Techniques-Used-for-Linear-Algebra">Techniques Used for Linear Algebra</a>
 <li><a href="Basic-Matrix-Functions.html#Basic-Matrix-Functions">Basic Matrix Functions</a>
 <li><a href="Matrix-Factorizations.html#Matrix-Factorizations">Matrix Factorizations</a>
 <li><a href="Functions-of-a-Matrix.html#Functions-of-a-Matrix">Functions of a Matrix</a>
@@ -1329,9 +1352,9 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Descriptive-Statistics.html#Descriptive-Statistics">Descriptive Statistics</a>
 <li><a href="Basic-Statistical-Functions.html#Basic-Statistical-Functions">Basic Statistical Functions</a>
 <li><a href="Statistical-Plots.html#Statistical-Plots">Statistical Plots</a>
-<li><a href="Tests.html#Tests">Tests</a>
-<li><a href="Models.html#Models">Models</a>
+<li><a href="Correlation-and-Regression-Analysis.html#Correlation-and-Regression-Analysis">Correlation and Regression Analysis</a>
 <li><a href="Distributions.html#Distributions">Distributions</a>
+<li><a href="Tests.html#Tests">Tests</a>
 <li><a href="Random-Number-Generation.html#Random-Number-Generation">Random Number Generation</a>
 
 </li></ul>
@@ -1349,7 +1372,7 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Evaluating-Polynomials.html#Evaluating-Polynomials">Evaluating Polynomials</a>
 <li><a href="Finding-Roots.html#Finding-Roots">Finding Roots</a>
 <li><a href="Products-of-Polynomials.html#Products-of-Polynomials">Products of Polynomials</a>
-<li><a href="Derivatives-and-Integrals.html#Derivatives-and-Integrals">Derivatives and Integrals</a>
+<li><a href="Derivatives-_002f-Integrals-_002f-Transforms.html#Derivatives-_002f-Integrals-_002f-Transforms">Derivatives / Integrals / Transforms</a>
 <li><a href="Polynomial-Interpolation.html#Polynomial-Interpolation">Polynomial Interpolation</a>
 <li><a href="Miscellaneous-Functions.html#Miscellaneous-Functions">Miscellaneous Functions</a>
 
@@ -1377,7 +1400,7 @@ It corresponds to GNU Octave version 3.2.4.
 </p>
 <ul class="menu">
 <li><a href="Plotting-the-Triangulation.html#Plotting-the-Triangulation">Plotting the Triangulation</a>
-<li><a href="Identifying-points-in-Triangulation.html#Identifying-points-in-Triangulation">Identifying points in Triangulation</a>
+<li><a href="Identifying-Points-in-Triangulation.html#Identifying-Points-in-Triangulation">Identifying Points in Triangulation</a>
 
 </li></ul>
 <p>Image Processing
@@ -1399,6 +1422,15 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Manipulating-Classes.html#Manipulating-Classes">Manipulating Classes</a>
 <li><a href="Indexing-Objects.html#Indexing-Objects">Indexing Objects</a>
 <li><a href="Overloading-Objects.html#Overloading-Objects">Overloading Objects</a>
+<li><a href="Inheritance-and-Aggregation.html#Inheritance-and-Aggregation">Inheritance and Aggregation</a>
+
+</li></ul>
+<p>Indexing Objects
+
+</p>
+<ul class="menu">
+<li><a href="Defining-Indexing-And-Indexed-Assignment.html#Defining-Indexing-And-Indexed-Assignment">Defining Indexing And Indexed Assignment</a>
+<li><a href="Indexed-Assignment-Optimization.html#Indexed-Assignment-Optimization">Indexed Assignment Optimization</a>
 
 </li></ul>
 <p>Overloading Objects
@@ -1428,6 +1460,14 @@ It corresponds to GNU Octave version 3.2.4.
 <li><a href="Hashing-Functions.html#Hashing-Functions">Hashing Functions</a>
 
 </li></ul>
+<p>Networking Utilities
+
+</p>
+<ul class="menu">
+<li><a href="FTP-Objects.html#FTP-Objects">FTP Objects</a>
+<li><a href="URL-Manipulation.html#URL-Manipulation">URL Manipulation</a>
+
+</li></ul>
 <p>Packages
 
 </p>
@@ -1443,8 +1483,8 @@ It corresponds to GNU Octave version 3.2.4.
 </p>
 <ul class="menu">
 <li><a href="The-DESCRIPTION-File.html#The-DESCRIPTION-File">The DESCRIPTION File</a>
-<li><a href="The-INDEX-file.html#The-INDEX-file">The INDEX file</a>
-<li><a href="PKG_005fADD-and-PKG_005fDEL-directives.html#PKG_005fADD-and-PKG_005fDEL-directives">PKG_ADD and PKG_DEL directives</a>
+<li><a href="The-INDEX-File.html#The-INDEX-File">The INDEX File</a>
+<li><a href="PKG_005fADD-and-PKG_005fDEL-Directives.html#PKG_005fADD-and-PKG_005fDEL-Directives">PKG_ADD and PKG_DEL Directives</a>
 
 </li></ul>
 <p>Dynamically Linked Functions
@@ -1533,10 +1573,6 @@ It corresponds to GNU Octave version 3.2.4.
 <ul class="menu">
 <li><a href="Actual-Bugs.html#Actual-Bugs">Actual Bugs</a>:                  Bugs we will fix later. 
 <li><a href="Reporting-Bugs.html#Reporting-Bugs">Reporting Bugs</a>
-<li><a href="Bug-Criteria.html#Bug-Criteria">Bug Criteria</a>
-<li><a href="Bug-Lists.html#Bug-Lists">Bug Lists</a>
-<li><a href="Bug-Reporting.html#Bug-Reporting">Bug Reporting</a>
-<li><a href="Sending-Patches.html#Sending-Patches">Sending Patches</a>
 <li><a href="Service.html#Service">Service</a>
 
 </li></ul>
@@ -1545,9 +1581,9 @@ It corresponds to GNU Octave version 3.2.4.
 </p>
 <ul class="menu">
 <li><a href="Bug-Criteria.html#Bug-Criteria">Bug Criteria</a>
-<li><a href="Bug-Lists.html#Bug-Lists">Where</a>:              Where to send your bug report. 
-<li><a href="Bug-Reporting.html#Bug-Reporting">Reporting</a>:      How to report a bug effectively. 
-<li><a href="Sending-Patches.html#Sending-Patches">Patches</a>:      How to send a patch for Octave.
+<li><a href="Bug-Tracker.html#Bug-Tracker">Bug Tracker</a>: ff               Where to submit your bug report. 
+<li><a href="Bug-Reporting.html#Bug-Reporting">Bug Reporting</a>:                How to report a bug effectively. 
+<li><a href="Sending-Patches.html#Sending-Patches">Sending Patches</a>:              How to send a patch for Octave.
 
 </li></ul>
 <p>Installation
@@ -1563,14 +1599,13 @@ It corresponds to GNU Octave version 3.2.4.
 <ul class="menu">
 <li><a href="Installing-EOS.html#Installing-EOS">Installing EOS</a>
 <li><a href="Using-Octave-Mode.html#Using-Octave-Mode">Using Octave Mode</a>
-<li><a href="Running-Octave-From-Within-Emacs.html#Running-Octave-From-Within-Emacs">Running Octave From Within Emacs</a>
+<li><a href="Running-Octave-from-Within-Emacs.html#Running-Octave-from-Within-Emacs">Running Octave from Within Emacs</a>
 <li><a href="Using-the-Emacs-Info-Reader-for-Octave.html#Using-the-Emacs-Info-Reader-for-Octave">Using the Emacs Info Reader for Octave</a>
 </ul>
 
 <!--  -->
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 1999, 2000, 2001, 2002, 2003, 2004, -->
-<!-- 2005, 2006, 2007, 2009 John W. Eaton -->
+<!-- Copyright (C) 1996-2011 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

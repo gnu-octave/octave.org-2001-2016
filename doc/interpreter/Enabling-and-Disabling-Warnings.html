@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Enabling and Disabling Warnings - Untitled</title>
+<title>Enabling and Disabling Warnings - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Handling-Warnings.html#Handling-Warnings" title="Handling Warnings">
 <link rel="prev" href="Issuing-Warnings.html#Issuing-Warnings" title="Issuing Warnings">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Enabling-and-Disabling-Warnings"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Issuing-Warnings.html#Issuing-Warnings">Issuing Warnings</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Handling-Warnings.html#Handling-Warnings">Handling Warnings</a>
 <hr>
@@ -52,7 +53,7 @@ their string identifications.  The following code will issue a warning
    <p>The functions distributed with Octave can issue one of the following
 warnings.
 
-<!-- ./miscellaneous/warning_ids.m -->
+<!-- warning_ids scripts/miscellaneous/warning_ids.m -->
    <p><a name="doc_002dwarning_005fids"></a>
      <dl>
 <dt><code>Octave:array-to-scalar</code><dd>If the <code>Octave:array-to-scalar</code> warning is enabled, Octave will
@@ -123,7 +124,7 @@ default, the <code>Octave:divide-by-zero</code> warning is enabled.
 
      <br><dt><code>Octave:empty-list-elements</code><dd>If the <code>Octave:empty-list-elements</code> warning is enabled, a
 warning is issued when an empty matrix is found in a matrix list. 
-For example,
+For example:
 
      <pre class="example">          a = [1, [], 3, [], 5]
 </pre>
@@ -170,9 +171,9 @@ equivalents when strings are constructed using a mixture of strings and
 numbers in matrix notation.  For example,
 
      <pre class="example">          [ "f", 111, 111 ]
-                "foo"
+               &rArr; "foo"
 </pre>
-     <p>elicits a warning if the <code>Octave:num-to-str</code> warning is
+     <p class="noindent">elicits a warning if the <code>Octave:num-to-str</code> warning is
 enabled.  By default, the <code>Octave:num-to-str</code> warning is enabled.
 
      <br><dt><code>Octave:precedence-change</code><dd>If the <code>Octave:precedence-change</code> warning is enabled, Octave
@@ -202,10 +203,11 @@ string constant.
      <br><dt><code>Octave:str-to-num</code><dd>If the <code>Octave:str-to-num</code> warning is enabled, a warning is printed
 for implicit conversions of strings to their numeric ASCII equivalents. 
 For example,
+
      <pre class="example">          "abc" + 0
-                97 98 99
+               &rArr; 97 98 99
 </pre>
-     <p>elicits a warning if the <code>Octave:str-to-num</code> warning is enabled. 
+     <p class="noindent">elicits a warning if the <code>Octave:str-to-num</code> warning is enabled. 
 By default, the <code>Octave:str-to-num</code> warning is disabled.
 
      <br><dt><code>Octave:string-concat</code><dd>If the <code>Octave:string-concat</code> warning is enabled, print a
@@ -224,7 +226,7 @@ warning is disabled.
 </dl>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 2007, 2008, 2009 John W. Eaton -->
+<!-- Copyright (C) 1996-2011 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

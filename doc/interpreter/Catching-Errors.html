@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Catching Errors - Untitled</title>
+<title>Catching Errors - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Handling-Errors.html#Handling-Errors" title="Handling Errors">
 <link rel="prev" href="Raising-Errors.html#Raising-Errors" title="Raising Errors">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Catching-Errors"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Raising-Errors.html#Raising-Errors">Raising Errors</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Handling-Errors.html#Handling-Errors">Handling Errors</a>
 <hr>
@@ -65,28 +66,34 @@ to count the number of errors related to the &lsquo;<samp><span class="samp">*</
        end_try_catch
      endfor
 </pre>
-   <!-- error.cc -->
+   <!-- lasterror src/error.cc -->
    <p><a name="doc_002dlasterror"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>err</var> = <b>lasterror</b> (<var>err</var>)<var><a name="index-lasterror-670"></a></var><br>
-&mdash; Built-in Function:  <b>lasterror</b> (<var>'reset'</var>)<var><a name="index-lasterror-671"></a></var><br>
-<blockquote><p>Returns or sets the last error message.  Called without any arguments
+&mdash; Built-in Function: <var>lasterr</var> = <b>lasterror</b> ()<var><a name="index-lasterror-756"></a></var><br>
+&mdash; Built-in Function:  <b>lasterror</b> (<var>err</var>)<var><a name="index-lasterror-757"></a></var><br>
+&mdash; Built-in Function:  <b>lasterror</b> (<var>'reset'</var>)<var><a name="index-lasterror-758"></a></var><br>
+<blockquote><p>Query or set the last error message.  Called without any arguments
 returns a structure containing the last error message, as well as other
 information related to this error.  The elements of this structure are:
 
           <dl>
 <dt>'message'<dd>The text of the last error message
-<br><dt>'identifier'<dd>The message identifier of this error message
-<br><dt>'stack'<dd>A structure containing information on where the message occurred.  This might
+
+          <br><dt>'identifier'<dd>The message identifier of this error message
+
+          <br><dt>'stack'<dd>A structure containing information on where the message occurred.  This might
 be an empty structure if this in the case where this information cannot
 be obtained.  The fields of this structure are:
 
                <dl>
 <dt>'file'<dd>The name of the file where the error occurred
-<br><dt>'name'<dd>The name of function in which the error occurred
-<br><dt>'line'<dd>The line number at which the error occurred
-<br><dt>'column'<dd>An optional field with the column number at which the error occurred
+
+               <br><dt>'name'<dd>The name of function in which the error occurred
+
+               <br><dt>'line'<dd>The line number at which the error occurred
+
+               <br><dt>'column'<dd>An optional field with the column number at which the error occurred
 </dl>
           </dl>
 
@@ -100,11 +107,11 @@ set to their default values.
 their default values. 
 </p></blockquote></div>
 
-<!-- error.cc -->
+<!-- lasterr src/error.cc -->
    <p><a name="doc_002dlasterr"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lasterr</b> (<var>msg, msgid</var>)<var><a name="index-lasterr-672"></a></var><br>
+&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lasterr</b> (<var>msg, msgid</var>)<var><a name="index-lasterr-759"></a></var><br>
 <blockquote><p>Without any arguments, return the last error message.  With one
 argument, set the last error message to <var>msg</var>.  With two arguments,
 also set the last message identifier. 
@@ -131,12 +138,12 @@ error occurs.
        end_try_catch
      endfor
 </pre>
-   <!-- error.cc -->
+   <!-- rethrow src/error.cc -->
    <p><a name="doc_002drethrow"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>rethrow</b> (<var>err</var>)<var><a name="index-rethrow-673"></a></var><br>
-<blockquote><p>Reissues a previous error as defined by <var>err</var>.  <var>err</var> is a structure
+&mdash; Built-in Function:  <b>rethrow</b> (<var>err</var>)<var><a name="index-rethrow-760"></a></var><br>
+<blockquote><p>Reissue a previous error as defined by <var>err</var>.  <var>err</var> is a structure
 that must contain at least the 'message' and 'identifier' fields.  <var>err</var>
 can also contain a field 'stack' that gives information on the assumed
 location of the error.  Typically <var>err</var> is returned from
@@ -149,24 +156,24 @@ location of the error.  Typically <var>err</var> is returned from
 </p></blockquote></div>
 
 <!-- FIXME: I have no idea what the rest of the functions are used for... -->
-<!-- utils.cc -->
+<!-- errno src/utils.cc -->
    <p><a name="doc_002derrno"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>err</var> = <b>errno</b> ()<var><a name="index-errno-674"></a></var><br>
-&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>val</var>)<var><a name="index-errno-675"></a></var><br>
-&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>name</var>)<var><a name="index-errno-676"></a></var><br>
+&mdash; Built-in Function: <var>err</var> = <b>errno</b> ()<var><a name="index-errno-761"></a></var><br>
+&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>val</var>)<var><a name="index-errno-762"></a></var><br>
+&mdash; Built-in Function: <var>err</var> = <b>errno</b> (<var>name</var>)<var><a name="index-errno-763"></a></var><br>
 <blockquote><p>Return the current value of the system-dependent variable errno,
 set its value to <var>val</var> and return the previous value, or return
 the named error code given <var>name</var> as a character string, or -1
 if <var>name</var> is not found. 
 </p></blockquote></div>
 
-<!-- utils.cc -->
+<!-- errno_list src/utils.cc -->
    <p><a name="doc_002derrno_005flist"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>errno_list</b> ()<var><a name="index-errno_005flist-677"></a></var><br>
+&mdash; Built-in Function:  <b>errno_list</b> ()<var><a name="index-errno_005flist-764"></a></var><br>
 <blockquote><p>Return a structure containing the system-dependent errno values. 
 </p></blockquote></div>
 

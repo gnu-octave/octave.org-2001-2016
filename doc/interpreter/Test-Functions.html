@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Test Functions - Untitled</title>
+<title>Test Functions - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Test-and-Demo-Functions.html#Test-and-Demo-Functions" title="Test and Demo Functions">
 <link rel="next" href="Demonstration-Functions.html#Demonstration-Functions" title="Demonstration Functions">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Test-Functions"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Demonstration-Functions.html#Demonstration-Functions">Demonstration Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Test-and-Demo-Functions.html#Test-and-Demo-Functions">Test and Demo Functions</a>
 <hr>
@@ -32,17 +33,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Test-and-Demo-Functions.html#Test-and-D
 
 <h3 class="section">B.1 Test Functions</h3>
 
-<!-- ./testfun/test.m -->
+<!-- test scripts/testfun/test.m -->
 <p><a name="doc_002dtest"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>test</b><var> name<a name="index-test-2485"></a></var><br>
-&mdash; Function File:  <b>test</b><var> name quiet|normal|verbose<a name="index-test-2486"></a></var><br>
-&mdash; Function File:  <b>test</b> (<var>'name', 'quiet|normal|verbose', fid</var>)<var><a name="index-test-2487"></a></var><br>
-&mdash; Function File:  <b>test</b> ([]<var>, 'explain', fid</var>)<var><a name="index-test-2488"></a></var><br>
-&mdash; Function File: <var>success</var> = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-2489"></a></var><br>
-&mdash; Function File: [<var>n</var>, <var>max</var>] = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-2490"></a></var><br>
-&mdash; Function File: [<var>code</var>, <var>idx</var>] = <b>test</b> (<var>'name','grabdemo'</var>)<var><a name="index-test-2491"></a></var><br>
+&mdash; Command:  <b>test</b><var> name<a name="index-test-2964"></a></var><br>
+&mdash; Command:  <b>test</b><var> name quiet|normal|verbose<a name="index-test-2965"></a></var><br>
+&mdash; Function File:  <b>test</b> (<var>'name', 'quiet|normal|verbose', fid</var>)<var><a name="index-test-2966"></a></var><br>
+&mdash; Function File:  <b>test</b> ([]<var>, 'explain', fid</var>)<var><a name="index-test-2967"></a></var><br>
+&mdash; Function File: <var>success</var> = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-2968"></a></var><br>
+&mdash; Function File: [<var>n</var>, <var>max</var>] = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-2969"></a></var><br>
+&mdash; Function File: [<var>code</var>, <var>idx</var>] = <b>test</b> (<var>'name', 'grabdemo'</var>)<var><a name="index-test-2970"></a></var><br>
 <blockquote>
         <p>Perform tests from the first file in the loadpath matching <var>name</var>. 
 <code>test</code> can be called as a command or as a function.  Called with
@@ -85,7 +86,7 @@ explanation of the line markers used is written to the file <var>fid</var>.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dassert.html#doc_002dassert">assert</a>, <a href="doc_002dfail.html#doc_002dfail">fail</a>, <a href="doc_002ddemo.html#doc_002ddemo">demo</a>, <a href="doc_002dexample.html#doc_002dexample">example</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dassert.html#doc_002dassert">assert</a>, <a href="doc_002dfail.html#doc_002dfail">fail</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002ddemo.html#doc_002ddemo">demo</a>, <a href="doc_002dexample.html#doc_002dexample">example</a>. 
 </p></blockquote></div>
 
    <p><code>test</code> scans the named script file looking for lines which
@@ -96,7 +97,7 @@ generates an error, then the test is said to fail.
    <p>Since <code>eval()</code> will stop at the first error it encounters, you must
 divide your tests up into blocks, with anything in a separate
 block evaluated separately.  Blocks are introduced by the keyword
-<code>test</code> immediately following the <code>%!</code>.  For example,
+<code>test</code> immediately following the <code>%!</code>.  For example:
 
 <pre class="example">        %!test error ("this test fails!");
         %!test "test doesn't fail. it doesn't generate an error";
@@ -145,7 +146,7 @@ is a shorthand form:
 
 <pre class="example">        %!assert (...)
 </pre>
-   <p>which is equivalent to:
+   <p class="noindent">which is equivalent to:
 
 <pre class="example">        %!test assert (...)
 </pre>
@@ -194,11 +195,11 @@ For example:
 
 <pre class="example">        %!error &lt;passes!&gt; error('this test passes!');
 </pre>
-   <p>If the code doesn't generate an error, the test fails.  For example,
+   <p>If the code doesn't generate an error, the test fails.  For example:
 
 <pre class="example">        %!error "this is an error because it succeeds.";
 </pre>
-   <p>produces
+   <p class="noindent">produces
 
 <pre class="example">        ***** error "this is an error because it succeeds.";
         !!!!! test failed: no error
@@ -214,7 +215,7 @@ it is executed.  For example,
         %! plot(<var>t</var>,<var>x</var>);
         %! you should now see a sine wave in your figure window
 </pre>
-   <p>produces
+   <p class="noindent">produces
 
 <pre class="example">        &gt; <var>t</var>=[0:0.01:2*pi]; <var>x</var>=sin(<var>t</var>);
         &gt; plot(<var>t</var>,<var>x</var>);
@@ -237,13 +238,20 @@ in the log file, but is not executed.  For example:
 
      <dl>
 <dt><code>%!test</code><dd>check that entire block is correct
-<br><dt><code>%!error</code><dd>check for correct error message
-<br><dt><code>%!warning</code><dd>check for correct warning message
-<br><dt><code>%!demo</code><dd>demo only executes in interactive mode
-<br><dt><code>%!#</code><dd>comment: ignore everything within the block
-<br><dt><code>%!shared x,y,z</code><dd>declares variables for use in multiple tests
-<br><dt><code>%!function</code><dd>defines a function value for a shared variable
-<br><dt><code>%!assert (x, y, tol)</code><dd>shorthand for %!test assert (x, y, tol)
+
+     <br><dt><code>%!error</code><dd>check for correct error message
+
+     <br><dt><code>%!warning</code><dd>check for correct warning message
+
+     <br><dt><code>%!demo</code><dd>demo only executes in interactive mode
+
+     <br><dt><code>%!#</code><dd>comment: ignore everything within the block
+
+     <br><dt><code>%!shared x,y,z</code><dd>declares variables for use in multiple tests
+
+     <br><dt><code>%!function</code><dd>defines a function value for a shared variable
+
+     <br><dt><code>%!assert (x, y, tol)</code><dd>shorthand for %!test assert (x, y, tol)
 </dl>
 
    <p>You can also create test scripts for builtins and your own C++
@@ -255,13 +263,13 @@ can even embed tests directly in your C++ code:
         %!test disp('this is a test')
         #endif
 </pre>
-   <p>or
+   <p class="noindent">or
 
 <pre class="example">        /*
         %!test disp('this is a test')
         */
 </pre>
-   <p>but then the code will have to be on the load path and the user
+   <p class="noindent">but then the code will have to be on the load path and the user
 will have to remember to type test('name.cc').  Conversely, you
 can separate the tests from normal Octave script files by putting
 them in plain files with no extension rather than in script files. 
@@ -270,15 +278,15 @@ them in plain files with no extension rather than in script files.
 <!-- is actually octave code, using something like: -->
 <!-- *-octave-*- -->
 
-<!-- ./testfun/assert.m -->
+<!-- assert scripts/testfun/assert.m -->
    <p><a name="doc_002dassert"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>assert</b> (<var>cond</var>)<var><a name="index-assert-2492"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>cond, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-2493"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>cond, msg_id, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-2494"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>observed,expected</var>)<var><a name="index-assert-2495"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>observed,expected,tol</var>)<var><a name="index-assert-2496"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>cond</var>)<var><a name="index-assert-2971"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>cond, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-2972"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>cond, msg_id, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-2973"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>observed, expected</var>)<var><a name="index-assert-2974"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>observed, expected, tol</var>)<var><a name="index-assert-2975"></a></var><br>
 <blockquote>
         <p>Produces an error if the condition is not met.  <code>assert</code> can be
 called in three different ways.
@@ -294,11 +302,14 @@ observed and expected can be strings, scalars, vectors, matrices,
 lists or structures.
 
           <br><dt><code>assert(</code><var>observed</var><code>, </code><var>expected</var><code>, </code><var>tol</var><code>)</code><dd>Accept a tolerance when comparing numbers. 
-If <var>tol</var> is positive use it as an absolute tolerance, will produce an error if
+If <var>tol</var> is positive use it as an absolute tolerance, will produce an
+error if
 <code>abs(</code><var>observed</var><code> - </code><var>expected</var><code>) &gt; abs(</code><var>tol</var><code>)</code>. 
-If <var>tol</var> is negative use it as a relative tolerance, will produce an error if
-<code>abs(</code><var>observed</var><code> - </code><var>expected</var><code>) &gt; abs(</code><var>tol</var><code> * </code><var>expected</var><code>)</code>. 
-If <var>expected</var> is zero <var>tol</var> will always be used as an absolute tolerance. 
+If <var>tol</var> is negative use it as a relative tolerance, will produce an
+error if
+<code>abs(</code><var>observed</var><code> - </code><var>expected</var><code>) &gt; abs(</code><var>tol</var><code> *
+</code><var>expected</var><code>)</code>.  If <var>expected</var> is zero <var>tol</var> will always be used as
+an absolute tolerance. 
 </dl>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -307,12 +318,12 @@ If <var>expected</var> is zero <var>tol</var> will always be used as an absolute
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dtest.html#doc_002dtest">test</a>. 
 </p></blockquote></div>
 
-<!-- ./testfun/fail.m -->
+<!-- fail scripts/testfun/fail.m -->
    <p><a name="doc_002dfail"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fail</b> (<var>code,pattern</var>)<var><a name="index-fail-2497"></a></var><br>
-&mdash; Function File:  <b>fail</b> (<var>code,'warning',pattern</var>)<var><a name="index-fail-2498"></a></var><br>
+&mdash; Function File:  <b>fail</b> (<var>code, pattern</var>)<var><a name="index-fail-2976"></a></var><br>
+&mdash; Function File:  <b>fail</b> (<var>code, 'warning', pattern</var>)<var><a name="index-fail-2977"></a></var><br>
 <blockquote>
         <p>Return true if <var>code</var> fails with an error message matching
 <var>pattern</var>, otherwise produce an error.  Note that <var>code</var>

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Calling a Function by its Name - Untitled</title>
+<title>Calling a Function by its Name - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Evaluation.html#Evaluation" title="Evaluation">
 <link rel="next" href="Evaluation-in-a-Different-Context.html#Evaluation-in-a-Different-Context" title="Evaluation in a Different Context">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Calling-a-Function-by-its-Name"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Evaluation-in-a-Different-Context.html#Evaluation-in-a-Different-Context">Evaluation in a Different Context</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Evaluation.html#Evaluation">Evaluation</a>
 <hr>
@@ -42,7 +43,7 @@ arguments are given to the function.
 that finds the root of a user-supplied function of one variable using
 Newton's method.
 
-<pre class="example">     <a name="index-Fordyce_002c-A_002e-P_002e-547"></a><a name="index-newtroot-548"></a>function result = newtroot (fname, x)
+<pre class="example">     <a name="index-Fordyce_002c-A_002e-P_002e-636"></a><a name="index-newtroot-637"></a>function result = newtroot (fname, x)
      
      # usage: newtroot (fname, x)
      #
@@ -75,16 +76,16 @@ of all the arguments, ensure that the supplied function really was a
 function, etc.  See <a href="Predicates-for-Numeric-Objects.html#Predicates-for-Numeric-Objects">Predicates for Numeric Objects</a>, for example,
 for a list of predicates for numeric objects, and see <a href="Status-of-Variables.html#Status-of-Variables">Status of Variables</a>, for a description of the <code>exist</code> function.
 
-<!-- parse.cc -->
+<!-- feval src/oct-parse.cc -->
    <p><a name="doc_002dfeval"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>feval</b> (<var>name, <small class="dots">...</small></var>)<var><a name="index-feval-549"></a></var><br>
+&mdash; Built-in Function:  <b>feval</b> (<var>name, <small class="dots">...</small></var>)<var><a name="index-feval-638"></a></var><br>
 <blockquote><p>Evaluate the function named <var>name</var>.  Any arguments after the first
 are passed on to the named function.  For example,
 
      <pre class="example">          feval ("acos", -1)
-                3.1416
+               &rArr; 3.1416
 </pre>
         <p class="noindent">calls the function <code>acos</code> with the argument &lsquo;<samp><span class="samp">-1</span></samp>&rsquo;.
 
@@ -99,16 +100,17 @@ by name, and use <code>feval</code> to call them.
    <p>A similar function <code>run</code> exists for calling user script files, that
 are not necessarily on the user path
 
-<!-- ./miscellaneous/run.m -->
+<!-- run scripts/miscellaneous/run.m -->
    <p><a name="doc_002drun"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>run</b> (<var>f</var>)<var><a name="index-run-550"></a></var><br>
-&mdash; Command:  <b>run</b><var> f<a name="index-run-551"></a></var><br>
+&mdash; Command:  <b>run</b><var> script<a name="index-run-639"></a></var><br>
+&mdash; Function File:  <b>run</b> (<var>script</var>)<var><a name="index-run-640"></a></var><br>
 <blockquote><p>Run scripts in the current workspace that are not necessarily on the
-path.  If <var>f</var> is the script to run, including its path, then <code>run</code>
-change the directory to the directory where <var>f</var> is found.  <code>run</code>
-then executes the script, and returns to the original directory. 
+path.  If <var>script</var> is the script to run, including its path, then
+<code>run</code> changes the directory to the directory where <var>script</var> is
+found.  <code>run</code> then executes the script, and returns to the original
+directory. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->

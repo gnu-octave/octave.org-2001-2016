@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Customizing the Prompt - Untitled</title>
+<title>Customizing the Prompt - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Command-Line-Editing.html#Command-Line-Editing" title="Command Line Editing">
 <link rel="prev" href="Customizing-readline.html#Customizing-readline" title="Customizing readline">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Customizing-the-Prompt"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Diary-and-Echo-Commands.html#Diary-and-Echo-Commands">Diary and Echo Commands</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Customizing-readline.html#Customizing-readline">Customizing readline</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>
@@ -34,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-
 
 <h4 class="subsection">2.4.7 Customizing the Prompt</h4>
 
-<p><a name="index-prompt-customization-134"></a><a name="index-customizing-the-prompt-135"></a>
+<p><a name="index-prompt-customization-137"></a><a name="index-customizing-the-prompt-138"></a>
 The following variables are available for customizing the appearance of
 the command-line prompts.  Octave allows the prompt to be customized by
 inserting a number of backslash-escaped special characters that are
@@ -72,25 +73,31 @@ number of commands in the history list when Octave starts.
      <br><dt>&lsquo;<samp><span class="samp">\\</span></samp>&rsquo;<dd>A backslash. 
 </dl>
 
-<!-- input.cc -->
+<!-- PS1 src/input.cc -->
    <p><a name="doc_002dPS1"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PS1</b> ()<var><a name="index-PS1-136"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PS1</b> (<var>new_val</var>)<var><a name="index-PS1-137"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PS1</b> ()<var><a name="index-PS1-139"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PS1</b> (<var>new_val</var>)<var><a name="index-PS1-140"></a></var><br>
 <blockquote><p>Query or set the primary prompt string.  When executing interactively,
 Octave displays the primary prompt when it is ready to read a command.
 
         <p>The default value of the primary prompt string is <code>"\s:\#&gt; "</code>. 
 To change it, use a command like
 
-     <pre class="example">          octave:13&gt; PS1 ("\\u@\\H&gt; ")
+     <pre class="example">          PS1 ("\\u@\\H&gt; ")
 </pre>
         <p class="noindent">which will result in the prompt &lsquo;<samp><span class="samp">boris@kremvax&gt; </span></samp>&rsquo; for the user
 &lsquo;<samp><span class="samp">boris</span></samp>&rsquo; logged in on the host &lsquo;<samp><span class="samp">kremvax.kgb.su</span></samp>&rsquo;.  Note that two
 backslashes are required to enter a backslash into a double-quoted
-character string. 
-See <a href="Strings.html#Strings">Strings</a>. 
+character string.  See <a href="Strings.html#Strings">Strings</a>.
+
+        <p>You can also use ANSI escape sequences if your terminal supports them. 
+This can be useful for coloring the prompt.  For example,
+
+     <pre class="example">          PS1 ("\\[\\033[01;31m\\]\\s:\\#&gt; \\[\\033[0m\]")
+</pre>
+        <p class="noindent">will give the default Octave prompt a red coloring. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -98,12 +105,12 @@ See <a href="Strings.html#Strings">Strings</a>.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dPS2.html#doc_002dPS2">PS2</a>, <a href="doc_002dPS4.html#doc_002dPS4">PS4</a>. 
 </p></blockquote></div>
 
-<!-- input.cc -->
+<!-- PS2 src/input.cc -->
    <p><a name="doc_002dPS2"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PS2</b> ()<var><a name="index-PS2-138"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PS2</b> (<var>new_val</var>)<var><a name="index-PS2-139"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PS2</b> ()<var><a name="index-PS2-141"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PS2</b> (<var>new_val</var>)<var><a name="index-PS2-142"></a></var><br>
 <blockquote><p>Query or set the secondary prompt string.  The secondary prompt is
 printed when Octave is expecting additional input to complete a
 command.  For example, if you are typing a <code>for</code> loop that spans several
@@ -117,12 +124,12 @@ string is <code>"&gt; "</code>.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dPS1.html#doc_002dPS1">PS1</a>, <a href="doc_002dPS4.html#doc_002dPS4">PS4</a>. 
 </p></blockquote></div>
 
-<!-- input.cc -->
+<!-- PS4 src/input.cc -->
    <p><a name="doc_002dPS4"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PS4</b> ()<var><a name="index-PS4-140"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PS4</b> (<var>new_val</var>)<var><a name="index-PS4-141"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PS4</b> ()<var><a name="index-PS4-143"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PS4</b> (<var>new_val</var>)<var><a name="index-PS4-144"></a></var><br>
 <blockquote><p>Query or set the character string used to prefix output produced
 when echoing commands is enabled. 
 The default value is <code>"+ "</code>. 

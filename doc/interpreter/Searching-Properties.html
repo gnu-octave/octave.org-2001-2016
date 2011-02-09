@@ -1,12 +1,13 @@
 <html lang="en">
 <head>
-<title>Searching Properties - Untitled</title>
+<title>Searching Properties - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Graphics-Object-Properties.html#Graphics-Object-Properties" title="Graphics Object Properties">
-<link rel="prev" href="Surface-Properties.html#Surface-Properties" title="Surface Properties">
+<link rel="up" href="Graphics-Data-Structures.html#Graphics-Data-Structures" title="Graphics Data Structures">
+<link rel="prev" href="Graphics-Object-Properties.html#Graphics-Object-Properties" title="Graphics Object Properties">
+<link rel="next" href="Managing-Default-Properties.html#Managing-Default-Properties" title="Managing Default Properties">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -20,29 +21,31 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Searching-Properties"></a>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Surface-Properties.html#Surface-Properties">Surface Properties</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Graphics-Object-Properties.html#Graphics-Object-Properties">Graphics Object Properties</a>
+<p>
+Next:&nbsp;<a rel="next" accesskey="n" href="Managing-Default-Properties.html#Managing-Default-Properties">Managing Default Properties</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Graphics-Object-Properties.html#Graphics-Object-Properties">Graphics Object Properties</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Graphics-Data-Structures.html#Graphics-Data-Structures">Graphics Data Structures</a>
 <hr>
 </div>
 
-<h5 class="subsubsection">15.2.2.9 Searching Properties</h5>
+<h4 class="subsection">15.3.4 Searching Properties</h4>
 
-<!-- ./plot/findobj.m -->
+<!-- findobj scripts/plot/findobj.m -->
 <p><a name="doc_002dfindobj"></a>
 
 <div class="defun">
-&mdash; Function File: <var>h</var> = <b>findobj</b> ()<var><a name="index-findobj-1197"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>prop_name, prop_value</var>)<var><a name="index-findobj-1198"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>'-property', prop_name</var>)<var><a name="index-findobj-1199"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>'-regexp', prop_name, pattern</var>)<var><a name="index-findobj-1200"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>'flat', <small class="dots">...</small></var>)<var><a name="index-findobj-1201"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-findobj-1202"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>h, '-depth', d, <small class="dots">...</small></var>)<var><a name="index-findobj-1203"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findobj</b> ()<var><a name="index-findobj-1376"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>prop_name, prop_value</var>)<var><a name="index-findobj-1377"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>'-property', prop_name</var>)<var><a name="index-findobj-1378"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>'-regexp', prop_name, pattern</var>)<var><a name="index-findobj-1379"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>'flat', <small class="dots">...</small></var>)<var><a name="index-findobj-1380"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-findobj-1381"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findobj</b> (<var>h, '-depth', d, <small class="dots">...</small></var>)<var><a name="index-findobj-1382"></a></var><br>
 <blockquote><p>Find object with specified property values.  The simplest form is
 
      <pre class="example">          findobj (<var>prop_name</var>, <var>prop_Value</var>)
@@ -78,14 +81,14 @@ matched by property name only, using the '-property' option.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dget.html#doc_002dget">get</a>, <a href="doc_002dset.html#doc_002dset">set</a>. 
 </p></blockquote></div>
 
-<!-- ./plot/findall.m -->
+<!-- findall scripts/plot/findall.m -->
    <p><a name="doc_002dfindall"></a>
 
 <div class="defun">
-&mdash; Function File: <var>h</var> = <b>findall</b> ()<var><a name="index-findall-1204"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findall</b> (<var>prop_name, prop_value</var>)<var><a name="index-findall-1205"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findall</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-findall-1206"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>findall</b> (<var>h, "-depth", d, <small class="dots">...</small></var>)<var><a name="index-findall-1207"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findall</b> ()<var><a name="index-findall-1383"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findall</b> (<var>prop_name, prop_value</var>)<var><a name="index-findall-1384"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findall</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-findall-1385"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>findall</b> (<var>h, "-depth", d, <small class="dots">...</small></var>)<var><a name="index-findall-1386"></a></var><br>
 <blockquote><p>Find object with specified property values including hidden handles.
 
         <p>This function performs the same function as <code>findobj</code>, but it

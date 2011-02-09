@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Return Types of Operators and Functions - Untitled</title>
+<title>Return Types of Operators and Functions - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Operators-and-Functions.html#Operators-and-Functions" title="Operators and Functions">
 <link rel="prev" href="Sparse-Functions.html#Sparse-Functions" title="Sparse Functions">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Return-Types-of-Operators-and-Functions"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Mathematical-Considerations.html#Mathematical-Considerations">Mathematical Considerations</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Sparse-Functions.html#Sparse-Functions">Sparse Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Operators-and-Functions.html#Operators-and-Functions">Operators and Functions</a>
@@ -44,14 +45,14 @@ where it no longer makes sense to store it as a sparse matrix, but rather
 as a full matrix.  For this reason operators and functions that have a
 high probability of returning a full matrix will always return one.  For
 example adding a scalar constant to a sparse matrix will almost always
-make it a full matrix, and so the example
+make it a full matrix, and so the example,
 
 <pre class="example">     speye(3) + 0
-        1  0  0
+     &rArr;   1  0  0
        0  1  0
        0  0  1
 </pre>
-   <p>returns a full matrix as can be seen.
+   <p class="noindent">returns a full matrix as can be seen.
 
    <p>Additionally, if <code>sparse_auto_mutate</code> is true, all sparse functions
 test the amount of memory occupied by the sparse matrix to see if the
@@ -75,30 +76,30 @@ depending on the type of its input arguments.  So
 
 <pre class="example">      a = diag (sparse([1,2,3]), -1);
 </pre>
-   <p>should return a sparse matrix.  To ensure this actually happens, the
+   <p class="noindent">should return a sparse matrix.  To ensure this actually happens, the
 <dfn>sparse</dfn> function, and other functions based on it like <dfn>speye</dfn>,
 always returns a sparse matrix, even if the memory used will be larger
 than its full representation.
 
-<!-- ov-base.cc -->
+<!-- sparse_auto_mutate src/ov-base.cc -->
    <p><a name="doc_002dsparse_005fauto_005fmutate"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>sparse_auto_mutate</b> ()<var><a name="index-sparse_005fauto_005fmutate-1684"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>sparse_auto_mutate</b> (<var>new_val</var>)<var><a name="index-sparse_005fauto_005fmutate-1685"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>sparse_auto_mutate</b> ()<var><a name="index-sparse_005fauto_005fmutate-1961"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>sparse_auto_mutate</b> (<var>new_val</var>)<var><a name="index-sparse_005fauto_005fmutate-1962"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave will
 automatically mutate sparse matrices to real matrices to save memory. 
-For example,
+For example:
 
      <pre class="example">          s = speye(3);
           sparse_auto_mutate (false)
           s (:, 1) = 1;
           typeinfo (s)
-           sparse matrix
+          &rArr; sparse matrix
           sparse_auto_mutate (true)
           s (1, :) = 1;
           typeinfo (s)
-           matrix
+          &rArr; matrix
 </pre>
         </blockquote></div>
 

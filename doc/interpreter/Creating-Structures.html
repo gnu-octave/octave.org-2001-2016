@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Creating Structures - Untitled</title>
+<title>Creating Structures - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data-Structures.html#Data-Structures" title="Data Structures">
 <link rel="prev" href="Structure-Arrays.html#Structure-Arrays" title="Structure Arrays">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Creating-Structures"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Manipulating-Structures.html#Manipulating-Structures">Manipulating Structures</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Structure-Arrays.html#Structure-Arrays">Structure Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">Data Structures</a>
@@ -38,10 +39,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">D
 with the <code>struct</code> command.  <code>struct</code> takes pairs of arguments,
 where the first argument in the pair is the fieldname to include in the
 structure and the second is a scalar or cell array, representing the
-values to include in the structure or structure array.  For example
+values to include in the structure or structure array.  For example:
 
 <pre class="example">     struct ("field1", 1, "field2", 2)
-      ans =
+     &rArr; ans =
            {
              field1 =  1
              field2 =  2
@@ -49,22 +50,22 @@ values to include in the structure or structure array.  For example
 </pre>
    <p>If the values passed to <code>struct</code> are a mix of scalar and cell
 arrays, then the scalar arguments are expanded to create a
-structure array with a consistent dimension.  For example
+structure array with a consistent dimension.  For example:
 
 <pre class="example">     s = struct ("field1", {1, "one"}, "field2", {2, "two"},
              "field3", 3);
      s.field1
-          
+          &rArr;
              ans =  1
              ans = one
      
      s.field2
-          
+          &rArr;
              ans =  2
              ans = two
      
      s.field3
-          
+          &rArr;
              ans =  3
              ans =  3
 </pre>
@@ -73,7 +74,7 @@ individual field, you have to put it into another cell array like in
 the following example:
 
 <pre class="example">     struct ("field1", {{1, "one"}}, "field2", 2)
-           ans =
+          &rArr; ans =
              {
                field1 =
      
@@ -85,11 +86,11 @@ the following example:
                field2 =  2
              }
 </pre>
-   <!-- ov-struct.cc -->
+   <!-- struct src/ov-struct.cc -->
    <p><a name="doc_002dstruct"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>struct</b> (<var>"field", value, "field", value, <small class="dots">...</small></var>)<var><a name="index-struct-373"></a></var><br>
+&mdash; Built-in Function:  <b>struct</b> (<var>"field", value, "field", value, <small class="dots">...</small></var>)<var><a name="index-struct-396"></a></var><br>
 <blockquote>
         <p>Create a structure and initialize its value.
 
@@ -105,12 +106,17 @@ array with the specified field names.
    <p>The function <code>isstruct</code> can be used to test if an object is a
 structure or a structure array.
 
-<!-- ov-struct.cc -->
+<!-- isstruct src/ov-struct.cc -->
    <p><a name="doc_002disstruct"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isstruct</b> (<var>expr</var>)<var><a name="index-isstruct-374"></a></var><br>
-<blockquote><p>Return 1 if the value of the expression <var>expr</var> is a structure. 
+&mdash; Built-in Function:  <b>isstruct</b> (<var>x</var>)<var><a name="index-isstruct-397"></a></var><br>
+<blockquote><p>Return true if <var>x</var> is a structure or a structure array. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dismatrix.html#doc_002dismatrix">ismatrix</a>, <a href="doc_002discell.html#doc_002discell">iscell</a>, <a href="doc_002disa.html#doc_002disa">isa</a>. 
 </p></blockquote></div>
 
    </body></html>

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Orthogonal Collocation - Untitled</title>
+<title>Orthogonal Collocation - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numerical-Integration.html#Numerical-Integration" title="Numerical Integration">
 <link rel="prev" href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables" title="Functions of Multiple Variables">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Orthogonal-Collocation"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables">Functions of Multiple Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Numerical-Integration.html#Numerical-Integration">Numerical Integration</a>
 <hr>
@@ -32,11 +33,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Numerical-Integration.html#Numerical-In
 
 <h3 class="section">22.2 Orthogonal Collocation</h3>
 
-<!-- ./DLD-FUNCTIONS/colloc.cc -->
+<!-- colloc src/DLD-FUNCTIONS/colloc.cc -->
 <p><a name="doc_002dcolloc"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>r</var>, <var>amat</var>, <var>bmat</var>, <var>q</var>] = <b>colloc</b> (<var>n, "left", "right"</var>)<var><a name="index-colloc-1780"></a></var><br>
+&mdash; Loadable Function: [<var>r</var>, <var>amat</var>, <var>bmat</var>, <var>q</var>] = <b>colloc</b> (<var>n, "left", "right"</var>)<var><a name="index-colloc-2069"></a></var><br>
 <blockquote><p>Compute derivative and integral weight matrices for orthogonal
 collocation using the subroutines given in J. Villadsen and
 M. L. Michelsen, <cite>Solution of Differential Equation Models by
@@ -63,7 +64,7 @@ in the right hand side (for a specific value of
    <p>Then the solution at the roots <var>r</var> is
 
 <pre class="example">     u = [ 0; (at - alpha * bt) \ rhs; 1]
-           [ 0.00; 0.004; 0.01 0.00; 0.12; 0.62; 1.00 ]
+          &rArr; [ 0.00; 0.004; 0.01 0.00; 0.12; 0.62; 1.00 ]
 </pre>
    </body></html>
 

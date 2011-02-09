@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Structures in Oct-Files - Untitled</title>
+<title>Structures in Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Cell-Arrays-in-Oct_002dFiles.html#Cell-Arrays-in-Oct_002dFiles" title="Cell Arrays in Oct-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Structures-in-Oct-Files"></a>
 <a name="Structures-in-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Sparse-Matrices-in-Oct_002dFiles.html#Sparse-Matrices-in-Oct_002dFiles">Sparse Matrices in Oct-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Cell-Arrays-in-Oct_002dFiles.html#Cell-Arrays-in-Oct_002dFiles">Cell Arrays in Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
@@ -50,42 +51,50 @@ with the pair consisting of a <code>std::string</code> and an octave
        int nargin = args.length ();
        octave_value retval;
      
-       if (nargin != 2)
-         print_usage ();
-       else
+       if (args.length () == 2)
          {
-           Octave_map arg0 = args(0).map_value ();
-           std::string arg1 = args(1).string_value ();
+           octave_scalar_map arg0 = args(0).scalar_map_value ();
      
-           if (! error_state &amp;&amp; arg0.contains (arg1))
+           if (! error_state)
              {
-               // The following two lines might be written as
-               //    octave_value tmp;
-               //    for (Octave_map::iterator p0 = 
-     	  //        arg0.begin(); 
-               //        p0 != arg0.end(); p0++ )
-               //      if (arg0.key (p0) == arg1)
-               //        {
-               //          tmp = arg0.contents (p0) (0);
-               //          break;
-               //        }
-               // though using seek is more concise.
-               Octave_map::const_iterator p1 = arg0.seek (arg1);
-               octave_value tmp =  arg0.contents(p1)(0);
-               Octave_map st;
-               st.assign ("selected", tmp);
-               retval = octave_value (st);
+               std::string arg1 = args(1).string_value ();
+     
+               if (! error_state)
+                 {
+                   octave_value tmp = arg0.contents (arg1);
+     
+                   if (tmp.is_defined ())
+                     {
+                       octave_scalar_map st;
+     
+                       st.assign ("selected", tmp);
+     
+                       retval = octave_value (st);
+                     }
+                   else
+                     error ("sruct does not contain field named '%s'\n",
+                            arg1.c_str ());
+                 }
+               else
+                 error ("expecting character string as second argument");
              }
+           else
+             error ("expecting struct as first argument");
          }
-       return retval; 
+       else
+         print_usage ();
+     
+       return retval;
      }
      
-</pre></pre>
+</pre>
+     
+</pre>
    <p>An example of its use is
 
 <pre class="example">     x.a = 1; x.b = "test"; x.c = [1, 2];
      structdemo (x, "b")
-      selected = test
+     &rArr; selected = test
 </pre>
    <p>The commented code above demonstrates how to iterate over all of the
 fields of the structure, where as the following code demonstrates finding
@@ -97,7 +106,7 @@ Therefore, to obtain the underlying <code>octave_value</code> we write
 
 <pre class="example">     octave_value tmp = arg0.contents (p1) (0);
 </pre>
-   <p>where the trailing (0) is the () operator on the <code>Cell</code> object.  We
+   <p class="noindent">where the trailing (0) is the () operator on the <code>Cell</code> object.  We
 can equally iterate of the elements of the Cell array to address the
 elements of the structure array.
 

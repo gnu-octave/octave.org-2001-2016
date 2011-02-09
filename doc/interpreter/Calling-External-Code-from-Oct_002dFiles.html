@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Calling External Code from Oct-Files - Untitled</title>
+<title>Calling External Code from Oct-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Oct_002dFiles.html#Oct_002dFiles" title="Oct-Files">
 <link rel="prev" href="Calling-Octave-Functions-from-Oct_002dFiles.html#Calling-Octave-Functions-from-Oct_002dFiles" title="Calling Octave Functions from Oct-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Calling-External-Code-from-Oct-Files"></a>
 <a name="Calling-External-Code-from-Oct_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Allocating-Local-Memory-in-Oct_002dFiles.html#Allocating-Local-Memory-in-Oct_002dFiles">Allocating Local Memory in Oct-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Calling-Octave-Functions-from-Oct_002dFiles.html#Calling-Octave-Functions-from-Oct_002dFiles">Calling Octave Functions from Oct-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Oct_002dFiles.html#Oct_002dFiles">Oct-Files</a>
@@ -59,12 +60,12 @@ consistent behavior across a number of compilers.
 
    <p>The underlying Fortran code should use the <code>XSTOPX</code> function to
 replace the Fortran <code>STOP</code> function.  <code>XSTOPX</code> uses the Octave
-exception handler to treat failing cases in the fortran code
+exception handler to treat failing cases in the Fortran code
 explicitly.  Note that Octave supplies its own replacement <span class="sc">blas</span>
 <code>XERBLA</code> function, which uses <code>XSTOPX</code>.
 
    <p>If the underlying code calls <code>XSTOPX</code>, then the <code>F77_XFCN</code><!-- /@w -->
-macro should be used to call the underlying fortran function.  The Fortran
+macro should be used to call the underlying Fortran function.  The Fortran
 exception state can then be checked with the global variable
 <code>f77_exception_encountered</code>.  If <code>XSTOPX</code> will not be called,
 then the <code>F77_FCN</code><!-- /@w --> macro should be used instead to call the Fortran
@@ -82,17 +83,17 @@ given in the following example, where the C++ wrapper is
 <pre class="example"><pre class="verbatim">     #include &lt;octave/oct.h>
      #include &lt;octave/f77-fcn.h>
      
-     extern "C" 
+     extern "C"
      {
-       F77_RET_T 
-       F77_FUNC (fortsub, FORTSUB) 
-             (const int&amp;, double*, F77_CHAR_ARG_DECL  
+       F77_RET_T
+       F77_FUNC (fortsub, FORTSUB)
+             (const int&amp;, double*, F77_CHAR_ARG_DECL
               F77_CHAR_ARG_LEN_DECL);
      }
      
      DEFUN_DLD (fortdemo , args , , "Fortran Demo.")
      {
-       octave_value_list retval;  
+       octave_value_list retval;
        int nargin = args.length();
        if (nargin != 1)
          print_usage ();
@@ -105,17 +106,19 @@ given in the following example, where the C++ wrapper is
                octave_idx_type na = a.nelem ();
                OCTAVE_LOCAL_BUFFER (char, ctmp, 128);
      
-               F77_XFCN (fortsub, FORTSUB, (na, av, ctmp 
+               F77_XFCN (fortsub, FORTSUB, (na, av, ctmp
                          F77_CHAR_ARG_LEN (128)));
      
-     	  retval(1) = std::string (ctmp);
-     	  retval(0) = a;
+               retval(1) = std::string (ctmp);
+               retval(0) = a;
              }
          }
        return retval;
      }
-</pre></pre>
-   <p class="noindent">and the fortran function is
+</pre>
+     
+</pre>
+   <p class="noindent">and the Fortran function is
 
 <pre class="example"><pre class="verbatim">           subroutine fortsub (n, a, s)
            implicit none
@@ -138,19 +141,21 @@ given in the following example, where the C++ wrapper is
            return
            end
      
-</pre></pre>
+</pre>
+     
+</pre>
    <p>This example demonstrates most of the features needed to link to an
 external Fortran function, including passing arrays and strings, as well
 as exception handling.  An example of the behavior of this function is
 
 <pre class="example">     [b, s] = fortdemo (1:3)
-     
+     &rArr;
        b = 1.00000   0.50000   0.33333
        s = There are   3 values in the input vector
      [b, s] = fortdemo(0:3)
      error: fortsub:divide by zero
      error: exception encountered in Fortran subroutine fortsub_
-     error: fortdemo: error in fortran
+     error: fortdemo: error in Fortran
 </pre>
    </body></html>
 

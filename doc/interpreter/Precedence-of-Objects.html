@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Precedence of Objects - Untitled</title>
+<title>Precedence of Objects - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overloading-Objects.html#Overloading-Objects" title="Overloading Objects">
 <link rel="prev" href="Operator-Overloading.html#Operator-Overloading" title="Operator Overloading">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Precedence-of-Objects"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Operator-Overloading.html#Operator-Overloading">Operator Overloading</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overloading-Objects.html#Overloading-Objects">Overloading Objects</a>
 <hr>
@@ -39,22 +40,22 @@ of which method of which class to call when there are mixed objects given
 to a function or operator.  To do this the <code>superiorto</code> and
 <code>inferiorto</code> functions can be used
 
-<!-- ov-class.cc -->
+<!-- superiorto src/ov-class.cc -->
    <p><a name="doc_002dsuperiorto"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>superiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-superiorto-2266"></a></var><br>
+&mdash; Built-in Function:  <b>superiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-superiorto-2713"></a></var><br>
 <blockquote><p>When called from a class constructor, mark the object currently
 constructed as having a higher precedence than <var>class_name</var>. 
 More that one such class can be specified in a single call. 
 This function may only be called from a class constructor. 
 </p></blockquote></div>
 
-<!-- ov-class.cc -->
+<!-- inferiorto src/ov-class.cc -->
    <p><a name="doc_002dinferiorto"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>inferiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-inferiorto-2267"></a></var><br>
+&mdash; Built-in Function:  <b>inferiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-inferiorto-2714"></a></var><br>
 <blockquote><p>When called from a class constructor, mark the object currently
 constructed as having a lower precedence than <var>class_name</var>. 
 More that one such class can be specified in a single call. 

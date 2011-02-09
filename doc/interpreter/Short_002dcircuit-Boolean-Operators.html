@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Short-circuit Boolean Operators - Untitled</title>
+<title>Short-circuit Boolean Operators - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Boolean-Expressions.html#Boolean-Expressions" title="Boolean Expressions">
 <link rel="prev" href="Element_002dby_002delement-Boolean-Operators.html#Element_002dby_002delement-Boolean-Operators" title="Element-by-element Boolean Operators">
@@ -20,12 +20,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Short-circuit-Boolean-Operators"></a>
 <a name="Short_002dcircuit-Boolean-Operators"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Element_002dby_002delement-Boolean-Operators.html#Element_002dby_002delement-Boolean-Operators">Element-by-element Boolean Operators</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Boolean-Expressions.html#Boolean-Expressions">Boolean Expressions</a>
 <hr>
@@ -33,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Boolean-Expressions.html#Boolean-Expres
 
 <h4 class="subsection">8.5.2 Short-circuit Boolean Operators</h4>
 
-<p><a name="index-short_002dcircuit-evaluation-523"></a>
+<p><a name="index-short_002dcircuit-evaluation-610"></a>
 Combined with the implicit conversion to scalar values in <code>if</code> and
 <code>while</code> conditions, Octave's element-by-element boolean operators
 are often sufficient for performing most logical operations.  However,
@@ -42,7 +43,7 @@ soon as the overall truth value can be determined.  Octave's
 <dfn>short-circuit</dfn> boolean operators work this way.
 
      <dl>
-<dt><var>boolean1</var><code> &amp;&amp; </code><var>boolean2</var><dd><a name="index-g_t_0026_0026-524"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
+<dt><var>boolean1</var><code> &amp;&amp; </code><var>boolean2</var><dd><a name="index-g_t_0026_0026-611"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
 using the equivalent of the operation <code>all (</code><var>boolean1</var><code>(:))</code>. 
 If it is false, the result of the overall expression is 0.  If it is
 true, the expression <var>boolean2</var> is evaluated and converted to a
@@ -56,7 +57,7 @@ empty matrix.  The truth value of an empty matrix is always <code>false</code>
 so <code>[] &amp;&amp; true</code> evaluates to <code>false</code> even though
 <code>all ([])</code> is <code>true</code>.
 
-     <br><dt><var>boolean1</var><code> || </code><var>boolean2</var><dd><a name="index-g_t_007c_007c-525"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
+     <br><dt><var>boolean1</var><code> || </code><var>boolean2</var><dd><a name="index-g_t_007c_007c-612"></a>The expression <var>boolean1</var> is evaluated and converted to a scalar
 using the equivalent of the operation <code>all (</code><var>boolean1</var><code>(:))</code>. 
 If it is true, the result of the overall expression is 1.  If it is
 false, the expression <var>boolean2</var> is evaluated and converted to a
@@ -102,6 +103,38 @@ short-circuit feature, it would be necessary to write
    <p class="noindent">would result in an error if <code>f</code> were called with one or two
 arguments because Octave would be forced to try to evaluate both of the
 operands for the operator &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo;.
+
+   <p>The ternary operator (?:) is not supported in Octave.  If short-circuiting is
+not important, it can be replaced by the <code>ifelse</code> function.
+
+<!-- merge src/data.cc -->
+   <p><a name="doc_002dmerge"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>merge</b> (<var>mask, tval, fval</var>)<var><a name="index-merge-613"></a></var><br>
+&mdash; Built-in Function:  <b>ifelse</b> (<var>mask, tval, fval</var>)<var><a name="index-ifelse-614"></a></var><br>
+<blockquote><p>Merge elements of <var>true_val</var> and <var>false_val</var>, depending on the
+value of <var>mask</var>.  If <var>mask</var> is a logical scalar, the other two
+arguments can be arbitrary values.  Otherwise, <var>mask</var> must be a logical
+array, and <var>tval</var>, <var>fval</var> should be arrays of matching class, or
+cell arrays.  In the scalar mask case, <var>tval</var> is returned if <var>mask</var>
+is true, otherwise <var>fval</var> is returned.
+
+        <p>In the array mask case, both <var>tval</var> and <var>fval</var> must be either
+scalars or arrays with dimensions equal to <var>mask</var>.  The result is
+constructed as follows:
+
+     <pre class="example">          result(mask) = tval(mask);
+          result(! mask) = fval(! mask);
+</pre>
+        <p><var>mask</var> can also be arbitrary numeric type, in which case
+it is first converted to logical. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dlogical.html#doc_002dlogical">logical</a>. 
+</p></blockquote></div>
 
    </body></html>
 

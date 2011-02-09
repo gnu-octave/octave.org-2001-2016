@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Simple Output - Untitled</title>
+<title>Simple Output - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions" title="C-Style I/O Functions">
 <link rel="prev" href="Opening-and-Closing-Files.html#Opening-and-Closing-Files" title="Opening and Closing Files">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Simple-Output"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Line_002dOriented-Input.html#Line_002dOriented-Input">Line-Oriented Input</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Opening-and-Closing-Files.html#Opening-and-Closing-Files">Opening and Closing Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions">C-Style I/O Functions</a>
@@ -44,11 +45,11 @@ to the file &lsquo;<samp><span class="samp">free.txt</span></samp>&rsquo;.
      fputs (fid, "Free Software is needed for Free Science");
      fclose (fid);
 </pre>
-   <!-- file-io.cc -->
+   <!-- fputs src/file-io.cc -->
    <p><a name="doc_002dfputs"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fputs</b> (<var>fid, string</var>)<var><a name="index-fputs-777"></a></var><br>
+&mdash; Built-in Function:  <b>fputs</b> (<var>fid, string</var>)<var><a name="index-fputs-877"></a></var><br>
 <blockquote><p>Write a string to a file with no formatting.
 
         <p>Return a non-negative number on success and EOF on error. 
@@ -63,11 +64,11 @@ to the file &lsquo;<samp><span class="samp">free.txt</span></samp>&rsquo;.
 to the screen.  The <code>puts</code> function works just like <code>fputs</code>
 except it doesn't take a file pointer as its input.
 
-<!-- file-io.cc -->
+<!-- puts src/file-io.cc -->
    <p><a name="doc_002dputs"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>puts</b> (<var>string</var>)<var><a name="index-puts-778"></a></var><br>
+&mdash; Built-in Function:  <b>puts</b> (<var>string</var>)<var><a name="index-puts-878"></a></var><br>
 <blockquote><p>Write a string to the standard output with no formatting.
 
         <p>Return a non-negative number on success and EOF on error. 

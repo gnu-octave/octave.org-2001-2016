@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Expressions Involving Permutation Matrices - Untitled</title>
+<title>Expressions Involving Permutation Matrices - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Matrix-Algebra.html#Matrix-Algebra" title="Matrix Algebra">
 <link rel="prev" href="Expressions-Involving-Diagonal-Matrices.html#Expressions-Involving-Diagonal-Matrices" title="Expressions Involving Diagonal Matrices">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Expressions-Involving-Permutation-Matrices"></a>
+<p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Expressions-Involving-Diagonal-Matrices.html#Expressions-Involving-Diagonal-Matrices">Expressions Involving Diagonal Matrices</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Matrix-Algebra.html#Matrix-Algebra">Matrix Algebra</a>
 <hr>
@@ -41,9 +42,11 @@ Matrix division <code>P\M</code> and <code>M/P</code> can be used to do inverse 
 help an user to understand the connection between a permutation matrix and
 a permuting vector.  Namely, the following holds, where <code>I = eye (n)</code>
 is an identity matrix:
+
 <pre class="example">       I(p,:) * M = (I*M) (p,:) = M(p,:)
 </pre>
    <p>Similarly,
+
 <pre class="example">       M * I(:,p) = (M*I) (:,p) = M(:,p)
 </pre>
    <p>The expressions <code>I(p,:)</code> and <code>I(:,p)</code> are permutation matrices.
@@ -60,14 +63,14 @@ expressions for inverse permuting is completely up to the user's taste.
    <p>Multiplication and division by permutation matrices works efficiently also when
 combined with sparse matrices, i.e., <code>P*S</code>, where <var>P</var> is a permutation
 matrix and <var>S</var> is a sparse matrix permutes the rows of the sparse matrix and
-returns a sparse matrix.  The expressions <code>S*P</code>, <code>P\S</code>, <code>S/P</code> work
-analogically.
+returns a sparse matrix.  The expressions <code>S*P</code>, <code>P\S</code>, <code>S/P</code>
+work analogically.
 
-   <p>Two permutation matrices can be multiplied or divided (if their sizes match), performing
-a composition of permutations.  Also a permutation matrix can be indexed by a permutation
-vector (or two vectors), giving again a permutation matrix. 
-Any other operations do not generally yield a permutation matrix and will thus
-trigger the implicit conversion.
+   <p>Two permutation matrices can be multiplied or divided (if their sizes match),
+performing a composition of permutations.  Also a permutation matrix can be
+indexed by a permutation vector (or two vectors), giving again a permutation
+matrix.  Any other operations do not generally yield a permutation matrix and
+will thus trigger the implicit conversion.
 
    </body></html>
 

@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Storage of Sparse Matrices - Untitled</title>
+<title>Storage of Sparse Matrices - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Basics.html#Basics" title="Basics">
 <link rel="next" href="Creating-Sparse-Matrices.html#Creating-Sparse-Matrices" title="Creating Sparse Matrices">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Storage-of-Sparse-Matrices"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Creating-Sparse-Matrices.html#Creating-Sparse-Matrices">Creating Sparse Matrices</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Basics.html#Basics">Basics</a>
 <hr>
@@ -71,7 +72,7 @@ C is.
 <pre class="example">       for (j = 0; j &lt; nc; j++)
          for (i = cidx (j); i &lt; cidx(j+1); i++)
             printf ("non-zero element (%i,%i) is %d\n",
-     	   ridx(i), j, data(i));
+                ridx(i), j, data(i));
 </pre>
    <p>A clear understanding might be had by considering an example of how the
 above applies to an example matrix.  Consider the matrix
@@ -82,10 +83,10 @@ above applies to an example matrix.  Consider the matrix
 </pre>
    <p>The non-zero elements of this matrix are
 
-<pre class="example">        (1, 1)   1
-        (1, 2)   2
-        (2, 4)   3
-        (3, 4)   4
+<pre class="example">        (1, 1)  &rArr; 1
+        (1, 2)  &rArr; 2
+        (2, 4)  &rArr; 3
+        (3, 4)  &rArr; 4
 </pre>
    <p>This will be stored as three vectors <var>cidx</var>, <var>ridx</var> and <var>data</var>,
 representing the column indexing, row indexing and data respectively.  The
@@ -119,7 +120,7 @@ it adds complexity and speed problems elsewhere.
 
    <div class="footnote">
 <hr>
-<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Youcef Saad "SPARSKIT: A basic toolkit
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Y. Saad "SPARSKIT: A basic toolkit
 for sparse matrix computation", 1994,
 <a href="http://www-users.cs.umn.edu/~saad/software/SPARSKIT/paper.ps">http://www-users.cs.umn.edu/~saad/software/SPARSKIT/paper.ps</a></p>
 

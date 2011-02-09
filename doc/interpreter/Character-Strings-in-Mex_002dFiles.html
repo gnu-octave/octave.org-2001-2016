@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Character Strings in Mex-Files - Untitled</title>
+<title>Character Strings in Mex-Files - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mex_002dFiles.html#Mex_002dFiles" title="Mex-Files">
 <link rel="prev" href="Working-with-Matrices-and-Arrays-in-Mex_002dFiles.html#Working-with-Matrices-and-Arrays-in-Mex_002dFiles" title="Working with Matrices and Arrays in Mex-Files">
@@ -21,12 +21,13 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Character-Strings-in-Mex-Files"></a>
 <a name="Character-Strings-in-Mex_002dFiles"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Cell-Arrays-with-Mex_002dFiles.html#Cell-Arrays-with-Mex_002dFiles">Cell Arrays with Mex-Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Working-with-Matrices-and-Arrays-in-Mex_002dFiles.html#Working-with-Matrices-and-Arrays-in-Mex_002dFiles">Working with Matrices and Arrays in Mex-Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mex_002dFiles.html#Mex_002dFiles">Mex-Files</a>
@@ -46,7 +47,7 @@ file <samp><span class="file">mystring.c</span></samp>, as seen below.
      
      void
      mexFunction (int nlhs, mxArray *plhs[], int nrhs, 
-     	     const mxArray *prhs[])
+                  const mxArray *prhs[])
      {
        mwIndex i, j;
        mwSize m, n;
@@ -60,18 +61,20 @@ file <samp><span class="file">mystring.c</span></samp>, as seen below.
        n = mxGetN (prhs[0]);
        pi = mxGetChars (prhs[0]);
        plhs[0] = mxCreateNumericMatrix (m, n, mxCHAR_CLASS, 
-     				   mxREAL);
+                                        mxREAL);
        po = mxGetChars (plhs[0]);
      
        for (j = 0; j &lt; n; j++)
          for (i = 0; i &lt; m; i++)
            po [j*m + m - 1 - i] = pi [j*m + i];
      }
-</pre></pre>
+</pre>
+     
+</pre>
    <p class="noindent">An example of its expected output is
 
 <pre class="example">     mystring(["First String"; "Second String"])
-      s1 = Second String
+     &rArr; s1 = Second String
              First String
 </pre>
    <p>Other functions in the mex interface for handling character strings are

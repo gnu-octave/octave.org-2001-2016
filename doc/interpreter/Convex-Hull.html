@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Convex Hull - Untitled</title>
+<title>Convex Hull - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Geometry.html#Geometry" title="Geometry">
 <link rel="prev" href="Voronoi-Diagrams.html#Voronoi-Diagrams" title="Voronoi Diagrams">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Convex-Hull"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Interpolation-on-Scattered-Data.html#Interpolation-on-Scattered-Data">Interpolation on Scattered Data</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Voronoi-Diagrams.html#Voronoi-Diagrams">Voronoi Diagrams</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Geometry.html#Geometry">Geometry</a>
@@ -39,12 +40,12 @@ containing all of the points.  Octave has the functions <code>convhull</code>
 and <code>convhulln</code> to calculate the convex hull of 2-dimensional and
 N-dimensional sets of points.
 
-<!-- ./geometry/convhull.m -->
+<!-- convhull scripts/geometry/convhull.m -->
    <p><a name="doc_002dconvhull"></a>
 
 <div class="defun">
-&mdash; Function File: <var>H</var> = <b>convhull</b> (<var>x, y</var>)<var><a name="index-convhull-2113"></a></var><br>
-&mdash; Function File: <var>H</var> = <b>convhull</b> (<var>x, y, opt</var>)<var><a name="index-convhull-2114"></a></var><br>
+&mdash; Function File: <var>H</var> = <b>convhull</b> (<var>x, y</var>)<var><a name="index-convhull-2466"></a></var><br>
+&mdash; Function File: <var>H</var> = <b>convhull</b> (<var>x, y, opt</var>)<var><a name="index-convhull-2467"></a></var><br>
 <blockquote><p>Returns the index vector to the points of the enclosing convex hull.  The
 data points are defined by the x and y vectors.
 
@@ -58,13 +59,13 @@ Qhull library for details.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddelaunay.html#doc_002ddelaunay">delaunay</a>, <a href="doc_002dconvhulln.html#doc_002dconvhulln">convhulln</a>. 
 </p></blockquote></div>
 
-<!-- ./DLD-FUNCTIONS/convhulln.cc -->
+<!-- convhulln src/DLD-FUNCTIONS/convhulln.cc -->
    <p><a name="doc_002dconvhulln"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>h</var> = <b>convhulln</b> (<var>p</var>)<var><a name="index-convhulln-2115"></a></var><br>
-&mdash; Loadable Function: <var>h</var> = <b>convhulln</b> (<var>p, opt</var>)<var><a name="index-convhulln-2116"></a></var><br>
-&mdash; Loadable Function: [<var>h</var>, <var>v</var>] = <b>convhulln</b> (<var><small class="dots">...</small></var>)<var><a name="index-convhulln-2117"></a></var><br>
+&mdash; Loadable Function: <var>h</var> = <b>convhulln</b> (<var>p</var>)<var><a name="index-convhulln-2468"></a></var><br>
+&mdash; Loadable Function: <var>h</var> = <b>convhulln</b> (<var>p, opt</var>)<var><a name="index-convhulln-2469"></a></var><br>
+&mdash; Loadable Function: [<var>h</var>, <var>v</var>] = <b>convhulln</b> (<var><small class="dots">...</small></var>)<var><a name="index-convhulln-2470"></a></var><br>
 <blockquote><p>Return an index vector to the points of the enclosing convex hull. 
 The input matrix of size [n, dim] contains n points of dimension dim.
 
@@ -72,7 +73,7 @@ The input matrix of size [n, dim] contains n points of dimension dim.
 of strings containing options for the underlying qhull command.  (See
 the Qhull documentation for the available options.)  The default options
 are "s Qci Tcv". 
-If the second output <var>V</var> is requested the volume of the convex hull is
+If the second output <var>v</var> is requested the volume of the convex hull is
 calculated.
 
      <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -89,5 +90,11 @@ calculated.
      plot (x(k), y(k), "r-", x, y, "b+");
      axis ([-3.05, 3.05, -0.05, 1.05]);
 </pre>
+   <p class="noindent">The output of the above can be seen in <a href="fig_003aconvhull.html#fig_003aconvhull">fig:convhull</a>.
+
+   <div class="float">
+<a name="fig_003aconvhull"></a><div align="center"><img src="convhull.png" alt="convhull.png"></div>
+   <p><strong class="float-caption">Figure 29.5: The convex hull of a simple set of points</strong></p></div>
+
    </body></html>
 

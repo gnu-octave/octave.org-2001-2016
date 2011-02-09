@@ -1,11 +1,12 @@
 <html lang="en">
 <head>
-<title>Installation Problems - Untitled</title>
+<title>Installation Problems - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Installation.html#Installation" title="Installation">
+<link rel="prev" href="Compiling-Octave-with-64_002dbit-Indexing.html#Compiling-Octave-with-64_002dbit-Indexing" title="Compiling Octave with 64-bit Indexing">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -19,16 +20,18 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Installation-Problems"></a>
+<p>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Compiling-Octave-with-64_002dbit-Indexing.html#Compiling-Octave-with-64_002dbit-Indexing">Compiling Octave with 64-bit Indexing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Installation.html#Installation">Installation</a>
 <hr>
 </div>
 
-<h3 class="appendixsec">F.1 Installation Problems</h3>
+<h3 class="appendixsec">G.2 Installation Problems</h3>
 
 <p>This section contains a list of problems (and some apparent problems
 that don't really mean anything is wrong) that may show up during
@@ -36,8 +39,9 @@ installation of Octave.
 
      <ul>
 <li>On some SCO systems, <code>info</code> fails to compile if
-<code>HAVE_TERMIOS_H</code><!-- /@w --> is defined in <samp><span class="file">config.h</span></samp>.  Simply removing
-the definition from <samp><span class="file">info/config.h</span></samp> should allow it to compile.
+<code>HAVE_TERMIOS_H</code><!-- /@w --> is defined in <samp><span class="file">config.h</span></samp>.  Simply
+removing the definition from <samp><span class="file">info/config.h</span></samp> should allow it to
+compile.
 
      <li>If <code>configure</code> finds <code>dlopen</code>, <code>dlsym</code>, <code>dlclose</code>,
 and <code>dlerror</code>, but not the header file <samp><span class="file">dlfcn.h</span></samp>, you need to
@@ -53,9 +57,9 @@ is needed to build shared versions of version 2.7.2 of <code>libstdc++</code>
 on the HP-PA architecture.  You can find the patch at
 <a href="ftp://ftp.cygnus.com/pub/g++/libg++-2.7.2-hppa-gcc-fix">ftp://ftp.cygnus.com/pub/g++/libg++-2.7.2-hppa-gcc-fix</a>.
 
-     <li>On some alpha systems there may be a problem with the <code>libdxml</code>
-library, resulting in floating point errors and/or segmentation faults in
-the linear algebra routines called by Octave.  If you encounter such
+     <li>On some DEC alpha systems there may be a problem with the <code>libdxml</code>
+library, resulting in floating point errors and/or segmentation faults
+in the linear algebra routines called by Octave.  If you encounter such
 problems, then you should modify the configure script so that
 <code>SPECIAL_MATH_LIB</code><!-- /@w --> is not set to <code>-ldxml</code>.
 
@@ -83,13 +87,13 @@ the kernel, install it, and reboot.
                    to `(...)'
 </pre>
      <p class="noindent">while compiling <samp><span class="file">sighandlers.cc</span></samp>, you may need to edit some files
-in the <code>gcc</code> include subdirectory to add proper prototypes for functions
-there.  For example, Ultrix 4.2 needs proper declarations for the
-<code>signal</code> function and the <code>SIG_IGN</code><!-- /@w --> macro in the file
+in the <code>gcc</code> include subdirectory to add proper prototypes for
+functions there.  For example, Ultrix 4.2 needs proper declarations for
+the <code>signal</code> function and the <code>SIG_IGN</code><!-- /@w --> macro in the file
 <samp><span class="file">signal.h</span></samp>.
 
-     <p>On some systems the <code>SIG_IGN</code><!-- /@w --> macro is defined to be something like
-this:
+     <p>On some systems the <code>SIG_IGN</code><!-- /@w --> macro is defined to be something
+like this:
 
      <pre class="example">          #define  SIG_IGN  (void (*)())1
 </pre>
@@ -98,9 +102,9 @@ this:
      <pre class="example">          #define  SIG_IGN  (void (*)(int))1
 </pre>
      <p class="noindent">to match the prototype declaration for the <code>signal</code> function.  This
-change should also be made for the <code>SIG_DFL</code><!-- /@w --> and <code>SIG_ERR</code><!-- /@w -->
-symbols.  It may be necessary to change the definitions in
-<samp><span class="file">sys/signal.h</span></samp> as well.
+change should also be made for the <code>SIG_DFL</code><!-- /@w --> and
+<code>SIG_ERR</code><!-- /@w --> symbols.  It may be necessary to change the
+definitions in <samp><span class="file">sys/signal.h</span></samp> as well.
 
      <p>The <code>gcc</code> <code>fixincludes</code> and <code>fixproto</code> scripts should
 probably fix these problems when <code>gcc</code> installs its modified set of
@@ -111,14 +115,14 @@ can find the <code>gcc</code> include directory tree by running the command
 
      <pre class="example">          gcc -print-libgcc-file-name
 </pre>
-     <p class="noindent">The directory of <code>gcc</code> include files normally begins in the same directory
-that contains the file <samp><span class="file">libgcc.a</span></samp>.
+     <p class="noindent">The directory of <code>gcc</code> include files normally begins in the same
+directory that contains the file <samp><span class="file">libgcc.a</span></samp>.
 
      <li>Some of the Fortran subroutines may fail to compile with older versions
 of the Sun Fortran compiler.  If you get errors like
 
      <pre class="example">          zgemm.f:
-          	zgemm:
+                  zgemm:
           warning: unexpected parent of complex expression subtree
           zgemm.f, line 245: warning: unexpected parent of complex
             expression subtree
@@ -143,7 +147,7 @@ with optimization turned off.
                 symbol LBE7656
 </pre>
      <p class="noindent">when compiling <samp><span class="file">Array.cc</span></samp> and <samp><span class="file">Matrix.cc</span></samp>, try recompiling
-these files without <code>-g</code>.
+these files without <samp><span class="option">-g</span></samp>.
 
      <li>Some people have reported that calls to shell_cmd and the pager do not
 work on SunOS systems.  This is apparently due to having
@@ -158,7 +162,7 @@ following functions
           _tcflow
 </pre>
      <p class="noindent">which are part of <samp><span class="file">libposix.a</span></samp>.  Unfortunately, linking Octave with
-<code>-posix</code> results in the following undefined symbols.
+<samp><span class="option">-posix</span></samp> results in the following undefined symbols.
 
      <pre class="example">          .destructors_used
           .constructors_used
@@ -185,7 +189,8 @@ infinity and NaN variables.
      <p>If your system does not support IEEE arithmetic but Octave's configure
 script incorrectly determined that it does, you can work around the
 problem by editing the file <samp><span class="file">config.h</span></samp> to not define
-<code>HAVE_ISINF</code><!-- /@w -->, <code>HAVE_FINITE</code><!-- /@w -->, and <code>HAVE_ISNAN</code><!-- /@w -->.
+<code>HAVE_ISINF</code><!-- /@w -->, <code>HAVE_FINITE</code><!-- /@w -->, and
+<code>HAVE_ISNAN</code><!-- /@w -->.
 
      <p>In any case, please report this as a bug since it might be possible to
 modify Octave's configuration script to automatically determine the
@@ -196,17 +201,16 @@ location that is not normally searched by the compiler, you can add the
 directory to the include search path by specifying (for example)
 <code>CPPFLAGS=-I/some/nonstandard/directory</code> as an argument to
 <code>configure</code>.  Other variables that can be specified this way are
-<code>CFLAGS</code>, <code>CXXFLAGS</code>, <code>FFLAGS</code>, and <code>LDFLAGS</code>. 
-Passing them as options to the configure script also records them in the
-<samp><span class="file">config.status</span></samp> file.  By default, <code>CPPFLAGS</code> and
-<code>LDFLAGS</code> are empty, <code>CFLAGS</code> and <code>CXXFLAGS</code> are set to
-<code>"-g -O"</code> and <code>FFLAGS</code> is set to <code>"-O"</code>.
+<samp><span class="env">CFLAGS</span></samp>, <samp><span class="env">CXXFLAGS</span></samp>, <samp><span class="env">FFLAGS</span></samp>, and <samp><span class="env">LDFLAGS</span></samp>.  Passing
+them as options to the configure script also records them in the
+<samp><span class="file">config.status</span></samp> file.  By default, <samp><span class="env">CPPFLAGS</span></samp> and <samp><span class="env">LDFLAGS</span></samp>
+are empty, <samp><span class="env">CFLAGS</span></samp> and <samp><span class="env">CXXFLAGS</span></samp> are set to <code>"-g -O"</code> and
+<samp><span class="env">FFLAGS</span></samp> is set to <code>"-O"</code>.
 
    </ul>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996, 1997, 1999, 2001, 2002, 2003, 2005, -->
-<!-- 2006, 2007, 2008, 2009 Kurt Hornik -->
+<!-- Copyright (C) 1996-2011 Kurt Hornik -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

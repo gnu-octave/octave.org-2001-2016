@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Bit Manipulations - Untitled</title>
+<title>Bit Manipulations - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Numeric-Data-Types.html#Numeric-Data-Types" title="Numeric Data Types">
 <link rel="prev" href="Integer-Data-Types.html#Integer-Data-Types" title="Integer Data Types">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Bit-Manipulations"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Logical-Values.html#Logical-Values">Logical Values</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Integer-Data-Types.html#Integer-Data-Types">Integer Data Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Types">Numeric Data Types</a>
@@ -38,18 +39,18 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Ty
 values on a bit by bit basis.  The basic functions to set and obtain the
 values of individual bits are <code>bitset</code> and <code>bitget</code>.
 
-<!-- ./general/bitset.m -->
+<!-- bitset scripts/general/bitset.m -->
    <p><a name="doc_002dbitset"></a>
 
 <div class="defun">
-&mdash; Function File: <var>x</var> = <b>bitset</b> (<var>a, n</var>)<var><a name="index-bitset-250"></a></var><br>
-&mdash; Function File: <var>x</var> = <b>bitset</b> (<var>a, n, v</var>)<var><a name="index-bitset-251"></a></var><br>
-<blockquote><p>Set or reset bit(s) <var>n</var> of unsigned integers in <var>a</var>. 
-<var>v</var> = 0 resets and <var>v</var> = 1 sets the bits. 
+&mdash; Function File: <var>C</var> = <b>bitset</b> (<var>A, n</var>)<var><a name="index-bitset-255"></a></var><br>
+&mdash; Function File: <var>C</var> = <b>bitset</b> (<var>A, n, val</var>)<var><a name="index-bitset-256"></a></var><br>
+<blockquote><p>Set or reset bit(s) <var>n</var> of unsigned integers in <var>A</var>. 
+<var>val</var> = 0 resets and <var>val</var> = 1 sets the bits. 
 The lowest significant bit is: <var>n</var> = 1
 
      <pre class="example">          dec2bin (bitset (10, 1))
-           1011
+          &rArr; 1011
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -57,16 +58,16 @@ The lowest significant bit is: <var>n</var> = 1
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dbitand.html#doc_002dbitand">bitand</a>, <a href="doc_002dbitor.html#doc_002dbitor">bitor</a>, <a href="doc_002dbitxor.html#doc_002dbitxor">bitxor</a>, <a href="doc_002dbitget.html#doc_002dbitget">bitget</a>, <a href="doc_002dbitcmp.html#doc_002dbitcmp">bitcmp</a>, <a href="doc_002dbitshift.html#doc_002dbitshift">bitshift</a>, <a href="doc_002dbitmax.html#doc_002dbitmax">bitmax</a>. 
 </p></blockquote></div>
 
-<!-- ./general/bitget.m -->
+<!-- bitget scripts/general/bitget.m -->
    <p><a name="doc_002dbitget"></a>
 
 <div class="defun">
-&mdash; Function File: <var>X</var> = <b>bitget</b> (<var>a,n</var>)<var><a name="index-bitget-252"></a></var><br>
-<blockquote><p>Return the status of bit(s) <var>n</var> of unsigned integers in <var>a</var>
+&mdash; Function File: <var>c</var> = <b>bitget</b> (<var>A, n</var>)<var><a name="index-bitget-257"></a></var><br>
+<blockquote><p>Return the status of bit(s) <var>n</var> of unsigned integers in <var>A</var>
 the lowest significant bit is <var>n</var> = 1.
 
      <pre class="example">          bitget (100, 8:-1:1)
-           0  1  1  0  0  1  0  0
+          &rArr; 0  1  1  0  0  1  0  0
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -84,7 +85,7 @@ duplicated.  Therefore
 
 <pre class="example">     bitget (100, 8:-1:1)
 </pre>
-   <p>is the same as
+   <p class="noindent">is the same as
 
 <pre class="example">     bitget (100 * ones (1, 8), 8:-1:1)
 </pre>
@@ -98,13 +99,16 @@ bits of the native floating point format representation of <code>10</code>.
 for bit manipulation, particularly when forming masks, Octave supplies
 the function <code>bitmax</code>.
 
-<!-- bitfcns.cc -->
+<!-- bitmax src/bitfcns.cc -->
    <p><a name="doc_002dbitmax"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>bitmax</b> ()<var><a name="index-bitmax-253"></a></var><br>
-<blockquote><p>Return the largest integer that can be represented as a floating point
-value.  On IEEE-754 compatible systems, <code>bitmax</code> is <code>2^53 - 1</code>. 
+&mdash; Built-in Function:  <b>bitmax</b> ()<var><a name="index-bitmax-258"></a></var><br>
+&mdash; Built-in Function:  <b>bitmax</b> (<var>"double"</var>)<var><a name="index-bitmax-259"></a></var><br>
+&mdash; Built-in Function:  <b>bitmax</b> (<var>"single"</var>)<var><a name="index-bitmax-260"></a></var><br>
+<blockquote><p>Return the largest integer that can be represented within a floating point
+value.  The default class is "double", but "single" is a valid option. 
+On IEEE-754 compatible systems, <code>bitmax</code> is 2^53&nbsp;-&nbsp;1<!-- /@w -->. 
 </p></blockquote></div>
 
    <p>This is the double precision version of the functions <code>intmax</code>,
@@ -113,11 +117,11 @@ previously discussed.
    <p>Octave also includes the basic bitwise 'and', 'or' and 'exclusive or'
 operators.
 
-<!-- bitfcns.cc -->
+<!-- bitand src/bitfcns.cc -->
    <p><a name="doc_002dbitand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>bitand</b> (<var>x, y</var>)<var><a name="index-bitand-254"></a></var><br>
+&mdash; Built-in Function:  <b>bitand</b> (<var>x, y</var>)<var><a name="index-bitand-261"></a></var><br>
 <blockquote><p>Return the bitwise AND of non-negative integers. 
 <var>x</var>, <var>y</var> must be in the range [0,bitmax]
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -127,11 +131,11 @@ operators.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dbitor.html#doc_002dbitor">bitor</a>, <a href="doc_002dbitxor.html#doc_002dbitxor">bitxor</a>, <a href="doc_002dbitset.html#doc_002dbitset">bitset</a>, <a href="doc_002dbitget.html#doc_002dbitget">bitget</a>, <a href="doc_002dbitcmp.html#doc_002dbitcmp">bitcmp</a>, <a href="doc_002dbitshift.html#doc_002dbitshift">bitshift</a>, <a href="doc_002dbitmax.html#doc_002dbitmax">bitmax</a>. 
 </p></blockquote></div>
 
-<!-- bitfcns.cc -->
+<!-- bitor src/bitfcns.cc -->
    <p><a name="doc_002dbitor"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>bitor</b> (<var>x, y</var>)<var><a name="index-bitor-255"></a></var><br>
+&mdash; Built-in Function:  <b>bitor</b> (<var>x, y</var>)<var><a name="index-bitor-262"></a></var><br>
 <blockquote><p>Return the bitwise OR of non-negative integers. 
 <var>x</var>, <var>y</var> must be in the range [0,bitmax]
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -141,11 +145,11 @@ operators.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dbitor.html#doc_002dbitor">bitor</a>, <a href="doc_002dbitxor.html#doc_002dbitxor">bitxor</a>, <a href="doc_002dbitset.html#doc_002dbitset">bitset</a>, <a href="doc_002dbitget.html#doc_002dbitget">bitget</a>, <a href="doc_002dbitcmp.html#doc_002dbitcmp">bitcmp</a>, <a href="doc_002dbitshift.html#doc_002dbitshift">bitshift</a>, <a href="doc_002dbitmax.html#doc_002dbitmax">bitmax</a>. 
 </p></blockquote></div>
 
-<!-- bitfcns.cc -->
+<!-- bitxor src/bitfcns.cc -->
    <p><a name="doc_002dbitxor"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>bitxor</b> (<var>x, y</var>)<var><a name="index-bitxor-256"></a></var><br>
+&mdash; Built-in Function:  <b>bitxor</b> (<var>x, y</var>)<var><a name="index-bitxor-263"></a></var><br>
 <blockquote><p>Return the bitwise XOR of non-negative integers. 
 <var>x</var>, <var>y</var> must be in the range [0,bitmax]
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -160,20 +164,20 @@ negation of each of the bits of the value.  For this to make sense, the
 mask against which the value is negated must be defined.  Octave's
 bitwise 'not' operator is <code>bitcmp</code>.
 
-<!-- ./general/bitcmp.m -->
+<!-- bitcmp scripts/general/bitcmp.m -->
    <p><a name="doc_002dbitcmp"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>bitcmp</b> (<var>a, k</var>)<var><a name="index-bitcmp-257"></a></var><br>
-<blockquote><p>Return the <var>k</var>-bit complement of integers in <var>a</var>.  If
+&mdash; Function File:  <b>bitcmp</b> (<var>A, k</var>)<var><a name="index-bitcmp-264"></a></var><br>
+<blockquote><p>Return the <var>k</var>-bit complement of integers in <var>A</var>.  If
 <var>k</var> is omitted <code>k = log2 (bitmax) + 1</code> is assumed.
 
      <pre class="example">          bitcmp(7,4)
-           8
+          &rArr; 8
           dec2bin(11)
-           1011
+          &rArr; 1011
           dec2bin(bitcmp(11, 6))
-           110100
+          &rArr; 110100
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -183,12 +187,12 @@ bitwise 'not' operator is <code>bitcmp</code>.
 
    <p>Octave also includes the ability to left-shift and right-shift values bitwise.
 
-<!-- bitfcns.cc -->
+<!-- bitshift src/bitfcns.cc -->
    <p><a name="doc_002dbitshift"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>bitshift</b> (<var>a, k</var>)<var><a name="index-bitshift-258"></a></var><br>
-&mdash; Built-in Function:  <b>bitshift</b> (<var>a, k, n</var>)<var><a name="index-bitshift-259"></a></var><br>
+&mdash; Built-in Function:  <b>bitshift</b> (<var>a, k</var>)<var><a name="index-bitshift-265"></a></var><br>
+&mdash; Built-in Function:  <b>bitshift</b> (<var>a, k, n</var>)<var><a name="index-bitshift-266"></a></var><br>
 <blockquote><p>Return a <var>k</var> bit shift of <var>n</var>-digit unsigned
 integers in <var>a</var>.  A positive <var>k</var> leads to a left shift. 
 A negative value to a right shift.  If <var>n</var> is omitted it defaults
@@ -196,12 +200,13 @@ to log2(bitmax)+1.
 <var>n</var> must be in the range [1,log2(bitmax)+1] usually [1,33]
 
      <pre class="example">          bitshift (eye (3), 1)
+          &rArr;
           <p>2 0 0
           0 2 0
           0 0 2
           
           bitshift (10, [-2, -1, 0, 1, 2])
-           2   5  10  20  40
+          &rArr; 2   5  10  20  40
           <!-- FIXME - restore this example when third arg is allowed to be an array. -->
           <!-- bitshift ([1, 10], 2, [3,4]) -->
           <!-- @result{} 4  8 -->
@@ -214,12 +219,12 @@ to log2(bitmax)+1.
 
    <p>Bits that are shifted out of either end of the value are lost.  Octave
 also uses arithmetic shifts, where the sign bit of the value is kept
-during a right shift.  For example
+during a right shift.  For example:
 
 <pre class="example">     bitshift (-10, -1)
-      -5
+     &rArr; -5
      bitshift (int8 (-1), -1)
-      -1
+     &rArr; -1
 </pre>
    <p>Note that <code>bitshift (int8 (-1), -1)</code> is <code>-1</code> since the bit
 representation of <code>-1</code> in the <code>int8</code> data type is <code>[1, 1,

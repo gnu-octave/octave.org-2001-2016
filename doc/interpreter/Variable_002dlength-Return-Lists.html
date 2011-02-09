@@ -1,13 +1,13 @@
 <html lang="en">
 <head>
-<title>Variable-length Return Lists - Untitled</title>
+<title>Variable-length Return Lists - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-and-Scripts.html#Functions-and-Scripts" title="Functions and Scripts">
-<link rel="prev" href="Variable_002dlength-Argument-Lists.html#Variable_002dlength-Argument-Lists" title="Variable-length Argument Lists">
-<link rel="next" href="Returning-From-a-Function.html#Returning-From-a-Function" title="Returning From a Function">
+<link rel="prev" href="Ignoring-Arguments.html#Ignoring-Arguments" title="Ignoring Arguments">
+<link rel="next" href="Returning-from-a-Function.html#Returning-from-a-Function" title="Returning from a Function">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -21,21 +21,22 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Variable-length-Return-Lists"></a>
 <a name="Variable_002dlength-Return-Lists"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="Returning-From-a-Function.html#Returning-From-a-Function">Returning From a Function</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Variable_002dlength-Argument-Lists.html#Variable_002dlength-Argument-Lists">Variable-length Argument Lists</a>,
+<p>
+Next:&nbsp;<a rel="next" accesskey="n" href="Returning-from-a-Function.html#Returning-from-a-Function">Returning from a Function</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Ignoring-Arguments.html#Ignoring-Arguments">Ignoring Arguments</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-and-Scripts">Functions and Scripts</a>
 <hr>
 </div>
 
-<h3 class="section">11.4 Variable-length Return Lists</h3>
+<h3 class="section">11.5 Variable-length Return Lists</h3>
 
-<p><a name="index-variable_002dlength-return-lists-606"></a><a name="index-g_t_0040code_007bvarargout_007d-607"></a>
+<p><a name="index-variable_002dlength-return-lists-697"></a><a name="index-g_t_0040code_007bvarargout_007d-698"></a>
 It is possible to return a variable number of output arguments from a
 function using a syntax that's similar to the one used with the
 special <code>varargin</code> parameter name.  To let a function return a
@@ -55,20 +56,20 @@ a cell array that will contain the requested output arguments.
    <p class="noindent">When called this function returns values like this
 
 <pre class="example">     [a, b, c] = one_to_n ()
-           a =  1
-           b =  2
-           c =  3
+          &rArr; a =  1
+          &rArr; b =  2
+          &rArr; c =  3
 </pre>
    <p>If <code>varargin</code> (<code>varargout</code>) does not appear as the last
 element of the input (output) parameter list, then it is not special,
 and is handled the same as any other parameter name.
 
-<!-- ./general/deal.m -->
+<!-- deal scripts/general/deal.m -->
    <p><a name="doc_002ddeal"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a</var>)<var><a name="index-deal-608"></a></var><br>
-&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a1, a2, <small class="dots">...</small>, an</var>)<var><a name="index-deal-609"></a></var><br>
+&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a</var>)<var><a name="index-deal-699"></a></var><br>
+&mdash; Function File: [<var>r1</var>, <var>r2</var>, <small class="dots">...</small>, <var>rn</var>] = <b>deal</b> (<var>a1, a2, <small class="dots">...</small>, an</var>)<var><a name="index-deal-700"></a></var><br>
 <blockquote>
         <p>Copy the input parameters into the corresponding output parameters. 
 If only one input parameter is supplied, its value is copied to each

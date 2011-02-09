@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Sparse Functions - Untitled</title>
+<title>Sparse Functions - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Operators-and-Functions.html#Operators-and-Functions" title="Operators and Functions">
 <link rel="next" href="Return-Types-of-Operators-and-Functions.html#Return-Types-of-Operators-and-Functions" title="Return Types of Operators and Functions">
@@ -20,11 +20,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Sparse-Functions"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Return-Types-of-Operators-and-Functions.html#Return-Types-of-Operators-and-Functions">Return Types of Operators and Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Operators-and-Functions.html#Operators-and-Functions">Operators and Functions</a>
 <hr>
@@ -32,21 +33,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Operators-and-Functions.html#Operators-
 
 <h5 class="subsubsection">21.1.4.1 Sparse Functions</h5>
 
-<p>An important consideration in the use of the sparse functions of
-Octave is that many of the internal functions of Octave, such as
-<dfn>diag</dfn>, cannot accept sparse matrices as an input.  The sparse
-implementation in Octave therefore uses the <dfn>dispatch</dfn>
-function to overload the normal Octave functions with equivalent
-functions that work with sparse matrices.  However, at any time the
-sparse matrix specific version of the function can be used by
-explicitly calling its function name.
+<p>Many Octave functions have been overloaded to work with either sparse or full
+matrices.  There is no difference in calling convention when using an
+overloaded function with a sparse matrix, however, there is also no access to
+potentially sparse-specific features.  At any time the sparse matrix specific
+version of a function can be used by explicitly calling its function name.
 
-   <p>The table below lists all of the sparse functions of Octave.  Note that
-the names of the
-specific sparse forms of the functions are typically the same as
-the general versions with a <dfn>sp</dfn> prefix.  In the table below, and the
-rest of this article the specific sparse versions of the functions are
-used.
+   <p>The table below lists all of the sparse functions of Octave.  Note that the
+names of the specific sparse forms of the functions are typically the same as
+the general versions with a <dfn>sp</dfn> prefix.  In the table below, and in the
+rest of this article, the specific sparse versions of functions are used.
 
 <!-- Table includes in comments the missing sparse functions -->
      <dl>

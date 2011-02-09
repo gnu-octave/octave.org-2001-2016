@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-<title>Output Conversion for Matrices - Untitled</title>
+<title>Output Conversion for Matrices - GNU Octave</title>
 <meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.11">
+<meta name="description" content="GNU Octave">
+<meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions" title="C-Style I/O Functions">
 <link rel="prev" href="Formatted-Output.html#Formatted-Output" title="Formatted Output">
@@ -21,11 +21,12 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../../octave.css">
 </head>
 <body>
 <div class="node">
-<p>
 <a name="Output-Conversion-for-Matrices"></a>
+<p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Output-Conversion-Syntax.html#Output-Conversion-Syntax">Output Conversion Syntax</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Formatted-Output.html#Formatted-Output">Formatted Output</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002dStyle-I_002fO-Functions.html#C_002dStyle-I_002fO-Functions">C-Style I/O Functions</a>
@@ -36,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C_002dStyle-I_002fO-Functions.html#C_00
 
 <p>When given a matrix value, Octave's formatted output functions cycle
 through the format template until all the values in the matrix have been
-printed.  For example,
+printed.  For example:
 
 <pre class="example">     printf ("%4.2f %10.2e %8.4g\n", hilb (3));
      
@@ -48,7 +49,7 @@ printed.  For example,
 functions do not return to the beginning of the format template when
 moving on from one value to the next.  This can lead to confusing output
 if the number of elements in the matrices are not exact multiples of the
-number of conversions in the format template.  For example,
+number of conversions in the format template.  For example:
 
 <pre class="example">     printf ("%4.2f %10.2e %8.4g\n", [1, 2], [3, 4]);
      
