@@ -1,0 +1,46 @@
+__HEADER__(`Functions Missing in GNU Octave')
+
+<div class="section">
+__TITLE_BAR__(`So, you tried to use a missing function...?')
+
+<p>
+GNU Octave strives to be among the very best numerical tools
+available.  While compatibility with Matlab is one of many strong
+features of Octave, we have not achieved 100% compatibility.  If you
+are reading this page, it is most likely because you attempted to use
+a function that is part of core Matlab, but has yet to be implemented
+in Octave.
+</p>
+
+<p>
+There can be several reasons for the given function not to exist in
+Octave:
+</p>
+<ul>
+  <li>
+    The function may exist in __HTTP__(`octave.sourceforge.net',
+    `Octave-Forge'), but has not yet been adopted as a part of the core
+    Octave distribution.  You can try to look for your function in the
+    __HTTP__(`octave.sourceforge.net/functions_by_alpha.php',
+    `alphabetical list of functions') at the Octave-Forge web site to
+    see if it is available in some package.
+  </li>
+  <li>
+    The function may be new to Matlab.  It is possible that the Octave
+    community simply does not know it exists. Should this be the case,
+    feel free to open a feature request in the
+    __HTTP__(`bugs.octave.org', `Octave bug tracker').
+  </li>
+</ul>
+
+<p>
+The Octave community consists of volunteers working in their spare
+time.  As a result, development might sometimes not be fast enough for
+your needs.  If you have a feature request for Octave, the best way to
+ensure that your suggested improvement gets incorporated is either to
+implement the feature yourself or to pay somebody to do it for you.
+If you are interested in funding work on Octave, please contact the
+__MAILTO__(`maintainers@octave.org', `maintainers mailing list').
+</p>
+
+__OCTAVE_TRAILER__(`missing')
