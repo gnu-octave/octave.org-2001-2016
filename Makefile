@@ -37,6 +37,7 @@ HTML_SRC := about.in \
 	help-wanted.in \
 	index.in \
 	license.in \
+	missing.in \
 	news.in \
 	projects.in \
 	related.in
