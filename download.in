@@ -91,7 +91,7 @@ installing.</li>
 <div class="section">
 __TITLE_BAR__(`Mirror Sites')
 
-<p>The primary ftp site for Octave is now __OCTAVE_FTP__(`',
+<p>The primary ftp site for Octave is now __GNU_FTP__(`',
 `ftp://ftp.gnu.org/gnu/octave'), which has many mirrors around the
 world.  You can find a list at __HTTP__(`www.gnu.org/prep/ftp.html').
 </p>
@@ -112,8 +112,8 @@ redirects to __HTTP__(`hg.savannah.gnu.org/hgweb/octave').</p>
 __HTTP__(`velveeta.che.wisc.edu/cgi-bin/hgwebdir.cgi/octave').</p>
 
 <p>If you decide to use the development sources from the Mercurial
-archive, please read the file __OCTAVE_FTP__(`/bleeding-edge/README',
-`ftp://ftp.octave.org/pub/octave/bleeding-edge/README').</p>
+archive, please read the file HACKING that is available with the
+source files.</p>
 
 <p>Assuming you have Mercurial installed on your machine you may check
 out the latest development version of Octave sources with the following
