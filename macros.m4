@@ -112,14 +112,14 @@ define(`__DOWNLOAD_INFO__',
 <th>Version number</th>
 <th>Release Date</th></tr>
 <tr><td class="download">
-__FTP__(`ftp.octave.org/pub/octave', `Stable')</td>
+__GNU_FTP__(`', `Stable')</td>
 <td class="download">$1
     (__GNU_FTP__(`octave-'$1`.tar.gz',`.tar.gz'))
     (__GNU_FTP__(`octave-'$1`.tar.bz2',`.tar.bz2'))
 </td>
 <td class="download">$2</td></tr>
 ifelse($#, 4, `<tr><td class="download">
-__FTP__(`alpha.gnu.org/gnu/octave', `Development')</td>
+__GNU_ALPHA_FTP__(`', `Development')</td>
 <td class="download">$3
     (__GNU_ALPHA_FTP__(`octave-'$3`.tar.gz',`.tar.gz'))
     (__GNU_ALPHA_FTP__(`octave-'$3`.tar.bz2',`.tar.bz2'))
