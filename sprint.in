@@ -1,0 +1,33 @@
+__HEADER__(`Code Sprint')
+
+<div class="section">
+<p>When : July 16th, 2011 (a Saturday) at 10:00 a.m EST (UTC-5)</p>
+
+<p>Where: Octave IRC channel.  See __OCTAVE_HTTP__(`chat.html', `IRC instructions').</p>
+<p>Who  : <b>Anyone</b> with a passable knowledge of the Octave language.  This
+       particular sprint does not require C++, Fortran, Texinfo, or any
+       other esoteric skills.</p>
+<p>What : A code sprint is a goal-focused gathering of computer programmers
+       to hack code in a collaborative environment.</p>
+
+<div class="section">
+__TITLE_BAR__(`Goal')
+
+<p>The purpose of a code sprint is to get people together to quickly
+tackle a project that would be far too large, or take far too much time,
+for individuals working alone.  The goal for Octave sprint #1 is</p>
+
+<p><center><b>Reduce the number of untested functions by 1/2</b></center></p>
+
+<p>The rationale for this goal is straightforward.  The usual programming
+cycle for new features is "code, test, fix everthing broken
+by the new feature".  Currently, Octave does not have a complete baseline
+set of tests.  This means introducing new features, or quickly patching
+a reported bug, often has unforeseen effects which break other parts
+of Octave.  Our long-term goal is to reach 100% test coverage for all 
+Octave functions so that the new feature development loop can proceed much
+faster.
+
+</div>
+
+__OCTAVE_TRAILER__(`sprint')

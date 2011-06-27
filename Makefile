@@ -40,7 +40,8 @@ HTML_SRC := about.in \
 	missing.in \
 	news.in \
 	projects.in \
-	related.in
+	related.in \
+	sprint.in
 
 HTML_OUT := $(HTML_SRC:.in=.html)
 

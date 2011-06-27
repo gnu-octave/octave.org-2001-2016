@@ -24,6 +24,11 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>July 16, 2011</dt>
+<dd>First Octave code sprint to occur on July 16th, 2011.  Bring
+your coffee and come mingle with other Octave programmers while
+we race to beat a coding goal.  See 
+__OCTAVE_HTTP__(`sprint.html', `Code Sprint') for all the details.
 <dt>June 24, 2011</dt>
 <dd>Version 3.4.2 has been released and is now available for ftp.
 Octave 3.4.2 fixes some minor installation problems that affected
