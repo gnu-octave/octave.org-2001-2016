@@ -20,7 +20,7 @@ for individuals working alone.  The goal for Octave sprint #1 is</p>
 <p><center><b>Reduce the number of untested functions by 1/2</b></center></p>
 
 <p>The rationale for this goal is straightforward.  The usual programming
-cycle for new features is "code, test, fix everthing broken
+cycle for new features is "code, test, fix everything broken
 by the new feature".  Currently, Octave does not have a complete baseline
 set of tests.  This means introducing new features, or quickly patching
 a reported bug, often has unforeseen effects which break other parts
