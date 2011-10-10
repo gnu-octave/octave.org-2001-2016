@@ -2,6 +2,9 @@ __HEADER__(`Octave News Archive')
 
 <div class="section">
 <dl>
+<dt>October 10, 2011</dt>
+<dd>Version 3.4.3 has been released and is now available for ftp.
+Octave 3.4.3 is a bug fixing release.</dd>
 <dt>June 24, 2011</dt>
 <dd>Version 3.4.2 has been released and is now available for ftp.
 Octave 3.4.2 fixes some minor installation problems that affected

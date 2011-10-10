@@ -24,6 +24,9 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>October 10, 2011</dt>
+<dd>Version 3.4.3 has been released and is now available for ftp.
+Octave 3.4.3 is a bug fixing release.</dd>
 <dt>August 15, 2011</dt>
 <dd>Following <a href="http://octave.1599824.n4.nabble.com/Code-Sprint-Results-td3672698.html">the
 success</a> of the first sprint, we will be having a second sprint on
@@ -39,16 +42,6 @@ __OCTAVE_HTTP__(`sprint.html', `Code Sprints') for all the details.
 Octave 3.4.2 fixes some minor installation problems that affected
 version 3.4.1.  See the __OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file
 for a list of changes.
-<dt>June 15, 2011</dt>
-<dd>Version 3.4.1 has been released and is now available for ftp.
-Octave 3.4.1 is primarily a bug fixing release.  See the
-__OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file for a list of changes
-since the previous release.</dd>
-<dt>February 8, 2011</dt>
-<dd>Version 3.4.0 has been released and is now available for ftp.
-Octave 3.4.0 is a major new release.  See the
-__OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file for a list of
-user-visible changes.</dd>
 </dl>
 
 <p>For older news, see the
