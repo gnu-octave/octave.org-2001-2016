@@ -3,40 +3,18 @@ __HEADER__(`Octave Funding')
 <div class="section">
 __TITLE_BAR__(`Funding for Future Development')
 
-<p>The easiest and most secure way to make a contribution to the
-Octave project is to use the UW Foundation's <a
-href="https://secure.uwfoundation.wisc.edu/MultiPage/processStep1.do">secure
-online form</a>.</p>
+<p>
+Octave used to receive support from a fund at the University of
+Wisconsin Foundation. Nowadays, __HTTP__(`fsf.org', `Free Software
+Foundation') is supporting Octave, and donations to its fund can be
+made __HTTPS__(`my.fsf.org/donate/working-together/octave',
+`using this secure online form.')</a>
 
-<p><b>IMPORTANT:</b>To make sure that your contribution is directed to
-the Octave project and not to the general UW Foundation fund, you must
-do the following:</p>
-
-<ul>
-<li>Select "Other - detailed below" from the drop down menu in the
-"Designation" section of the form.</li>
-<li>Insert the following instructions into the text box:
-<blockquote>
-   <p>I/we wish to support development of the Octave modeling
-   language, under the supervision of Professor James B. Rawlings of
-   the Department of Chemical and Biological Engineering at
-   UW-Madison.</p>
-</blockquote></li>
-</ul>
-
-<p>If your contribution does not include these instructions, it will
-probably not find its way to our account for Octave.</p>
-
-<p>If you wish to mail your contribution, complete this
-__OCTAVE_HTTP__(`giftform.html', `form') and send it, along with a check (or
-credit card information) payable to the University of Wisconsin
-Foundation, to the address shown on the form.</p>
-
-<p>Nearly all of Octave's development has been paid for using
+<p>In the past, nearly all of Octave's development was paid for using
 unrestricted funding from various sources, or from grants for other
 projects that have used Octave, but for which writing and improving
-Octave was not the central focus.  Funding Octave this way has worked
-out reasonably well so far, but now we are looking for new ways to
+Octave was not the central focus. Funding Octave this way worked out
+reasonably well for its time, but now we are looking for new ways to
 provide a more stable funding base for the future.</p>
 
 <p>If you are aware of any funding opportunities within your

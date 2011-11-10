@@ -5,21 +5,21 @@ __TITLE_BAR__(`Ask not what Octave can do for you, ask what you can do
 for Octave!')
 
 <p>There are a number of ways that you can contribute to help make
-Octave a better system.  Perhaps the most important way to contribute
+Octave a better system. Perhaps the most important way to contribute
 is to write high-quality code for solving new problems, and to make
-your code freely available for others to use.  For inspiration, we
-have a wish-list of __OCTAVE_HTTP__(`projects.html', `projects') and feature
-requests.</p>
+your code freely available for others to use. For inspiration, we have
+__HTTP__(`wiki.octave.org/wiki.pl?Projects', 'a wish-list of projects
+and feature requests in our wiki.')</p>
 
 <p>If you have modifications to the core Octave distribution (bug
-fixes or enhancements), please post the changes to the
-__MAILTO__(`bug@octave.org') mailing list.</p>
+fixes or enhancements), please __OCTAVE_HTTP__(`bugs.html', `report
+and discuss them').</p>
 
 <p>If you've written a useful function for Octave that you would like
 to make available for others to use, please consider contributing it
 to the Octave Forge project __HTTP__(`octave.sf.net').</p>
 
-<p>If you find Octave useful, consider 
+<p>If you find Octave useful, consider
 __OCTAVE_HTTP__(`funding.html', `providing additional funding') to
 continue its development.  Even a modest amount of additional funding
 could make a significant difference in the amount of time that its

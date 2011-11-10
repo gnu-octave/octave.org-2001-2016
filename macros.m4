@@ -17,7 +17,7 @@ define(`__DEFAULT_LINK_TEXT__', `ifelse($#, 2, `$1://$2', `$3')')dnl
 define(`__HTTP__',
        ``<a href="http://$1">'__DEFAULT_LINK_TEXT__(`http', $*)`</a>'')dnl
 define(`__HTTPS__',
-       ``<a href="http://$1">'__DEFAULT_LINK_TEXT__(`https', $*)`</a>'')dnl
+       ``<a href="https://$1">'__DEFAULT_LINK_TEXT__(`https', $*)`</a>'')dnl
 define(`__MAILTO__',
        ``<a href="mailto:$1">'__DEFAULT_LINK_TEXT__(`http', $*)`</a>'')dnl
 define(`__FTP__',
