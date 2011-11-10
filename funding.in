@@ -5,10 +5,10 @@ __TITLE_BAR__(`Funding for Future Development')
 
 <p>
 Octave used to receive support from a fund at the University of
-Wisconsin Foundation. Nowadays, __HTTP__(`fsf.org', `Free Software
+Wisconsin Foundation. Nowadays, the __HTTP__(`fsf.org', `Free Software
 Foundation') is supporting Octave, and donations to its fund can be
-made __HTTPS__(`my.fsf.org/donate/working-together/octave',
-`using this secure online form.')</a>
+made __HTTPS__(`my.fsf.org/donate/working-together/octave', `using
+this secure online form.')</a>
 
 <p>In the past, nearly all of Octave's development was paid for using
 unrestricted funding from various sources, or from grants for other
