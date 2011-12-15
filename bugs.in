@@ -6,7 +6,7 @@ __HEADER__(`Bugs')
 <p>When you encounter a problem, the first thing to do is to see if it
 is already known. The best place to look for reported problems is
 __HTTP__(`bugs.octave.org', `The Octave bug tracker'). We used to have
-a mailing list dedicated to reporting and discussing bugs, but this is
+a mailing list dedicated to reporting and discussing bugs, but it is
 no longer used.</p>
 
 <p>The Octave __OCTAVE_HTTP__(`docs.html', `manual') also contains a
@@ -58,7 +58,7 @@ suggestions for improvement are welcome in any case.</li>
 __TITLE_BAR__(`Where and How to Send Bug Reports')
 
 <p>To report a bug in Octave,
-__HTTP__(`bugs.octave.org', `submit a bug report') using the bug
+__HTTP__(`savannah.gnu.org/bugs/?func=additem&group=octave', `submit a bug report') using the bug
 tracker.</p>
 
 <p>Please do <strong>not</strong> send bug reports to the
