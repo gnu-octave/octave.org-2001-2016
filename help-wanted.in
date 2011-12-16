@@ -8,8 +8,8 @@ for Octave!')
 Octave a better system. Perhaps the most important way to contribute
 is to write high-quality code for solving new problems, and to make
 your code freely available for others to use. For inspiration, we have
-__HTTP__(`wiki.octave.org/wiki.pl?Projects', `a wish-list of projects
-and feature requests in our wiki.')</p>
+__HTTP__(`www.octave.org/wiki/index.php?title=Projects', `a wish-list
+of projects and feature requests in our wiki.')</p>
 
 <p>If you have modifications to the core Octave distribution (bug
 fixes or enhancements), please __OCTAVE_HTTP__(`bugs.html', `report
