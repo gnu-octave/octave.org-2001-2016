@@ -60,8 +60,9 @@ empty matrix symbol, &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;.  T
    <p><a name="doc_002dprint_005fempty_005fdimensions"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>print_empty_dimensions</b> ()<var><a name="index-print_005fempty_005fdimensions-237"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>print_empty_dimensions</b> (<var>new_val</var>)<var><a name="index-print_005fempty_005fdimensions-238"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>print_empty_dimensions</b> ()<var><a name="index-print_005fempty_005fdimensions-264"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>print_empty_dimensions</b> (<var>new_val</var>)<var><a name="index-print_005fempty_005fdimensions-265"></a></var><br>
+&mdash; Built-in Function:  <b>print_empty_dimensions</b> (<var>new_val, "local"</var>)<var><a name="index-print_005fempty_005fdimensions-266"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether the
 dimensions of empty matrices are printed along with the empty matrix
 symbol, &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;.  For example, the expression
@@ -72,9 +73,13 @@ symbol, &lsquo;<samp><span class="samp">[]</span></samp>&rsquo;.  For example, t
 
      <pre class="example">          ans = [](3x0)
 </pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>. 
 </p></blockquote></div>
 

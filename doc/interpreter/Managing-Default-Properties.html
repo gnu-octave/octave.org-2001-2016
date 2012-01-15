@@ -33,13 +33,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Graphics-Data-Structures.html#Graphics-
 
 <h4 class="subsection">15.3.5 Managing Default Properties</h4>
 
-<p><a name="index-default-graphics-properties-1387"></a><a name="index-graphics-properties_002c-default-1388"></a>
+<p><a name="index-default-graphics-properties-1538"></a><a name="index-graphics-properties_002c-default-1539"></a>
 Object properties have two classes of default values, <dfn>factory
 defaults</dfn> (the initial values) and <dfn>user-defined defaults</dfn>, which
 may override the factory defaults.
 
    <p>Although default values may be set for any object, they are set in
-parent objects and apply to child objects.  For example,
+parent objects and apply to child objects, of the specified object type. 
+For example, setting the default <code>color</code> property of <code>line</code>
+objects to "green", for the <code>root</code> object, will result in all
+<code>line</code> objects inheriting the <code>color</code> "green" as the default
+value.
 
 <pre class="example">     set (0, "defaultlinecolor", "green");
 </pre>
@@ -88,7 +92,7 @@ function.
    <p><a name="doc_002dreset"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>reset</b> (<var>h, property</var>)<var><a name="index-reset-1389"></a></var><br>
+&mdash; Built-in Function:  <b>reset</b> (<var>h, property</var>)<var><a name="index-reset-1540"></a></var><br>
 <blockquote><p>Remove any defaults set for the handle <var>h</var>.  The default figure
 properties of "position", "units", "windowstyle" and
 "paperunits" and the default axes properties of "position" and "units"

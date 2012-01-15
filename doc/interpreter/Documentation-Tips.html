@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Tips-and-Standards.html#Tips-and-Standa
 <hr>
 </div>
 
-<h3 class="section">C.5 Tips for Documentation Strings</h3>
+<h3 class="section">C.4 Tips for Documentation Strings</h3>
 
 <p>As noted above, documentation is typically in a commented header block
 on an Octave function following the copyright statement.  The help string
@@ -65,14 +65,18 @@ containing A and B.&rdquo; instead of &ldquo;A list containing A and B will be
 returned.&rdquo;
 
      <li>Avoid using the word &ldquo;cause&rdquo; (or its equivalents) unnecessarily. 
-Instead of, &ldquo;Cause Octave to display text in boldface,&rdquo; write just
+Instead of, &ldquo;Cause Octave to display text in boldface,&rdquo; just write
 &ldquo;Display text in boldface.&rdquo;
+
+     <li>Use two spaces between the period marking the end of a sentence and the
+word which opens the next sentence.  This convention has no effect for
+typeset formats like TeX, but improves the readability of the documentation
+in fixed-width environments such as the Info reader.
 
      <li>Do not start or end a documentation string with whitespace.
 
-     <li>Format the documentation string so that it fits in an Emacs window on an
-80-column screen.  It is a good idea for most lines to be no wider than
-60 characters.
+     <li>Format the documentation string so that it fits within an 80-column screen. 
+It is a good idea for most lines to be no wider than 60 characters.
 
      <p>However, rather than simply filling the entire documentation string, you
 can make it much more readable by choosing line breaks with care. 
@@ -83,6 +87,20 @@ that the text is lined up in the source code with the text of the first
 line.  This looks nice in the source code, but looks bizarre when users
 view the documentation.  Remember that the indentation before the
 starting double-quote is not part of the string!
+
+     <li>When choosing variable names try to adhere to the following guidelines.
+
+          <dl>
+<dt><dd>vectors : x,y,z,t,w
+
+          <br><dt><dd>matrices : A,B,M
+
+          <br><dt><dd>strings : str,s
+
+          <br><dt><dd>filenames : fname
+
+          <br><dt><dd>cells,cellstrs : c,cstr
+</dl>
 
      <li>The documentation string for a variable that is a yes-or-no flag should
 start with words such as &ldquo;Nonzero means<small class="dots">...</small>&rdquo;, to make it clear that
@@ -210,7 +228,7 @@ and the <code>@deftypefnx</code> macro can be used to give alternatives.  For
 example
 
 <pre class="example">     -*- texinfo -*-
-     @deftypefn{Function File} {@var{a} =} fn (@var{x}, ...)
+     @deftypefn {Function File} {@var{a} =} fn (@var{x}, ...)
      @deftypefnx{Function File} {@var{a} =} fn (@var{y}, ...)
      Help text in Texinfo format.
      @end deftypefn
@@ -221,15 +239,17 @@ example of which is the <code>nchoosek</code> function.  The Texinfo
 documentation string for <code>nchoosek</code> is
 
 <pre class="example">     -*- texinfo -*-
-     @deftypefn {Function File} {} nchoosek (@var{n}, @var{k})
+     @deftypefn  {Function File} {@var{c} =} nchoosek (@var{n}, @var{k})
+     @deftypefnx {Function File} {@var{c} =} nchoosek (@var{set}, @var{k})
      
-     Compute the binomial coefficient or all combinations of
-     @var{n}.  If @var{n} is a scalar then, calculate the
-     binomial coefficient of @var{n} and @var{k}, defined as
+     Compute the binomial coefficient or all combinations of a set of items.
      
+     If @var{n} is a scalar then calculate the binomial coefficient
+     of @var{n} and @var{k} which is defined as
      @tex
      $$
       {n \choose k} = {n (n-1) (n-2) \cdots (n-k+1) \over k!}
+                    = {n! \over k! (n-k)!}
      $$
      @end tex
      @ifnottex
@@ -237,30 +257,58 @@ documentation string for <code>nchoosek</code> is
      @example
      @group
       /   \
-      | n |    n (n-1) (n-2) ... (n-k+1)
-      |   |  = -------------------------
-      | k |               k!
+      | n |    n (n-1) (n-2) @dots{} (n-k+1)       n!
+      |   |  = ------------------------- =  ---------
+      | k |               k!                k! (n-k)!
       \   /
      @end group
      @end example
+     
      @end ifnottex
+     @noindent
+     This is the number of combinations of @var{n} items taken in groups of
+     size @var{k}.
      
-     If @var{n} is a vector, this generates all combinations
-     of the elements of @var{n}, taken @var{k} at a time,
-     one row per combination.  The resulting @var{c} has size
-     @code{[nchoosek (length (@var{n}),@var{k}), @var{k}]}.
+     If the first argument is a vector, @var{set}, then generate all
+     combinations of the elements of @var{set}, taken @var{k} at a time, with
+     one row per combination.  The result @var{c} has @var{k} columns and
+     @w{@code{nchoosek (length (@var{set}), @var{k})}} rows.
      
-     @code{nchoosek} works only for non-negative integer arguments; use
-     @code{bincoeff} for non-integer scalar arguments and for using vector
-     arguments to compute many coefficients at once.
+     For example:
      
-     @seealso{bincoeff}
+     How many ways can three items be grouped into pairs?
+     
+     @example
+     @group
+     nchoosek (3, 2)
+        @result{} 3
+     @end group
+     @end example
+     
+     What are the possible pairs?
+     
+     @example
+     @group
+     nchoosek (1:3, 2)
+        @result{}  1   2
+            1   3
+            2   3
+     @end group
+     @end example
+     
+     @code{nchoosek} works only for non-negative, integer arguments.  Use
+     @code{bincoeff} for non-integer and negative scalar arguments, or for
+     computing many binomial coefficients at once with vector inputs
+     for @var{n} or @var{k}.
+     
+     @seealso{bincoeff, perms}
      @end deftypefn
 </pre>
-   <p>which demonstrates most of the concepts discussed above.
+   <p class="noindent">which demonstrates most of the concepts discussed above.
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 2008-2011 Jaroslav Hajek -->
+<!-- Copyright (C) 2012 John W. Eaton -->
+<!-- Copyright (C) 2008-2012 Jaroslav Hajek -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

@@ -5,7 +5,7 @@
 <meta name="description" content="GNU Octave">
 <meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Data-Structures.html#Data-Structures" title="Data Structures">
+<link rel="up" href="Structures.html#Structures" title="Structures">
 <link rel="prev" href="Manipulating-Structures.html#Manipulating-Structures" title="Manipulating Structures">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -27,7 +27,7 @@
 <a name="Processing-Data-in-Structures"></a>
 <p>
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Manipulating-Structures.html#Manipulating-Structures">Manipulating Structures</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">Data Structures</a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Structures.html#Structures">Structures</a>
 <hr>
 </div>
 
@@ -36,62 +36,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">D
 <p>The simplest way to process data in a structure is within a <code>for</code>
 loop (see <a href="Looping-Over-Structure-Elements.html#Looping-Over-Structure-Elements">Looping Over Structure Elements</a>).  A similar effect can be
 achieved with the <code>structfun</code> function, where a user defined
-function is applied to each field of the structure.
-
-<!-- structfun scripts/general/structfun.m -->
-   <p><a name="doc_002dstructfun"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>structfun</b> (<var>func, S</var>)<var><a name="index-structfun-407"></a></var><br>
-&mdash; Function File: [<var>A</var>, <small class="dots">...</small>] = <b>structfun</b> (<var><small class="dots">...</small></var>)<var><a name="index-structfun-408"></a></var><br>
-&mdash; Function File:  <b>structfun</b> (<var><small class="dots">...</small>, "ErrorHandler", errfunc</var>)<var><a name="index-structfun-409"></a></var><br>
-&mdash; Function File:  <b>structfun</b> (<var><small class="dots">...</small>, "UniformOutput", val</var>)<var><a name="index-structfun-410"></a></var><br>
-<blockquote>
-        <p>Evaluate the function named <var>name</var> on the fields of the structure
-<var>S</var>.  The fields of <var>S</var> are passed to the function <var>func</var>
-individually.
-
-        <p><code>structfun</code> accepts an arbitrary function <var>func</var> in the form of
-an inline function, function handle, or the name of a function (in a
-character string).  In the case of a character string argument, the
-function must accept a single argument named <var>x</var>, and it must return
-a string value.  If the function returns more than one argument, they are
-returned as separate output variables.
-
-        <p>If the parameter "UniformOutput" is set to true (the default), then the
-function
-must return a single element which will be concatenated into the
-return value.  If "UniformOutput" is false, the outputs are placed into a
-structure
-with the same fieldnames as the input structure.
-
-     <pre class="example">          s.name1 = "John Smith";
-          s.name2 = "Jill Jones";
-          structfun (@(x) regexp (x, '(\w+)$', "matches"){1}, s,
-                     "UniformOutput", false)
-              &rArr;
-             {
-               name1 = Smith
-               name2 = Jones
-             }
-</pre>
-        <p>Given the parameter "ErrorHandler", <var>errfunc</var> defines a function to
-call in case <var>func</var> generates an error.  The form of the function is
-
-     <pre class="example">          function [...] = errfunc (<var>se</var>, ...)
-</pre>
-        <p class="noindent">where there is an additional input argument to <var>errfunc</var> relative to
-<var>func</var>, given by <var>se</var>.  This is a structure with the elements
-"identifier", "message" and "index", giving respectively the error
-identifier, the error message, and the index into the input arguments
-of the element that caused the error.  For an example on how to use
-an error handler, see <a href="doc_002dcellfun.html#doc_002dcellfun"><code>cellfun</code></a>.
-
-     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcellfun.html#doc_002dcellfun">cellfun</a>, <a href="doc_002darrayfun.html#doc_002darrayfun">arrayfun</a>, <a href="doc_002dspfun.html#doc_002dspfun">spfun</a>. 
-</p></blockquote></div>
+function is applied to each field of the structure.  See <a href="doc_002dstructfun.html#doc_002dstructfun">doc-structfun</a>.
 
    <p>Alternatively, to process the data in a structure, the structure might
 be converted to another type of container before being treated.
@@ -100,7 +45,7 @@ be converted to another type of container before being treated.
    <p><a name="doc_002dstruct2cell"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>struct2cell</b> (<var>S</var>)<var><a name="index-struct2cell-411"></a></var><br>
+&mdash; Built-in Function:  <b>struct2cell</b> (<var>S</var>)<var><a name="index-struct2cell-453"></a></var><br>
 <blockquote><p>Create a new cell array from the objects stored in the struct object. 
 If <var>f</var> is the number of fields in the structure, the resulting
 cell array will have a dimension vector corresponding to

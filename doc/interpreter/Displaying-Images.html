@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Image-Processing.html#Image-Processing"
 <hr>
 </div>
 
-<h3 class="section">31.2 Displaying Images</h3>
+<h3 class="section">32.2 Displaying Images</h3>
 
 <p>A natural part of image processing is visualization of an image. 
 The most basic function for this is the <code>imshow</code> function that
@@ -43,12 +43,13 @@ shows the image given in the first input argument.
    <p><a name="doc_002dimshow"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>imshow</b> (<var>im</var>)<var><a name="index-imshow-2553"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>im, limits</var>)<var><a name="index-imshow-2554"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>im, map</var>)<var><a name="index-imshow-2555"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>rgb, <small class="dots">...</small></var>)<var><a name="index-imshow-2556"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var>filename</var>)<var><a name="index-imshow-2557"></a></var><br>
-&mdash; Function File:  <b>imshow</b> (<var><small class="dots">...</small>, string_param1, value1, <small class="dots">...</small></var>)<var><a name="index-imshow-2558"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>im</var>)<var><a name="index-imshow-2896"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>im, limits</var>)<var><a name="index-imshow-2897"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>im, map</var>)<var><a name="index-imshow-2898"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>rgb, <small class="dots">...</small></var>)<var><a name="index-imshow-2899"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var>filename</var>)<var><a name="index-imshow-2900"></a></var><br>
+&mdash; Function File:  <b>imshow</b> (<var><small class="dots">...</small>, string_param1, value1, <small class="dots">...</small></var>)<var><a name="index-imshow-2901"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>imshow</b> (<var><small class="dots">...</small></var>)<var><a name="index-imshow-2902"></a></var><br>
 <blockquote><p>Display the image <var>im</var>, where <var>im</var> can be a 2-dimensional
 (gray-scale image) or a 3-dimensional (RGB image) matrix.
 
@@ -69,7 +70,9 @@ shown.
           <dl>
 <dt>"displayrange"<dd><var>value1</var> is the display range as described above. 
 </dl>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+
+        <p>The optional return value <var>h</var> is a graphics handle to the image. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
@@ -80,11 +83,12 @@ shown.
    <p><a name="doc_002dimage"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>image</b> (<var>img</var>)<var><a name="index-image-2559"></a></var><br>
-&mdash; Function File:  <b>image</b> (<var>x, y, img</var>)<var><a name="index-image-2560"></a></var><br>
-<blockquote><p>Display a matrix as a color image.  The elements of <var>x</var> are indices
+&mdash; Function File:  <b>image</b> (<var>img</var>)<var><a name="index-image-2903"></a></var><br>
+&mdash; Function File:  <b>image</b> (<var>x, y, img</var>)<var><a name="index-image-2904"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>image</b> (<var><small class="dots">...</small></var>)<var><a name="index-image-2905"></a></var><br>
+<blockquote><p>Display a matrix as a color image.  The elements of <var>img</var> are indices
 into the current colormap, and the colormap will be scaled so that the
-extremes of <var>x</var> are mapped to the extremes of the colormap.
+extremes of <var>img</var> are mapped to the extremes of the colormap.
 
         <p>The axis values corresponding to the matrix elements are specified in
 <var>x</var> and <var>y</var>.  If you're not using gnuplot 4.2 or later, these
@@ -97,7 +101,9 @@ and then reversing the direction of the y-axis by setting the
 <code>ydir</code> property to <code>"reverse"</code>.  This has implications whenever
 an image and an ordinary plot need to be overlaid.  The recommended
 solution is to display the image and then plot the reversed ydata
-using, for example, <code>flipud (ydata,1)</code>. 
+using, for example, <code>flipud (ydata,1)</code>.
+
+        <p>The optional return value <var>h</var> is a graphics handle to the image. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -109,11 +115,11 @@ using, for example, <code>flipud (ydata,1)</code>.
    <p><a name="doc_002dimagesc"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>imagesc</b> (<var>A</var>)<var><a name="index-imagesc-2561"></a></var><br>
-&mdash; Function File:  <b>imagesc</b> (<var>x, y, A</var>)<var><a name="index-imagesc-2562"></a></var><br>
-&mdash; Function File:  <b>imagesc</b> (<var><small class="dots">...</small>, limits</var>)<var><a name="index-imagesc-2563"></a></var><br>
-&mdash; Function File:  <b>imagesc</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-imagesc-2564"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>imagesc</b> (<var><small class="dots">...</small></var>)<var><a name="index-imagesc-2565"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var>A</var>)<var><a name="index-imagesc-2906"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var>x, y, A</var>)<var><a name="index-imagesc-2907"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var><small class="dots">...</small>, limits</var>)<var><a name="index-imagesc-2908"></a></var><br>
+&mdash; Function File:  <b>imagesc</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-imagesc-2909"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>imagesc</b> (<var><small class="dots">...</small></var>)<var><a name="index-imagesc-2910"></a></var><br>
 <blockquote><p>Display a scaled version of the matrix <var>A</var> as a color image.  The
 colormap is scaled so that the entries of the matrix occupy the entire
 colormap.  If <var>limits</var> = [<var>lo</var>, <var>hi</var>] are given, then that
@@ -124,9 +130,11 @@ range is set to the 'clim' of the current axes.
 values for the respective axes, or as values for each row and column
 of the matrix <var>A</var>.
 
-     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
+        <p>The optional return value <var>h</var> is a graphics handle to the image. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dimage.html#doc_002dimage">image</a>, <a href="doc_002dimshow.html#doc_002dimshow">imshow</a>, <a href="doc_002dcaxis.html#doc_002dcaxis">caxis</a>. 
 </p></blockquote></div>
 

@@ -42,22 +42,33 @@ function.
    <p><a name="doc_002ddbstop"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>rline</var> = <b>dbstop</b> (<var>func, line, <small class="dots">...</small></var>)<var><a name="index-dbstop-780"></a></var><br>
-<blockquote><p>Set a breakpoint in a function
+&mdash; Loadable Function: <var>rline</var> = <b>dbstop</b> (<var>"func"</var>)<var><a name="index-dbstop-841"></a></var><br>
+&mdash; Loadable Function: <var>rline</var> = <b>dbstop</b> (<var>"func", line, <small class="dots">...</small></var>)<var><a name="index-dbstop-842"></a></var><br>
+<blockquote><p>Set a breakpoint in function <var>func</var>.
+
+        <p>Arguments are
+
           <dl>
-<dt><code>func</code><dd>String representing the function name.  When already in debug
+<dt><var>func</var><dd>Function name as a string variable.  When already in debug
 mode this should be left out and only the line should be given.
 
-          <br><dt><code>line</code><dd>Line number you would like the breakpoint to be set on.  Multiple
-lines might be given as separate arguments or as a vector. 
+          <br><dt><var>line</var><dd>Line number where the breakpoint should be set.  Multiple
+lines may be given as separate arguments or as a vector. 
 </dl>
 
-        <p>The rline returned is the real line that the breakpoint was set at. 
+        <p>When called with a single argument <var>func</var>, the breakpoint
+is set at the first executable line in the named function.
+
+        <p>The optional output <var>rline</var> is the real line number where the
+breakpoint was set.  This can differ from specified line if
+the line is not executable.  For example, if a breakpoint attempted on a
+blank line then Octave will set the real breakpoint at the
+next executable line. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstep.html#doc_002ddbstep">dbstep</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstep.html#doc_002ddbstep">dbstep</a>, <a href="doc_002ddebug_005fon_005ferror.html#doc_002ddebug_005fon_005ferror">debug_on_error</a>, <a href="doc_002ddebug_005fon_005fwarning.html#doc_002ddebug_005fon_005fwarning">debug_on_warning</a>, <a href="doc_002ddebug_005fon_005finterrupt.html#doc_002ddebug_005fon_005finterrupt">debug_on_interrupt</a>. 
 </p></blockquote></div>
 
 <p class="noindent">Note that breakpoints cannot be set in built-in functions
@@ -68,7 +79,7 @@ the breakpoint will be set to the first executable statement in the
 function.  For example:
 
 <pre class="example">     dbstop ("asind", 1)
-     &rArr; 27
+     &rArr; 28
 </pre>
    <p class="noindent">Note that the return value of <code>27</code> means that the breakpoint was
 effectively set to line 27.  The status of breakpoints in a function can
@@ -78,38 +89,59 @@ be queried with the <code>dbstatus</code> function.
    <p><a name="doc_002ddbstatus"></a>
 
 <div class="defun">
-&mdash; Loadable Function: lst = <b>dbstatus</b> (<var>func</var>)<var><a name="index-dbstatus-781"></a></var><br>
-<blockquote><p>Return a vector containing the lines on which a function has
-breakpoints set.
-          <dl>
-<dt><code>func</code><dd>String representing the function name.  When already in debug
-mode this should be left out. 
-</dl>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
+&mdash; Loadable Function:  <b>dbstatus</b> ()<var><a name="index-dbstatus-843"></a></var><br>
+&mdash; Loadable Function: <var>brk_list</var> = <b>dbstatus</b> ()<var><a name="index-dbstatus-844"></a></var><br>
+&mdash; Loadable Function: <var>brk_list</var> = <b>dbstatus</b> (<var>"func"</var>)<var><a name="index-dbstatus-845"></a></var><br>
+<blockquote><p>Report the location of active breakpoints.
 
+        <p>When called with no input or output arguments, print the list of
+all functions with breakpoints and the line numbers where those
+breakpoints are set. 
+If a function name <var>func</var> is specified then only report breakpoints
+for the named function.
+
+        <p>The optional return argument <var>brk_list</var> is a struct array with the
+following fields.
+
+          <dl>
+<dt>name<dd>The name of the function with a breakpoint.
+
+          <br><dt>file<dd>The name of the m-file where the function code is located.
+
+          <br><dt>line<dd>A line number, or vector of line numbers, with a breakpoint. 
+</dl>
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbwhere.html#doc_002ddbwhere">dbwhere</a>. 
 </p></blockquote></div>
 
 <p class="noindent">Taking the above as an example, <code>dbstatus ("asind")</code> should return
-27.  The breakpoints can then be cleared with the <code>dbclear</code> function
+28.  The breakpoints can then be cleared with the <code>dbclear</code> function
 
 <!-- dbclear src/debug.cc -->
    <p><a name="doc_002ddbclear"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbclear</b> (<var>func, line, <small class="dots">...</small></var>)<var><a name="index-dbclear-782"></a></var><br>
-<blockquote><p>Delete a breakpoint in a function
+&mdash; Loadable Function:  <b>dbclear</b> (<var>"func"</var>)<var><a name="index-dbclear-846"></a></var><br>
+&mdash; Loadable Function:  <b>dbclear</b> (<var>"func", line, <small class="dots">...</small></var>)<var><a name="index-dbclear-847"></a></var><br>
+<blockquote><p>Delete a breakpoint in the function <var>func</var>.
+
+        <p>Arguments are
+
           <dl>
-<dt><code>func</code><dd>String representing the function name.  When already in debug
+<dt><var>func</var><dd>Function name as a string variable.  When already in debug
 mode this should be left out and only the line should be given.
 
-          <br><dt><code>line</code><dd>Line number where you would like to remove the breakpoint.  Multiple
-lines might be given as separate arguments or as a vector. 
+          <br><dt><var>line</var><dd>Line number from which to remove a breakpoint.  Multiple
+lines may be given as separate arguments or as a vector. 
 </dl>
-        No checking is done to make sure that the line you requested is really
-a breakpoint.  If you get the wrong line nothing will happen. 
+
+        <p>When called without a line number specification all breakpoints
+in the named function are cleared.
+
+        <p>If the requested line is not a breakpoint no action is performed. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -148,8 +180,8 @@ use of the <code>keyboard</code> function.
    <p><a name="doc_002dkeyboard"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>keyboard</b> ()<var><a name="index-keyboard-783"></a></var><br>
-&mdash; Built-in Function:  <b>keyboard</b> (<var>prompt</var>)<var><a name="index-keyboard-784"></a></var><br>
+&mdash; Built-in Function:  <b>keyboard</b> ()<var><a name="index-keyboard-848"></a></var><br>
+&mdash; Built-in Function:  <b>keyboard</b> (<var>prompt</var>)<var><a name="index-keyboard-849"></a></var><br>
 <blockquote><p>This function is normally used for simple debugging.  When the
 <code>keyboard</code> function is executed, Octave prints a prompt and waits
 for user input.  The input strings are then evaluated and the results

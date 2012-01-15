@@ -45,5 +45,41 @@ value should be ignored and not stored to any variable.
 </pre>
    <p>The value of <code>nargin</code> is not affected by using this declaration.
 
+   <p>Return arguments can also be ignored using the same syntax.  Functions may
+take advantage of ignored outputs to reduce the number of calculations
+performed.  To do so, use the <code>isargout</code> function to query whether the
+output argument is wanted.  For example:
+
+<pre class="example">     function [out1, out2] = long_function (x, y, z)
+       if (isargout (1))
+         ## Long calculation
+         ...
+         out1 = result;
+       endif
+       ...
+     endfunction
+</pre>
+   <!-- isargout src/ov-usr-fcn.cc -->
+   <p><a name="doc_002disargout"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>isargout</b> (<var>k</var>)<var><a name="index-isargout-746"></a></var><br>
+<blockquote><p>Within a function, return a logical value indicating whether the argument
+<var>k</var> will be assigned on output to a variable.  If the result is false,
+the argument has been ignored during the function call through the use of
+the tilde (~) special output argument.  Functions can use <code>isargout</code> to
+avoid performing unnecessary calculations for outputs which are unwanted.
+
+        <p>If <var>k</var> is outside the range <code>1:max(nargout)</code>, the function returns
+false.  <var>k</var> can also be an array, in which case the function works
+element-by-element and a logical array is returned.  At the top level,
+<code>isargout</code> returns an error. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>, <a href="doc_002dnthargout.html#doc_002dnthargout">nthargout</a>. 
+</p></blockquote></div>
+
    </body></html>
 

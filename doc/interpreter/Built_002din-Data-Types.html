@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Data-Types.html#Data-Types">Data Types<
 
 <h3 class="section">3.1 Built-in Data Types</h3>
 
-<p><a name="index-data-types_002c-built_002din-176"></a><a name="index-built_002din-data-types-177"></a>
+<p><a name="index-data-types_002c-built_002din-199"></a><a name="index-built_002din-data-types-200"></a>
 The standard built-in data types are real and complex scalars and
 matrices, ranges, character strings, a data structure type, and cell
 arrays.  Additional built-in data types may be added in future versions. 
@@ -49,9 +49,9 @@ use of the following functions.
    <p><a name="doc_002dclass"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>class</b> (<var>expr</var>)<var><a name="index-class-178"></a></var><br>
-&mdash; Built-in Function:  <b>class</b> (<var>s, id</var>)<var><a name="index-class-179"></a></var><br>
-&mdash; Built-in Function:  <b>class</b> (<var>s, id, p, <small class="dots">...</small></var>)<var><a name="index-class-180"></a></var><br>
+&mdash; Built-in Function:  <b>class</b> (<var>expr</var>)<var><a name="index-class-201"></a></var><br>
+&mdash; Built-in Function:  <b>class</b> (<var>s, id</var>)<var><a name="index-class-202"></a></var><br>
+&mdash; Built-in Function:  <b>class</b> (<var>s, id, p, <small class="dots">...</small></var>)<var><a name="index-class-203"></a></var><br>
 <blockquote><p>Return the class of the expression <var>expr</var> or create a class with
 fields from structure <var>s</var> and name (string) <var>id</var>.  Additional
 arguments name a list of parent classes from which the new class is
@@ -62,7 +62,7 @@ derived.
    <p><a name="doc_002disa"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>isa</b> (<var>obj, class</var>)<var><a name="index-isa-181"></a></var><br>
+&mdash; Function File:  <b>isa</b> (<var>obj, class</var>)<var><a name="index-isa-204"></a></var><br>
 <blockquote><p>Return true if <var>obj</var> is an object from the class <var>class</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -75,7 +75,7 @@ derived.
    <p><a name="doc_002dcast"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cast</b> (<var>val, type</var>)<var><a name="index-cast-182"></a></var><br>
+&mdash; Function File:  <b>cast</b> (<var>val, type</var>)<var><a name="index-cast-205"></a></var><br>
 <blockquote><p>Convert <var>val</var> to data type <var>type</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -88,7 +88,7 @@ derived.
    <p><a name="doc_002dtypecast"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>typecast</b> (<var>x, class</var>)<var><a name="index-typecast-183"></a></var><br>
+&mdash; Loadable Function:  <b>typecast</b> (<var>x, class</var>)<var><a name="index-typecast-206"></a></var><br>
 <blockquote><p>Return a new array <var>y</var> resulting from interpreting the data of
 <var>x</var> in memory as data of the numeric class <var>class</var>.  Both the class
 of <var>x</var> and <var>class</var> must be one of the built-in numeric classes:
@@ -135,8 +135,8 @@ occurs.
    <p><a name="doc_002dswapbytes"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>swapbytes</b> (<var>x</var>)<var><a name="index-swapbytes-184"></a></var><br>
-<blockquote><p>Swaps the byte order on values, converting from little endian to big
+&mdash; Function File:  <b>swapbytes</b> (<var>x</var>)<var><a name="index-swapbytes-207"></a></var><br>
+<blockquote><p>Swap the byte order on values, converting from little endian to big
 endian and vice versa.  For example:
 
      <pre class="example">          swapbytes (uint16 (1:4))
@@ -152,7 +152,7 @@ endian and vice versa.  For example:
    <p><a name="doc_002dbitpack"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>y</var> = <b>bitpack</b> (<var>x, class</var>)<var><a name="index-bitpack-185"></a></var><br>
+&mdash; Loadable Function: <var>y</var> = <b>bitpack</b> (<var>x, class</var>)<var><a name="index-bitpack-208"></a></var><br>
 <blockquote><p>Return a new array <var>y</var> resulting from interpreting an array
 <var>x</var> as raw bit patterns for data of the numeric class <var>class</var>. 
 <var>class</var> must be one of the built-in numeric classes:
@@ -185,7 +185,7 @@ it is a column vector.
    <p><a name="doc_002dbitunpack"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>y</var> = <b>bitpack</b> (<var>x</var>)<var><a name="index-bitpack-186"></a></var><br>
+&mdash; Loadable Function: <var>y</var> = <b>bitunpack</b> (<var>x</var>)<var><a name="index-bitunpack-209"></a></var><br>
 <blockquote><p>Return an array <var>y</var> corresponding to the raw bit patterns of
 <var>x</var>.  <var>x</var> must belong to one of the built-in numeric classes:
 

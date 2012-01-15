@@ -7,6 +7,7 @@
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Debugging.html#Debugging" title="Debugging">
 <link rel="prev" href="Debug-Mode.html#Debug-Mode" title="Debug Mode">
+<link rel="next" href="Profiling.html#Profiling" title="Profiling">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
@@ -26,6 +27,7 @@
 <div class="node">
 <a name="Call-Stack"></a>
 <p>
+Next:&nbsp;<a rel="next" accesskey="n" href="Profiling.html#Profiling">Profiling</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Debug-Mode.html#Debug-Mode">Debug Mode</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
 <hr>
@@ -37,59 +39,67 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Debugging.html#Debugging">Debugging</a>
 <p><a name="doc_002ddbstack"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>stack</var>, <var>idx</var>] <b>dbstack</b> (<var>n</var>)<var><a name="index-dbstack-792"></a></var><br>
-<blockquote><p>Print or return current stack information.  With optional argument
-<var>n</var>, omit the <var>n</var> innermost stack frames. 
+&mdash; Loadable Function:  <b>dbstack</b> ()<var><a name="index-dbstack-861"></a></var><br>
+&mdash; Loadable Function:  <b>dbstack</b> (<var>n</var>)<var><a name="index-dbstack-862"></a></var><br>
+&mdash; Loadable Function: [<var>stack</var>, <var>idx</var>] = <b>dbstack</b> (<var><small class="dots">...</small></var>)<var><a name="index-dbstack-863"></a></var><br>
+<blockquote><p>Display or return current debugging function stack information. 
+With optional argument <var>n</var>, omit the <var>n</var> innermost stack frames.
+
+        <p>The optional return argument <var>stack</var> is a struct array with the
+following fields:
+
+          <dl>
+<dt>file<dd>The name of the m-file where the function code is located.
+
+          <br><dt>name<dd>The name of the function with a breakpoint.
+
+          <br><dt>line<dd>The line number of an active breakpoint.
+
+          <br><dt>column<dd>The column number of the line where the breakpoint begins.
+
+          <br><dt>scope<dd>Undocumented.
+
+          <br><dt>context<dd>Undocumented. 
+</dl>
+
+        <p>The return argument <var>idx</var> specifies which element of the <var>stack</var>
+struct array is currently active. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbup.html#doc_002ddbup">dbup</a>, <a href="doc_002ddbdown.html#doc_002ddbdown">dbdown</a>, <a href="doc_002ddbwhere.html#doc_002ddbwhere">dbwhere</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>. 
 </p></blockquote></div>
 
 <!-- dbup src/debug.cc -->
    <p><a name="doc_002ddbup"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbup</b><var><a name="index-dbup-793"></a></var><br>
-&mdash; Loadable Function:  <b>dbup</b> (<var>n</var>)<var><a name="index-dbup-794"></a></var><br>
+&mdash; Loadable Function:  <b>dbup</b><var><a name="index-dbup-864"></a></var><br>
+&mdash; Loadable Function:  <b>dbup</b> (<var>n</var>)<var><a name="index-dbup-865"></a></var><br>
 <blockquote><p>In debugging mode, move up the execution stack <var>n</var> frames. 
 If <var>n</var> is omitted, move up one frame. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>, <a href="doc_002ddbdown.html#doc_002ddbdown">dbdown</a>. 
 </p></blockquote></div>
 
 <!-- dbdown src/debug.cc -->
    <p><a name="doc_002ddbdown"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbdown</b><var><a name="index-dbdown-795"></a></var><br>
-&mdash; Loadable Function:  <b>dbdown</b> (<var>n</var>)<var><a name="index-dbdown-796"></a></var><br>
+&mdash; Loadable Function:  <b>dbdown</b><var><a name="index-dbdown-866"></a></var><br>
+&mdash; Loadable Function:  <b>dbdown</b> (<var>n</var>)<var><a name="index-dbdown-867"></a></var><br>
 <blockquote><p>In debugging mode, move down the execution stack <var>n</var> frames. 
 If <var>n</var> is omitted, move down one frame. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>, <a href="doc_002ddbup.html#doc_002ddbup">dbup</a>. 
 </p></blockquote></div>
 
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
-<!-- This file is part of Octave. -->
-<!-- Octave is free software; you can redistribute it and/or modify it -->
-<!-- under the terms of the GNU General Public License as published by the -->
-<!-- Free Software Foundation; either version 3 of the License, or (at -->
-<!-- your option) any later version. -->
-<!-- Octave is distributed in the hope that it will be useful, but WITHOUT -->
-<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or -->
-<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License -->
-<!-- for more details. -->
-<!-- You should have received a copy of the GNU General Public License -->
-<!-- along with Octave; see the file COPYING.  If not, see -->
-<!-- <http://www.gnu.org/licenses/>. -->
    </body></html>
 

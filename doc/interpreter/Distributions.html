@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics<
 <hr>
 </div>
 
-<h3 class="section">25.5 Distributions</h3>
+<h3 class="section">26.5 Distributions</h3>
 
 <p>Octave has functions for computing the Probability Density Function
 (PDF), the Cumulative Distribution function (CDF), and the quantile
@@ -119,9 +119,9 @@ alphabetical order).
   </td><td valign="top" width="23%"><code>poisscdf</code>
   </td><td valign="top" width="23%"><code>poissinv</code>
 <br></td></tr><tr align="left"><td valign="top" width="31%">Standard Normal Distribution
-  </td><td valign="top" width="23%"><code>stdtormal_pdf</code>
-  </td><td valign="top" width="23%"><code>stdtormal_cdf</code>
-  </td><td valign="top" width="23%"><code>stdtormal_inv</code>
+  </td><td valign="top" width="23%"><code>stdnormal_pdf</code>
+  </td><td valign="top" width="23%"><code>stdnormal_cdf</code>
+  </td><td valign="top" width="23%"><code>stdnormal_inv</code>
 <br></td></tr><tr align="left"><td valign="top" width="31%">t (Student) Distribution
   </td><td valign="top" width="23%"><code>tpdf</code>
   </td><td valign="top" width="23%"><code>tcdf</code>
@@ -144,27 +144,27 @@ alphabetical order).
    <p><a name="doc_002dbetapdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>betapdf</b> (<var>x, a, b</var>)<var><a name="index-betapdf-2198"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, returns the PDF at <var>x</var> of the beta
-distribution with parameters <var>a</var> and <var>b</var>. 
+&mdash; Function File:  <b>betapdf</b> (<var>x, a, b</var>)<var><a name="index-betapdf-2483"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function (PDF)
+at <var>x</var> of the Beta distribution with parameters <var>a</var> and <var>b</var>. 
 </p></blockquote></div>
 
 <!-- betacdf scripts/statistics/distributions/betacdf.m -->
    <p><a name="doc_002dbetacdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>betacdf</b> (<var>x, a, b</var>)<var><a name="index-betacdf-2199"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, returns the CDF at <var>x</var> of the beta
-distribution with parameters <var>a</var> and <var>b</var>, i.e.,
-PROB (beta (<var>a</var>, <var>b</var>) &le; <var>x</var>). 
+&mdash; Function File:  <b>betacdf</b> (<var>x, a, b</var>)<var><a name="index-betacdf-2484"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution function
+(CDF) at <var>x</var> of the Beta distribution with parameters <var>a</var> and
+<var>b</var>. 
 </p></blockquote></div>
 
 <!-- betainv scripts/statistics/distributions/betainv.m -->
    <p><a name="doc_002dbetainv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>betainv</b> (<var>x, a, b</var>)<var><a name="index-betainv-2200"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+&mdash; Function File:  <b>betainv</b> (<var>x, a, b</var>)<var><a name="index-betainv-2485"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
 the CDF) at <var>x</var> of the Beta distribution with parameters <var>a</var>
 and <var>b</var>. 
 </p></blockquote></div>
@@ -173,35 +173,41 @@ and <var>b</var>.
    <p><a name="doc_002dbinopdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>binopdf</b> (<var>x, n, p</var>)<var><a name="index-binopdf-2201"></a></var><br>
+&mdash; Function File:  <b>binopdf</b> (<var>x, n, p</var>)<var><a name="index-binopdf-2486"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the binomial distribution with parameters <var>n</var>
-and <var>p</var>. 
+and <var>p</var>, where <var>n</var> is the number of trials and <var>p</var> is the
+probability of success. 
 </p></blockquote></div>
 
 <!-- binocdf scripts/statistics/distributions/binocdf.m -->
    <p><a name="doc_002dbinocdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>binocdf</b> (<var>x, n, p</var>)<var><a name="index-binocdf-2202"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the CDF at <var>x</var> of the
-binomial distribution with parameters <var>n</var> and <var>p</var>. 
+&mdash; Function File:  <b>binocdf</b> (<var>x, n, p</var>)<var><a name="index-binocdf-2487"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution function
+(CDF) at <var>x</var> of the binomial distribution with parameters <var>n</var> and
+<var>p</var>, where <var>n</var> is the number of trials and <var>p</var> is the
+probability of success. 
 </p></blockquote></div>
 
 <!-- binoinv scripts/statistics/distributions/binoinv.m -->
    <p><a name="doc_002dbinoinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>binoinv</b> (<var>x, n, p</var>)<var><a name="index-binoinv-2203"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
-binomial distribution with parameters <var>n</var> and <var>p</var>. 
+&mdash; Function File:  <b>binoinv</b> (<var>x, n, p</var>)<var><a name="index-binoinv-2488"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the binomial distribution with parameters
+<var>n</var> and <var>p</var>, where <var>n</var> is the number of trials and
+<var>p</var> is the probability of success. 
 </p></blockquote></div>
 
 <!-- cauchy_pdf scripts/statistics/distributions/cauchy_pdf.m -->
    <p><a name="doc_002dcauchy_005fpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cauchy_pdf</b> (<var>x, location, scale</var>)<var><a name="index-cauchy_005fpdf-2204"></a></var><br>
+&mdash; Function File:  <b>cauchy_pdf</b> (<var>x</var>)<var><a name="index-cauchy_005fpdf-2489"></a></var><br>
+&mdash; Function File:  <b>cauchy_pdf</b> (<var>x, location, scale</var>)<var><a name="index-cauchy_005fpdf-2490"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the Cauchy distribution with location parameter
 <var>location</var> and scale parameter <var>scale</var> &gt; 0.  Default values are
@@ -212,7 +218,8 @@ binomial distribution with parameters <var>n</var> and <var>p</var>.
    <p><a name="doc_002dcauchy_005fcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cauchy_cdf</b> (<var>x, location, scale</var>)<var><a name="index-cauchy_005fcdf-2205"></a></var><br>
+&mdash; Function File:  <b>cauchy_cdf</b> (<var>x</var>)<var><a name="index-cauchy_005fcdf-2491"></a></var><br>
+&mdash; Function File:  <b>cauchy_cdf</b> (<var>x, location, scale</var>)<var><a name="index-cauchy_005fcdf-2492"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the Cauchy distribution with location
 parameter <var>location</var> and scale parameter <var>scale</var>.  Default
@@ -223,7 +230,8 @@ values are <var>location</var> = 0, <var>scale</var> = 1.
    <p><a name="doc_002dcauchy_005finv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cauchy_inv</b> (<var>x, location, scale</var>)<var><a name="index-cauchy_005finv-2206"></a></var><br>
+&mdash; Function File:  <b>cauchy_inv</b> (<var>x</var>)<var><a name="index-cauchy_005finv-2493"></a></var><br>
+&mdash; Function File:  <b>cauchy_inv</b> (<var>x, location, scale</var>)<var><a name="index-cauchy_005finv-2494"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
 CDF) at <var>x</var> of the Cauchy distribution with location parameter
 <var>location</var> and scale parameter <var>scale</var>.  Default values are
@@ -234,9 +242,9 @@ CDF) at <var>x</var> of the Cauchy distribution with location parameter
    <p><a name="doc_002dchi2pdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>chi2pdf</b> (<var>x, n</var>)<var><a name="index-chi2pdf-2207"></a></var><br>
+&mdash; Function File:  <b>chi2pdf</b> (<var>x, n</var>)<var><a name="index-chi2pdf-2495"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
-(PDF) at <var>x</var> of the chisquare distribution with <var>n</var> degrees
+(PDF) at <var>x</var> of the chi-square distribution with <var>n</var> degrees
 of freedom. 
 </p></blockquote></div>
 
@@ -244,9 +252,9 @@ of freedom.
    <p><a name="doc_002dchi2cdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>chi2cdf</b> (<var>x, n</var>)<var><a name="index-chi2cdf-2208"></a></var><br>
+&mdash; Function File:  <b>chi2cdf</b> (<var>x, n</var>)<var><a name="index-chi2cdf-2496"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
-function (CDF) at <var>x</var> of the chisquare distribution with <var>n</var>
+function (CDF) at <var>x</var> of the chi-square distribution with <var>n</var>
 degrees of freedom. 
 </p></blockquote></div>
 
@@ -254,9 +262,9 @@ degrees of freedom.
    <p><a name="doc_002dchi2inv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>chi2inv</b> (<var>x, n</var>)<var><a name="index-chi2inv-2209"></a></var><br>
+&mdash; Function File:  <b>chi2inv</b> (<var>x, n</var>)<var><a name="index-chi2inv-2497"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
-CDF) at <var>x</var> of the chisquare distribution with <var>n</var> degrees of
+CDF) at <var>x</var> of the chi-square distribution with <var>n</var> degrees of
 freedom. 
 </p></blockquote></div>
 
@@ -264,7 +272,7 @@ freedom.
    <p><a name="doc_002ddiscrete_005fpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>discrete_pdf</b> (<var>x, v, p</var>)<var><a name="index-discrete_005fpdf-2210"></a></var><br>
+&mdash; Function File:  <b>discrete_pdf</b> (<var>x, v, p</var>)<var><a name="index-discrete_005fpdf-2498"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of a univariate discrete distribution which assumes
 the values in <var>v</var> with probabilities <var>p</var>. 
@@ -274,7 +282,7 @@ the values in <var>v</var> with probabilities <var>p</var>.
    <p><a name="doc_002ddiscrete_005fcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>discrete_cdf</b> (<var>x, v, p</var>)<var><a name="index-discrete_005fcdf-2211"></a></var><br>
+&mdash; Function File:  <b>discrete_cdf</b> (<var>x, v, p</var>)<var><a name="index-discrete_005fcdf-2499"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of a univariate discrete distribution which
 assumes the values in <var>v</var> with probabilities <var>p</var>. 
@@ -284,8 +292,8 @@ assumes the values in <var>v</var> with probabilities <var>p</var>.
    <p><a name="doc_002ddiscrete_005finv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>discrete_inv</b> (<var>x, v, p</var>)<var><a name="index-discrete_005finv-2212"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+&mdash; Function File:  <b>discrete_inv</b> (<var>x, v, p</var>)<var><a name="index-discrete_005finv-2500"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
 the CDF) at <var>x</var> of the univariate distribution which assumes the
 values in <var>v</var> with probabilities <var>p</var>. 
 </p></blockquote></div>
@@ -294,7 +302,7 @@ values in <var>v</var> with probabilities <var>p</var>.
    <p><a name="doc_002dempirical_005fpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>empirical_pdf</b> (<var>x, data</var>)<var><a name="index-empirical_005fpdf-2213"></a></var><br>
+&mdash; Function File:  <b>empirical_pdf</b> (<var>x, data</var>)<var><a name="index-empirical_005fpdf-2501"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the empirical distribution obtained from the
 univariate sample <var>data</var>. 
@@ -304,7 +312,7 @@ univariate sample <var>data</var>.
    <p><a name="doc_002dempirical_005fcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>empirical_cdf</b> (<var>x, data</var>)<var><a name="index-empirical_005fcdf-2214"></a></var><br>
+&mdash; Function File:  <b>empirical_cdf</b> (<var>x, data</var>)<var><a name="index-empirical_005fcdf-2502"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the empirical distribution obtained from
 the univariate sample <var>data</var>. 
@@ -314,7 +322,7 @@ the univariate sample <var>data</var>.
    <p><a name="doc_002dempirical_005finv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>empirical_inv</b> (<var>x, data</var>)<var><a name="index-empirical_005finv-2215"></a></var><br>
+&mdash; Function File:  <b>empirical_inv</b> (<var>x, data</var>)<var><a name="index-empirical_005finv-2503"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
 CDF) at <var>x</var> of the empirical distribution obtained from the
 univariate sample <var>data</var>. 
@@ -324,38 +332,37 @@ univariate sample <var>data</var>.
    <p><a name="doc_002dexppdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>exppdf</b> (<var>x, lambda</var>)<var><a name="index-exppdf-2216"></a></var><br>
+&mdash; Function File:  <b>exppdf</b> (<var>x, lambda</var>)<var><a name="index-exppdf-2504"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
-(PDF) of the exponential distribution with mean <var>lambda</var>. 
+(PDF) at <var>x</var> of the exponential distribution with mean <var>lambda</var>. 
 </p></blockquote></div>
 
 <!-- expcdf scripts/statistics/distributions/expcdf.m -->
    <p><a name="doc_002dexpcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>expcdf</b> (<var>x, lambda</var>)<var><a name="index-expcdf-2217"></a></var><br>
+&mdash; Function File:  <b>expcdf</b> (<var>x, lambda</var>)<var><a name="index-expcdf-2505"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the exponential distribution with
 mean <var>lambda</var>.
 
-        <p>The arguments can be of common size or scalar. 
+        <p>The arguments can be of common size or scalars. 
 </p></blockquote></div>
 
 <!-- expinv scripts/statistics/distributions/expinv.m -->
    <p><a name="doc_002dexpinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>expinv</b> (<var>x, lambda</var>)<var><a name="index-expinv-2218"></a></var><br>
+&mdash; Function File:  <b>expinv</b> (<var>x, lambda</var>)<var><a name="index-expinv-2506"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
-CDF) at <var>x</var> of the exponential distribution with mean
-<var>lambda</var>. 
+CDF) at <var>x</var> of the exponential distribution with mean <var>lambda</var>. 
 </p></blockquote></div>
 
 <!-- fpdf scripts/statistics/distributions/fpdf.m -->
    <p><a name="doc_002dfpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fpdf</b> (<var>x, m, n</var>)<var><a name="index-fpdf-2219"></a></var><br>
+&mdash; Function File:  <b>fpdf</b> (<var>x, m, n</var>)<var><a name="index-fpdf-2507"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the F distribution with <var>m</var> and <var>n</var>
 degrees of freedom. 
@@ -365,72 +372,57 @@ degrees of freedom.
    <p><a name="doc_002dfcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fcdf</b> (<var>x, m, n</var>)<var><a name="index-fcdf-2220"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the CDF at <var>x</var> of the F
-distribution with <var>m</var> and <var>n</var> degrees of freedom, i.e.,
-PROB (F (<var>m</var>, <var>n</var>) &le; <var>x</var>). 
+&mdash; Function File:  <b>fcdf</b> (<var>x, m, n</var>)<var><a name="index-fcdf-2508"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution function
+(CDF) at <var>x</var> of the F distribution with <var>m</var> and <var>n</var> degrees of
+freedom. 
 </p></blockquote></div>
 
 <!-- finv scripts/statistics/distributions/finv.m -->
    <p><a name="doc_002dfinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>finv</b> (<var>x, m, n</var>)<var><a name="index-finv-2221"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
-the CDF) at <var>x</var> of the F distribution with parameters <var>m</var> and
-<var>n</var>. 
+&mdash; Function File:  <b>finv</b> (<var>x, m, n</var>)<var><a name="index-finv-2509"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the F distribution with <var>m</var> and <var>n</var>
+degrees of freedom. 
 </p></blockquote></div>
 
 <!-- gampdf scripts/statistics/distributions/gampdf.m -->
    <p><a name="doc_002dgampdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>gampdf</b> (<var>x, a, b</var>)<var><a name="index-gampdf-2222"></a></var><br>
+&mdash; Function File:  <b>gampdf</b> (<var>x, a, b</var>)<var><a name="index-gampdf-2510"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, return the probability density function
-(PDF) at <var>x</var> of the Gamma distribution with parameters <var>a</var>
-and <var>b</var>. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgamma.html#doc_002dgamma">gamma</a>, <a href="doc_002dgammaln.html#doc_002dgammaln">gammaln</a>, <a href="doc_002dgammainc.html#doc_002dgammainc">gammainc</a>, <a href="doc_002dgamcdf.html#doc_002dgamcdf">gamcdf</a>, <a href="doc_002dgaminv.html#doc_002dgaminv">gaminv</a>, <a href="doc_002dgamrnd.html#doc_002dgamrnd">gamrnd</a>. 
+(PDF) at <var>x</var> of the Gamma distribution with shape parameter
+<var>a</var> and scale <var>b</var>. 
 </p></blockquote></div>
 
 <!-- gamcdf scripts/statistics/distributions/gamcdf.m -->
    <p><a name="doc_002dgamcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>gamcdf</b> (<var>x, a, b</var>)<var><a name="index-gamcdf-2223"></a></var><br>
+&mdash; Function File:  <b>gamcdf</b> (<var>x, a, b</var>)<var><a name="index-gamcdf-2511"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
-function (CDF) at <var>x</var> of the Gamma distribution with parameters
-<var>a</var> and <var>b</var>. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgamma.html#doc_002dgamma">gamma</a>, <a href="doc_002dgammaln.html#doc_002dgammaln">gammaln</a>, <a href="doc_002dgammainc.html#doc_002dgammainc">gammainc</a>, <a href="doc_002dgampdf.html#doc_002dgampdf">gampdf</a>, <a href="doc_002dgaminv.html#doc_002dgaminv">gaminv</a>, <a href="doc_002dgamrnd.html#doc_002dgamrnd">gamrnd</a>. 
+function (CDF) at <var>x</var> of the Gamma distribution with shape
+parameter <var>a</var> and scale <var>b</var>. 
 </p></blockquote></div>
 
 <!-- gaminv scripts/statistics/distributions/gaminv.m -->
    <p><a name="doc_002dgaminv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>gaminv</b> (<var>x, a, b</var>)<var><a name="index-gaminv-2224"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
-the CDF) at <var>x</var> of the Gamma distribution with parameters <var>a</var>
-and <var>b</var>. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgamma.html#doc_002dgamma">gamma</a>, <a href="doc_002dgammaln.html#doc_002dgammaln">gammaln</a>, <a href="doc_002dgammainc.html#doc_002dgammainc">gammainc</a>, <a href="doc_002dgampdf.html#doc_002dgampdf">gampdf</a>, <a href="doc_002dgamcdf.html#doc_002dgamcdf">gamcdf</a>, <a href="doc_002dgamrnd.html#doc_002dgamrnd">gamrnd</a>. 
+&mdash; Function File:  <b>gaminv</b> (<var>x, a, b</var>)<var><a name="index-gaminv-2512"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the Gamma distribution with shape parameter
+<var>a</var> and scale <var>b</var>. 
 </p></blockquote></div>
 
 <!-- geopdf scripts/statistics/distributions/geopdf.m -->
    <p><a name="doc_002dgeopdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>geopdf</b> (<var>x, p</var>)<var><a name="index-geopdf-2225"></a></var><br>
+&mdash; Function File:  <b>geopdf</b> (<var>x, p</var>)<var><a name="index-geopdf-2513"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the geometric distribution with parameter <var>p</var>. 
 </p></blockquote></div>
@@ -439,39 +431,40 @@ and <var>b</var>.
    <p><a name="doc_002dgeocdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>geocdf</b> (<var>x, p</var>)<var><a name="index-geocdf-2226"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the CDF at <var>x</var> of the
-geometric distribution with parameter <var>p</var>. 
+&mdash; Function File:  <b>geocdf</b> (<var>x, p</var>)<var><a name="index-geocdf-2514"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution function
+(CDF) at <var>x</var> of the geometric distribution with parameter <var>p</var>. 
 </p></blockquote></div>
 
 <!-- geoinv scripts/statistics/distributions/geoinv.m -->
    <p><a name="doc_002dgeoinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>geoinv</b> (<var>x, p</var>)<var><a name="index-geoinv-2227"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
-geometric distribution with parameter <var>p</var>. 
+&mdash; Function File:  <b>geoinv</b> (<var>x, p</var>)<var><a name="index-geoinv-2515"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the geometric distribution with parameter <var>p</var>. 
 </p></blockquote></div>
 
 <!-- hygepdf scripts/statistics/distributions/hygepdf.m -->
    <p><a name="doc_002dhygepdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hygepdf</b> (<var>x, t, m, n</var>)<var><a name="index-hygepdf-2228"></a></var><br>
+&mdash; Function File:  <b>hygepdf</b> (<var>x, t, m, n</var>)<var><a name="index-hygepdf-2516"></a></var><br>
 <blockquote><p>Compute the probability density function (PDF) at <var>x</var> of the
 hypergeometric distribution with parameters <var>t</var>, <var>m</var>, and
 <var>n</var>.  This is the probability of obtaining <var>x</var> marked items
 when randomly drawing a sample of size <var>n</var> without replacement
 from a population of total size <var>t</var> containing <var>m</var> marked items.
 
-        <p>The arguments must be of common size or scalar. 
+        <p>The parameters <var>t</var>, <var>m</var>, and <var>n</var> must be positive integers
+with <var>m</var> and <var>n</var> not greater than <var>t</var>. 
 </p></blockquote></div>
 
 <!-- hygecdf scripts/statistics/distributions/hygecdf.m -->
    <p><a name="doc_002dhygecdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hygecdf</b> (<var>x, t, m, n</var>)<var><a name="index-hygecdf-2229"></a></var><br>
+&mdash; Function File:  <b>hygecdf</b> (<var>x, t, m, n</var>)<var><a name="index-hygecdf-2517"></a></var><br>
 <blockquote><p>Compute the cumulative distribution function (CDF) at <var>x</var> of the
 hypergeometric distribution with parameters <var>t</var>, <var>m</var>, and
 <var>n</var>.  This is the probability of obtaining not more than <var>x</var>
@@ -479,7 +472,7 @@ marked items when randomly drawing a sample of size <var>n</var> without
 replacement from a population of total size <var>t</var> containing
 <var>m</var> marked items.
 
-        <p>The parameters <var>t</var>, <var>m</var>, and <var>n</var> must positive integers
+        <p>The parameters <var>t</var>, <var>m</var>, and <var>n</var> must be positive integers
 with <var>m</var> and <var>n</var> not greater than <var>t</var>. 
 </p></blockquote></div>
 
@@ -487,12 +480,15 @@ with <var>m</var> and <var>n</var> not greater than <var>t</var>.
    <p><a name="doc_002dhygeinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hygeinv</b> (<var>x, t, m, n</var>)<var><a name="index-hygeinv-2230"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
-hypergeometric distribution with parameters <var>t</var>, <var>m</var>, and
-<var>n</var>.
+&mdash; Function File:  <b>hygeinv</b> (<var>x, t, m, n</var>)<var><a name="index-hygeinv-2518"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the hypergeometric distribution with parameters
+<var>t</var>, <var>m</var>, and <var>n</var>.  This is the probability of obtaining <var>x</var>
+marked items when randomly drawing a sample of size <var>n</var> without
+replacement from a population of total size <var>t</var> containing <var>m</var>
+marked items.
 
-        <p>The parameters <var>t</var>, <var>m</var>, and <var>n</var> must positive integers
+        <p>The parameters <var>t</var>, <var>m</var>, and <var>n</var> must be positive integers
 with <var>m</var> and <var>n</var> not greater than <var>t</var>. 
 </p></blockquote></div>
 
@@ -500,11 +496,12 @@ with <var>m</var> and <var>n</var> not greater than <var>t</var>.
    <p><a name="doc_002dkolmogorov_005fsmirnov_005fcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>kolmogorov_smirnov_cdf</b> (<var>x, tol</var>)<var><a name="index-kolmogorov_005fsmirnov_005fcdf-2231"></a></var><br>
-<blockquote><p>Return the CDF at <var>x</var> of the Kolmogorov-Smirnov distribution,
+&mdash; Function File:  <b>kolmogorov_smirnov_cdf</b> (<var>x, tol</var>)<var><a name="index-kolmogorov_005fsmirnov_005fcdf-2519"></a></var><br>
+<blockquote><p>Return the cumulative distribution function (CDF) at <var>x</var> of the
+Kolmogorov-Smirnov distribution,
 
      <pre class="example">                   Inf
-          Q(x) =   SUM    (-1)^k exp(-2 k^2 x^2)
+          Q(x) =   SUM    (-1)^k exp (-2 k^2 x^2)
                  k = -Inf
 </pre>
         <p class="noindent">for <var>x</var> &gt; 0.
@@ -517,7 +514,7 @@ the series should be evaluated; the default is <var>tol</var> = <code>eps</code>
    <p><a name="doc_002dlaplace_005fpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>laplace_pdf</b> (<var>x</var>)<var><a name="index-laplace_005fpdf-2232"></a></var><br>
+&mdash; Function File:  <b>laplace_pdf</b> (<var>x</var>)<var><a name="index-laplace_005fpdf-2520"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the Laplace distribution. 
 </p></blockquote></div>
@@ -526,7 +523,7 @@ the series should be evaluated; the default is <var>tol</var> = <code>eps</code>
    <p><a name="doc_002dlaplace_005fcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>laplace_cdf</b> (<var>x</var>)<var><a name="index-laplace_005fcdf-2233"></a></var><br>
+&mdash; Function File:  <b>laplace_cdf</b> (<var>x</var>)<var><a name="index-laplace_005fcdf-2521"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the Laplace distribution. 
 </p></blockquote></div>
@@ -535,7 +532,7 @@ function (CDF) at <var>x</var> of the Laplace distribution.
    <p><a name="doc_002dlaplace_005finv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>laplace_inv</b> (<var>x</var>)<var><a name="index-laplace_005finv-2234"></a></var><br>
+&mdash; Function File:  <b>laplace_inv</b> (<var>x</var>)<var><a name="index-laplace_005finv-2522"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
 CDF) at <var>x</var> of the Laplace distribution. 
 </p></blockquote></div>
@@ -544,8 +541,8 @@ CDF) at <var>x</var> of the Laplace distribution.
    <p><a name="doc_002dlogistic_005fpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logistic_pdf</b> (<var>x</var>)<var><a name="index-logistic_005fpdf-2235"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the PDF at <var>x</var> of the
+&mdash; Function File:  <b>logistic_pdf</b> (<var>x</var>)<var><a name="index-logistic_005fpdf-2523"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the PDF at <var>x</var> of the
 logistic distribution. 
 </p></blockquote></div>
 
@@ -553,17 +550,17 @@ logistic distribution.
    <p><a name="doc_002dlogistic_005fcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logistic_cdf</b> (<var>x</var>)<var><a name="index-logistic_005fcdf-2236"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the CDF at <var>x</var> of the
-logistic distribution. 
+&mdash; Function File:  <b>logistic_cdf</b> (<var>x</var>)<var><a name="index-logistic_005fcdf-2524"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution function
+(CDF) at <var>x</var> of the logistic distribution. 
 </p></blockquote></div>
 
 <!-- logistic_inv scripts/statistics/distributions/logistic_inv.m -->
    <p><a name="doc_002dlogistic_005finv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logistic_inv</b> (<var>x</var>)<var><a name="index-logistic_005finv-2237"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+&mdash; Function File:  <b>logistic_inv</b> (<var>x</var>)<var><a name="index-logistic_005finv-2525"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
 the CDF) at <var>x</var> of the logistic distribution. 
 </p></blockquote></div>
 
@@ -571,7 +568,8 @@ the CDF) at <var>x</var> of the logistic distribution.
    <p><a name="doc_002dlognpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>lognpdf</b> (<var>x, mu, sigma</var>)<var><a name="index-lognpdf-2238"></a></var><br>
+&mdash; Function File:  <b>lognpdf</b> (<var>x</var>)<var><a name="index-lognpdf-2526"></a></var><br>
+&mdash; Function File:  <b>lognpdf</b> (<var>x, mu, sigma</var>)<var><a name="index-lognpdf-2527"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the lognormal distribution with parameters
 <var>mu</var> and <var>sigma</var>.  If a random variable follows this distribution,
@@ -585,7 +583,8 @@ and standard deviation <var>sigma</var>.
    <p><a name="doc_002dlogncdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logncdf</b> (<var>x, mu, sigma</var>)<var><a name="index-logncdf-2239"></a></var><br>
+&mdash; Function File:  <b>logncdf</b> (<var>x</var>)<var><a name="index-logncdf-2528"></a></var><br>
+&mdash; Function File:  <b>logncdf</b> (<var>x, mu, sigma</var>)<var><a name="index-logncdf-2529"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the lognormal distribution with
 parameters <var>mu</var> and <var>sigma</var>.  If a random variable follows this
@@ -599,7 +598,8 @@ distribution, its logarithm is normally distributed with mean
    <p><a name="doc_002dlogninv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>logninv</b> (<var>x, mu, sigma</var>)<var><a name="index-logninv-2240"></a></var><br>
+&mdash; Function File:  <b>logninv</b> (<var>x</var>)<var><a name="index-logninv-2530"></a></var><br>
+&mdash; Function File:  <b>logninv</b> (<var>x, mu, sigma</var>)<var><a name="index-logninv-2531"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
 CDF) at <var>x</var> of the lognormal distribution with parameters <var>mu</var>
 and <var>sigma</var>.  If a random variable follows this distribution, its
@@ -613,10 +613,13 @@ variance <var>sigma</var>.
    <p><a name="doc_002dnbinpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>nbinpdf</b> (<var>x, n, p</var>)<var><a name="index-nbinpdf-2241"></a></var><br>
+&mdash; Function File:  <b>nbinpdf</b> (<var>x, n, p</var>)<var><a name="index-nbinpdf-2532"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
-(PDF) at <var>x</var> of the Pascal (negative binomial) distribution with
+(PDF) at <var>x</var> of the negative binomial distribution with
 parameters <var>n</var> and <var>p</var>.
+
+        <p>When <var>n</var> is integer this is the Pascal distribution.  When
+<var>n</var> is extended to real numbers this is the Polya distribution.
 
         <p>The number of failures in a Bernoulli experiment with success
 probability <var>p</var> before the <var>n</var>-th success follows this
@@ -627,9 +630,13 @@ distribution.
    <p><a name="doc_002dnbincdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>nbincdf</b> (<var>x, n, p</var>)<var><a name="index-nbincdf-2242"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the CDF at x of the Pascal
-(negative binomial) distribution with parameters <var>n</var> and <var>p</var>.
+&mdash; Function File:  <b>nbincdf</b> (<var>x, n, p</var>)<var><a name="index-nbincdf-2533"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution function
+(CDF) at <var>x</var> of the negative binomial distribution with
+parameters <var>n</var> and <var>p</var>.
+
+        <p>When <var>n</var> is integer this is the Pascal distribution.  When
+<var>n</var> is extended to real numbers this is the Polya distribution.
 
         <p>The number of failures in a Bernoulli experiment with success
 probability <var>p</var> before the <var>n</var>-th success follows this
@@ -640,10 +647,13 @@ distribution.
    <p><a name="doc_002dnbininv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>nbininv</b> (<var>x, n, p</var>)<var><a name="index-nbininv-2243"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the quantile at <var>x</var> of the
-Pascal (negative binomial) distribution with parameters <var>n</var> and
-<var>p</var>.
+&mdash; Function File:  <b>nbininv</b> (<var>x, n, p</var>)<var><a name="index-nbininv-2534"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the negative binomial distribution
+with parameters <var>n</var> and <var>p</var>.
+
+        <p>When <var>n</var> is integer this is the Pascal distribution.  When
+<var>n</var> is extended to real numbers this is the Polya distribution.
 
         <p>The number of failures in a Bernoulli experiment with success
 probability <var>p</var> before the <var>n</var>-th success follows this
@@ -654,43 +664,46 @@ distribution.
    <p><a name="doc_002dnormpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>normpdf</b> (<var>x, m, s</var>)<var><a name="index-normpdf-2244"></a></var><br>
+&mdash; Function File:  <b>normpdf</b> (<var>x</var>)<var><a name="index-normpdf-2535"></a></var><br>
+&mdash; Function File:  <b>normpdf</b> (<var>x, mu, sigma</var>)<var><a name="index-normpdf-2536"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
-(PDF) at <var>x</var> of the normal distribution with mean <var>m</var> and
-standard deviation <var>s</var>.
+(PDF) at <var>x</var> of the normal distribution with mean <var>mu</var> and
+standard deviation <var>sigma</var>.
 
-        <p>Default values are <var>m</var> = 0, <var>s</var> = 1. 
+        <p>Default values are <var>mu</var> = 0, <var>sigma</var> = 1. 
 </p></blockquote></div>
 
 <!-- normcdf scripts/statistics/distributions/normcdf.m -->
    <p><a name="doc_002dnormcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>normcdf</b> (<var>x, m, s</var>)<var><a name="index-normcdf-2245"></a></var><br>
+&mdash; Function File:  <b>normcdf</b> (<var>x</var>)<var><a name="index-normcdf-2537"></a></var><br>
+&mdash; Function File:  <b>normcdf</b> (<var>x, mu, sigma</var>)<var><a name="index-normcdf-2538"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the normal distribution with mean
-<var>m</var> and standard deviation <var>s</var>.
+<var>mu</var> and standard deviation <var>sigma</var>.
 
-        <p>Default values are <var>m</var> = 0, <var>s</var> = 1. 
+        <p>Default values are <var>mu</var> = 0, <var>sigma</var> = 1. 
 </p></blockquote></div>
 
 <!-- norminv scripts/statistics/distributions/norminv.m -->
    <p><a name="doc_002dnorminv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>norminv</b> (<var>x, m, s</var>)<var><a name="index-norminv-2246"></a></var><br>
+&mdash; Function File:  <b>norminv</b> (<var>x</var>)<var><a name="index-norminv-2539"></a></var><br>
+&mdash; Function File:  <b>norminv</b> (<var>x, mu, sigma</var>)<var><a name="index-norminv-2540"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
-CDF) at <var>x</var> of the normal distribution with mean <var>m</var> and
-standard deviation <var>s</var>.
+CDF) at <var>x</var> of the normal distribution with mean <var>mu</var> and
+standard deviation <var>sigma</var>.
 
-        <p>Default values are <var>m</var> = 0, <var>s</var> = 1. 
+        <p>Default values are <var>mu</var> = 0, <var>sigma</var> = 1. 
 </p></blockquote></div>
 
 <!-- poisspdf scripts/statistics/distributions/poisspdf.m -->
    <p><a name="doc_002dpoisspdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>poisspdf</b> (<var>x, lambda</var>)<var><a name="index-poisspdf-2247"></a></var><br>
+&mdash; Function File:  <b>poisspdf</b> (<var>x, lambda</var>)<var><a name="index-poisspdf-2541"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the Poisson distribution with parameter <var>lambda</var>. 
 </p></blockquote></div>
@@ -699,7 +712,7 @@ standard deviation <var>s</var>.
    <p><a name="doc_002dpoisscdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>poisscdf</b> (<var>x, lambda</var>)<var><a name="index-poisscdf-2248"></a></var><br>
+&mdash; Function File:  <b>poisscdf</b> (<var>x, lambda</var>)<var><a name="index-poisscdf-2542"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the Poisson distribution with parameter
 lambda. 
@@ -709,8 +722,8 @@ lambda.
    <p><a name="doc_002dpoissinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>poissinv</b> (<var>x, lambda</var>)<var><a name="index-poissinv-2249"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
+&mdash; Function File:  <b>poissinv</b> (<var>x, lambda</var>)<var><a name="index-poissinv-2543"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
 the CDF) at <var>x</var> of the Poisson distribution with parameter
 <var>lambda</var>. 
 </p></blockquote></div>
@@ -719,34 +732,37 @@ the CDF) at <var>x</var> of the Poisson distribution with parameter
    <p><a name="doc_002dstdnormal_005fpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>stdnormal_pdf</b> (<var>x</var>)<var><a name="index-stdnormal_005fpdf-2250"></a></var><br>
+&mdash; Function File:  <b>stdnormal_pdf</b> (<var>x</var>)<var><a name="index-stdnormal_005fpdf-2544"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
-(PDF) of the standard normal distribution at <var>x</var>. 
+(PDF) at <var>x</var> of the standard normal distribution (mean = 0,
+standard deviation = 1). 
 </p></blockquote></div>
 
 <!-- stdnormal_cdf scripts/statistics/distributions/stdnormal_cdf.m -->
    <p><a name="doc_002dstdnormal_005fcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>stdnormal_cdf</b> (<var>x</var>)<var><a name="index-stdnormal_005fcdf-2251"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the CDF of the standard normal
-distribution at <var>x</var>. 
+&mdash; Function File:  <b>stdnormal_cdf</b> (<var>x</var>)<var><a name="index-stdnormal_005fcdf-2545"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the standard normal distribution
+(mean = 0, standard deviation = 1). 
 </p></blockquote></div>
 
 <!-- stdnormal_inv scripts/statistics/distributions/stdnormal_inv.m -->
    <p><a name="doc_002dstdnormal_005finv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>stdnormal_inv</b> (<var>x</var>)<var><a name="index-stdnormal_005finv-2252"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the
-inverse of the CDF) at <var>x</var> of the standard normal distribution. 
+&mdash; Function File:  <b>stdnormal_inv</b> (<var>x</var>)<var><a name="index-stdnormal_005finv-2546"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the
+inverse of the CDF) at <var>x</var> of the standard normal distribution
+(mean = 0, standard deviation = 1). 
 </p></blockquote></div>
 
 <!-- tpdf scripts/statistics/distributions/tpdf.m -->
    <p><a name="doc_002dtpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>tpdf</b> (<var>x, n</var>)<var><a name="index-tpdf-2253"></a></var><br>
+&mdash; Function File:  <b>tpdf</b> (<var>x, n</var>)<var><a name="index-tpdf-2547"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
 (PDF) at <var>x</var> of the <var>t</var> (Student) distribution with <var>n</var>
 degrees of freedom. 
@@ -756,7 +772,7 @@ degrees of freedom.
    <p><a name="doc_002dtcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>tcdf</b> (<var>x, n</var>)<var><a name="index-tcdf-2254"></a></var><br>
+&mdash; Function File:  <b>tcdf</b> (<var>x, n</var>)<var><a name="index-tcdf-2548"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
 function (CDF) at <var>x</var> of the t (Student) distribution with
 <var>n</var> degrees of freedom, i.e., PROB (t(<var>n</var>) &le; <var>x</var>). 
@@ -766,51 +782,55 @@ function (CDF) at <var>x</var> of the t (Student) distribution with
    <p><a name="doc_002dtinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>tinv</b> (<var>x, n</var>)<var><a name="index-tinv-2255"></a></var><br>
-<blockquote><p>For each probability value <var>x</var>, compute the inverse of the
-cumulative distribution function (CDF) of the t (Student)
-distribution with degrees of freedom <var>n</var>.  This function is
-analogous to looking in a table for the t-value of a single-tailed
-distribution. 
+&mdash; Function File:  <b>tinv</b> (<var>x, n</var>)<var><a name="index-tinv-2549"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the t (Student) distribution with <var>n</var>
+degrees of freedom.  This function is analogous to looking in a table
+for the t-value of a single-tailed distribution. 
 </p></blockquote></div>
 
 <!-- unidpdf scripts/statistics/distributions/unidpdf.m -->
    <p><a name="doc_002dunidpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unidpdf</b> (<var>x, v</var>)<var><a name="index-unidpdf-2256"></a></var><br>
+&mdash; Function File:  <b>unidpdf</b> (<var>x, n</var>)<var><a name="index-unidpdf-2550"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the probability density function
-(PDF) at <var>x</var> of a univariate discrete distribution which assumes
-the values in <var>v</var> with equal probability. 
+(PDF) at <var>x</var> of a discrete uniform distribution which assumes
+the integer values 1&ndash;<var>n</var> with equal probability.
+
+        <p>Warning: The underlying implementation uses the double class and
+will only be accurate for <var>n</var> &le; <code>bitmax</code>
+(2^53&nbsp;-&nbsp;1<!-- /@w --> on IEEE-754 compatible systems). 
 </p></blockquote></div>
 
 <!-- unidcdf scripts/statistics/distributions/unidcdf.m -->
    <p><a name="doc_002dunidcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unidcdf</b> (<var>x, v</var>)<var><a name="index-unidcdf-2257"></a></var><br>
+&mdash; Function File:  <b>unidcdf</b> (<var>x, n</var>)<var><a name="index-unidcdf-2551"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
-function (CDF) at <var>x</var> of a univariate discrete distribution which
-assumes the values in <var>v</var> with equal probability. 
+function (CDF) at <var>x</var> of a discrete uniform distribution which assumes
+the integer values 1&ndash;<var>n</var> with equal probability. 
 </p></blockquote></div>
 
 <!-- unidinv scripts/statistics/distributions/unidinv.m -->
    <p><a name="doc_002dunidinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unidinv</b> (<var>x, v</var>)<var><a name="index-unidinv-2258"></a></var><br>
-<blockquote><p>For each component of <var>x</var>, compute the quantile (the inverse of
-the CDF) at <var>x</var> of the univariate discrete distribution which assumes the
-values in <var>v</var> with equal probability
+&mdash; Function File:  <b>unidinv</b> (<var>x, n</var>)<var><a name="index-unidinv-2552"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of
+the CDF) at <var>x</var> of the discrete uniform distribution which assumes
+the integer values 1&ndash;<var>n</var> with equal probability. 
 </p></blockquote></div>
 
 <!-- unifpdf scripts/statistics/distributions/unifpdf.m -->
    <p><a name="doc_002dunifpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unifpdf</b> (<var>x, a, b</var>)<var><a name="index-unifpdf-2259"></a></var><br>
-<blockquote><p>For each element of <var>x</var>, compute the PDF at <var>x</var> of the uniform
-distribution on [<var>a</var>, <var>b</var>].
+&mdash; Function File:  <b>unifpdf</b> (<var>x</var>)<var><a name="index-unifpdf-2553"></a></var><br>
+&mdash; Function File:  <b>unifpdf</b> (<var>x, a, b</var>)<var><a name="index-unifpdf-2554"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the probability density function (PDF)
+at <var>x</var> of the uniform distribution on the interval [<var>a</var>, <var>b</var>].
 
         <p>Default values are <var>a</var> = 0, <var>b</var> = 1. 
 </p></blockquote></div>
@@ -819,9 +839,11 @@ distribution on [<var>a</var>, <var>b</var>].
    <p><a name="doc_002dunifcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unifcdf</b> (<var>x, a, b</var>)<var><a name="index-unifcdf-2260"></a></var><br>
-<blockquote><p>Return the CDF at <var>x</var> of the uniform distribution on [<var>a</var>,
-<var>b</var>], i.e., PROB (uniform (<var>a</var>, <var>b</var>) &le; x).
+&mdash; Function File:  <b>unifcdf</b> (<var>x</var>)<var><a name="index-unifcdf-2555"></a></var><br>
+&mdash; Function File:  <b>unifcdf</b> (<var>x, a, b</var>)<var><a name="index-unifcdf-2556"></a></var><br>
+<blockquote><p>For each element of <var>x</var>, compute the cumulative distribution
+function (CDF) at <var>x</var> of the uniform distribution on the interval
+[<var>a</var>, <var>b</var>].
 
         <p>Default values are <var>a</var> = 0, <var>b</var> = 1. 
 </p></blockquote></div>
@@ -830,9 +852,11 @@ distribution on [<var>a</var>, <var>b</var>].
    <p><a name="doc_002dunifinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unifinv</b> (<var>x, a, b</var>)<var><a name="index-unifinv-2261"></a></var><br>
+&mdash; Function File:  <b>unifinv</b> (<var>x</var>)<var><a name="index-unifinv-2557"></a></var><br>
+&mdash; Function File:  <b>unifinv</b> (<var>x, a, b</var>)<var><a name="index-unifinv-2558"></a></var><br>
 <blockquote><p>For each element of <var>x</var>, compute the quantile (the inverse of the
-CDF) at <var>x</var> of the uniform distribution on [<var>a</var>, <var>b</var>].
+CDF) at <var>x</var> of the uniform distribution on the interval
+[<var>a</var>, <var>b</var>].
 
         <p>Default values are <var>a</var> = 0, <var>b</var> = 1. 
 </p></blockquote></div>
@@ -841,38 +865,50 @@ CDF) at <var>x</var> of the uniform distribution on [<var>a</var>, <var>b</var>]
    <p><a name="doc_002dwblpdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>wblpdf</b> (<var>x, scale, shape</var>)<var><a name="index-wblpdf-2262"></a></var><br>
+&mdash; Function File:  <b>wblpdf</b> (<var>x</var>)<var><a name="index-wblpdf-2559"></a></var><br>
+&mdash; Function File:  <b>wblpdf</b> (<var>x, scale</var>)<var><a name="index-wblpdf-2560"></a></var><br>
+&mdash; Function File:  <b>wblpdf</b> (<var>x, scale, shape</var>)<var><a name="index-wblpdf-2561"></a></var><br>
 <blockquote><p>Compute the probability density function (PDF) at <var>x</var> of the
 Weibull distribution with scale parameter <var>scale</var> and shape
 parameter <var>shape</var> which is given by
 
-     <pre class="example">             shape * scale^(-shape) * x^(shape-1) * exp(-(x/scale)^shape)
+     <pre class="example">             shape * scale^(-shape) * x^(shape-1) * exp (-(x/scale)^shape)
 </pre>
-        <p class="noindent">for <var>x</var> &ge; 0. 
+        <p class="noindent">for <var>x</var> &ge; 0.
+
+        <p>Default values are <var>scale</var> = 1, <var>shape</var> = 1. 
 </p></blockquote></div>
 
 <!-- wblcdf scripts/statistics/distributions/wblcdf.m -->
    <p><a name="doc_002dwblcdf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>wblcdf</b> (<var>x, scale, shape</var>)<var><a name="index-wblcdf-2263"></a></var><br>
+&mdash; Function File:  <b>wblcdf</b> (<var>x</var>)<var><a name="index-wblcdf-2562"></a></var><br>
+&mdash; Function File:  <b>wblcdf</b> (<var>x, scale</var>)<var><a name="index-wblcdf-2563"></a></var><br>
+&mdash; Function File:  <b>wblcdf</b> (<var>x, scale, shape</var>)<var><a name="index-wblcdf-2564"></a></var><br>
 <blockquote><p>Compute the cumulative distribution function (CDF) at <var>x</var> of the
 Weibull distribution with scale parameter <var>scale</var> and shape
 parameter <var>shape</var>, which is
 
-     <pre class="example">          1 - exp(-(x/scale)^shape)
+     <pre class="example">          1 - exp (-(x/scale)^shape)
 </pre>
-        <p class="noindent">for <var>x</var> &ge; 0. 
+        <p class="noindent">for <var>x</var> &ge; 0.
+
+        <p>Default values are <var>scale</var> = 1, <var>shape</var> = 1. 
 </p></blockquote></div>
 
 <!-- wblinv scripts/statistics/distributions/wblinv.m -->
    <p><a name="doc_002dwblinv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>wblinv</b> (<var>x, scale, shape</var>)<var><a name="index-wblinv-2264"></a></var><br>
+&mdash; Function File:  <b>wblinv</b> (<var>x</var>)<var><a name="index-wblinv-2565"></a></var><br>
+&mdash; Function File:  <b>wblinv</b> (<var>x, scale</var>)<var><a name="index-wblinv-2566"></a></var><br>
+&mdash; Function File:  <b>wblinv</b> (<var>x, scale, shape</var>)<var><a name="index-wblinv-2567"></a></var><br>
 <blockquote><p>Compute the quantile (the inverse of the CDF) at <var>x</var> of the
 Weibull distribution with scale parameter <var>scale</var> and shape
-parameter <var>shape</var>. 
+parameter <var>shape</var>.
+
+        <p>Default values are <var>scale</var> = 1, <var>shape</var> = 1. 
 </p></blockquote></div>
 
    </body></html>

@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Polynomial-Manipulations.html#Polynomia
 <hr>
 </div>
 
-<h3 class="section">27.1 Evaluating Polynomials</h3>
+<h3 class="section">28.1 Evaluating Polynomials</h3>
 
 <p>The value of a polynomial represented by the vector <var>c</var> can be evaluated
 at the point <var>x</var> very easily, as the following example shows:
@@ -54,45 +54,45 @@ provides such an algorithm.
    <p><a name="doc_002dpolyval"></a>
 
 <div class="defun">
-&mdash; Function File: <var>y</var> = <b>polyval</b> (<var>p, x</var>)<var><a name="index-polyval-2359"></a></var><br>
-&mdash; Function File: <var>y</var> = <b>polyval</b> (<var>p, x, </var>[]<var>, mu</var>)<var><a name="index-polyval-2360"></a></var><br>
+&mdash; Function File: <var>y</var> = <b>polyval</b> (<var>p, x</var>)<var><a name="index-polyval-2700"></a></var><br>
+&mdash; Function File: <var>y</var> = <b>polyval</b> (<var>p, x, </var>[]<var>, mu</var>)<var><a name="index-polyval-2701"></a></var><br>
 <blockquote><p>Evaluate the polynomial <var>p</var> at the specified values of <var>x</var>.  When
-<var>mu</var> is present evaluate the polynomial for
+<var>mu</var> is present, evaluate the polynomial for
 (<var>x</var>-<var>mu</var>(1))/<var>mu</var>(2). 
 If <var>x</var> is a vector or matrix, the polynomial is evaluated for each of
 the elements of <var>x</var>.
 
-   &mdash; Function File: [<var>y</var>, <var>dy</var>] = <b>polyval</b> (<var>p, x, s</var>)<var><a name="index-polyval-2361"></a></var><br>
-&mdash; Function File: [<var>y</var>, <var>dy</var>] = <b>polyval</b> (<var>p, x, s, mu</var>)<var><a name="index-polyval-2362"></a></var><br>
+   &mdash; Function File: [<var>y</var>, <var>dy</var>] = <b>polyval</b> (<var>p, x, s</var>)<var><a name="index-polyval-2702"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>dy</var>] = <b>polyval</b> (<var>p, x, s, mu</var>)<var><a name="index-polyval-2703"></a></var><br>
 <blockquote><p>In addition to evaluating the polynomial, the second output
 represents the prediction interval, <var>y</var> +/- <var>dy</var>, which
 contains at least 50% of the future predictions.  To calculate the
 prediction interval, the structured variable <var>s</var>, originating
-form `polyfit', must be present. 
+from <code>polyfit</code>, must be supplied. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyfit.html#doc_002dpolyfit">polyfit</a>, <a href="doc_002dpolyvalm.html#doc_002dpolyvalm">polyvalm</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dfilter.html#doc_002dfilter">filter</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyvalm.html#doc_002dpolyvalm">polyvalm</a>, <a href="doc_002dpolyaffine.html#doc_002dpolyaffine">polyaffine</a>, <a href="doc_002dpolyfit.html#doc_002dpolyfit">polyfit</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>. 
 </p></blockquote></div>
 
 <!-- polyvalm scripts/polynomial/polyvalm.m -->
    <p><a name="doc_002dpolyvalm"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyvalm</b> (<var>c, x</var>)<var><a name="index-polyvalm-2363"></a></var><br>
+&mdash; Function File:  <b>polyvalm</b> (<var>c, x</var>)<var><a name="index-polyvalm-2704"></a></var><br>
 <blockquote><p>Evaluate a polynomial in the matrix sense.
 
         <p><code>polyvalm (</code><var>c</var><code>, </code><var>x</var><code>)</code> will evaluate the polynomial in the
 matrix sense, i.e., matrix multiplication is used instead of element by
-element multiplication as is used in polyval.
+element multiplication as used in <code>polyval</code>.
 
         <p>The argument <var>x</var> must be a square matrix. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dfilter.html#doc_002dfilter">filter</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>. 
 </p></blockquote></div>
 
    </body></html>

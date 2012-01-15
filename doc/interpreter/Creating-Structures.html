@@ -5,7 +5,7 @@
 <meta name="description" content="GNU Octave">
 <meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Data-Structures.html#Data-Structures" title="Data Structures">
+<link rel="up" href="Structures.html#Structures" title="Structures">
 <link rel="prev" href="Structure-Arrays.html#Structure-Arrays" title="Structure Arrays">
 <link rel="next" href="Manipulating-Structures.html#Manipulating-Structures" title="Manipulating Structures">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -29,17 +29,48 @@
 <p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Manipulating-Structures.html#Manipulating-Structures">Manipulating Structures</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Structure-Arrays.html#Structure-Arrays">Structure Arrays</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">Data Structures</a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Structures.html#Structures">Structures</a>
 <hr>
 </div>
 
 <h4 class="subsection">6.1.3 Creating Structures</h4>
 
-<p>As well as indexing a structure with ".", Octave can create a structure
-with the <code>struct</code> command.  <code>struct</code> takes pairs of arguments,
-where the first argument in the pair is the fieldname to include in the
-structure and the second is a scalar or cell array, representing the
-values to include in the structure or structure array.  For example:
+<p><a name="index-dynamic-naming-441"></a>
+Besides the index operator ".", Octave can use dynamic naming "(var)" or the
+<code>struct</code> function to create structures.  Dynamic naming uses the string
+value of a variable as the field name.  For example:
+
+<pre class="example">     a = "field2";
+     x.a = 1;
+     x.(a) = 2;
+     x
+          &rArr; x =
+             {
+               a =  1
+               field2 =  2
+             }
+</pre>
+   <p>More realistically, all of the functions that operate on strings can be used
+to build the correct field name before it is entered into the data structure.
+
+<pre class="example">     names = ["Bill"; "Mary"; "John"];
+     ages  = [37; 26; 31];
+     for i = 1:rows (names)
+       database.(names(i,:)) = ages(i);
+     endfor
+     database
+          &rArr; database =
+             {
+               Bill =  37
+               Mary =  26
+               John =  31
+             }
+</pre>
+   <p>The third way to create structures is the <code>struct</code> command.  <code>struct</code>
+takes pairs of arguments, where the first argument in the pair is the fieldname
+to include in the structure and the second is a scalar or cell array,
+representing the values to include in the structure or structure array.  For
+example:
 
 <pre class="example">     struct ("field1", 1, "field2", 2)
      &rArr; ans =
@@ -70,7 +101,7 @@ structure array with a consistent dimension.  For example:
              ans =  3
 </pre>
    <p>If you want to create a struct which contains a cell array as an
-individual field, you have to put it into another cell array like in
+individual field, you must wrap it in another cell array as shown in
 the following example:
 
 <pre class="example">     struct ("field1", {{1, "one"}}, "field2", 2)
@@ -90,7 +121,7 @@ the following example:
    <p><a name="doc_002dstruct"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>struct</b> (<var>"field", value, "field", value, <small class="dots">...</small></var>)<var><a name="index-struct-396"></a></var><br>
+&mdash; Built-in Function:  <b>struct</b> (<var>"field", value, "field", value, <small class="dots">...</small></var>)<var><a name="index-struct-442"></a></var><br>
 <blockquote>
         <p>Create a structure and initialize its value.
 
@@ -110,7 +141,7 @@ structure or a structure array.
    <p><a name="doc_002disstruct"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isstruct</b> (<var>x</var>)<var><a name="index-isstruct-397"></a></var><br>
+&mdash; Built-in Function:  <b>isstruct</b> (<var>x</var>)<var><a name="index-isstruct-443"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a structure or a structure array. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->

@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressio
 
 <h3 class="section">8.8 Operator Precedence</h3>
 
-<p><a name="index-operator-precedence-634"></a>
+<p><a name="index-operator-precedence-679"></a>
 <dfn>Operator precedence</dfn> determines how operators are grouped, when
 different operators appear close by in one expression.  For example,
 &lsquo;<samp><span class="samp">*</span></samp>&rsquo; has higher precedence than &lsquo;<samp><span class="samp">+</span></samp>&rsquo;.  Thus, the expression
@@ -50,46 +50,55 @@ you too could make a mistake.  Explicit parentheses will help prevent
 any such mistake.
 
    <p>When operators of equal precedence are used together, the leftmost
-operator groups first, except for the assignment and exponentiation
-operators, which group in the opposite order.  Thus, the expression
-<code>a - b + c</code> groups as <code>(a - b) + c</code>, but the expression
-<code>a = b = c</code> groups as <code>a = (b = c)</code>.
+operator groups first, except for the assignment operators, which group
+in the opposite order.  Thus, the expression <code>a - b + c</code> groups as
+<code>(a - b) + c</code>, but the expression <code>a = b = c</code> groups as
+<code>a = (b = c)</code>.
 
    <p>The precedence of prefix unary operators is important when another
 operator follows the operand.  For example, <code>-x^2</code> means
 <code>-(x^2)</code>, because &lsquo;<samp><span class="samp">-</span></samp>&rsquo; has lower precedence than &lsquo;<samp><span class="samp">^</span></samp>&rsquo;.
 
-   <p>Here is a table of the operators in Octave, in order of increasing
-precedence.
+   <p>Here is a table of the operators in Octave, in order of decreasing
+precedence.  Unless noted, all operators group left to right.
 
      <dl>
-<dt><code>statement separators</code><dd>&lsquo;<samp><span class="samp">;</span></samp>&rsquo;, &lsquo;<samp><span class="samp">,</span></samp>&rsquo;.
+<dt><code>function call and array indexing, cell array indexing, and structure element indexing</code><dd>&lsquo;<samp><span class="samp">()</span></samp>&rsquo;  &lsquo;<samp><span class="samp">{}</span></samp>&rsquo; &lsquo;<samp><span class="samp">.</span></samp>&rsquo;
 
-     <br><dt><code>assignment</code><dd>&lsquo;<samp><span class="samp">=</span></samp>&rsquo;, &lsquo;<samp><span class="samp">+=</span></samp>&rsquo;, &lsquo;<samp><span class="samp">-=</span></samp>&rsquo;, &lsquo;<samp><span class="samp">*=</span></samp>&rsquo;,&lsquo;<samp><span class="samp">/=</span></samp>&rsquo;.  This operator
-groups right to left.
+     <br><dt><code>postfix increment, and postfix decrement</code><dd>&lsquo;<samp><span class="samp">++</span></samp>&rsquo;  &lsquo;<samp><span class="samp">--</span></samp>&rsquo;
 
-     <br><dt><code>logical "or" and "and"</code><dd>&lsquo;<samp><span class="samp">||</span></samp>&rsquo;, &lsquo;<samp><span class="samp">&amp;&amp;</span></samp>&rsquo;.
+     <p>These operators group right to left.
 
-     <br><dt><code>element-wise "or" and "and"</code><dd>&lsquo;<samp><span class="samp">|</span></samp>&rsquo;, &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo;.
+     <br><dt><code>transpose and exponentiation</code><dd>&lsquo;<samp><span class="samp">'</span></samp>&rsquo; &lsquo;<samp><span class="samp">.'</span></samp>&rsquo; &lsquo;<samp><span class="samp">^</span></samp>&rsquo; &lsquo;<samp><span class="samp">**</span></samp>&rsquo; &lsquo;<samp><span class="samp">.^</span></samp>&rsquo; &lsquo;<samp><span class="samp">.**</span></samp>&rsquo;
 
-     <br><dt><code>relational</code><dd>&lsquo;<samp><span class="samp">&lt;</span></samp>&rsquo;, &lsquo;<samp><span class="samp">&lt;=</span></samp>&rsquo;, &lsquo;<samp><span class="samp">==</span></samp>&rsquo;, &lsquo;<samp><span class="samp">&gt;=</span></samp>&rsquo;, &lsquo;<samp><span class="samp">&gt;</span></samp>&rsquo;, &lsquo;<samp><span class="samp">!=</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">~=</span></samp>&rsquo;.
+     <br><dt><code>unary plus, unary minus, prefix increment, prefix decrement, and logical "not"</code><dd>&lsquo;<samp><span class="samp">+</span></samp>&rsquo; &lsquo;<samp><span class="samp">-</span></samp>&rsquo; &lsquo;<samp><span class="samp">++</span></samp>&rsquo;  &lsquo;<samp><span class="samp">--</span></samp>&rsquo; &lsquo;<samp><span class="samp">~</span></samp>&rsquo; &lsquo;<samp><span class="samp">!</span></samp>&rsquo;
 
-     <br><dt><code>colon</code><dd>&lsquo;<samp><span class="samp">:</span></samp>&rsquo;.
+     <br><dt><code>multiply and divide</code><dd>&lsquo;<samp><span class="samp">*</span></samp>&rsquo; &lsquo;<samp><span class="samp">/</span></samp>&rsquo; &lsquo;<samp><span class="samp">\</span></samp>&rsquo; &lsquo;<samp><span class="samp">.\</span></samp>&rsquo; &lsquo;<samp><span class="samp">.*</span></samp>&rsquo; &lsquo;<samp><span class="samp">./</span></samp>&rsquo;
 
-     <br><dt><code>add, subtract</code><dd>&lsquo;<samp><span class="samp">+</span></samp>&rsquo;, &lsquo;<samp><span class="samp">-</span></samp>&rsquo;.
+     <br><dt><code>add, subtract</code><dd>&lsquo;<samp><span class="samp">+</span></samp>&rsquo; &lsquo;<samp><span class="samp">-</span></samp>&rsquo;
 
-     <br><dt><code>multiply, divide</code><dd>&lsquo;<samp><span class="samp">*</span></samp>&rsquo;, &lsquo;<samp><span class="samp">/</span></samp>&rsquo;, &lsquo;<samp><span class="samp">\</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.\</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.*</span></samp>&rsquo;, &lsquo;<samp><span class="samp">./</span></samp>&rsquo;.
+     <br><dt><code>colon</code><dd>&lsquo;<samp><span class="samp">:</span></samp>&rsquo;
 
-     <br><dt><code>transpose</code><dd>&lsquo;<samp><span class="samp">'</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.'</span></samp>&rsquo;
+     <br><dt><code>relational</code><dd>&lsquo;<samp><span class="samp">&lt;</span></samp>&rsquo; &lsquo;<samp><span class="samp">&lt;=</span></samp>&rsquo; &lsquo;<samp><span class="samp">==</span></samp>&rsquo; &lsquo;<samp><span class="samp">&gt;=</span></samp>&rsquo; &lsquo;<samp><span class="samp">&gt;</span></samp>&rsquo; &lsquo;<samp><span class="samp">!=</span></samp>&rsquo;
+&lsquo;<samp><span class="samp">~=</span></samp>&rsquo;
 
-     <br><dt><code>unary plus, minus, increment, decrement, and ``not''</code><dd>&lsquo;<samp><span class="samp">+</span></samp>&rsquo;, &lsquo;<samp><span class="samp">-</span></samp>&rsquo;, &lsquo;<samp><span class="samp">++</span></samp>&rsquo;, &lsquo;<samp><span class="samp">--</span></samp>&rsquo;, &lsquo;<samp><span class="samp">!</span></samp>&rsquo;, &lsquo;<samp><span class="samp">~</span></samp>&rsquo;.
+     <br><dt><code>element-wise "and"</code><dd>&lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo;
 
-     <br><dt><code>exponentiation</code><dd>&lsquo;<samp><span class="samp">^</span></samp>&rsquo;, &lsquo;<samp><span class="samp">**</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.^</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.**</span></samp>&rsquo;. 
+     <br><dt><code>element-wise "or"</code><dd>&lsquo;<samp><span class="samp">|</span></samp>&rsquo;
+
+     <br><dt><code>logical "and"</code><dd>&lsquo;<samp><span class="samp">&amp;&amp;</span></samp>&rsquo;
+
+     <br><dt><code>logical "or"</code><dd>&lsquo;<samp><span class="samp">||</span></samp>&rsquo;
+
+     <br><dt><code>assignment</code><dd>&lsquo;<samp><span class="samp">=</span></samp>&rsquo; &lsquo;<samp><span class="samp">+=</span></samp>&rsquo; &lsquo;<samp><span class="samp">-=</span></samp>&rsquo; &lsquo;<samp><span class="samp">*=</span></samp>&rsquo; &lsquo;<samp><span class="samp">/=</span></samp>&rsquo; &lsquo;<samp><span class="samp">\=</span></samp>&rsquo;
+&lsquo;<samp><span class="samp">^=</span></samp>&rsquo; &lsquo;<samp><span class="samp">.*=</span></samp>&rsquo; &lsquo;<samp><span class="samp">./=</span></samp>&rsquo; &lsquo;<samp><span class="samp">.\=</span></samp>&rsquo; &lsquo;<samp><span class="samp">.^=</span></samp>&rsquo; &lsquo;<samp><span class="samp">|=</span></samp>&rsquo;
+&lsquo;<samp><span class="samp">&amp;=</span></samp>&rsquo;
+
+     <p>These operators group right to left. 
 </dl>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

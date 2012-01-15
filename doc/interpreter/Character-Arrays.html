@@ -58,7 +58,7 @@ matrix.
    <p><a name="doc_002dischar"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ischar</b> (<var>x</var>)<var><a name="index-ischar-296"></a></var><br>
+&mdash; Built-in Function:  <b>ischar</b> (<var>x</var>)<var><a name="index-ischar-328"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a character array. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -90,8 +90,9 @@ blank character using the <code>string_fill_char</code> function.
    <p><a name="doc_002dstring_005ffill_005fchar"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>string_fill_char</b> ()<var><a name="index-string_005ffill_005fchar-297"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>string_fill_char</b> (<var>new_val</var>)<var><a name="index-string_005ffill_005fchar-298"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>string_fill_char</b> ()<var><a name="index-string_005ffill_005fchar-329"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>string_fill_char</b> (<var>new_val</var>)<var><a name="index-string_005ffill_005fchar-330"></a></var><br>
+&mdash; Built-in Function:  <b>string_fill_char</b> (<var>new_val, "local"</var>)<var><a name="index-string_005ffill_005fchar-331"></a></var><br>
 <blockquote><p>Query or set the internal variable used to pad all rows of a character
 matrix to the same length.  It must be a single character.  The default
 value is <code>" "</code> (a single space).  For example:
@@ -102,7 +103,10 @@ value is <code>" "</code> (a single space).  For example:
                   "areXXXX"
                   "strings"
 </pre>
-        </blockquote></div>
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
+</p></blockquote></div>
 
    <p>This shows a problem with character matrices.  It simply isn't possible to
 represent strings of different lengths.  The solution is to use a cell array of

@@ -6,6 +6,7 @@
 <meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Installation.html#Installation" title="Installation">
+<link rel="prev" href="Running-Configure-and-Make.html#Running-Configure-and-Make" title="Running Configure and Make">
 <link rel="next" href="Installation-Problems.html#Installation-Problems" title="Installation Problems">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -28,11 +29,12 @@
 <a name="Compiling-Octave-with-64_002dbit-Indexing"></a>
 <p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Installation-Problems.html#Installation-Problems">Installation Problems</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Running-Configure-and-Make.html#Running-Configure-and-Make">Running Configure and Make</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Installation.html#Installation">Installation</a>
 <hr>
 </div>
 
-<h3 class="appendixsec">G.1 Compiling Octave with 64-bit Indexing</h3>
+<h3 class="section">G.3 Compiling Octave with 64-bit Indexing</h3>
 
 <p>Note: the following only applies to systems that have 64-bit pointers. 
 Configuring Octave with <samp><span class="option">--enable-64</span></samp> cannot magically make a
@@ -209,7 +211,7 @@ following in the <samp><span class="file">$prefix64/lib</span></samp> directory:
      <p>You must ensure that all Fortran sources except those in the
 <samp><span class="file">libcruft/ranlib</span></samp> directory are compiled such that INTEGERS are
 8-bytes wide.  If you are using gfortan, the configure script should
-automatically set the Makefile variable <code>F77_INTEGER_8_FLAG</code> to
+automatically set the Makefile variable <samp><span class="env">F77_INTEGER_8_FLAG</span></samp><!-- /@w --> to
 <samp><span class="option">-fdefault-integer-8</span></samp>.  If you are using another compiler, you
 must set this variable yourself.  You should NOT set this flag in
 <samp><span class="env">FFLAGS</span></samp>, otherwise the files in <samp><span class="file">libcruft/ranlib</span></samp> will be
@@ -222,7 +224,7 @@ dependencies.  If you discover that something does need to be done,
 please submit a bug report.
 
           <ul>
-<li>pcre or regex
+<li>pcre
 
           <li>zlib
 

@@ -55,9 +55,9 @@ function, and you can turn paging off by using the function
    <p><a name="doc_002dmore"></a>
 
 <div class="defun">
-&mdash; Command:  <b>more</b><var><a name="index-more-800"></a></var><br>
-&mdash; Command:  <b>more</b><var> on<a name="index-more-801"></a></var><br>
-&mdash; Command:  <b>more</b><var> off<a name="index-more-802"></a></var><br>
+&mdash; Command:  <b>more</b><var><a name="index-more-884"></a></var><br>
+&mdash; Command:  <b>more</b><var> on<a name="index-more-885"></a></var><br>
+&mdash; Command:  <b>more</b><var> off<a name="index-more-886"></a></var><br>
 <blockquote><p>Turn output pagination on or off.  Without an argument, <code>more</code>
 toggles the current state. 
 The current state can be determined via <code>page_screen_output</code>. 
@@ -67,13 +67,18 @@ The current state can be determined via <code>page_screen_output</code>.
    <p><a name="doc_002dPAGER"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PAGER</b> ()<var><a name="index-PAGER-803"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PAGER</b> (<var>new_val</var>)<var><a name="index-PAGER-804"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PAGER</b> ()<var><a name="index-PAGER-887"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PAGER</b> (<var>new_val</var>)<var><a name="index-PAGER-888"></a></var><br>
+&mdash; Built-in Function:  <b>PAGER</b> (<var>new_val, "local"</var>)<var><a name="index-PAGER-889"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the program to use
 to display terminal output on your system.  The default value is
 normally <code>"less"</code>, <code>"more"</code>, or
 <code>"pg"</code>, depending on what programs are installed on your system. 
-See <a href="Installation.html#Installation">Installation</a>. 
+See <a href="Installation.html#Installation">Installation</a>.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -85,10 +90,15 @@ See <a href="Installation.html#Installation">Installation</a>.
    <p><a name="doc_002dPAGER_005fFLAGS"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PAGER_FLAGS</b> ()<var><a name="index-PAGER_005fFLAGS-805"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PAGER_FLAGS</b> (<var>new_val</var>)<var><a name="index-PAGER_005fFLAGS-806"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PAGER_FLAGS</b> ()<var><a name="index-PAGER_005fFLAGS-890"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PAGER_FLAGS</b> (<var>new_val</var>)<var><a name="index-PAGER_005fFLAGS-891"></a></var><br>
+&mdash; Built-in Function:  <b>PAGER_FLAGS</b> (<var>new_val, "local"</var>)<var><a name="index-PAGER_005fFLAGS-892"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the options to pass
-to the pager. 
+to the pager.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -100,32 +110,42 @@ to the pager.
    <p><a name="doc_002dpage_005fscreen_005foutput"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>page_screen_output</b> ()<var><a name="index-page_005fscreen_005foutput-807"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>page_screen_output</b> (<var>new_val</var>)<var><a name="index-page_005fscreen_005foutput-808"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>page_screen_output</b> ()<var><a name="index-page_005fscreen_005foutput-893"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>page_screen_output</b> (<var>new_val</var>)<var><a name="index-page_005fscreen_005foutput-894"></a></var><br>
+&mdash; Built-in Function:  <b>page_screen_output</b> (<var>new_val, "local"</var>)<var><a name="index-page_005fscreen_005foutput-895"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether output intended
 for the terminal window that is longer than one page is sent through a
 pager.  This allows you to view one screenful at a time.  Some pagers
 (such as <code>less</code>&mdash;see <a href="Installation.html#Installation">Installation</a>) are also capable of moving
-backward on the output. 
+backward on the output.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 </p></blockquote></div>
 
 <!-- page_output_immediately src/pager.cc -->
    <p><a name="doc_002dpage_005foutput_005fimmediately"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>page_output_immediately</b> ()<var><a name="index-page_005foutput_005fimmediately-809"></a></var><br>
-&mdash; Built-in Function: <var>val</var> = <b>page_output_immediately</b> (<var>new_val</var>)<var><a name="index-page_005foutput_005fimmediately-810"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>page_output_immediately</b> ()<var><a name="index-page_005foutput_005fimmediately-896"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>page_output_immediately</b> (<var>new_val</var>)<var><a name="index-page_005foutput_005fimmediately-897"></a></var><br>
+&mdash; Built-in Function:  <b>page_output_immediately</b> (<var>new_val, "local"</var>)<var><a name="index-page_005foutput_005fimmediately-898"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave sends
 output to the pager as soon as it is available.  Otherwise, Octave
 buffers its output and waits until just before the prompt is printed to
-flush it to the pager. 
+flush it to the pager.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 </p></blockquote></div>
 
 <!-- fflush src/file-io.cc -->
    <p><a name="doc_002dfflush"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fflush</b> (<var>fid</var>)<var><a name="index-fflush-811"></a></var><br>
+&mdash; Built-in Function:  <b>fflush</b> (<var>fid</var>)<var><a name="index-fflush-899"></a></var><br>
 <blockquote><p>Flush output to <var>fid</var>.  This is useful for ensuring that all
 pending output makes it to the screen before some other event occurs. 
 For example, it is always a good idea to flush the standard output

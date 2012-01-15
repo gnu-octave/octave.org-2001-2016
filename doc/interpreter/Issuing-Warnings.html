@@ -61,8 +61,12 @@ is the identification string, and the second is the actual warning.
    <p><a name="doc_002dwarning"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>warning</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-warning-765"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-warning-766"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-warning-822"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-warning-823"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>"on", id</var>)<var><a name="index-warning-824"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>"off", id</var>)<var><a name="index-warning-825"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>"query", id</var>)<var><a name="index-warning-826"></a></var><br>
+&mdash; Built-in Function:  <b>warning</b> (<var>"error", id</var>)<var><a name="index-warning-827"></a></var><br>
 <blockquote><p>Format the optional arguments under the control of the template string
 <var>template</var> using the same rules as the <code>printf</code> family of
 functions (see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>) and print the resulting message
@@ -76,18 +80,19 @@ to go on.
 warnings tagged by <var>id</var>.  The special identifier &lsquo;<samp><span class="samp">"all"</span></samp>&rsquo; may
 be used to set the state of all warnings.
 
-   &mdash; Built-in Function:  <b>warning</b> (<var>"on", id</var>)<var><a name="index-warning-767"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>"off", id</var>)<var><a name="index-warning-768"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>"error", id</var>)<var><a name="index-warning-769"></a></var><br>
-&mdash; Built-in Function:  <b>warning</b> (<var>"query", id</var>)<var><a name="index-warning-770"></a></var><br>
-<blockquote><p>Set or query the state of a particular warning using the identifier
-<var>id</var>.  If the identifier is omitted, a value of &lsquo;<samp><span class="samp">"all"</span></samp>&rsquo; is
-assumed.  If you set the state of a warning to &lsquo;<samp><span class="samp">"error"</span></samp>&rsquo;, the
-warning named by <var>id</var> is handled as if it were an error instead. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
+        <p>If the first argument is &lsquo;<samp><span class="samp">"on"</span></samp>&rsquo; or &lsquo;<samp><span class="samp">"off"</span></samp>&rsquo;, set the state
+of a particular warning using the identifier <var>id</var>.  If the first
+argument is &lsquo;<samp><span class="samp">"query"</span></samp>&rsquo;, query the state of this warning instead. 
+If the identifier is omitted, a value of &lsquo;<samp><span class="samp">"all"</span></samp>&rsquo; is assumed.  If
+you set the state of a warning to &lsquo;<samp><span class="samp">"error"</span></samp>&rsquo;, the warning named by
+<var>id</var> is handled as if it were an error instead.  So, for example, the
+following handles all warnings as errors:
 
+     <pre class="example">          warning ("error");
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dwarning_005fids.html#doc_002dwarning_005fids">warning_ids</a>. 
 </p></blockquote></div>
 
@@ -95,7 +100,7 @@ warning named by <var>id</var> is handled as if it were an error instead.
    <p><a name="doc_002dlastwarn"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lastwarn</b> (<var>msg, msgid</var>)<var><a name="index-lastwarn-771"></a></var><br>
+&mdash; Built-in Function: [<var>msg</var>, <var>msgid</var>] = <b>lastwarn</b> (<var>msg, msgid</var>)<var><a name="index-lastwarn-828"></a></var><br>
 <blockquote><p>Without any arguments, return the last warning message.  With one
 argument, set the last warning message to <var>msg</var>.  With two arguments,
 also set the last message identifier. 

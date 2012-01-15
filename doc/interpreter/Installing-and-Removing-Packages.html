@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Packages.html#Packages">Packages</a>
 <hr>
 </div>
 
-<h3 class="section">35.1 Installing and Removing Packages</h3>
+<h3 class="section">37.1 Installing and Removing Packages</h3>
 
 <p>Assuming a package is available in the file <samp><span class="file">image-1.0.0.tar.gz</span></samp>
 it can be installed from the Octave prompt with the command
@@ -90,10 +90,12 @@ to disable dependency checking.
    <p><a name="doc_002dpkg"></a>
 
 <div class="defun">
-&mdash; Command:  <b>pkg</b><var> command pkg_name<a name="index-pkg-2945"></a></var><br>
-&mdash; Command:  <b>pkg</b><var> command option pkg_name<a name="index-pkg-2946"></a></var><br>
-<blockquote><p>This command interacts with the package manager.  Different actions will
-be taken depending on the value of <var>command</var>.
+&mdash; Command:  <b>pkg</b><var> command pkg_name<a name="index-pkg-3354"></a></var><br>
+&mdash; Command:  <b>pkg</b><var> command option pkg_name<a name="index-pkg-3355"></a></var><br>
+<blockquote><p>Manage packages (groups of add-on functions) for Octave.  Different actions
+are available depending on the value of <var>command</var>.
+
+        <p>Available commands:
 
           <dl>
 <dt>&lsquo;<samp><span class="samp">install</span></samp>&rsquo;<dd>Install named packages.  For example,
@@ -106,25 +108,35 @@ be taken depending on the value of <var>command</var>.
 in which a package is installed.  These options can be one or more of
 
                <dl>
-<dt><code>-nodeps</code><dd>The package manager will disable the dependency checking.  That way it
-is possible to install a package even if it depends on another package
-that's not installed on the system.  <strong>Use this option with care.</strong>
+<dt><code>-nodeps</code><dd>The package manager will disable dependency checking.  With this option it
+is possible to install a package even when it depends on another package
+which is not installed on the system.  <strong>Use this option with care.</strong>
 
                <br><dt><code>-noauto</code><dd>The package manager will not automatically load the installed package
-when starting Octave, even if the package requests that it is.
+when starting Octave.  This overrides any setting within the package.
 
                <br><dt><code>-auto</code><dd>The package manager will automatically load the installed package when
-starting Octave, even if the package requests that it isn't.
+starting Octave.  This overrides any setting within the package.
 
-               <br><dt><code>-local</code><dd>A local installation is forced, even if the user has system privileges.
+               <br><dt><code>-local</code><dd>A local installation (package available only to current user) is forced,
+even if the user has system privileges.
 
-               <br><dt><code>-global</code><dd>A global installation is forced, even if the user doesn't normally have
-system privileges
+               <br><dt><code>-global</code><dd>A global installation (package available to all users) is forced, even if
+the user doesn't normally have system privileges.
 
-               <br><dt><code>-verbose</code><dd>The package manager will print the output of all of the commands that are
-performed. 
+               <br><dt><code>-forge</code><dd>Install a package directly from the Octave-Forge repository.  This
+requires an internet connection and the cURL library.
+
+               <br><dt><code>-verbose</code><dd>The package manager will print the output of all commands as
+they are performed. 
 </dl>
 
+          <br><dt>&lsquo;<samp><span class="samp">update</span></samp>&rsquo;<dd>Check installed Octave-Forge packages against repository and update any
+outdated items.  This requires an internet connection and the cURL library. 
+Usage:
+
+          <pre class="example">               pkg update
+</pre>
           <br><dt>&lsquo;<samp><span class="samp">uninstall</span></samp>&rsquo;<dd>Uninstall named packages.  For example,
 
           <pre class="example">               pkg uninstall image
@@ -139,44 +151,50 @@ possible to use the functions provided by the package.  For example,
           <pre class="example">               pkg load image
 </pre>
           <p class="noindent">adds the <code>image</code> package to the path.  It is possible to load all
-installed packages at once with the command
+installed packages at once with the keyword &lsquo;<samp><span class="samp">all</span></samp>&rsquo;.  Usage:
 
           <pre class="example">               pkg load all
 </pre>
-          <br><dt>&lsquo;<samp><span class="samp">unload</span></samp>&rsquo;<dd>Removes named packages from the path.  After unloading a package it is
-no longer possible to use the functions provided by the package. 
-This command behaves like the <code>load</code> command.
+          <br><dt>&lsquo;<samp><span class="samp">unload</span></samp>&rsquo;<dd>Remove named packages from the path.  After unloading a package it is
+no longer possible to use the functions provided by the package.  It is
+possible to unload all installed packages at once with the keyword
+&lsquo;<samp><span class="samp">all</span></samp>&rsquo;.  Usage:
 
-          <br><dt>&lsquo;<samp><span class="samp">list</span></samp>&rsquo;<dd>Show a list of the currently installed packages.  By requesting one or two
-output argument it is possible to get a list of the currently installed
-packages.  For example,
-
-          <pre class="example">               installed_packages = pkg list;
+          <pre class="example">               pkg unload all
 </pre>
-          <p class="noindent">returns a cell array containing a structure for each installed package. 
-The command
+          <br><dt>&lsquo;<samp><span class="samp">list</span></samp>&rsquo;<dd>Show the list of currently installed packages.  For example,
 
-          <pre class="example">               [<var>user_packages</var>, <var>system_packages</var>] = pkg list
+          <pre class="example">               installed_packages = pkg ("list")
 </pre>
-          <p class="noindent">splits the list of installed packages into those who are installed by
-the current user, and those installed by the system administrator.
+          <p class="noindent">returns a cell array containing a structure for each installed package.
 
+          <p>If two output arguments are requested <code>pkg</code> splits the list of
+installed packages into those which were installed by the current user,
+and those which were installed by the system administrator.
+
+          <pre class="example">               [user_packages, system_packages] = pkg ("list")
+</pre>
+          <p>The option '-forge' lists packages available at the Octave-Forge repository. 
+This requires an internet connection and the cURL library.  For example:
+
+          <pre class="example">               oct_forge_pkgs = pkg ("list", "-forge")
+</pre>
           <br><dt>&lsquo;<samp><span class="samp">describe</span></samp>&rsquo;<dd>Show a short description of the named installed packages, with the option
-'-verbose' also list functions provided by the package, e.g.:
+'-verbose' also list functions provided by the package.  For example,
 
-          <pre class="example">                pkg describe -verbose all
+          <pre class="example">               pkg describe -verbose all
 </pre>
           <p class="noindent">will describe all installed packages and the functions they provide. 
 If one output is requested a cell of structure containing the
 description and list of functions of each package is returned as
 output rather than printed on screen:
 
-          <pre class="example">                desc = pkg ("describe", "secs1d", "image")
+          <pre class="example">               desc = pkg ("describe", "secs1d", "image")
 </pre>
           <p class="noindent">If any of the requested packages is not installed, pkg returns an
 error, unless a second output is requested:
 
-          <pre class="example">                [ desc, flag] = pkg ("describe", "secs1d", "image")
+          <pre class="example">               [desc, flag] = pkg ("describe", "secs1d", "image")
 </pre>
           <p class="noindent"><var>flag</var> will take one of the values "Not installed", "Loaded" or
 "Not loaded" for each of the named packages.
@@ -191,16 +209,16 @@ Packages will be installed in this directory.
           <p>It is possible to get the current installation prefix by requesting an
 output argument.  For example:
 
-          <pre class="example">               p = pkg prefix
+          <pre class="example">               pfx = pkg ("prefix")
 </pre>
           <p>The location in which to install the architecture dependent files can be
-independent specified with an addition argument.  For example:
+independently specified with an addition argument.  For example:
 
           <pre class="example">               pkg prefix ~/my_octave_packages ~/my_arch_dep_pkgs
 </pre>
-          <br><dt>&lsquo;<samp><span class="samp">local_list</span></samp>&rsquo;<dd>Set the file in which to look for information on the locally
+          <br><dt>&lsquo;<samp><span class="samp">local_list</span></samp>&rsquo;<dd>Set the file in which to look for information on locally
 installed packages.  Locally installed packages are those that are
-typically available only to the current user.  For example:
+available only to the current user.  For example:
 
           <pre class="example">               pkg local_list ~/.octave_packages
 </pre>
@@ -208,9 +226,9 @@ typically available only to the current user.  For example:
 
           <pre class="example">               pkg local_list
 </pre>
-          <br><dt>&lsquo;<samp><span class="samp">global_list</span></samp>&rsquo;<dd>Set the file in which to look for, for information on the globally
+          <br><dt>&lsquo;<samp><span class="samp">global_list</span></samp>&rsquo;<dd>Set the file in which to look for information on globally
 installed packages.  Globally installed packages are those that are
-typically available to all users.  For example:
+available to all users.  For example:
 
           <pre class="example">               pkg global_list /usr/share/octave/octave_packages
 </pre>
@@ -218,16 +236,7 @@ typically available to all users.  For example:
 
           <pre class="example">               pkg global_list
 </pre>
-          <br><dt>&lsquo;<samp><span class="samp">rebuild</span></samp>&rsquo;<dd>Rebuilds the package database from the installed directories.  This can
-be used in cases where for some reason the package database is corrupted. 
-It can also take the <samp><span class="option">-auto</span></samp> and <samp><span class="option">-noauto</span></samp> options to allow the
-autoloading state of a package to be changed.  For example,
-
-          <pre class="example">               pkg rebuild -noauto image
-</pre>
-          <p class="noindent">will remove the autoloading status of the image package.
-
-          <br><dt>&lsquo;<samp><span class="samp">build</span></samp>&rsquo;<dd>Builds a binary form of a package or packages.  The binary file produced
+          <br><dt>&lsquo;<samp><span class="samp">build</span></samp>&rsquo;<dd>Build a binary form of a package or packages.  The binary file produced
 will itself be an Octave package that can be installed normally with
 <code>pkg</code>.  The form of the command to build a binary package is
 
@@ -236,8 +245,18 @@ will itself be an Octave package that can be installed normally with
           <p class="noindent">where <code>builddir</code> is the name of a directory where the temporary
 installation will be produced and the binary packages will be found. 
 The options <samp><span class="option">-verbose</span></samp> and <samp><span class="option">-nodeps</span></samp> are respected, while
-the other options are ignored. 
-</dl>
+all other options are ignored.
+
+          <br><dt>&lsquo;<samp><span class="samp">rebuild</span></samp>&rsquo;<dd>Rebuild the package database from the installed directories.  This can
+be used in cases where the package database has been corrupted. 
+It can also take the <samp><span class="option">-auto</span></samp> and <samp><span class="option">-noauto</span></samp> options to allow the
+autoloading state of a package to be changed.  For example,
+
+          <pre class="example">               pkg rebuild -noauto image
+</pre>
+          <p class="noindent">will remove the autoloading status of the image package.
+
+        </dl>
         </p></blockquote></div>
 
    </body></html>

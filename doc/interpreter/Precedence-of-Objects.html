@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Overloading-Objects.html#Overloading-Ob
 <hr>
 </div>
 
-<h4 class="subsection">33.4.3 Precedence of Objects</h4>
+<h4 class="subsection">34.4.3 Precedence of Objects</h4>
 
 <p>Many functions and operators take two or more arguments and so the
 case can easily arise that these functions are called with objects of
@@ -44,7 +44,7 @@ to a function or operator.  To do this the <code>superiorto</code> and
    <p><a name="doc_002dsuperiorto"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>superiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-superiorto-2713"></a></var><br>
+&mdash; Built-in Function:  <b>superiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-superiorto-3061"></a></var><br>
 <blockquote><p>When called from a class constructor, mark the object currently
 constructed as having a higher precedence than <var>class_name</var>. 
 More that one such class can be specified in a single call. 
@@ -55,7 +55,7 @@ This function may only be called from a class constructor.
    <p><a name="doc_002dinferiorto"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>inferiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-inferiorto-2714"></a></var><br>
+&mdash; Built-in Function:  <b>inferiorto</b> (<var>class_name, <small class="dots">...</small></var>)<var><a name="index-inferiorto-3062"></a></var><br>
 <blockquote><p>When called from a class constructor, mark the object currently
 constructed as having a lower precedence than <var>class_name</var>. 
 More that one such class can be specified in a single call. 
@@ -73,15 +73,16 @@ the above is of the type "polynomial" and so we use the
 polynomial class constructor would be modified to be
 
 <pre class="example"><pre class="verbatim">     ## -*- texinfo -*-
-     ## @deftypefn {Function File} {} polynomial ()
+     ## @deftypefn  {Function File} {} polynomial ()
      ## @deftypefnx {Function File} {} polynomial (@var{a})
-     ## Creates a polynomial object representing the polynomial
+     ## Create a polynomial object representing the polynomial
      ##
      ## @example
      ## a0 + a1 * x + a2 * x^2 + @dots{} + an * x^n
      ## @end example
      ##
-     ## from a vector of coefficients [a0 a1 a2 ... an].
+     ## @noindent
+     ## from a vector of coefficients [a0 a1 a2 @dots{} an].
      ## @end deftypefn
      
      function p = polynomial (a)

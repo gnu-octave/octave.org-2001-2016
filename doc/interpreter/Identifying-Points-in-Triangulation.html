@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Delaunay-Triangulation.html#Delaunay-Tr
 <hr>
 </div>
 
-<h4 class="subsection">29.1.2 Identifying Points in Triangulation</h4>
+<h4 class="subsection">30.1.2 Identifying Points in Triangulation</h4>
 
 <p>It is often necessary to identify whether a particular point in the
 N-dimensional space is within the Delaunay tessellation of a set of
@@ -87,7 +87,7 @@ Barycentric coordinates are not explicitly formed.
    <p><a name="doc_002dtsearch"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>idx</var> = <b>tsearch</b> (<var>x, y, t, xi, yi</var>)<var><a name="index-tsearch-2448"></a></var><br>
+&mdash; Loadable Function: <var>idx</var> = <b>tsearch</b> (<var>x, y, t, xi, yi</var>)<var><a name="index-tsearch-2788"></a></var><br>
 <blockquote><p>Search for the enclosing Delaunay convex hull.  For <var>t</var><code> =
 delaunay (</code><var>x</var><code>, </code><var>y</var><code>)</code>, finds the index in <var>t</var> containing the
 points <code>(</code><var>xi</var><code>, </code><var>yi</var><code>)</code>.  For points outside the convex hull,
@@ -103,8 +103,8 @@ points <code>(</code><var>xi</var><code>, </code><var>yi</var><code>)</code>.  F
    <p><a name="doc_002dtsearchn"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>idx</var>, <var>p</var>] = <b>tsearchn</b> (<var>x, t, xi</var>)<var><a name="index-tsearchn-2449"></a></var><br>
-<blockquote><p>Searches for the enclosing Delaunay convex hull.  For <var>t</var><code> =
+&mdash; Function File: [<var>idx</var>, <var>p</var>] = <b>tsearchn</b> (<var>x, t, xi</var>)<var><a name="index-tsearchn-2789"></a></var><br>
+<blockquote><p>Search for the enclosing Delaunay convex hull.  For <var>t</var><code> =
 delaunayn (</code><var>x</var><code>)</code>, finds the index in <var>t</var> containing the
 points <var>xi</var>.  For points outside the convex hull, <var>idx</var> is NaN. 
 If requested <code>tsearchn</code> also returns the Barycentric coordinates <var>p</var>
@@ -146,9 +146,9 @@ N-simplex within which the desired point is found.
    <p><a name="doc_002ddsearch"></a>
 
 <div class="defun">
-&mdash; Function File: <var>idx</var> = <b>dsearch</b> (<var>x, y, tri, xi, yi</var>)<var><a name="index-dsearch-2450"></a></var><br>
-&mdash; Function File: <var>idx</var> = <b>dsearch</b> (<var>x, y, tri, xi, yi, s</var>)<var><a name="index-dsearch-2451"></a></var><br>
-<blockquote><p>Returns the index <var>idx</var> or the closest point in <var>x</var><code>, </code><var>y</var>
+&mdash; Function File: <var>idx</var> = <b>dsearch</b> (<var>x, y, tri, xi, yi</var>)<var><a name="index-dsearch-2790"></a></var><br>
+&mdash; Function File: <var>idx</var> = <b>dsearch</b> (<var>x, y, tri, xi, yi, s</var>)<var><a name="index-dsearch-2791"></a></var><br>
+<blockquote><p>Return the index <var>idx</var> or the closest point in <var>x</var><code>, </code><var>y</var>
 to the elements <code>[</code><var>xi</var><code>(:), </code><var>yi</var><code>(:)]</code>.  The variable <var>s</var> is
 accepted for compatibility but is ignored. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -162,11 +162,11 @@ accepted for compatibility but is ignored.
    <p><a name="doc_002ddsearchn"></a>
 
 <div class="defun">
-&mdash; Function File: <var>idx</var> = <b>dsearchn</b> (<var>x, tri, xi</var>)<var><a name="index-dsearchn-2452"></a></var><br>
-&mdash; Function File: <var>idx</var> = <b>dsearchn</b> (<var>x, tri, xi, outval</var>)<var><a name="index-dsearchn-2453"></a></var><br>
-&mdash; Function File: <var>idx</var> = <b>dsearchn</b> (<var>x, xi</var>)<var><a name="index-dsearchn-2454"></a></var><br>
-&mdash; Function File: [<var>idx</var>, <var>d</var>] = <b>dsearchn</b> (<var><small class="dots">...</small></var>)<var><a name="index-dsearchn-2455"></a></var><br>
-<blockquote><p>Returns the index <var>idx</var> or the closest point in <var>x</var> to the elements
+&mdash; Function File: <var>idx</var> = <b>dsearchn</b> (<var>x, tri, xi</var>)<var><a name="index-dsearchn-2792"></a></var><br>
+&mdash; Function File: <var>idx</var> = <b>dsearchn</b> (<var>x, tri, xi, outval</var>)<var><a name="index-dsearchn-2793"></a></var><br>
+&mdash; Function File: <var>idx</var> = <b>dsearchn</b> (<var>x, xi</var>)<var><a name="index-dsearchn-2794"></a></var><br>
+&mdash; Function File: [<var>idx</var>, <var>d</var>] = <b>dsearchn</b> (<var><small class="dots">...</small></var>)<var><a name="index-dsearchn-2795"></a></var><br>
+<blockquote><p>Return the index <var>idx</var> or the closest point in <var>x</var> to the elements
 <var>xi</var>.  If <var>outval</var> is supplied, then the values of <var>xi</var> that are
 not contained within one of the simplices <var>tri</var> are set to
 <var>outval</var>.  Generally, <var>tri</var> is returned from <code>delaunayn

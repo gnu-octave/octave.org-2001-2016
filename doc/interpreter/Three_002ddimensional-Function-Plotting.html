@@ -5,7 +5,8 @@
 <meta name="description" content="GNU Octave">
 <meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting" title="Three-Dimensional Plotting">
+<link rel="up" href="Three_002dDimensional-Plots.html#Three_002dDimensional-Plots" title="Three-Dimensional Plots">
+<link rel="prev" href="Aspect-Ratio.html#Aspect-Ratio" title="Aspect Ratio">
 <link rel="next" href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes" title="Three-dimensional Geometric Shapes">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -28,23 +29,24 @@
 <a name="Three_002ddimensional-Function-Plotting"></a>
 <p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes">Three-dimensional Geometric Shapes</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">Three-Dimensional Plotting</a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Aspect-Ratio.html#Aspect-Ratio">Aspect Ratio</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Three_002dDimensional-Plots.html#Three_002dDimensional-Plots">Three-Dimensional Plots</a>
 <hr>
 </div>
 
-<h5 class="subsubsection">15.2.2.1 Three-dimensional Function Plotting</h5>
+<h5 class="subsubsection">15.2.2.2 Three-dimensional Function Plotting</h5>
 
 <!-- ezplot3 scripts/plot/ezplot3.m -->
 <p><a name="doc_002dezplot3"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ezplot3</b> (<var>fx, fy, fz</var>)<var><a name="index-ezplot3-1178"></a></var><br>
-&mdash; Function File:  <b>ezplot3</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezplot3-1179"></a></var><br>
-&mdash; Function File:  <b>ezplot3</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezplot3-1180"></a></var><br>
-&mdash; Function File:  <b>ezplot3</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezplot3-1181"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>ezplot3</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezplot3-1182"></a></var><br>
+&mdash; Function File:  <b>ezplot3</b> (<var>fx, fy, fz</var>)<var><a name="index-ezplot3-1322"></a></var><br>
+&mdash; Function File:  <b>ezplot3</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezplot3-1323"></a></var><br>
+&mdash; Function File:  <b>ezplot3</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezplot3-1324"></a></var><br>
+&mdash; Function File:  <b>ezplot3</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezplot3-1325"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>ezplot3</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezplot3-1326"></a></var><br>
 <blockquote>
-        <p>Plots in three-dimensions the curve defined parametrically. 
+        <p>Plot a parametrically defined curve in three dimensions. 
 <var>fx</var>, <var>fy</var>, and <var>fz</var> are strings, inline functions
 or function handles with one arguments defining the function.  By
 default the plot is over the domain <code>-2*pi &lt; </code><var>x</var><code> &lt; 2*pi</code>
@@ -53,8 +55,7 @@ with 60 points.
         <p>If <var>dom</var> is a two element vector, it represents the minimum and maximum
 value of <var>t</var>.  <var>n</var> is a scalar defining the number of points to use.
 
-        <p>The optional return value <var>h</var> provides a list of handles to the
-the parts of the vector field (body, arrow and marker).
+        <p>The optional return value <var>h</var> is a graphics handle to the created plot.
 
      <pre class="example">          fx = @(t) cos (t);
           fy = @(t) sin (t);
@@ -71,15 +72,15 @@ the parts of the vector field (body, arrow and marker).
    <p><a name="doc_002dezmesh"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ezmesh</b> (<var>f</var>)<var><a name="index-ezmesh-1183"></a></var><br>
-&mdash; Function File:  <b>ezmesh</b> (<var>fx, fy, fz</var>)<var><a name="index-ezmesh-1184"></a></var><br>
-&mdash; Function File:  <b>ezmesh</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezmesh-1185"></a></var><br>
-&mdash; Function File:  <b>ezmesh</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezmesh-1186"></a></var><br>
-&mdash; Function File:  <b>ezmesh</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezmesh-1187"></a></var><br>
-&mdash; Function File:  <b>ezmesh</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezmesh-1188"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>ezmesh</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezmesh-1189"></a></var><br>
+&mdash; Function File:  <b>ezmesh</b> (<var>f</var>)<var><a name="index-ezmesh-1327"></a></var><br>
+&mdash; Function File:  <b>ezmesh</b> (<var>fx, fy, fz</var>)<var><a name="index-ezmesh-1328"></a></var><br>
+&mdash; Function File:  <b>ezmesh</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezmesh-1329"></a></var><br>
+&mdash; Function File:  <b>ezmesh</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezmesh-1330"></a></var><br>
+&mdash; Function File:  <b>ezmesh</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezmesh-1331"></a></var><br>
+&mdash; Function File:  <b>ezmesh</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezmesh-1332"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>ezmesh</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezmesh-1333"></a></var><br>
 <blockquote>
-        <p>Plots the mesh defined by a function.  <var>f</var> is a string, inline
+        <p>Plot the mesh defined by a function.  <var>f</var> is a string, inline
 function or function handle with two arguments defining the function.  By
 default the plot is over the domain <code>-2*pi &lt; </code><var>x</var><code> &lt; 2*pi</code> and
 <code>-2*pi &lt; </code><var>y</var><code> &lt; 2*pi</code> with 60 points in each dimension.
@@ -98,8 +99,8 @@ function <code>[</code><var>fx</var><code> (</code><var>s</var><code>, </code><v
         <p>If the argument 'circ' is given, then the function is plotted over a disk
 centered on the middle of the domain <var>dom</var>.
 
-        <p>The optional return value <var>h</var> provides a list of handles to the
-the parts of the vector field (body, arrow and marker).
+        <p>The optional return value <var>h</var> is a graphics handle to the created
+surface object.
 
      <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
           ezmesh (f, [-3, 3]);
@@ -114,22 +115,22 @@ the parts of the vector field (body, arrow and marker).
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dezplot.html#doc_002dezplot">ezplot</a>, <a href="doc_002dezsurf.html#doc_002dezsurf">ezsurf</a>, <a href="doc_002dezsurfc.html#doc_002dezsurfc">ezsurfc</a>, <a href="doc_002dezmeshc.html#doc_002dezmeshc">ezmeshc</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dezplot.html#doc_002dezplot">ezplot</a>, <a href="doc_002dezmeshc.html#doc_002dezmeshc">ezmeshc</a>, <a href="doc_002dezsurf.html#doc_002dezsurf">ezsurf</a>, <a href="doc_002dezsurfc.html#doc_002dezsurfc">ezsurfc</a>. 
 </p></blockquote></div>
 
 <!-- ezmeshc scripts/plot/ezmeshc.m -->
    <p><a name="doc_002dezmeshc"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ezmeshc</b> (<var>f</var>)<var><a name="index-ezmeshc-1190"></a></var><br>
-&mdash; Function File:  <b>ezmeshc</b> (<var>fx, fy, fz</var>)<var><a name="index-ezmeshc-1191"></a></var><br>
-&mdash; Function File:  <b>ezmeshc</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezmeshc-1192"></a></var><br>
-&mdash; Function File:  <b>ezmeshc</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezmeshc-1193"></a></var><br>
-&mdash; Function File:  <b>ezmeshc</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezmeshc-1194"></a></var><br>
-&mdash; Function File:  <b>ezmeshc</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezmeshc-1195"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>ezmeshc</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezmeshc-1196"></a></var><br>
+&mdash; Function File:  <b>ezmeshc</b> (<var>f</var>)<var><a name="index-ezmeshc-1334"></a></var><br>
+&mdash; Function File:  <b>ezmeshc</b> (<var>fx, fy, fz</var>)<var><a name="index-ezmeshc-1335"></a></var><br>
+&mdash; Function File:  <b>ezmeshc</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezmeshc-1336"></a></var><br>
+&mdash; Function File:  <b>ezmeshc</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezmeshc-1337"></a></var><br>
+&mdash; Function File:  <b>ezmeshc</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezmeshc-1338"></a></var><br>
+&mdash; Function File:  <b>ezmeshc</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezmeshc-1339"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>ezmeshc</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezmeshc-1340"></a></var><br>
 <blockquote>
-        <p>Plots the mesh and contour lines defined by a function.  <var>f</var> is a string,
+        <p>Plot the mesh and contour lines defined by a function.  <var>f</var> is a string,
 inline function or function handle with two arguments defining the function. 
 By default the plot is over the domain <code>-2*pi &lt; </code><var>x</var><code> &lt; 2*pi</code> and
 <code>-2*pi &lt; </code><var>y</var><code> &lt; 2*pi</code> with 60 points in each dimension.
@@ -148,8 +149,9 @@ function <code>[</code><var>fx</var><code> (</code><var>s</var><code>, </code><v
         <p>If the argument 'circ' is given, then the function is plotted over a disk
 centered on the middle of the domain <var>dom</var>.
 
-        <p>The optional return value <var>h</var> provides a list of handles to the
-the parts of the vector field (body, arrow and marker).
+        <p>The optional return value <var>h</var> is a 2-element vector with a graphics
+handle for the created mesh plot and a second handle for the created contour
+plot.
 
      <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
           ezmeshc (f, [-3, 3]);
@@ -164,15 +166,15 @@ the parts of the vector field (body, arrow and marker).
    <p><a name="doc_002dezsurf"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ezsurf</b> (<var>f</var>)<var><a name="index-ezsurf-1197"></a></var><br>
-&mdash; Function File:  <b>ezsurf</b> (<var>fx, fy, fz</var>)<var><a name="index-ezsurf-1198"></a></var><br>
-&mdash; Function File:  <b>ezsurf</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezsurf-1199"></a></var><br>
-&mdash; Function File:  <b>ezsurf</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezsurf-1200"></a></var><br>
-&mdash; Function File:  <b>ezsurf</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezsurf-1201"></a></var><br>
-&mdash; Function File:  <b>ezsurf</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezsurf-1202"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>ezsurf</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezsurf-1203"></a></var><br>
+&mdash; Function File:  <b>ezsurf</b> (<var>f</var>)<var><a name="index-ezsurf-1341"></a></var><br>
+&mdash; Function File:  <b>ezsurf</b> (<var>fx, fy, fz</var>)<var><a name="index-ezsurf-1342"></a></var><br>
+&mdash; Function File:  <b>ezsurf</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezsurf-1343"></a></var><br>
+&mdash; Function File:  <b>ezsurf</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezsurf-1344"></a></var><br>
+&mdash; Function File:  <b>ezsurf</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezsurf-1345"></a></var><br>
+&mdash; Function File:  <b>ezsurf</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezsurf-1346"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>ezsurf</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezsurf-1347"></a></var><br>
 <blockquote>
-        <p>Plots the surface defined by a function.  <var>f</var> is a string, inline
+        <p>Plot the surface defined by a function.  <var>f</var> is a string, inline
 function or function handle with two arguments defining the function.  By
 default the plot is over the domain <code>-2*pi &lt; </code><var>x</var><code> &lt; 2*pi</code> and
 <code>-2*pi &lt; </code><var>y</var><code> &lt; 2*pi</code> with 60 points in each dimension.
@@ -191,8 +193,8 @@ function <code>[</code><var>fx</var><code> (</code><var>s</var><code>, </code><v
         <p>If the argument 'circ' is given, then the function is plotted over a disk
 centered on the middle of the domain <var>dom</var>.
 
-        <p>The optional return value <var>h</var> provides a list of handles to the
-the parts of the vector field (body, arrow and marker).
+        <p>The optional return value <var>h</var> is a graphics handle to the created
+surface object.
 
      <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
           ezsurf (f, [-3, 3]);
@@ -214,15 +216,15 @@ the parts of the vector field (body, arrow and marker).
    <p><a name="doc_002dezsurfc"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ezsurfc</b> (<var>f</var>)<var><a name="index-ezsurfc-1204"></a></var><br>
-&mdash; Function File:  <b>ezsurfc</b> (<var>fx, fy, fz</var>)<var><a name="index-ezsurfc-1205"></a></var><br>
-&mdash; Function File:  <b>ezsurfc</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezsurfc-1206"></a></var><br>
-&mdash; Function File:  <b>ezsurfc</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezsurfc-1207"></a></var><br>
-&mdash; Function File:  <b>ezsurfc</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezsurfc-1208"></a></var><br>
-&mdash; Function File:  <b>ezsurfc</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezsurfc-1209"></a></var><br>
-&mdash; Function File: <var>h</var> = <b>ezsurfc</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezsurfc-1210"></a></var><br>
+&mdash; Function File:  <b>ezsurfc</b> (<var>f</var>)<var><a name="index-ezsurfc-1348"></a></var><br>
+&mdash; Function File:  <b>ezsurfc</b> (<var>fx, fy, fz</var>)<var><a name="index-ezsurfc-1349"></a></var><br>
+&mdash; Function File:  <b>ezsurfc</b> (<var><small class="dots">...</small>, dom</var>)<var><a name="index-ezsurfc-1350"></a></var><br>
+&mdash; Function File:  <b>ezsurfc</b> (<var><small class="dots">...</small>, n</var>)<var><a name="index-ezsurfc-1351"></a></var><br>
+&mdash; Function File:  <b>ezsurfc</b> (<var><small class="dots">...</small>, 'circ'</var>)<var><a name="index-ezsurfc-1352"></a></var><br>
+&mdash; Function File:  <b>ezsurfc</b> (<var>h, <small class="dots">...</small></var>)<var><a name="index-ezsurfc-1353"></a></var><br>
+&mdash; Function File: <var>h</var> = <b>ezsurfc</b> (<var><small class="dots">...</small></var>)<var><a name="index-ezsurfc-1354"></a></var><br>
 <blockquote>
-        <p>Plots the surface and contour lines defined by a function.  <var>f</var> is a
+        <p>Plot the surface and contour lines defined by a function.  <var>f</var> is a
 string, inline function or function handle with two arguments defining the
 function.  By default the plot is over the domain <code>-2*pi &lt; </code><var>x</var><code> &lt;
 2*pi</code> and <code>-2*pi &lt; </code><var>y</var><code> &lt; 2*pi</code> with 60 points in each dimension.
@@ -241,8 +243,9 @@ function <code>[</code><var>fx</var><code> (</code><var>s</var><code>, </code><v
         <p>If the argument 'circ' is given, then the function is plotted over a disk
 centered on the middle of the domain <var>dom</var>.
 
-        <p>The optional return value <var>h</var> provides a list of handles to the
-the parts of the vector field (body, arrow and marker).
+        <p>The optional return value <var>h</var> is a 2-element vector with a graphics
+for the created surface plot and a second handle for the created contour
+plot.
 
      <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
           ezsurfc (f, [-3, 3]);

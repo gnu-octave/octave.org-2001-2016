@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Geometry.html#Geometry">Geometry</a>
 <hr>
 </div>
 
-<h3 class="section">29.4 Interpolation on Scattered Data</h3>
+<h3 class="section">30.4 Interpolation on Scattered Data</h3>
 
 <p>An important use of the Delaunay tessellation is that it can be used to
 interpolate from scattered data to an arbitrary set of points.  To do
@@ -47,8 +47,8 @@ interpolation are <code>griddata</code>, <code>griddata3</code> and
    <p><a name="doc_002dgriddata"></a>
 
 <div class="defun">
-&mdash; Function File: <var>zi</var> = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2471"></a></var><br>
-&mdash; Function File: [<var>xi</var>, <var>yi</var>, <var>zi</var>] = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2472"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2813"></a></var><br>
+&mdash; Function File: [<var>xi</var>, <var>yi</var>, <var>zi</var>] = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2814"></a></var><br>
 <blockquote>
         <p>Generate a regular mesh from irregular data using interpolation. 
 The function is defined by <var>z</var><code> = f (</code><var>x</var><code>, </code><var>y</var><code>)</code>. 
@@ -71,7 +71,7 @@ or <var>x</var><code>, </code><var>y</var> are vectors and <var>z</var> is matri
    <p><a name="doc_002dgriddata3"></a>
 
 <div class="defun">
-&mdash; Function File: <var>vi</var> = <b>griddata3</b> (<var>x, y, z, v xi, yi, zi, method, options</var>)<var><a name="index-griddata3-2473"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>griddata3</b> (<var>x, y, z, v xi, yi, zi, method, options</var>)<var><a name="index-griddata3-2815"></a></var><br>
 <blockquote>
         <p>Generate a regular mesh from irregular data using interpolation. 
 The function is defined by <var>y</var><code> = f (</code><var>x</var><code>,</code><var>y</var><code>,</code><var>z</var><code>)</code>. 
@@ -90,7 +90,7 @@ If method is omitted it defaults to <code>"linear"</code>.
    <p><a name="doc_002dgriddatan"></a>
 
 <div class="defun">
-&mdash; Function File: <var>yi</var> = <b>griddatan</b> (<var>x, y, xi, method, options</var>)<var><a name="index-griddatan-2474"></a></var><br>
+&mdash; Function File: <var>yi</var> = <b>griddatan</b> (<var>x, y, xi, method, options</var>)<var><a name="index-griddatan-2816"></a></var><br>
 <blockquote>
         <p>Generate a regular mesh from irregular data using interpolation. 
 The function is defined by <var>y</var><code> = f (</code><var>x</var><code>)</code>. 
@@ -120,10 +120,10 @@ The output of the above can be seen in <a href="fig_003agriddata.html#fig_003agr
 
    <div class="float">
 <a name="fig_003agriddata"></a><div align="center"><img src="griddata.png" alt="griddata.png"></div>
-   <p><strong class="float-caption">Figure 29.6: Interpolation from a scattered data to a regular grid</strong></p></div>
+   <p><strong class="float-caption">Figure 30.6: Interpolation from a scattered data to a regular grid</strong></p></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

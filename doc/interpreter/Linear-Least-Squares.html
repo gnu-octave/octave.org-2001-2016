@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization.html#Optimization">Optimiz
 <hr>
 </div>
 
-<h3 class="section">24.4 Linear Least Squares</h3>
+<h3 class="section">25.4 Linear Least Squares</h3>
 
 <p>Octave also supports linear least squares minimization.  That is,
 Octave can find the parameter b such that the model
@@ -46,7 +46,7 @@ the <code>gls</code> is needed.
    <p><a name="doc_002dols"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>beta</var>, <var>sigma</var>, <var>r</var>] = <b>ols</b> (<var>y, x</var>)<var><a name="index-ols-2113"></a></var><br>
+&mdash; Function File: [<var>beta</var>, <var>sigma</var>, <var>r</var>] = <b>ols</b> (<var>y, x</var>)<var><a name="index-ols-2392"></a></var><br>
 <blockquote><p>Ordinary least squares estimation for the multivariate model
 y&nbsp;=&nbsp;x*b&nbsp;+&nbsp;e<!-- /@w --> with
 mean (e) = 0 and cov (vec (e)) = kron (s, I). 
@@ -87,7 +87,7 @@ Otherwise, <var>beta</var><code> = pinv (</code><var>x</var><code>) * </code><va
    <p><a name="doc_002dgls"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>beta</var>, <var>v</var>, <var>r</var>] = <b>gls</b> (<var>y, x, o</var>)<var><a name="index-gls-2114"></a></var><br>
+&mdash; Function File: [<var>beta</var>, <var>v</var>, <var>r</var>] = <b>gls</b> (<var>y, x, o</var>)<var><a name="index-gls-2393"></a></var><br>
 <blockquote><p>Generalized least squares estimation for the multivariate model
 y&nbsp;=&nbsp;x*b&nbsp;+&nbsp;e<!-- /@w --> with mean (e) = 0 and
 cov (vec (e)) = (s^2) o,
@@ -119,13 +119,13 @@ defined as follows.
    <p><a name="doc_002dlsqnonneg"></a>
 
 <div class="defun">
-&mdash; Function File: <var>x</var> = <b>lsqnonneg</b> (<var>c, d</var>)<var><a name="index-lsqnonneg-2115"></a></var><br>
-&mdash; Function File: <var>x</var> = <b>lsqnonneg</b> (<var>c, d, x0</var>)<var><a name="index-lsqnonneg-2116"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>resnorm</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2117"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2118"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2119"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>, <var>output</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2120"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>, <var>output</var>, <var>lambda</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2121"></a></var><br>
+&mdash; Function File: <var>x</var> = <b>lsqnonneg</b> (<var>c, d</var>)<var><a name="index-lsqnonneg-2394"></a></var><br>
+&mdash; Function File: <var>x</var> = <b>lsqnonneg</b> (<var>c, d, x0</var>)<var><a name="index-lsqnonneg-2395"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2396"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2397"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2398"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>, <var>output</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2399"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>resnorm</var>, <var>residual</var>, <var>exitflag</var>, <var>output</var>, <var>lambda</var>] = <b>lsqnonneg</b> (<var><small class="dots">...</small></var>)<var><a name="index-lsqnonneg-2400"></a></var><br>
 <blockquote><p>Minimize <code>norm (</code><var>c</var><code>*</code><var>x</var><code> - d)</code> subject to
 <var>x</var><code> &gt;= 0</code>.  <var>c</var> and <var>d</var> must be real.  <var>x0</var> is an
 optional initial guess for <var>x</var>.
@@ -171,19 +171,70 @@ converge given enough iterations.)
    <p><a name="doc_002doptimset"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>optimset</b> ()<var><a name="index-optimset-2122"></a></var><br>
-&mdash; Function File:  <b>optimset</b> (<var>par, val, <small class="dots">...</small></var>)<var><a name="index-optimset-2123"></a></var><br>
-&mdash; Function File:  <b>optimset</b> (<var>old, par, val, <small class="dots">...</small></var>)<var><a name="index-optimset-2124"></a></var><br>
-&mdash; Function File:  <b>optimset</b> (<var>old, new</var>)<var><a name="index-optimset-2125"></a></var><br>
-<blockquote><p>Create options struct for optimization functions. 
-</p></blockquote></div>
+&mdash; Function File:  <b>optimset</b> ()<var><a name="index-optimset-2401"></a></var><br>
+&mdash; Function File:  <b>optimset</b> (<var>par, val, <small class="dots">...</small></var>)<var><a name="index-optimset-2402"></a></var><br>
+&mdash; Function File:  <b>optimset</b> (<var>old, par, val, <small class="dots">...</small></var>)<var><a name="index-optimset-2403"></a></var><br>
+&mdash; Function File:  <b>optimset</b> (<var>old, new</var>)<var><a name="index-optimset-2404"></a></var><br>
+<blockquote><p>Create options struct for optimization functions.
+
+        <p>Valid parameters are:
+          <ul>
+<li>AutoScaling
+
+          <li>ComplexEqn
+
+          <li>FinDiffType
+
+          <li>FunValCheck
+When enabled, display an error if the objective function returns a complex
+value or NaN.  Must be set to "on" or "off" [default].
+
+          <li>GradObj
+When set to "on", the function to be minimized must return a second argument
+which is the gradient, or first derivative, of the function at the point
+<var>x</var>.  If set to "off" [default], the gradient is computed via finite
+differences.
+
+          <li>Jacobian
+When set to "on", the function to be minimized must return a second argument
+which is the Jacobian, or first derivative, of the function at the point
+<var>x</var>.  If set to "off" [default], the Jacobian is computed via finite
+differences.
+
+          <li>MaxFunEvals
+Maximum number of function evaluations before optimization stops. 
+Must be a positive integer.
+
+          <li>MaxIter
+Maximum number of algorithm iterations before optimization stops. 
+Must be a positive integer.
+
+          <li>OutputFcn
+A user-defined function executed once per algorithm iteration.
+
+          <li>TolFun
+Termination criterion for the function output.  If the difference in the
+calculated objective function between one algorithm iteration and the next
+is less than <code>TolFun</code> the optimization stops.  Must be a positive
+scalar.
+
+          <li>TolX
+Termination criterion for the function input.  If the difference in <var>x</var>,
+the current search point, between one algorithm iteration and the next is
+less than <code>TolX</code> the optimization stops.  Must be a positive scalar.
+
+          <li>TypicalX
+
+          <li>Updating
+</ul>
+        </p></blockquote></div>
 
 <!-- optimget scripts/optimization/optimget.m -->
    <p><a name="doc_002doptimget"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>optimget</b> (<var>options, parname</var>)<var><a name="index-optimget-2126"></a></var><br>
-&mdash; Function File:  <b>optimget</b> (<var>options, parname, default</var>)<var><a name="index-optimget-2127"></a></var><br>
+&mdash; Function File:  <b>optimget</b> (<var>options, parname</var>)<var><a name="index-optimget-2405"></a></var><br>
+&mdash; Function File:  <b>optimget</b> (<var>options, parname, default</var>)<var><a name="index-optimget-2406"></a></var><br>
 <blockquote><p>Return a specific option from a structure created by
 <code>optimset</code>.  If <var>parname</var> is not a field of the <var>options</var>
 structure, return <var>default</var> if supplied, otherwise return an
@@ -191,7 +242,7 @@ empty matrix.
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

@@ -38,102 +38,7 @@ depending on the actual data.  The simplest way to process that data
 is to iterate through it using one or more <code>for</code> loops.  The same
 idea can be implemented more easily through the use of the <code>cellfun</code>
 function that calls a user-specified function on all elements of a cell
-array.
-
-<!-- cellfun src/DLD-FUNCTIONS/cellfun.cc -->
-   <p><a name="doc_002dcellfun"></a>
-
-<div class="defun">
-&mdash; Loadable Function:  <b>cellfun</b> (<var>name, C</var>)<var><a name="index-cellfun-427"></a></var><br>
-&mdash; Loadable Function:  <b>cellfun</b> (<var>"size", C, k</var>)<var><a name="index-cellfun-428"></a></var><br>
-&mdash; Loadable Function:  <b>cellfun</b> (<var>"isclass", C, class</var>)<var><a name="index-cellfun-429"></a></var><br>
-&mdash; Loadable Function:  <b>cellfun</b> (<var>func, C</var>)<var><a name="index-cellfun-430"></a></var><br>
-&mdash; Loadable Function:  <b>cellfun</b> (<var>func, C, D</var>)<var><a name="index-cellfun-431"></a></var><br>
-&mdash; Loadable Function: [<var>a</var>, <small class="dots">...</small>] = <b>cellfun</b> (<var><small class="dots">...</small></var>)<var><a name="index-cellfun-432"></a></var><br>
-&mdash; Loadable Function:  <b>cellfun</b> (<var><small class="dots">...</small>, 'ErrorHandler', errfunc</var>)<var><a name="index-cellfun-433"></a></var><br>
-&mdash; Loadable Function:  <b>cellfun</b> (<var><small class="dots">...</small>, 'UniformOutput', val</var>)<var><a name="index-cellfun-434"></a></var><br>
-<blockquote>
-        <p>Evaluate the function named <var>name</var> on the elements of the cell array
-<var>C</var>.  Elements in <var>C</var> are passed on to the named function
-individually.  The function <var>name</var> can be one of the functions
-
-          <dl>
-<dt><code>isempty</code><dd>Return 1 for empty elements.
-
-          <br><dt><code>islogical</code><dd>Return 1 for logical elements.
-
-          <br><dt><code>isreal</code><dd>Return 1 for real elements.
-
-          <br><dt><code>length</code><dd>Return a vector of the lengths of cell elements.
-
-          <br><dt><code>ndims</code><dd>Return the number of dimensions of each element.
-
-          <br><dt><code>prodofsize</code><dd>Return the product of dimensions of each element.
-
-          <br><dt><code>size</code><dd>Return the size along the <var>k</var>-th dimension.
-
-          <br><dt><code>isclass</code><dd>Return 1 for elements of <var>class</var>. 
-</dl>
-
-        <p>Additionally, <code>cellfun</code> accepts an arbitrary function <var>func</var>
-in the form of an inline function, function handle, or the name of a
-function (in a character string).  In the case of a character string
-argument, the function must accept a single argument named <var>x</var>, and
-it must return a string value.  The function can take one or more arguments,
-with the inputs arguments given by <var>C</var>, <var>D</var>, etc.  Equally the
-function can return one or more output arguments.  For example:
-
-     <pre class="example">          cellfun (@atan2, {1, 0}, {0, 1})
-               &rArr;ans = [1.57080   0.00000]
-</pre>
-        <p>The number of output arguments of <code>cellfun</code> matches the number of output
-arguments of the function.  The outputs of the function will be collected
-into the output arguments of <code>cellfun</code> like this:
-
-     <pre class="example">          function [a, b] = twoouts (x)
-            a = x;
-            b = x*x;
-          endfunction
-          [aa, bb] = cellfun(@twoouts, {1, 2, 3})
-               &rArr;
-                  aa =
-                     1 2 3
-                  bb =
-                     1 4 9
-</pre>
-        <p>Note that per default the output argument(s) are arrays of the same size as
-the input arguments.  Input arguments that are singleton (1x1) cells will be
-automatically expanded to the size of the other arguments.
-
-        <p>If the parameter 'UniformOutput' is set to true (the default), then the
-function must return scalars which will be concatenated into the return
-array(s).  If 'UniformOutput' is false, the outputs are concatenated into a
-cell array (or cell arrays).  For example:
-
-     <pre class="example">          cellfun ("tolower(x)", {"Foo", "Bar", "FooBar"},
-                   "UniformOutput",false)
-          &rArr; ans = {"foo", "bar", "foobar"}
-</pre>
-        <p>Given the parameter 'ErrorHandler', then <var>errfunc</var> defines a function to
-call in case <var>func</var> generates an error.  The form of the function is
-
-     <pre class="example">          function [...] = errfunc (<var>s</var>, ...)
-</pre>
-        <p class="noindent">where there is an additional input argument to <var>errfunc</var> relative to
-<var>func</var>, given by <var>s</var>.  This is a structure with the elements
-'identifier', 'message' and 'index', giving respectively the error
-identifier, the error message, and the index into the input arguments
-of the element that caused the error.  For example:
-
-     <pre class="example">          function y = foo (s, x), y = NaN; endfunction
-          cellfun (@factorial, {-1,2},'ErrorHandler',@foo)
-          &rArr; ans = [NaN 2]
-</pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002darrayfun.html#doc_002darrayfun">arrayfun</a>, <a href="doc_002dstructfun.html#doc_002dstructfun">structfun</a>, <a href="doc_002dspfun.html#doc_002dspfun">spfun</a>. 
-</p></blockquote></div>
+array.  See <a href="doc_002dcellfun.html#doc_002dcellfun">doc-cellfun</a>.
 
    <p>An alternative is to convert the data to a different container, such as
 a matrix or a data structure.  Depending on the data this is possible
@@ -143,7 +48,7 @@ using the <code>cell2mat</code> and <code>cell2struct</code> functions.
    <p><a name="doc_002dcell2mat"></a>
 
 <div class="defun">
-&mdash; Function File: <var>m</var> = <b>cell2mat</b> (<var>c</var>)<var><a name="index-cell2mat-435"></a></var><br>
+&mdash; Function File: <var>m</var> = <b>cell2mat</b> (<var>c</var>)<var><a name="index-cell2mat-472"></a></var><br>
 <blockquote><p>Convert the cell array <var>c</var> into a matrix by concatenating all
 elements of <var>c</var> into a hyperrectangle.  Elements of <var>c</var> must
 be numeric, logical or char matrices, or cell arrays, and <code>cat</code>
@@ -159,10 +64,11 @@ must be able to concatenate them together.
    <p><a name="doc_002dcell2struct"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cell2struct</b> (<var>cell, fields, dim</var>)<var><a name="index-cell2struct-436"></a></var><br>
+&mdash; Built-in Function:  <b>cell2struct</b> (<var>cell, fields, dim</var>)<var><a name="index-cell2struct-473"></a></var><br>
 <blockquote><p>Convert <var>cell</var> to a structure.  The number of fields in <var>fields</var>
 must match the number of elements in <var>cell</var> along dimension <var>dim</var>,
-that is <code>numel (</code><var>fields</var><code>) == size (</code><var>cell</var><code>, </code><var>dim</var><code>)</code>.
+that is <code>numel (</code><var>fields</var><code>) == size (</code><var>cell</var><code>, </code><var>dim</var><code>)</code>. 
+If <var>dim</var> is omitted, a value of 1 is assumed.
 
      <pre class="example">          A = cell2struct ({'Peter', 'Hannah', 'Robert';
                              185, 170, 168},

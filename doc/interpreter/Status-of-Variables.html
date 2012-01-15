@@ -48,10 +48,10 @@ different information about what is in memory, as the following shows.
    <p><a name="doc_002dwho"></a>
 
 <div class="defun">
-&mdash; Command:  <b>who</b><var><a name="index-who-457"></a></var><br>
-&mdash; Command:  <b>who</b><var> pattern <small class="dots">...</small><a name="index-who-458"></a></var><br>
-&mdash; Command:  <b>who</b><var> option pattern <small class="dots">...</small><a name="index-who-459"></a></var><br>
-&mdash; Command: C = <b>who</b> (<var>"pattern", <small class="dots">...</small></var>)<var><a name="index-who-460"></a></var><br>
+&mdash; Command:  <b>who</b><var><a name="index-who-491"></a></var><br>
+&mdash; Command:  <b>who</b><var> pattern <small class="dots">...</small><a name="index-who-492"></a></var><br>
+&mdash; Command:  <b>who</b><var> option pattern <small class="dots">...</small><a name="index-who-493"></a></var><br>
+&mdash; Command: C = <b>who</b> (<var>"pattern", <small class="dots">...</small></var>)<var><a name="index-who-494"></a></var><br>
 <blockquote><p>List currently defined variables matching the given patterns.  Valid
 pattern syntax is the same as described for the <code>clear</code> command. 
 If no patterns are supplied, all variables are listed. 
@@ -77,17 +77,17 @@ matching the given patterns.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dwhos.html#doc_002dwhos">whos</a>, <a href="doc_002dregexp.html#doc_002dregexp">regexp</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dwhos.html#doc_002dwhos">whos</a>, <a href="doc_002disglobal.html#doc_002disglobal">isglobal</a>, <a href="doc_002disvarname.html#doc_002disvarname">isvarname</a>, <a href="doc_002dexist.html#doc_002dexist">exist</a>, <a href="doc_002dregexp.html#doc_002dregexp">regexp</a>. 
 </p></blockquote></div>
 
 <!-- whos src/variables.cc -->
    <p><a name="doc_002dwhos"></a>
 
 <div class="defun">
-&mdash; Command:  <b>whos</b><var><a name="index-whos-461"></a></var><br>
-&mdash; Command:  <b>whos</b><var> pattern <small class="dots">...</small><a name="index-whos-462"></a></var><br>
-&mdash; Command:  <b>whos</b><var> option pattern <small class="dots">...</small><a name="index-whos-463"></a></var><br>
-&mdash; Command: S = <b>whos</b> (<var>"pattern", <small class="dots">...</small></var>)<var><a name="index-whos-464"></a></var><br>
+&mdash; Command:  <b>whos</b><var><a name="index-whos-495"></a></var><br>
+&mdash; Command:  <b>whos</b><var> pattern <small class="dots">...</small><a name="index-whos-496"></a></var><br>
+&mdash; Command:  <b>whos</b><var> option pattern <small class="dots">...</small><a name="index-whos-497"></a></var><br>
+&mdash; Command: S = <b>whos</b> (<var>"pattern", <small class="dots">...</small></var>)<var><a name="index-whos-498"></a></var><br>
 <blockquote><p>Provide detailed information on currently defined variables matching the
 given patterns.  Options and pattern syntax are the same as for the
 <code>who</code> command.  Extended information about each variable is
@@ -100,6 +100,8 @@ summarized in a table with the following default entries.
 
                <br><dt><code>a</code><dd>Automatic variable.  An automatic variable is one created by the
 interpreter, for example <code>argn</code>.
+
+               <br><dt><code>c</code><dd>Variable of complex type.
 
                <br><dt><code>f</code><dd>Formal parameter (function argument).
 
@@ -137,8 +139,9 @@ complex, nesting, persistent.
    <p><a name="doc_002dwhos_005fline_005fformat"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>whos_line_format</b> ()<var><a name="index-whos_005fline_005fformat-465"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>whos_line_format</b> (<var>new_val</var>)<var><a name="index-whos_005fline_005fformat-466"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>whos_line_format</b> ()<var><a name="index-whos_005fline_005fformat-499"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>whos_line_format</b> (<var>new_val</var>)<var><a name="index-whos_005fline_005fformat-500"></a></var><br>
+&mdash; Built-in Function:  <b>whos_line_format</b> (<var>new_val, "local"</var>)<var><a name="index-whos_005fline_005fformat-501"></a></var><br>
 <blockquote><p>Query or set the format string used by the command <code>whos</code>.
 
         <p>A full format string is:
@@ -187,7 +190,11 @@ leftmost column.  <code>left-min</code> specifies the minimum field width to the
 left of the specified balance column.
 
         <p>The default format is
-<code>"  %a:4; %ln:6; %cs:16:6:1;  %rb:12;  %lc:-1;\n"</code>. 
+<code>"  %a:4; %ln:6; %cs:16:6:1;  %rb:12;  %lc:-1;\n"</code>.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -208,7 +215,7 @@ variable.  The following example illustrates this.
    <p><a name="doc_002dexist"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>exist</b> (<var>name, type</var>)<var><a name="index-exist-467"></a></var><br>
+&mdash; Built-in Function:  <b>exist</b> (<var>name, type</var>)<var><a name="index-exist-502"></a></var><br>
 <blockquote><p>Return 1 if the name exists as a variable, 2 if the name is an
 absolute file name, an ordinary file in Octave's <code>path</code>, or (after
 appending &lsquo;<samp><span class="samp">.m</span></samp>&rsquo;) a function file in Octave's <code>path</code>, 3 if the
@@ -236,7 +243,12 @@ symbols of the specified type.  Valid types are
 
           <br><dt>"dir"<dd>Check only for directories. 
 </dl>
-        </p></blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfile_005fin_005floadpath.html#doc_002dfile_005fin_005floadpath">file_in_loadpath</a>. 
+</p></blockquote></div>
 
    <p>Usually Octave will manage the memory, but sometimes it can be practical
 to remove variables from memory manually.  This is usually needed when
@@ -254,7 +266,7 @@ function allows this.
    <p><a name="doc_002dclear"></a>
 
 <div class="defun">
-&mdash; Command:  <b>clear</b> [<var>options</var>]<var> pattern <small class="dots">...</small><a name="index-clear-468"></a></var><br>
+&mdash; Command:  <b>clear</b> [<var>options</var>]<var> pattern <small class="dots">...</small><a name="index-clear-503"></a></var><br>
 <blockquote><p>Delete the names matching the given patterns from the symbol table.  The
 pattern may contain the following special characters:
 
@@ -266,7 +278,7 @@ pattern may contain the following special characters:
           <br><dt><code>[ </code><var>list</var><code> ]</code><dd>Match the list of characters specified by <var>list</var>.  If the first
 character is <code>!</code> or <code>^</code>, match all characters except those
 specified by <var>list</var>.  For example, the pattern &lsquo;<samp><span class="samp">[a-zA-Z]</span></samp>&rsquo; will
-match all lower and upper case alphabetic characters. 
+match all lowercase and uppercase alphabetic characters. 
 </dl>
 
         <p>For example, the command
@@ -308,6 +320,15 @@ match will be cleared.
 without the dash as well. 
 </p></blockquote></div>
 
+<!-- pack scripts/miscellaneous/pack.m -->
+   <p><a name="doc_002dpack"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>pack</b> ()<var><a name="index-pack-504"></a></var><br>
+<blockquote><p>Consolidate workspace memory in <span class="sc">matlab</span>.  This function is provided for
+compatibility, but does nothing in Octave. 
+</p></blockquote></div>
+
    <p>Information about a function or variable such as its location in the
 file system can also be acquired from within Octave.  This is usually
 only useful during development of programs, and not within a program.
@@ -316,9 +337,9 @@ only useful during development of programs, and not within a program.
    <p><a name="doc_002dtype"></a>
 
 <div class="defun">
-&mdash; Command:  <b>type</b><var> name <small class="dots">...</small><a name="index-type-469"></a></var><br>
-&mdash; Command:  <b>type</b><var> -q name <small class="dots">...</small><a name="index-type-470"></a></var><br>
-&mdash; Function File: dfns = <b>type</b> (<var>"name", <small class="dots">...</small></var>)<var><a name="index-type-471"></a></var><br>
+&mdash; Command:  <b>type</b><var> name <small class="dots">...</small><a name="index-type-505"></a></var><br>
+&mdash; Command:  <b>type</b><var> -q name <small class="dots">...</small><a name="index-type-506"></a></var><br>
+&mdash; Function File: dfns = <b>type</b> (<var>"name", <small class="dots">...</small></var>)<var><a name="index-type-507"></a></var><br>
 <blockquote><p>Display the definition of each <var>name</var> that refers to a function.
 
         <p>Normally also displays whether each <var>name</var> is user-defined or built-in;
@@ -333,7 +354,7 @@ definition of each requested function.
    <p><a name="doc_002dwhich"></a>
 
 <div class="defun">
-&mdash; Command:  <b>which</b><var> name <small class="dots">...</small><a name="index-which-472"></a></var><br>
+&mdash; Command:  <b>which</b><var> name <small class="dots">...</small><a name="index-which-508"></a></var><br>
 <blockquote><p>Display the type of each <var>name</var>.  If <var>name</var> is defined from a
 function file, the full name of the file is also displayed. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -347,13 +368,12 @@ function file, the full name of the file is also displayed.
    <p><a name="doc_002dwhat"></a>
 
 <div class="defun">
-&mdash; Command:  <b>what</b><var><a name="index-what-473"></a></var><br>
-&mdash; Command:  <b>what</b><var> dir<a name="index-what-474"></a></var><br>
-&mdash; Function File: w = <b>what</b> (<var>dir</var>)<var><a name="index-what-475"></a></var><br>
-<blockquote><p>List the Octave specific files in a directory.  If the variable <var>dir</var>
-is given then check that directory rather than the current directory.  If
-a return argument is requested, the files found are returned in the
-structure <var>w</var>. 
+&mdash; Command:  <b>what</b><var><a name="index-what-509"></a></var><br>
+&mdash; Command:  <b>what</b><var> dir<a name="index-what-510"></a></var><br>
+&mdash; Function File: w = <b>what</b> (<var>dir</var>)<var><a name="index-what-511"></a></var><br>
+<blockquote><p>List the Octave specific files in directory <var>dir</var>.  If <var>dir</var> is
+not specified then the current directory is used.  If a return argument is
+requested, the files found are returned in the structure <var>w</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -362,7 +382,7 @@ structure <var>w</var>.
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

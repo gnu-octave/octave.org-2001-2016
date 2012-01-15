@@ -43,7 +43,7 @@ arguments are given to the function.
 that finds the root of a user-supplied function of one variable using
 Newton's method.
 
-<pre class="example">     <a name="index-Fordyce_002c-A_002e-P_002e-636"></a><a name="index-newtroot-637"></a>function result = newtroot (fname, x)
+<pre class="example">     function result = newtroot (fname, x)
      
      # usage: newtroot (fname, x)
      #
@@ -80,7 +80,7 @@ for a list of predicates for numeric objects, and see <a href="Status-of-Variabl
    <p><a name="doc_002dfeval"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>feval</b> (<var>name, <small class="dots">...</small></var>)<var><a name="index-feval-638"></a></var><br>
+&mdash; Built-in Function:  <b>feval</b> (<var>name, <small class="dots">...</small></var>)<var><a name="index-feval-682"></a></var><br>
 <blockquote><p>Evaluate the function named <var>name</var>.  Any arguments after the first
 are passed on to the named function.  For example,
 
@@ -89,12 +89,21 @@ are passed on to the named function.  For example,
 </pre>
         <p class="noindent">calls the function <code>acos</code> with the argument &lsquo;<samp><span class="samp">-1</span></samp>&rsquo;.
 
-        <p>The function <code>feval</code> is necessary in order to be able to write
-functions that call user-supplied functions, because Octave does not
-have a way to declare a pointer to a function (like C) or to declare a
-special kind of variable that can be used to hold the name of a function
-(like <code>EXTERNAL</code> in Fortran).  Instead, you must refer to functions
-by name, and use <code>feval</code> to call them. 
+        <p>The function <code>feval</code> can also be used with function handles of
+any sort (see <a href="Function-Handles.html#Function-Handles">Function Handles</a>).  Historically, <code>feval</code> was
+the only way to call user-supplied functions in strings, but
+function handles are now preferred due to the cleaner syntax they
+offer.  For example,
+
+     <pre class="example">          <var>f</var> = @exp;
+          feval (<var>f</var>, 1)
+               &rArr; 2.7183
+          <var>f</var> (1)
+               &rArr; 2.7183
+</pre>
+        <p class="noindent">are equivalent ways to call the function referred to by <var>f</var>.  If it
+cannot be predicted beforehand that <var>f</var> is a function handle or the
+function name in a string, <code>feval</code> can be used instead. 
 </p></blockquote></div>
 
    <p>A similar function <code>run</code> exists for calling user script files, that
@@ -104,8 +113,8 @@ are not necessarily on the user path
    <p><a name="doc_002drun"></a>
 
 <div class="defun">
-&mdash; Command:  <b>run</b><var> script<a name="index-run-639"></a></var><br>
-&mdash; Function File:  <b>run</b> (<var>script</var>)<var><a name="index-run-640"></a></var><br>
+&mdash; Command:  <b>run</b><var> script<a name="index-run-683"></a></var><br>
+&mdash; Function File:  <b>run</b> (<var>script</var>)<var><a name="index-run-684"></a></var><br>
 <blockquote><p>Run scripts in the current workspace that are not necessarily on the
 path.  If <var>script</var> is the script to run, including its path, then
 <code>run</code> changes the directory to the directory where <var>script</var> is

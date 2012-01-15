@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Polynomial-Manipulations.html#Polynomia
 <hr>
 </div>
 
-<h3 class="section">27.2 Finding Roots</h3>
+<h3 class="section">28.2 Finding Roots</h3>
 
 <p>Octave can find the roots of a given polynomial.  This is done by computing
 the companion matrix of the polynomial (see the <code>compan</code> function
@@ -43,7 +43,7 @@ for a definition), and then finding its eigenvalues.
    <p><a name="doc_002droots"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>roots</b> (<var>v</var>)<var><a name="index-roots-2364"></a></var><br>
+&mdash; Function File:  <b>roots</b> (<var>v</var>)<var><a name="index-roots-2705"></a></var><br>
 <blockquote>
         <p>For a vector <var>v</var> with N components, return
 the roots of the polynomial
@@ -56,7 +56,7 @@ polynomial
      <pre class="example">          p(x) = x^2 - 5.
 </pre>
         <pre class="example">          c = [1, 0, -5];
-          roots(c)
+          roots (c)
           &rArr;  2.2361
           &rArr; -2.2361
 </pre>
@@ -68,14 +68,14 @@ which is roughly
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcompan.html#doc_002dcompan">compan</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002dcompan.html#doc_002dcompan">compan</a>, <a href="doc_002dfzero.html#doc_002dfzero">fzero</a>. 
 </p></blockquote></div>
 
 <!-- compan scripts/polynomial/compan.m -->
    <p><a name="doc_002dcompan"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>compan</b> (<var>c</var>)<var><a name="index-compan-2365"></a></var><br>
+&mdash; Function File:  <b>compan</b> (<var>c</var>)<var><a name="index-compan-2706"></a></var><br>
 <blockquote><p>Compute the companion matrix corresponding to polynomial coefficient
 vector <var>c</var>.
 
@@ -97,27 +97,28 @@ polynomial.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002deig.html#doc_002deig">eig</a>. 
 </p></blockquote></div>
 
 <!-- mpoles scripts/polynomial/mpoles.m -->
    <p><a name="doc_002dmpoles"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>multp</var>, <var>indx</var>] = <b>mpoles</b> (<var>p</var>)<var><a name="index-mpoles-2366"></a></var><br>
-&mdash; Function File: [<var>multp</var>, <var>indx</var>] = <b>mpoles</b> (<var>p, tol</var>)<var><a name="index-mpoles-2367"></a></var><br>
-&mdash; Function File: [<var>multp</var>, <var>indx</var>] = <b>mpoles</b> (<var>p, tol, reorder</var>)<var><a name="index-mpoles-2368"></a></var><br>
-<blockquote><p>Identify unique poles in <var>p</var> and associates their multiplicity,
-ordering them from largest to smallest.
+&mdash; Function File: [<var>multp</var>, <var>idxp</var>] = <b>mpoles</b> (<var>p</var>)<var><a name="index-mpoles-2707"></a></var><br>
+&mdash; Function File: [<var>multp</var>, <var>idxp</var>] = <b>mpoles</b> (<var>p, tol</var>)<var><a name="index-mpoles-2708"></a></var><br>
+&mdash; Function File: [<var>multp</var>, <var>idxp</var>] = <b>mpoles</b> (<var>p, tol, reorder</var>)<var><a name="index-mpoles-2709"></a></var><br>
+<blockquote><p>Identify unique poles in <var>p</var> and their associated multiplicity.  The
+output is ordered from largest pole to smallest pole.
 
-        <p>If the relative difference of the poles is less than <var>tol</var>, then
+        <p>If the relative difference of two poles is less than <var>tol</var> then
 they are considered to be multiples.  The default value for <var>tol</var>
 is 0.001.
 
         <p>If the optional parameter <var>reorder</var> is zero, poles are not sorted.
 
-        <p>The value <var>multp</var> is a vector specifying the multiplicity of the
-poles.  <var>multp</var>(:) refers to multiplicity of <var>p</var>(<var>indx</var>(:)).
+        <p>The output <var>multp</var> is a vector specifying the multiplicity of the
+poles.  <var>multp</var><code>(n)</code> refers to the multiplicity of the Nth pole
+<var>p</var><code>(</code><var>idxp</var><code>(n))</code>.
 
         <p>For example:
 
@@ -130,7 +131,7 @@ poles.  <var>multp</var>(:) refers to multiplicity of <var>p</var>(<var>indx</va
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>. 
 </p></blockquote></div>
 
    </body></html>

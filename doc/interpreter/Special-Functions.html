@@ -39,7 +39,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic<
 <p><a name="doc_002dairy"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>a</var>, <var>ierr</var>] = <b>airy</b> (<var>k, z, opt</var>)<var><a name="index-airy-1728"></a></var><br>
+&mdash; Loadable Function: [<var>a</var>, <var>ierr</var>] = <b>airy</b> (<var>k, z, opt</var>)<var><a name="index-airy-1913"></a></var><br>
 <blockquote><p>Compute Airy functions of the first and second kind, and their
 derivatives.
 
@@ -79,11 +79,11 @@ return <code>NaN</code>.
    <p><a name="doc_002dbesselj"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>j</var>, <var>ierr</var>] = <b>besselj</b> (<var>alpha, x, opt</var>)<var><a name="index-besselj-1729"></a></var><br>
-&mdash; Loadable Function: [<var>y</var>, <var>ierr</var>] = <b>bessely</b> (<var>alpha, x, opt</var>)<var><a name="index-bessely-1730"></a></var><br>
-&mdash; Loadable Function: [<var>i</var>, <var>ierr</var>] = <b>besseli</b> (<var>alpha, x, opt</var>)<var><a name="index-besseli-1731"></a></var><br>
-&mdash; Loadable Function: [<var>k</var>, <var>ierr</var>] = <b>besselk</b> (<var>alpha, x, opt</var>)<var><a name="index-besselk-1732"></a></var><br>
-&mdash; Loadable Function: [<var>h</var>, <var>ierr</var>] = <b>besselh</b> (<var>alpha, k, x, opt</var>)<var><a name="index-besselh-1733"></a></var><br>
+&mdash; Loadable Function: [<var>j</var>, <var>ierr</var>] = <b>besselj</b> (<var>alpha, x, opt</var>)<var><a name="index-besselj-1914"></a></var><br>
+&mdash; Loadable Function: [<var>y</var>, <var>ierr</var>] = <b>bessely</b> (<var>alpha, x, opt</var>)<var><a name="index-bessely-1915"></a></var><br>
+&mdash; Loadable Function: [<var>i</var>, <var>ierr</var>] = <b>besseli</b> (<var>alpha, x, opt</var>)<var><a name="index-besseli-1916"></a></var><br>
+&mdash; Loadable Function: [<var>k</var>, <var>ierr</var>] = <b>besselk</b> (<var>alpha, x, opt</var>)<var><a name="index-besselk-1917"></a></var><br>
+&mdash; Loadable Function: [<var>h</var>, <var>ierr</var>] = <b>besselh</b> (<var>alpha, k, x, opt</var>)<var><a name="index-besselh-1918"></a></var><br>
 <blockquote><p>Compute Bessel or Hankel functions of various kinds:
 
           <dl>
@@ -141,7 +141,7 @@ return <code>NaN</code>.
    <p><a name="doc_002dbeta"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>beta</b> (<var>a, b</var>)<var><a name="index-beta-1734"></a></var><br>
+&mdash; Mapping Function:  <b>beta</b> (<var>a, b</var>)<var><a name="index-beta-1919"></a></var><br>
 <blockquote><p>For real inputs, return the Beta function,
 
      <pre class="example">          beta (a, b) = gamma (a) * gamma (b) / gamma (a + b).
@@ -152,17 +152,18 @@ return <code>NaN</code>.
    <p><a name="doc_002dbetainc"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>betainc</b> (<var>x, a, b</var>)<var><a name="index-betainc-1735"></a></var><br>
-<blockquote><p>Return the incomplete Beta function,
+&mdash; Mapping Function:  <b>betainc</b> (<var>x, a, b</var>)<var><a name="index-betainc-1920"></a></var><br>
+<blockquote><p>Return the regularized incomplete Beta function,
 <!-- Set example in small font to prevent overfull line -->
 
-     <pre class="smallexample">                                                x
-                                               /
-          betainc (x, a, b) = beta (a, b)^(-1) | t^(a-1) (1-t)^(b-1) dt.
-                                               /
-                                            t=0
+     <pre class="smallexample">          <!-- spacing appears odd here, but is correct after Makeinfo -->
+                                               x
+                                    1         /
+          betainc (x, a, b) = -----------    | t^(a-1) (1-t)^(b-1) dt.
+                               beta (a, b)    /
+                                           t=0
 </pre>
-        <p>If x has more than one component, both <var>a</var> and <var>b</var> must be
+        <p>If <var>x</var> has more than one component, both <var>a</var> and <var>b</var> must be
 scalars.  If <var>x</var> is a scalar, <var>a</var> and <var>b</var> must be of
 compatible dimensions. 
 </p></blockquote></div>
@@ -171,14 +172,16 @@ compatible dimensions.
    <p><a name="doc_002dbetaln"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>betaln</b> (<var>a, b</var>)<var><a name="index-betaln-1736"></a></var><br>
+&mdash; Mapping Function:  <b>betaln</b> (<var>a, b</var>)<var><a name="index-betaln-1921"></a></var><br>
 <blockquote><p>Return the natural logarithm of the Beta function,
 
-     <pre class="example">          betaln (a, b) = gammaln (a) + gammaln (b) - gammaln (a + b)
+     <pre class="example">          betaln (a, b) = log (beta (a, b))
 </pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
+        <p>calculated in a way to reduce the occurrence of underflow. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dbeta.html#doc_002dbeta">beta</a>, <a href="doc_002dbetainc.html#doc_002dbetainc">betainc</a>, <a href="doc_002dgammaln.html#doc_002dgammaln">gammaln</a>. 
 </p></blockquote></div>
 
@@ -186,7 +189,7 @@ compatible dimensions.
    <p><a name="doc_002dbincoeff"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>bincoeff</b> (<var>n, k</var>)<var><a name="index-bincoeff-1737"></a></var><br>
+&mdash; Mapping Function:  <b>bincoeff</b> (<var>n, k</var>)<var><a name="index-bincoeff-1922"></a></var><br>
 <blockquote><p>Return the binomial coefficient of <var>n</var> and <var>k</var>, defined as
 
      <pre class="example">           /   \
@@ -214,7 +217,7 @@ big arguments.
    <p><a name="doc_002dcommutation_005fmatrix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>commutation_matrix</b> (<var>m, n</var>)<var><a name="index-commutation_005fmatrix-1738"></a></var><br>
+&mdash; Function File:  <b>commutation_matrix</b> (<var>m, n</var>)<var><a name="index-commutation_005fmatrix-1923"></a></var><br>
 <blockquote><p>Return the commutation matrix
  K(m,n)
  which is the unique
@@ -238,7 +241,7 @@ Applications in Statistics and Econometrics.</cite>
    <p><a name="doc_002dduplication_005fmatrix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>duplication_matrix</b> (<var>n</var>)<var><a name="index-duplication_005fmatrix-1739"></a></var><br>
+&mdash; Function File:  <b>duplication_matrix</b> (<var>n</var>)<var><a name="index-duplication_005fmatrix-1924"></a></var><br>
 <blockquote><p>Return the duplication matrix
 Dn
  which is the unique
@@ -258,14 +261,15 @@ applications in statistics and econometrics.
    <p><a name="doc_002derf"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>erf</b> (<var>z</var>)<var><a name="index-erf-1740"></a></var><br>
+&mdash; Mapping Function:  <b>erf</b> (<var>z</var>)<var><a name="index-erf-1925"></a></var><br>
 <blockquote><p>Compute the error function,
 
-     <pre class="example">                                   z
-                                  /
+     <pre class="example">          <!-- spacing appears odd here, but is correct after Makeinfo -->
+                                    z
+                                   /
           erf (z) = (2/sqrt (pi)) | e^(-t^2) dt
-                                  /
-                               t=0
+                                   /
+                                t=0
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -277,9 +281,9 @@ applications in statistics and econometrics.
    <p><a name="doc_002derfc"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>erfc</b> (<var>z</var>)<var><a name="index-erfc-1741"></a></var><br>
+&mdash; Mapping Function:  <b>erfc</b> (<var>z</var>)<var><a name="index-erfc-1926"></a></var><br>
 <blockquote><p>Compute the complementary error function,
-<code>1 - erf (</code><var>z</var><code>)</code>. 
+<code>1&nbsp;-&nbsp;erf&nbsp;(</code><var>z</var><code>)</code><!-- /@w -->. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -291,13 +295,14 @@ applications in statistics and econometrics.
    <p><a name="doc_002derfcx"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>erfcx</b> (<var>z</var>)<var><a name="index-erfcx-1742"></a></var><br>
+&mdash; Mapping Function:  <b>erfcx</b> (<var>z</var>)<var><a name="index-erfcx-1927"></a></var><br>
 <blockquote><p>Compute the scaled complementary error function,
-<code>z^2*(1 - erf (</code><var>z</var><code>))</code>. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
 
+     <pre class="example">          exp (z^2) * erfc (x)
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002derfc.html#doc_002derfc">erfc</a>, <a href="doc_002derf.html#doc_002derf">erf</a>, <a href="doc_002derfinv.html#doc_002derfinv">erfinv</a>. 
 </p></blockquote></div>
 
@@ -305,10 +310,10 @@ applications in statistics and econometrics.
    <p><a name="doc_002derfinv"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>erfinv</b> (<var>x</var>)<var><a name="index-erfinv-1743"></a></var><br>
+&mdash; Mapping Function:  <b>erfinv</b> (<var>x</var>)<var><a name="index-erfinv-1928"></a></var><br>
 <blockquote><p>Compute the inverse error function, i.e., <var>y</var> such that
 
-     <pre class="example">            erf(<var>y</var>) == <var>x</var>
+     <pre class="example">            erf (<var>y</var>) == <var>x</var>
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -320,14 +325,15 @@ applications in statistics and econometrics.
    <p><a name="doc_002dgamma"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>gamma</b> (<var>z</var>)<var><a name="index-gamma-1744"></a></var><br>
+&mdash; Mapping Function:  <b>gamma</b> (<var>z</var>)<var><a name="index-gamma-1929"></a></var><br>
 <blockquote><p>Compute the Gamma function,
 
-     <pre class="example">                      infinity
-                      /
+     <pre class="example">          <!-- spacing appears odd here, but is correct after Makeinfo -->
+                        infinity
+                       /
           gamma (z) = | t^(z-1) exp (-t) dt.
-                      /
-                   t=0
+                       /
+                    t=0
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -339,9 +345,9 @@ applications in statistics and econometrics.
    <p><a name="doc_002dgammainc"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a</var>)<var><a name="index-gammainc-1745"></a></var><br>
-&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a, "lower"</var>)<var><a name="index-gammainc-1746"></a></var><br>
-&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a, "upper"</var>)<var><a name="index-gammainc-1747"></a></var><br>
+&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a</var>)<var><a name="index-gammainc-1930"></a></var><br>
+&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a, "lower"</var>)<var><a name="index-gammainc-1931"></a></var><br>
+&mdash; Mapping Function:  <b>gammainc</b> (<var>x, a, "upper"</var>)<var><a name="index-gammainc-1932"></a></var><br>
 <blockquote><p>Compute the normalized incomplete gamma function,
 
      <pre class="example">                                           x
@@ -375,8 +381,8 @@ from <var>x</var> to infinity is calculated.  It should be noted that
    <p><a name="doc_002dlegendre"></a>
 
 <div class="defun">
-&mdash; Function File: <var>l</var> = <b>legendre</b> (<var>n, x</var>)<var><a name="index-legendre-1748"></a></var><br>
-&mdash; Function File: <var>l</var> = <b>legendre</b> (<var>n, x, normalization</var>)<var><a name="index-legendre-1749"></a></var><br>
+&mdash; Function File: <var>l</var> = <b>legendre</b> (<var>n, x</var>)<var><a name="index-legendre-1933"></a></var><br>
+&mdash; Function File: <var>l</var> = <b>legendre</b> (<var>n, x, normalization</var>)<var><a name="index-legendre-1934"></a></var><br>
 <blockquote><p>Compute the Legendre function of degree <var>n</var> and order
 <var>m</var> = 0 <small class="dots">...</small> N.  The optional argument, <var>normalization</var>,
 may be one of <code>"unnorm"</code>, <code>"sch"</code>, or <code>"norm"</code>. 
@@ -443,8 +449,8 @@ to the unnormalized Legendre functions by the following:
 <a name="doc_002dlgamma"></a>
 
 <div class="defun">
-&mdash; Mapping Function:  <b>lgamma</b> (<var>x</var>)<var><a name="index-lgamma-1750"></a></var><br>
-&mdash; Mapping Function:  <b>gammaln</b> (<var>x</var>)<var><a name="index-gammaln-1751"></a></var><br>
+&mdash; Mapping Function:  <b>lgamma</b> (<var>x</var>)<var><a name="index-lgamma-1935"></a></var><br>
+&mdash; Mapping Function:  <b>gammaln</b> (<var>x</var>)<var><a name="index-gammaln-1936"></a></var><br>
 <blockquote><p>Return the natural logarithm of the gamma function of <var>x</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->

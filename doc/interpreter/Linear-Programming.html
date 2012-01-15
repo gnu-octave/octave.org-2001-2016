@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization.html#Optimization">Optimiz
 <hr>
 </div>
 
-<h3 class="section">24.1 Linear Programming</h3>
+<h3 class="section">25.1 Linear Programming</h3>
 
 <p>Octave can solve Linear Programming problems using the <code>glpk</code>
 function.  That is, Octave can solve
@@ -47,7 +47,7 @@ A*x = b where x &ge; 0.
    <p><a name="doc_002dglpk"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>xopt</var>, <var>fmin</var>, <var>status</var>, <var>extra</var>] = <b>glpk</b> (<var>c, A, b, lb, ub, ctype, vartype, sense, param</var>)<var><a name="index-glpk-2094"></a></var><br>
+&mdash; Function File: [<var>xopt</var>, <var>fmin</var>, <var>status</var>, <var>extra</var>] = <b>glpk</b> (<var>c, A, b, lb, ub, ctype, vartype, sense, param</var>)<var><a name="index-glpk-2373"></a></var><br>
 <blockquote><p>Solve a linear program using the GNU <span class="sc">glpk</span> library.  Given three
 arguments, <code>glpk</code> solves the following standard LP:
 
@@ -267,40 +267,59 @@ detailed understanding of its purpose.
 
           <p>Simplex Method:
                <dl>
-<dt>180 (<code>LPX_OPT</code><!-- /@w -->)<dd>Solution is optimal. 
-<br><dt>181 (<code>LPX_FEAS</code><!-- /@w -->)<dd>Solution is feasible. 
-<br><dt>182 (<code>LPX_INFEAS</code><!-- /@w -->)<dd>Solution is infeasible. 
-<br><dt>183 (<code>LPX_NOFEAS</code><!-- /@w -->)<dd>Problem has no feasible solution. 
-<br><dt>184 (<code>LPX_UNBND</code><!-- /@w -->)<dd>Problem has no unbounded solution. 
-<br><dt>185 (<code>LPX_UNDEF</code><!-- /@w -->)<dd>Solution status is undefined. 
+<dt>180 (<code>LPX_OPT</code><!-- /@w -->)<dd>Solution is optimal.
+
+               <br><dt>181 (<code>LPX_FEAS</code><!-- /@w -->)<dd>Solution is feasible.
+
+               <br><dt>182 (<code>LPX_INFEAS</code><!-- /@w -->)<dd>Solution is infeasible.
+
+               <br><dt>183 (<code>LPX_NOFEAS</code><!-- /@w -->)<dd>Problem has no feasible solution.
+
+               <br><dt>184 (<code>LPX_UNBND</code><!-- /@w -->)<dd>Problem has no unbounded solution.
+
+               <br><dt>185 (<code>LPX_UNDEF</code><!-- /@w -->)<dd>Solution status is undefined. 
 </dl>
           Interior Point Method:
                <dl>
-<dt>150 (<code>LPX_T_UNDEF</code><!-- /@w -->)<dd>The interior point method is undefined. 
-<br><dt>151 (<code>LPX_T_OPT</code><!-- /@w -->)<dd>The interior point method is optimal. 
+<dt>150 (<code>LPX_T_UNDEF</code><!-- /@w -->)<dd>The interior point method is undefined.
+
+               <br><dt>151 (<code>LPX_T_OPT</code><!-- /@w -->)<dd>The interior point method is optimal. 
 </dl>
           Mixed Integer Method:
                <dl>
-<dt>170 (<code>LPX_I_UNDEF</code><!-- /@w -->)<dd>The status is undefined. 
-<br><dt>171 (<code>LPX_I_OPT</code><!-- /@w -->)<dd>The solution is integer optimal. 
-<br><dt>172 (<code>LPX_I_FEAS</code><!-- /@w -->)<dd>Solution integer feasible but its optimality has not been proven
-<br><dt>173 (<code>LPX_I_NOFEAS</code><!-- /@w -->)<dd>No integer feasible solution. 
+<dt>170 (<code>LPX_I_UNDEF</code><!-- /@w -->)<dd>The status is undefined.
+
+               <br><dt>171 (<code>LPX_I_OPT</code><!-- /@w -->)<dd>The solution is integer optimal.
+
+               <br><dt>172 (<code>LPX_I_FEAS</code><!-- /@w -->)<dd>Solution integer feasible but its optimality has not been proven
+
+               <br><dt>173 (<code>LPX_I_NOFEAS</code><!-- /@w -->)<dd>No integer feasible solution. 
 </dl>
           If an error occurs, <var>status</var> will contain one of the following
 codes:
 
                <dl>
-<dt>204 (<code>LPX_E_FAULT</code><!-- /@w -->)<dd>Unable to start the search. 
-<br><dt>205 (<code>LPX_E_OBJLL</code><!-- /@w -->)<dd>Objective function lower limit reached. 
-<br><dt>206 (<code>LPX_E_OBJUL</code><!-- /@w -->)<dd>Objective function upper limit reached. 
-<br><dt>207 (<code>LPX_E_ITLIM</code><!-- /@w -->)<dd>Iterations limit exhausted. 
-<br><dt>208 (<code>LPX_E_TMLIM</code><!-- /@w -->)<dd>Time limit exhausted. 
-<br><dt>209 (<code>LPX_E_NOFEAS</code><!-- /@w -->)<dd>No feasible solution. 
-<br><dt>210 (<code>LPX_E_INSTAB</code><!-- /@w -->)<dd>Numerical instability. 
-<br><dt>211 (<code>LPX_E_SING</code><!-- /@w -->)<dd>Problems with basis matrix. 
-<br><dt>212 (<code>LPX_E_NOCONV</code><!-- /@w -->)<dd>No convergence (interior). 
-<br><dt>213 (<code>LPX_E_NOPFS</code><!-- /@w -->)<dd>No primal feasible solution (LP presolver). 
-<br><dt>214 (<code>LPX_E_NODFS</code><!-- /@w -->)<dd>No dual feasible solution (LP presolver). 
+<dt>204 (<code>LPX_E_FAULT</code><!-- /@w -->)<dd>Unable to start the search.
+
+               <br><dt>205 (<code>LPX_E_OBJLL</code><!-- /@w -->)<dd>Objective function lower limit reached.
+
+               <br><dt>206 (<code>LPX_E_OBJUL</code><!-- /@w -->)<dd>Objective function upper limit reached.
+
+               <br><dt>207 (<code>LPX_E_ITLIM</code><!-- /@w -->)<dd>Iterations limit exhausted.
+
+               <br><dt>208 (<code>LPX_E_TMLIM</code><!-- /@w -->)<dd>Time limit exhausted.
+
+               <br><dt>209 (<code>LPX_E_NOFEAS</code><!-- /@w -->)<dd>No feasible solution.
+
+               <br><dt>210 (<code>LPX_E_INSTAB</code><!-- /@w -->)<dd>Numerical instability.
+
+               <br><dt>211 (<code>LPX_E_SING</code><!-- /@w -->)<dd>Problems with basis matrix.
+
+               <br><dt>212 (<code>LPX_E_NOCONV</code><!-- /@w -->)<dd>No convergence (interior).
+
+               <br><dt>213 (<code>LPX_E_NOPFS</code><!-- /@w -->)<dd>No primal feasible solution (LP presolver).
+
+               <br><dt>214 (<code>LPX_E_NODFS</code><!-- /@w -->)<dd>No dual feasible solution (LP presolver). 
 </dl>
 
           <br><dt><var>extra</var><dd>A data structure containing the following fields:

@@ -50,9 +50,9 @@ used when reading a file.
    <p><a name="doc_002dfopen"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>fopen</b> (<var>name, mode, arch</var>)<var><a name="index-fopen-872"></a></var><br>
-&mdash; Built-in Function: <var>fid_list</var> = <b>fopen</b> (<var>"all"</var>)<var><a name="index-fopen-873"></a></var><br>
-&mdash; Built-in Function: [<var>file</var>, <var>mode</var>, <var>arch</var>] = <b>fopen</b> (<var>fid</var>)<var><a name="index-fopen-874"></a></var><br>
+&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>fopen</b> (<var>name, mode, arch</var>)<var><a name="index-fopen-976"></a></var><br>
+&mdash; Built-in Function: <var>fid_list</var> = <b>fopen</b> (<var>"all"</var>)<var><a name="index-fopen-977"></a></var><br>
+&mdash; Built-in Function: [<var>file</var>, <var>mode</var>, <var>arch</var>] = <b>fopen</b> (<var>fid</var>)<var><a name="index-fopen-978"></a></var><br>
 <blockquote><p>The first form of the <code>fopen</code> function opens the named file with
 the specified mode (read-write, read-only, etc.) and architecture
 interpretation (IEEE big endian, IEEE little endian, etc.), and returns
@@ -148,9 +148,11 @@ Cray floating format.
    <p><a name="doc_002dfclose"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fclose</b> (<var>fid</var>)<var><a name="index-fclose-875"></a></var><br>
+&mdash; Built-in Function:  <b>fclose</b> (<var>fid</var>)<var><a name="index-fclose-979"></a></var><br>
+&mdash; Built-in Function:  <b>fclose</b> (<var>"all"</var>)<var><a name="index-fclose-980"></a></var><br>
 <blockquote><p>Close the specified file.  If successful, <code>fclose</code> returns 0,
-otherwise, it returns -1. 
+otherwise, it returns -1.  The second form of the <code>fclose</code> call closes
+all open files except <code>stdout</code>, <code>stderr</code>, and <code>stdin</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -162,7 +164,7 @@ otherwise, it returns -1.
    <p><a name="doc_002dis_005fvalid_005ffile_005fid"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>is_valid_file_id</b> (<var>fid</var>)<var><a name="index-is_005fvalid_005ffile_005fid-876"></a></var><br>
+&mdash; Function File:  <b>is_valid_file_id</b> (<var>fid</var>)<var><a name="index-is_005fvalid_005ffile_005fid-981"></a></var><br>
 <blockquote><p>Return true if <var>fid</var> refers to an open file. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->

@@ -32,7 +32,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Differential-Equations.html#Differentia
 <hr>
 </div>
 
-<h3 class="section">23.2 Differential-Algebraic Equations</h3>
+<h3 class="section">24.2 Differential-Algebraic Equations</h3>
 
 <p>The function <code>daspk</code> can be used to solve DAEs of the form
 
@@ -47,7 +47,7 @@ DAE solver <span class="sc">daspk</span>.
    <p><a name="doc_002ddaspk"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>x</var>, <var>xdot</var>, <var>istate</var>, <var>msg</var>] = <b>daspk</b> (<var>fcn, x_0, xdot_0, t, t_crit</var>)<var><a name="index-daspk-2079"></a></var><br>
+&mdash; Loadable Function: [<var>x</var>, <var>xdot</var>, <var>istate</var>, <var>msg</var>] = <b>daspk</b> (<var>fcn, x_0, xdot_0, t, t_crit</var>)<var><a name="index-daspk-2352"></a></var><br>
 <blockquote><p>Solve the set of differential-algebraic equations
 
      <pre class="example">          0 = f (x, xdot, t)
@@ -121,12 +121,15 @@ parameters for <code>daspk</code>.
    <p><a name="doc_002ddaspk_005foptions"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>daspk_options</b> (<var>opt, val</var>)<var><a name="index-daspk_005foptions-2080"></a></var><br>
-<blockquote><p>When called with two arguments, this function
-allows you set options parameters for the function <code>daspk</code>. 
-Given one argument, <code>daspk_options</code> returns the value of the
-corresponding option.  If no arguments are supplied, the names of all
-the available options and their current values are displayed.
+&mdash; Loadable Function:  <b>daspk_options</b> ()<var><a name="index-daspk_005foptions-2353"></a></var><br>
+&mdash; Loadable Function: val = <b>daspk_options</b> (<var>opt</var>)<var><a name="index-daspk_005foptions-2354"></a></var><br>
+&mdash; Loadable Function:  <b>daspk_options</b> (<var>opt, val</var>)<var><a name="index-daspk_005foptions-2355"></a></var><br>
+<blockquote><p>Query or set options for the function <code>daspk</code>. 
+When called with no arguments, the names of all available options and
+their current values are displayed. 
+Given one argument, return the value of the corresponding option. 
+When called with two arguments, <code>daspk_options</code> set the option
+<var>opt</var> to value <var>val</var>.
 
         <p>Options include
 
@@ -267,7 +270,7 @@ and <span class="sc">dasrt</span>, which can be used to solve DAEs with constrai
    <p><a name="doc_002ddassl"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>x</var>, <var>xdot</var>, <var>istate</var>, <var>msg</var>] = <b>dassl</b> (<var>fcn, x_0, xdot_0, t, t_crit</var>)<var><a name="index-dassl-2081"></a></var><br>
+&mdash; Loadable Function: [<var>x</var>, <var>xdot</var>, <var>istate</var>, <var>msg</var>] = <b>dassl</b> (<var>fcn, x_0, xdot_0, t, t_crit</var>)<var><a name="index-dassl-2356"></a></var><br>
 <blockquote><p>Solve the set of differential-algebraic equations
 
      <pre class="example">          0 = f (x, xdot, t)
@@ -341,12 +344,15 @@ parameters for <code>dassl</code>.
    <p><a name="doc_002ddassl_005foptions"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dassl_options</b> (<var>opt, val</var>)<var><a name="index-dassl_005foptions-2082"></a></var><br>
-<blockquote><p>When called with two arguments, this function
-allows you set options parameters for the function <code>dassl</code>. 
-Given one argument, <code>dassl_options</code> returns the value of the
-corresponding option.  If no arguments are supplied, the names of all
-the available options and their current values are displayed.
+&mdash; Loadable Function:  <b>dassl_options</b> ()<var><a name="index-dassl_005foptions-2357"></a></var><br>
+&mdash; Loadable Function: val = <b>dassl_options</b> (<var>opt</var>)<var><a name="index-dassl_005foptions-2358"></a></var><br>
+&mdash; Loadable Function:  <b>dassl_options</b> (<var>opt, val</var>)<var><a name="index-dassl_005foptions-2359"></a></var><br>
+<blockquote><p>Query or set options for the function <code>dassl</code>. 
+When called with no arguments, the names of all available options and
+their current values are displayed. 
+Given one argument, return the value of the corresponding option. 
+When called with two arguments, <code>dassl_options</code> set the option
+<var>opt</var> to value <var>val</var>.
 
         <p>Options include
 
@@ -394,10 +400,10 @@ underlying Fortran code.
    <p><a name="doc_002ddasrt"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>x</var>, <var>xdot</var>, <var>t_out</var>, <var>istat</var>, <var>msg</var>] = <b>dasrt</b> (<var>fcn, </var>[]<var>, x_0, xdot_0, t</var>)<var><a name="index-dasrt-2083"></a></var><br>
-&mdash; Loadable Function: <small class="dots">...</small> = <b>dasrt</b> (<var>fcn, g, x_0, xdot_0, t</var>)<var><a name="index-dasrt-2084"></a></var><br>
-&mdash; Loadable Function: <small class="dots">...</small> = <b>dasrt</b> (<var>fcn, </var>[]<var>, x_0, xdot_0, t, t_crit</var>)<var><a name="index-dasrt-2085"></a></var><br>
-&mdash; Loadable Function: <small class="dots">...</small> = <b>dasrt</b> (<var>fcn, g, x_0, xdot_0, t, t_crit</var>)<var><a name="index-dasrt-2086"></a></var><br>
+&mdash; Loadable Function: [<var>x</var>, <var>xdot</var>, <var>t_out</var>, <var>istat</var>, <var>msg</var>] = <b>dasrt</b> (<var>fcn, </var>[]<var>, x_0, xdot_0, t</var>)<var><a name="index-dasrt-2360"></a></var><br>
+&mdash; Loadable Function: <small class="dots">...</small> = <b>dasrt</b> (<var>fcn, g, x_0, xdot_0, t</var>)<var><a name="index-dasrt-2361"></a></var><br>
+&mdash; Loadable Function: <small class="dots">...</small> = <b>dasrt</b> (<var>fcn, </var>[]<var>, x_0, xdot_0, t, t_crit</var>)<var><a name="index-dasrt-2362"></a></var><br>
+&mdash; Loadable Function: <small class="dots">...</small> = <b>dasrt</b> (<var>fcn, g, x_0, xdot_0, t, t_crit</var>)<var><a name="index-dasrt-2363"></a></var><br>
 <blockquote><p>Solve the set of differential-algebraic equations
 
      <pre class="example">          0 = f (x, xdot, t)
@@ -504,12 +510,15 @@ parameters for <code>dasrt</code>.
    <p><a name="doc_002ddasrt_005foptions"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dasrt_options</b> (<var>opt, val</var>)<var><a name="index-dasrt_005foptions-2087"></a></var><br>
-<blockquote><p>When called with two arguments, this function
-allows you set options parameters for the function <code>dasrt</code>. 
-Given one argument, <code>dasrt_options</code> returns the value of the
-corresponding option.  If no arguments are supplied, the names of all
-the available options and their current values are displayed.
+&mdash; Loadable Function:  <b>dasrt_options</b> ()<var><a name="index-dasrt_005foptions-2364"></a></var><br>
+&mdash; Loadable Function: val = <b>dasrt_options</b> (<var>opt</var>)<var><a name="index-dasrt_005foptions-2365"></a></var><br>
+&mdash; Loadable Function:  <b>dasrt_options</b> (<var>opt, val</var>)<var><a name="index-dasrt_005foptions-2366"></a></var><br>
+<blockquote><p>Query or set options for the function <code>dasrt</code>. 
+When called with no arguments, the names of all available options and
+their current values are displayed. 
+Given one argument, return the value of the corresponding option. 
+When called with two arguments, <code>dasrt_options</code> set the option
+<var>opt</var> to value <var>val</var>.
 
         <p>Options include
 
@@ -548,7 +557,7 @@ Problems in Differential-Algebraic Equations</cite>, North-Holland (1989) for
 more information about the implementation of <span class="sc">dassl</span>.
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

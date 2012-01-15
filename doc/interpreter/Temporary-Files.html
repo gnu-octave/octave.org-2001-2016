@@ -44,14 +44,14 @@ files will be deleted, so this step need not be executed manually.
    <p><a name="doc_002dmkstemp"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>fid</var>, <var>name</var>, <var>msg</var>] = <b>mkstemp</b> (<var>template, delete</var>)<var><a name="index-mkstemp-903"></a></var><br>
+&mdash; Built-in Function: [<var>fid</var>, <var>name</var>, <var>msg</var>] = <b>mkstemp</b> (<var>template, delete</var>)<var><a name="index-mkstemp-1009"></a></var><br>
 <blockquote><p>Return the file ID corresponding to a new temporary file with a unique
 name created from <var>template</var>.  The last six characters of <var>template</var>
 must be <code>XXXXXX</code> and these are replaced with a string that makes the
 filename unique.  The file is then created with mode read/write and
 permissions that are system dependent (on GNU/Linux systems, the permissions
 will be 0600 for versions of glibc 2.0.7 and later).  The file is opened
-with the <code>O_EXCL</code><!-- /@w --> flag.
+in binary mode and with the <code>O_EXCL</code><!-- /@w --> flag.
 
         <p>If the optional argument <var>delete</var> is supplied and is true,
 the file will be deleted automatically when Octave exits, or when
@@ -72,7 +72,7 @@ error message.
    <p><a name="doc_002dtmpfile"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>tmpfile</b> ()<var><a name="index-tmpfile-904"></a></var><br>
+&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>tmpfile</b> ()<var><a name="index-tmpfile-1010"></a></var><br>
 <blockquote><p>Return the file ID corresponding to a new temporary file with a unique
 name.  The file is opened in binary read/write (<code>"w+b"</code>) mode. 
 The file will be deleted automatically when it is closed or when Octave
@@ -89,12 +89,13 @@ system-dependent error message.
 </p></blockquote></div>
 
 <!-- tmpnam src/file-io.cc -->
-   <p><a name="doc_002dtmpnam"></a>
+   <p><a name="doc_002dtmpnam"></a><!-- List other forms of function in documentation index -->
+<a name="index-octave_005ftmp_005ffile_005fname-1011"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>tmpnam</b> ()<var><a name="index-tmpnam-905"></a></var><br>
-&mdash; Built-in Function:  <b>tmpnam</b> (<var>dir</var>)<var><a name="index-tmpnam-906"></a></var><br>
-&mdash; Built-in Function:  <b>tmpnam</b> (<var>dir, prefix</var>)<var><a name="index-tmpnam-907"></a></var><br>
+&mdash; Built-in Function:  <b>tmpnam</b> ()<var><a name="index-tmpnam-1012"></a></var><br>
+&mdash; Built-in Function:  <b>tmpnam</b> (<var>dir</var>)<var><a name="index-tmpnam-1013"></a></var><br>
+&mdash; Built-in Function:  <b>tmpnam</b> (<var>dir, prefix</var>)<var><a name="index-tmpnam-1014"></a></var><br>
 <blockquote><p>Return a unique temporary file name as a string.
 
         <p>If <var>prefix</var> is omitted, a value of <code>"oct-"</code> is used. 

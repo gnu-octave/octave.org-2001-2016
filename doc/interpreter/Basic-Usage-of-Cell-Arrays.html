@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Cell-Arrays.html#Cell-Arrays">Cell Arra
 
 <h4 class="subsection">6.2.1 Basic Usage of Cell Arrays</h4>
 
-<p><a name="index-g_t_0040_007b-413"></a><a name="index-g_t_0040_007d-414"></a>As an example, the following code creates a cell array containing a
+<p><a name="index-g_t_0040_007b-455"></a><a name="index-g_t_0040_007d-456"></a>As an example, the following code creates a cell array containing a
 string and a 2-by-2 random matrix
 
 <pre class="example">     c = {"a string", rand(2, 2)};
@@ -49,16 +49,11 @@ can be indexed like this:
 extracted by indexing with a vector of indexes
 
 <pre class="example">     c{1:2}
+          &rArr; ans = a string
           &rArr; ans =
-     
-               (,
-                 [1] = a string
-                 [2] =
      
                     0.593993   0.627732
                     0.377037   0.033643
-     
-               ,)
 </pre>
    <p>The indexing operators can also be used to insert or overwrite elements
 of a cell array.  The following code inserts the scalar 3 on the
@@ -88,7 +83,7 @@ function.
    <p><a name="doc_002dcelldisp"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>celldisp</b> (<var>c, name</var>)<var><a name="index-celldisp-415"></a></var><br>
+&mdash; Function File:  <b>celldisp</b> (<var>c, name</var>)<var><a name="index-celldisp-457"></a></var><br>
 <blockquote><p>Recursively display the contents of a cell array.  By default the values
 are displayed with the name of the variable <var>c</var>.  However, this name
 can be replaced with the variable <var>name</var>.  For example:
@@ -124,7 +119,7 @@ function.  For example:
    <p><a name="doc_002discell"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>iscell</b> (<var>x</var>)<var><a name="index-iscell-416"></a></var><br>
+&mdash; Built-in Function:  <b>iscell</b> (<var>x</var>)<var><a name="index-iscell-458"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a cell array object. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->

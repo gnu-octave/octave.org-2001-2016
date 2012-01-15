@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 
 <h3 class="section">5.1 Escape Sequences in String Constants</h3>
 
-<p><a name="index-escape-sequence-notation-295"></a>In double-quoted strings, the backslash character is used to introduce
+<p><a name="index-escape-sequence-notation-325"></a>In double-quoted strings, the backslash character is used to introduce
 <dfn>escape sequences</dfn> that represent other characters.  For example,
 &lsquo;<samp><span class="samp">\n</span></samp>&rsquo; embeds a newline character in a double-quoted string and
 &lsquo;<samp><span class="samp">\"</span></samp>&rsquo; embeds a double quote character.  In single-quoted strings, backslash
@@ -93,5 +93,34 @@ example,
 <pre class="example">     'I can''t escape'
          &rArr; I can't escape
 </pre>
+   <p>In scripts the two different string types can be distinguished if necessary
+by using <code>is_dq_string</code> and <code>is_sq_string</code>.
+
+<!-- is_dq_string src/ov.cc -->
+   <p><a name="doc_002dis_005fdq_005fstring"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>is_dq_string</b> (<var>x</var>)<var><a name="index-is_005fdq_005fstring-326"></a></var><br>
+<blockquote><p>Return true if <var>x</var> is a double-quoted character string. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dis_005fsq_005fstring.html#doc_002dis_005fsq_005fstring">is_sq_string</a>, <a href="doc_002dischar.html#doc_002dischar">ischar</a>. 
+</p></blockquote></div>
+
+<!-- is_sq_string src/ov.cc -->
+   <p><a name="doc_002dis_005fsq_005fstring"></a>
+
+<div class="defun">
+&mdash; Built-in Function:  <b>is_sq_string</b> (<var>x</var>)<var><a name="index-is_005fsq_005fstring-327"></a></var><br>
+<blockquote><p>Return true if <var>x</var> is a single-quoted character string. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dis_005fdq_005fstring.html#doc_002dis_005fdq_005fstring">is_dq_string</a>, <a href="doc_002dischar.html#doc_002dischar">ischar</a>. 
+</p></blockquote></div>
+
    </body></html>
 

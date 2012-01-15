@@ -33,180 +33,67 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressio
 
 <h3 class="section">8.1 Index Expressions</h3>
 
-<p><a name="index-g_t_0028-477"></a><a name="index-g_t_0029-478"></a><a name="index-g_t_003a-479"></a>
+<p><a name="index-g_t_0028-513"></a><a name="index-g_t_0029-514"></a><a name="index-g_t_003a-515"></a>
 An <dfn>index expression</dfn> allows you to reference or extract selected
 elements of a matrix or vector.
 
    <p>Indices may be scalars, vectors, ranges, or the special operator
 &lsquo;<samp><span class="samp">:</span></samp>&rsquo;, which may be used to select entire rows or columns.
 
-   <p>Vectors are indexed using a single index expression.  Matrices may be
-indexed using one or two indices.  When using a single index
-expression, the elements of the matrix are taken in column-first order;
-the dimensions of the output match those of the index expression.  For
-example,
+   <p>Vectors are indexed using a single index expression.  Matrices (2-D)
+and higher multi-dimensional arrays are indexed using either one index
+or N indices where N is the dimension of the array. 
+When using a single index expression to index 2-D or higher data the
+elements of the array are taken in column-first order (like Fortran).
 
-<pre class="example">     a (2)       # a scalar
-     a (1:2)     # a row vector
-     a ([1; 2])  # a column vector
+   <p>The output from indexing assumes the dimensions of the index
+expression.  For example:
+
+<pre class="example">     a(2)       # result is a scalar
+     a(1:2)     # result is a row vector
+     a([1; 2])  # result is a column vector
 </pre>
    <p>As a special case, when a colon is used as a single index, the output
-is a column vector containing all the elements of the vector or matrix. 
-For example:
+is a column vector containing all the elements of the vector or
+matrix.  For example:
 
-<pre class="example">     a (:)       # a column vector
+<pre class="example">     a(:)       # result is a column vector
+     a(:)'      # result is a row vector
 </pre>
+   <p>The above two code idioms are often used in place of <code>reshape</code>
+when a simple vector, rather than an arbitrarily sized array, is
+needed.
+
    <p>Given the matrix
 
 <pre class="example">     a = [1, 2; 3, 4]
 </pre>
-   <p class="noindent">all of the following expressions are equivalent
+   <p class="noindent">all of the following expressions are equivalent and select the first
+row of the matrix.
 
-<pre class="example">     a (1, [1, 2])
-     a (1, 1:2)
-     a (1, :)
+<pre class="example">     a(1, [1, 2])  # row 1, columns 1 and 2
+     a(1, 1:2)     # row 1, columns in range 1-2
+     a(1, :)       # row 1, all columns
 </pre>
-   <p class="noindent">and select the first row of the matrix.
+   <p><a name="index-g_t_0040code_007bend_007d_002c-indexing-516"></a><a name="index-g_t_003aend-517"></a>
+In index expressions the keyword <code>end</code> automatically refers to
+the last entry for a particular dimension.  This magic index can also
+be used in ranges and typically eliminates the needs to call
+<code>size</code> or <code>length</code> to gather array bounds before indexing. 
+For example:
 
-   <p>In general, an array with &lsquo;<samp><span class="samp">n</span></samp>&rsquo; dimensions can be indexed using &lsquo;<samp><span class="samp">m</span></samp>&rsquo;
-indices.  If <code>n == m</code>, each index corresponds to its respective dimension. 
-The set of index tuples determining the result is formed by the Cartesian
-product of the index vectors (or ranges or scalars).  If <code>n &lt; m</code>, then the
-array is padded by trailing singleton dimensions.  If <code>n &gt; m</code>, the last
-<code>n-m+1</code> dimensions are folded into a single dimension with extent equal to
-product of extents of the original dimensions.
-
-<!-- FIXED - sections on variable prefer_zero_one_indexing were removed -->
-   <p>Indexing a scalar with a vector of ones can be used to create a
-vector the same size as the index vector, with each element equal to
-the value of the original scalar.  For example, the following statements
-
-<pre class="example">     a = 13;
-     a (ones (1, 4))
+<pre class="example">     a = [1, 2, 3, 4];
+     
+     a(1:end/2)        # first half of a =&gt; [1, 2]
+     a(end + 1) = 5;   # append element
+     a(end) = [];      # delete element
+     a(1:2:end)        # odd elements of a =&gt; [1, 3]
+     a(2:2:end)        # even elements of a =&gt; [2, 4]
+     a(end:-1:1)       # reversal of a =&gt; [4, 3, 2 , 1]
 </pre>
-   <p class="noindent">produce a vector whose four elements are all equal to 13.
-
-   <p>Similarly, indexing a scalar with two vectors of ones can be used to
-create a matrix.  For example the following statements
-
-<pre class="example">     a = 13;
-     a (ones (1, 2), ones (1, 3))
-</pre>
-   <p class="noindent">create a 2 by 3 matrix with all elements equal to 13.
-
-   <p>The last example could also be written as
-
-<pre class="example">     13 (ones (2, 3))
-</pre>
-   <p>It should be, noted that <code>ones (1, n)</code> (a row vector of ones) results in a
-range (with zero increment), and is therefore more efficient when used in index
-expression than other forms of <dfn>ones</dfn>.  In particular, when &lsquo;<samp><span class="samp">r</span></samp>&rsquo; is a
-row vector, the expressions
-
-<pre class="example">       r(ones (1, n), :)
-</pre>
-   <pre class="example">       r(ones (n, 1), :)
-</pre>
-   <p class="noindent">will produce identical results, but the first one will be significantly
-faster, at least for &lsquo;<samp><span class="samp">r</span></samp>&rsquo; and &lsquo;<samp><span class="samp">n</span></samp>&rsquo; large enough.  The reason is that
-in the first case the index is kept in a compressed form, which allows Octave
-to choose a more efficient algorithm to handle the expression.
-
-   <p>In general, for an user unaware of these subtleties, it is best to use
-the function <dfn>repmat</dfn> for spreading arrays into bigger ones.
-
-   <p>It is also possible to create a matrix with different values.  The
-following example creates a 10 dimensional row vector a containing
-the values
-a(i) = sqrt(i).
-
-<pre class="example">     for i = 1:10
-       a(i) = sqrt (i);
-     endfor
-</pre>
-   <p class="noindent">Note that it is quite inefficient to create a vector using a loop like
-the one shown in the example above.  In this particular case, it would
-have been much more efficient to use the expression
-
-<pre class="example">     a = sqrt (1:10);
-</pre>
-   <p class="noindent">thus avoiding the loop entirely.  In cases where a loop is still
-required, or a number of values must be combined to form a larger
-matrix, it is generally much faster to set the size of the matrix first,
-and then insert elements using indexing commands.  For example, given a
-matrix <code>a</code>,
-
-<pre class="example">     [nr, nc] = size (a);
-     x = zeros (nr, n * nc);
-     for i = 1:n
-       x(:,(i-1)*nc+1:i*nc) = a;
-     endfor
-</pre>
-   <p class="noindent">is considerably faster than
-
-<pre class="example">     x = a;
-     for i = 1:n-1
-       x = [x, a];
-     endfor
-</pre>
-   <p class="noindent">particularly for large matrices because Octave does not have to
-repeatedly resize the result.
-
-<!-- sub2ind src/DLD-FUNCTIONS/sub2ind.cc -->
-   <p><a name="doc_002dsub2ind"></a>
-
-<div class="defun">
-&mdash; Function File: <var>ind</var> = <b>sub2ind</b> (<var>dims, i, j</var>)<var><a name="index-sub2ind-480"></a></var><br>
-&mdash; Function File: <var>ind</var> = <b>sub2ind</b> (<var>dims, s1, s2, <small class="dots">...</small>, sN</var>)<var><a name="index-sub2ind-481"></a></var><br>
-<blockquote><p>Convert subscripts to a linear index.
-
-        <p>The following example shows how to convert the two-dimensional
-index <code>(2,3)</code> of a 3-by-3 matrix to a linear index.  The matrix
-is linearly indexed moving from one column to next, filling up
-all rows in each column.
-
-     <pre class="example">          linear_index = sub2ind ([3, 3], 2, 3)
-          &rArr; 8
-</pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dind2sub.html#doc_002dind2sub">ind2sub</a>. 
-</p></blockquote></div>
-
-<!-- ind2sub src/DLD-FUNCTIONS/sub2ind.cc -->
-   <p><a name="doc_002dind2sub"></a>
-
-<div class="defun">
-&mdash; Function File: [<var>s1</var>, <var>s2</var>, <small class="dots">...</small>, <var>sN</var>] = <b>ind2sub</b> (<var>dims, ind</var>)<var><a name="index-ind2sub-482"></a></var><br>
-<blockquote><p>Convert a linear index to subscripts.
-
-        <p>The following example shows how to convert the linear index <code>8</code>
-in a 3-by-3 matrix into a subscript.  The matrix is linearly indexed
-moving from one column to next, filling up all rows in each column.
-
-     <pre class="example">          [r, c] = ind2sub ([3, 3], 8)
-          &rArr; r =  2
-             c =  3
-</pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsub2ind.html#doc_002dsub2ind">sub2ind</a>. 
-</p></blockquote></div>
-
-<!-- isindex src/utils.cc -->
-   <p><a name="doc_002disindex"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>isindex</b> (<var>ind</var>)<var><a name="index-isindex-483"></a></var><br>
-&mdash; Built-in Function:  <b>isindex</b> (<var>ind, n</var>)<var><a name="index-isindex-484"></a></var><br>
-<blockquote><p>Return true if <var>ind</var> is a valid index.  Valid indices are
-either positive integers (although possibly of real data type), or logical
-arrays.  If present, <var>n</var> specifies the maximum extent of the dimension
-to be indexed.  When possible the internal result is cached so that
-subsequent indexing using <var>ind</var> will not perform the check again. 
-</p></blockquote></div>
+   <ul class="menu">
+<li><a accesskey="1" href="Advanced-Indexing.html#Advanced-Indexing">Advanced Indexing</a>
+</ul>
 
    </body></html>
 

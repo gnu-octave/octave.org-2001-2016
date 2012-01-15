@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics<
 <hr>
 </div>
 
-<h3 class="section">25.3 Statistical Plots</h3>
+<h3 class="section">26.3 Statistical Plots</h3>
 
 <!-- Should hist be moved to here, or perhaps the qqplot and ppplot -->
 <!-- functions should be moved to the Plotting Chapter? -->
@@ -49,9 +49,10 @@ using the <code>hist</code> function as described in
    <p><a name="doc_002dqqplot"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x</var>)<var><a name="index-qqplot-2179"></a></var><br>
-&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist</var>)<var><a name="index-qqplot-2180"></a></var><br>
-&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist, params</var>)<var><a name="index-qqplot-2181"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x</var>)<var><a name="index-qqplot-2465"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist</var>)<var><a name="index-qqplot-2466"></a></var><br>
+&mdash; Function File: [<var>q</var>, <var>s</var>] = <b>qqplot</b> (<var>x, dist, params</var>)<var><a name="index-qqplot-2467"></a></var><br>
+&mdash; Function File:  <b>qqplot</b> (<var><small class="dots">...</small></var>)<var><a name="index-qqplot-2468"></a></var><br>
 <blockquote><p>Perform a QQ-plot (quantile plot).
 
         <p>If F is the CDF of the distribution <var>dist</var> with parameters
@@ -68,7 +69,7 @@ optional argument <var>params</var> contains a list of parameters of
 <var>dist</var>.  For example, for a quantile plot of the uniform
 distribution on [2,4] and <var>x</var>, use
 
-     <pre class="example">          qqplot (x, "uniform", 2, 4)
+     <pre class="example">          qqplot (x, "unif", 2, 4)
 </pre>
         <p class="noindent"><var>dist</var> can be any string for which a function <var>distinv</var> or
 <var>dist_inv</var> exists that calculates the inverse CDF of distribution
@@ -81,7 +82,7 @@ distribution on [2,4] and <var>x</var>, use
    <p><a name="doc_002dppplot"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>p</var>, <var>y</var>] = <b>ppplot</b> (<var>x, dist, params</var>)<var><a name="index-ppplot-2182"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>y</var>] = <b>ppplot</b> (<var>x, dist, params</var>)<var><a name="index-ppplot-2469"></a></var><br>
 <blockquote><p>Perform a PP-plot (probability plot).
 
         <p>If F is the CDF of the distribution <var>dist</var> with parameters

@@ -31,9 +31,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Creating-Packages.html#Creating-Package
 <hr>
 </div>
 
-<h4 class="subsection">35.4.1 The DESCRIPTION File</h4>
+<h4 class="subsection">37.4.1 The DESCRIPTION File</h4>
 
-<p>The <code>DESCRIPTION</code> file contains various information about the
+<p>The <samp><span class="file">DESCRIPTION</span></samp> file contains various information about the
 package, such as its name, author, and version.  This file has a very
 simple format
 
@@ -47,7 +47,7 @@ previous line.
      <li>Everything else is of the form <code>NameOfOption: ValueOfOption</code>. 
 </ul>
 
-<p class="noindent">The following is a simple example of a <code>DESCRIPTION</code> file
+<p class="noindent">The following is a simple example of a <samp><span class="file">DESCRIPTION</span></samp> file
 
 <pre class="example">     Name: The name of my package
      Version: 1.0.0
@@ -68,7 +68,8 @@ previous line.
      <dl>
 <dt><code>Name</code><dd>Name of the package.
 
-     <br><dt><code>Version</code><dd>Version of the package.
+     <br><dt><code>Version</code><dd>Version of the package.  A package version must be 3 numbers separated
+by a dot.
 
      <br><dt><code>Date</code><dd>Date of last update.
 
@@ -80,7 +81,7 @@ previous line.
 
      <br><dt><code>Description</code><dd>A one paragraph description of the package.
 
-     <br><dt><code>Categories</code><dd>Optional keyword describing the package (if no <code>INDEX</code> file is
+     <br><dt><code>Categories</code><dd>Optional keyword describing the package (if no <samp><span class="file">INDEX</span></samp> file is
 given this is mandatory).
 
      <br><dt><code>Problems</code><dd>Optional list of known problems.
@@ -105,7 +106,7 @@ defined either as a comma separated list or on separate <code>Depends</code>
 lines.
 
      <br><dt><code>License</code><dd>An optional short description of the used license (e.g., GPL version 3
-or newer).  This is optional since the file <code>COPYING</code> is mandatory.
+or newer).  This is optional since the file <samp><span class="file">COPYING</span></samp> is mandatory.
 
      <br><dt><code>SystemRequirements</code><dd>These are the external install dependencies of the package and are not
 checked by the package manager.  This is here as a hint to the
@@ -124,7 +125,7 @@ from the build dependencies, and therefore the often a
    </dl>
 
 <p class="noindent">The developer is free to add additional arguments to the
-<code>DESCRIPTION</code> file for their own purposes.  One further detail to
+<samp><span class="file">DESCRIPTION</span></samp> file for their own purposes.  One further detail to
 aid the packager is that the <code>SystemRequirements</code> and
 <code>BuildRequires</code> keywords can have a distribution dependent section,
 and the automatic build process will use these.  An example of the

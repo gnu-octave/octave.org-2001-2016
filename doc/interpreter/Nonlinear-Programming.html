@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization.html#Optimization">Optimiz
 <hr>
 </div>
 
-<h3 class="section">24.3 Nonlinear Programming</h3>
+<h3 class="section">25.3 Nonlinear Programming</h3>
 
 <p>Octave can also perform general nonlinear minimization using a
 successive quadratic programming solver.
@@ -42,12 +42,12 @@ successive quadratic programming solver.
    <p><a name="doc_002dsqp"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>x</var>, <var>obj</var>, <var>info</var>, <var>iter</var>, <var>nf</var>, <var>lambda</var>] = <b>sqp</b> (<var>x0, phi</var>)<var><a name="index-sqp-2107"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g</var>)<var><a name="index-sqp-2108"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h</var>)<var><a name="index-sqp-2109"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h, lb, ub</var>)<var><a name="index-sqp-2110"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h, lb, ub, maxiter</var>)<var><a name="index-sqp-2111"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h, lb, ub, maxiter, tolerance</var>)<var><a name="index-sqp-2112"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>obj</var>, <var>info</var>, <var>iter</var>, <var>nf</var>, <var>lambda</var>] = <b>sqp</b> (<var>x0, phi</var>)<var><a name="index-sqp-2386"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g</var>)<var><a name="index-sqp-2387"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h</var>)<var><a name="index-sqp-2388"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h, lb, ub</var>)<var><a name="index-sqp-2389"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h, lb, ub, maxiter</var>)<var><a name="index-sqp-2390"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>sqp</b> (<var>x0, phi, g, h, lb, ub, maxiter, tol</var>)<var><a name="index-sqp-2391"></a></var><br>
 <blockquote><p>Solve the nonlinear program
 
      <pre class="example">               min phi (x)
@@ -64,11 +64,8 @@ successive quadratic programming solver.
         <p>The first argument is the initial guess for the vector <var>x0</var>.
 
         <p>The second argument is a function handle pointing to the objective
-function.  The objective function must be of the form
-
-     <pre class="example">               <var>y</var> = phi (<var>x</var>)
-</pre>
-        <p class="noindent">in which <var>x</var> is a vector and <var>y</var> is a scalar.
+function <var>phi</var>.  The objective function must accept one vector
+argument and return a scalar.
 
         <p>The second argument may also be a 2- or 3-element cell array of
 function handles.  The first element should point to the objective
@@ -79,31 +76,18 @@ gradient function is not supplied, the gradient is computed by finite
 differences.  If the Hessian function is not supplied, a BFGS update
 formula is used to approximate the Hessian.
 
-        <p>When supplied, the gradient function must be of the form
+        <p>When supplied, the gradient function <var>phi</var><code>{2}</code> must accept
+one vector argument and return a vector.  When supplied, the Hessian
+function <var>phi</var><code>{3}</code> must accept one vector argument and
+return a matrix.
 
-     <pre class="example">          <var>g</var> = gradient (<var>x</var>)
-</pre>
-        <p class="noindent">in which <var>x</var> is a vector and <var>g</var> is a vector.
-
-        <p>When supplied, the Hessian function must be of the form
-
-     <pre class="example">          <var>h</var> = hessian (<var>x</var>)
-</pre>
-        <p class="noindent">in which <var>x</var> is a vector and <var>h</var> is a matrix.
-
-        <p>The third and fourth arguments are function handles pointing to
-functions that compute the equality constraints and the inequality
-constraints, respectively.
-
-        <p>If the problem does not have equality (or inequality) constraints,
-then use an empty matrix ([]) for <var>cef</var> (or <var>cif</var>).
-
-        <p>When supplied, the equality and inequality constraint functions must be
-of the form
-
-     <pre class="example">          <var>r</var> = f (<var>x</var>)
-</pre>
-        <p class="noindent">in which <var>x</var> is a vector and <var>r</var> is a vector.
+        <p>The third and fourth arguments <var>g</var> and <var>h</var> are function
+handles pointing to functions that compute the equality constraints
+and the inequality constraints, respectively.  If the problem does
+not have equality (or inequality) constraints, then use an empty
+matrix ([]) for <var>g</var> (or <var>h</var>).  When supplied, these equality
+and inequality constraint functions must accept one vector argument
+and return a vector.
 
         <p>The third and fourth arguments may also be 2-element cell arrays of
 function handles.  The first element should point to the constraint
@@ -114,19 +98,20 @@ gradient of the constraint function:
               transpose ( [ ------   -----   ...   ------ ] )
                           [  dx_1     dx_2          dx_N  ]
 </pre>
-        <p>The fifth and sixth arguments contain lower and upper bounds
-on <var>x</var>.  These must be consistent with the equality and inequality
-constraints <var>g</var> and <var>h</var>.  If the arguments are vectors then
-<var>x</var>(i) is bound by <var>lb</var>(i) and <var>ub</var>(i).  A bound can also
-be a scalar in which case all elements of <var>x</var> will share the same
-bound.  If only one bound (lb, ub) is specified then the other will
-default to (-<var>realmax</var>, +<var>realmax</var>).
+        <p>The fifth and sixth arguments, <var>lb</var> and <var>ub</var>, contain lower
+and upper bounds on <var>x</var>.  These must be consistent with the
+equality and inequality constraints <var>g</var> and <var>h</var>.  If the
+arguments are vectors then <var>x</var>(i) is bound by <var>lb</var>(i) and
+<var>ub</var>(i).  A bound can also be a scalar in which case all elements
+of <var>x</var> will share the same bound.  If only one bound (lb, ub) is
+specified then the other will default to (-<var>realmax</var>,
++<var>realmax</var>).
 
-        <p>The seventh argument specifies the maximum number of iterations. 
-The default value is 100.
+        <p>The seventh argument <var>maxiter</var> specifies the maximum number of
+iterations.  The default value is 100.
 
-        <p>The eighth argument specifies the tolerance for the stopping criteria. 
-The default value is <code>sqrt(eps)</code>.
+        <p>The eighth argument <var>tol</var> specifies the tolerance for the
+stopping criteria.  The default value is <code>sqrt(eps)</code>.
 
         <p>The value returned in <var>info</var> may be one of the following:
 
@@ -134,7 +119,7 @@ The default value is <code>sqrt(eps)</code>.
 <dt>101<dd>The algorithm terminated normally. 
 Either all constraints meet the requested tolerance, or the stepsize,
 delta <var>x</var>,
-is less than <code>tol * norm (x)</code>.
+is less than <var>tol</var><code> * norm (x)</code>.
 
           <br><dt>102<dd>The BFGS update failed.
 

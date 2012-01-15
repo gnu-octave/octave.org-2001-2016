@@ -35,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-
 
 <h4 class="subsection">2.4.5 Commands For Manipulating The History</h4>
 
-<p><a name="index-command-history-114"></a><a name="index-input-history-115"></a><a name="index-history-of-commands-116"></a>
+<p><a name="index-command-history-129"></a><a name="index-input-history-130"></a><a name="index-history-of-commands-131"></a>
 Octave normally keeps track of the commands you type so that you can
 recall previous commands to edit or execute them again.  When you exit
 Octave, the most recent commands you have typed, up to the number
@@ -77,7 +77,7 @@ re-running chunks of commands from the history list.
    <p><a name="doc_002dhistory"></a>
 
 <div class="defun">
-&mdash; Command:  <b>history</b><var> options<a name="index-history-117"></a></var><br>
+&mdash; Command:  <b>history</b><var> options<a name="index-history-132"></a></var><br>
 <blockquote><p>If invoked with no arguments, <code>history</code> displays a list of commands
 that you have executed.  Valid options are:
 
@@ -104,7 +104,7 @@ typed without displaying line numbers, use the command
    <p><a name="doc_002dedit_005fhistory"></a>
 
 <div class="defun">
-&mdash; Command:  <b>edit_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-edit_005fhistory-118"></a></var><br>
+&mdash; Command:  <b>edit_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-edit_005fhistory-133"></a></var><br>
 <blockquote><p>If invoked with no arguments, <code>edit_history</code> allows you to edit the
 history list using the editor named by the variable <samp><span class="env">EDITOR</span></samp><!-- /@w -->.  The
 commands to be edited are first copied to a temporary file.  When you
@@ -141,7 +141,7 @@ omitted, the previous command in the history list is used.
    <p><a name="doc_002drun_005fhistory"></a>
 
 <div class="defun">
-&mdash; Command:  <b>run_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-run_005fhistory-119"></a></var><br>
+&mdash; Command:  <b>run_history</b> [<var>first</var>] [<var>last</var>]<var><a name="index-run_005fhistory-134"></a></var><br>
 <blockquote><p>Similar to <code>edit_history</code>, except that the editor is not invoked,
 and the commands are simply executed as they appear in the history list. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -158,10 +158,15 @@ is saved.
    <p><a name="doc_002dsaving_005fhistory"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>saving_history</b> ()<var><a name="index-saving_005fhistory-120"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>saving_history</b> (<var>new_val</var>)<var><a name="index-saving_005fhistory-121"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>saving_history</b> ()<var><a name="index-saving_005fhistory-135"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>saving_history</b> (<var>new_val</var>)<var><a name="index-saving_005fhistory-136"></a></var><br>
+&mdash; Built-in Function:  <b>saving_history</b> (<var>new_val, "local"</var>)<var><a name="index-saving_005fhistory-137"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether commands entered
-on the command line are saved in the history file. 
+on the command line are saved in the history file.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -173,8 +178,8 @@ on the command line are saved in the history file.
    <p><a name="doc_002dhistory_005fcontrol"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>history_control</b> ()<var><a name="index-history_005fcontrol-122"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>history_control</b> (<var>new_val</var>)<var><a name="index-history_005fcontrol-123"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>history_control</b> ()<var><a name="index-history_005fcontrol-138"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_control</b> (<var>new_val</var>)<var><a name="index-history_005fcontrol-139"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies how commands are saved
 to the history list.  The default value is an empty character string,
 but may be overridden by the environment variable
@@ -202,8 +207,8 @@ the history list, subject to the value of <code>saving_history</code>.
    <p><a name="doc_002dhistory_005ffile"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>history_file</b> ()<var><a name="index-history_005ffile-124"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>history_file</b> (<var>new_val</var>)<var><a name="index-history_005ffile-125"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>history_file</b> ()<var><a name="index-history_005ffile-140"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_file</b> (<var>new_val</var>)<var><a name="index-history_005ffile-141"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the name of the
 file used to store command history.  The default value is
 <samp><span class="file">~/.octave_hist</span></samp>, but may be overridden by the environment
@@ -219,8 +224,8 @@ variable <samp><span class="env">OCTAVE_HISTFILE</span></samp><!-- /@w -->.
    <p><a name="doc_002dhistory_005fsize"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>history_size</b> ()<var><a name="index-history_005fsize-126"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>history_size</b> (<var>new_val</var>)<var><a name="index-history_005fsize-127"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>history_size</b> ()<var><a name="index-history_005fsize-142"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_size</b> (<var>new_val</var>)<var><a name="index-history_005fsize-143"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies how many entries
 to store in the history file.  The default value is <code>1024</code>,
 but may be overridden by the environment variable <samp><span class="env">OCTAVE_HISTSIZE</span></samp><!-- /@w -->. 
@@ -235,8 +240,9 @@ but may be overridden by the environment variable <samp><span class="env">OCTAVE
    <p><a name="doc_002dhistory_005ftimestamp_005fformat_005fstring"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>history_timestamp_format_string</b> ()<var><a name="index-history_005ftimestamp_005fformat_005fstring-128"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>history_timestamp_format_string</b> (<var>new_val</var>)<var><a name="index-history_005ftimestamp_005fformat_005fstring-129"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>history_timestamp_format_string</b> ()<var><a name="index-history_005ftimestamp_005fformat_005fstring-144"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>history_timestamp_format_string</b> (<var>new_val</var>)<var><a name="index-history_005ftimestamp_005fformat_005fstring-145"></a></var><br>
+&mdash; Built-in Function:  <b>history_timestamp_format_string</b> (<var>new_val, "local"</var>)<var><a name="index-history_005ftimestamp_005fformat_005fstring-146"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the format string
 for the comment line that is written to the history file when Octave
 exits.  The format string is passed to <code>strftime</code>.  The default
@@ -244,9 +250,13 @@ value is
 
      <pre class="example">          "# Octave VERSION, %a %b %d %H:%M:%S %Y %Z &lt;USER@HOST&gt;"
 </pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dhistory_005ffile.html#doc_002dhistory_005ffile">history_file</a>, <a href="doc_002dhistory_005fsize.html#doc_002dhistory_005fsize">history_size</a>, <a href="doc_002dsaving_005fhistory.html#doc_002dsaving_005fhistory">saving_history</a>. 
 </p></blockquote></div>
 
@@ -254,13 +264,18 @@ value is
    <p><a name="doc_002dEDITOR"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>EDITOR</b> ()<var><a name="index-EDITOR-130"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>EDITOR</b> (<var>new_val</var>)<var><a name="index-EDITOR-131"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>EDITOR</b> ()<var><a name="index-EDITOR-147"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>EDITOR</b> (<var>new_val</var>)<var><a name="index-EDITOR-148"></a></var><br>
+&mdash; Built-in Function:  <b>EDITOR</b> (<var>new_val, "local"</var>)<var><a name="index-EDITOR-149"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the editor to
 use with the <code>edit_history</code> command.  The default value is taken from
 the environment variable <samp><span class="env">EDITOR</span></samp><!-- /@w --> when Octave starts.  If the
 environment variable is not initialized, <samp><span class="env">EDITOR</span></samp><!-- /@w --> will be set to
-<code>"emacs"</code>. 
+<code>"emacs"</code>.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->

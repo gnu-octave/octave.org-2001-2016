@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h2 class="chapter">7 Variables</h2>
 
-<p><a name="index-variables_002c-user_002ddefined-439"></a><a name="index-user_002ddefined-variables-440"></a>
+<p><a name="index-variables_002c-user_002ddefined-476"></a><a name="index-user_002ddefined-variables-477"></a>
 Variables let you give names to values and refer to them later.  You have
 already seen variables in many of the examples.  The name of a variable
 must be a sequence of letters, digits and underscores, but it may not begin
@@ -42,7 +42,6 @@ with a digit.  Octave does not enforce a limit on the length of variable
 names, but it is seldom useful to have variables with names longer than
 about 30 characters.  The following are all valid variable names
 
-   <p><a name="index-job-hunting-441"></a><a name="index-getting-a-good-job-442"></a><a name="index-flying-high-and-fast-443"></a>
 <pre class="example">     x
      x15
      __foo_bar_baz__
@@ -72,11 +71,11 @@ store a numeric value in a variable and then to later use the same name
 to hold a string value in the same program.  Variables may not be used
 before they have been given a value.  Doing so results in an error.
 
-   <p><a name="index-g_t_0040code_007bans_007d-444"></a><!-- ans scripts/miscellaneous/ans.m -->
+   <p><a name="index-g_t_0040code_007bans_007d-478"></a><!-- ans scripts/miscellaneous/ans.m -->
 <a name="doc_002dans"></a>
 
 <div class="defun">
-&mdash; Automatic Variable: <b>ans</b><var><a name="index-ans-445"></a></var><br>
+&mdash; Automatic Variable: <b>ans</b><var><a name="index-ans-479"></a></var><br>
 <blockquote><p>The most recently computed result that was not
 explicitly assigned to a variable.  For example, after the expression
 
@@ -89,21 +88,21 @@ explicitly assigned to a variable.  For example, after the expression
    <p><a name="doc_002disvarname"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isvarname</b> (<var>name</var>)<var><a name="index-isvarname-446"></a></var><br>
+&mdash; Built-in Function:  <b>isvarname</b> (<var>name</var>)<var><a name="index-isvarname-480"></a></var><br>
 <blockquote><p>Return true if <var>name</var> is a valid variable name. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dexist.html#doc_002dexist">exist</a>, <a href="doc_002dwho.html#doc_002dwho">who</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002diskeyword.html#doc_002diskeyword">iskeyword</a>, <a href="doc_002dexist.html#doc_002dexist">exist</a>, <a href="doc_002dwho.html#doc_002dwho">who</a>. 
 </p></blockquote></div>
 
 <!-- genvarname scripts/general/genvarname.m -->
    <p><a name="doc_002dgenvarname"></a>
 
 <div class="defun">
-&mdash; Function File: <var>varname</var> = <b>genvarname</b> (<var>str</var>)<var><a name="index-genvarname-447"></a></var><br>
-&mdash; Function File: <var>varname</var> = <b>genvarname</b> (<var>str, exclusions</var>)<var><a name="index-genvarname-448"></a></var><br>
+&mdash; Function File: <var>varname</var> = <b>genvarname</b> (<var>str</var>)<var><a name="index-genvarname-481"></a></var><br>
+&mdash; Function File: <var>varname</var> = <b>genvarname</b> (<var>str, exclusions</var>)<var><a name="index-genvarname-482"></a></var><br>
 <blockquote><p>Create unique variable(s) from <var>str</var>.  If <var>exclusions</var> is
 given, then the variable(s) will be unique to each other and to
 <var>exclusions</var> (<var>exclusions</var> may be either a string or a cellstr).
@@ -171,11 +170,10 @@ such as "sin".  Such names should be included in <var>avoid</var> if necessary.
    <p><a name="doc_002dnamelengthmax"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>namelengthmax</b> ()<var><a name="index-namelengthmax-449"></a></var><br>
-<blockquote><p>Returns the <span class="sc">matlab</span> compatible maximum variable name length.  Octave is
-capable of storing strings up to
-<code>2 ^ 31 - 1</code>
-in length.  However for <span class="sc">matlab</span> compatibility all variable, function
+&mdash; Function File:  <b>namelengthmax</b> ()<var><a name="index-namelengthmax-483"></a></var><br>
+<blockquote><p>Return the <span class="sc">matlab</span> compatible maximum variable name length.  Octave is
+capable of storing strings up to 2^31 - 1 in length. 
+However for <span class="sc">matlab</span> compatibility all variable, function,
 and structure field names should be shorter than the length supplied by
 <code>namelengthmax</code>.  In particular variables stored to a <span class="sc">matlab</span> file
 format will have their names truncated to this length. 

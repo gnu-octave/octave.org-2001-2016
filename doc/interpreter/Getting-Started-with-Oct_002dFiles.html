@@ -41,7 +41,8 @@ call from within octave or from the command line.
    <p><a name="doc_002dmkoctfile"></a>
 
 <div class="defun">
-&mdash; Command:  <b>mkoctfile</b> [<var>-options</var>]<var> file <small class="dots">...</small><a name="index-mkoctfile-2951"></a></var><br>
+&mdash; Command:  <b>mkoctfile</b> [<var>-options</var>]<var> file <small class="dots">...</small><a name="index-mkoctfile-3360"></a></var><br>
+&mdash; Function File: [<var>output</var>, <var>status</var> = <b>mkoctfile</b> (<var><small class="dots">...</small></var>)<var><a name="index-mkoctfile-3361"></a></var><br>
 <blockquote>
         <p>The <code>mkoctfile</code> function compiles source code written in C,
 C++, or Fortran.  Depending on the options used with <code>mkoctfile</code>, the
@@ -49,7 +50,9 @@ compiled code can be called within Octave or can be used as a stand-alone
 application.
 
         <p><code>mkoctfile</code> can be called from the shell prompt or from the Octave
-prompt.
+prompt.  Calling it from the Octave prompt simply delegates the
+call to the shell prompt.  The output is stored in the <var>output</var>
+variable and the exit status in the <var>status</var> variable.
 
         <p><code>mkoctfile</code> accepts the following options, all of which are optional
 except for the file name of the code you wish to compile:
@@ -83,26 +86,30 @@ a stand-alone executable.
 
           <br><dt>&lsquo;<samp><span class="samp">-p VAR</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">--print VAR</span></samp>&rsquo;<dd>Print the configuration variable VAR.  Recognized variables are:
 
-          <pre class="example">                  ALL_CFLAGS                FFTW_LIBS
+          <pre class="example">                  ALL_CFLAGS                FFTW3F_LIBS
                   ALL_CXXFLAGS              FLIBS
                   ALL_FFLAGS                FPICFLAG
                   ALL_LDFLAGS               INCFLAGS
-                  BLAS_LIBS                 LDFLAGS
-                  CC                        LD_CXX
-                  CFLAGS                    LD_STATIC_FLAG
-                  CPICFLAG                  LFLAGS
-                  CPPFLAGS                  LIBCRUFT
-                  CXX                       LIBOCTAVE
-                  CXXFLAGS                  LIBOCTINTERP
-                  CXXPICFLAG                LIBREADLINE
+                  BLAS_LIBS                 LAPACK_LIBS
+                  CC                        LDFLAGS
+                  CFLAGS                    LD_CXX
+                  CPICFLAG                  LD_STATIC_FLAG
+                  CPPFLAGS                  LFLAGS
+                  CXX                       LIBCRUFT
+                  CXXFLAGS                  LIBOCTAVE
+                  CXXPICFLAG                LIBOCTINTERP
                   DEPEND_EXTRA_SED_PATTERN  LIBS
                   DEPEND_FLAGS              OCTAVE_LIBS
-                  DL_LD                     RDYNAMIC_FLAG
-                  DL_LDFLAGS                RLD_FLAG
-                  F2C                       SED
-                  F2CFLAGS                  XTRA_CFLAGS
-                  F77                       XTRA_CXXFLAGS
-                  FFLAGS
+                  DL_LD                     OCTAVE_LINK_DEPS
+                  DL_LDFLAGS                OCT_LINK_DEPS
+                  EXEEXT                    RDYNAMIC_FLAG
+                  F77                       READLINE_LIBS
+                  F77_INTEGER_8_FLAG        SED
+                  FFLAGS                    XTRA_CFLAGS
+                  FFTW3_LDFLAGS             XTRA_CXXFLAGS
+                  FFTW3_LIBS
+                  FFTW3F_LDFLAGS
+               
 </pre>
           <br><dt>&lsquo;<samp><span class="samp">--link-stand-alone</span></samp>&rsquo;<dd>Link a stand-alone executable file.
 
@@ -129,7 +136,7 @@ to ".mex".
           </dl>
         </p></blockquote></div>
 
-   <p>Consider the short example:
+   <p>Consider the short C++ example:
 
 <pre class="example"><pre class="verbatim">     #include &lt;octave/oct.h>
      
@@ -146,9 +153,12 @@ to ".mex".
 </pre>
    <p>This example although short introduces the basics of writing a C++
 function that can be dynamically linked to Octave.  The easiest way to
-make available most of the definitions that might be necessary for an
-oct-file in Octave is to use the <code>#include &lt;octave/oct.h&gt;</code>
-header.
+make available most of the definitions that might be necessary for a C++
+oct-file in Octave is to use the <code>#include &lt;octave/oct.h&gt;</code> header. 
+Note that <samp><span class="file">octave/oct.h</span></samp> is a C++ header and cannot be directly
+<code>#include</code>'ed in a C source file, nor any other language.  What
+follows is mostly C++, with a discussion of other languages in section
+<a href="Calling-External-Code-from-Oct_002dFiles.html#Calling-External-Code-from-Oct_002dFiles">Calling External Code from Oct-Files</a>.
 
    <p>The macro that defines the entry point into the dynamically loaded
 function is <code>DEFUN_DLD</code><!-- /@w -->.  This macro takes four arguments, these being

@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Advanced-Plotting.html#Advanced-Plotting" title="Advanced Plotting">
-<link rel="prev" href="Callbacks.html#Callbacks" title="Callbacks">
+<link rel="prev" href="Application_002ddefined-Data.html#Application_002ddefined-Data" title="Application-defined Data">
 <link rel="next" href="Graphics-Toolkits.html#Graphics-Toolkits" title="Graphics Toolkits">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -28,14 +28,14 @@
 <a name="Object-Groups"></a>
 <p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Graphics-Toolkits.html#Graphics-Toolkits">Graphics Toolkits</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Callbacks.html#Callbacks">Callbacks</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Application_002ddefined-Data.html#Application_002ddefined-Data">Application-defined Data</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Advanced-Plotting.html#Advanced-Plotting">Advanced Plotting</a>
 <hr>
 </div>
 
-<h4 class="subsection">15.4.5 Object Groups</h4>
+<h4 class="subsection">15.4.6 Object Groups</h4>
 
-<p><a name="index-object-groups-1400"></a>
+<p><a name="index-object-groups-1558"></a>
 A number of Octave high level plot functions return groups of other
 graphics objects or they return graphics objects that have their
 properties linked in such a way that changes to one of the properties
@@ -46,9 +46,9 @@ objects is an <code>hggroup</code>
    <p><a name="doc_002dhggroup"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>hggroup</b> ()<var><a name="index-hggroup-1401"></a></var><br>
-&mdash; Function File:  <b>hggroup</b> (<var>h</var>)<var><a name="index-hggroup-1402"></a></var><br>
-&mdash; Function File:  <b>hggroup</b> (<var><small class="dots">...</small>, property, value, <small class="dots">...</small></var>)<var><a name="index-hggroup-1403"></a></var><br>
+&mdash; Function File:  <b>hggroup</b> ()<var><a name="index-hggroup-1559"></a></var><br>
+&mdash; Function File:  <b>hggroup</b> (<var>h</var>)<var><a name="index-hggroup-1560"></a></var><br>
+&mdash; Function File:  <b>hggroup</b> (<var><small class="dots">...</small>, property, value, <small class="dots">...</small></var>)<var><a name="index-hggroup-1561"></a></var><br>
 <blockquote><p>Create group object with parent <var>h</var>.  If no parent is specified,
 the group is created in the current axes.  Return the handle of the
 group object created.
@@ -76,8 +76,8 @@ function.
    <p><a name="doc_002daddproperty"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>addproperty</b> (<var>name, h, type</var>)<var><a name="index-addproperty-1404"></a></var><br>
-&mdash; Built-in Function:  <b>addproperty</b> (<var>name, h, type, arg, <small class="dots">...</small></var>)<var><a name="index-addproperty-1405"></a></var><br>
+&mdash; Built-in Function:  <b>addproperty</b> (<var>name, h, type</var>)<var><a name="index-addproperty-1562"></a></var><br>
+&mdash; Built-in Function:  <b>addproperty</b> (<var>name, h, type, arg, <small class="dots">...</small></var>)<var><a name="index-addproperty-1563"></a></var><br>
 <blockquote><p>Create a new property named <var>name</var> in graphics object <var>h</var>. 
 <var>type</var> determines the type of the property to create.  <var>args</var>
 usually contains the default value of the property, but additional
@@ -142,7 +142,7 @@ callback function that is executed when the property is altered.
    <p><a name="doc_002daddlistener"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>addlistener</b> (<var>h, prop, fcn</var>)<var><a name="index-addlistener-1406"></a></var><br>
+&mdash; Built-in Function:  <b>addlistener</b> (<var>h, prop, fcn</var>)<var><a name="index-addlistener-1564"></a></var><br>
 <blockquote><p>Register <var>fcn</var> as listener for the property <var>prop</var> of the graphics
 object <var>h</var>.  Property listeners are executed (in order of registration)
 when the property is set.  The new value is already available when the
@@ -173,7 +173,7 @@ as additional arguments to the function.
    <p><a name="doc_002ddellistener"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>dellistener</b> (<var>h, prop, fcn</var>)<var><a name="index-dellistener-1407"></a></var><br>
+&mdash; Built-in Function:  <b>dellistener</b> (<var>h, prop, fcn</var>)<var><a name="index-dellistener-1565"></a></var><br>
 <blockquote><p>Remove the registration of <var>fcn</var> as a listener for the property
 <var>prop</var> of the graphics object <var>h</var>.  The function <var>fcn</var> must
 be the same variable (not just the same value), as was passed to the
@@ -224,8 +224,8 @@ propagating any changes its value to the children of the group.  The
    <p><a name="doc_002dlinkprop"></a>
 
 <div class="defun">
-&mdash; Function File: <var>hlink</var> = <b>linkprop</b> (<var>h, prop</var>)<var><a name="index-linkprop-1408"></a></var><br>
-<blockquote><p>Links graphics object properties, such that a change in one is
+&mdash; Function File: <var>hlink</var> = <b>linkprop</b> (<var>h, prop</var>)<var><a name="index-linkprop-1566"></a></var><br>
+<blockquote><p>Link graphics object properties, such that a change in one is
 propagated to the others.  The properties to link are given as a
 string of cell string array by <var>prop</var> and the objects containing
 these properties by the handle array <var>h</var>.

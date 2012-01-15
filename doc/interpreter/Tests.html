@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics<
 <hr>
 </div>
 
-<h3 class="section">25.6 Tests</h3>
+<h3 class="section">26.6 Tests</h3>
 
 <p>Octave can perform many different statistical tests.  The following
 table summarizes the available tests.
@@ -76,7 +76,7 @@ if the p-value exceeds 0.05.
    <p><a name="doc_002danova"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>f</var>, <var>df_b</var>, <var>df_w</var>] = <b>anova</b> (<var>y, g</var>)<var><a name="index-anova-2265"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>f</var>, <var>df_b</var>, <var>df_w</var>] = <b>anova</b> (<var>y, g</var>)<var><a name="index-anova-2568"></a></var><br>
 <blockquote><p>Perform a one-way analysis of variance (ANOVA).  The goal is to test
 whether the population means of data taken from <var>k</var> different
 groups are all equal.
@@ -104,7 +104,7 @@ printed.
    <p><a name="doc_002dbartlett_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>bartlett_test</b> (<var>x1, <small class="dots">...</small></var>)<var><a name="index-bartlett_005ftest-2266"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>bartlett_test</b> (<var>x1, <small class="dots">...</small></var>)<var><a name="index-bartlett_005ftest-2569"></a></var><br>
 <blockquote><p>Perform a Bartlett test for the homogeneity of variances in the data
 vectors <var>x1</var>, <var>x2</var>, <small class="dots">...</small>, <var>xk</var>, where <var>k</var> &gt; 1.
 
@@ -122,7 +122,7 @@ returned in <var>pval</var>.
    <p><a name="doc_002dchisquare_005ftest_005fhomogeneity"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>chisquare_test_homogeneity</b> (<var>x, y, c</var>)<var><a name="index-chisquare_005ftest_005fhomogeneity-2267"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>chisquare_test_homogeneity</b> (<var>x, y, c</var>)<var><a name="index-chisquare_005ftest_005fhomogeneity-2570"></a></var><br>
 <blockquote><p>Given two samples <var>x</var> and <var>y</var>, perform a chisquare test for
 homogeneity of the null hypothesis that <var>x</var> and <var>y</var> come from
 the same distribution, based on the partition induced by the
@@ -142,7 +142,7 @@ returned in <var>pval</var>.
    <p><a name="doc_002dchisquare_005ftest_005findependence"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>chisquare_test_independence</b> (<var>x</var>)<var><a name="index-chisquare_005ftest_005findependence-2268"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>chisquare_test_independence</b> (<var>x</var>)<var><a name="index-chisquare_005ftest_005findependence-2571"></a></var><br>
 <blockquote><p>Perform a chi-square test for independence based on the contingency
 table <var>x</var>.  Under the null hypothesis of independence,
 <var>chisq</var> approximately has a chi-square distribution with
@@ -158,7 +158,7 @@ test is returned in <var>pval</var>.
    <p><a name="doc_002dcor_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cor_test</b> (<var>x, y, alt, method</var>)<var><a name="index-cor_005ftest-2269"></a></var><br>
+&mdash; Function File:  <b>cor_test</b> (<var>x, y, alt, method</var>)<var><a name="index-cor_005ftest-2572"></a></var><br>
 <blockquote><p>Test whether two samples <var>x</var> and <var>y</var> come from uncorrelated
 populations.
 
@@ -200,7 +200,7 @@ rho is used.  Only the first character is necessary.
    <p><a name="doc_002df_005ftest_005fregression"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>f</var>, <var>df_num</var>, <var>df_den</var>] = <b>f_test_regression</b> (<var>y, x, rr, r</var>)<var><a name="index-f_005ftest_005fregression-2270"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>f</var>, <var>df_num</var>, <var>df_den</var>] = <b>f_test_regression</b> (<var>y, x, rr, r</var>)<var><a name="index-f_005ftest_005fregression-2573"></a></var><br>
 <blockquote><p>Perform an F test for the null hypothesis rr * b = r in a classical
 normal regression model y = X * b + e.
 
@@ -219,7 +219,7 @@ returned in <var>pval</var>.
    <p><a name="doc_002dhotelling_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>tsq</var>] = <b>hotelling_test</b> (<var>x, m</var>)<var><a name="index-hotelling_005ftest-2271"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>tsq</var>] = <b>hotelling_test</b> (<var>x, m</var>)<var><a name="index-hotelling_005ftest-2574"></a></var><br>
 <blockquote><p>For a sample <var>x</var> from a multivariate normal distribution with unknown
 mean and covariance matrix, test the null hypothesis that <code>mean
 (</code><var>x</var><code>) == </code><var>m</var>.
@@ -238,7 +238,7 @@ numbers of samples and variables, respectively.
    <p><a name="doc_002dhotelling_005ftest_005f2"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>tsq</var>] = <b>hotelling_test_2</b> (<var>x, y</var>)<var><a name="index-hotelling_005ftest_005f2-2272"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>tsq</var>] = <b>hotelling_test_2</b> (<var>x, y</var>)<var><a name="index-hotelling_005ftest_005f2-2575"></a></var><br>
 <blockquote><p>For two samples <var>x</var> from multivariate normal distributions with
 the same number of variables (columns), unknown means and unknown
 equal covariance matrices, test the null hypothesis <code>mean
@@ -261,7 +261,7 @@ p is the number of variables.
    <p><a name="doc_002dkolmogorov_005fsmirnov_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>ks</var>] = <b>kolmogorov_smirnov_test</b> (<var>x, dist, params, alt</var>)<var><a name="index-kolmogorov_005fsmirnov_005ftest-2273"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>ks</var>] = <b>kolmogorov_smirnov_test</b> (<var>x, dist, params, alt</var>)<var><a name="index-kolmogorov_005fsmirnov_005ftest-2576"></a></var><br>
 <blockquote><p>Perform a Kolmogorov-Smirnov test of the null hypothesis that the
 sample <var>x</var> comes from the (continuous) distribution dist.  I.e.,
 if F and G are the CDFs corresponding to the sample and dist,
@@ -295,7 +295,7 @@ distribution.  The default is the two-sided case.
    <p><a name="doc_002dkolmogorov_005fsmirnov_005ftest_005f2"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>ks</var>, <var>d</var>] = <b>kolmogorov_smirnov_test_2</b> (<var>x, y, alt</var>)<var><a name="index-kolmogorov_005fsmirnov_005ftest_005f2-2274"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>ks</var>, <var>d</var>] = <b>kolmogorov_smirnov_test_2</b> (<var>x, y, alt</var>)<var><a name="index-kolmogorov_005fsmirnov_005ftest_005f2-2577"></a></var><br>
 <blockquote><p>Perform a 2-sample Kolmogorov-Smirnov test of the null hypothesis
 that the samples <var>x</var> and <var>y</var> come from the same (continuous)
 distribution.  I.e., if F and G are the CDFs corresponding to the
@@ -324,7 +324,7 @@ vertical distance between the two cumulative distribution functions.
    <p><a name="doc_002dkruskal_005fwallis_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>k</var>, <var>df</var>] = <b>kruskal_wallis_test</b> (<var>x1, <small class="dots">...</small></var>)<var><a name="index-kruskal_005fwallis_005ftest-2275"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>k</var>, <var>df</var>] = <b>kruskal_wallis_test</b> (<var>x1, <small class="dots">...</small></var>)<var><a name="index-kruskal_005fwallis_005ftest-2578"></a></var><br>
 <blockquote><p>Perform a Kruskal-Wallis one-factor "analysis of variance".
 
         <p>Suppose a variable is observed for <var>k</var> &gt; 1 different groups, and
@@ -357,7 +357,7 @@ returned in <var>pval</var>.
    <p><a name="doc_002dmanova"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>manova</b> (<var>x, g</var>)<var><a name="index-manova-2276"></a></var><br>
+&mdash; Function File:  <b>manova</b> (<var>x, g</var>)<var><a name="index-manova-2579"></a></var><br>
 <blockquote><p>Perform a one-way multivariate analysis of variance (MANOVA).  The
 goal is to test whether the p-dimensional population means of data
 taken from <var>k</var> different groups are all equal.  All data are
@@ -376,7 +376,7 @@ computed and displayed.
    <p><a name="doc_002dmcnemar_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>mcnemar_test</b> (<var>x</var>)<var><a name="index-mcnemar_005ftest-2277"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>chisq</var>, <var>df</var>] = <b>mcnemar_test</b> (<var>x</var>)<var><a name="index-mcnemar_005ftest-2580"></a></var><br>
 <blockquote><p>For a square contingency table <var>x</var> of data cross-classified on
 the row and column variables, McNemar's test can be used for testing
 the null hypothesis of symmetry of the classification probabilities.
@@ -394,7 +394,7 @@ returned in <var>pval</var>.
    <p><a name="doc_002dprop_005ftest_005f2"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>prop_test_2</b> (<var>x1, n1, x2, n2, alt</var>)<var><a name="index-prop_005ftest_005f2-2278"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>prop_test_2</b> (<var>x1, n1, x2, n2, alt</var>)<var><a name="index-prop_005ftest_005f2-2581"></a></var><br>
 <blockquote><p>If <var>x1</var> and <var>n1</var> are the counts of successes and trials in
 one sample, and <var>x2</var> and <var>n2</var> those in a second one, test the
 null hypothesis that the success probabilities <var>p1</var> and <var>p2</var>
@@ -418,7 +418,7 @@ The default is the two-sided case.
    <p><a name="doc_002drun_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>chisq</var>] = <b>run_test</b> (<var>x</var>)<var><a name="index-run_005ftest-2279"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>chisq</var>] = <b>run_test</b> (<var>x</var>)<var><a name="index-run_005ftest-2582"></a></var><br>
 <blockquote><p>Perform a chi-square test with 6 degrees of freedom based on the
 upward runs in the columns of <var>x</var>.  Can be used to test whether
 <var>x</var> contains independent data.
@@ -432,7 +432,7 @@ upward runs in the columns of <var>x</var>.  Can be used to test whether
    <p><a name="doc_002dsign_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>b</var>, <var>n</var>] = <b>sign_test</b> (<var>x, y, alt</var>)<var><a name="index-sign_005ftest-2280"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>b</var>, <var>n</var>] = <b>sign_test</b> (<var>x, y, alt</var>)<var><a name="index-sign_005ftest-2583"></a></var><br>
 <blockquote><p>For two matched-pair samples <var>x</var> and <var>y</var>, perform a sign test
 of the null hypothesis PROB (<var>x</var> &gt; <var>y</var>) == PROB (<var>x</var> &lt;
 <var>y</var>) == 1/2.  Under the null, the test statistic <var>b</var> roughly
@@ -458,7 +458,7 @@ the two-sided case.
    <p><a name="doc_002dt_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>t_test</b> (<var>x, m, alt</var>)<var><a name="index-t_005ftest-2281"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>t_test</b> (<var>x, m, alt</var>)<var><a name="index-t_005ftest-2584"></a></var><br>
 <blockquote><p>For a sample <var>x</var> from a normal distribution with unknown mean and
 variance, perform a t-test of the null hypothesis <code>mean
 (</code><var>x</var><code>) == </code><var>m</var>.  Under the null, the test statistic <var>t</var>
@@ -483,7 +483,7 @@ case.
    <p><a name="doc_002dt_005ftest_005f2"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>t_test_2</b> (<var>x, y, alt</var>)<var><a name="index-t_005ftest_005f2-2282"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>t_test_2</b> (<var>x, y, alt</var>)<var><a name="index-t_005ftest_005f2-2585"></a></var><br>
 <blockquote><p>For two samples x and y from normal distributions with unknown means
 and unknown equal variances, perform a two-sample t-test of the null
 hypothesis of equal means.  Under the null, the test statistic
@@ -508,7 +508,7 @@ case.
    <p><a name="doc_002dt_005ftest_005fregression"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>t_test_regression</b> (<var>y, x, rr, r, alt</var>)<var><a name="index-t_005ftest_005fregression-2283"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>t_test_regression</b> (<var>y, x, rr, r, alt</var>)<var><a name="index-t_005ftest_005fregression-2586"></a></var><br>
 <blockquote><p>Perform an t test for the null hypothesis <var>rr</var><code> * </code><var>b</var><code> =
 </code><var>r</var> in a classical normal regression model <var>y</var><code> =
 </code><var>x</var><code> * </code><var>b</var><code> + </code><var>e</var>.  Under the null, the test statistic <var>t</var>
@@ -533,7 +533,7 @@ Similarly for <var>"&lt;"</var>, the one-sided alternative <var>rr</var><code> *
    <p><a name="doc_002du_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>u_test</b> (<var>x, y, alt</var>)<var><a name="index-u_005ftest-2284"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>u_test</b> (<var>x, y, alt</var>)<var><a name="index-u_005ftest-2587"></a></var><br>
 <blockquote><p>For two samples <var>x</var> and <var>y</var>, perform a Mann-Whitney U-test of
 the null hypothesis PROB (<var>x</var> &gt; <var>y</var>) == 1/2 == PROB (<var>x</var>
 &lt; <var>y</var>).  Under the null, the test statistic <var>z</var> approximately
@@ -557,7 +557,7 @@ Similarly for <code>"&lt;"</code>, the one-sided alternative PROB (<var>x</var> 
    <p><a name="doc_002dvar_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>f</var>, <var>df_num</var>, <var>df_den</var>] = <b>var_test</b> (<var>x, y, alt</var>)<var><a name="index-var_005ftest-2285"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>f</var>, <var>df_num</var>, <var>df_den</var>] = <b>var_test</b> (<var>x, y, alt</var>)<var><a name="index-var_005ftest-2588"></a></var><br>
 <blockquote><p>For two samples <var>x</var> and <var>y</var> from normal distributions with
 unknown means and unknown variances, perform an F-test of the null
 hypothesis of equal variances.  Under the null, the test statistic
@@ -582,7 +582,7 @@ case.
    <p><a name="doc_002dwelch_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>welch_test</b> (<var>x, y, alt</var>)<var><a name="index-welch_005ftest-2286"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>t</var>, <var>df</var>] = <b>welch_test</b> (<var>x, y, alt</var>)<var><a name="index-welch_005ftest-2589"></a></var><br>
 <blockquote><p>For two samples <var>x</var> and <var>y</var> from normal distributions with
 unknown means and unknown and not necessarily equal variances,
 perform a Welch test of the null hypothesis of equal means. 
@@ -606,13 +606,13 @@ considered.  The default is the two-sided case.
    <p><a name="doc_002dwilcoxon_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>wilcoxon_test</b> (<var>x, y, alt</var>)<var><a name="index-wilcoxon_005ftest-2287"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>wilcoxon_test</b> (<var>x, y, alt</var>)<var><a name="index-wilcoxon_005ftest-2590"></a></var><br>
 <blockquote><p>For two matched-pair sample vectors <var>x</var> and <var>y</var>, perform a
 Wilcoxon signed-rank test of the null hypothesis PROB (<var>x</var> &gt;
 <var>y</var>) == 1/2.  Under the null, the test statistic <var>z</var>
 approximately follows a standard normal distribution when <var>n</var> &gt; 25.
 
-        <p><strong>Warning</strong>: This function assumes a normal distribution for <var>z</var>
+        <p><strong>Caution:</strong> This function assumes a normal distribution for <var>z</var>
 and thus is invalid for <var>n</var> &le; 25.
 
         <p>With the optional argument string <var>alt</var>, the alternative of
@@ -632,7 +632,7 @@ for <code>"&lt;"</code>, the one-sided alternative PROB (<var>x</var> &gt; <var>
    <p><a name="doc_002dz_005ftest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>z_test</b> (<var>x, m, v, alt</var>)<var><a name="index-z_005ftest-2288"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>z_test</b> (<var>x, m, v, alt</var>)<var><a name="index-z_005ftest-2591"></a></var><br>
 <blockquote><p>Perform a Z-test of the null hypothesis <code>mean (</code><var>x</var><code>) ==
 </code><var>m</var> for a sample <var>x</var> from a normal distribution with unknown
 mean and known variance <var>v</var>.  Under the null, the test statistic
@@ -657,7 +657,7 @@ along with some information.
    <p><a name="doc_002dz_005ftest_005f2"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>z_test_2</b> (<var>x, y, v_x, v_y, alt</var>)<var><a name="index-z_005ftest_005f2-2289"></a></var><br>
+&mdash; Function File: [<var>pval</var>, <var>z</var>] = <b>z_test_2</b> (<var>x, y, v_x, v_y, alt</var>)<var><a name="index-z_005ftest_005f2-2592"></a></var><br>
 <blockquote><p>For two samples <var>x</var> and <var>y</var> from normal distributions with
 unknown means and known variances <var>v_x</var> and <var>v_y</var>, perform a
 Z-test of the hypothesis of equal means.  Under the null, the test

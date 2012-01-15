@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Polynomial-Manipulations.html#Polynomia
 <hr>
 </div>
 
-<h3 class="section">27.5 Polynomial Interpolation</h3>
+<h3 class="section">28.5 Polynomial Interpolation</h3>
 
 <p>Octave comes with good support for various kinds of interpolation,
 most of which are described in <a href="Interpolation.html#Interpolation">Interpolation</a>.  One simple alternative
@@ -47,15 +47,16 @@ in a least-squares sense, which just is what the <code>polyfit</code> function d
    <p><a name="doc_002dpolyfit"></a>
 
 <div class="defun">
-&mdash; Function File: <var>p</var> = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2390"></a></var><br>
-&mdash; Function File: [<var>p</var>, <var>s</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2391"></a></var><br>
-&mdash; Function File: [<var>p</var>, <var>s</var>, <var>mu</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2392"></a></var><br>
+&mdash; Function File: <var>p</var> = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2728"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>s</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2729"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>s</var>, <var>mu</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2730"></a></var><br>
 <blockquote><p>Return the coefficients of a polynomial <var>p</var>(<var>x</var>) of degree
-<var>n</var> that minimizes the least-squares-error of the fit.
+<var>n</var> that minimizes the least-squares-error of the fit to the points
+<code>[</code><var>x</var><code>, </code><var>y</var><code>]</code>.
 
         <p>The polynomial coefficients are returned in a row vector.
 
-        <p>The second output is a structure containing the following fields:
+        <p>The optional output <var>s</var> is a structure containing the following fields:
 
           <dl>
 <dt>&lsquo;<samp><span class="samp">R</span></samp>&rsquo;<dd>Triangular factor R from the QR&nbsp;decomposition.
@@ -82,7 +83,7 @@ stability of the fit.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyaffine.html#doc_002dpolyaffine">polyaffine</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dvander.html#doc_002dvander">vander</a>, <a href="doc_002dzscore.html#doc_002dzscore">zscore</a>. 
 </p></blockquote></div>
 
    <p>In situations where a single polynomial isn't good enough, a solution
@@ -108,36 +109,43 @@ on adjoined intervals.
    <p><a name="doc_002dmkpp"></a>
 
 <div class="defun">
-&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>x, p</var>)<var><a name="index-mkpp-2393"></a></var><br>
-&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>x, p, d</var>)<var><a name="index-mkpp-2394"></a></var><br>
+&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>breaks, coefs</var>)<var><a name="index-mkpp-2731"></a></var><br>
+&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>breaks, coefs, d</var>)<var><a name="index-mkpp-2732"></a></var><br>
 <blockquote>
-        <p>Construct a piecewise polynomial structure from sample points
-<var>x</var> and coefficients <var>p</var>.  The i-th row of <var>p</var>,
-<var>p</var><code> (</code><var>i</var><code>,:)</code>, contains the coefficients for the polynomial
-over the <var>i</var>-th interval, ordered from highest to
-lowest.  There must be one row for each interval in <var>x</var>, so
-<code>rows (</code><var>p</var><code>) == length (</code><var>x</var><code>) - 1</code>.
+        <p>Construct a piecewise polynomial (pp) structure from sample points
+<var>breaks</var> and coefficients <var>coefs</var>.  <var>breaks</var> must be a vector of
+strictly increasing values.  The number of intervals is given by
+<var>ni</var><code> = length (</code><var>breaks</var><code>) - 1</code>. 
+When <var>m</var> is the polynomial order <var>coefs</var> must be of
+size: <var>ni</var> x <var>m</var> + 1.
 
-        <p><var>p</var> may also be a multi-dimensional array, specifying a vector-valued
-or array-valued polynomial.  The shape is determined by <var>d</var>.  If <var>d</var>
-is
-not given, the default is <code>size (p)(1:end-2)</code>.  If <var>d</var> is given, the
-leading dimensions of <var>p</var> are reshaped to conform to <var>d</var>.
+        <p>The i-th row of <var>coefs</var>,
+<var>coefs</var><code> (</code><var>i</var><code>,:)</code>, contains the coefficients for the polynomial
+over the <var>i</var>-th interval, ordered from highest (<var>m</var>) to
+lowest (<var>0</var>).
+
+        <p><var>coefs</var> may also be a multi-dimensional array, specifying a vector-valued
+or array-valued polynomial.  In that case the polynomial order is defined
+by the length of the last dimension of <var>coefs</var>. 
+The size of first dimension(s) are given by the scalar or
+vector <var>d</var>.  If <var>d</var> is not given it is set to <code>1</code>. 
+In any case <var>coefs</var> is reshaped to a 2-D matrix of
+size <code>[</code><var>ni</var><code>*prod(</code><var>d</var> <var>m</var><code>)] </code>
 
      <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunmkpp.html#doc_002dunmkpp">unmkpp</a>, <a href="doc_002dppval.html#doc_002dppval">ppval</a>, <a href="doc_002dspline.html#doc_002dspline">spline</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dunmkpp.html#doc_002dunmkpp">unmkpp</a>, <a href="doc_002dppval.html#doc_002dppval">ppval</a>, <a href="doc_002dspline.html#doc_002dspline">spline</a>, <a href="doc_002dpchip.html#doc_002dpchip">pchip</a>, <a href="doc_002dppder.html#doc_002dppder">ppder</a>, <a href="doc_002dppint.html#doc_002dppint">ppint</a>, <a href="doc_002dppjumps.html#doc_002dppjumps">ppjumps</a>. 
 </p></blockquote></div>
 
 <!-- unmkpp scripts/polynomial/unmkpp.m -->
    <p><a name="doc_002dunmkpp"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>x</var>, <var>p</var>, <var>n</var>, <var>k</var>, <var>d</var>] = <b>unmkpp</b> (<var>pp</var>)<var><a name="index-unmkpp-2395"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>p</var>, <var>n</var>, <var>k</var>, <var>d</var>] = <b>unmkpp</b> (<var>pp</var>)<var><a name="index-unmkpp-2733"></a></var><br>
 <blockquote>
         <p>Extract the components of a piecewise polynomial structure <var>pp</var>. 
-These are as follows:
+The components are:
 
           <dl>
 <dt><var>x</var><dd>Sample points.
@@ -158,36 +166,35 @@ the r-th polynomial defined on interval <var>i</var>.
      <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmkpp.html#doc_002dmkpp">mkpp</a>, <a href="doc_002dppval.html#doc_002dppval">ppval</a>, <a href="doc_002dspline.html#doc_002dspline">spline</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmkpp.html#doc_002dmkpp">mkpp</a>, <a href="doc_002dppval.html#doc_002dppval">ppval</a>, <a href="doc_002dspline.html#doc_002dspline">spline</a>, <a href="doc_002dpchip.html#doc_002dpchip">pchip</a>. 
 </p></blockquote></div>
 
 <!-- ppval scripts/polynomial/ppval.m -->
    <p><a name="doc_002dppval"></a>
 
 <div class="defun">
-&mdash; Function File: <var>yi</var> = <b>ppval</b> (<var>pp, xi</var>)<var><a name="index-ppval-2396"></a></var><br>
-<blockquote><p>Evaluate piecewise polynomial <var>pp</var> at the points <var>xi</var>. 
-If <var>pp</var> is scalar-valued, the result is an array of the same shape as
-<var>xi</var>. 
-Otherwise, the size of the result is <code>[pp.d, length(</code><var>xi</var><code>)]</code> if
-<var>xi</var> is a vector, or <code>[pp.d, size(</code><var>xi</var><code>)]</code> if it is a
-multi-dimensional array.  If pp.orient is 1, the dimensions are permuted as
-in interp1, to
-<code>[pp.d, length(</code><var>xi</var><code>)]</code> and <code>[pp.d, size(</code><var>xi</var><code>)]</code>
-respectively. 
+&mdash; Function File: <var>yi</var> = <b>ppval</b> (<var>pp, xi</var>)<var><a name="index-ppval-2734"></a></var><br>
+<blockquote><p>Evaluate the piecewise polynomial structure <var>pp</var> at the points <var>xi</var>. 
+If <var>pp</var> describes a scalar polynomial function, the result is an
+array of the same shape as <var>xi</var>. 
+Otherwise, the size of the result is <code>[pp.dim, length(</code><var>xi</var><code>)]</code> if
+<var>xi</var> is a vector, or <code>[pp.dim, size(</code><var>xi</var><code>)]</code> if it is a
+multi-dimensional array. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmkpp.html#doc_002dmkpp">mkpp</a>, <a href="doc_002dunmkpp.html#doc_002dunmkpp">unmkpp</a>, <a href="doc_002dspline.html#doc_002dspline">spline</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmkpp.html#doc_002dmkpp">mkpp</a>, <a href="doc_002dunmkpp.html#doc_002dunmkpp">unmkpp</a>, <a href="doc_002dspline.html#doc_002dspline">spline</a>, <a href="doc_002dpchip.html#doc_002dpchip">pchip</a>. 
 </p></blockquote></div>
 
 <!-- ppder scripts/polynomial/ppder.m -->
    <p><a name="doc_002dppder"></a>
 
 <div class="defun">
-&mdash; Function File: <var>ppd</var> = <b>ppder</b> (<var>pp</var>)<var><a name="index-ppder-2397"></a></var><br>
-<blockquote><p>Compute the piecewise derivative of the piecewise polynomial struct <var>pp</var>. 
+&mdash; Function File: ppd = <b>ppder</b> (<var>pp</var>)<var><a name="index-ppder-2735"></a></var><br>
+&mdash; Function File: ppd = <b>ppder</b> (<var>pp, m</var>)<var><a name="index-ppder-2736"></a></var><br>
+<blockquote><p>Compute the piecewise <var>m</var>-th derivative of a piecewise polynomial
+struct <var>pp</var>.  If <var>m</var> is omitted the first derivative is calculated. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -199,8 +206,8 @@ respectively.
    <p><a name="doc_002dppint"></a>
 
 <div class="defun">
-&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp</var>)<var><a name="index-ppint-2398"></a></var><br>
-&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp, c</var>)<var><a name="index-ppint-2399"></a></var><br>
+&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp</var>)<var><a name="index-ppint-2737"></a></var><br>
+&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp, c</var>)<var><a name="index-ppint-2738"></a></var><br>
 <blockquote><p>Compute the integral of the piecewise polynomial struct <var>pp</var>. 
 <var>c</var>, if given, is the constant of integration. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -214,7 +221,7 @@ respectively.
    <p><a name="doc_002dppjumps"></a>
 
 <div class="defun">
-&mdash; Function File: <var>jumps</var> = <b>ppjumps</b> (<var>pp</var>)<var><a name="index-ppjumps-2400"></a></var><br>
+&mdash; Function File: <var>jumps</var> = <b>ppjumps</b> (<var>pp</var>)<var><a name="index-ppjumps-2739"></a></var><br>
 <blockquote><p>Evaluate the boundary jumps of a piecewise polynomial. 
 If there are n intervals, and the dimensionality of <var>pp</var> is
 d, the resulting array has dimensions <code>[d, n-1]</code>. 

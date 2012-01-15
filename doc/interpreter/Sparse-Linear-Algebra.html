@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Sparse-Matrices.html#Sparse-Matrices">S
 <hr>
 </div>
 
-<h3 class="section">21.2 Linear Algebra on Sparse Matrices</h3>
+<h3 class="section">22.2 Linear Algebra on Sparse Matrices</h3>
 
 <p>Octave includes a polymorphic solver for sparse matrices, where
 the exact solver used to factorize the matrix, depends on the properties
@@ -126,9 +126,9 @@ used with care.
    <p><a name="doc_002dnormest"></a>
 
 <div class="defun">
-&mdash; Function File: <var>n</var> = <b>normest</b> (<var>A</var>)<var><a name="index-normest-1986"></a></var><br>
-&mdash; Function File: <var>n</var> = <b>normest</b> (<var>A, tol</var>)<var><a name="index-normest-1987"></a></var><br>
-&mdash; Function File: [<var>n</var>, <var>c</var>] = <b>normest</b> (<var><small class="dots">...</small></var>)<var><a name="index-normest-1988"></a></var><br>
+&mdash; Function File: <var>n</var> = <b>normest</b> (<var>A</var>)<var><a name="index-normest-2245"></a></var><br>
+&mdash; Function File: <var>n</var> = <b>normest</b> (<var>A, tol</var>)<var><a name="index-normest-2246"></a></var><br>
+&mdash; Function File: [<var>n</var>, <var>c</var>] = <b>normest</b> (<var><small class="dots">...</small></var>)<var><a name="index-normest-2247"></a></var><br>
 <blockquote><p>Estimate the 2-norm of the matrix <var>A</var> using a power series
 analysis.  This is typically used for large matrices, where the cost
 of calculating <code>norm (</code><var>A</var><code>)</code> is prohibitive and an approximation
@@ -143,8 +143,8 @@ to the 2-norm is acceptable.
    <p><a name="doc_002donenormest"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>est</var>, <var>v</var>, <var>w</var>, <var>iter</var>] = <b>onenormest</b> (<var>A, t</var>)<var><a name="index-onenormest-1989"></a></var><br>
-&mdash; Function File: [<var>est</var>, <var>v</var>, <var>w</var>, <var>iter</var>] = <b>onenormest</b> (<var>apply, apply_t, n, t</var>)<var><a name="index-onenormest-1990"></a></var><br>
+&mdash; Function File: [<var>est</var>, <var>v</var>, <var>w</var>, <var>iter</var>] = <b>onenormest</b> (<var>A, t</var>)<var><a name="index-onenormest-2248"></a></var><br>
+&mdash; Function File: [<var>est</var>, <var>v</var>, <var>w</var>, <var>iter</var>] = <b>onenormest</b> (<var>apply, apply_t, n, t</var>)<var><a name="index-onenormest-2249"></a></var><br>
 <blockquote>
         <p>Apply Higham and Tisseur's randomized block 1-norm estimator to
 matrix <var>A</var> using <var>t</var> test vectors.  If <var>t</var> exceeds 5, then
@@ -185,11 +185,11 @@ Pseudospectra</cite>. <a href="http://citeseer.ist.psu.edu/223007.html">http://c
    <p><a name="doc_002dcondest"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>condest</b> (<var>A</var>)<var><a name="index-condest-1991"></a></var><br>
-&mdash; Function File:  <b>condest</b> (<var>A, t</var>)<var><a name="index-condest-1992"></a></var><br>
-&mdash; Function File: [<var>est</var>, <var>v</var>] = <b>condest</b> (<var><small class="dots">...</small></var>)<var><a name="index-condest-1993"></a></var><br>
-&mdash; Function File: [<var>est</var>, <var>v</var>] = <b>condest</b> (<var>A, solve, solve_t, t</var>)<var><a name="index-condest-1994"></a></var><br>
-&mdash; Function File: [<var>est</var>, <var>v</var>] = <b>condest</b> (<var>apply, apply_t, solve, solve_t, n, t</var>)<var><a name="index-condest-1995"></a></var><br>
+&mdash; Function File:  <b>condest</b> (<var>A</var>)<var><a name="index-condest-2250"></a></var><br>
+&mdash; Function File:  <b>condest</b> (<var>A, t</var>)<var><a name="index-condest-2251"></a></var><br>
+&mdash; Function File: [<var>est</var>, <var>v</var>] = <b>condest</b> (<var><small class="dots">...</small></var>)<var><a name="index-condest-2252"></a></var><br>
+&mdash; Function File: [<var>est</var>, <var>v</var>] = <b>condest</b> (<var>A, solve, solve_t, t</var>)<var><a name="index-condest-2253"></a></var><br>
+&mdash; Function File: [<var>est</var>, <var>v</var>] = <b>condest</b> (<var>apply, apply_t, solve, solve_t, n, t</var>)<var><a name="index-condest-2254"></a></var><br>
 <blockquote>
         <p>Estimate the 1-norm condition number of a matrix <var>A</var>
 using <var>t</var> test vectors using a randomized 1-norm estimator. 
@@ -241,14 +241,14 @@ Pseudospectra</cite>. <a href="http://citeseer.ist.psu.edu/223007.html">http://c
    <p><a name="doc_002dspparms"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>spparms</b> ()<var><a name="index-spparms-1996"></a></var><br>
-&mdash; Loadable Function: <var>vals</var> = <b>spparms</b> ()<var><a name="index-spparms-1997"></a></var><br>
-&mdash; Loadable Function: [<var>keys</var>, <var>vals</var>] = <b>spparms</b> ()<var><a name="index-spparms-1998"></a></var><br>
-&mdash; Loadable Function: <var>val</var> = <b>spparms</b> (<var>key</var>)<var><a name="index-spparms-1999"></a></var><br>
-&mdash; Loadable Function:  <b>spparms</b> (<var>vals</var>)<var><a name="index-spparms-2000"></a></var><br>
-&mdash; Loadable Function:  <b>spparms</b> (<var>'defaults'</var>)<var><a name="index-spparms-2001"></a></var><br>
-&mdash; Loadable Function:  <b>spparms</b> (<var>'tight'</var>)<var><a name="index-spparms-2002"></a></var><br>
-&mdash; Loadable Function:  <b>spparms</b> (<var>key, val</var>)<var><a name="index-spparms-2003"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> ()<var><a name="index-spparms-2255"></a></var><br>
+&mdash; Loadable Function: <var>vals</var> = <b>spparms</b> ()<var><a name="index-spparms-2256"></a></var><br>
+&mdash; Loadable Function: [<var>keys</var>, <var>vals</var>] = <b>spparms</b> ()<var><a name="index-spparms-2257"></a></var><br>
+&mdash; Loadable Function: <var>val</var> = <b>spparms</b> (<var>key</var>)<var><a name="index-spparms-2258"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>vals</var>)<var><a name="index-spparms-2259"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>'defaults'</var>)<var><a name="index-spparms-2260"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>'tight'</var>)<var><a name="index-spparms-2261"></a></var><br>
+&mdash; Loadable Function:  <b>spparms</b> (<var>key, val</var>)<var><a name="index-spparms-2262"></a></var><br>
 <blockquote><p>Query or set the parameters used by the sparse solvers and factorization
 functions.  The first four calls above get information about the current
 settings, while the others change the current settings.  The parameters are
@@ -299,8 +299,8 @@ time.
    <p><a name="doc_002dsprank"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>sprank</b> (<var>S</var>)<var><a name="index-sprank-2004"></a></var><br>
-<blockquote><p><a name="index-Structural-Rank-2005"></a>
+&mdash; Loadable Function: <var>p</var> = <b>sprank</b> (<var>S</var>)<var><a name="index-sprank-2263"></a></var><br>
+<blockquote><p><a name="index-structural-rank-2264"></a>
 Calculate the structural rank of the sparse matrix <var>S</var>.  Note that
 only the structure of the matrix is used in this calculation based on
 a Dulmage-Mendelsohn permutation to block triangular form.  As such the
@@ -318,9 +318,9 @@ numerical rank of the matrix <var>S</var> is bounded by
    <p><a name="doc_002dsymbfact"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>count</var>, <var>h</var>, <var>parent</var>, <var>post</var>, <var>r</var>] = <b>symbfact</b> (<var>S</var>)<var><a name="index-symbfact-2006"></a></var><br>
-&mdash; Loadable Function: [<small class="dots">...</small>] = <b>symbfact</b> (<var>S, typ</var>)<var><a name="index-symbfact-2007"></a></var><br>
-&mdash; Loadable Function: [<small class="dots">...</small>] = <b>symbfact</b> (<var>S, typ, mode</var>)<var><a name="index-symbfact-2008"></a></var><br>
+&mdash; Loadable Function: [<var>count</var>, <var>h</var>, <var>parent</var>, <var>post</var>, <var>r</var>] = <b>symbfact</b> (<var>S</var>)<var><a name="index-symbfact-2265"></a></var><br>
+&mdash; Loadable Function: [<small class="dots">...</small>] = <b>symbfact</b> (<var>S, typ</var>)<var><a name="index-symbfact-2266"></a></var><br>
+&mdash; Loadable Function: [<small class="dots">...</small>] = <b>symbfact</b> (<var>S, typ, mode</var>)<var><a name="index-symbfact-2267"></a></var><br>
 <blockquote>
         <p>Perform a symbolic factorization analysis on the sparse matrix <var>S</var>. 
 Where
@@ -368,8 +368,8 @@ function to find a least squares solution to a linear equation.
    <p><a name="doc_002dspaugment"></a>
 
 <div class="defun">
-&mdash; Function File: <var>s</var> = <b>spaugment</b> (<var>A, c</var>)<var><a name="index-spaugment-2009"></a></var><br>
-<blockquote><p>Creates the augmented matrix of <var>A</var>.  This is given by
+&mdash; Function File: <var>s</var> = <b>spaugment</b> (<var>A, c</var>)<var><a name="index-spaugment-2268"></a></var><br>
+<blockquote><p>Create the augmented matrix of <var>A</var>.  This is given by
 
      <pre class="example">          [<var>c</var> * eye(<var>m</var>, <var>m</var>),<var>A</var>; <var>A</var>', zeros(<var>n</var>,
           <var>n</var>)]
@@ -416,26 +416,26 @@ singular values and vectors.
    <p><a name="doc_002deigs"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A</var>)<var><a name="index-eigs-2010"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, k</var>)<var><a name="index-eigs-2011"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, k, sigma</var>)<var><a name="index-eigs-2012"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, k, sigma, opts</var>)<var><a name="index-eigs-2013"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B</var>)<var><a name="index-eigs-2014"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B, k</var>)<var><a name="index-eigs-2015"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B, k, sigma</var>)<var><a name="index-eigs-2016"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B, k, sigma, opts</var>)<var><a name="index-eigs-2017"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n</var>)<var><a name="index-eigs-2018"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B</var>)<var><a name="index-eigs-2019"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, k</var>)<var><a name="index-eigs-2020"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B, k</var>)<var><a name="index-eigs-2021"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, k, sigma</var>)<var><a name="index-eigs-2022"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B, k, sigma</var>)<var><a name="index-eigs-2023"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, k, sigma, opts</var>)<var><a name="index-eigs-2024"></a></var><br>
-&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B, k, sigma, opts</var>)<var><a name="index-eigs-2025"></a></var><br>
-&mdash; Loadable Function: [<var>V</var>, <var>d</var>] = <b>eigs</b> (<var>A, <small class="dots">...</small></var>)<var><a name="index-eigs-2026"></a></var><br>
-&mdash; Loadable Function: [<var>V</var>, <var>d</var>] = <b>eigs</b> (<var>af, n, <small class="dots">...</small></var>)<var><a name="index-eigs-2027"></a></var><br>
-&mdash; Loadable Function: [<var>V</var>, <var>d</var>, <var>flag</var>] = <b>eigs</b> (<var>A, <small class="dots">...</small></var>)<var><a name="index-eigs-2028"></a></var><br>
-&mdash; Loadable Function: [<var>V</var>, <var>d</var>, <var>flag</var>] = <b>eigs</b> (<var>af, n, <small class="dots">...</small></var>)<var><a name="index-eigs-2029"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A</var>)<var><a name="index-eigs-2269"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, k</var>)<var><a name="index-eigs-2270"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, k, sigma</var>)<var><a name="index-eigs-2271"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, k, sigma, opts</var>)<var><a name="index-eigs-2272"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B</var>)<var><a name="index-eigs-2273"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B, k</var>)<var><a name="index-eigs-2274"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B, k, sigma</var>)<var><a name="index-eigs-2275"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>A, B, k, sigma, opts</var>)<var><a name="index-eigs-2276"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n</var>)<var><a name="index-eigs-2277"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B</var>)<var><a name="index-eigs-2278"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, k</var>)<var><a name="index-eigs-2279"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B, k</var>)<var><a name="index-eigs-2280"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, k, sigma</var>)<var><a name="index-eigs-2281"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B, k, sigma</var>)<var><a name="index-eigs-2282"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, k, sigma, opts</var>)<var><a name="index-eigs-2283"></a></var><br>
+&mdash; Loadable Function: <var>d</var> = <b>eigs</b> (<var>af, n, B, k, sigma, opts</var>)<var><a name="index-eigs-2284"></a></var><br>
+&mdash; Loadable Function: [<var>V</var>, <var>d</var>] = <b>eigs</b> (<var>A, <small class="dots">...</small></var>)<var><a name="index-eigs-2285"></a></var><br>
+&mdash; Loadable Function: [<var>V</var>, <var>d</var>] = <b>eigs</b> (<var>af, n, <small class="dots">...</small></var>)<var><a name="index-eigs-2286"></a></var><br>
+&mdash; Loadable Function: [<var>V</var>, <var>d</var>, <var>flag</var>] = <b>eigs</b> (<var>A, <small class="dots">...</small></var>)<var><a name="index-eigs-2287"></a></var><br>
+&mdash; Loadable Function: [<var>V</var>, <var>d</var>, <var>flag</var>] = <b>eigs</b> (<var>af, n, <small class="dots">...</small></var>)<var><a name="index-eigs-2288"></a></var><br>
 <blockquote><p>Calculate a limited number of eigenvalues and eigenvectors of <var>A</var>,
 based on a selection criteria.  The number of eigenvalues and eigenvectors to
 calculate is given by <var>k</var> and defaults to 6.
@@ -555,12 +555,12 @@ K. Maschhoff, D. Sorensen, and C. Yang.  For more information see
    <p><a name="doc_002dsvds"></a>
 
 <div class="defun">
-&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A</var>)<var><a name="index-svds-2030"></a></var><br>
-&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A, k</var>)<var><a name="index-svds-2031"></a></var><br>
-&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A, k, sigma</var>)<var><a name="index-svds-2032"></a></var><br>
-&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A, k, sigma, opts</var>)<var><a name="index-svds-2033"></a></var><br>
-&mdash; Function File: [<var>u</var>, <var>s</var>, <var>v</var>] = <b>svds</b> (<var><small class="dots">...</small></var>)<var><a name="index-svds-2034"></a></var><br>
-&mdash; Function File: [<var>u</var>, <var>s</var>, <var>v</var>, <var>flag</var>] = <b>svds</b> (<var><small class="dots">...</small></var>)<var><a name="index-svds-2035"></a></var><br>
+&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A</var>)<var><a name="index-svds-2289"></a></var><br>
+&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A, k</var>)<var><a name="index-svds-2290"></a></var><br>
+&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A, k, sigma</var>)<var><a name="index-svds-2291"></a></var><br>
+&mdash; Function File: <var>s</var> = <b>svds</b> (<var>A, k, sigma, opts</var>)<var><a name="index-svds-2292"></a></var><br>
+&mdash; Function File: [<var>u</var>, <var>s</var>, <var>v</var>] = <b>svds</b> (<var><small class="dots">...</small></var>)<var><a name="index-svds-2293"></a></var><br>
+&mdash; Function File: [<var>u</var>, <var>s</var>, <var>v</var>, <var>flag</var>] = <b>svds</b> (<var><small class="dots">...</small></var>)<var><a name="index-svds-2294"></a></var><br>
 <blockquote>
         <p>Find a few singular values of the matrix <var>A</var>.  The singular values
 are calculated using

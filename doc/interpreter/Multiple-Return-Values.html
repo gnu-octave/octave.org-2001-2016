@@ -70,6 +70,52 @@ convenient.  The values to be returned may not have compatible
 dimensions, and it is often desirable to give the individual return
 values distinct names.
 
+   <p>It is possible to use the <code>nthargout</code> function to obtain only some
+of the return values or several at once in a cell array. 
+<a href="Cell-Array-Objects.html#Cell-Array-Objects">Cell Array Objects</a>
+
+<!-- nthargout scripts/general/nthargout.m -->
+   <p><a name="doc_002dnthargout"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>nthargout</b> (<var>n, func, <small class="dots">...</small></var>)<var><a name="index-nthargout-730"></a></var><br>
+&mdash; Function File:  <b>nthargout</b> (<var>n, ntot, func, <small class="dots">...</small></var>)<var><a name="index-nthargout-731"></a></var><br>
+<blockquote><p>Return the <var>n</var>th output argument of function given by the
+function handle or string <var>func</var>.  Any arguments after <var>func</var>
+are passed to <var>func</var>.  The total number of arguments to call
+<var>func</var> with can be passed in <var>ntot</var>; by default <var>ntot</var>
+is <var>n</var>.  The input <var>n</var> can also be a vector of indices of the
+output, in which case the output will be a cell array of the
+requested output arguments.
+
+        <p>The intended use <code>nthargout</code> is to avoid intermediate variables. 
+For example, when finding the indices of the maximum entry of a
+matrix, the following two compositions of nthargout
+
+     <pre class="example">          <var>m</var> = magic (5);
+          cell2mat (nthargout ([1, 2], @ind2sub, size(<var>m</var>),
+                               nthargout (2, @max, <var>m</var>(:))))
+          &rArr; 5   3
+</pre>
+        <p class="noindent">are completely equivalent to the following lines:
+
+     <pre class="example">          <var>m</var> = magic(5);
+          [~, idx] = max (<var>M</var>(:));
+          [i, j] = ind2sub (size (<var>m</var>), idx);
+          [i, j]
+          &rArr; 5   3
+</pre>
+        <p>It can also be helpful to have all output arguments in a single cell
+in the following manner:
+
+     <pre class="example">          <var>USV</var> = nthargout ([1:3], @svd, hilb (5));
+</pre>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>, <a href="doc_002disargout.html#doc_002disargout">isargout</a>. 
+</p></blockquote></div>
+
    <p>In addition to setting <code>nargin</code> each time a function is called,
 Octave also automatically initializes <code>nargout</code> to the number of
 values that are expected to be returned.  This allows you to write
@@ -108,8 +154,8 @@ example, calling the function
    <p><a name="doc_002dnargout"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>nargout</b> ()<var><a name="index-nargout-684"></a></var><br>
-&mdash; Built-in Function:  <b>nargout</b> (<var>fcn_name</var>)<var><a name="index-nargout-685"></a></var><br>
+&mdash; Built-in Function:  <b>nargout</b> ()<var><a name="index-nargout-732"></a></var><br>
+&mdash; Built-in Function:  <b>nargout</b> (<var>fcn_name</var>)<var><a name="index-nargout-733"></a></var><br>
 <blockquote><p>Within a function, return the number of values the caller expects to
 receive.  If called with the optional argument <var>fcn_name</var>, return the
 maximum number of values the named function can produce, or -1 if the
@@ -131,16 +177,29 @@ function can produce a variable number of values.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002disargout.html#doc_002disargout">isargout</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>, <a href="doc_002dnthargout.html#doc_002dnthargout">nthargout</a>. 
 </p></blockquote></div>
+
+   <p>It is good practice at the head of a function to verify that it has been called
+correctly.  In Octave the following idiom is seen frequently
+
+<pre class="example">     if (nargin &lt; min_#_inputs || nargin &gt; max_#_inputs)
+       print_usage ();
+     endif
+</pre>
+   <p class="noindent">which stops the function execution and prints a message about the correct
+way to call the function whenever the number of inputs is wrong.
+
+   <p>For compatibility with <span class="sc">matlab</span>, <code>nargchk</code>, <code>narginchk</code> and
+<code>nargoutchk</code> are available which provide similar error checking.
 
 <!-- nargchk scripts/general/nargchk.m -->
    <p><a name="doc_002dnargchk"></a>
 
 <div class="defun">
-&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargchk-686"></a></var><br>
-&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargchk-687"></a></var><br>
-&mdash; Function File: <var>msgstruct</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargchk-688"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargchk-734"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargchk-735"></a></var><br>
+&mdash; Function File: <var>msgstruct</var> = <b>nargchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargchk-736"></a></var><br>
 <blockquote><p>Return an appropriate error message string (or structure) if the
 number of inputs requested is invalid.
 
@@ -150,18 +209,51 @@ supplied to a function is within an acceptable range.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargoutchk.html#doc_002dnargoutchk">nargoutchk</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargoutchk.html#doc_002dnargoutchk">nargoutchk</a>, <a href="doc_002dnarginchk.html#doc_002dnarginchk">narginchk</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>. 
+</p></blockquote></div>
+
+<!-- narginchk scripts/general/narginchk.m -->
+   <p><a name="doc_002dnarginchk"></a>
+
+<div class="defun">
+&mdash; Function File:  <b>narginchk</b> (<var>minargs, maxargs</var>)<var><a name="index-narginchk-737"></a></var><br>
+<blockquote><p>Check for correct number of arguments or generate an error message if
+the number of arguments in the calling function is outside the range
+<var>minargs</var> and <var>maxargs</var>.  Otherwise, do nothing.
+
+        <p>Both <var>minargs</var> and <var>maxargs</var> need to be scalar numeric
+values.  Zero, Inf and negative values are all allowed, and
+<var>minargs</var> and <var>maxargs</var> may be equal.
+
+        <p>Note that this function evaluates <code>nargin</code> on the caller.
+
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargchk.html#doc_002dnargchk">nargchk</a>, <a href="doc_002dnargoutchk.html#doc_002dnargoutchk">nargoutchk</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>. 
 </p></blockquote></div>
 
 <!-- nargoutchk scripts/general/nargoutchk.m -->
    <p><a name="doc_002dnargoutchk"></a>
 
 <div class="defun">
-&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargoutchk-689"></a></var><br>
-&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargoutchk-690"></a></var><br>
-&mdash; Function File: <var>msgstruct</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargoutchk-691"></a></var><br>
-<blockquote><p>Return an appropriate error message string (or structure) if the
-number of outputs requested is invalid.
+&mdash; Function File:  <b>nargoutchk</b> (<var>minargs, maxargs</var>)<var><a name="index-nargoutchk-738"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs</var>)<var><a name="index-nargoutchk-739"></a></var><br>
+&mdash; Function File: <var>msgstr</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "string"</var>)<var><a name="index-nargoutchk-740"></a></var><br>
+&mdash; Function File: <var>msgstruct</var> = <b>nargoutchk</b> (<var>minargs, maxargs, nargs, "struct"</var>)<var><a name="index-nargoutchk-741"></a></var><br>
+<blockquote><p>Check for correct number of output arguments.
+
+        <p>On the first form, returns an error unless the number of arguments in its
+caller is between the values of <var>minargs</var> and <var>maxargs</var>.  It does
+nothing otherwise.  Note that this function evaluates the value of
+<code>nargout</code> on the caller so its value must have not been tampered with.
+
+        <p>Both <var>minargs</var> and <var>maxargs</var> need to be a numeric scalar.  Zero, Inf
+and negative are all valid, and they can have the same value.
+
+        <p>For backward compatibility reasons, the other forms return an appropriate
+error message string (or structure) if the number of outputs requested is
+invalid.
 
         <p>This is useful for checking to see that the number of output
 arguments supplied to a function is within an acceptable range. 
@@ -169,29 +261,7 @@ arguments supplied to a function is within an acceptable range.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargchk.html#doc_002dnargchk">nargchk</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>. 
-</p></blockquote></div>
-
-<!-- isargout src/ov-usr-fcn.cc -->
-   <p><a name="doc_002disargout"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>isargout</b> (<var>k</var>)<var><a name="index-isargout-692"></a></var><br>
-<blockquote><p>Within a function, return a logical value indicating whether the argument
-<var>k</var> will be assigned on output to a variable.  If the result is false,
-the argument has been ignored during the function call through the use of
-the tilde (~) special output argument.  Functions can use <code>isargout</code> to
-avoid performing unnecessary calculations for outputs which are unwanted.
-
-        <p>If <var>k</var> is outside the range <code>1:max(nargout)</code>, the function returns
-false.  <var>k</var> can also be an array, in which case the function works
-element-by-element and a logical array is returned.  At the top level,
-<code>isargout</code> returns an error. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargchk.html#doc_002dnargchk">nargchk</a>, <a href="doc_002dnarginchk.html#doc_002dnarginchk">narginchk</a>, <a href="doc_002derror.html#doc_002derror">error</a>, <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dnargin.html#doc_002dnargin">nargin</a>. 
 </p></blockquote></div>
 
    <p><a name="doc_002dvarargin"></a><a name="doc_002dvarargout"></a>

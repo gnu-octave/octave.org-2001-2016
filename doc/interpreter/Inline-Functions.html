@@ -46,9 +46,9 @@ writing <code>f(x)</code>.
    <p><a name="doc_002dinline"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>inline</b> (<var>str</var>)<var><a name="index-inline-741"></a></var><br>
-&mdash; Built-in Function:  <b>inline</b> (<var>str, arg1, <small class="dots">...</small></var>)<var><a name="index-inline-742"></a></var><br>
-&mdash; Built-in Function:  <b>inline</b> (<var>str, n</var>)<var><a name="index-inline-743"></a></var><br>
+&mdash; Built-in Function:  <b>inline</b> (<var>str</var>)<var><a name="index-inline-795"></a></var><br>
+&mdash; Built-in Function:  <b>inline</b> (<var>str, arg1, <small class="dots">...</small></var>)<var><a name="index-inline-796"></a></var><br>
+&mdash; Built-in Function:  <b>inline</b> (<var>str, n</var>)<var><a name="index-inline-797"></a></var><br>
 <blockquote><p>Create an inline function from the character string <var>str</var>. 
 If called with a single argument, the arguments of the generated
 function are extracted from the function itself.  The generated
@@ -74,7 +74,7 @@ they are the names of the arguments of the function.
    <p><a name="doc_002dargnames"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>argnames</b> (<var>fun</var>)<var><a name="index-argnames-744"></a></var><br>
+&mdash; Built-in Function:  <b>argnames</b> (<var>fun</var>)<var><a name="index-argnames-798"></a></var><br>
 <blockquote><p>Return a cell array of character strings containing the names of
 the arguments of the inline function <var>fun</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -88,7 +88,7 @@ the arguments of the inline function <var>fun</var>.
    <p><a name="doc_002dformula"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>formula</b> (<var>fun</var>)<var><a name="index-formula-745"></a></var><br>
+&mdash; Built-in Function:  <b>formula</b> (<var>fun</var>)<var><a name="index-formula-799"></a></var><br>
 <blockquote><p>Return a character string representing the inline function <var>fun</var>. 
 Note that <code>char (</code><var>fun</var><code>)</code> is equivalent to
 <code>formula (</code><var>fun</var><code>)</code>. 
@@ -99,22 +99,12 @@ Note that <code>char (</code><var>fun</var><code>)</code> is equivalent to
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dargnames.html#doc_002dargnames">argnames</a>, <a href="doc_002dinline.html#doc_002dinline">inline</a>, <a href="doc_002dvectorize.html#doc_002dvectorize">vectorize</a>. 
 </p></blockquote></div>
 
-<!-- vectorize src/ov-fcn-inline.cc -->
-   <p><a name="doc_002dvectorize"></a>
-
-<div class="defun">
-&mdash; Built-in Function:  <b>vectorize</b> (<var>fun</var>)<var><a name="index-vectorize-746"></a></var><br>
-<blockquote><p>Create a vectorized version of the inline function <var>fun</var>
-by replacing all occurrences of <code>*</code>, <code>/</code>, etc., with
-<code>.*</code>, <code>./</code>, etc. 
-</p></blockquote></div>
-
 <!-- symvar scripts/miscellaneous/symvar.m -->
    <p><a name="doc_002dsymvar"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>symvar</b> (<var>s</var>)<var><a name="index-symvar-747"></a></var><br>
-<blockquote><p>Identifies the argument names in the function defined by a string. 
+&mdash; Function File:  <b>symvar</b> (<var>s</var>)<var><a name="index-symvar-800"></a></var><br>
+<blockquote><p>Identify the argument names in the function defined by a string. 
 Common constant names such as <code>pi</code>, <code>NaN</code>, <code>Inf</code>,
 <code>eps</code>, <code>i</code> or <code>j</code> are ignored.  The arguments that are
 found are returned in a cell array of strings.  If no variables are

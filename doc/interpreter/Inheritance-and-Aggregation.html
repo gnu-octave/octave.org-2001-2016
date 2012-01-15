@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Object-Oriented-Programming.html#Object
 <hr>
 </div>
 
-<h3 class="section">33.5 Inheritance and Aggregation</h3>
+<h3 class="section">34.5 Inheritance and Aggregation</h3>
 
 <p>Using classes to build new classes is supported by octave through the
 use of both inheritance and aggregation.
@@ -59,11 +59,9 @@ be performed as follows.
 FIRfilter.m in the class directory.
 
 <pre class="example"><pre class="verbatim">     ## -*- texinfo -*-
-     ## @deftypefn {Function File} {} FIRfilter ()
+     ## @deftypefn  {Function File} {} FIRfilter ()
      ## @deftypefnx {Function File} {} FIRfilter (@var{p})
-     ## Creates an FIR filter with polynomial @var{p} as
-     ## coefficient vector.
-     ##
+     ## Create a FIR filter with polynomial @var{p} as coefficient vector.
      ## @end deftypefn
      
      function f = FIRfilter (p)
@@ -212,11 +210,9 @@ polynomial is simply a field in the class structure.  A class
 constructor for this case might be
 
 <pre class="example"><pre class="verbatim">     ## -*- texinfo -*-
-     ## @deftypefn {Function File} {} FIRfilter ()
+     ## @deftypefn  {Function File} {} FIRfilter ()
      ## @deftypefnx {Function File} {} FIRfilter (@var{p})
-     ## Creates an FIR filter with polynomial @var{p} as
-     ## coefficient vector.
-     ##
+     ## Create a FIR filter with polynomial @var{p} as coefficient vector.
      ## @end deftypefn
      
      function f = FIRfilter (p)
@@ -239,7 +235,7 @@ constructor for this case might be
    <p>For our example, the remaining class methods remain unchanged.
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 2012 Rik Wehbring -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

@@ -43,12 +43,12 @@ data structure type doesn't have rows or columns, so the <code>rows</code> and
    <p><a name="doc_002dndims"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ndims</b> (<var>a</var>)<var><a name="index-ndims-205"></a></var><br>
+&mdash; Built-in Function:  <b>ndims</b> (<var>a</var>)<var><a name="index-ndims-228"></a></var><br>
 <blockquote><p>Return the number of dimensions of <var>a</var>. 
 For any array, the result will always be larger than or equal to 2. 
 Trailing singleton dimensions are not counted.
 
-     <pre class="example">            ndims (ones (4, 1, 2, 1)
+     <pre class="example">            ndims (ones (4, 1, 2, 1))
                &rArr; 3
 </pre>
         </blockquote></div>
@@ -57,7 +57,7 @@ Trailing singleton dimensions are not counted.
    <p><a name="doc_002dcolumns"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>columns</b> (<var>a</var>)<var><a name="index-columns-206"></a></var><br>
+&mdash; Built-in Function:  <b>columns</b> (<var>a</var>)<var><a name="index-columns-229"></a></var><br>
 <blockquote><p>Return the number of columns of <var>a</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -70,7 +70,7 @@ Trailing singleton dimensions are not counted.
    <p><a name="doc_002drows"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>rows</b> (<var>a</var>)<var><a name="index-rows-207"></a></var><br>
+&mdash; Built-in Function:  <b>rows</b> (<var>a</var>)<var><a name="index-rows-230"></a></var><br>
 <blockquote><p>Return the number of rows of <var>a</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -83,14 +83,22 @@ Trailing singleton dimensions are not counted.
    <p><a name="doc_002dnumel"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>numel</b> (<var>a</var>)<var><a name="index-numel-208"></a></var><br>
-&mdash; Built-in Function:  <b>numel</b> (<var>a, idx1, idx2, <small class="dots">...</small></var>)<var><a name="index-numel-209"></a></var><br>
+&mdash; Built-in Function:  <b>numel</b> (<var>a</var>)<var><a name="index-numel-231"></a></var><br>
+&mdash; Built-in Function:  <b>numel</b> (<var>a, idx1, idx2, <small class="dots">...</small></var>)<var><a name="index-numel-232"></a></var><br>
 <blockquote><p>Return the number of elements in the object <var>a</var>. 
 Optionally, if indices <var>idx1</var>, <var>idx2</var>, <small class="dots">...</small> are supplied,
 return the number of elements that would result from the indexing
 
      <pre class="example">            <var>a</var>(<var>idx1</var>, <var>idx2</var>, ...)
 </pre>
+        <p>Note that the indices do not have to be numerical.  For example,
+
+     <pre class="example">            <var>a</var> = 1;
+            <var>b</var> = ones (2, 3);
+            numel (<var>a</var>, <var>b</var>);
+</pre>
+        <p class="noindent">will return 6, as this is the number of ways to index with <var>b</var>.
+
         <p>This method is also called when an object appears as lvalue with cs-list
 indexing, i.e., <code>object{...}</code> or <code>object(...).field</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -104,7 +112,7 @@ indexing, i.e., <code>object{...}</code> or <code>object(...).field</code>.
    <p><a name="doc_002dlength"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>length</b> (<var>a</var>)<var><a name="index-length-210"></a></var><br>
+&mdash; Built-in Function:  <b>length</b> (<var>a</var>)<var><a name="index-length-233"></a></var><br>
 <blockquote><p>Return the "length" of the object <var>a</var>.  For matrix objects, the
 length is the number of rows or columns, whichever is greater (this
 odd definition is used for compatibility with <span class="sc">matlab</span>). 
@@ -114,9 +122,9 @@ odd definition is used for compatibility with <span class="sc">matlab</span>).
    <p><a name="doc_002dsize"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>size</b> (<var>a</var>)<var><a name="index-size-211"></a></var><br>
-&mdash; Built-in Function:  <b>size</b> (<var>a, dim</var>)<var><a name="index-size-212"></a></var><br>
-<blockquote><p>Return the number rows and columns of <var>a</var>.
+&mdash; Built-in Function:  <b>size</b> (<var>a</var>)<var><a name="index-size-234"></a></var><br>
+&mdash; Built-in Function:  <b>size</b> (<var>a, dim</var>)<var><a name="index-size-235"></a></var><br>
+<blockquote><p>Return the number of rows and columns of <var>a</var>.
 
         <p>With one input argument and one output argument, the result is returned
 in a row vector.  If there are multiple output arguments, the number of
@@ -148,7 +156,7 @@ corresponding dimension.  For example,
    <p><a name="doc_002disempty"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isempty</b> (<var>a</var>)<var><a name="index-isempty-213"></a></var><br>
+&mdash; Built-in Function:  <b>isempty</b> (<var>a</var>)<var><a name="index-isempty-236"></a></var><br>
 <blockquote><p>Return true if <var>a</var> is an empty matrix (any one of its dimensions is
 zero).  Otherwise, return false. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -162,7 +170,7 @@ zero).  Otherwise, return false.
    <p><a name="doc_002disnull"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isnull</b> (<var>x</var>)<var><a name="index-isnull-214"></a></var><br>
+&mdash; Built-in Function:  <b>isnull</b> (<var>x</var>)<var><a name="index-isnull-237"></a></var><br>
 <blockquote><p>Return true if <var>x</var> is a special null matrix, string, or single quoted
 string.  Indexed assignment with such a value on the right-hand side should
 delete array elements.  This function should be used when overloading
@@ -184,7 +192,7 @@ distinguish the cases:
    <p><a name="doc_002dsizeof"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sizeof</b> (<var>val</var>)<var><a name="index-sizeof-215"></a></var><br>
+&mdash; Built-in Function:  <b>sizeof</b> (<var>val</var>)<var><a name="index-sizeof-238"></a></var><br>
 <blockquote><p>Return the size of <var>val</var> in bytes. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -197,7 +205,7 @@ distinguish the cases:
    <p><a name="doc_002dsize_005fequal"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>size_equal</b> (<var>a, b, <small class="dots">...</small></var>)<var><a name="index-size_005fequal-216"></a></var><br>
+&mdash; Built-in Function:  <b>size_equal</b> (<var>a, b, <small class="dots">...</small></var>)<var><a name="index-size_005fequal-239"></a></var><br>
 <blockquote><p>Return true if the dimensions of all arguments agree. 
 Trailing singleton dimensions are ignored. 
 Called with a single or no argument, size_equal returns true. 
@@ -212,14 +220,14 @@ Called with a single or no argument, size_equal returns true.
    <p><a name="doc_002dsqueeze"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>squeeze</b> (<var>x</var>)<var><a name="index-squeeze-217"></a></var><br>
+&mdash; Built-in Function:  <b>squeeze</b> (<var>x</var>)<var><a name="index-squeeze-240"></a></var><br>
 <blockquote><p>Remove singleton dimensions from <var>x</var> and return the result. 
 Note that for compatibility with <span class="sc">matlab</span>, all objects have
 a minimum of two dimensions and row vectors are left unchanged. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

@@ -33,8 +33,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Numeric-Data-Types.html#Numeric-Data-Ty
 
 <h3 class="section">4.1 Matrices</h3>
 
-<p><a name="index-matrices-223"></a>
-<a name="index-g_t_005b-224"></a><a name="index-g_t_005d-225"></a><a name="index-g_t_003b-226"></a><a name="index-g_t_002c-227"></a>
+<p><a name="index-matrices-246"></a>
+<a name="index-g_t_005b-247"></a><a name="index-g_t_005d-248"></a><a name="index-g_t_003b-249"></a><a name="index-g_t_002c-250"></a>
 It is easy to define a matrix of values in Octave.  The size of the
 matrix is determined automatically, so it is not necessary to explicitly
 state the dimensions.  The expression
@@ -145,7 +145,7 @@ may limit the maximum size of matrices to something smaller.
    <p><a name="doc_002dsizemax"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sizemax</b> ()<var><a name="index-sizemax-228"></a></var><br>
+&mdash; Built-in Function:  <b>sizemax</b> ()<var><a name="index-sizemax-251"></a></var><br>
 <blockquote><p>Return the largest value allowed for the size of an array. 
 If Octave is compiled with 64-bit indexing, the result is of class int64,
 otherwise it is of class int32.  The maximum array size is slightly
@@ -169,10 +169,15 @@ following variables to control the format of the output.
    <p><a name="doc_002doutput_005fmax_005ffield_005fwidth"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>output_max_field_width</b> ()<var><a name="index-output_005fmax_005ffield_005fwidth-229"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>output_max_field_width</b> (<var>new_val</var>)<var><a name="index-output_005fmax_005ffield_005fwidth-230"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>output_max_field_width</b> ()<var><a name="index-output_005fmax_005ffield_005fwidth-252"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>output_max_field_width</b> (<var>new_val</var>)<var><a name="index-output_005fmax_005ffield_005fwidth-253"></a></var><br>
+&mdash; Built-in Function:  <b>output_max_field_width</b> (<var>new_val, "local"</var>)<var><a name="index-output_005fmax_005ffield_005fwidth-254"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the maximum width
-of a numeric output field. 
+of a numeric output field.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -184,10 +189,15 @@ of a numeric output field.
    <p><a name="doc_002doutput_005fprecision"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>output_precision</b> ()<var><a name="index-output_005fprecision-231"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>output_precision</b> (<var>new_val</var>)<var><a name="index-output_005fprecision-232"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>output_precision</b> ()<var><a name="index-output_005fprecision-255"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>output_precision</b> (<var>new_val</var>)<var><a name="index-output_005fprecision-256"></a></var><br>
+&mdash; Built-in Function:  <b>output_precision</b> (<var>new_val, "local"</var>)<var><a name="index-output_005fprecision-257"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the minimum number of
-significant figures to display for numeric output. 
+significant figures to display for numeric output.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -204,8 +214,9 @@ the <code>format</code> function.  See <a href="Basic-Input-and-Output.html#Basi
    <p><a name="doc_002dsplit_005flong_005frows"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>split_long_rows</b> ()<var><a name="index-split_005flong_005frows-233"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>split_long_rows</b> (<var>new_val</var>)<var><a name="index-split_005flong_005frows-234"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>split_long_rows</b> ()<var><a name="index-split_005flong_005frows-258"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>split_long_rows</b> (<var>new_val</var>)<var><a name="index-split_005flong_005frows-259"></a></var><br>
+&mdash; Built-in Function:  <b>split_long_rows</b> (<var>new_val, "local"</var>)<var><a name="index-split_005flong_005frows-260"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether rows of a matrix
 may be split when displayed to a terminal window.  If the rows are split,
 Octave will display the matrix in a series of smaller pieces, each of
@@ -226,9 +237,13 @@ being displayed.  For example:
             0.90174  0.11854  0.72313  0.73326
             0.44672  0.94303  0.56564  0.82150
 </pre>
-        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-     <!-- A simple blank line produces the correct behavior. -->
-     <!-- @sp 1 -->
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dformat.html#doc_002dformat">format</a>. 
 </p></blockquote></div>
 
@@ -244,8 +259,9 @@ easily be misinterpreted.
    <p><a name="doc_002dfixed_005fpoint_005fformat"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>fixed_point_format</b> ()<var><a name="index-fixed_005fpoint_005fformat-235"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>fixed_point_format</b> (<var>new_val</var>)<var><a name="index-fixed_005fpoint_005fformat-236"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>fixed_point_format</b> ()<var><a name="index-fixed_005fpoint_005fformat-261"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>fixed_point_format</b> (<var>new_val</var>)<var><a name="index-fixed_005fpoint_005fformat-262"></a></var><br>
+&mdash; Built-in Function:  <b>fixed_point_format</b> (<var>new_val, "local"</var>)<var><a name="index-fixed_005fpoint_005fformat-263"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave will
 use a scaled format to print matrix values such that the largest
 element may be written with a single leading digit with the scaling
@@ -264,7 +280,11 @@ factor is printed on the first line of output.  For example:
 </pre>
         <p class="noindent">Notice that first value appears to be zero when it is actually 1.  For
 this reason, you should be careful when setting
-<code>fixed_point_format</code> to a nonzero value. 
+<code>fixed_point_format</code> to a nonzero value.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->

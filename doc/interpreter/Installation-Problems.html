@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Installation.html#Installation">Install
 <hr>
 </div>
 
-<h3 class="appendixsec">G.2 Installation Problems</h3>
+<h3 class="section">G.4 Installation Problems</h3>
 
 <p>This section contains a list of problems (and some apparent problems
 that don't really mean anything is wrong) that may show up during
@@ -149,7 +149,7 @@ with optimization turned off.
      <p class="noindent">when compiling <samp><span class="file">Array.cc</span></samp> and <samp><span class="file">Matrix.cc</span></samp>, try recompiling
 these files without <samp><span class="option">-g</span></samp>.
 
-     <li>Some people have reported that calls to shell_cmd and the pager do not
+     <li>Some people have reported that calls to system() and the pager do not
 work on SunOS systems.  This is apparently due to having
 <code>G_HAVE_SYS_WAIT</code><!-- /@w --> defined to be 0 instead of 1 when compiling
 <code>libg++</code>.
@@ -210,7 +210,7 @@ are empty, <samp><span class="env">CFLAGS</span></samp> and <samp><span class="e
    </ul>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 Kurt Hornik -->
+<!-- Copyright (C) 1996-2012 Kurt Hornik -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

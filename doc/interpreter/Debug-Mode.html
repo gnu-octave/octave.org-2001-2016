@@ -44,26 +44,35 @@ Octave entered debug mode.
    <p><a name="doc_002ddbwhere"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbwhere</b> ()<var><a name="index-dbwhere-785"></a></var><br>
-<blockquote><p>Show where we are in the code
+&mdash; Loadable Function:  <b>dbwhere</b> ()<var><a name="index-dbwhere-850"></a></var><br>
+<blockquote><p>In debugging mode, report the current file and line number where
+execution is stopped. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbcont.html#doc_002ddbcont">dbcont</a>, <a href="doc_002ddbstep.html#doc_002ddbstep">dbstep</a>, <a href="doc_002ddbup.html#doc_002ddbup">dbup</a>. 
 </p></blockquote></div>
 
 <!-- dbtype src/debug.cc -->
    <p><a name="doc_002ddbtype"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>dbtype</b> ()<var><a name="index-dbtype-786"></a></var><br>
-<blockquote><p>List script file with line numbers. 
+&mdash; Loadable Function:  <b>dbtype</b> ()<var><a name="index-dbtype-851"></a></var><br>
+&mdash; Loadable Function:  <b>dbtype</b> (<var>"startl:endl"</var>)<var><a name="index-dbtype-852"></a></var><br>
+&mdash; Loadable Function:  <b>dbtype</b> (<var>"func"</var>)<var><a name="index-dbtype-853"></a></var><br>
+&mdash; Loadable Function:  <b>dbtype</b> (<var>"func", "startl:endl"</var>)<var><a name="index-dbtype-854"></a></var><br>
+<blockquote><p>When in debugging mode and called with no arguments, list the script file
+being debugged with line numbers.  An optional range specification,
+specified as a string, can be used to list only a portion of the file.
+
+        <p>When called with the name of a function, list that script file
+with line numbers. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>. 
 </p></blockquote></div>
 
    <p>You may also use <code>isdebugmode</code> to determine whether the debugger is
@@ -73,13 +82,13 @@ currently active.
    <p><a name="doc_002disdebugmode"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>isdebugmode</b> ()<var><a name="index-isdebugmode-787"></a></var><br>
-<blockquote><p>Return true if debug mode is on, otherwise false. 
+&mdash; Loadable Function:  <b>isdebugmode</b> ()<var><a name="index-isdebugmode-855"></a></var><br>
+<blockquote><p>Return true if in debugging mode, otherwise false. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>, <a href="doc_002ddbclear.html#doc_002ddbclear">dbclear</a>, <a href="doc_002ddbstop.html#doc_002ddbstop">dbstop</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddbwhere.html#doc_002ddbwhere">dbwhere</a>, <a href="doc_002ddbstack.html#doc_002ddbstack">dbstack</a>, <a href="doc_002ddbstatus.html#doc_002ddbstatus">dbstatus</a>. 
 </p></blockquote></div>
 
    <p>Debug mode also allows single line stepping through a function using
@@ -89,18 +98,21 @@ the commands <code>dbstep</code>.
    <p><a name="doc_002ddbstep"></a>
 
 <div class="defun">
-&mdash; Command:  <b>dbstep</b><var><a name="index-dbstep-788"></a></var><br>
-&mdash; Command:  <b>dbstep</b><var> n<a name="index-dbstep-789"></a></var><br>
-&mdash; Command:  <b>dbstep</b><var> in<a name="index-dbstep-790"></a></var><br>
-&mdash; Command:  <b>dbstep</b><var> out<a name="index-dbstep-791"></a></var><br>
+&mdash; Command:  <b>dbstep</b><var><a name="index-dbstep-856"></a></var><br>
+&mdash; Command:  <b>dbstep</b><var> n<a name="index-dbstep-857"></a></var><br>
+&mdash; Command:  <b>dbstep</b><var> in<a name="index-dbstep-858"></a></var><br>
+&mdash; Command:  <b>dbstep</b><var> out<a name="index-dbstep-859"></a></var><br>
+&mdash; Command:  <b>dbnext</b><var> <small class="dots">...</small><a name="index-dbnext-860"></a></var><br>
 <blockquote><p>In debugging mode, execute the next <var>n</var> lines of code. 
-If <var>n</var> is omitted , execute the next single line of code. 
-If the next line of code is itself
-defined in terms of an m-file remain in the existing function.
+If <var>n</var> is omitted, execute the next single line of code. 
+If the next line of code is itself defined in terms of an m-file remain in
+the existing function.
 
         <p>Using <code>dbstep in</code> will cause execution of the next line to step into
 any m-files defined on the next line.  Using <code>dbstep out</code> will cause
-execution to continue until the current function returns. 
+execution to continue until the current function returns.
+
+        <p><code>dbnext</code> is an alias for <code>dbstep</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->

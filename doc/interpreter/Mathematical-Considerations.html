@@ -31,7 +31,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Operators-and-Functions.html#Operators-
 <hr>
 </div>
 
-<h5 class="subsubsection">21.1.4.3 Mathematical Considerations</h5>
+<h5 class="subsubsection">22.1.4.3 Mathematical Considerations</h5>
 
 <p>The attempt has been made to make sparse matrices behave in exactly the
 same manner as there full counterparts.  However, there are certain differences
@@ -105,7 +105,7 @@ positive definite matrix.
 
    <div class="float">
 <a name="fig_003asimplematrix"></a><div align="center"><img src="spmatrix.png" alt="spmatrix.png"></div>
-   <p><strong class="float-caption">Figure 21.3: Structure of simple sparse matrix.</strong></p></div>
+   <p><strong class="float-caption">Figure 22.3: Structure of simple sparse matrix.</strong></p></div>
 
    <p>The standard Cholesky&nbsp;factorization of this matrix can be
 obtained by the same command that would be used for a full
@@ -135,11 +135,11 @@ arguments as r<code>[r, p, q] = chol(A); spy(r)</code>.
 
    <div class="float">
 <a name="fig_003asimplechol"></a><div align="center"><img src="spchol.png" alt="spchol.png"></div>
-   <p><strong class="float-caption">Figure 21.4: Structure of the un-permuted Cholesky&nbsp;factorization of the above matrix.</strong></p></div>
+   <p><strong class="float-caption">Figure 22.4: Structure of the un-permuted Cholesky&nbsp;factorization of the above matrix.</strong></p></div>
 
    <div class="float">
 <a name="fig_003asimplecholperm"></a><div align="center"><img src="spcholperm.png" alt="spcholperm.png"></div>
-   <p><strong class="float-caption">Figure 21.5: Structure of the permuted Cholesky&nbsp;factorization of the above matrix.</strong></p></div>
+   <p><strong class="float-caption">Figure 22.5: Structure of the permuted Cholesky&nbsp;factorization of the above matrix.</strong></p></div>
 
    <p>In the case of an asymmetric matrix, the appropriate sparsity
 preserving permutation is <dfn>colamd</dfn> and the factorization using
@@ -154,10 +154,10 @@ reorder the matrix to maximize performance.
    <p><a name="doc_002damd"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>amd</b> (<var>S</var>)<var><a name="index-amd-1963"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>amd</b> (<var>S, opts</var>)<var><a name="index-amd-1964"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>amd</b> (<var>S</var>)<var><a name="index-amd-2222"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>amd</b> (<var>S, opts</var>)<var><a name="index-amd-2223"></a></var><br>
 <blockquote>
-        <p>Returns the approximate minimum degree permutation of a matrix.  This
+        <p>Return the approximate minimum degree permutation of a matrix.  This
 permutation such that the Cholesky&nbsp;factorization of <var>S</var><code>
 (</code><var>p</var><code>, </code><var>p</var><code>)</code> tends to be sparser than the Cholesky&nbsp;factorization
 of <var>S</var> itself.  <code>amd</code> is typically faster than <code>symamd</code> but
@@ -191,10 +191,10 @@ absorption.  The default is not to perform aggressive absorption.
    <p><a name="doc_002dccolamd"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>ccolamd</b> (<var>S</var>)<var><a name="index-ccolamd-1965"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>ccolamd</b> (<var>S, knobs</var>)<var><a name="index-ccolamd-1966"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>ccolamd</b> (<var>S, knobs, cmember</var>)<var><a name="index-ccolamd-1967"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>ccolamd</b> (<var><small class="dots">...</small></var>)<var><a name="index-ccolamd-1968"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>ccolamd</b> (<var>S</var>)<var><a name="index-ccolamd-2224"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>ccolamd</b> (<var>S, knobs</var>)<var><a name="index-ccolamd-2225"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>ccolamd</b> (<var>S, knobs, cmember</var>)<var><a name="index-ccolamd-2226"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>ccolamd</b> (<var><small class="dots">...</small></var>)<var><a name="index-ccolamd-2227"></a></var><br>
 <blockquote>
         <p>Constrained column approximate minimum degree permutation. 
 <var>p</var><code> = ccolamd (</code><var>S</var><code>)</code> returns the column approximate minimum
@@ -283,10 +283,10 @@ colamd, symamd, and other related orderings.
    <p><a name="doc_002dcolamd"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>colamd</b> (<var>S</var>)<var><a name="index-colamd-1969"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>colamd</b> (<var>S, knobs</var>)<var><a name="index-colamd-1970"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>colamd</b> (<var>S</var>)<var><a name="index-colamd-1971"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>colamd</b> (<var>S, knobs</var>)<var><a name="index-colamd-1972"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>colamd</b> (<var>S</var>)<var><a name="index-colamd-2228"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>colamd</b> (<var>S, knobs</var>)<var><a name="index-colamd-2229"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>colamd</b> (<var>S</var>)<var><a name="index-colamd-2230"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>colamd</b> (<var>S, knobs</var>)<var><a name="index-colamd-2231"></a></var><br>
 <blockquote>
         <p>Column approximate minimum degree permutation. 
 <var>p</var><code> = colamd (</code><var>S</var><code>)</code> returns the column approximate minimum
@@ -305,7 +305,7 @@ completely dense rows or columns are removed if <var>knobs</var><code>(1)</code>
 <var>knobs</var><code>(2)</code> are &lt; 0, respectively.  If <var>knobs</var><code>(3)</code> is
 nonzero, <var>stats</var> and <var>knobs</var> are printed.  The default is
 <var>knobs</var><code> = [10 10 0]</code>.  Note that <var>knobs</var> differs from earlier
-versions of colamd
+versions of colamd.
 
         <p><var>stats</var> is an optional 20-element output vector that provides data
 about the ordering and the validity of the input matrix <var>S</var>.  Ordering
@@ -358,8 +358,8 @@ Ng, Oak Ridge National Laboratory.  (see
    <p><a name="doc_002dcolperm"></a>
 
 <div class="defun">
-&mdash; Function File: <var>p</var> = <b>colperm</b> (<var>s</var>)<var><a name="index-colperm-1973"></a></var><br>
-<blockquote><p>Returns the column permutations such that the columns of
+&mdash; Function File: <var>p</var> = <b>colperm</b> (<var>s</var>)<var><a name="index-colperm-2232"></a></var><br>
+<blockquote><p>Return the column permutations such that the columns of
 <var>s</var><code> (:, </code><var>p</var><code>)</code> are ordered in terms of increase number
 of non-zero elements.  If <var>s</var> is symmetric, then <var>p</var> is chosen
 such that <var>s</var><code> (</code><var>p</var><code>, </code><var>p</var><code>)</code> orders the rows and
@@ -370,10 +370,10 @@ columns with increasing number of non zeros elements.
    <p><a name="doc_002dcsymamd"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>csymamd</b> (<var>S</var>)<var><a name="index-csymamd-1974"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>csymamd</b> (<var>S, knobs</var>)<var><a name="index-csymamd-1975"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>csymamd</b> (<var>S, knobs, cmember</var>)<var><a name="index-csymamd-1976"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>csymamd</b> (<var><small class="dots">...</small></var>)<var><a name="index-csymamd-1977"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>csymamd</b> (<var>S</var>)<var><a name="index-csymamd-2233"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>csymamd</b> (<var>S, knobs</var>)<var><a name="index-csymamd-2234"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>csymamd</b> (<var>S, knobs, cmember</var>)<var><a name="index-csymamd-2235"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>csymamd</b> (<var><small class="dots">...</small></var>)<var><a name="index-csymamd-2236"></a></var><br>
 <blockquote>
         <p>For a symmetric positive definite matrix <var>S</var>, returns the permutation
 vector <var>p</var> such that <var>S</var><code>(</code><var>p</var><code>,</code><var>p</var><code>)</code> tends to have a
@@ -435,10 +435,10 @@ colamd, symamd, and other related orderings.
    <p><a name="doc_002ddmperm"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>dmperm</b> (<var>S</var>)<var><a name="index-dmperm-1978"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>q</var>, <var>r</var>, <var>S</var>] = <b>dmperm</b> (<var>S</var>)<var><a name="index-dmperm-1979"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>dmperm</b> (<var>S</var>)<var><a name="index-dmperm-2237"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>q</var>, <var>r</var>, <var>S</var>] = <b>dmperm</b> (<var>S</var>)<var><a name="index-dmperm-2238"></a></var><br>
 <blockquote>
-        <p><a name="index-Dulmage_002dMendelsohn-decomposition-1980"></a>Perform a Dulmage-Mendelsohn permutation of the sparse matrix <var>S</var>. 
+        <p><a name="index-Dulmage_002dMendelsohn-decomposition-2239"></a>Perform a Dulmage-Mendelsohn permutation of the sparse matrix <var>S</var>. 
 With a single output argument <code>dmperm</code> performs the row permutations
 <var>p</var> such that <var>S</var><code>(</code><var>p</var><code>,:)</code> has no zero elements on the
 diagonal.
@@ -462,10 +462,10 @@ Block Triangular Form of a Sparse Matrix</cite>. ACM Trans. Math. Software,
    <p><a name="doc_002dsymamd"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>symamd</b> (<var>S</var>)<var><a name="index-symamd-1981"></a></var><br>
-&mdash; Loadable Function: <var>p</var> = <b>symamd</b> (<var>S, knobs</var>)<var><a name="index-symamd-1982"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>symamd</b> (<var>S</var>)<var><a name="index-symamd-1983"></a></var><br>
-&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>symamd</b> (<var>S, knobs</var>)<var><a name="index-symamd-1984"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>symamd</b> (<var>S</var>)<var><a name="index-symamd-2240"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>symamd</b> (<var>S, knobs</var>)<var><a name="index-symamd-2241"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>symamd</b> (<var>S</var>)<var><a name="index-symamd-2242"></a></var><br>
+&mdash; Loadable Function: [<var>p</var>, <var>stats</var>] = <b>symamd</b> (<var>S, knobs</var>)<var><a name="index-symamd-2243"></a></var><br>
 <blockquote>
         <p>For a symmetric positive definite matrix <var>S</var>, returns the permutation
 vector p such that <var>S</var><code>(</code><var>p</var><code>, </code><var>p</var><code>)</code> tends to have a
@@ -532,7 +532,7 @@ Ng, Oak Ridge National Laboratory.  (see
    <p><a name="doc_002dsymrcm"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>p</var> = <b>symrcm</b> (<var>S</var>)<var><a name="index-symrcm-1985"></a></var><br>
+&mdash; Loadable Function: <var>p</var> = <b>symrcm</b> (<var>S</var>)<var><a name="index-symrcm-2244"></a></var><br>
 <blockquote><p>Return the symmetric reverse Cuthill-McKee permutation of <var>S</var>. 
 <var>p</var> is a permutation vector such that
 <var>S</var><code>(</code><var>p</var><code>, </code><var>p</var><code>)</code> tends to have its diagonal elements

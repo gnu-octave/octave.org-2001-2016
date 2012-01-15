@@ -35,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-an
 
 <h3 class="section">11.8 Function Files</h3>
 
-<p><a name="index-function-file-703"></a>
+<p><a name="index-function-file-753"></a>
 Except for simple one-shot programs, it is not practical to have to
 define all the functions you need each time you need them.  Instead, you
 will normally want to save them in a file so that you can easily edit
@@ -87,9 +87,9 @@ ignore the time stamps for all function files.  Passing
    <p><a name="doc_002dedit"></a>
 
 <div class="defun">
-&mdash; Command:  <b>edit</b><var> name<a name="index-edit-704"></a></var><br>
-&mdash; Command:  <b>edit</b><var> field value<a name="index-edit-705"></a></var><br>
-&mdash; Command: <var>value</var> = <b>edit</b><var> get field<a name="index-edit-706"></a></var><br>
+&mdash; Command:  <b>edit</b><var> name<a name="index-edit-754"></a></var><br>
+&mdash; Command:  <b>edit</b><var> field value<a name="index-edit-755"></a></var><br>
+&mdash; Command: <var>value</var> = <b>edit</b><var> get field<a name="index-edit-756"></a></var><br>
 <blockquote><p>Edit the named function, or change editor settings.
 
         <p>If <code>edit</code> is called with the name of a file or function as
@@ -120,7 +120,7 @@ the editor will be started with <samp><span class="file">HOME/name.ext</span></s
 filename.  If <samp><span class="file">name.ext</span></samp> is not modifiable, it will be copied to
 <samp><span class="env">HOME</span></samp> before editing.
 
-          <p><strong>WARNING!</strong> You may need to clear name before the new definition
+          <p><strong>Warning:</strong> You may need to clear name before the new definition
 is available.  If you are editing a .cc file, you will need
 to mkoctfile <samp><span class="file">name.cc</span></samp> before the definition will be available. 
 </ul>
@@ -140,7 +140,7 @@ Octave's <samp><span class="env">EDITOR</span></samp> built-in function, which c
 <code>getenv("EDITOR")</code> and defaults to <code>emacs</code>.  Use <code>%s</code>
 In place of the function name.  For example,
                <dl>
-<dt>&lsquo;<samp><span class="samp">[EDITOR, " %s"]</span></samp>&rsquo;<dd>Use the editor which Octave uses for <code>bug_report</code>.
+<dt>&lsquo;<samp><span class="samp">[EDITOR, " %s"]</span></samp>&rsquo;<dd>Use the editor which Octave uses for <code>edit_history</code>.
 
                <br><dt>&lsquo;<samp><span class="samp">"xedit %s &amp;"</span></samp>&rsquo;<dd>pop up simple X11 editor in a separate window
 
@@ -194,9 +194,9 @@ whether they are modifiable or not.  The default is <code>false</code>.
    <p><a name="doc_002dmfilename"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>mfilename</b> ()<var><a name="index-mfilename-707"></a></var><br>
-&mdash; Built-in Function:  <b>mfilename</b> (<code>"fullpath"</code>)<var><a name="index-mfilename-708"></a></var><br>
-&mdash; Built-in Function:  <b>mfilename</b> (<code>"fullpathext"</code>)<var><a name="index-mfilename-709"></a></var><br>
+&mdash; Built-in Function:  <b>mfilename</b> ()<var><a name="index-mfilename-757"></a></var><br>
+&mdash; Built-in Function:  <b>mfilename</b> (<var>"fullpath"</var>)<var><a name="index-mfilename-758"></a></var><br>
+&mdash; Built-in Function:  <b>mfilename</b> (<var>"fullpathext"</var>)<var><a name="index-mfilename-759"></a></var><br>
 <blockquote><p>Return the name of the currently executing file.  At the top-level,
 return the empty string.  Given the argument <code>"fullpath"</code>,
 include the directory part of the file name, but not the extension. 
@@ -208,8 +208,8 @@ of the file name and the extension.
    <p><a name="doc_002dignore_005ffunction_005ftime_005fstamp"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>ignore_function_time_stamp</b> ()<var><a name="index-ignore_005ffunction_005ftime_005fstamp-710"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>ignore_function_time_stamp</b> (<var>new_val</var>)<var><a name="index-ignore_005ffunction_005ftime_005fstamp-711"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>ignore_function_time_stamp</b> ()<var><a name="index-ignore_005ffunction_005ftime_005fstamp-760"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>ignore_function_time_stamp</b> (<var>new_val</var>)<var><a name="index-ignore_005ffunction_005ftime_005fstamp-761"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave checks
 the time stamp on files each time it looks up functions defined in
 function files.  If the internal variable is set to <code>"system"</code>,

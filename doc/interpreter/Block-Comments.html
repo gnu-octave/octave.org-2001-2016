@@ -35,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Comments.html#Comments">Comments</a>
 
 <h4 class="subsection">2.7.2 Block Comments</h4>
 
-<p><a name="index-block-comments-167"></a><a name="index-multi_002dline-comments-168"></a><a name="index-g_t_0040samp_007b_0023_0040_007b_007d-169"></a><a name="index-g_t_0040samp_007b_0025_0040_007b_007d-170"></a>
+<p><a name="index-block-comments-189"></a><a name="index-multi_002dline-comments-190"></a><a name="index-g_t_0040samp_007b_0023_0040_007b_007d-191"></a><a name="index-g_t_0040samp_007b_0025_0040_007b_007d-192"></a>
 Entire blocks of code can be commented by enclosing the code between
 matching &lsquo;<samp><span class="samp">#{</span></samp>&rsquo; and &lsquo;<samp><span class="samp">#}</span></samp>&rsquo; or &lsquo;<samp><span class="samp">%{</span></samp>&rsquo; and &lsquo;<samp><span class="samp">%}</span></samp>&rsquo; markers. 
 For example,
@@ -52,6 +52,9 @@ For example,
 </pre>
    <p class="noindent">will produce a very quick countdown from '3' to 'Blast Off' as the
 lines "<code>disp(2);</code>" and "<code>disp(1);</code>" won't be executed.
+
+   <p>The block comment markers must appear alone as the only characters on a line
+(excepting whitespace) in order to be parsed correctly.
 
    </body></html>
 

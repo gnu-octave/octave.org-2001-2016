@@ -33,20 +33,20 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Polynomial-Manipulations.html#Polynomia
 <hr>
 </div>
 
-<h3 class="section">27.3 Products of Polynomials</h3>
+<h3 class="section">28.3 Products of Polynomials</h3>
 
 <!-- conv scripts/polynomial/conv.m -->
 <p><a name="doc_002dconv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>conv</b> (<var>a, b</var>)<var><a name="index-conv-2369"></a></var><br>
-&mdash; Function File:  <b>conv</b> (<var>a, b, shape</var>)<var><a name="index-conv-2370"></a></var><br>
-<blockquote><p>Convolve two vectors.
+&mdash; Function File:  <b>conv</b> (<var>a, b</var>)<var><a name="index-conv-2710"></a></var><br>
+&mdash; Function File:  <b>conv</b> (<var>a, b, shape</var>)<var><a name="index-conv-2711"></a></var><br>
+<blockquote><p>Convolve two vectors <var>a</var> and <var>b</var>.
 
-        <p><code>c = conv (</code><var>a</var><code>, </code><var>b</var><code>)</code> returns a vector of length equal to
+        <p>The output convolution is a vector with length equal to
 <code>length (</code><var>a</var><code>) + length (</code><var>b</var><code>) - 1</code>. 
-If <var>a</var> and <var>b</var> are the coefficient vectors of two polynomials, the
-returned value is the coefficient vector of the product polynomial.
+When <var>a</var> and <var>b</var> are the coefficient vectors of two polynomials, the
+convolution represents the coefficient vector of the product polynomial.
 
         <p>The optional <var>shape</var> argument may be
 
@@ -59,14 +59,14 @@ returned value is the coefficient vector of the product polynomial.
      <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dfftconv.html#doc_002dfftconv">fftconv</a>, <a href="doc_002dconv2.html#doc_002dconv2">conv2</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dconv2.html#doc_002dconv2">conv2</a>, <a href="doc_002dconvn.html#doc_002dconvn">convn</a>, <a href="doc_002dfftconv.html#doc_002dfftconv">fftconv</a>. 
 </p></blockquote></div>
 
 <!-- convn src/DLD-FUNCTIONS/conv2.cc -->
    <p><a name="doc_002dconvn"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>C</var> = <b>convn</b> (<var>A, B, shape</var>)<var><a name="index-convn-2371"></a></var><br>
+&mdash; Loadable Function: <var>C</var> = <b>convn</b> (<var>A, B, shape</var>)<var><a name="index-convn-2712"></a></var><br>
 <blockquote><p>Return the n-D convolution of <var>A</var> and <var>B</var> where the size
 of <var>C</var> is given by
 
@@ -90,7 +90,7 @@ of <var>C</var> is given by
    <p><a name="doc_002ddeconv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>deconv</b> (<var>y, a</var>)<var><a name="index-deconv-2372"></a></var><br>
+&mdash; Function File:  <b>deconv</b> (<var>y, a</var>)<var><a name="index-deconv-2713"></a></var><br>
 <blockquote><p>Deconvolve two vectors.
 
         <p><code>[b, r] = deconv (y, a)</code> solves for <var>b</var> and <var>r</var> such that
@@ -103,16 +103,16 @@ a remainder polynomial of lowest order.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>. 
 </p></blockquote></div>
 
 <!-- conv2 src/DLD-FUNCTIONS/conv2.cc -->
    <p><a name="doc_002dconv2"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>conv2</b> (<var>A, B</var>)<var><a name="index-conv2-2373"></a></var><br>
-&mdash; Loadable Function:  <b>conv2</b> (<var>v1, v2, m</var>)<var><a name="index-conv2-2374"></a></var><br>
-&mdash; Loadable Function:  <b>conv2</b> (<var><small class="dots">...</small>, shape</var>)<var><a name="index-conv2-2375"></a></var><br>
+&mdash; Loadable Function:  <b>conv2</b> (<var>A, B</var>)<var><a name="index-conv2-2714"></a></var><br>
+&mdash; Loadable Function:  <b>conv2</b> (<var>v1, v2, m</var>)<var><a name="index-conv2-2715"></a></var><br>
+&mdash; Loadable Function:  <b>conv2</b> (<var><small class="dots">...</small>, shape</var>)<var><a name="index-conv2-2716"></a></var><br>
 <blockquote><p>Return the 2-D convolution of <var>A</var> and <var>B</var>.  The size of the result
 is determined by the optional <var>shape</var> argument which takes the following
 values
@@ -139,18 +139,17 @@ values
    <p><a name="doc_002dpolygcd"></a>
 
 <div class="defun">
-&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a</var>)<var><a name="index-polygcd-2376"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a, tol</var>)<var><a name="index-polygcd-2377"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a</var>)<var><a name="index-polygcd-2717"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a, tol</var>)<var><a name="index-polygcd-2718"></a></var><br>
 <blockquote>
         <p>Find the greatest common divisor of two polynomials.  This is equivalent
 to the polynomial found by multiplying together all the common roots. 
 Together with deconv, you can reduce a ratio of two polynomials. 
-Tolerance defaults to <code>sqrt(eps)</code>.
+The tolerance <var>tol</var> defaults to <code>sqrt(eps)</code>.
 
-        <p>Note that this is a numerically unstable algorithm, and should not be used
-on large polynomials.
+        <p><strong>Caution:</strong> This is a numerically unstable algorithm and should not be used on large polynomials.
 
-        <p>Example:
+        <p>Example code:
 
      <pre class="example">          polygcd (poly(1:8), poly(3:12)) - poly(3:8)
           &rArr; [ 0, 0, 0, 0, 0, 0, 0 ]
@@ -161,16 +160,18 @@ on large polynomials.
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyreduce.html#doc_002dpolyreduce">polyreduce</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>, <a href="doc_002dfilter.html#doc_002dfilter">filter</a>, <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyvalm.html#doc_002dpolyvalm">polyvalm</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dresidue.html#doc_002dresidue">residue</a>. 
 </p></blockquote></div>
 
 <!-- residue scripts/polynomial/residue.m -->
    <p><a name="doc_002dresidue"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>r</var>, <var>p</var>, <var>k</var>, <var>e</var>] = <b>residue</b> (<var>b, a</var>)<var><a name="index-residue-2378"></a></var><br>
-<blockquote><p>Compute the partial fraction expansion for the quotient of the
-polynomials, <var>b</var> and <var>a</var>.
+&mdash; Function File: [<var>r</var>, <var>p</var>, <var>k</var>, <var>e</var>] = <b>residue</b> (<var>b, a</var>)<var><a name="index-residue-2719"></a></var><br>
+&mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k</var>)<var><a name="index-residue-2720"></a></var><br>
+&mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k, e</var>)<var><a name="index-residue-2721"></a></var><br>
+<blockquote><p>The first calling form computes the partial fraction expansion for the
+quotient of the polynomials, <var>b</var> and <var>a</var>.
 
      <pre class="example">           B(s)    M       r(m)         N
            ---- = SUM -------------  + SUM k(i)*s^(N-i)
@@ -197,12 +198,11 @@ the multiplicity of the m-th residue's pole.
              ------------------- = ----- + ------- + -----
              s^3 - 5s^2 + 8s - 4   (s-2)   (s-2)^2   (s-1)
 </pre>
-        &mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k</var>)<var><a name="index-residue-2379"></a></var><br>
-&mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k, e</var>)<var><a name="index-residue-2380"></a></var><br>
-<blockquote><p>Compute the reconstituted quotient of polynomials,
-<var>b</var>(s)/<var>a</var>(s), from the partial fraction expansion;
-represented by the residues, poles, and a direct polynomial specified
-by <var>r</var>, <var>p</var> and <var>k</var>, and the pole multiplicity <var>e</var>.
+        <p>The second calling form performs the inverse operation and computes
+the reconstituted quotient of polynomials, <var>b</var>(s)/<var>a</var>(s),
+from the partial fraction expansion; represented by the residues,
+poles, and a direct polynomial specified by <var>r</var>, <var>p</var> and
+<var>k</var>, and the pole multiplicity <var>e</var>.
 
         <p>If the multiplicity, <var>e</var>, is not explicitly specified the multiplicity is
 determined by the function <code>mpoles</code>.
@@ -237,7 +237,7 @@ determined by the function <code>mpoles</code>.
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
      <!-- @sp 1 -->
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>, <a href="doc_002dmpoles.html#doc_002dmpoles">mpoles</a>, <a href="doc_002dpolyval.html#doc_002dpolyval">polyval</a>, <a href="doc_002dpolyderiv.html#doc_002dpolyderiv">polyderiv</a>, <a href="doc_002dpolyint.html#doc_002dpolyint">polyint</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dmpoles.html#doc_002dmpoles">mpoles</a>, <a href="doc_002dpoly.html#doc_002dpoly">poly</a>, <a href="doc_002droots.html#doc_002droots">roots</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>, <a href="doc_002ddeconv.html#doc_002ddeconv">deconv</a>. 
 </p></blockquote></div>
 
    </body></html>

@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Functions-and-Scripts.html#Functions-an
 
 <h3 class="section">11.1 Defining Functions</h3>
 
-<p><a name="index-g_t_0040code_007bfunction_007d-statement-677"></a><a name="index-g_t_0040code_007bendfunction_007d-statement-678"></a>
+<p><a name="index-g_t_0040code_007bfunction_007d-statement-722"></a><a name="index-g_t_0040code_007bendfunction_007d-statement-723"></a>
 In its simplest form, the definition of a function named <var>name</var>
 looks like this:
 
@@ -178,8 +178,8 @@ possibilities and issue our own error message.
    <p><a name="doc_002dnargin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>nargin</b> ()<var><a name="index-nargin-679"></a></var><br>
-&mdash; Built-in Function:  <b>nargin</b> (<var>fcn_name</var>)<var><a name="index-nargin-680"></a></var><br>
+&mdash; Built-in Function:  <b>nargin</b> ()<var><a name="index-nargin-724"></a></var><br>
+&mdash; Built-in Function:  <b>nargin</b> (<var>fcn_name</var>)<var><a name="index-nargin-725"></a></var><br>
 <blockquote><p>Within a function, return the number of arguments passed to the function. 
 At the top level, return the number of command line arguments passed to
 Octave.  If called with the optional argument <var>fcn_name</var>, return the
@@ -189,14 +189,14 @@ function accepts a variable number of arguments.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dnargout.html#doc_002dnargout">nargout</a>, <a href="doc_002dvarargin.html#doc_002dvarargin">varargin</a>, <a href="doc_002disargout.html#doc_002disargout">isargout</a>, <a href="doc_002dvarargout.html#doc_002dvarargout">varargout</a>, <a href="doc_002dnthargout.html#doc_002dnthargout">nthargout</a>. 
 </p></blockquote></div>
 
 <!-- inputname scripts/miscellaneous/inputname.m -->
    <p><a name="doc_002dinputname"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>inputname</b> (<var>n</var>)<var><a name="index-inputname-681"></a></var><br>
+&mdash; Function File:  <b>inputname</b> (<var>n</var>)<var><a name="index-inputname-726"></a></var><br>
 <blockquote><p>Return the name of the <var>n</var>-th argument to the calling function. 
 If the argument is not a simple variable name, return an empty string. 
 </p></blockquote></div>
@@ -205,12 +205,17 @@ If the argument is not a simple variable name, return an empty string.
    <p><a name="doc_002dsilent_005ffunctions"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>silent_functions</b> ()<var><a name="index-silent_005ffunctions-682"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>silent_functions</b> (<var>new_val</var>)<var><a name="index-silent_005ffunctions-683"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>silent_functions</b> ()<var><a name="index-silent_005ffunctions-727"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>silent_functions</b> (<var>new_val</var>)<var><a name="index-silent_005ffunctions-728"></a></var><br>
+&mdash; Built-in Function:  <b>silent_functions</b> (<var>new_val, "local"</var>)<var><a name="index-silent_005ffunctions-729"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether internal
 output from a function is suppressed.  If this option is disabled,
 Octave will display the results produced by evaluating expressions
-within a function body that are not terminated with a semicolon. 
+within a function body that are not terminated with a semicolon.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 </p></blockquote></div>
 
    </body></html>

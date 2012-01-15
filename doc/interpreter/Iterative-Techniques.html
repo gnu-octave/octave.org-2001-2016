@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Sparse-Matrices.html#Sparse-Matrices">S
 <hr>
 </div>
 
-<h3 class="section">21.3 Iterative Techniques applied to sparse matrices</h3>
+<h3 class="section">22.3 Iterative Techniques applied to sparse matrices</h3>
 
 <p>The left division <code>\</code> and right division <code>/</code> operators,
 discussed in the previous section, use direct solvers to resolve a
@@ -45,10 +45,10 @@ functions to solve sparse linear equations using iterative techniques.
    <p><a name="doc_002dpcg"></a>
 
 <div class="defun">
-&mdash; Function File: <var>x</var> = <b>pcg</b> (<var>A, b, tol, maxit, m1, m2, x0, <small class="dots">...</small></var>)<var><a name="index-pcg-2036"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>flag</var>, <var>relres</var>, <var>iter</var>, <var>resvec</var>, <var>eigest</var>] = <b>pcg</b> (<var><small class="dots">...</small></var>)<var><a name="index-pcg-2037"></a></var><br>
+&mdash; Function File: <var>x</var> = <b>pcg</b> (<var>A, b, tol, maxit, m1, m2, x0, <small class="dots">...</small></var>)<var><a name="index-pcg-2295"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>flag</var>, <var>relres</var>, <var>iter</var>, <var>resvec</var>, <var>eigest</var>] = <b>pcg</b> (<var><small class="dots">...</small></var>)<var><a name="index-pcg-2296"></a></var><br>
 <blockquote>
-        <p>Solves the linear system of equations <var>A</var><code> * </code><var>x</var><code> = </code><var>b</var>
+        <p>Solve the linear system of equations <var>A</var><code> * </code><var>x</var><code> = </code><var>b</var>
 by means of the Preconditioned Conjugate Gradient iterative
 method.  The input arguments are
 
@@ -213,10 +213,10 @@ available online at <a href="http://www-users.cs.umn.edu/~saad/books.html">http:
    <p><a name="doc_002dpcr"></a>
 
 <div class="defun">
-&mdash; Function File: <var>x</var> = <b>pcr</b> (<var>A, b, tol, maxit, m, x0, <small class="dots">...</small></var>)<var><a name="index-pcr-2038"></a></var><br>
-&mdash; Function File: [<var>x</var>, <var>flag</var>, <var>relres</var>, <var>iter</var>, <var>resvec</var>] = <b>pcr</b> (<var><small class="dots">...</small></var>)<var><a name="index-pcr-2039"></a></var><br>
+&mdash; Function File: <var>x</var> = <b>pcr</b> (<var>A, b, tol, maxit, m, x0, <small class="dots">...</small></var>)<var><a name="index-pcr-2297"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>flag</var>, <var>relres</var>, <var>iter</var>, <var>resvec</var>] = <b>pcr</b> (<var><small class="dots">...</small></var>)<var><a name="index-pcr-2298"></a></var><br>
 <blockquote>
-        <p>Solves the linear system of equations <var>A</var><code> * </code><var>x</var><code> = </code><var>b</var>
+        <p>Solve the linear system of equations <var>A</var><code> * </code><var>x</var><code> = </code><var>b</var>
 by means of the Preconditioned Conjugate Residuals iterative
 method.  The input arguments are
 
@@ -347,10 +347,10 @@ are partial factorizations of the original matrix.
    <p><a name="doc_002dluinc"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>L</var>, <var>U</var>, <var>P</var>, <var>Q</var>] = <b>luinc</b> (<var>A, '0'</var>)<var><a name="index-luinc-2040"></a></var><br>
-&mdash; Loadable Function: [<var>L</var>, <var>U</var>, <var>P</var>, <var>Q</var>] = <b>luinc</b> (<var>A, droptol</var>)<var><a name="index-luinc-2041"></a></var><br>
-&mdash; Loadable Function: [<var>L</var>, <var>U</var>, <var>P</var>, <var>Q</var>] = <b>luinc</b> (<var>A, opts</var>)<var><a name="index-luinc-2042"></a></var><br>
-<blockquote><p><a name="index-LU-decomposition-2043"></a>Produce the incomplete LU&nbsp;factorization of the sparse matrix <var>A</var>. 
+&mdash; Loadable Function: [<var>L</var>, <var>U</var>, <var>P</var>, <var>Q</var>] = <b>luinc</b> (<var>A, '0'</var>)<var><a name="index-luinc-2299"></a></var><br>
+&mdash; Loadable Function: [<var>L</var>, <var>U</var>, <var>P</var>, <var>Q</var>] = <b>luinc</b> (<var>A, droptol</var>)<var><a name="index-luinc-2300"></a></var><br>
+&mdash; Loadable Function: [<var>L</var>, <var>U</var>, <var>P</var>, <var>Q</var>] = <b>luinc</b> (<var>A, opts</var>)<var><a name="index-luinc-2301"></a></var><br>
+<blockquote><p><a name="index-LU-decomposition-2302"></a>Produce the incomplete LU&nbsp;factorization of the sparse matrix <var>A</var>. 
 Two types of incomplete factorization are possible, and the type
 is determined by the second argument to <code>luinc</code>.
 

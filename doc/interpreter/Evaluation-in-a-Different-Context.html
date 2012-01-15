@@ -103,23 +103,34 @@ are in the &lsquo;<samp><span class="samp">caller</span></samp>&rsquo; context a
    <p><a name="doc_002devalin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>evalin</b> (<var>context, try, catch</var>)<var><a name="index-evalin-641"></a></var><br>
+&mdash; Built-in Function:  <b>evalin</b> (<var>context, try</var>)<var><a name="index-evalin-685"></a></var><br>
+&mdash; Built-in Function:  <b>evalin</b> (<var>context, try, catch</var>)<var><a name="index-evalin-686"></a></var><br>
 <blockquote><p>Like <code>eval</code>, except that the expressions are evaluated in the
 context <var>context</var>, which may be either <code>"caller"</code> or
 <code>"base"</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002deval.html#doc_002deval">eval</a>, <a href="doc_002dassignin.html#doc_002dassignin">assignin</a>. 
 </p></blockquote></div>
 
 <!-- assignin src/oct-parse.cc -->
    <p><a name="doc_002dassignin"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>assignin</b> (<var>context, varname, value</var>)<var><a name="index-assignin-642"></a></var><br>
+&mdash; Built-in Function:  <b>assignin</b> (<var>context, varname, value</var>)<var><a name="index-assignin-687"></a></var><br>
 <blockquote><p>Assign <var>value</var> to <var>varname</var> in context <var>context</var>, which
 may be either <code>"base"</code> or <code>"caller"</code>. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002devalin.html#doc_002devalin">evalin</a>. 
 </p></blockquote></div>
 
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

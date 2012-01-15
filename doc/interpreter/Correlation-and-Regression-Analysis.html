@@ -33,17 +33,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Statistics.html#Statistics">Statistics<
 <hr>
 </div>
 
-<h3 class="section">25.4 Correlation and Regression Analysis</h3>
+<h3 class="section">26.4 Correlation and Regression Analysis</h3>
 
 <!-- FIXME: Need Intro Here -->
 <!-- cov scripts/statistics/base/cov.m -->
 <p><a name="doc_002dcov"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cov</b> (<var>x</var>)<var><a name="index-cov-2183"></a></var><br>
-&mdash; Function File:  <b>cov</b> (<var>x, opt</var>)<var><a name="index-cov-2184"></a></var><br>
-&mdash; Function File:  <b>cov</b> (<var>x, y</var>)<var><a name="index-cov-2185"></a></var><br>
-&mdash; Function File:  <b>cov</b> (<var>x, y, opt</var>)<var><a name="index-cov-2186"></a></var><br>
+&mdash; Function File:  <b>cov</b> (<var>x</var>)<var><a name="index-cov-2470"></a></var><br>
+&mdash; Function File:  <b>cov</b> (<var>x, opt</var>)<var><a name="index-cov-2471"></a></var><br>
+&mdash; Function File:  <b>cov</b> (<var>x, y</var>)<var><a name="index-cov-2472"></a></var><br>
+&mdash; Function File:  <b>cov</b> (<var>x, y, opt</var>)<var><a name="index-cov-2473"></a></var><br>
 <blockquote><p>Compute the covariance matrix.
 
         <p>If each row of <var>x</var> and <var>y</var> is an observation, and each column is
@@ -69,41 +69,25 @@ covariance [default]
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcorrcoef.html#doc_002dcorrcoef">corrcoef</a>, <a href="doc_002dcor.html#doc_002dcor">cor</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcorr.html#doc_002dcorr">corr</a>. 
 </p></blockquote></div>
 
-<!-- cor scripts/statistics/base/cor.m -->
-   <p><a name="doc_002dcor"></a>
+<!-- corr scripts/statistics/base/corr.m -->
+   <p><a name="doc_002dcorr"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>cor</b> (<var>x</var>)<var><a name="index-cor-2187"></a></var><br>
-&mdash; Function File:  <b>cor</b> (<var>x, y</var>)<var><a name="index-cor-2188"></a></var><br>
-<blockquote><p>Compute matrix of correlation coefficients.
-
-        <p>This is an alias for <code>corrcoef</code>. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcorrcoef.html#doc_002dcorrcoef">corrcoef</a>. 
-</p></blockquote></div>
-
-<!-- corrcoef scripts/statistics/base/corrcoef.m -->
-   <p><a name="doc_002dcorrcoef"></a>
-
-<div class="defun">
-&mdash; Function File:  <b>corrcoef</b> (<var>x</var>)<var><a name="index-corrcoef-2189"></a></var><br>
-&mdash; Function File:  <b>corrcoef</b> (<var>x, y</var>)<var><a name="index-corrcoef-2190"></a></var><br>
+&mdash; Function File:  <b>corr</b> (<var>x</var>)<var><a name="index-corr-2474"></a></var><br>
+&mdash; Function File:  <b>corr</b> (<var>x, y</var>)<var><a name="index-corr-2475"></a></var><br>
 <blockquote><p>Compute matrix of correlation coefficients.
 
         <p>If each row of <var>x</var> and <var>y</var> is an observation and each column is
 a variable, then the (<var>i</var>,&nbsp;<var>j</var>)-th<!-- /@w --> entry of
-<code>corrcoef (</code><var>x</var><code>, </code><var>y</var><code>)</code> is the correlation between the
+<code>corr (</code><var>x</var><code>, </code><var>y</var><code>)</code> is the correlation between the
 <var>i</var>-th variable in <var>x</var> and the <var>j</var>-th variable in <var>y</var>.
 
-     <pre class="example">          corrcoef(x,y) = cov(x,y)/(std(x)*std(y))
+     <pre class="example">          corr(x,y) = cov(x,y)/(std(x)*std(y))
 </pre>
-        <p>If called with one argument, compute <code>corrcoef (</code><var>x</var><code>, </code><var>x</var><code>)</code>,
+        <p>If called with one argument, compute <code>corr (</code><var>x</var><code>, </code><var>x</var><code>)</code>,
 the correlation between the columns of <var>x</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -116,9 +100,9 @@ the correlation between the columns of <var>x</var>.
    <p><a name="doc_002dspearman"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>spearman</b> (<var>x</var>)<var><a name="index-spearman-2191"></a></var><br>
-&mdash; Function File:  <b>spearman</b> (<var>x, y</var>)<var><a name="index-spearman-2192"></a></var><br>
-<blockquote><p><a name="index-Spearman_0027s-Rho-2193"></a>Compute Spearman's rank correlation coefficient <var>rho</var>.
+&mdash; Function File:  <b>spearman</b> (<var>x</var>)<var><a name="index-spearman-2476"></a></var><br>
+&mdash; Function File:  <b>spearman</b> (<var>x, y</var>)<var><a name="index-spearman-2477"></a></var><br>
+<blockquote><p><a name="index-Spearman_0027s-Rho-2478"></a>Compute Spearman's rank correlation coefficient <var>rho</var>.
 
         <p>For two data vectors <var>x</var> and <var>y</var>, Spearman's <var>rho</var> is the
 correlation coefficient of the ranks of <var>x</var> and <var>y</var>.
@@ -140,9 +124,9 @@ asymptotically normally distributed.
    <p><a name="doc_002dkendall"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>kendall</b> (<var>x</var>)<var><a name="index-kendall-2194"></a></var><br>
-&mdash; Function File:  <b>kendall</b> (<var>x, y</var>)<var><a name="index-kendall-2195"></a></var><br>
-<blockquote><p><a name="index-Kendall_0027s-Tau-2196"></a>Compute Kendall's <var>tau</var>.
+&mdash; Function File:  <b>kendall</b> (<var>x</var>)<var><a name="index-kendall-2479"></a></var><br>
+&mdash; Function File:  <b>kendall</b> (<var>x, y</var>)<var><a name="index-kendall-2480"></a></var><br>
+<blockquote><p><a name="index-Kendall_0027s-Tau-2481"></a>Compute Kendall's <var>tau</var>.
 
         <p>For two data vectors <var>x</var>, <var>y</var> of common length <var>n</var>,
 Kendall's <var>tau</var> is the correlation of the signs of all rank
@@ -175,7 +159,7 @@ Kendall's <var>tau</var> is asymptotically normal with mean 0 and variance
    <p><a name="doc_002dlogistic_005fregression"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>theta</var>, <var>beta</var>, <var>dev</var>, <var>dl</var>, <var>d2l</var>, <var>p</var>] = <b>logistic_regression</b> (<var>y, x, print, theta, beta</var>)<var><a name="index-logistic_005fregression-2197"></a></var><br>
+&mdash; Function File: [<var>theta</var>, <var>beta</var>, <var>dev</var>, <var>dl</var>, <var>d2l</var>, <var>p</var>] = <b>logistic_regression</b> (<var>y, x, print, theta, beta</var>)<var><a name="index-logistic_005fregression-2482"></a></var><br>
 <blockquote><p>Perform ordinal logistic regression.
 
         <p>Suppose <var>y</var> takes values in <var>k</var> ordered categories, and let

@@ -5,7 +5,7 @@
 <meta name="description" content="GNU Octave">
 <meta name="generator" content="makeinfo 4.13">
 <link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Data-Structures.html#Data-Structures" title="Data Structures">
+<link rel="up" href="Structures.html#Structures" title="Structures">
 <link rel="next" href="Structure-Arrays.html#Structure-Arrays" title="Structure Arrays">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -27,7 +27,7 @@
 <a name="Basic-Usage-and-Examples"></a>
 <p>
 Next:&nbsp;<a rel="next" accesskey="n" href="Structure-Arrays.html#Structure-Arrays">Structure Arrays</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Data-Structures.html#Data-Structures">Data Structures</a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Structures.html#Structures">Structures</a>
 <hr>
 </div>
 
@@ -42,7 +42,7 @@ expressions
      x.b = [1, 2; 3, 4];
      x.c = "string";
 </pre>
-   <p><a name="index-g_t_002e-391"></a>create a structure with three elements.  The &lsquo;<samp><span class="samp">.</span></samp>&rsquo; character separates
+   <p><a name="index-g_t_002e-434"></a>create a structure with three elements.  The &lsquo;<samp><span class="samp">.</span></samp>&rsquo; character separates
 the structure name from the field name and indicates to Octave that this
 variable is a structure.  To print the value of the
 structure you can type its name, just as for any other variable:
@@ -127,23 +127,33 @@ contents of structure arrays.
    <p><a name="doc_002dstruct_005flevels_005fto_005fprint"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>struct_levels_to_print</b> ()<var><a name="index-struct_005flevels_005fto_005fprint-392"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>struct_levels_to_print</b> (<var>new_val</var>)<var><a name="index-struct_005flevels_005fto_005fprint-393"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>struct_levels_to_print</b> ()<var><a name="index-struct_005flevels_005fto_005fprint-435"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>struct_levels_to_print</b> (<var>new_val</var>)<var><a name="index-struct_005flevels_005fto_005fprint-436"></a></var><br>
+&mdash; Built-in Function:  <b>struct_levels_to_print</b> (<var>new_val, "local"</var>)<var><a name="index-struct_005flevels_005fto_005fprint-437"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the number of
-structure levels to display. 
+structure levels to display.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 </p></blockquote></div>
 
 <!-- print_struct_array_contents src/ov-struct.cc -->
    <p><a name="doc_002dprint_005fstruct_005farray_005fcontents"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>print_struct_array_contents</b> ()<var><a name="index-print_005fstruct_005farray_005fcontents-394"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>print_struct_array_contents</b> (<var>new_val</var>)<var><a name="index-print_005fstruct_005farray_005fcontents-395"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>print_struct_array_contents</b> ()<var><a name="index-print_005fstruct_005farray_005fcontents-438"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>print_struct_array_contents</b> (<var>new_val</var>)<var><a name="index-print_005fstruct_005farray_005fcontents-439"></a></var><br>
+&mdash; Built-in Function:  <b>print_struct_array_contents</b> (<var>new_val, "local"</var>)<var><a name="index-print_005fstruct_005farray_005fcontents-440"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies whether to print struct
 array contents.  If true, values of struct array elements are printed. 
 This variable does not affect scalar structures.  Their elements
 are always printed.  In both cases, however, printing will be limited to
-the number of levels specified by <var>struct_levels_to_print</var>. 
+the number of levels specified by <var>struct_levels_to_print</var>.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 </p></blockquote></div>
 
    <p>Functions can return structures.  For example, the following function

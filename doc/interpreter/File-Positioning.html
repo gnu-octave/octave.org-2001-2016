@@ -40,7 +40,7 @@ the file pointer for a given file.
    <p><a name="doc_002dftell"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>ftell</b> (<var>fid</var>)<var><a name="index-ftell-912"></a></var><br>
+&mdash; Built-in Function:  <b>ftell</b> (<var>fid</var>)<var><a name="index-ftell-1019"></a></var><br>
 <blockquote><p>Return the position of the file pointer as the number of characters
 from the beginning of the file <var>fid</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -54,7 +54,7 @@ from the beginning of the file <var>fid</var>.
    <p><a name="doc_002dfseek"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fseek</b> (<var>fid, offset, origin</var>)<var><a name="index-fseek-913"></a></var><br>
+&mdash; Built-in Function:  <b>fseek</b> (<var>fid, offset, origin</var>)<var><a name="index-fseek-1020"></a></var><br>
 <blockquote><p>Set the file pointer to any location within the file <var>fid</var>.
 
         <p>The pointer is positioned <var>offset</var> characters from the <var>origin</var>,
@@ -76,10 +76,10 @@ by <code>ftell</code> (in which case <var>origin</var> must be <code>SEEK_SET</c
    <p><a name="doc_002dSEEK_005fSET"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>SEEK_SET</b> ()<var><a name="index-SEEK_005fSET-914"></a></var><br>
-&mdash; Built-in Function:  <b>SEEK_CUR</b> ()<var><a name="index-SEEK_005fCUR-915"></a></var><br>
-&mdash; Built-in Function:  <b>SEEK_END</b> ()<var><a name="index-SEEK_005fEND-916"></a></var><br>
-<blockquote><p>Return the value required to request that <code>fseek</code> perform
+&mdash; Built-in Function:  <b>SEEK_SET</b> ()<var><a name="index-SEEK_005fSET-1021"></a></var><br>
+&mdash; Built-in Function:  <b>SEEK_CUR</b> ()<var><a name="index-SEEK_005fCUR-1022"></a></var><br>
+&mdash; Built-in Function:  <b>SEEK_END</b> ()<var><a name="index-SEEK_005fEND-1023"></a></var><br>
+<blockquote><p>Return the numerical value to pass to <code>fseek</code> to perform
 one of the following actions:
           <dl>
 <dt><code>SEEK_SET</code><dd>Position file relative to the beginning.
@@ -88,13 +88,18 @@ one of the following actions:
 
           <br><dt><code>SEEK_END</code><dd>Position file relative to the end. 
 </dl>
-        </p></blockquote></div>
+        <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dfseek.html#doc_002dfseek">fseek</a>. 
+</p></blockquote></div>
 
 <!-- frewind src/file-io.cc -->
    <p><a name="doc_002dfrewind"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>frewind</b> (<var>fid</var>)<var><a name="index-frewind-917"></a></var><br>
+&mdash; Built-in Function:  <b>frewind</b> (<var>fid</var>)<var><a name="index-frewind-1024"></a></var><br>
 <blockquote><p>Move the file pointer to the beginning of the file <var>fid</var>, returning
 0 for success, and -1 if an error was encountered.  It is equivalent to
 <code>fseek (</code><var>fid</var><code>, 0, SEEK_SET)</code>. 
@@ -110,7 +115,7 @@ four characters, and then returns to the original position.
      fseek (myfile, marker, SEEK_SET);
 </pre>
    <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

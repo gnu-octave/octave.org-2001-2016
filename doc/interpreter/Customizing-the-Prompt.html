@@ -35,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Editing.html#Command-Line-
 
 <h4 class="subsection">2.4.7 Customizing the Prompt</h4>
 
-<p><a name="index-prompt-customization-137"></a><a name="index-customizing-the-prompt-138"></a>
+<p><a name="index-prompt-customization-155"></a><a name="index-customizing-the-prompt-156"></a>
 The following variables are available for customizing the appearance of
 the command-line prompts.  Octave allows the prompt to be customized by
 inserting a number of backslash-escaped special characters that are
@@ -77,8 +77,9 @@ number of commands in the history list when Octave starts.
    <p><a name="doc_002dPS1"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PS1</b> ()<var><a name="index-PS1-139"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PS1</b> (<var>new_val</var>)<var><a name="index-PS1-140"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PS1</b> ()<var><a name="index-PS1-157"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PS1</b> (<var>new_val</var>)<var><a name="index-PS1-158"></a></var><br>
+&mdash; Built-in Function:  <b>PS1</b> (<var>new_val, "local"</var>)<var><a name="index-PS1-159"></a></var><br>
 <blockquote><p>Query or set the primary prompt string.  When executing interactively,
 Octave displays the primary prompt when it is ready to read a command.
 
@@ -97,7 +98,11 @@ This can be useful for coloring the prompt.  For example,
 
      <pre class="example">          PS1 ("\\[\\033[01;31m\\]\\s:\\#&gt; \\[\\033[0m\]")
 </pre>
-        <p class="noindent">will give the default Octave prompt a red coloring. 
+        <p class="noindent">will give the default Octave prompt a red coloring.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -109,14 +114,19 @@ This can be useful for coloring the prompt.  For example,
    <p><a name="doc_002dPS2"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PS2</b> ()<var><a name="index-PS2-141"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PS2</b> (<var>new_val</var>)<var><a name="index-PS2-142"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PS2</b> ()<var><a name="index-PS2-160"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PS2</b> (<var>new_val</var>)<var><a name="index-PS2-161"></a></var><br>
+&mdash; Built-in Function:  <b>PS2</b> (<var>new_val, "local"</var>)<var><a name="index-PS2-162"></a></var><br>
 <blockquote><p>Query or set the secondary prompt string.  The secondary prompt is
 printed when Octave is expecting additional input to complete a
 command.  For example, if you are typing a <code>for</code> loop that spans several
 lines, Octave will print the secondary prompt at the beginning of
 each line after the first.  The default value of the secondary prompt
-string is <code>"&gt; "</code>. 
+string is <code>"&gt; "</code>.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -128,12 +138,17 @@ string is <code>"&gt; "</code>.
    <p><a name="doc_002dPS4"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>PS4</b> ()<var><a name="index-PS4-143"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>PS4</b> (<var>new_val</var>)<var><a name="index-PS4-144"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>PS4</b> ()<var><a name="index-PS4-163"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>PS4</b> (<var>new_val</var>)<var><a name="index-PS4-164"></a></var><br>
+&mdash; Built-in Function:  <b>PS4</b> (<var>new_val, "local"</var>)<var><a name="index-PS4-165"></a></var><br>
 <blockquote><p>Query or set the character string used to prefix output produced
 when echoing commands is enabled. 
 The default value is <code>"+ "</code>. 
-See <a href="Diary-and-Echo-Commands.html#Diary-and-Echo-Commands">Diary and Echo Commands</a>, for a description of echoing commands. 
+See <a href="Diary-and-Echo-Commands.html#Diary-and-Echo-Commands">Diary and Echo Commands</a>, for a description of echoing commands.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->

@@ -43,7 +43,11 @@ is used is controlled by the <code>graphics_toolkit</code> function.  (See
 FLTK/OpenGL system, and <code>graphics_toolkit ("gnuplot")</code> selects the
 gnuplot system.  The two systems may be used selectively through the use
 of the <code>graphics_toolkit</code> property of the graphics handle for each
-figure.  This is explained in <a href="Graphics-Data-Structures.html#Graphics-Data-Structures">Graphics Data Structures</a>.
+figure.  This is explained in <a href="Graphics-Data-Structures.html#Graphics-Data-Structures">Graphics Data Structures</a>. 
+<strong>Caution:</strong> The FLTK toolkit uses single precision variables internally
+which limits the maximum value that can be displayed to approximately
+10^38.  If your data contains larger values you must use the gnuplot
+toolkit which supports values up to 10^308.
 
    </body></html>
 

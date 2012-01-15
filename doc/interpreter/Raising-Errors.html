@@ -51,8 +51,8 @@ a call to <code>error</code> will be executed.
    <p><a name="doc_002derror"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>error</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-error-748"></a></var><br>
-&mdash; Built-in Function:  <b>error</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-error-749"></a></var><br>
+&mdash; Built-in Function:  <b>error</b> (<var>template, <small class="dots">...</small></var>)<var><a name="index-error-801"></a></var><br>
+&mdash; Built-in Function:  <b>error</b> (<var>id, template, <small class="dots">...</small></var>)<var><a name="index-error-802"></a></var><br>
 <blockquote><p>Format the optional arguments under the control of the template string
 <var>template</var> using the same rules as the <code>printf</code> family of
 functions (see <a href="Formatted-Output.html#Formatted-Output">Formatted Output</a>) and print the resulting message
@@ -138,8 +138,8 @@ error.
    <p><a name="doc_002dprint_005fusage"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>print_usage</b> ()<var><a name="index-print_005fusage-750"></a></var><br>
-&mdash; Function File:  <b>print_usage</b> (<var>name</var>)<var><a name="index-print_005fusage-751"></a></var><br>
+&mdash; Function File:  <b>print_usage</b> ()<var><a name="index-print_005fusage-803"></a></var><br>
+&mdash; Function File:  <b>print_usage</b> (<var>name</var>)<var><a name="index-print_005fusage-804"></a></var><br>
 <blockquote><p>Print the usage message for a function.  When called with no input arguments
 the <code>print_usage</code> function displays the usage message of the currently
 executing function. 
@@ -154,7 +154,7 @@ executing function.
    <p><a name="doc_002dusage"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>usage</b> (<var>msg</var>)<var><a name="index-usage-752"></a></var><br>
+&mdash; Built-in Function:  <b>usage</b> (<var>msg</var>)<var><a name="index-usage-805"></a></var><br>
 <blockquote><p>Print the message <var>msg</var>, prefixed by the string &lsquo;<samp><span class="samp">usage: </span></samp>&rsquo;, and
 set Octave's internal error state such that control will return to the
 top level without evaluating any more commands.  This is useful for
@@ -180,7 +180,7 @@ this
    <p><a name="doc_002dbeep"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>beep</b> ()<var><a name="index-beep-753"></a></var><br>
+&mdash; Function File:  <b>beep</b> ()<var><a name="index-beep-806"></a></var><br>
 <blockquote><p>Produce a beep from the speaker (or visual bell). 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -193,10 +193,15 @@ this
    <p><a name="doc_002dbeep_005fon_005ferror"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>beep_on_error</b> ()<var><a name="index-beep_005fon_005ferror-754"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>beep_on_error</b> (<var>new_val</var>)<var><a name="index-beep_005fon_005ferror-755"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>beep_on_error</b> ()<var><a name="index-beep_005fon_005ferror-807"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>beep_on_error</b> (<var>new_val</var>)<var><a name="index-beep_005fon_005ferror-808"></a></var><br>
+&mdash; Built-in Function:  <b>beep_on_error</b> (<var>new_val, "local"</var>)<var><a name="index-beep_005fon_005ferror-809"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave will try
-to ring the terminal bell before printing an error message. 
+to ring the terminal bell before printing an error message.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
 </p></blockquote></div>
 
    </body></html>

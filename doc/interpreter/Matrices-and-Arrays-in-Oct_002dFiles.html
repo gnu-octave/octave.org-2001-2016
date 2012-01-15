@@ -99,8 +99,8 @@ example
 selection of which include
 
 <div class="defun">
-&mdash; Method: T&amp; <b>operator ()</b> (<var>octave_idx_type</var>)<var><a name="index-operator-_0028_0029-2952"></a></var><br>
-&mdash; Method: T&amp; <b>elem</b> (<var>octave_idx_type</var>)<var><a name="index-elem-2953"></a></var><br>
+&mdash; Method: T&amp; <b>operator ()</b> (<var>octave_idx_type</var>)<var><a name="index-operator-_0028_0029-3362"></a></var><br>
+&mdash; Method: T&amp; <b>elem</b> (<var>octave_idx_type</var>)<var><a name="index-elem-3363"></a></var><br>
 <blockquote><p>The <code>()</code> operator or <code>elem</code> method allow the values of the
 matrix or array to be read or set.  These can take a single argument,
 which is of type <code>octave_idx_type</code>, that is the index into the matrix or
@@ -114,29 +114,29 @@ circumstances the user might prefer to access the data of the array or
 matrix directly through the fortran_vec method discussed below.
 
 <div class="defun">
-&mdash; Method: octave_idx_type <b>nelem</b> (<var>void</var>)<var> const<a name="index-nelem-2954"></a></var><br>
+&mdash; Method: octave_idx_type <b>nelem</b> (<var>void</var>)<var> const<a name="index-nelem-3364"></a></var><br>
 <blockquote><p>The total number of elements in the matrix or array. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: size_t <b>byte_size</b> (<var>void</var>)<var> const<a name="index-byte_005fsize-2955"></a></var><br>
+&mdash; Method: size_t <b>byte_size</b> (<var>void</var>)<var> const<a name="index-byte_005fsize-3365"></a></var><br>
 <blockquote><p>The number of bytes used to store the matrix or array. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: dim_vector <b>dims</b> (<var>void</var>)<var> const<a name="index-dims-2956"></a></var><br>
+&mdash; Method: dim_vector <b>dims</b> (<var>void</var>)<var> const<a name="index-dims-3366"></a></var><br>
 <blockquote><p>The dimensions of the matrix or array in value of type dim_vector. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: void <b>resize</b> (<var>const dim_vector&amp;</var>)<var><a name="index-resize-2957"></a></var><br>
+&mdash; Method: void <b>resize</b> (<var>const dim_vector&amp;</var>)<var><a name="index-resize-3367"></a></var><br>
 <blockquote><p>A method taking either an argument of type <code>dim_vector</code>, or in the
 case of a matrix two arguments of type <code>octave_idx_type</code> defining
 the number of rows and columns in the matrix. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Method: T* <b>fortran_vec</b> (<var>void</var>)<var><a name="index-fortran_005fvec-2958"></a></var><br>
+&mdash; Method: T* <b>fortran_vec</b> (<var>void</var>)<var><a name="index-fortran_005fvec-3368"></a></var><br>
 <blockquote><p>This method returns a pointer to the underlying data of the matrix or a
 array so that it can be manipulated directly, either within Octave or by
 an external library. 

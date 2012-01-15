@@ -150,7 +150,7 @@ modified versions.
 </li></ul>
 <li><a name="toc_Data-Containers" href="Data-Containers.html#Data-Containers">6 Data Containers</a>
 <ul>
-<li><a href="Data-Structures.html#Data-Structures">6.1 Data Structures</a>
+<li><a href="Structures.html#Structures">6.1 Structures</a>
 <ul>
 <li><a href="Basic-Usage-and-Examples.html#Basic-Usage-and-Examples">6.1.1 Basic Usage and Examples</a>
 <li><a href="Structure-Arrays.html#Structure-Arrays">6.1.2 Structure Arrays</a>
@@ -181,6 +181,9 @@ modified versions.
 <li><a name="toc_Expressions" href="Expressions.html#Expressions">8 Expressions</a>
 <ul>
 <li><a href="Index-Expressions.html#Index-Expressions">8.1 Index Expressions</a>
+<ul>
+<li><a href="Advanced-Indexing.html#Advanced-Indexing">8.1.1 Advanced Indexing</a>
+</li></ul>
 <li><a href="Calling-Functions.html#Calling-Functions">8.2 Calling Functions</a>
 <ul>
 <li><a href="Call-by-Value.html#Call-by-Value">8.2.1 Call by Value</a>
@@ -255,6 +258,7 @@ modified versions.
 <ul>
 <li><a href="Raising-Errors.html#Raising-Errors">12.1.1 Raising Errors</a>
 <li><a href="Catching-Errors.html#Catching-Errors">12.1.2 Catching Errors</a>
+<li><a href="Recovering-From-Errors.html#Recovering-From-Errors">12.1.3 Recovering From Errors</a>
 </li></ul>
 <li><a href="Handling-Warnings.html#Handling-Warnings">12.2 Handling Warnings</a>
 <ul>
@@ -269,6 +273,8 @@ modified versions.
 <li><a href="Breakpoints.html#Breakpoints">13.3 Breakpoints</a>
 <li><a href="Debug-Mode.html#Debug-Mode">13.4 Debug Mode</a>
 <li><a href="Call-Stack.html#Call-Stack">13.5 Call Stack</a>
+<li><a href="Profiling.html#Profiling">13.6 Profiling</a>
+<li><a href="Profiler-Example.html#Profiler-Example">13.7 Profiler Example</a>
 </li></ul>
 <li><a name="toc_Input-and-Output" href="Input-and-Output.html#Input-and-Output">14 Input and Output</a>
 <ul>
@@ -314,12 +320,15 @@ modified versions.
 <ul>
 <li><a href="Two_002dDimensional-Plots.html#Two_002dDimensional-Plots">15.2.1 Two-Dimensional Plots</a>
 <ul>
-<li><a href="Two_002ddimensional-Function-Plotting.html#Two_002ddimensional-Function-Plotting">15.2.1.1 Two-dimensional Function Plotting</a>
+<li><a href="Axis-Configuration.html#Axis-Configuration">15.2.1.1 Axis Configuration</a>
+<li><a href="Two_002ddimensional-Function-Plotting.html#Two_002ddimensional-Function-Plotting">15.2.1.2 Two-dimensional Function Plotting</a>
+<li><a href="Two_002ddimensional-Geometric-Shapes.html#Two_002ddimensional-Geometric-Shapes">15.2.1.3 Two-dimensional Geometric Shapes</a>
 </li></ul>
-<li><a href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">15.2.2 Three-Dimensional Plotting</a>
+<li><a href="Three_002dDimensional-Plots.html#Three_002dDimensional-Plots">15.2.2 Three-Dimensional Plots</a>
 <ul>
-<li><a href="Three_002ddimensional-Function-Plotting.html#Three_002ddimensional-Function-Plotting">15.2.2.1 Three-dimensional Function Plotting</a>
-<li><a href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes">15.2.2.2 Three-dimensional Geometric Shapes</a>
+<li><a href="Aspect-Ratio.html#Aspect-Ratio">15.2.2.1 Aspect Ratio</a>
+<li><a href="Three_002ddimensional-Function-Plotting.html#Three_002ddimensional-Function-Plotting">15.2.2.2 Three-dimensional Function Plotting</a>
+<li><a href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes">15.2.2.3 Three-dimensional Geometric Shapes</a>
 </li></ul>
 <li><a href="Plot-Annotations.html#Plot-Annotations">15.2.3 Plot Annotations</a>
 <li><a href="Multiple-Plots-on-One-Page.html#Multiple-Plots-on-One-Page">15.2.4 Multiple Plots on One Page</a>
@@ -358,23 +367,24 @@ modified versions.
 <li><a href="Line-Styles.html#Line-Styles">15.4.2 Line Styles</a>
 <li><a href="Marker-Styles.html#Marker-Styles">15.4.3 Marker Styles</a>
 <li><a href="Callbacks.html#Callbacks">15.4.4 Callbacks</a>
-<li><a href="Object-Groups.html#Object-Groups">15.4.5 Object Groups</a>
+<li><a href="Application_002ddefined-Data.html#Application_002ddefined-Data">15.4.5 Application-defined Data</a>
+<li><a href="Object-Groups.html#Object-Groups">15.4.6 Object Groups</a>
 <ul>
-<li><a href="Data-Sources-in-Object-Groups.html#Data-Sources-in-Object-Groups">15.4.5.1 Data Sources in Object Groups</a>
-<li><a href="Area-Series.html#Area-Series">15.4.5.2 Area Series</a>
-<li><a href="Bar-Series.html#Bar-Series">15.4.5.3 Bar Series</a>
-<li><a href="Contour-Groups.html#Contour-Groups">15.4.5.4 Contour Groups</a>
-<li><a href="Error-Bar-Series.html#Error-Bar-Series">15.4.5.5 Error Bar Series</a>
-<li><a href="Line-Series.html#Line-Series">15.4.5.6 Line Series</a>
-<li><a href="Quiver-Group.html#Quiver-Group">15.4.5.7 Quiver Group</a>
-<li><a href="Scatter-Group.html#Scatter-Group">15.4.5.8 Scatter Group</a>
-<li><a href="Stair-Group.html#Stair-Group">15.4.5.9 Stair Group</a>
-<li><a href="Stem-Series.html#Stem-Series">15.4.5.10 Stem Series</a>
-<li><a href="Surface-Group.html#Surface-Group">15.4.5.11 Surface Group</a>
+<li><a href="Data-Sources-in-Object-Groups.html#Data-Sources-in-Object-Groups">15.4.6.1 Data Sources in Object Groups</a>
+<li><a href="Area-Series.html#Area-Series">15.4.6.2 Area Series</a>
+<li><a href="Bar-Series.html#Bar-Series">15.4.6.3 Bar Series</a>
+<li><a href="Contour-Groups.html#Contour-Groups">15.4.6.4 Contour Groups</a>
+<li><a href="Error-Bar-Series.html#Error-Bar-Series">15.4.6.5 Error Bar Series</a>
+<li><a href="Line-Series.html#Line-Series">15.4.6.6 Line Series</a>
+<li><a href="Quiver-Group.html#Quiver-Group">15.4.6.7 Quiver Group</a>
+<li><a href="Scatter-Group.html#Scatter-Group">15.4.6.8 Scatter Group</a>
+<li><a href="Stair-Group.html#Stair-Group">15.4.6.9 Stair Group</a>
+<li><a href="Stem-Series.html#Stem-Series">15.4.6.10 Stem Series</a>
+<li><a href="Surface-Group.html#Surface-Group">15.4.6.11 Surface Group</a>
 </li></ul>
-<li><a href="Graphics-Toolkits.html#Graphics-Toolkits">15.4.6 Graphics Toolkits</a>
+<li><a href="Graphics-Toolkits.html#Graphics-Toolkits">15.4.7 Graphics Toolkits</a>
 <ul>
-<li><a href="Customizing-Toolkit-Behavior.html#Customizing-Toolkit-Behavior">15.4.6.1 Customizing Toolkit Behavior</a>
+<li><a href="Customizing-Toolkit-Behavior.html#Customizing-Toolkit-Behavior">15.4.7.1 Customizing Toolkit Behavior</a>
 </li></ul>
 </li></ul>
 </li></ul>
@@ -382,9 +392,8 @@ modified versions.
 <ul>
 <li><a href="Finding-Elements-and-Checking-Conditions.html#Finding-Elements-and-Checking-Conditions">16.1 Finding Elements and Checking Conditions</a>
 <li><a href="Rearranging-Matrices.html#Rearranging-Matrices">16.2 Rearranging Matrices</a>
-<li><a href="Applying-a-Function-to-an-Array.html#Applying-a-Function-to-an-Array">16.3 Applying a Function to an Array</a>
-<li><a href="Special-Utility-Matrices.html#Special-Utility-Matrices">16.4 Special Utility Matrices</a>
-<li><a href="Famous-Matrices.html#Famous-Matrices">16.5 Famous Matrices</a>
+<li><a href="Special-Utility-Matrices.html#Special-Utility-Matrices">16.3 Special Utility Matrices</a>
+<li><a href="Famous-Matrices.html#Famous-Matrices">16.4 Famous Matrices</a>
 </li></ul>
 <li><a name="toc_Arithmetic" href="Arithmetic.html#Arithmetic">17 Arithmetic</a>
 <ul>
@@ -406,159 +415,182 @@ modified versions.
 <li><a href="Functions-of-a-Matrix.html#Functions-of-a-Matrix">18.4 Functions of a Matrix</a>
 <li><a href="Specialized-Solvers.html#Specialized-Solvers">18.5 Specialized Solvers</a>
 </li></ul>
-<li><a name="toc_Nonlinear-Equations" href="Nonlinear-Equations.html#Nonlinear-Equations">19 Nonlinear Equations</a>
-<li><a name="toc_Diagonal-and-Permutation-Matrices" href="Diagonal-and-Permutation-Matrices.html#Diagonal-and-Permutation-Matrices">20 Diagonal and Permutation Matrices</a>
+<li><a name="toc_Vectorization-and-Faster-Code-Execution" href="Vectorization-and-Faster-Code-Execution.html#Vectorization-and-Faster-Code-Execution">19 Vectorization and Faster Code Execution</a>
 <ul>
-<li><a href="Basic-Usage.html#Basic-Usage">20.1 Creating and Manipulating Diagonal and Permutation Matrices</a>
+<li><a href="Basic-Vectorization.html#Basic-Vectorization">19.1 Basic Vectorization</a>
+<li><a href="Broadcasting.html#Broadcasting">19.2 Broadcasting</a>
 <ul>
-<li><a href="Creating-Diagonal-Matrices.html#Creating-Diagonal-Matrices">20.1.1 Creating Diagonal Matrices</a>
-<li><a href="Creating-Permutation-Matrices.html#Creating-Permutation-Matrices">20.1.2 Creating Permutation Matrices</a>
-<li><a href="Explicit-and-Implicit-Conversions.html#Explicit-and-Implicit-Conversions">20.1.3 Explicit and Implicit Conversions</a>
+<li><a href="Broadcasting.html#Broadcasting">19.2.1 Broadcasting and Legacy Code</a>
 </li></ul>
-<li><a href="Matrix-Algebra.html#Matrix-Algebra">20.2 Linear Algebra with Diagonal and Permutation Matrices</a>
-<ul>
-<li><a href="Expressions-Involving-Diagonal-Matrices.html#Expressions-Involving-Diagonal-Matrices">20.2.1 Expressions Involving Diagonal Matrices</a>
-<li><a href="Expressions-Involving-Permutation-Matrices.html#Expressions-Involving-Permutation-Matrices">20.2.2 Expressions Involving Permutation Matrices</a>
+<li><a href="Function-Application.html#Function-Application">19.3 Function Application</a>
+<li><a href="Accumulation.html#Accumulation">19.4 Accumulation</a>
+<li><a href="Miscellaneous-Techniques.html#Miscellaneous-Techniques">19.5 Miscellaneous Techniques</a>
+<li><a href="Examples.html#Examples">19.6 Examples</a>
 </li></ul>
-<li><a href="Function-Support.html#Function-Support">20.3 Functions That Are Aware of These Matrices</a>
+<li><a name="toc_Nonlinear-Equations" href="Nonlinear-Equations.html#Nonlinear-Equations">20 Nonlinear Equations</a>
 <ul>
-<li><a href="Diagonal-Matrix-Functions.html#Diagonal-Matrix-Functions">20.3.1 Diagonal Matrix Functions</a>
-<li><a href="Permutation-Matrix-Functions.html#Permutation-Matrix-Functions">20.3.2 Permutation Matrix Functions</a>
+<li><a href="Solvers.html#Solvers">20.1 Solvers</a>
+<li><a href="Minimizers.html#Minimizers">20.2 Minimizers</a>
 </li></ul>
-<li><a href="Example-Codes.html#Example-Codes">20.4 Some Examples of Usage</a>
-<li><a href="Zeros-Treatment.html#Zeros-Treatment">20.5 The Differences in Treatment of Zero Elements</a>
+<li><a name="toc_Diagonal-and-Permutation-Matrices" href="Diagonal-and-Permutation-Matrices.html#Diagonal-and-Permutation-Matrices">21 Diagonal and Permutation Matrices</a>
+<ul>
+<li><a href="Basic-Usage.html#Basic-Usage">21.1 Creating and Manipulating Diagonal and Permutation Matrices</a>
+<ul>
+<li><a href="Creating-Diagonal-Matrices.html#Creating-Diagonal-Matrices">21.1.1 Creating Diagonal Matrices</a>
+<li><a href="Creating-Permutation-Matrices.html#Creating-Permutation-Matrices">21.1.2 Creating Permutation Matrices</a>
+<li><a href="Explicit-and-Implicit-Conversions.html#Explicit-and-Implicit-Conversions">21.1.3 Explicit and Implicit Conversions</a>
 </li></ul>
-<li><a name="toc_Sparse-Matrices" href="Sparse-Matrices.html#Sparse-Matrices">21 Sparse Matrices</a>
+<li><a href="Matrix-Algebra.html#Matrix-Algebra">21.2 Linear Algebra with Diagonal and Permutation Matrices</a>
 <ul>
-<li><a href="Basics.html#Basics">21.1 The Creation and Manipulation of Sparse Matrices</a>
+<li><a href="Expressions-Involving-Diagonal-Matrices.html#Expressions-Involving-Diagonal-Matrices">21.2.1 Expressions Involving Diagonal Matrices</a>
+<li><a href="Expressions-Involving-Permutation-Matrices.html#Expressions-Involving-Permutation-Matrices">21.2.2 Expressions Involving Permutation Matrices</a>
+</li></ul>
+<li><a href="Function-Support.html#Function-Support">21.3 Functions That Are Aware of These Matrices</a>
 <ul>
-<li><a href="Storage-of-Sparse-Matrices.html#Storage-of-Sparse-Matrices">21.1.1 Storage of Sparse Matrices</a>
-<li><a href="Creating-Sparse-Matrices.html#Creating-Sparse-Matrices">21.1.2 Creating Sparse Matrices</a>
-<li><a href="Information.html#Information">21.1.3 Finding out Information about Sparse Matrices</a>
-<li><a href="Operators-and-Functions.html#Operators-and-Functions">21.1.4 Basic Operators and Functions on Sparse Matrices</a>
+<li><a href="Diagonal-Matrix-Functions.html#Diagonal-Matrix-Functions">21.3.1 Diagonal Matrix Functions</a>
+<li><a href="Permutation-Matrix-Functions.html#Permutation-Matrix-Functions">21.3.2 Permutation Matrix Functions</a>
+</li></ul>
+<li><a href="Example-Codes.html#Example-Codes">21.4 Some Examples of Usage</a>
+<li><a href="Zeros-Treatment.html#Zeros-Treatment">21.5 The Differences in Treatment of Zero Elements</a>
+</li></ul>
+<li><a name="toc_Sparse-Matrices" href="Sparse-Matrices.html#Sparse-Matrices">22 Sparse Matrices</a>
 <ul>
-<li><a href="Sparse-Functions.html#Sparse-Functions">21.1.4.1 Sparse Functions</a>
-<li><a href="Return-Types-of-Operators-and-Functions.html#Return-Types-of-Operators-and-Functions">21.1.4.2 The Return Types of Operators and Functions</a>
-<li><a href="Mathematical-Considerations.html#Mathematical-Considerations">21.1.4.3 Mathematical Considerations</a>
+<li><a href="Basics.html#Basics">22.1 The Creation and Manipulation of Sparse Matrices</a>
+<ul>
+<li><a href="Storage-of-Sparse-Matrices.html#Storage-of-Sparse-Matrices">22.1.1 Storage of Sparse Matrices</a>
+<li><a href="Creating-Sparse-Matrices.html#Creating-Sparse-Matrices">22.1.2 Creating Sparse Matrices</a>
+<li><a href="Information.html#Information">22.1.3 Finding out Information about Sparse Matrices</a>
+<li><a href="Operators-and-Functions.html#Operators-and-Functions">22.1.4 Basic Operators and Functions on Sparse Matrices</a>
+<ul>
+<li><a href="Sparse-Functions.html#Sparse-Functions">22.1.4.1 Sparse Functions</a>
+<li><a href="Return-Types-of-Operators-and-Functions.html#Return-Types-of-Operators-and-Functions">22.1.4.2 The Return Types of Operators and Functions</a>
+<li><a href="Mathematical-Considerations.html#Mathematical-Considerations">22.1.4.3 Mathematical Considerations</a>
 </li></ul>
 </li></ul>
-<li><a href="Sparse-Linear-Algebra.html#Sparse-Linear-Algebra">21.2 Linear Algebra on Sparse Matrices</a>
-<li><a href="Iterative-Techniques.html#Iterative-Techniques">21.3 Iterative Techniques applied to sparse matrices</a>
-<li><a href="Real-Life-Example.html#Real-Life-Example">21.4 Real Life Example of the use of Sparse Matrices</a>
+<li><a href="Sparse-Linear-Algebra.html#Sparse-Linear-Algebra">22.2 Linear Algebra on Sparse Matrices</a>
+<li><a href="Iterative-Techniques.html#Iterative-Techniques">22.3 Iterative Techniques applied to sparse matrices</a>
+<li><a href="Real-Life-Example.html#Real-Life-Example">22.4 Real Life Example of the use of Sparse Matrices</a>
 </li></ul>
-<li><a name="toc_Numerical-Integration" href="Numerical-Integration.html#Numerical-Integration">22 Numerical Integration</a>
+<li><a name="toc_Numerical-Integration" href="Numerical-Integration.html#Numerical-Integration">23 Numerical Integration</a>
 <ul>
-<li><a href="Functions-of-One-Variable.html#Functions-of-One-Variable">22.1 Functions of One Variable</a>
-<li><a href="Orthogonal-Collocation.html#Orthogonal-Collocation">22.2 Orthogonal Collocation</a>
-<li><a href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables">22.3 Functions of Multiple Variables</a>
+<li><a href="Functions-of-One-Variable.html#Functions-of-One-Variable">23.1 Functions of One Variable</a>
+<li><a href="Orthogonal-Collocation.html#Orthogonal-Collocation">23.2 Orthogonal Collocation</a>
+<li><a href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables">23.3 Functions of Multiple Variables</a>
 </li></ul>
-<li><a name="toc_Differential-Equations" href="Differential-Equations.html#Differential-Equations">23 Differential Equations</a>
+<li><a name="toc_Differential-Equations" href="Differential-Equations.html#Differential-Equations">24 Differential Equations</a>
 <ul>
-<li><a href="Ordinary-Differential-Equations.html#Ordinary-Differential-Equations">23.1 Ordinary Differential Equations</a>
-<li><a href="Differential_002dAlgebraic-Equations.html#Differential_002dAlgebraic-Equations">23.2 Differential-Algebraic Equations</a>
+<li><a href="Ordinary-Differential-Equations.html#Ordinary-Differential-Equations">24.1 Ordinary Differential Equations</a>
+<li><a href="Differential_002dAlgebraic-Equations.html#Differential_002dAlgebraic-Equations">24.2 Differential-Algebraic Equations</a>
 </li></ul>
-<li><a name="toc_Optimization" href="Optimization.html#Optimization">24 Optimization</a>
+<li><a name="toc_Optimization" href="Optimization.html#Optimization">25 Optimization</a>
 <ul>
-<li><a href="Linear-Programming.html#Linear-Programming">24.1 Linear Programming</a>
-<li><a href="Quadratic-Programming.html#Quadratic-Programming">24.2 Quadratic Programming</a>
-<li><a href="Nonlinear-Programming.html#Nonlinear-Programming">24.3 Nonlinear Programming</a>
-<li><a href="Linear-Least-Squares.html#Linear-Least-Squares">24.4 Linear Least Squares</a>
+<li><a href="Linear-Programming.html#Linear-Programming">25.1 Linear Programming</a>
+<li><a href="Quadratic-Programming.html#Quadratic-Programming">25.2 Quadratic Programming</a>
+<li><a href="Nonlinear-Programming.html#Nonlinear-Programming">25.3 Nonlinear Programming</a>
+<li><a href="Linear-Least-Squares.html#Linear-Least-Squares">25.4 Linear Least Squares</a>
 </li></ul>
-<li><a name="toc_Statistics" href="Statistics.html#Statistics">25 Statistics</a>
+<li><a name="toc_Statistics" href="Statistics.html#Statistics">26 Statistics</a>
 <ul>
-<li><a href="Descriptive-Statistics.html#Descriptive-Statistics">25.1 Descriptive Statistics</a>
-<li><a href="Basic-Statistical-Functions.html#Basic-Statistical-Functions">25.2 Basic Statistical Functions</a>
-<li><a href="Statistical-Plots.html#Statistical-Plots">25.3 Statistical Plots</a>
-<li><a href="Correlation-and-Regression-Analysis.html#Correlation-and-Regression-Analysis">25.4 Correlation and Regression Analysis</a>
-<li><a href="Distributions.html#Distributions">25.5 Distributions</a>
-<li><a href="Tests.html#Tests">25.6 Tests</a>
-<li><a href="Random-Number-Generation.html#Random-Number-Generation">25.7 Random Number Generation</a>
+<li><a href="Descriptive-Statistics.html#Descriptive-Statistics">26.1 Descriptive Statistics</a>
+<li><a href="Basic-Statistical-Functions.html#Basic-Statistical-Functions">26.2 Basic Statistical Functions</a>
+<li><a href="Statistical-Plots.html#Statistical-Plots">26.3 Statistical Plots</a>
+<li><a href="Correlation-and-Regression-Analysis.html#Correlation-and-Regression-Analysis">26.4 Correlation and Regression Analysis</a>
+<li><a href="Distributions.html#Distributions">26.5 Distributions</a>
+<li><a href="Tests.html#Tests">26.6 Tests</a>
+<li><a href="Random-Number-Generation.html#Random-Number-Generation">26.7 Random Number Generation</a>
 </li></ul>
-<li><a name="toc_Sets" href="Sets.html#Sets">26 Sets</a>
+<li><a name="toc_Sets" href="Sets.html#Sets">27 Sets</a>
 <ul>
-<li><a href="Set-Operations.html#Set-Operations">26.1 Set Operations</a>
+<li><a href="Set-Operations.html#Set-Operations">27.1 Set Operations</a>
 </li></ul>
-<li><a name="toc_Polynomial-Manipulations" href="Polynomial-Manipulations.html#Polynomial-Manipulations">27 Polynomial Manipulations</a>
+<li><a name="toc_Polynomial-Manipulations" href="Polynomial-Manipulations.html#Polynomial-Manipulations">28 Polynomial Manipulations</a>
 <ul>
-<li><a href="Evaluating-Polynomials.html#Evaluating-Polynomials">27.1 Evaluating Polynomials</a>
-<li><a href="Finding-Roots.html#Finding-Roots">27.2 Finding Roots</a>
-<li><a href="Products-of-Polynomials.html#Products-of-Polynomials">27.3 Products of Polynomials</a>
-<li><a href="Derivatives-_002f-Integrals-_002f-Transforms.html#Derivatives-_002f-Integrals-_002f-Transforms">27.4 Derivatives / Integrals / Transforms</a>
-<li><a href="Polynomial-Interpolation.html#Polynomial-Interpolation">27.5 Polynomial Interpolation</a>
-<li><a href="Miscellaneous-Functions.html#Miscellaneous-Functions">27.6 Miscellaneous Functions</a>
+<li><a href="Evaluating-Polynomials.html#Evaluating-Polynomials">28.1 Evaluating Polynomials</a>
+<li><a href="Finding-Roots.html#Finding-Roots">28.2 Finding Roots</a>
+<li><a href="Products-of-Polynomials.html#Products-of-Polynomials">28.3 Products of Polynomials</a>
+<li><a href="Derivatives-_002f-Integrals-_002f-Transforms.html#Derivatives-_002f-Integrals-_002f-Transforms">28.4 Derivatives / Integrals / Transforms</a>
+<li><a href="Polynomial-Interpolation.html#Polynomial-Interpolation">28.5 Polynomial Interpolation</a>
+<li><a href="Miscellaneous-Functions.html#Miscellaneous-Functions">28.6 Miscellaneous Functions</a>
 </li></ul>
-<li><a name="toc_Interpolation" href="Interpolation.html#Interpolation">28 Interpolation</a>
+<li><a name="toc_Interpolation" href="Interpolation.html#Interpolation">29 Interpolation</a>
 <ul>
-<li><a href="One_002ddimensional-Interpolation.html#One_002ddimensional-Interpolation">28.1 One-dimensional Interpolation</a>
-<li><a href="Multi_002ddimensional-Interpolation.html#Multi_002ddimensional-Interpolation">28.2 Multi-dimensional Interpolation</a>
+<li><a href="One_002ddimensional-Interpolation.html#One_002ddimensional-Interpolation">29.1 One-dimensional Interpolation</a>
+<li><a href="Multi_002ddimensional-Interpolation.html#Multi_002ddimensional-Interpolation">29.2 Multi-dimensional Interpolation</a>
 </li></ul>
-<li><a name="toc_Geometry" href="Geometry.html#Geometry">29 Geometry</a>
+<li><a name="toc_Geometry" href="Geometry.html#Geometry">30 Geometry</a>
 <ul>
-<li><a href="Delaunay-Triangulation.html#Delaunay-Triangulation">29.1 Delaunay Triangulation</a>
+<li><a href="Delaunay-Triangulation.html#Delaunay-Triangulation">30.1 Delaunay Triangulation</a>
 <ul>
-<li><a href="Plotting-the-Triangulation.html#Plotting-the-Triangulation">29.1.1 Plotting the Triangulation</a>
-<li><a href="Identifying-Points-in-Triangulation.html#Identifying-Points-in-Triangulation">29.1.2 Identifying Points in Triangulation</a>
+<li><a href="Plotting-the-Triangulation.html#Plotting-the-Triangulation">30.1.1 Plotting the Triangulation</a>
+<li><a href="Identifying-Points-in-Triangulation.html#Identifying-Points-in-Triangulation">30.1.2 Identifying Points in Triangulation</a>
 </li></ul>
-<li><a href="Voronoi-Diagrams.html#Voronoi-Diagrams">29.2 Voronoi Diagrams</a>
-<li><a href="Convex-Hull.html#Convex-Hull">29.3 Convex Hull</a>
-<li><a href="Interpolation-on-Scattered-Data.html#Interpolation-on-Scattered-Data">29.4 Interpolation on Scattered Data</a>
+<li><a href="Voronoi-Diagrams.html#Voronoi-Diagrams">30.2 Voronoi Diagrams</a>
+<li><a href="Convex-Hull.html#Convex-Hull">30.3 Convex Hull</a>
+<li><a href="Interpolation-on-Scattered-Data.html#Interpolation-on-Scattered-Data">30.4 Interpolation on Scattered Data</a>
 </li></ul>
-<li><a name="toc_Signal-Processing" href="Signal-Processing.html#Signal-Processing">30 Signal Processing</a>
-<li><a name="toc_Image-Processing" href="Image-Processing.html#Image-Processing">31 Image Processing</a>
+<li><a name="toc_Signal-Processing" href="Signal-Processing.html#Signal-Processing">31 Signal Processing</a>
+<li><a name="toc_Image-Processing" href="Image-Processing.html#Image-Processing">32 Image Processing</a>
 <ul>
-<li><a href="Loading-and-Saving-Images.html#Loading-and-Saving-Images">31.1 Loading and Saving Images</a>
-<li><a href="Displaying-Images.html#Displaying-Images">31.2 Displaying Images</a>
-<li><a href="Representing-Images.html#Representing-Images">31.3 Representing Images</a>
-<li><a href="Plotting-on-top-of-Images.html#Plotting-on-top-of-Images">31.4 Plotting on top of Images</a>
-<li><a href="Color-Conversion.html#Color-Conversion">31.5 Color Conversion</a>
+<li><a href="Loading-and-Saving-Images.html#Loading-and-Saving-Images">32.1 Loading and Saving Images</a>
+<li><a href="Displaying-Images.html#Displaying-Images">32.2 Displaying Images</a>
+<li><a href="Representing-Images.html#Representing-Images">32.3 Representing Images</a>
+<li><a href="Plotting-on-top-of-Images.html#Plotting-on-top-of-Images">32.4 Plotting on top of Images</a>
+<li><a href="Color-Conversion.html#Color-Conversion">32.5 Color Conversion</a>
 </li></ul>
-<li><a name="toc_Audio-Processing" href="Audio-Processing.html#Audio-Processing">32 Audio Processing</a>
-<li><a name="toc_Object-Oriented-Programming" href="Object-Oriented-Programming.html#Object-Oriented-Programming">33 Object Oriented Programming</a>
+<li><a name="toc_Audio-Processing" href="Audio-Processing.html#Audio-Processing">33 Audio Processing</a>
+<li><a name="toc_Object-Oriented-Programming" href="Object-Oriented-Programming.html#Object-Oriented-Programming">34 Object Oriented Programming</a>
 <ul>
-<li><a href="Creating-a-Class.html#Creating-a-Class">33.1 Creating a Class</a>
-<li><a href="Manipulating-Classes.html#Manipulating-Classes">33.2 Manipulating Classes</a>
-<li><a href="Indexing-Objects.html#Indexing-Objects">33.3 Indexing Objects</a>
+<li><a href="Creating-a-Class.html#Creating-a-Class">34.1 Creating a Class</a>
+<li><a href="Manipulating-Classes.html#Manipulating-Classes">34.2 Manipulating Classes</a>
+<li><a href="Indexing-Objects.html#Indexing-Objects">34.3 Indexing Objects</a>
 <ul>
-<li><a href="Defining-Indexing-And-Indexed-Assignment.html#Defining-Indexing-And-Indexed-Assignment">33.3.1 Defining Indexing And Indexed Assignment</a>
-<li><a href="Indexed-Assignment-Optimization.html#Indexed-Assignment-Optimization">33.3.2 Indexed Assignment Optimization</a>
+<li><a href="Defining-Indexing-And-Indexed-Assignment.html#Defining-Indexing-And-Indexed-Assignment">34.3.1 Defining Indexing And Indexed Assignment</a>
+<li><a href="Indexed-Assignment-Optimization.html#Indexed-Assignment-Optimization">34.3.2 Indexed Assignment Optimization</a>
 </li></ul>
-<li><a href="Overloading-Objects.html#Overloading-Objects">33.4 Overloading Objects</a>
+<li><a href="Overloading-Objects.html#Overloading-Objects">34.4 Overloading Objects</a>
 <ul>
-<li><a href="Function-Overloading.html#Function-Overloading">33.4.1 Function Overloading</a>
-<li><a href="Operator-Overloading.html#Operator-Overloading">33.4.2 Operator Overloading</a>
-<li><a href="Precedence-of-Objects.html#Precedence-of-Objects">33.4.3 Precedence of Objects</a>
+<li><a href="Function-Overloading.html#Function-Overloading">34.4.1 Function Overloading</a>
+<li><a href="Operator-Overloading.html#Operator-Overloading">34.4.2 Operator Overloading</a>
+<li><a href="Precedence-of-Objects.html#Precedence-of-Objects">34.4.3 Precedence of Objects</a>
 </li></ul>
-<li><a href="Inheritance-and-Aggregation.html#Inheritance-and-Aggregation">33.5 Inheritance and Aggregation</a>
+<li><a href="Inheritance-and-Aggregation.html#Inheritance-and-Aggregation">34.5 Inheritance and Aggregation</a>
 </li></ul>
-<li><a name="toc_System-Utilities" href="System-Utilities.html#System-Utilities">34 System Utilities</a>
+<li><a name="toc_GUI-Development" href="GUI-Development.html#GUI-Development">35 GUI Development</a>
 <ul>
-<li><a href="Timing-Utilities.html#Timing-Utilities">34.1 Timing Utilities</a>
-<li><a href="Filesystem-Utilities.html#Filesystem-Utilities">34.2 Filesystem Utilities</a>
-<li><a href="File-Archiving-Utilities.html#File-Archiving-Utilities">34.3 File Archiving Utilities</a>
-<li><a href="Networking-Utilities.html#Networking-Utilities">34.4 Networking Utilities</a>
-<ul>
-<li><a href="FTP-Objects.html#FTP-Objects">34.4.1 FTP Objects</a>
-<li><a href="URL-Manipulation.html#URL-Manipulation">34.4.2 URL Manipulation</a>
+<li><a href="I_002fO-Dialogs.html#I_002fO-Dialogs">35.1 I/O Dialogs</a>
+<li><a href="Progress-Bar.html#Progress-Bar">35.2 Progress Bar</a>
+<li><a href="GUI-Utility-Functions.html#GUI-Utility-Functions">35.3 GUI Utility Functions</a>
+<li><a href="User_002dDefined-Preferences.html#User_002dDefined-Preferences">35.4 User-Defined Preferences</a>
 </li></ul>
-<li><a href="Controlling-Subprocesses.html#Controlling-Subprocesses">34.5 Controlling Subprocesses</a>
-<li><a href="Process-ID-Information.html#Process-ID-Information">34.6 Process, Group, and User IDs</a>
-<li><a href="Environment-Variables.html#Environment-Variables">34.7 Environment Variables</a>
-<li><a href="Current-Working-Directory.html#Current-Working-Directory">34.8 Current Working Directory</a>
-<li><a href="Password-Database-Functions.html#Password-Database-Functions">34.9 Password Database Functions</a>
-<li><a href="Group-Database-Functions.html#Group-Database-Functions">34.10 Group Database Functions</a>
-<li><a href="System-Information.html#System-Information">34.11 System Information</a>
-<li><a href="Hashing-Functions.html#Hashing-Functions">34.12 Hashing Functions</a>
+<li><a name="toc_System-Utilities" href="System-Utilities.html#System-Utilities">36 System Utilities</a>
+<ul>
+<li><a href="Timing-Utilities.html#Timing-Utilities">36.1 Timing Utilities</a>
+<li><a href="Filesystem-Utilities.html#Filesystem-Utilities">36.2 Filesystem Utilities</a>
+<li><a href="File-Archiving-Utilities.html#File-Archiving-Utilities">36.3 File Archiving Utilities</a>
+<li><a href="Networking-Utilities.html#Networking-Utilities">36.4 Networking Utilities</a>
+<ul>
+<li><a href="FTP-Objects.html#FTP-Objects">36.4.1 FTP Objects</a>
+<li><a href="URL-Manipulation.html#URL-Manipulation">36.4.2 URL Manipulation</a>
 </li></ul>
-<li><a name="toc_Packages" href="Packages.html#Packages">35 Packages</a>
+<li><a href="Controlling-Subprocesses.html#Controlling-Subprocesses">36.5 Controlling Subprocesses</a>
+<li><a href="Process-ID-Information.html#Process-ID-Information">36.6 Process, Group, and User IDs</a>
+<li><a href="Environment-Variables.html#Environment-Variables">36.7 Environment Variables</a>
+<li><a href="Current-Working-Directory.html#Current-Working-Directory">36.8 Current Working Directory</a>
+<li><a href="Password-Database-Functions.html#Password-Database-Functions">36.9 Password Database Functions</a>
+<li><a href="Group-Database-Functions.html#Group-Database-Functions">36.10 Group Database Functions</a>
+<li><a href="System-Information.html#System-Information">36.11 System Information</a>
+<li><a href="Hashing-Functions.html#Hashing-Functions">36.12 Hashing Functions</a>
+</li></ul>
+<li><a name="toc_Packages" href="Packages.html#Packages">37 Packages</a>
 <ul>
-<li><a href="Installing-and-Removing-Packages.html#Installing-and-Removing-Packages">35.1 Installing and Removing Packages</a>
-<li><a href="Using-Packages.html#Using-Packages">35.2 Using Packages</a>
-<li><a href="Administrating-Packages.html#Administrating-Packages">35.3 Administrating Packages</a>
-<li><a href="Creating-Packages.html#Creating-Packages">35.4 Creating Packages</a>
+<li><a href="Installing-and-Removing-Packages.html#Installing-and-Removing-Packages">37.1 Installing and Removing Packages</a>
+<li><a href="Using-Packages.html#Using-Packages">37.2 Using Packages</a>
+<li><a href="Administrating-Packages.html#Administrating-Packages">37.3 Administrating Packages</a>
+<li><a href="Creating-Packages.html#Creating-Packages">37.4 Creating Packages</a>
 <ul>
-<li><a href="The-DESCRIPTION-File.html#The-DESCRIPTION-File">35.4.1 The DESCRIPTION File</a>
-<li><a href="The-INDEX-File.html#The-INDEX-File">35.4.2 The INDEX File</a>
-<li><a href="PKG_005fADD-and-PKG_005fDEL-Directives.html#PKG_005fADD-and-PKG_005fDEL-Directives">35.4.3 PKG_ADD and PKG_DEL Directives</a>
+<li><a href="The-DESCRIPTION-File.html#The-DESCRIPTION-File">37.4.1 The DESCRIPTION File</a>
+<li><a href="The-INDEX-File.html#The-INDEX-File">37.4.2 The INDEX File</a>
+<li><a href="PKG_005fADD-and-PKG_005fDEL-Directives.html#PKG_005fADD-and-PKG_005fDEL-Directives">37.4.3 PKG_ADD and PKG_DEL Directives</a>
 </li></ul>
 </li></ul>
 <li><a name="toc_Dynamically-Linked-Functions" href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Appendix A Dynamically Linked Functions</a>
@@ -604,18 +636,19 @@ modified versions.
 <li><a name="toc_Tips-and-Standards" href="Tips-and-Standards.html#Tips-and-Standards">Appendix C Tips and Standards</a>
 <ul>
 <li><a href="Style-Tips.html#Style-Tips">C.1 Writing Clean Octave Programs</a>
-<li><a href="Coding-Tips.html#Coding-Tips">C.2 Tips for Making Code Run Faster.</a>
-<li><a href="Comment-Tips.html#Comment-Tips">C.3 Tips on Writing Comments</a>
-<li><a href="Function-Headers.html#Function-Headers">C.4 Conventional Headers for Octave Functions</a>
-<li><a href="Documentation-Tips.html#Documentation-Tips">C.5 Tips for Documentation Strings</a>
+<li><a href="Comment-Tips.html#Comment-Tips">C.2 Tips on Writing Comments</a>
+<li><a href="Function-Headers.html#Function-Headers">C.3 Conventional Headers for Octave Functions</a>
+<li><a href="Documentation-Tips.html#Documentation-Tips">C.4 Tips for Documentation Strings</a>
 </li></ul>
 <li><a name="toc_Contributing-Guidelines" href="Contributing-Guidelines.html#Contributing-Guidelines">Appendix D Contributing Guidelines</a>
 <ul>
 <li><a href="How-to-Contribute.html#How-to-Contribute">D.1 How to Contribute</a>
-<li><a href="General-Guidelines.html#General-Guidelines">D.2 General Guidelines</a>
-<li><a href="Octave-Sources-_0028m_002dfiles_0029.html#Octave-Sources-_0028m_002dfiles_0029">D.3 Octave Sources (m-files)</a>
-<li><a href="C_002b_002b-Sources.html#C_002b_002b-Sources">D.4 C++ Sources</a>
-<li><a href="Other-Sources.html#Other-Sources">D.5 Other Sources</a>
+<li><a href="Building-the-Development-Sources.html#Building-the-Development-Sources">D.2 Building the Development Sources</a>
+<li><a href="Basics-of-Generating-a-Changeset.html#Basics-of-Generating-a-Changeset">D.3 Basics of Generating a Changeset</a>
+<li><a href="General-Guidelines.html#General-Guidelines">D.4 General Guidelines</a>
+<li><a href="Octave-Sources-_0028m_002dfiles_0029.html#Octave-Sources-_0028m_002dfiles_0029">D.5 Octave Sources (m-files)</a>
+<li><a href="C_002b_002b-Sources.html#C_002b_002b-Sources">D.6 C++ Sources</a>
+<li><a href="Other-Sources.html#Other-Sources">D.7 Other Sources</a>
 </li></ul>
 <li><a name="toc_Obsolete-Functions" href="Obsolete-Functions.html#Obsolete-Functions">Appendix E Obsolete Functions</a>
 <li><a name="toc_Trouble" href="Trouble.html#Trouble">Appendix F Known Causes of Trouble</a>
@@ -632,8 +665,15 @@ modified versions.
 </li></ul>
 <li><a name="toc_Installation" href="Installation.html#Installation">Appendix G Installing Octave</a>
 <ul>
-<li><a href="Compiling-Octave-with-64_002dbit-Indexing.html#Compiling-Octave-with-64_002dbit-Indexing">G.1 Compiling Octave with 64-bit Indexing</a>
-<li><a href="Installation-Problems.html#Installation-Problems">G.2 Installation Problems</a>
+<li><a href="Build-Dependencies.html#Build-Dependencies">G.1 Build Dependencies</a>
+<ul>
+<li><a href="Tips-for-Specific-Systems.html#Tips-for-Specific-Systems">G.1.1 Tips for Specific Systems</a>
+<li><a href="Build-Tools.html#Build-Tools">G.1.2 Build Tools</a>
+<li><a href="External-Packages.html#External-Packages">G.1.3 External Packages</a>
+</li></ul>
+<li><a href="Running-Configure-and-Make.html#Running-Configure-and-Make">G.2 Running Configure and Make</a>
+<li><a href="Compiling-Octave-with-64_002dbit-Indexing.html#Compiling-Octave-with-64_002dbit-Indexing">G.3 Compiling Octave with 64-bit Indexing</a>
+<li><a href="Installation-Problems.html#Installation-Problems">G.4 Installation Problems</a>
 </li></ul>
 <li><a name="toc_Emacs-Octave-Support" href="Emacs-Octave-Support.html#Emacs-Octave-Support">Appendix H Emacs Octave Support</a>
 <ul>
@@ -642,7 +682,12 @@ modified versions.
 <li><a href="Running-Octave-from-Within-Emacs.html#Running-Octave-from-Within-Emacs">H.3 Running Octave from Within Emacs</a>
 <li><a href="Using-the-Emacs-Info-Reader-for-Octave.html#Using-the-Emacs-Info-Reader-for-Octave">H.4 Using the Emacs Info Reader for Octave</a>
 </li></ul>
-<li><a name="toc_Copying" href="Copying.html#Copying">Appendix I GNU GENERAL PUBLIC LICENSE</a>
+<li><a name="toc_Grammar-and-Parser" href="Grammar-and-Parser.html#Grammar-and-Parser">Appendix I Grammar and Parser</a>
+<ul>
+<li><a href="Keywords.html#Keywords">I.1 Keywords</a>
+<li><a href="Parser.html#Parser">I.2 Parser</a>
+</li></ul>
+<li><a name="toc_Copying" href="Copying.html#Copying">Appendix J GNU GENERAL PUBLIC LICENSE</a>
 <li><a name="toc_Concept-Index" href="Concept-Index.html#Concept-Index">Concept Index</a>
 <li><a name="toc_Function-Index" href="Function-Index.html#Function-Index">Function Index</a>
 <li><a name="toc_Operator-Index" href="Operator-Index.html#Operator-Index">Operator Index</a>
@@ -661,7 +706,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
 
 <p>This manual documents how to run, install and port GNU Octave, as well
 as its new features and incompatibilities, and how to report bugs. 
-It corresponds to GNU Octave version 3.4.0.
+It corresponds to GNU Octave version 3.6.0.
 
 <!--  -->
 <ul class="menu">
@@ -684,6 +729,7 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Matrix-Manipulation.html#Matrix-Manipulation">Matrix Manipulation</a>
 <li><a href="Arithmetic.html#Arithmetic">Arithmetic</a>
 <li><a href="Linear-Algebra.html#Linear-Algebra">Linear Algebra</a>
+<li><a href="Vectorization-and-Faster-Code-Execution.html#Vectorization-and-Faster-Code-Execution">Vectorization and Faster Code Execution</a>
 <li><a href="Nonlinear-Equations.html#Nonlinear-Equations">Nonlinear Equations</a>
 <li><a href="Diagonal-and-Permutation-Matrices.html#Diagonal-and-Permutation-Matrices">Diagonal and Permutation Matrices</a>
 <li><a href="Sparse-Matrices.html#Sparse-Matrices">Sparse Matrices</a>
@@ -699,6 +745,7 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Image-Processing.html#Image-Processing">Image Processing</a>
 <li><a href="Audio-Processing.html#Audio-Processing">Audio Processing</a>
 <li><a href="Object-Oriented-Programming.html#Object-Oriented-Programming">Object Oriented Programming</a>
+<li><a href="GUI-Development.html#GUI-Development">GUI Development</a>
 <li><a href="System-Utilities.html#System-Utilities">System Utilities</a>
 <li><a href="Packages.html#Packages">Packages</a>
 <li><a href="Dynamically-Linked-Functions.html#Dynamically-Linked-Functions">Dynamically Linked Functions</a>
@@ -709,7 +756,7 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Trouble.html#Trouble">Trouble</a>:                      If you have trouble installing Octave. 
 <li><a href="Installation.html#Installation">Installation</a>:                 How to configure, compile and install Octave. 
 <li><a href="Emacs-Octave-Support.html#Emacs-Octave-Support">Emacs Octave Support</a>
-<!-- * Grammar:: -->
+<li><a href="Grammar-and-Parser.html#Grammar-and-Parser">Grammar and Parser</a>
 <li><a href="Copying.html#Copying">Copying</a>:                      The GNU General Public License. 
 <li><a href="Concept-Index.html#Concept-Index">Concept Index</a>:                An item for each concept. 
 <li><a href="Function-Index.html#Function-Index">Function Index</a>:               An item for each documented function. 
@@ -873,12 +920,12 @@ It corresponds to GNU Octave version 3.4.0.
 
 </p>
 <ul class="menu">
-<li><a href="Data-Structures.html#Data-Structures">Data Structures</a>
+<li><a href="Structures.html#Structures">Structures</a>
 <li><a href="Cell-Arrays.html#Cell-Arrays">Cell Arrays</a>
 <li><a href="Comma-Separated-Lists.html#Comma-Separated-Lists">Comma Separated Lists</a>
 
 </li></ul>
-<p>Data Structures
+<p>Structures
 
 </p>
 <ul class="menu">
@@ -929,6 +976,13 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Assignment-Ops.html#Assignment-Ops">Assignment Ops</a>
 <li><a href="Increment-Ops.html#Increment-Ops">Increment Ops</a>
 <li><a href="Operator-Precedence.html#Operator-Precedence">Operator Precedence</a>
+
+</li></ul>
+<p>Index Expressions
+
+</p>
+<ul class="menu">
+<li><a href="Advanced-Indexing.html#Advanced-Indexing">Advanced Indexing</a>
 
 </li></ul>
 <p>Calling Functions
@@ -1038,6 +1092,7 @@ It corresponds to GNU Octave version 3.4.0.
 <ul class="menu">
 <li><a href="Raising-Errors.html#Raising-Errors">Raising Errors</a>
 <li><a href="Catching-Errors.html#Catching-Errors">Catching Errors</a>
+<li><a href="Recovering-From-Errors.html#Recovering-From-Errors">Recovering From Errors</a>
 
 </li></ul>
 <p>Handling Warnings
@@ -1057,6 +1112,8 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Breakpoints.html#Breakpoints">Breakpoints</a>
 <li><a href="Debug-Mode.html#Debug-Mode">Debug Mode</a>
 <li><a href="Call-Stack.html#Call-Stack">Call Stack</a>
+<li><a href="Profiling.html#Profiling">Profiling</a>
+<li><a href="Profiler-Example.html#Profiler-Example">Profiler Example</a>
 
 </li></ul>
 <p>Input and Output
@@ -1074,7 +1131,6 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Terminal-Output.html#Terminal-Output">Terminal Output</a>
 <li><a href="Terminal-Input.html#Terminal-Input">Terminal Input</a>
 <li><a href="Simple-File-I_002fO.html#Simple-File-I_002fO">Simple File I/O</a>
-<li><a href="Rational-Approximations.html#Rational-Approximations">Rational Approximations</a>
 
 </li></ul>
 <p>Terminal Output
@@ -1131,7 +1187,7 @@ It corresponds to GNU Octave version 3.4.0.
 </p>
 <ul class="menu">
 <li><a href="Two_002dDimensional-Plots.html#Two_002dDimensional-Plots">Two-Dimensional Plots</a>
-<li><a href="Three_002dDimensional-Plotting.html#Three_002dDimensional-Plotting">Three-Dimensional Plotting</a>
+<li><a href="Three_002dDimensional-Plots.html#Three_002dDimensional-Plots">Three-Dimensional Plots</a>
 <li><a href="Plot-Annotations.html#Plot-Annotations">Plot Annotations</a>
 <li><a href="Multiple-Plots-on-One-Page.html#Multiple-Plots-on-One-Page">Multiple Plots on One Page</a>
 <li><a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows">Multiple Plot Windows</a>
@@ -1144,13 +1200,16 @@ It corresponds to GNU Octave version 3.4.0.
 
 </p>
 <ul class="menu">
+<li><a href="Axis-Configuration.html#Axis-Configuration">Axis Configuration</a>
 <li><a href="Two_002ddimensional-Function-Plotting.html#Two_002ddimensional-Function-Plotting">Two-dimensional Function Plotting</a>
+<li><a href="Two_002ddimensional-Geometric-Shapes.html#Two_002ddimensional-Geometric-Shapes">Two-dimensional Geometric Shapes</a>
 
 </li></ul>
-<p>Three-Dimensional Plotting
+<p>Three-Dimensional Plots
 
 </p>
 <ul class="menu">
+<li><a href="Aspect-Ratio.html#Aspect-Ratio">Aspect Ratio</a>
 <li><a href="Three_002ddimensional-Function-Plotting.html#Three_002ddimensional-Function-Plotting">Three-dimensional Function Plotting</a>
 <li><a href="Three_002ddimensional-Geometric-Shapes.html#Three_002ddimensional-Geometric-Shapes">Three-dimensional Geometric Shapes</a>
 
@@ -1188,6 +1247,7 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Line-Styles.html#Line-Styles">Line Styles</a>
 <li><a href="Marker-Styles.html#Marker-Styles">Marker Styles</a>
 <li><a href="Callbacks.html#Callbacks">Callbacks</a>
+<li><a href="Application_002ddefined-Data.html#Application_002ddefined-Data">Application-defined Data</a>
 <li><a href="Object-Groups.html#Object-Groups">Object Groups</a>
 <li><a href="Graphics-Toolkits.html#Graphics-Toolkits">Graphics Toolkits</a>
 
@@ -1222,7 +1282,6 @@ It corresponds to GNU Octave version 3.4.0.
 <ul class="menu">
 <li><a href="Finding-Elements-and-Checking-Conditions.html#Finding-Elements-and-Checking-Conditions">Finding Elements and Checking Conditions</a>
 <li><a href="Rearranging-Matrices.html#Rearranging-Matrices">Rearranging Matrices</a>
-<li><a href="Applying-a-Function-to-an-Array.html#Applying-a-Function-to-an-Array">Applying a Function to an Array</a>
 <li><a href="Special-Utility-Matrices.html#Special-Utility-Matrices">Special Utility Matrices</a>
 <li><a href="Famous-Matrices.html#Famous-Matrices">Famous Matrices</a>
 
@@ -1251,6 +1310,26 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Matrix-Factorizations.html#Matrix-Factorizations">Matrix Factorizations</a>
 <li><a href="Functions-of-a-Matrix.html#Functions-of-a-Matrix">Functions of a Matrix</a>
 <li><a href="Specialized-Solvers.html#Specialized-Solvers">Specialized Solvers</a>
+
+</li></ul>
+<p>Vectorization and Faster Code Execution
+
+</p>
+<ul class="menu">
+<li><a href="Basic-Vectorization.html#Basic-Vectorization">Basic Vectorization</a>:         Basic techniques for code optimization
+<li><a href="Broadcasting.html#Broadcasting">Broadcasting</a>:                Broadcasting operations
+<li><a href="Function-Application.html#Function-Application">Function Application</a>:        Applying functions to arrays, cells, and structs
+<li><a href="Accumulation.html#Accumulation">Accumulation</a>:                Accumulation functions
+<li><a href="Miscellaneous-Techniques.html#Miscellaneous-Techniques">Miscellaneous Techniques</a>:    Other techniques for speeding up code
+<li><a href="Examples.html#Examples">Examples</a>
+
+</li></ul>
+<p>Nonlinear Equations
+
+</p>
+<ul class="menu">
+<li><a href="Solvers.html#Solvers">Solvers</a>
+<li><a href="Minimizers.html#Minimizers">Minimizers</a>
 
 </li></ul>
 <p>Diagonal and Permutation Matrices
@@ -1323,8 +1402,8 @@ It corresponds to GNU Octave version 3.4.0.
 </p>
 <ul class="menu">
 <li><a href="Functions-of-One-Variable.html#Functions-of-One-Variable">Functions of One Variable</a>
-<li><a href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables">Functions of Multiple Variables</a>
 <li><a href="Orthogonal-Collocation.html#Orthogonal-Collocation">Orthogonal Collocation</a>
+<li><a href="Functions-of-Multiple-Variables.html#Functions-of-Multiple-Variables">Functions of Multiple Variables</a>
 
 </li></ul>
 <p>Differential Equations
@@ -1442,6 +1521,16 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Precedence-of-Objects.html#Precedence-of-Objects">Precedence of Objects</a>
 
 </li></ul>
+<p>GUI Development
+
+</p>
+<ul class="menu">
+<li><a href="I_002fO-Dialogs.html#I_002fO-Dialogs">I/O Dialogs</a>
+<li><a href="Progress-Bar.html#Progress-Bar">Progress Bar</a>
+<li><a href="GUI-Utility-Functions.html#GUI-Utility-Functions">GUI Utility Functions</a>
+<li><a href="User_002dDefined-Preferences.html#User_002dDefined-Preferences">User-Defined Preferences</a>
+
+</li></ul>
 <p>System Utilities
 
 </p>
@@ -1550,7 +1639,6 @@ It corresponds to GNU Octave version 3.4.0.
 </p>
 <ul class="menu">
 <li><a href="Style-Tips.html#Style-Tips">Style Tips</a>:                   Writing clean and robust programs. 
-<li><a href="Coding-Tips.html#Coding-Tips">Coding Tips</a>:                  Making code run faster. 
 <li><a href="Comment-Tips.html#Comment-Tips">Comment Tips</a>:                 Conventions for writing comments. 
 <li><a href="Function-Headers.html#Function-Headers">Function Headers</a>:             Standard headers for functions. 
 <li><a href="Documentation-Tips.html#Documentation-Tips">Documentation Tips</a>:           Writing readable documentation strings.
@@ -1561,6 +1649,8 @@ It corresponds to GNU Octave version 3.4.0.
 </p>
 <ul class="menu">
 <li><a href="How-to-Contribute.html#How-to-Contribute">How to Contribute</a>
+<li><a href="Building-the-Development-Sources.html#Building-the-Development-Sources">Building the Development Sources</a>
+<li><a href="Basics-of-Generating-a-Changeset.html#Basics-of-Generating-a-Changeset">Basics of Generating a Changeset</a>
 <li><a href="General-Guidelines.html#General-Guidelines">General Guidelines</a>
 <li><a href="Octave-Sources-_0028m_002dfiles_0029.html#Octave-Sources-_0028m_002dfiles_0029">Octave Sources (m-files)</a>
 <li><a href="C_002b_002b-Sources.html#C_002b_002b-Sources">C++ Sources</a>
@@ -1581,16 +1671,28 @@ It corresponds to GNU Octave version 3.4.0.
 </p>
 <ul class="menu">
 <li><a href="Bug-Criteria.html#Bug-Criteria">Bug Criteria</a>
-<li><a href="Bug-Tracker.html#Bug-Tracker">Bug Tracker</a>: ff               Where to submit your bug report. 
-<li><a href="Bug-Reporting.html#Bug-Reporting">Bug Reporting</a>:                How to report a bug effectively. 
-<li><a href="Sending-Patches.html#Sending-Patches">Sending Patches</a>:              How to send a patch for Octave.
+<li><a href="Bug-Tracker.html#Bug-Tracker">Bug Tracker</a>:         Where to submit your bug report. 
+<li><a href="Bug-Reporting.html#Bug-Reporting">Bug Reporting</a>:       How to report a bug effectively. 
+<li><a href="Sending-Patches.html#Sending-Patches">Sending Patches</a>:     How to send a patch for Octave.
 
 </li></ul>
 <p>Installation
 
 </p>
 <ul class="menu">
+<li><a href="Build-Dependencies.html#Build-Dependencies">Build Dependencies</a>
+<li><a href="Running-Configure-and-Make.html#Running-Configure-and-Make">Running Configure and Make</a>
+<li><a href="Compiling-Octave-with-64_002dbit-Indexing.html#Compiling-Octave-with-64_002dbit-Indexing">Compiling Octave with 64-bit Indexing</a>
 <li><a href="Installation-Problems.html#Installation-Problems">Installation Problems</a>
+
+</li></ul>
+<p>Build Dependencies
+
+</p>
+<ul class="menu">
+<li><a href="Tips-for-Specific-Systems.html#Tips-for-Specific-Systems">Tips for Specific Systems</a>
+<li><a href="Build-Tools.html#Build-Tools">Build Tools</a>
+<li><a href="External-Packages.html#External-Packages">External Packages</a>
 
 </li></ul>
 <p>Emacs Octave Support
@@ -1601,11 +1703,20 @@ It corresponds to GNU Octave version 3.4.0.
 <li><a href="Using-Octave-Mode.html#Using-Octave-Mode">Using Octave Mode</a>
 <li><a href="Running-Octave-from-Within-Emacs.html#Running-Octave-from-Within-Emacs">Running Octave from Within Emacs</a>
 <li><a href="Using-the-Emacs-Info-Reader-for-Octave.html#Using-the-Emacs-Info-Reader-for-Octave">Using the Emacs Info Reader for Octave</a>
-</ul>
+
+</li></ul>
+<p>Grammar and Parser
+
+</p>
+<ul class="menu">
+<li><a href="Keywords.html#Keywords">Keywords</a>
+<li><a href="Parser.html#Parser">Parser</a>
+
+   </ul>
 
 <!--  -->
 <!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
-<!-- Copyright (C) 1996-2011 John W. Eaton -->
+<!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->
 <!-- under the terms of the GNU General Public License as published by the -->

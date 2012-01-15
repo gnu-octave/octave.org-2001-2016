@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Boolean-Expressions.html#Boolean-Expres
 
 <h4 class="subsection">8.5.1 Element-by-element Boolean Operators</h4>
 
-<p><a name="index-element_002dby_002delement-evaluation-596"></a>
+<p><a name="index-element_002dby_002delement-evaluation-638"></a>
 An <dfn>element-by-element boolean expression</dfn> is a combination of
 comparison expressions using the boolean
 operators &ldquo;or&rdquo; (&lsquo;<samp><span class="samp">|</span></samp>&rsquo;), &ldquo;and&rdquo; (&lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo;), and &ldquo;not&rdquo; (&lsquo;<samp><span class="samp">!</span></samp>&rsquo;),
@@ -57,25 +57,25 @@ variable, or used in arithmetic.
    <p>Here are descriptions of the three element-by-element boolean operators.
 
      <dl>
-<dt><var>boolean1</var><code> &amp; </code><var>boolean2</var><dd><a name="index-g_t_0026-597"></a>Elements of the result are true if both corresponding elements of
+<dt><var>boolean1</var><code> &amp; </code><var>boolean2</var><dd><a name="index-g_t_0026-639"></a>Elements of the result are true if both corresponding elements of
 <var>boolean1</var> and <var>boolean2</var> are true.
 
-     <br><dt><var>boolean1</var><code> | </code><var>boolean2</var><dd><a name="index-g_t_007c-598"></a>Elements of the result are true if either of the corresponding elements
+     <br><dt><var>boolean1</var><code> | </code><var>boolean2</var><dd><a name="index-g_t_007c-640"></a>Elements of the result are true if either of the corresponding elements
 of <var>boolean1</var> or <var>boolean2</var> is true.
 
-     <br><dt><code>! </code><var>boolean</var><dt><code>~ </code><var>boolean</var><dd><a name="index-g_t_007e-599"></a><a name="index-g_t_0021-600"></a>Each element of the result is true if the corresponding element of
+     <br><dt><code>! </code><var>boolean</var><dt><code>~ </code><var>boolean</var><dd><a name="index-g_t_007e-641"></a><a name="index-g_t_0021-642"></a>Each element of the result is true if the corresponding element of
 <var>boolean</var> is false. 
 </dl>
 
-   <p>For matrix operands, these operators work on an element-by-element
-basis.  For example, the expression
+   <p>These operators work on an element-by-element basis.  For example, the
+expression
 
 <pre class="example">     [1, 0; 0, 1] &amp; [1, 0; 2, 3]
 </pre>
    <p class="noindent">returns a two by two identity matrix.
 
-   <p>For the binary operators, the dimensions of the operands must conform if
-both are matrices.  If one of the operands is a scalar and the other a
+   <p>For the binary operators, broadcasting rules apply.  See <a href="Broadcasting.html#Broadcasting">Broadcasting</a>. 
+In particular, if one of the operands is a scalar and the other a
 matrix, the operator is applied to the scalar and each element of the
 matrix.
 
@@ -92,12 +92,12 @@ effects.  For example, in the expression
    <p>This behavior is necessary for the boolean operators to work as
 described for matrix-valued operands.
 
-   <p><a name="index-g_t_0026-601"></a><!-- and src/data.cc -->
+   <p><a name="index-g_t_0026-643"></a><!-- and src/data.cc -->
 <a name="doc_002dand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>and</b> (<var>x, y</var>)<var><a name="index-and-602"></a></var><br>
-&mdash; Built-in Function:  <b>and</b> (<var>x1, x2, <small class="dots">...</small></var>)<var><a name="index-and-603"></a></var><br>
+&mdash; Built-in Function:  <b>and</b> (<var>x, y</var>)<var><a name="index-and-644"></a></var><br>
+&mdash; Built-in Function:  <b>and</b> (<var>x1, x2, <small class="dots">...</small></var>)<var><a name="index-and-645"></a></var><br>
 <blockquote><p>Return the logical AND of <var>x</var> and <var>y</var>. 
 This function is equivalent to <code>x&nbsp;&amp;&nbsp;y</code><!-- /@w -->. 
 If more arguments are given, the logical and is applied
@@ -110,29 +110,29 @@ cumulatively from left to right:
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dor.html#doc_002dor">or</a>, <a href="doc_002dnot.html#doc_002dnot">not</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dor.html#doc_002dor">or</a>, <a href="doc_002dnot.html#doc_002dnot">not</a>, <a href="doc_002dxor.html#doc_002dxor">xor</a>. 
 </p></blockquote></div>
 
-   <p><a name="index-g_t_007e-604"></a><a name="index-g_t_0021-605"></a><!-- not src/data.cc -->
+   <p><a name="index-g_t_007e-646"></a><a name="index-g_t_0021-647"></a><!-- not src/data.cc -->
 <a name="doc_002dnot"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>not</b> (<var>x</var>)<var><a name="index-not-606"></a></var><br>
+&mdash; Built-in Function:  <b>not</b> (<var>x</var>)<var><a name="index-not-648"></a></var><br>
 <blockquote><p>Return the logical NOT of <var>x</var>.  This function is equivalent to
 <code>! x</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dand.html#doc_002dand">and</a>, <a href="doc_002dor.html#doc_002dor">or</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dand.html#doc_002dand">and</a>, <a href="doc_002dor.html#doc_002dor">or</a>, <a href="doc_002dxor.html#doc_002dxor">xor</a>. 
 </p></blockquote></div>
 
-   <p><a name="index-g_t_007c-607"></a><!-- or src/data.cc -->
+   <p><a name="index-g_t_007c-649"></a><!-- or src/data.cc -->
 <a name="doc_002dor"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>or</b> (<var>x, y</var>)<var><a name="index-or-608"></a></var><br>
-&mdash; Built-in Function:  <b>or</b> (<var>x1, x2, <small class="dots">...</small></var>)<var><a name="index-or-609"></a></var><br>
+&mdash; Built-in Function:  <b>or</b> (<var>x, y</var>)<var><a name="index-or-650"></a></var><br>
+&mdash; Built-in Function:  <b>or</b> (<var>x1, x2, <small class="dots">...</small></var>)<var><a name="index-or-651"></a></var><br>
 <blockquote><p>Return the logical OR of <var>x</var> and <var>y</var>. 
 This function is equivalent to <code>x&nbsp;|&nbsp;y</code><!-- /@w -->. 
 If more arguments are given, the logical or is applied
@@ -145,7 +145,7 @@ cumulatively from left to right:
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dand.html#doc_002dand">and</a>, <a href="doc_002dnot.html#doc_002dnot">not</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dand.html#doc_002dand">and</a>, <a href="doc_002dnot.html#doc_002dnot">not</a>, <a href="doc_002dxor.html#doc_002dxor">xor</a>. 
 </p></blockquote></div>
 
    </body></html>

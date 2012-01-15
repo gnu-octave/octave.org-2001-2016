@@ -76,14 +76,15 @@ object, such as <a href="doc_002dlength.html#doc_002dlength"><code>length</code>
    <p><a name="doc_002dcell"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>cell</b> (<var>x</var>)<var><a name="index-cell-417"></a></var><br>
-&mdash; Built-in Function:  <b>cell</b> (<var>n, m</var>)<var><a name="index-cell-418"></a></var><br>
-<blockquote><p>Create a new cell array object.  If invoked with a single scalar
-argument, <code>cell</code> returns a square cell array with the dimension
-specified.  If you supply two scalar arguments, <code>cell</code> takes
-them to be the number of rows and columns.  If given a vector with two
-elements, <code>cell</code> uses the values of the elements as the number of
-rows and columns, respectively. 
+&mdash; Built-in Function:  <b>cell</b> (<var>n</var>)<var><a name="index-cell-459"></a></var><br>
+&mdash; Built-in Function:  <b>cell</b> (<var>m, n</var>)<var><a name="index-cell-460"></a></var><br>
+&mdash; Built-in Function:  <b>cell</b> (<var>m, n, k, <small class="dots">...</small></var>)<var><a name="index-cell-461"></a></var><br>
+&mdash; Built-in Function:  <b>cell</b> ([<var>m n <small class="dots">...</small></var>])<var><a name="index-cell-462"></a></var><br>
+<blockquote><p>Create a new cell array object. 
+If invoked with a single scalar integer argument, return a square
+NxN cell array.  If invoked with two or more scalar
+integer arguments, or a vector of integer values, return an array with
+the given dimensions. 
 </p></blockquote></div>
 
    <p>As an alternative to creating empty cell arrays, and then filling them, it
@@ -94,8 +95,8 @@ is possible to convert numerical arrays into cell arrays using the
    <p><a name="doc_002dnum2cell"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>C</var> = <b>num2cell</b> (<var>A</var>)<var><a name="index-num2cell-419"></a></var><br>
-&mdash; Loadable Function: <var>C</var> = <b>num2cell</b> (<var>A, dim</var>)<var><a name="index-num2cell-420"></a></var><br>
+&mdash; Loadable Function: <var>C</var> = <b>num2cell</b> (<var>A</var>)<var><a name="index-num2cell-463"></a></var><br>
+&mdash; Loadable Function: <var>C</var> = <b>num2cell</b> (<var>A, dim</var>)<var><a name="index-num2cell-464"></a></var><br>
 <blockquote><p>Convert the numeric matrix <var>A</var> to a cell array.  If <var>dim</var> is
 defined, the value <var>C</var> is of dimension 1 in this dimension and the
 elements of <var>A</var> are placed into <var>C</var> in slices.  For example:
@@ -129,9 +130,9 @@ elements of <var>A</var> are placed into <var>C</var> in slices.  For example:
    <p><a name="doc_002dmat2cell"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>C</var> = <b>mat2cell</b> (<var>A, m, n</var>)<var><a name="index-mat2cell-421"></a></var><br>
-&mdash; Loadable Function: <var>C</var> = <b>mat2cell</b> (<var>A, d1, d2, <small class="dots">...</small></var>)<var><a name="index-mat2cell-422"></a></var><br>
-&mdash; Loadable Function: <var>C</var> = <b>mat2cell</b> (<var>A, r</var>)<var><a name="index-mat2cell-423"></a></var><br>
+&mdash; Loadable Function: <var>C</var> = <b>mat2cell</b> (<var>A, m, n</var>)<var><a name="index-mat2cell-465"></a></var><br>
+&mdash; Loadable Function: <var>C</var> = <b>mat2cell</b> (<var>A, d1, d2, <small class="dots">...</small></var>)<var><a name="index-mat2cell-466"></a></var><br>
+&mdash; Loadable Function: <var>C</var> = <b>mat2cell</b> (<var>A, r</var>)<var><a name="index-mat2cell-467"></a></var><br>
 <blockquote><p>Convert the matrix <var>A</var> to a cell array.  If <var>A</var> is 2-D, then
 it is required that <code>sum (</code><var>m</var><code>) == size (</code><var>A</var><code>, 1)</code> and
 <code>sum (</code><var>n</var><code>) == size (</code><var>A</var><code>, 2)</code>.  Similarly, if <var>A</var> is
@@ -175,7 +176,7 @@ arguments are assumed to equal <code>size (</code><var>A</var><code>,</code><var
    <p><a name="doc_002dcellslices"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>sl</var> = <b>cellslices</b> (<var>x, lb, ub, dim</var>)<var><a name="index-cellslices-424"></a></var><br>
+&mdash; Loadable Function: <var>sl</var> = <b>cellslices</b> (<var>x, lb, ub, dim</var>)<var><a name="index-cellslices-468"></a></var><br>
 <blockquote><p>Given an array <var>x</var>, this function produces a cell array of slices from
 the array determined by the index vectors <var>lb</var>, <var>ub</var>, for lower and
 upper bounds, respectively.  In other words, it is equivalent to the
@@ -189,6 +190,11 @@ following code:
 </pre>
         <p>The position of the index is determined by <var>dim</var>.  If not specified,
 slicing is done along the first non-singleton dimension. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dcell2mat.html#doc_002dcell2mat">cell2mat</a>, <a href="doc_002dcellindexmat.html#doc_002dcellindexmat">cellindexmat</a>, <a href="doc_002dcellfun.html#doc_002dcellfun">cellfun</a>. 
 </p></blockquote></div>
 
    </body></html>
