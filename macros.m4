@@ -80,7 +80,7 @@ define(`__NAVIGATION__',
  __nav_button__($1, `Octave News Archive', `news.html', `News Archive')
  __nav_button__($1, `Octave Documentation', `docs.html', `Docs')
  __ext_nav_button__(`wiki.octave.org', `Wiki')
- __nav_button__($1, `faq', `FAQ.html', `FAQ') 
+ __ext_nav_button__($1, `faq', `octave.org/wiki/index.php?title=FAQ', `FAQ') 
  __nav_button__($1, `Octave Help', `help.html', `Help') 
  __nav_button__($1, `Bugs', `bugs.html', `Bugs') 
  __nav_button__($1, `Octave Copyright Information', `license.html', `License')
