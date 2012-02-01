@@ -24,6 +24,10 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>February 1, 2012</dt>
+<dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
+2012</a> will take place during July 16-20 2012. All Octave users and
+developers invited!</dd>
 <dt>October 10, 2011</dt>
 <dd>Version 3.4.3 has been released and is now available for ftp.
 Octave 3.4.3 is a bug fixing release.</dd>
@@ -37,11 +41,6 @@ __OCTAVE_HTTP__(`sprint.html', `Code Sprints').
 your coffee and come mingle with other Octave programmers while
 we race to beat a coding goal.  See 
 __OCTAVE_HTTP__(`sprint.html', `Code Sprints') for all the details.
-<dt>June 24, 2011</dt>
-<dd>Version 3.4.2 has been released and is now available for ftp.
-Octave 3.4.2 fixes some minor installation problems that affected
-version 3.4.1.  See the __OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file
-for a list of changes.
 </dl>
 
 <p>For older news, see the
