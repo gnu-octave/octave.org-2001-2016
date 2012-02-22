@@ -1,16 +1,14 @@
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteBase /software/octave
-RewriteRule ^manual(.*) velveeta.che.wisc.edu/octave/doc$1
-RewriteRule ^mailing-lists(.*) http://velveeta.che.wisc.edu/octave/lists$1
-</IfModule>
-
 <FilesMatch "\.(in|m4)$">
   Order allow,deny
   Deny from all
 </FilesMatch>
 
 <FilesMatch "Makefile$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "CVS">
   Order allow,deny
   Deny from all
 </FilesMatch>
