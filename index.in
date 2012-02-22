@@ -24,6 +24,11 @@ __OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
 __TITLE_BAR__(`Current News')
 
 <dl>
+<dt>February 22, 2012</dt>
+<dd>Version 3.6.1 has been released and is now available for ftp.
+Octave 3.6.1 is a major new release.  See the
+__OCTAVE_HTTP__(`NEWS-3.6.html', `NEWS') file for a list of
+user-visible changes.</dd>
 <dt>February 1, 2012</dt>
 <dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
 2012</a> will take place during July 16-20 2012. All Octave users and
