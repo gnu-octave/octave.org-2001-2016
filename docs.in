@@ -3,7 +3,7 @@ __HEADER__(`Octave Documentation')
 <div class="section">
 
 <p>Octave is fully documented by a comprehensive
-__OCTAVE_HTTP__(`doc/interpreter', `725 page manual').
+__OCTAVE_HTTP__(`doc/interpreter/index.html', `725 page manual').
 
 <p>The on-line HTML version of the manual was generated directly from
 the Texinfo source files that are distributed along with every copy of
