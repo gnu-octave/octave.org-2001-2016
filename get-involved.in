@@ -1,0 +1,91 @@
+__header__([Get Involved])
+
+__nav_buttons__([get-involved])
+
+<div id="content">
+
+  <p>
+    We always need more help improving Octave and there are many ways
+    you can contribute.  You can help by fixing bugs, developing new
+    features, answering questions on the mailing list or IRC channel,
+    helping to improve the web pages.
+  </p>
+
+  <p>
+    If you are wondering what to work on, we have a standard answer:
+    what would you like to work on?  We try not to tell contributors
+    what to work on as most people do their best work when they are
+    within their own field of interest.  So, we would love your help,
+    but would also love for you to work on what you love.
+  </p>
+
+  <p>
+    If you need some inspiration, we do maintain
+    a <a href="http://www.octave.org/wiki/index.php?title=Projects">list of
+    possible projects</a> on the Wiki.
+  </p>
+
+  <p>
+    If you have an idea on what to contribute, then join the
+    maintainers mailing list and discuss your ideas there.  That way
+    others can provide input early on, which makes your contribution
+    more likely to get accepted.
+  </p>
+
+  <h1>Maintainers Mailing List</h1>
+  <p>
+    If you want to participate in Octave development, you should join
+    the <a href="https://mailman.cae.wisc.edu/listinfo/octave-maintainers"><tt>maintainers@octave.org</tt></a> mailing list.
+  </p>
+
+  <h1>Using the Development Sources</h1>
+  <p>
+    The latest development sources of Octave are also available via
+    anonymous access to a read-only
+    <a href="http://www.selenic.com/mercurial/wiki">Mercurial</a>
+    archive.
+  </p>
+
+  <p>
+    The primary archive address
+    is <a href="http://www.octave.org/hg/octave">http://www.octave.org/hg/octave</a>, 
+    which currently redirects
+    to <a href="http://hg.savannah.gnu.org/hgweb/octave">http://hg.savannah.gnu.org/hgweb/octave</a>.
+  </p>
+
+  <p>
+    If you decide to use the development sources from the Mercurial
+    archive, please read the
+    file <a href="http://www.octave.org/hg/octave/file/tip/etc/HACKING"><tt>etc/HACKING</tt></a>
+    that is available with the source files.
+  </p> 
+
+  <p>
+    Assuming you have Mercurial installed on your machine you may
+    check out the latest development version of Octave sources with
+    the following command:
+  </p>
+
+  <div id="code">
+    <code>hg clone http://www.octave.org/hg/octave</code>
+  </div>
+
+  <p>
+    Once you have the repository checked out, you can resync with the
+    archive by doing
+  </p> 
+
+  <div id="code">
+    <code>hg pull http://www.octave.org/hg/octave</code><br>
+    <code>hg update</code><br>
+  </div>
+
+  <p>
+    The Octave manual has more information
+    about <a href="doc/interpreter/Contributing-Guidelines.html#Contributing-Guidelines">contributing
+    to Octave's development</a>.
+  </p>
+
+</div>
+
+__footer__

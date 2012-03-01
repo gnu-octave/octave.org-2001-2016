@@ -1,36 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <head>
-<title>Octave News Archive</title>
-<link rel="stylesheet" type="text/css" href="octave.css" />
+  <title>Octave News Archive</title>
+  <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
 <body>
-<div id="title"><h1><img src="images//logo.png" alt="GNU Octave Logo" id="logo""> Octave News Archive</h1></div>
-<div id="nav">
- <a href="index.html">Home</a>
- <a href="about.html">About Octave</a>
- <div id="currentnav">News Archive</div>
- <a href="docs.html">Docs</a>
- <a href="http://wiki.octave.org">Wiki</a>
- <a href="http://octave.org/wiki/index.php?title=FAQ">FAQ</a> 
- <a href="help.html">Help</a> 
- <a href="bugs.html">Bugs</a> 
- <a href="license.html">License</a>
- <a href="download.html">Download</a>
- <a href="related.html">Related Projects</a>
- <a href="archive.html">Mailing Lists</a>
- <a href="chat.html">Chat</a>
- <a href="funding.html">Funding</a>
- <a href="acknowledgments.html">Contributors</a>
- <a href="devmap.html">Developers Map</a>
- <a href="help-wanted.html">Help Wanted</a>
-</div>
+  <div id="container">
+    <div id="logo">
+      <p>
+        <span id="logo-text">Octave News Archive</span>
+        <img border="0" src="images//logo.png" alt="GNU Octave Logo"/>
+      </p>
+    </div>
 
-<div id="content">
 
-<div class="section">
+<div class="content">
+
 <dl>
 <dt>February 1, 2012</dt>
 <dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
@@ -42,17 +27,17 @@ Octave 3.4.3 is a bug fixing release.</dd>
 <dt>June 24, 2011</dt>
 <dd>Version 3.4.2 has been released and is now available for ftp.
 Octave 3.4.2 fixes some minor installation problems that affected
-version 3.4.1.  See the <a href="NEWS-3.4.html">NEWS</a> file
+version 3.4.1.  See the __OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file
 for a list of changes.
 <dt>June 15, 2011</dt>
 <dd>Version 3.4.1 has been released and is now available for ftp.
 Octave 3.4.1 is primarily a bug fixing release.  See the
-<a href="NEWS-3.4.html">NEWS</a> file for a list of changes
+__OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file for a list of changes
 since the previous release.</dd>
 <dt>February 8, 2011</dt>
 <dd>Version 3.4.0 has been released and is now available for ftp.
 Octave 3.4.0 is a major new release.  See the
-<a href="NEWS-3.4.html">NEWS</a> file for a list of
+__OCTAVE_HTTP__(`NEWS-3.4.html', `NEWS') file for a list of
 user-visible changes.</dd>
 <dt>November 19, 2010</dt>
 <dd>A new snapshot of the current development version of Octave is
@@ -76,19 +61,19 @@ available for ftp (3.3.51).  You should only be using this version if you are
 interested in testing the latest features and don't mind hitting the
 occasional bug.</dd>
 <dt>March 24, 2010</dt>
-<dd>We are now using the <a href="http://bugs.octave.org">a bug tracker</a>
+<dd>We are now using the __HTTP__(`bugs.octave.org', `a bug tracker')
 to manage bug reports instead of the bug@octave.org mailing
 list.  For now, the list will continue to function, but you are
 strongly encouraged to use the tracker instead.</dd>
 <dt>January 28, 2010</dt>
 <dd>Version 3.2.4 has been released and is now available for ftp.
 Octave 3.2.4 is a bug-fixing release
-<a href="NEWS-3.2.html">NEWS</a> file for a list of
+__OCTAVE_HTTP__(`NEWS-3.2.html', `NEWS') file for a list of
 user-visible changes in the 3.2.x series.</dd>
 <dt>September 21, 2009</dt>
 <dd>Version 3.2.3 has been released and is now available for ftp.
 Octave 3.2.3 is a bug-fixing release
-<a href="NEWS-3.2.html">NEWS</a> file for a list of
+__OCTAVE_HTTP__(`NEWS-3.2.html', `NEWS') file for a list of
 user-visible changes in the 3.2.x series.</dd>
 <dt>September 12, 2009</dt>
 <dd>A new snapshot of the current development version of Octave is
@@ -98,12 +83,12 @@ occasional bug.</dd>
 <dt>July 22, 2009</dt>
 <dd>Version 3.2.2 has been released and is now available for ftp.
 Octave 3.2.2 is a bug-fixing release
-<a href="NEWS-3.2.html">NEWS</a> file for a list of
+__OCTAVE_HTTP__(`NEWS-3.2.html', `NEWS') file for a list of
 user-visible changes in the 3.2.x series.</dd>
 <dt>June 6, 2009</dt>
 <dd>Version 3.2.0 has been released and is now available for ftp.
 Octave 3.2.0 is a major new release.  See the
-<a href="NEWS-3.2.html">NEWS</a> file for a list of
+__OCTAVE_HTTP__(`NEWS-3.2.html', `NEWS') file for a list of
 user-visible changes.</dd>
 <dt>April 8, 2009</dt>
 <dd>Version 3.0.5 has been released and is now available for ftp.
@@ -115,7 +100,8 @@ Octave 3.0.4 is a bug-fixing release.  Most bugs reported since the
 release of version 3.0.3 have been fixed.
 Please note that Octave 3.0 is significantly different from Octave
 2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the <a href="NEWS-3.html">NEWS</a> file.</dd>
+built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
+`NEWS') file.</dd>
 <dt>March 26, 2009</dt>
 <dd>A new snapshot of the current development version of Octave is
 available for ftp (3.1.55).  You should only be using this version if you are
@@ -137,145 +123,133 @@ Octave 3.0.3 is a bug-fixing release.  Most bugs reported since the
 release of version 3.0.2 have been fixed.
 Please note that Octave 3.0 is significantly different from Octave
 2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the <a href="NEWS-3.html">NEWS</a> file.</dd>
+built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
+`NEWS') file.</dd>
 <dt>August 14, 2008</dt>
 <dd>Version 3.0.2 has been released and is now available for ftp.
 Octave 3.0.2 is a bug-fixing release.  Most bugs reported since the
 release of version 3.0.1 have been fixed.
 Please note that Octave 3.0 is significantly different from Octave
 2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the <a href="NEWS-3.html">NEWS</a> file.</dd>
+built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
+`NEWS') file.</dd>
 <dt>April 21, 2008</dt>
 <dd>Version 3.0.1 has been released and is now available for ftp.
 Octave 3.0.1 is a bug-fixing release.  Most bugs reported since the
 release of version 3.0.0 have been fixed.
 Please note that Octave 3.0 is significantly different from Octave
 2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the <a href="NEWS-3.html">NEWS</a> file.</dd>
+built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
+`NEWS') file.</dd>
 <dt>December 21, 2007</dt>
 <dd>Version 3.0.0 has been released and is now available for ftp.
 Please note that Octave 3.0 is significantly different from Octave
 2.1.x, particularly with regard to graphics, path handling, and
-built-in variables.  Please read the <a href="NEWS-3.html">NEWS</a> file.</dd>
+built-in variables.  Please read the __OCTAVE_HTTP__(`NEWS-3.html',
+`NEWS') file.</dd>
 <dt>December 11, 2007</dt>
 <dd>Version 2.9.19 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.19 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-December/005259.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `December', `005259')</dd>
 <dt>December 5, 2007</dt>
 <dd>Version 2.9.18 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.18 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-December/005913.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `December', `005913')</dd>
 <dt>November 10, 2007</dt>
 <dd>Version 2.9.17 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.17 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-November/004842.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `November', `004842')</dd>
 <dt>October 31, 2007</dt>
 <dd>Version 2.9.16 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.16 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-October/004645.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `October', `004645')</dd>
 <dt>October 13, 2007</dt>
 <dd>Version 2.9.15 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.15 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-October/004352.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `October', `004352')</dd>
 <dt>September 17, 2007</dt>
 <dd>Version 2.9.14 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.14 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-September/004002.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `September', `004002')</dd>
 <dt>July 25, 2007</dt>
 <dd>Version 2.9.13 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.13 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-July/003572.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `July', `003572')</dd>
 <dt>May 23, 2007</dt>
 <dd>Version 2.9.12 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.12 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-May/002949.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `May', `002949')</dd>
 <dt>May 22, 2007</dt>
 <dd>Version 2.9.11 is now available for ftp and is the new
 "testing" (also "recommended") version.  As noted on the download
 page, 2.9.11 is a pre-release version of Octave 3.0.  It is
 significantly different from Octave 2.1.x, particularly with regard to
 graphics, path handling, and built-in variables.  Please read the
-<a href="NEWS-3.html">NEWS</a> file.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-May/002932.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__OCTAVE_HTTP__(`NEWS-3.html', `NEWS') file.
+__MAIL_THREAD__(`maintainers', `2007', `May', `002932')</dd>
 <dt>March 27, 2007</dt>
 <dd>Version 2.9.10 is now available for ftp.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2007-March/002372.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2007', `March', `002372')</dd>
 <dt>March 1, 2007</dt>
 <dd>Thanks to Bob Weigel and Nabble, it is now possible to
-<a href="http://www.nabble.com/Octave-f1895.html">search</a> the
+__HTTP__(`www.nabble.com/Octave-f1895.html', `search') the
 contents of the Octave mailing lists all the way back to the beginning
 of time (around 1992).</dd>
 <dt>December 7, 2006</dt>
 <dd>A new graphics branch of the code is now in the works to keep all
 graphics data in Octave to improve compatibility with Matlab and
 facilitate newer graphics back-ends.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-December/001435.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `December', `001435')</dd>
 <dt>October 2, 2006</dt>
 <dd>Version 2.9.9 is now available for ftp.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-October/000743.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `October', `000743')</dd>
 <dt>August 24, 2006</dt>
 <dd>Version 2.9.8 is now available for ftp.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-August/000500.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `August', `000500')</dd>
 <dt>July 28, 2006</dt>
 <dd>Version 2.9.7 is now available for ftp.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-July/000431.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `July', `000431')</dd>
 <dt>July 27, 2006</dt>
 <dd>Fairly complete support for Matlab's MEX interface has been
 added to the Octave CVS archive and will be part of the 2.9.7
 shapshot.  Please see
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-July/000424.html"
-class="mailthread">[Mailing List Thread]</a>
+__MAIL_THREAD__(`maintainers', `2006', `July', `000424')
 for more details.</dd>
 <dt>June 29, 2006</dt>
 <dd>Please see this
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-June/000309.html"
-class="mailthread">[Mailing List Thread]</a>
+__MAIL_THREAD__(`maintainers', `2006', `June', `000309')
 if you are having trouble compiling Octave 2.9.6 with GCC 3.x.  
 After applying the patch, you'll need to run autogen.sh and configure
 again.  This means you'll need to have a recent version of 
@@ -283,37 +257,31 @@ autoconf installed.  Or, you can upgrade to GCC 4.x or you can wait for
 2.9.7.  So many options!</dd>
 <dt>June 9, 2006</dt>
 <dd>Version 2.9.6 is now available for ftp.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-June/000281.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `June', `000281')</dd>
 <dt>May 26, 2006</dt>
 <dd>Function file cacheing has been improved with hopefully major 
 speedups when calling m-file functions.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-May/000230.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `May', `000230')</dd>
 <dt>May 21, 2006</dt>
 <dd>Octave-forge is being cleaned up by moving core functions into
 the main Octave distribution.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-May/000195.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `May', `000195')</dd>
 <dt>May 11, 2006</dt>
 <dd>Path manipulation was significantly cleaned up.  Now instead of
 manipulating the <code>LOADPATH</code> variable, you can use the
 <code>addpath</code>, <code>rmpath</code>, and <code>path</code>
 functions.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-May/000147.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `May', `000147')</dd>
 <dt>May 3, 2006</dt>
 <dd>To enable XML reading, mat2cell was developed along 
 with significantly more efficient versions of regexp and regexprep.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-May/000025.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `May', `000025')</dd>
 <dt>May 2, 2006</dt>
 <dd>All warn_* built-in variables were removed and replaced by warning
 identifiers that may be used with the warning function.  For example,
 <code>warn_divide_by_zero = false;</code> would now be
 <code>warning ("off", "Octave:divide-by-zero");</code>.
-<a href="https://www-old.cae.wisc.edu/pipermail/octave-maintainers/2006-May/000044.html"
-class="mailthread">[Mailing List Thread]</a></dd>
+__MAIL_THREAD__(`maintainers', `2006', `May', `000044')</dd>
 <dt>March 23, 2006</dt>
 <dd>Versions 2.1.73 and 2.9.5 are now available for ftp.</dd>
 <dt>November 11, 2005</dt>
@@ -345,11 +313,17 @@ in the series leading to Octave 3.0.</dd>
 split to allow work to proceed toward Octave 3.0 while also
 stabilizing a 2.1.x version.</dd>
 </dl>
+
 </div>
 
-<div id="footer"><p>Copyright &copy; 1998-2011
-<a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
-copying and distribution is permitted in any medium, provided this
-notice is preserved.</p>
-</body></html>
-</div>
+    <div id="footer">
+      <p>
+        Copyright &copy; 1998-2012 John W. Eaton.  Verbatim copying
+        and distribution is permitted in any medium, provided this
+        notice is preserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+

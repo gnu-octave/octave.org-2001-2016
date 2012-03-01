@@ -1,65 +1,149 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <head>
-<title>Octave Copyright Information</title>
-<link rel="stylesheet" type="text/css" href="octave.css" />
+  <title>Octave Copyright Information</title>
+  <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
 <body>
-<div id="title"><h1><img src="images//logo.png" alt="GNU Octave Logo" id="logo""> Octave Copyright Information</h1></div>
-<div id="nav">
- <a href="index.html">Home</a>
- <a href="about.html">About Octave</a>
- <a href="news.html">News Archive</a>
- <a href="docs.html">Docs</a>
- <a href="http://wiki.octave.org">Wiki</a>
- <a href="http://octave.org/wiki/index.php?title=FAQ">FAQ</a> 
- <a href="help.html">Help</a> 
- <a href="bugs.html">Bugs</a> 
- <div id="currentnav">License</div>
- <a href="download.html">Download</a>
- <a href="related.html">Related Projects</a>
- <a href="archive.html">Mailing Lists</a>
- <a href="chat.html">Chat</a>
- <a href="funding.html">Funding</a>
- <a href="acknowledgments.html">Contributors</a>
- <a href="devmap.html">Developers Map</a>
- <a href="help-wanted.html">Help Wanted</a>
+  <div id="container">
+    <div id="logo">
+      <p>
+        <span id="logo-text">Octave Copyright Information</span>
+        <img border="0" src="images//logo.png" alt="GNU Octave Logo"/>
+      </p>
+    </div>
+
+
+<div id="nav-box">
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="download.html">Download</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="get-involved.html">Get Involved</a>
+    </div>
+  </div>
+
+<div id="nav-button">
+  <div id="nav-item">
+    <a href="donate.html">Donate</a>
+    <div id="donate-blurb">
+      Your donations help to fund continuing maintenance tasks,
+      development of new features and the organization of Octave
+      conferences.
+    </div>
+    <div id="donate-form">
+      <form action="https://my.fsf.org/donate/working-together/octave"
+            method="post">
+        <div class="donate-field">
+          <label>Amount (USD)</label>
+          <div></div>
+          $<input type="text" name="amount" size="5" value="50.00" tabindex="1" />
+        </div>
+        <div class="donate-field">
+          <input type="radio" class="noborder"
+                 name="method" value="othercc"
+                 id="cb_method_other"
+                 checked="checked"
+                 tabindex="3" />
+          <label for="cb_method_other">Pay with credit card</label>
+        </div>
+        <div class="donate-field">
+          <div></div>
+          <input type="radio" class="noborder"
+                 name="method" value="paypal"
+                 id="cb_method_paypal"
+                 tabindex="4" />
+          <label for="cb_method_paypal">Pay with PayPal</label>
+        </div>
+        <div class="donate-field">
+          <input class="context" type="submit"
+                 tabindex="99"
+                 name="form.button.Continue"
+                 value="Continue..." />
+        </div>
+      </form>
+    </div>
+    <div id="donate-blurb">
+      Following the Continue link will take you to a Free Software Foundation
+      page for payment processing.
+    </div>
+  </div>
 </div>
+
+</div>
+
+
 
 <div id="content">
 
-<div class="section">
-<p>The source code for Octave is freely redistributable under the terms
-of the GNU General Public License
-(<a href="http://www.gnu.org/copyleft/gpl.html">GPL</a>) as published by the
-<a href="http://www.gnu.org">Free Software Foundation</a>.</p>
+  <p>
+    The source code for Octave is freely redistributable under the
+    terms of the GNU General Public License
+    (<a href="http://www.gnu.org/copyleft/gpl.html">GPL</a>) as published by
+    the <a href="http://www.fsf.org">Free Software Foundation</a>.
+  </p>
 
-<p>Simply put, the GPL says that anyone who redistributes the software,
-with or without changes, must pass along the freedom to further copy
-and change it.  By distributing the complete source code for GNU
-Octave under the terms of the GPL, we guarantee that you and all other
-users will have the freedom to redistribute and change Octave.</p>
+  <p>
+    Simply put, the GPL says that anyone who redistributes the
+    software, with or without changes, must pass along the freedom to
+    further copy and change it.  By distributing the complete source
+    code for GNU Octave under the terms of the GPL, we guarantee that
+    you and all other users will have the freedom to redistribute and
+    change Octave.
+  </p>
 
-<p>Releasing the source code for Octave has another benefit as well.  By
-having access to all of the source code for a mathematical system like
-Octave, you have the ability to see <em>exactly</em> how each and
-every computation is performed.  There are no black boxes that hide
-the details of any calculation.</p>
+  <p>
+    Releasing the source code for Octave has another benefit as well.
+    By having access to all of the source code for a mathematical
+    system like Octave, you have the ability to see <em>exactly</em>
+    how each and every computation is performed.  There are no black
+    boxes that hide the details of any calculation.
+  </p>
 
-<p>Although enhancements to Octave that are written as function files in
-Octave's scripting language are not required to be redistributed under
-the terms of the GPL, we encourage you to release your enhancements to
-Octave under the same terms for the benefit of all users.  We also
-encourage you to
-<a href="help-wanted.html">submit your changes</a>
-for inclusion in future versions of Octave.</p>
+  <p>
+    Although enhancements to Octave that are written as function files
+    in Octave's scripting language are not required to be
+    redistributed under the terms of the GPL, we encourage you to
+    release your enhancements to Octave under the same terms for the
+    benefit of all users.  We also encourage you
+    to <a href="get-involved.html">get involved with the Octave
+    project</a> and submit your changes for inclusion in future
+    versions of Octave.
+  </p>
+
 </div>
 
-<div id="footer"><p>Copyright &copy; 1998-2011
-<a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
-copying and distribution is permitted in any medium, provided this
-notice is preserved.</p>
-</body></html>
-</div>
+    <div id="footer">
+      <p>
+        Copyright &copy; 1998-2012 John W. Eaton.  Verbatim copying
+        and distribution is permitted in any medium, provided this
+        notice is preserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+

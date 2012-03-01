@@ -1,55 +1,67 @@
-__HEADER__(`Octave')
+__header__([GNU Octave], [logo])
 
-<div class="section">
-<div>
-<p>GNU Octave is a high-level interpreted language, primarily intended
-for numerical computations.  It provides capabilities for the numerical
-solution of linear and nonlinear problems, and for performing
-other numerical experiments.  It also provides extensive graphics
-capabilities for data visualization and manipulation.  Octave is
-normally used through its interactive command line interface, but
-it can also be used to write non-interactive programs.  The Octave
-language is quite similar to Matlab so that most programs are easily
-portable.</p>
+__nav_buttons__([home])
 
-<p>
-__OCTAVE_IMAGE__(`screenshot-small.png')
-</p>
+<div id="content">
 
-<p>For more information, see the page
-__OCTAVE_HTTP__(`about.html', `about Octave').</p></div>
+  <p>
+    <a href="images/screenshot.png"><img border=0 src="images/screenshot-small.png" alt="[screenshot]" /></a>
+  </p>
+
+  <p>
+    GNU Octave is a high-level interpreted language, primarily intended
+    for numerical computations.  It provides capabilities for the numerical
+    solution of linear and nonlinear problems, and for performing
+    other numerical experiments.  It also provides extensive graphics
+    capabilities for data visualization and manipulation.  Octave is
+    normally used through its interactive command line interface, but
+    it can also be used to write non-interactive programs.  The Octave
+    language is quite similar to Matlab so that most programs are easily
+    portable.
+  </p>
+  <p>
+    Octave is distributed under the terms of the
+    <a href="license.html">GNU General Public License</a>.
+  </p>
+
+  <h1>News</h1>
+
+  <dl>
+    <dt>February 22, 2012</dt>
+    <dd>Version 3.6.1 has been released and is now available
+      for <a href="download.html">download</a>.  Octave 3.6.1 is a
+      major new release.  See the <a href="NEWS-3.6.html">NEWS</a>
+      file for a list of user-visible changes.
+    </dd>
+    <dt>February 1, 2012</dt>
+    <dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
+        2012</a> will take place during July 16-20 2012. All Octave users and
+      developers invited!
+    </dd>
+    <dt>October 10, 2011</dt>
+    <dd>Version 3.4.3 has been released and is now available for ftp.
+      Octave 3.4.3 is a bug fixing release.
+    </dd>
+    <dt>August 15, 2011</dt>
+    <dd>Following <a href="http://octave.1599824.n4.nabble.com/Code-Sprint-Results-td3672698.html">the
+        success</a> of the first sprint, we will be having a second sprint on
+      September 3, 2011. The details are again at
+      <a href="sprint.html">Code Sprints</a>.
+    </dd>
+    <dt>July 16, 2011</dt>
+    <dd>First Octave code sprint to occur on July 16th, 2011.  Bring
+      your coffee and come mingle with other Octave programmers while
+      we race to beat a coding goal.  See 
+      <a href="sprint.html">Code Sprints</a> for all the
+      details.
+    </dd>
+  </dl>
+
+  <p>
+    For older news, see the <a href="news.html">news archive</a>.
+  </p>
+
 </div>
 
-<div class="section">
-__TITLE_BAR__(`Current News')
+__footer__
 
-<dl>
-<dt>February 22, 2012</dt>
-<dd>Version 3.6.1 has been released and is now available for ftp.
-Octave 3.6.1 is a major new release.  See the
-__OCTAVE_HTTP__(`NEWS-3.6.html', `NEWS') file for a list of
-user-visible changes.</dd>
-<dt>February 1, 2012</dt>
-<dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
-2012</a> will take place during July 16-20 2012. All Octave users and
-developers invited!</dd>
-<dt>October 10, 2011</dt>
-<dd>Version 3.4.3 has been released and is now available for ftp.
-Octave 3.4.3 is a bug fixing release.</dd>
-<dt>August 15, 2011</dt>
-<dd>Following <a href="http://octave.1599824.n4.nabble.com/Code-Sprint-Results-td3672698.html">the
-success</a> of the first sprint, we will be having a second sprint on
-September 3, 2011. The details are again at
-__OCTAVE_HTTP__(`sprint.html', `Code Sprints').
-<dt>July 16, 2011</dt>
-<dd>First Octave code sprint to occur on July 16th, 2011.  Bring
-your coffee and come mingle with other Octave programmers while
-we race to beat a coding goal.  See 
-__OCTAVE_HTTP__(`sprint.html', `Code Sprints') for all the details.
-</dl>
-
-<p>For older news, see the
-__OCTAVE_HTTP__(`news.html', `news archive').</p>
-</div>
-
-__OCTAVE_TRAILER__(`home')

@@ -1,90 +1,172 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <head>
-<title>Octave</title>
-<link rel="stylesheet" type="text/css" href="octave.css" />
+  <title>GNU Octave</title>
+  <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
 <body>
-<div id="title"><h1><img src="images//logo.png" alt="GNU Octave Logo" id="logo""> Octave</h1></div>
-<div id="nav">
- <div id="currentnav">Home</div>
- <a href="about.html">About Octave</a>
- <a href="news.html">News Archive</a>
- <a href="docs.html">Docs</a>
- <a href="http://wiki.octave.org">Wiki</a>
- <a href="http://octave.org/wiki/index.php?title=FAQ">FAQ</a> 
- <a href="help.html">Help</a> 
- <a href="bugs.html">Bugs</a> 
- <a href="license.html">License</a>
- <a href="download.html">Download</a>
- <a href="related.html">Related Projects</a>
- <a href="archive.html">Mailing Lists</a>
- <a href="chat.html">Chat</a>
- <a href="funding.html">Funding</a>
- <a href="acknowledgments.html">Contributors</a>
- <a href="devmap.html">Developers Map</a>
- <a href="help-wanted.html">Help Wanted</a>
+  <div id="container">
+    <div id="logo">
+      <p>
+        <span id="logo-text">GNU Octave</span>
+        <img border="0" src="images//logo.png" alt="GNU Octave Logo"/>
+      </p>
+    </div>
+
+
+<div id="nav-box">
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <div id="currentnav">Home</div>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="download.html">Download</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="get-involved.html">Get Involved</a>
+    </div>
+  </div>
+
+<div id="nav-button">
+  <div id="nav-item">
+    <a href="donate.html">Donate</a>
+    <div id="donate-blurb">
+      Your donations help to fund continuing maintenance tasks,
+      development of new features and the organization of Octave
+      conferences.
+    </div>
+    <div id="donate-form">
+      <form action="https://my.fsf.org/donate/working-together/octave"
+            method="post">
+        <div class="donate-field">
+          <label>Amount (USD)</label>
+          <div></div>
+          $<input type="text" name="amount" size="5" value="50.00" tabindex="1" />
+        </div>
+        <div class="donate-field">
+          <input type="radio" class="noborder"
+                 name="method" value="othercc"
+                 id="cb_method_other"
+                 checked="checked"
+                 tabindex="3" />
+          <label for="cb_method_other">Pay with credit card</label>
+        </div>
+        <div class="donate-field">
+          <div></div>
+          <input type="radio" class="noborder"
+                 name="method" value="paypal"
+                 id="cb_method_paypal"
+                 tabindex="4" />
+          <label for="cb_method_paypal">Pay with PayPal</label>
+        </div>
+        <div class="donate-field">
+          <input class="context" type="submit"
+                 tabindex="99"
+                 name="form.button.Continue"
+                 value="Continue..." />
+        </div>
+      </form>
+    </div>
+    <div id="donate-blurb">
+      Following the Continue link will take you to a Free Software Foundation
+      page for payment processing.
+    </div>
+  </div>
 </div>
+
+</div>
+
+
 
 <div id="content">
 
-<div class="section">
-<div>
-<p>GNU Octave is a high-level interpreted language, primarily intended
-for numerical computations.  It provides capabilities for the numerical
-solution of linear and nonlinear problems, and for performing
-other numerical experiments.  It also provides extensive graphics
-capabilities for data visualization and manipulation.  Octave is
-normally used through its interactive command line interface, but
-it can also be used to write non-interactive programs.  The Octave
-language is quite similar to Matlab so that most programs are easily
-portable.</p>
+  <p>
+    <a href="images/screenshot.png"><img border=0 src="images/screenshot-small.png" alt="screenshot" /></a>
+  </p>
 
-<p>
-<img src="images/screenshot-small.png" alt="[]" />
-</p>
+  <p>
+    GNU Octave is a high-level interpreted language, primarily intended
+    for numerical computations.  It provides capabilities for the numerical
+    solution of linear and nonlinear problems, and for performing
+    other numerical experiments.  It also provides extensive graphics
+    capabilities for data visualization and manipulation.  Octave is
+    normally used through its interactive command line interface, but
+    it can also be used to write non-interactive programs.  The Octave
+    language is quite similar to Matlab so that most programs are easily
+    portable.
+  </p>
+  <p>
+    Octave is distributed under the terms of the
+    <a href="license.html">GNU General Public License</a>.
+  </p>
 
-<p>For more information, see the page
-<a href="about.html">about Octave</a>.</p></div>
+  <h1>News</h1>
+
+  <dl>
+    <dt>February 22, 2012</dt>
+    <dd>Version 3.6.1 has been released and is now available
+      for <a href="download.html">download</a>.  Octave 3.6.1 is a
+      major new release.  See the <a href="NEWS-3.6.html">NEWS</a>
+      file for a list of user-visible changes.
+    </dd>
+    <dt>February 1, 2012</dt>
+    <dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
+        2012</a> will take place during July 16-20 2012. All Octave users and
+      developers invited!
+    </dd>
+    <dt>October 10, 2011</dt>
+    <dd>Version 3.4.3 has been released and is now available for ftp.
+      Octave 3.4.3 is a bug fixing release.
+    </dd>
+    <dt>August 15, 2011</dt>
+    <dd>Following <a href="http://octave.1599824.n4.nabble.com/Code-Sprint-Results-td3672698.html">the
+        success</a> of the first sprint, we will be having a second sprint on
+      September 3, 2011. The details are again at
+      <a href="sprint.html">Code Sprints</a>.
+    </dd>
+    <dt>July 16, 2011</dt>
+    <dd>First Octave code sprint to occur on July 16th, 2011.  Bring
+      your coffee and come mingle with other Octave programmers while
+      we race to beat a coding goal.  See 
+      <a href="sprint.html">Code Sprints</a> for all the
+      details.
+    </dd>
+  </dl>
+
+  <p>
+    For older news, see the <a href="news.html">news archive</a>.
+  </p>
+
 </div>
 
-<div class="section">
-<h2>Current News</h2>
+    <div id="footer">
+      <p>
+        Copyright &copy; 1998-2012 John W. Eaton.  Verbatim copying
+        and distribution is permitted in any medium, provided this
+        notice is preserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
 
-<dl>
-<dt>February 22, 2012</dt>
-<dd>Version 3.6.1 has been released and is now available for ftp.
-Octave 3.6.1 is a major new release.  See the
-<a href="NEWS-3.6.html">NEWS</a> file for a list of
-user-visible changes.</dd>
-<dt>February 1, 2012</dt>
-<dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
-2012</a> will take place during July 16-20 2012. All Octave users and
-developers invited!</dd>
-<dt>October 10, 2011</dt>
-<dd>Version 3.4.3 has been released and is now available for ftp.
-Octave 3.4.3 is a bug fixing release.</dd>
-<dt>August 15, 2011</dt>
-<dd>Following <a href="http://octave.1599824.n4.nabble.com/Code-Sprint-Results-td3672698.html">the
-success</a> of the first sprint, we will be having a second sprint on
-September 3, 2011. The details are again at
-<a href="sprint.html">Code Sprints</a>.
-<dt>July 16, 2011</dt>
-<dd>First Octave code sprint to occur on July 16th, 2011.  Bring
-your coffee and come mingle with other Octave programmers while
-we race to beat a coding goal.  See 
-<a href="sprint.html">Code Sprints</a> for all the details.
-</dl>
 
-<p>For older news, see the
-<a href="news.html">news archive</a>.</p>
-</div>
-
-<div id="footer"><p>Copyright &copy; 1998-2011
-<a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
-copying and distribution is permitted in any medium, provided this
-notice is preserved.</p>
-</body></html>
-</div>

@@ -1,0 +1,39 @@
+__header__([Commercial Support Options for GNU Octave])
+
+__nav_buttons__
+
+<div id="content">
+
+  <p>
+    The following organizations and individuals provide paid consulting
+    services for Octave.  If you have questions about them, please visit
+    their web sites or contact them individually.  This list is provided
+    as a service to the community and the support providers.  The Octave
+    project does not provide endorsements or recommendations.
+  </p>
+
+  <p>
+    If you would like to have your company listed here, please contact
+    the <a href="mailto:maintainers@octave.org"><tt>maintainers@octave.org</tt></a>
+    mailing list.
+  </p>
+
+  <h1>John W. Eaton Consulting, Inc.</h1>
+
+  <p>
+    <a href="http://jweaton.org">John W. Eaton Consulting, Inc.</a>
+    provides software consulting and support services, primarily for GNU
+    Octave, a free software system for numerical analysis. Services
+    include help with installing and using the software, as well as prompt
+    responses to problem reports.
+  </p>
+
+  <p>
+    As the original author and current maintainer of GNU Octave, Dr. Eaton
+    is uniquely qualified to deliver the most comprehensive solutions for
+    your Octave needs.
+  </p>
+
+</div>
+
+__footer__

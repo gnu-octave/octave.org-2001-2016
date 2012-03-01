@@ -1,179 +1,172 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <head>
-<title>Downloading Octave</title>
-<link rel="stylesheet" type="text/css" href="octave.css" />
+  <title>Download GNU Octave</title>
+  <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
 <body>
-<div id="title"><h1><img src="images//logo.png" alt="GNU Octave Logo" id="logo""> Downloading Octave</h1></div>
-<div id="nav">
- <a href="index.html">Home</a>
- <a href="about.html">About Octave</a>
- <a href="news.html">News Archive</a>
- <a href="docs.html">Docs</a>
- <a href="http://wiki.octave.org">Wiki</a>
- <a href="http://octave.org/wiki/index.php?title=FAQ">FAQ</a> 
- <a href="help.html">Help</a> 
- <a href="bugs.html">Bugs</a> 
- <a href="license.html">License</a>
- <div id="currentnav">Download</div>
- <a href="related.html">Related Projects</a>
- <a href="archive.html">Mailing Lists</a>
- <a href="chat.html">Chat</a>
- <a href="funding.html">Funding</a>
- <a href="acknowledgments.html">Contributors</a>
- <a href="devmap.html">Developers Map</a>
- <a href="help-wanted.html">Help Wanted</a>
+  <div id="container">
+    <div id="logo">
+      <p>
+        <span id="logo-text">Download GNU Octave</span>
+        <img border="0" src="images//logo.png" alt="GNU Octave Logo"/>
+      </p>
+    </div>
+
+
+<div id="nav-box">
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <div id="currentnav">Download</div>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+
+  <div id="nav-button">
+    <div id="nav-item">
+      <a href="get-involved.html">Get Involved</a>
+    </div>
+  </div>
+
+<div id="nav-button">
+  <div id="nav-item">
+    <a href="donate.html">Donate</a>
+    <div id="donate-blurb">
+      Your donations help to fund continuing maintenance tasks,
+      development of new features and the organization of Octave
+      conferences.
+    </div>
+    <div id="donate-form">
+      <form action="https://my.fsf.org/donate/working-together/octave"
+            method="post">
+        <div class="donate-field">
+          <label>Amount (USD)</label>
+          <div></div>
+          $<input type="text" name="amount" size="5" value="50.00" tabindex="1" />
+        </div>
+        <div class="donate-field">
+          <input type="radio" class="noborder"
+                 name="method" value="othercc"
+                 id="cb_method_other"
+                 checked="checked"
+                 tabindex="3" />
+          <label for="cb_method_other">Pay with credit card</label>
+        </div>
+        <div class="donate-field">
+          <div></div>
+          <input type="radio" class="noborder"
+                 name="method" value="paypal"
+                 id="cb_method_paypal"
+                 tabindex="4" />
+          <label for="cb_method_paypal">Pay with PayPal</label>
+        </div>
+        <div class="donate-field">
+          <input class="context" type="submit"
+                 tabindex="99"
+                 name="form.button.Continue"
+                 value="Continue..." />
+        </div>
+      </form>
+    </div>
+    <div id="donate-blurb">
+      Following the Continue link will take you to a Free Software Foundation
+      page for payment processing.
+    </div>
+  </div>
 </div>
+
+</div>
+
+
 
 <div id="content">
 
-<div class="section">
-<h2>Latest Release</h2>
+  GNU Octave 3.6.1 was released February 22, 2012.
 
-<p>There are several different versions of Octave available for
-download:</p>
+  <h1>GNU/Linux systems</h1>
+  <p>
+    Executable versions of Octave for GNU/Linux systems are provided
+    by the individual distributions.  Distributions known to package
+    Octave include: <a href="http://debian.org">Debian</a>,
+    <a href="http://fedora.org">Fedora</a>,
+    <a href="http://gentoo.org">Gentoo</a>,
+    and <a href="http://opensuse.org">SuSE</a>.  These packages are
+    created by volunteers.  The delay between an Octave source release
+    and the availability of a package for a particular GNU/Linux
+    distribution varies.  The Octave project has no control over that
+    process.
+  </p>
 
-<dl>
-<dt>stable</dt>
-<dd>This version is well tested and is the recommended version for
-most users of Octave.</dd>
-<!--
-<dt>testing</dt>
-<dd>A recent snapshot of the development sources that has been selected as
-being reasonably good.  Most people who are not actively involved in
-Octave's development will want to use this version.</dd>
--->
-<dt>development</dt>
-<dd>The most recent snapshot of the development sources (if one is
-available).  Use this if you want the latest features and it doesn't
-bother you that you might run into a few problems.  These snapshots
-are <b>not</b> regular Octave releases.  They are only provided for
-testing purposes, for people who would rather not bother with getting
-sources from the Mercurial archive.  If you do find
-problems in the development snapshots, please report them to the
-maintainers@octave.org mailing list (but first read
-<a href="bugs.html">the bug reporting guidelines</a>).
-If you are interested in the absolutely-latest-up-to-the-minute
-changes, you may use the sources from the public Mercurial archive
-instead (see below for details).
-</dd>
-</dl>
+  <h1>BSD systems</h1>
+  <p>
+    Executable versions of Octave for BSD systems are provided
+    by the individual distributions.
+    Both <a href="http://freebsd.org">FreeBSD</a>
+    and <a href="http://openbsd.org">OpenBSD</a> have Octave
+    packages.  These packages are created by volunteers.  The delay
+    between an Octave source release and the availability of a package
+    for a particular GNU/Linux distribution varies.  The Octave
+    project has no control over that process.
+  </p>
 
-<table width="100%" cellpadding="3" border="0" summary="Download Links for Octave">
-<tr><th>Octave version label</th>
-<th>Version number</th>
-<th>Release Date</th></tr>
-<tr><td class="download">
-<a href="ftp://ftp.gnu.org/gnu/octave/">Stable</a></td>
-<td class="download">3.6.1
-    (<a href="ftp://ftp.gnu.org/gnu/octave/octave-3.6.1.tar.gz">.tar.gz</a>)
-    (<a href="ftp://ftp.gnu.org/gnu/octave/octave-3.6.1.tar.bz2">.tar.bz2</a>)
-</td>
-<td class="download">22 February 2012</td></tr>
+  <h1>OS X</h1>
+  <p>
+    The Wiki has some instructions for
+    <a href="http://www.octave.org/wiki/index.php?title=Installing_MacOS_X_Bundle">installing
+    Octave on OS X systems</a>.
+  </p>
 
-</table>
+  <h1>Windows</h1>
+  <h2>Cygwin</h2>
+  <p>
+    There is an <a href="http://cygwin.com/packages">Octave package
+    for Cygwin</a>.
+  </p>
+  <h2>MinGW</h2>
+  <p>
+    The Wiki has some instructions for
+    <a href="http://www.octave.org/wiki/index.php?title=Octave_for_Windows">installing Octave on Windows systems</a>.
+  </p>
+
+  <h1>Sources</h1>
+  <p>
+    The latest released version of Octave is always available
+    from <a href="ftp://ftp.gnu.org/gnu/octave">ftp://ftp.gnu.org/gnu/octave</a>.
+  </p>
+  <p>
+    If you are interested in working with the latest version of the
+    Octave sources, check out the <a href="getting-involved">resources
+    for developers</a>.
+  </p>
+
 </div>
 
-<div class="section">
-<h2>Contributed Packages</h2>
+    <div id="footer">
+      <p>
+        Copyright &copy; 1998-2012 John W. Eaton.  Verbatim copying
+        and distribution is permitted in any medium, provided this
+        notice is preserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
 
-<p>A collection of contributed packages for Octave is available from
-<a href="http://octave.sf.net">http://octave.sf.net</a>.</p>
-</div>
-
-<div class="section">
-<h2>Binaries</h2>
-
-<p>Please note that all binary distributions of Octave are built by
-volunteers.  We make no promises about these binary packages.  If they
-are out of date and you would like to help keep them current, please
-contact the people who are responsible for the sites that distribute
-the various packages.</p>
-
-<h4>Linux</h4>
-
-<p>Binaries for Linux distributions are generally available with
-the distribution.  <a href="http://www.debian.org">Debian</a>,
-<a href="http://fedoraproject.org">Fedora</a>,
-<a href="http://www.novell.com/linux/suse">SuSE</a>, and others have
-packages.
-</p>
-
-<h4>Mac OS X</h4>
-
-<ul>
-<li><a href="http://octave.sourceforge.net">Octave Forge</a></li>
-<li><a href="http://hpc.sourceforge.net">Mac OS X High Performance Computing</a></li>
-<li><a href="http://fink.sourceforge.net">The Fink project</a></li>
-<li><a href="http://www.macports.org">MacPorts</a></li>
-</ul>
-
-<h4>Sun Solaris</h4>
-
-<p>The site <a href="http://www.sunfreeware.com">http://www.sunfreeware.com</a> has a binary distribution
-of Octave for Sun systems.</p>
-
-<h4>Windows</h4>
-
-<ul>
-<li>The <a href="http://octave.sourceforge.net">Octave Forge</a> project
-hosts a native Windows binary distribution of Octave built with
-the MinGW compiler.</li>
-
-<li><a href="http://www.cygwin.com">http://www.cygwin.com</a>
-The <a href="http://cygwin.com">Cygwin</a> project hosts binaries for
-Cygwin users.  Look in the math category for the Octave package when
-installing.</li>
-</ul>
-
-<div class="section">
-<h2>Mirror Sites</h2>
-
-<p>The primary ftp site for Octave is now <a href="ftp://ftp.gnu.org/gnu/octave/">ftp://ftp.gnu.org/gnu/octave</a>, which has many mirrors around the
-world.  You can find a list at <a href="http://www.gnu.org/prep/ftp.html">http://www.gnu.org/prep/ftp.html</a>.
-</p>
-</div>
-
-<div class="section">
-<h2>Development Sources</h2>
-
-<p>The latest development sources of Octave are also available via
-anonymous access to a read-only
-<a href="http://www.selenic.com/mercurial/wiki">Mercurial</a> archive.</p>
-
-<p>The primary archive address is
-<a href="http://www.octave.org/hg/octave">http://www.octave.org/hg/octave</a>, which currently
-redirects to <a href="http://hg.savannah.gnu.org/hgweb/octave">http://hg.savannah.gnu.org/hgweb/octave</a>.</p>
-
-<p>If the primary HG archive is unavailable, a secondary site is
-<a href="http://velveeta.che.wisc.edu/cgi-bin/hgwebdir.cgi/octave">http://velveeta.che.wisc.edu/cgi-bin/hgwebdir.cgi/octave</a>.</p>
-
-<p>If you decide to use the development sources from the Mercurial
-archive, please read the file HACKING that is available with the
-source files.</p>
-
-<p>Assuming you have Mercurial installed on your machine you may check
-out the latest development version of Octave sources with the following
-command:</p>
-
-<div class="code"><code>hg clone http://www.octave.org/hg/octave</code></div>
-
-<p>Once you have the repository checked out, you can resync with the
-archive by doing</p>
-
-<div class="code">
-<code>hg pull http://www.octave.org/hg/octave</code><br>
-<code>hg update</code><br>
-</div>
-
-<p>See the Mercurial manual for additional information.</p>
-
-<div id="footer"><p>Copyright &copy; 1998-2011
-<a href="mailto:jwe@octave.org">John W. Eaton</a>.  Verbatim
-copying and distribution is permitted in any medium, provided this
-notice is preserved.</p>
-</body></html>
-</div>

@@ -1,6 +1,7 @@
-__HEADER__(`Octave News Archive')
+__header__([Octave News Archive], [logo])
 
-<div class="section">
+<div class="content">
+
 <dl>
 <dt>February 1, 2012</dt>
 <dd><a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
@@ -298,6 +299,7 @@ in the series leading to Octave 3.0.</dd>
 split to allow work to proceed toward Octave 3.0 while also
 stabilizing a 2.1.x version.</dd>
 </dl>
+
 </div>
 
-__OCTAVE_TRAILER__(`news')
+__footer__
