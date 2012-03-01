@@ -89,10 +89,12 @@ __nav_buttons__([support])
 
   <h3>Chat</h3>
   <p>
-    Too impatient for email?  You can find Octave developers and users
-    on the <tt>#octave</tt> channel at <tt>irc.freenode.net</tt>.  The
-    atmosphere is relaxed and chat isn't restricted to matters
-    strictly pertaining to Octave.
+    Too impatient for email? You can find Octave developers and users
+    on
+    the <a href="http://webchat.freenode.net/?channels=octave&uio=MT1mYWxzZSYyPXRydWUmMTI9dHJ1ZQda"><tt>#octave</tt>
+    channel at <tt>irc.freenode.net</tt></a>. The atmosphere is
+    relaxed and chat isn't restricted to matters strictly pertaining
+    to Octave.
   </p>
 
   <h2>Reporting Bugs</h2>
