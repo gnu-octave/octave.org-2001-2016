@@ -11,7 +11,7 @@ __nav_buttons__([download])
     Executable versions of Octave for GNU/Linux systems are provided
     by the individual distributions.  Distributions known to package
     Octave include: <a href="http://debian.org">Debian</a>,
-    <a href="http://fedora.org">Fedora</a>,
+    <a href="http://fedoraproject.org">Fedora</a>,
     <a href="http://gentoo.org">Gentoo</a>,
     and <a href="http://opensuse.org">SuSE</a>.  These packages are
     created by volunteers.  The delay between an Octave source release
