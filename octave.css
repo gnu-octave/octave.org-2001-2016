@@ -46,6 +46,20 @@ div#top-buttons li {
   font-weight: bold;
 }
 
+div#search-form {
+  padding: 0px;
+  margin: 0px;
+}
+
+div#search-form form {
+  display: inline;
+}
+
+div#search-form td {
+  margin: 0px;
+  padding: 0px;
+}
+
 div#nav-box {
   float: right;
   width: 190px;
