@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -112,25 +112,25 @@ cell in <var>str</var>.
 
      <pre class="example">          x = 3.141;
           genvarname ("x", who ())
-          &rArr; x1
+            &rArr; x1
 </pre>
         <p>If <var>wanted</var> is a cell array, genvarname will make sure the returned
 strings are distinct:
 
      <pre class="example">          genvarname ({"foo", "foo"})
-          &rArr;
-          {
-            [1,1] = foo
-            [1,2] = foo1
-          }
+            &rArr;
+               {
+                 [1,1] = foo
+                 [1,2] = foo1
+               }
 </pre>
         <p>Note that the result is a char array/cell array of strings, not the
 variables themselves.  To define a variable, <code>eval()</code> can be
 used.  The following trivial example sets <code>x</code> to <code>42</code>.
 
      <pre class="example">          name = genvarname ("x");
-          eval([name " = 42"]);
-          &rArr; x =  42
+          eval ([name " = 42"]);
+            &rArr; x =  42
 </pre>
         <p>Also, this can be useful for creating unique struct field names.
 
@@ -138,13 +138,12 @@ used.  The following trivial example sets <code>x</code> to <code>42</code>.
           for i = 1:3
             x.(genvarname ("a", fieldnames (x))) = i;
           endfor
-          &rArr;
-          x =
-          {
-            a =  1
-            a1 =  2
-            a2 =  3
-          }
+            &rArr; x =
+               {
+                 a =  1
+                 a1 =  2
+                 a2 =  3
+               }
 </pre>
         <p>Since variable names may only contain letters, digits and underscores,
 genvarname replaces any sequence of disallowed characters with

@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -86,7 +86,7 @@ was to write
 assignments within the condition of a <code>while</code> or <code>if</code>
 statement.  For example, statements like
 
-     <pre class="example">          while (c = getc())
+     <pre class="example">          while (c = getc ())
             ...
 </pre>
      <p class="noindent">are common in C programming.
@@ -104,7 +104,7 @@ but that may also let real errors like
 writing them with an extra set of parentheses.  For example, writing the
 previous example as
 
-     <pre class="example">          while ((c = getc()))
+     <pre class="example">          while ((c = getc ()))
             ...
 </pre>
      <p class="noindent">will prevent the warning from being printed for this statement, while
@@ -195,7 +195,7 @@ equivalents when strings are constructed using a mixture of strings and
 numbers in matrix notation.  For example,
 
      <pre class="example">          [ "f", 111, 111 ]
-               &rArr; "foo"
+          &rArr; "foo"
 </pre>
      <p class="noindent">elicits a warning if the <code>Octave:num-to-str</code> warning is
 enabled.  By default, the <code>Octave:num-to-str</code> warning is enabled.
@@ -207,7 +207,7 @@ conditions.  They normally never short circuit, but <span class="sc">matlab</spa
 short circuits if any logical operators are used in a condition.  You
 can turn on the option
 
-     <pre class="example">          do_braindead_shortcircuit_evaluation(1)
+     <pre class="example">          do_braindead_shortcircuit_evaluation (1)
 </pre>
      <p class="noindent">if you would like to enable this short-circuit evaluation in
 Octave.  Note that the <code>&amp;&amp;</code> and <code>||</code> operators always short
@@ -256,7 +256,7 @@ for implicit conversions of strings to their numeric ASCII equivalents.
 For example,
 
      <pre class="example">          "abc" + 0
-               &rArr; 97 98 99
+          &rArr; 97 98 99
 </pre>
      <p class="noindent">elicits a warning if the <code>Octave:str-to-num</code> warning is enabled. 
 By default, the <code>Octave:str-to-num</code> warning is disabled.

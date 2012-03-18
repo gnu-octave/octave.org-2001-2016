@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -33,32 +33,32 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Reporting-Bugs.html#Reporting-Bugs">Rep
 
 <h4 class="appendixsubsec">F.2.1 Have You Found a Bug?</h4>
 
-<p><a name="index-bug-criteria-3420"></a>
+<p><a name="index-bug-criteria-3421"></a>
 If you are not sure whether you have found a bug, here are some guidelines:
 
      
-<a name="index-fatal-signal-3421"></a>
-<a name="index-core-dump-3422"></a>
+<a name="index-fatal-signal-3422"></a>
+<a name="index-core-dump-3423"></a>
 <ul><li>If Octave gets a fatal signal, for any input whatever, that is
 a bug.  Reliable interpreters never crash.
 
-     <p><a name="index-incorrect-output-3423"></a><a name="index-incorrect-results-3424"></a><a name="index-results_002c-incorrect-3425"></a><a name="index-answers_002c-incorrect-3426"></a><a name="index-erroneous-results-3427"></a><a name="index-wrong-answers-3428"></a><li>If Octave produces incorrect results, for any input whatever,
+     <p><a name="index-incorrect-output-3424"></a><a name="index-incorrect-results-3425"></a><a name="index-results_002c-incorrect-3426"></a><a name="index-answers_002c-incorrect-3427"></a><a name="index-erroneous-results-3428"></a><a name="index-wrong-answers-3429"></a><li>If Octave produces incorrect results, for any input whatever,
 that is a bug.
 
-     <p><a name="index-undefined-behavior-3429"></a><a name="index-undefined-function-value-3430"></a><li>Some output may appear to be incorrect when it is in fact due to a
+     <p><a name="index-undefined-behavior-3430"></a><a name="index-undefined-function-value-3431"></a><li>Some output may appear to be incorrect when it is in fact due to a
 program whose behavior is undefined, which happened by chance to give
 the desired results on another system.  For example, the range operator
 may produce different results because of differences in the way floating
 point arithmetic is handled on various systems.
 
-     <p><a name="index-erroneous-messages-3431"></a><a name="index-incorrect-error-messages-3432"></a><a name="index-error-messages_002c-incorrect-3433"></a><li>If Octave produces an error message for valid input, that is a bug.
+     <p><a name="index-erroneous-messages-3432"></a><a name="index-incorrect-error-messages-3433"></a><a name="index-error-messages_002c-incorrect-3434"></a><li>If Octave produces an error message for valid input, that is a bug.
 
-     <p><a name="index-invalid-input-3434"></a><li>If Octave does not produce an error message for invalid input, that is
+     <p><a name="index-invalid-input-3435"></a><li>If Octave does not produce an error message for invalid input, that is
 a bug.  However, you should note that your idea of &ldquo;invalid input&rdquo;
 might be my idea of &ldquo;an extension&rdquo; or &ldquo;support for traditional
 practice&rdquo;.
 
-     <p><a name="index-improving-Octave-3435"></a><a name="index-suggestions-3436"></a><li>If you are an experienced user of programs like Octave, your suggestions
+     <p><a name="index-improving-Octave-3436"></a><a name="index-suggestions-3437"></a><li>If you are an experienced user of programs like Octave, your suggestions
 for improvement are welcome in any case. 
 </ul>
 

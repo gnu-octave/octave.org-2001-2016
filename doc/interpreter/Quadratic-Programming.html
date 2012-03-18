@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -57,14 +57,14 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Optimization.html#Optimization">Optimiz
 &mdash; Function File: [<var>x</var>, <var>obj</var>, <var>info</var>, <var>lambda</var>] = <b>qp</b> (<var><small class="dots">...</small>, options</var>)<var><a name="index-qp-2379"></a></var><br>
 <blockquote><p>Solve the quadratic program
 
-     <pre class="example">               min 0.5 x'*H*x + x'*q
-                x
+     <pre class="example">          min 0.5 x'*H*x + x'*q
+           x
 </pre>
         <p>subject to
 
-     <pre class="example">               A*x = b
-               lb &lt;= x &lt;= ub
-               A_lb &lt;= A_in*x &lt;= A_ub
+     <pre class="example">          A*x = b
+          lb &lt;= x &lt;= ub
+          A_lb &lt;= A_in*x &lt;= A_ub
 </pre>
         <p class="noindent">using a null-space active-set method.
 

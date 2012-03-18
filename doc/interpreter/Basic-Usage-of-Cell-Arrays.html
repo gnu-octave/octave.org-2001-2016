@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -89,16 +89,16 @@ are displayed with the name of the variable <var>c</var>.  However, this name
 can be replaced with the variable <var>name</var>.  For example:
 
      <pre class="example">          c = {1, 2, {31, 32}};
-          celldisp(c, "b")
-               &rArr;
-                  b{1} =
-                   1
-                  b{2} =
-                   2
-                  b{3}{1} =
-                   31
-                  b{3}{2} =
-                   32
+          celldisp (c, "b")
+             &rArr;
+                b{1} =
+                 1
+                b{2} =
+                 2
+                b{3}{1} =
+                 31
+                b{3}{2} =
+                 32
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

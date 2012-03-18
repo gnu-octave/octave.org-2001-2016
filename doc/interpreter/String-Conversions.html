@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -148,7 +148,7 @@ converted number per cell element in <var>s</var>.
 the non-negative integer <var>d</var>.
 
      <pre class="example">          dec2base (123, 3)
-               &rArr; "11120"
+             &rArr; "11120"
 </pre>
         <p>If <var>d</var> is a matrix or cell array, return a string matrix with one
 row per element in <var>d</var>, padded with leading zeros to the width of
@@ -159,7 +159,7 @@ the symbols for the digits of <var>d</var>.  Space (' ') may not be used
 as a symbol.
 
      <pre class="example">          dec2base (123, "aei")
-               &rArr; "eeeia"
+             &rArr; "eeeia"
 </pre>
         <p>The optional third argument, <var>len</var>, specifies the minimum
 number of digits in the result. 
@@ -179,7 +179,7 @@ number of digits in the result.
 integer (base 10).
 
      <pre class="example">          base2dec ("11120", 3)
-               &rArr; 123
+             &rArr; 123
 </pre>
         <p>If <var>s</var> is a string matrix, return a column vector with one value per
 row of <var>s</var>.  If a row contains invalid symbols then the
@@ -193,7 +193,7 @@ symbols for the digits of <var>s</var>.  Space (' ') may not be used as a
 symbol.
 
      <pre class="example">          base2dec ("yyyzx", "xyz")
-               &rArr; 123
+             &rArr; 123
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -306,11 +306,11 @@ data are treated as non-white space.
         <p>Example:
 
      <pre class="example">          strjust (["a"; "ab"; "abc"; "abcd"])
-               &rArr; ans =
-                     a
-                    ab
-                   abc
-                  abcd
+               &rArr;
+                  "   a"
+                  "  ab"
+                  " abc"
+                  "abcd"
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -330,9 +330,8 @@ array).  Examples:
      <pre class="example">          str2num ("3.141596")
                 &rArr; 3.141596
           
-          str2num (["1, 2, 3"; "4, 5, 6"]);
-                &rArr; ans =
-                   1  2  3
+          str2num (["1, 2, 3"; "4, 5, 6"])
+                &rArr; 1  2  3
                    4  5  6
 </pre>
         <p>The optional second output, <var>state</var>, is logically true when the

@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -138,59 +138,59 @@ verifying this assumption.
         <p>Let us consider a trivial problem with a diagonal matrix (we exploit the
 sparsity of A)
 
-     <pre class="example">               n = 10;
-               A = diag (sparse (1:n));
-               b = rand (n, 1);
-               [l, u, p, q] = luinc (A, 1.e-3);
+     <pre class="example">          n = 10;
+          A = diag (sparse (1:n));
+          b = rand (n, 1);
+          [l, u, p, q] = luinc (A, 1.e-3);
 </pre>
         <p><span class="sc">Example 1:</span> Simplest use of <code>pcg</code>
 
-     <pre class="example">            x = pcg(A,b)
+     <pre class="example">          x = pcg (A,b)
 </pre>
         <p><span class="sc">Example 2:</span> <code>pcg</code> with a function which computes
 <var>A</var><code> * </code><var>x</var>
 
-     <pre class="example">            function y = apply_a (x)
-              y = [1:N]'.*x;
-            endfunction
+     <pre class="example">          function y = apply_a (x)
+            y = [1:N]' .* x;
+          endfunction
           
-            x = pcg ("apply_a", b)
+          x = pcg ("apply_a", b)
 </pre>
         <p><span class="sc">Example 3:</span> <code>pcg</code> with a preconditioner: <var>l</var> * <var>u</var>
 
-     <pre class="example">          x = pcg (A, b, 1.e-6, 500, l*u);
+     <pre class="example">          x = pcg (A, b, 1.e-6, 500, l*u)
 </pre>
         <p><span class="sc">Example 4:</span> <code>pcg</code> with a preconditioner: <var>l</var> * <var>u</var>. 
 Faster than <span class="sc">Example 3</span> since lower and upper triangular matrices
 are easier to invert
 
-     <pre class="example">          x = pcg (A, b, 1.e-6, 500, l, u);
+     <pre class="example">          x = pcg (A, b, 1.e-6, 500, l, u)
 </pre>
         <p><span class="sc">Example 5:</span> Preconditioned iteration, with full diagnostics.  The
 preconditioner (quite strange, because even the original matrix
 <var>A</var> is trivial) is defined as a function
 
-     <pre class="example">            function y = apply_m (x)
-              k = floor (length (x) - 2);
-              y = x;
-              y(1:k) = x(1:k)./[1:k]';
-            endfunction
+     <pre class="example">          function y = apply_m (x)
+            k = floor (length (x) - 2);
+            y = x;
+            y(1:k) = x(1:k) ./ [1:k]';
+          endfunction
           
-            [x, flag, relres, iter, resvec, eigest] = ...
-                               pcg (A, b, [], [], "apply_m");
-            semilogy (1:iter+1, resvec);
+          [x, flag, relres, iter, resvec, eigest] = ...
+                             pcg (A, b, [], [], "apply_m");
+          semilogy (1:iter+1, resvec);
 </pre>
         <p><span class="sc">Example 6:</span> Finally, a preconditioner which depends on a
 parameter <var>k</var>.
 
-     <pre class="example">            function y = apply_M (x, varargin)
+     <pre class="example">          function y = apply_M (x, varargin)
             K = varargin{1};
             y = x;
-            y(1:K) = x(1:K)./[1:K]';
-            endfunction
+            y(1:K) = x(1:K) ./ [1:K]';
+          endfunction
           
-            [x, flag, relres, iter, resvec, eigest] = ...
-                 pcg (A, b, [], [], "apply_m", [], [], 3)
+          [x, flag, relres, iter, resvec, eigest] = ...
+               pcg (A, b, [], [], "apply_m", [], [], 3)
 </pre>
         <p>References:
 
@@ -284,47 +284,48 @@ residual after the (<var>i</var>-1)-th iteration, <var>i</var><code> =
         <p>Let us consider a trivial problem with a diagonal matrix (we exploit the
 sparsity of A)
 
-     <pre class="example">               n = 10;
-               A = sparse (diag (1:n));
-               b = rand (N, 1);
+     <pre class="example">          n = 10;
+          A = sparse (diag (1:n));
+          b = rand (N, 1);
 </pre>
         <p><span class="sc">Example 1:</span> Simplest use of <code>pcr</code>
 
-     <pre class="example">            x = pcr(A, b)
+     <pre class="example">          x = pcr (A, b)
 </pre>
         <p><span class="sc">Example 2:</span> <code>pcr</code> with a function which computes
 <var>A</var><code> * </code><var>x</var>.
 
-     <pre class="example">            function y = apply_a (x)
-              y = [1:10]'.*x;
-            endfunction
+     <pre class="example">          function y = apply_a (x)
+            y = [1:10]' .* x;
+          endfunction
           
-            x = pcr ("apply_a", b)
+          x = pcr ("apply_a", b)
 </pre>
         <p><span class="sc">Example 3:</span>  Preconditioned iteration, with full diagnostics.  The
 preconditioner (quite strange, because even the original matrix
 <var>A</var> is trivial) is defined as a function
 
-     <pre class="example">            function y = apply_m (x)
-              k = floor (length(x)-2);
-              y = x;
-              y(1:k) = x(1:k)./[1:k]';
-            endfunction
+     <pre class="example">          function y = apply_m (x)
+            k = floor (length (x) - 2);
+            y = x;
+            y(1:k) = x(1:k) ./ [1:k]';
+          endfunction
           
-            [x, flag, relres, iter, resvec] = ...
-                               pcr (A, b, [], [], "apply_m")
-            semilogy([1:iter+1], resvec);
+          [x, flag, relres, iter, resvec] = ...
+                             pcr (A, b, [], [], "apply_m")
+          semilogy ([1:iter+1], resvec);
 </pre>
         <p><span class="sc">Example 4:</span> Finally, a preconditioner which depends on a
 parameter <var>k</var>.
 
-     <pre class="example">            function y = apply_m (x, varargin)
-              k = varargin{1};
-              y = x; y(1:k) = x(1:k)./[1:k]';
-            endfunction
+     <pre class="example">          function y = apply_m (x, varargin)
+            k = varargin{1};
+            y = x;
+            y(1:k) = x(1:k) ./ [1:k]';
+          endfunction
           
-            [x, flag, relres, iter, resvec] = ...
-                               pcr (A, b, [], [], "apply_m"', [], 3)
+          [x, flag, relres, iter, resvec] = ...
+                             pcr (A, b, [], [], "apply_m"', [], 3)
 </pre>
         <p>References:
 

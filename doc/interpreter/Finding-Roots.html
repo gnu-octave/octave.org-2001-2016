@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -123,10 +123,10 @@ poles.  <var>multp</var><code>(n)</code> refers to the multiplicity of the Nth p
         <p>For example:
 
      <pre class="example">          p = [2 3 1 1 2];
-          [m, n] = mpoles(p);
-            &rArr; m = [1; 1; 2; 1; 2]
-            &rArr; n = [2; 5; 1; 4; 3]
-            &rArr; p(n) = [3, 2, 2, 1, 1]
+          [m, n] = mpoles (p)
+             &rArr; m = [1; 1; 2; 1; 2]
+             &rArr; n = [2; 5; 1; 4; 3]
+             &rArr; p(n) = [3, 2, 2, 1, 1]
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

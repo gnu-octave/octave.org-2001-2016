@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -206,13 +206,13 @@ For example:
 
      <pre class="example">          s = [ "ab"; "cde" ];
           strcat (s, s, s)
-               &rArr; ans =
+              &rArr;
                   "ab ab ab "
                   "cdecdecde"
 </pre>
         <pre class="example">          s = { "ab"; "cde" };
           strcat (s, s, s)
-               &rArr; ans =
+              &rArr;
                   {
                     [1,1] = ababab
                     [2,1] = cdecdecde
@@ -233,12 +233,11 @@ For example:
 horizontally.  Trailing white space is preserved.  For example:
 
      <pre class="example">          cstrcat ("ab   ", "cd")
-               &rArr; "ab   cd"
+                &rArr; "ab   cd"
 </pre>
         <pre class="example">          s = [ "ab"; "cde" ];
           cstrcat (s, s, s)
-               &rArr; ans =
-                  "ab ab ab "
+               &rArr; "ab ab ab "
                   "cdecdecde"
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->

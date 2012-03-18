@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -91,11 +91,11 @@ the same index (see <a href="doc_002dunique.html#doc_002dunique">doc-unique</a>)
      <pre class="example">          <var>x</var> = [91, 92, 90, 92, 90, 89, 91, 89, 90, 100, 100, 100];
           [<var>u</var>, ~, <var>j</var>] = unique (<var>x</var>);
           [accumarray(<var>j</var>', 1), <var>u</var>']
-          &rArr; 2    89
-             3    90
-             2    91
-             2    92
-             3   100
+            &rArr;  2    89
+                3    90
+                2    91
+                2    92
+                3   100
 </pre>
         <p>Another example, where the result is a multi-dimensional 3-D array and
 the default value (zero) appears in the output:
@@ -106,7 +106,7 @@ the default value (zero) appears in the output:
                        2, 1, 2;
                        2, 3, 2], 101:105)
           &rArr; ans(:,:,1) = [101, 0, 0; 0, 0, 0]
-             ans(:,:,2) = [0, 0, 0; 206, 0, 208]
+          &rArr; ans(:,:,2) = [0, 0, 0; 206, 0, 208]
 </pre>
         <p>The sparse option can be used as an alternative to the <code>sparse</code>
 constructor (see <a href="doc_002dsparse.html#doc_002dsparse">doc-sparse</a>). Thus
@@ -172,7 +172,7 @@ value allows these values to be defined.
                                      -12,   2,   8;
                                      -10,   9,  -3;
                                       -5,  -3, -13])
-          &rArr; ans = [-10,-11,-1;-15,-3,5]
+          &rArr; [-10,-11,-1;-15,-3,5]
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

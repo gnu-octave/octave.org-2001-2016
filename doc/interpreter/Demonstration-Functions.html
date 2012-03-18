@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -37,10 +37,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Test-and-Demo-Functions.html#Test-and-D
 <p><a name="doc_002ddemo"></a>
 
 <div class="defun">
-&mdash; Command:  <b>demo</b><var> name<a name="index-demo-3389"></a></var><br>
-&mdash; Command:  <b>demo</b><var> name n<a name="index-demo-3390"></a></var><br>
-&mdash; Function File:  <b>demo</b> (<var>'name'</var>)<var><a name="index-demo-3391"></a></var><br>
-&mdash; Function File:  <b>demo</b> (<var>'name', n</var>)<var><a name="index-demo-3392"></a></var><br>
+&mdash; Command:  <b>demo</b><var> name<a name="index-demo-3390"></a></var><br>
+&mdash; Command:  <b>demo</b><var> name n<a name="index-demo-3391"></a></var><br>
+&mdash; Function File:  <b>demo</b> (<var>'name'</var>)<var><a name="index-demo-3392"></a></var><br>
+&mdash; Function File:  <b>demo</b> (<var>'name', n</var>)<var><a name="index-demo-3393"></a></var><br>
 <blockquote>
         <p>Run example code block <var>n</var> associated with the function <var>name</var>. 
 If <var>n</var> is not specified, all examples are run.
@@ -52,11 +52,11 @@ example must also be introduced by the keyword 'demo' flush left to the
 prefix with no intervening spaces.  The remainder of the example can
 contain arbitrary Octave code.  For example:
 
-     <pre class="example">            %!demo
-            %! t=0:0.01:2*pi; x = sin(t);
-            %! plot (t,x)
-            %! %-------------------------------------------------
-            %! % the figure window shows one cycle of a sine wave
+     <pre class="example">          !demo
+          ! t=0:0.01:2*pi; x = sin (t);
+          ! plot (t,x)
+          ! %-------------------------------------------------
+          ! % the figure window shows one cycle of a sine wave
 </pre>
         <p>Note that the code is displayed before it is executed, so a simple
 comment at the end suffices for labeling what is being shown.  It is
@@ -67,7 +67,7 @@ variables.  This means that every demo must have separate initialization
 code.  Alternatively, all demos can be combined into a single large demo
 with the code
 
-     <pre class="example">             %! input("Press &lt;enter&gt; to continue: ","s");
+     <pre class="example">          ! input("Press &lt;enter&gt; to continue: ","s");
 </pre>
         <p class="noindent">between the sections, but this is discouraged.  Other techniques
 to avoid multiple initialization blocks include using multiple plots
@@ -82,12 +82,12 @@ evaluates one line, or one statement if the statement crosses
 multiple lines, you must wrap your demo in "if 1 &lt;demo stuff&gt; endif"
 with the 'if' on the same line as 'demo'.  For example:
 
-     <pre class="example">            %!demo if 1
-            %!  function y=f(x)
-            %!    y=x;
-            %!  endfunction
-            %!  f(3)
-            %! endif
+     <pre class="example">          !demo if 1
+          !  function y=f(x)
+          !    y=x;
+          !  endfunction
+          !  f(3)
+          ! endif
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -99,11 +99,11 @@ with the 'if' on the same line as 'demo'.  For example:
    <p><a name="doc_002dexample"></a>
 
 <div class="defun">
-&mdash; Command:  <b>example</b><var> name<a name="index-example-3393"></a></var><br>
-&mdash; Command:  <b>example</b><var> name n<a name="index-example-3394"></a></var><br>
-&mdash; Function File:  <b>example</b> (<var>'name'</var>)<var><a name="index-example-3395"></a></var><br>
-&mdash; Function File:  <b>example</b> (<var>'name', n</var>)<var><a name="index-example-3396"></a></var><br>
-&mdash; Function File: [<var>s</var>, <var>idx</var>] = <b>example</b> (<var><small class="dots">...</small></var>)<var><a name="index-example-3397"></a></var><br>
+&mdash; Command:  <b>example</b><var> name<a name="index-example-3394"></a></var><br>
+&mdash; Command:  <b>example</b><var> name n<a name="index-example-3395"></a></var><br>
+&mdash; Function File:  <b>example</b> (<var>'name'</var>)<var><a name="index-example-3396"></a></var><br>
+&mdash; Function File:  <b>example</b> (<var>'name', n</var>)<var><a name="index-example-3397"></a></var><br>
+&mdash; Function File: [<var>s</var>, <var>idx</var>] = <b>example</b> (<var><small class="dots">...</small></var>)<var><a name="index-example-3398"></a></var><br>
 <blockquote>
         <p>Display the code for example <var>n</var> associated with the function
 '<var>name</var>', but do not run it.  If <var>n</var> is not specified, all examples
@@ -125,8 +125,8 @@ various examples.
    <p><a name="doc_002drundemos"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>rundemos</b> ()<var><a name="index-rundemos-3398"></a></var><br>
-&mdash; Function File:  <b>rundemos</b> (<var>directory</var>)<var><a name="index-rundemos-3399"></a></var><br>
+&mdash; Function File:  <b>rundemos</b> ()<var><a name="index-rundemos-3399"></a></var><br>
+&mdash; Function File:  <b>rundemos</b> (<var>directory</var>)<var><a name="index-rundemos-3400"></a></var><br>
 <blockquote><p>Execute built-in demos for all function files in the specified directory. 
 If no directory is specified, operate on all directories in Octave's
 search path for functions. 
@@ -141,8 +141,8 @@ search path for functions.
    <p><a name="doc_002druntests"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>runtests</b> ()<var><a name="index-runtests-3400"></a></var><br>
-&mdash; Function File:  <b>runtests</b> (<var>directory</var>)<var><a name="index-runtests-3401"></a></var><br>
+&mdash; Function File:  <b>runtests</b> ()<var><a name="index-runtests-3401"></a></var><br>
+&mdash; Function File:  <b>runtests</b> (<var>directory</var>)<var><a name="index-runtests-3402"></a></var><br>
 <blockquote><p>Execute built-in tests for all function files in the specified directory. 
 If no directory is specified, operate on all directories in Octave's
 search path for functions. 
@@ -157,8 +157,8 @@ search path for functions.
    <p><a name="doc_002dspeed"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>speed</b> (<var>f, init, max_n, f2, tol</var>)<var><a name="index-speed-3402"></a></var><br>
-&mdash; Function File: [<var>order</var>, <var>n</var>, <var>T_f</var>, <var>T_f2</var>] = <b>speed</b> (<var><small class="dots">...</small></var>)<var><a name="index-speed-3403"></a></var><br>
+&mdash; Function File:  <b>speed</b> (<var>f, init, max_n, f2, tol</var>)<var><a name="index-speed-3403"></a></var><br>
+&mdash; Function File: [<var>order</var>, <var>n</var>, <var>T_f</var>, <var>T_f2</var>] = <b>speed</b> (<var><small class="dots">...</small></var>)<var><a name="index-speed-3404"></a></var><br>
 <blockquote>
         <p>Determine the execution time of an expression (<var>f</var>) for various input
 values (<var>n</var>).  The <var>n</var> are log-spaced from 1 to <var>max_n</var>.  For

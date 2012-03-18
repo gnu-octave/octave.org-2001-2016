@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -66,8 +66,8 @@ plot, and if <var>tol</var> is an integer it is assumed that it defines the
 number points to use in the plot.  The <var>fmt</var> argument is passed
 to the plot command.
 
-     <pre class="example">             fplot ("cos", [0, 2*pi])
-             fplot ("[cos(x), sin(x)]", [0, 2*pi])
+     <pre class="example">          fplot ("cos", [0, 2*pi])
+          fplot ("[cos(x), sin(x)]", [0, 2*pi])
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -100,7 +100,7 @@ with 500 points.
 is calculated over the meshed domain <code>-2*pi &lt; </code><var>x</var><code> | </code><var>y</var><code>
 &lt; 2*pi</code> with 60 by 60 in the mesh.  For example:
 
-     <pre class="example">          ezplot (@(<var>x</var>, <var>y</var>) <var>x</var> .^ 2 - <var>y</var> .^ 2 - 1)
+     <pre class="example">          ezplot (@(<var>x</var>, <var>y</var>) <var>x</var>.^2 - <var>y</var>.^2 - 1)
 </pre>
         <p>If two functions are passed as strings, inline functions or function
 handles, then the parametric function
@@ -152,7 +152,7 @@ separately.
 
         <p>The optional return value <var>h</var> is a graphics handle to the created plot.
 
-     <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
+     <pre class="example">          f = @(x,y) sqrt (abs (x .* y)) ./ (1 + x.^2 + y.^2);
           ezcontour (f, [-3, 3]);
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -185,7 +185,7 @@ separately.
 
         <p>The optional return value <var>h</var> is a graphics handle to the created plot.
 
-     <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
+     <pre class="example">          f = @(x,y) sqrt (abs (x .* y)) ./ (1 + x.^2 + y.^2);
           ezcontourf (f, [-3, 3]);
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->

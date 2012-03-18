@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -85,7 +85,7 @@ a variable, then the (<var>i</var>,&nbsp;<var>j</var>)-th<!-- /@w --> entry of
 <code>corr (</code><var>x</var><code>, </code><var>y</var><code>)</code> is the correlation between the
 <var>i</var>-th variable in <var>x</var> and the <var>j</var>-th variable in <var>y</var>.
 
-     <pre class="example">          corr(x,y) = cov(x,y)/(std(x)*std(y))
+     <pre class="example">          corr (x,y) = cov (x,y) / (std (x) * std (y))
 </pre>
         <p>If called with one argument, compute <code>corr (</code><var>x</var><code>, </code><var>x</var><code>)</code>,
 the correlation between the columns of <var>x</var>. 

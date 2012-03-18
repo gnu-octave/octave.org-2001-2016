@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -37,18 +37,18 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Polynomial-Manipulations.html#Polynomia
 <p><a name="doc_002dpoly"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>poly</b> (<var>A</var>)<var><a name="index-poly-2740"></a></var><br>
-&mdash; Function File:  <b>poly</b> (<var>x</var>)<var><a name="index-poly-2741"></a></var><br>
+&mdash; Function File:  <b>poly</b> (<var>A</var>)<var><a name="index-poly-2741"></a></var><br>
+&mdash; Function File:  <b>poly</b> (<var>x</var>)<var><a name="index-poly-2742"></a></var><br>
 <blockquote><p>If <var>A</var> is a square N-by-N matrix, <code>poly (</code><var>A</var><code>)</code>
 is the row vector of the coefficients of <code>det (z * eye (N) - A)</code>,
 the characteristic polynomial of <var>A</var>.  For example,
 the following code finds the eigenvalues of <var>A</var> which are the roots of
 <code>poly (</code><var>A</var><code>)</code>.
 
-     <pre class="example">          roots(poly(eye(3)))
-          &rArr; 1.00001 + 0.00001i
-          &rArr; 1.00001 - 0.00001i
-          &rArr; 0.99999 + 0.00000i
+     <pre class="example">          roots (poly (eye (3)))
+              &rArr; 1.00001 + 0.00001i
+                 1.00001 - 0.00001i
+                 0.99999 + 0.00000i
 </pre>
         <p>In fact, all three eigenvalues are exactly 1 which emphasizes that for
 numerical performance the <code>eig</code> function should be used to compute
@@ -70,12 +70,12 @@ roots (poly (</code><var>c</var><code>))</code> are contained in <var>c</var>.  
    <p><a name="doc_002dpolyout"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyout</b> (<var>c</var>)<var><a name="index-polyout-2742"></a></var><br>
-&mdash; Function File:  <b>polyout</b> (<var>c, x</var>)<var><a name="index-polyout-2743"></a></var><br>
-&mdash; Function File: <var>str</var> = <b>polyout</b> (<var><small class="dots">...</small></var>)<var><a name="index-polyout-2744"></a></var><br>
+&mdash; Function File:  <b>polyout</b> (<var>c</var>)<var><a name="index-polyout-2743"></a></var><br>
+&mdash; Function File:  <b>polyout</b> (<var>c, x</var>)<var><a name="index-polyout-2744"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>polyout</b> (<var><small class="dots">...</small></var>)<var><a name="index-polyout-2745"></a></var><br>
 <blockquote><p>Write formatted polynomial
 
-     <pre class="example">             c(x) = c(1) * x^n + ... + c(n) x + c(n+1)
+     <pre class="example">          c(x) = c(1) * x^n + ... + c(n) x + c(n+1)
 </pre>
         <p>and return it as a string or write it to the screen (if <var>nargout</var> is
 zero).  <var>x</var> defaults to the string <code>"s"</code>. 
@@ -90,7 +90,7 @@ zero).  <var>x</var> defaults to the string <code>"s"</code>.
    <p><a name="doc_002dpolyreduce"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>polyreduce</b> (<var>c</var>)<var><a name="index-polyreduce-2745"></a></var><br>
+&mdash; Function File:  <b>polyreduce</b> (<var>c</var>)<var><a name="index-polyreduce-2746"></a></var><br>
 <blockquote><p>Reduce a polynomial coefficient vector to a minimum number of terms by
 stripping off any leading zeros. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->

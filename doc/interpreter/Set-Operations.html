@@ -19,7 +19,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -56,7 +56,7 @@ matching elements is also returned.
 
      <pre class="example">          a = [3, 10, 1];
           s = [0:9];
-          [tf, s_idx] = ismember (a, s);
+          [tf, s_idx] = ismember (a, s)
                &rArr; tf = [1, 0, 1]
                &rArr; s_idx = [4, 0, 2]
 </pre>
@@ -64,7 +64,7 @@ matching elements is also returned.
 
      <pre class="example">          a = {'abc'};
           s = {'abc', 'def'};
-          [tf, s_idx] = ismember (a, s);
+          [tf, s_idx] = ismember (a, s)
                &rArr; tf = [1, 0]
                &rArr; s_idx = [1, 0]
 </pre>
@@ -74,7 +74,7 @@ matching elements is also returned.
 
      <pre class="example">          a = [1:3; 5:7; 4:6];
           s = [0:2; 1:3; 2:4; 3:5; 4:6];
-          [tf, s_idx] = ismember(a, s, 'rows');
+          [tf, s_idx] = ismember(a, s, "rows")
                &rArr; tf = logical ([1; 0; 1])
                &rArr; s_idx = [2; 0; 5];
 </pre>
@@ -95,22 +95,21 @@ matching elements is also returned.
 For example:
 
      <pre class="example">          union ([1, 2, 4], [2, 3, 5])
-               &rArr; [1, 2, 3, 4, 5]
+              &rArr; [1, 2, 3, 4, 5]
 </pre>
         <p>If the optional third input argument is the string "rows" each row of
 the matrices <var>a</var> and <var>b</var> will be considered an element of sets. 
 For example:
 
-     <pre class="example">          union([1, 2; 2, 3], [1, 2; 3, 4], "rows")
-               &rArr;  1   2
-              2   3
-              3   4
+     <pre class="example">          union ([1, 2; 2, 3], [1, 2; 3, 4], "rows")
+             &rArr;  1   2
+                 2   3
+                 3   4
 </pre>
         &mdash; Function File: [<var>c</var>, <var>ia</var>, <var>ib</var>] = <b>union</b> (<var>a, b</var>)<var><a name="index-union-2689"></a></var><br>
 <blockquote>
         <p>Return index vectors <var>ia</var> and <var>ib</var> such that <code>a(ia)</code> and
-<code>b(ib)</code> are
-disjoint sets whose union is <var>c</var>.
+<code>b(ib)</code> are disjoint sets whose union is <var>c</var>.
 
      <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -63,9 +63,9 @@ that called <code>refreshdata</code>.
           y = sin (x);
           plot (x, y, "ydatasource", "y");
           for i = 1 : 100
-            pause(0.1)
-            y = sin (x + 0.1 * i);
-            refreshdata();
+            pause (0.1);
+            y = sin (x + 0.1*i);
+            refreshdata ();
           endfor
 </pre>
         </blockquote></div>

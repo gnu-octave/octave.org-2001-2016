@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -99,7 +99,7 @@ be a vector of zeros with the same size as <var>c</var>.
 <blockquote><p>Return the Hilbert matrix of order <var>n</var>.  The i,j element
 of a Hilbert matrix is defined as
 
-     <pre class="example">          H (i, j) = 1 / (i + j - 1)
+     <pre class="example">          H(i, j) = 1 / (i + j - 1)
 </pre>
         <p>Hilbert matrices are close to being singular which make them difficult to
 invert with numerical routines. 
@@ -107,9 +107,9 @@ Comparing the condition number of a random matrix 5x5 matrix with that of
 a Hilbert matrix of order 5 reveals just how difficult the problem is.
 
      <pre class="example">          cond (rand (5))
-              &rArr; 14.392
+             &rArr; 14.392
           cond (hilb (5))
-              &rArr; 4.7661e+05
+             &rArr; 4.7661e+05
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

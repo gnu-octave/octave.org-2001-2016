@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -371,14 +371,13 @@ function to find a least squares solution to a linear equation.
 &mdash; Function File: <var>s</var> = <b>spaugment</b> (<var>A, c</var>)<var><a name="index-spaugment-2268"></a></var><br>
 <blockquote><p>Create the augmented matrix of <var>A</var>.  This is given by
 
-     <pre class="example">          [<var>c</var> * eye(<var>m</var>, <var>m</var>),<var>A</var>; <var>A</var>', zeros(<var>n</var>,
-          <var>n</var>)]
+     <pre class="example">          [<var>c</var> * eye(<var>m</var>, <var>m</var>), <var>A</var>;
+                      <var>A</var>', zeros(<var>n</var>, <var>n</var>)]
 </pre>
         <p class="noindent">This is related to the least squares solution of
-<var>A</var><code> \\ </code><var>b</var>, by
+<var>A</var><code> \ </code><var>b</var>, by
 
-     <pre class="example">          <var>s</var> * [ <var>r</var> / <var>c</var>; x] = [<var>b</var>, zeros(<var>n</var>,
-          columns(<var>b</var>)]
+     <pre class="example">          <var>s</var> * [ <var>r</var> / <var>c</var>; x] = [ <var>b</var>, zeros(<var>n</var>, columns(<var>b</var>)) ]
 </pre>
         <p class="noindent">where <var>r</var> is the residual error
 
@@ -390,7 +389,7 @@ without the need for a <code>qr</code> factorization.  As the residual
 error will be <code>zeros (</code><var>m</var><code>, </code><var>m</var><code>)</code> for under determined
 problems, and example can be
 
-     <pre class="example">          m = 11; n = 10; mn = max(m ,n);
+     <pre class="example">          m = 11; n = 10; mn = max (m, n);
           A = spdiags ([ones(mn,1), 10*ones(mn,1), -ones(mn,1)],
                        [-1, 0, 1], m, n);
           x0 = A \ ones (m,1);
@@ -565,9 +564,9 @@ K. Maschhoff, D. Sorensen, and C. Yang.  For more information see
         <p>Find a few singular values of the matrix <var>A</var>.  The singular values
 are calculated using
 
-     <pre class="example">          [<var>m</var>, <var>n</var>] = size(<var>A</var>)
-          <var>s</var> = eigs([sparse(<var>m</var>, <var>m</var>), <var>A</var>;
-                              <var>A</var>', sparse(<var>n</var>, <var>n</var>)])
+     <pre class="example">          [<var>m</var>, <var>n</var>] = size (<var>A</var>);
+          <var>s</var> = eigs ([sparse(<var>m</var>, <var>m</var>), <var>A</var>;
+                               <var>A</var>', sparse(<var>n</var>, <var>n</var>)])
 </pre>
         <p>The eigenvalues returned by <code>eigs</code> correspond to the singular values
 of <var>A</var>.  The number of singular values to calculate is given by <var>k</var>

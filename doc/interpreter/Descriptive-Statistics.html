@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -85,9 +85,9 @@ either may appear first.
 If the elements of <var>x</var> are sorted, the median is defined
 as
 
-     <pre class="example">                      x(ceil(N/2)),             N odd
-          median(x) =
-                      (x(N/2) + x((N/2)+1))/2,  N even
+     <pre class="example">                        x(ceil(N/2))             N odd
+          median (x) =
+                       (x(N/2) + x((N/2)+1))/2   N even
 </pre>
         <p>If <var>x</var> is a matrix, compute the median value for each
 column and return them in a row vector.  If the optional <var>dim</var>
@@ -273,7 +273,7 @@ variance [default]
 &mdash; Function File:  <b>skewness</b> (<var>x, dim</var>)<var><a name="index-skewness-2429"></a></var><br>
 <blockquote><p>Compute the skewness of the elements of the vector <var>x</var>.
 
-     <pre class="example">          skewness (x) = N^(-1) std(x)^(-3) sum ((x - mean(x)).^3)
+     <pre class="example">          skewness (x) = 1/N std(x)^(-3) sum ((x - mean(x)).^3)
 </pre>
         <p class="noindent">If <var>x</var> is a matrix, return the skewness along the
 first non-singleton dimension of the matrix.  If the optional
@@ -293,7 +293,7 @@ first non-singleton dimension of the matrix.  If the optional
 &mdash; Function File:  <b>kurtosis</b> (<var>x, dim</var>)<var><a name="index-kurtosis-2431"></a></var><br>
 <blockquote><p>Compute the kurtosis of the elements of the vector <var>x</var>.
 
-     <pre class="example">          kurtosis (x) = N^(-1) std(x)^(-4) sum ((x - mean(x)).^4) - 3
+     <pre class="example">          kurtosis (x) = 1/N std(x)^(-4) sum ((x - mean(x)).^4) - 3
 </pre>
         <p>If <var>x</var> is a matrix, return the kurtosis over the
 first non-singleton dimension of the matrix.  If the optional
@@ -328,6 +328,7 @@ To calculate kurtosis without the normalization factor of -3 use
 
         <p>The optional string <var>type</var> specifies the type of moment to be computed. 
 Valid options are:
+
           <dl>
 <dt>"c"<dd>  Central Moment.  The moment about the mean defined as
 
@@ -335,11 +336,11 @@ Valid options are:
 </pre>
           <br><dt>"a"<dd>  Absolute Moment.  The moment about zero ignoring sign defined as
 
-          <pre class="example">               1/N SUM_i ( abs(x(i)) )^p
+          <pre class="example">               1/N SUM_i ( abs (x(i)) )^p
 </pre>
           <br><dt>"ac"<dd>  Absolute Central Moment.  Defined as
 
-          <pre class="example">               1/N SUM_i ( abs(x(i) - mean(x)) )^p
+          <pre class="example">               1/N SUM_i ( abs (x(i) - mean(x)) )^p
 </pre>
           </dl>
 

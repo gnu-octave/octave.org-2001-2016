@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -240,8 +240,8 @@ object to illuminate the surface is not implemented (yet).
 
         <p>Example:
 
-     <pre class="example">          colormap(bone);
-          surfl(peaks);
+     <pre class="example">          colormap (bone (64));
+          surfl (peaks);
           shading interp;
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -262,8 +262,8 @@ object to illuminate the surface is not implemented (yet).
 surface is defined by <var>x</var>, <var>y</var>, and <var>z</var>.  If <var>x</var> and
 <var>y</var> are not defined, then it is assumed that they are given by
 
-     <pre class="example">          [<var>x</var>, <var>y</var>] = meshgrid (1:size(<var>z</var>, 1),
-                               1:size(<var>z</var>, 2));
+     <pre class="example">          [<var>x</var>, <var>y</var>] = meshgrid (1:size (<var>z</var>, 1),
+                             1:size (<var>z</var>, 2));
 </pre>
         <p>If no return arguments are requested, a surface plot with the normal
 vectors to the surface is plotted.  Otherwise the components of the normal
@@ -347,34 +347,34 @@ coloring
           c = abs ((x-.5).^2 + (y-.5).^2 + (z-.5).^2);
           figure (); # Open another figure window
           
-          subplot (2, 2, 1); view (-38, 20);
+          subplot (2,2,1); view (-38, 20);
           [f, v] = isosurface (x, y, z, c, iso);
           p = patch ("Faces", f, "Vertices", v, "EdgeColor", "none");
-          set (gca, "PlotBoxAspectRatioMode","manual", ...
+          set (gca, "PlotBoxAspectRatioMode", "manual", ...
                     "PlotBoxAspectRatio", [1 1 1]);
            set (p, "FaceColor", "green", "FaceLighting", "phong");
            light ("Position", [1 1 5]); # Available with the JHandles package
           
-          subplot (2, 2, 2); view (-38, 20);
+          subplot (2,2,2); view (-38, 20);
           p = patch ("Faces", f, "Vertices", v, "EdgeColor", "blue");
-          set (gca, "PlotBoxAspectRatioMode","manual", ...
+          set (gca, "PlotBoxAspectRatioMode", "manual", ...
                     "PlotBoxAspectRatio", [1 1 1]);
            set (p, "FaceColor", "none", "FaceLighting", "phong");
            light ("Position", [1 1 5]);
           
-          subplot (2, 2, 3); view (-38, 20);
+          subplot (2,2,3); view (-38, 20);
           [f, v, c] = isosurface (x, y, z, c, iso, y);
-          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", c, \
+          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", c, ...
                      "FaceColor", "interp", "EdgeColor", "none");
-          set (gca, "PlotBoxAspectRatioMode","manual", ...
+          set (gca, "PlotBoxAspectRatioMode", "manual", ...
                     "PlotBoxAspectRatio", [1 1 1]);
            set (p, "FaceLighting", "phong");
            light ("Position", [1 1 5]);
           
-          subplot (2, 2, 4); view (-38, 20);
-          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", c, \
+          subplot (2,2,4); view (-38, 20);
+          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", c, ...
                      "FaceColor", "interp", "EdgeColor", "blue");
-          set (gca, "PlotBoxAspectRatioMode","manual", ...
+          set (gca, "PlotBoxAspectRatioMode", "manual", ...
                     "PlotBoxAspectRatio", [1 1 1]);
            set (p, "FaceLighting", "phong");
            light ("Position", [1 1 5]);
@@ -421,8 +421,8 @@ given by the patch handle <var>p</var>.
 
      <pre class="smallexample">          function [] = isofinish (p)
             set (gca, "PlotBoxAspectRatioMode", "manual", ...
-                      "PlotBoxAspectRatio",[1 1 1]);
-            set (p, "VertexNormals", -get(p,"VertexNormals")); # Revert normals
+                      "PlotBoxAspectRatio", [1 1 1]);
+            set (p, "VertexNormals", -get (p,"VertexNormals")); # Revert normals
             set (p, "FaceColor", "interp");
             ## set (p, "FaceLighting", "phong");
             ## light ("Position", [1 1 5]); # Available with JHandles
@@ -435,27 +435,27 @@ given by the patch handle <var>p</var>.
           c = abs ((x-.5).^2 + (y-.5).^2 + (z-.5).^2);
           figure (); # Open another figure window
           
-          subplot (2, 2, 1); view (-38, 20);
+          subplot (2,2,1); view (-38, 20);
           [f, v, cdat] = isosurface (x, y, z, c, iso, y);
-          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, \
+          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, ...
                      "FaceColor", "interp", "EdgeColor", "none");
           isofinish (p); ## Call user function isofinish
           
-          subplot (2, 2, 2); view (-38, 20);
-          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, \
+          subplot (2,2,2); view (-38, 20);
+          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, ...
                      "FaceColor", "interp", "EdgeColor", "none");
           isonormals (x, y, z, c, p); # Directly modify patch
           isofinish (p);
           
-          subplot (2, 2, 3); view (-38, 20);
-          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, \
+          subplot (2,2,3); view (-38, 20);
+          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, ...
                      "FaceColor", "interp", "EdgeColor", "none");
           n = isonormals (x, y, z, c, v); # Compute normals of isosurface
           set (p, "VertexNormals", n);    # Manually set vertex normals
           isofinish (p);
           
-          subplot (2, 2, 4); view (-38, 20);
-          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, \
+          subplot (2,2,4); view (-38, 20);
+          p = patch ("Faces", f, "Vertices", v, "FaceVertexCData", cdat, ...
                      "FaceColor", "interp", "EdgeColor", "none");
           isonormals (x, y, z, c, v, "negate"); # Use reverse directly
           isofinish (p);
@@ -502,43 +502,43 @@ change the colors of a patch that is given by the patch handle
         <p>For example:
 
      <pre class="example">          function [] = isofinish (p)
-            set (gca, "PlotBoxAspectRatioMode", "manual", \
-                 "PlotBoxAspectRatio", [1 1 1]);
+            set (gca, "PlotBoxAspectRatioMode", "manual", ...
+                      "PlotBoxAspectRatio", [1 1 1]);
             set (p, "FaceColor", "interp");
             ## set (p, "FaceLighting", "flat");
             ## light ("Position", [1 1 5]); ## Available with JHandles
           endfunction
           
-          N = 15;    ## Increase number of vertices in each direction
-          iso = .4;  ## Change isovalue to .1 to display a sphere
+          N = 15;    # Increase number of vertices in each direction
+          iso = .4;  # Change isovalue to .1 to display a sphere
           lin = linspace (0, 2, N);
           [x, y, z] = meshgrid (lin, lin, lin);
           c = abs ((x-.5).^2 + (y-.5).^2 + (z-.5).^2);
-          figure (); ## Open another figure window
+          figure (); # Open another figure window
           
-          subplot (2, 2, 1); view (-38, 20);
+          subplot (2,2,1); view (-38, 20);
           [f, v] = isosurface (x, y, z, c, iso);
           p = patch ("Faces", f, "Vertices", v, "EdgeColor", "none");
-          cdat = rand (size (c));       ## Compute random patch color data
-          isocolors (x, y, z, cdat, p); ## Directly set colors of patch
-          isofinish (p);                ## Call user function isofinish
+          cdat = rand (size (c));       # Compute random patch color data
+          isocolors (x, y, z, cdat, p); # Directly set colors of patch
+          isofinish (p);                # Call user function isofinish
           
-          subplot (2, 2, 2); view (-38, 20);
+          subplot (2,2,2); view (-38, 20);
           p = patch ("Faces", f, "Vertices", v, "EdgeColor", "none");
           [r, g, b] = meshgrid (lin, 2-lin, 2-lin);
-          cdat = isocolors (x, y, z, c, v); ## Compute color data vertices
-          set (p, "FaceVertexCData", cdat); ## Set color data manually
+          cdat = isocolors (x, y, z, c, v); # Compute color data vertices
+          set (p, "FaceVertexCData", cdat); # Set color data manually
           isofinish (p);
           
-          subplot (2, 2, 3); view (-38, 20);
+          subplot (2,2,3); view (-38, 20);
           p = patch ("Faces", f, "Vertices", v, "EdgeColor", "none");
-          cdat = isocolors (r, g, b, c, p); ## Compute color data patch
-          set (p, "FaceVertexCData", cdat); ## Set color data manually
+          cdat = isocolors (r, g, b, c, p); # Compute color data patch
+          set (p, "FaceVertexCData", cdat); # Set color data manually
           isofinish (p);
           
-          subplot (2, 2, 4); view (-38, 20);
+          subplot (2,2,4); view (-38, 20);
           p = patch ("Faces", f, "Vertices", v, "EdgeColor", "none");
-          r = g = b = repmat ([1:N] / N, [N, 1, N]); ## Black to white
+          r = g = b = repmat ([1:N] / N, [N, 1, N]); # Black to white
           cdat = isocolors (x, y, z, r, g, b, v);
           set (p, "FaceVertexCData", cdat);
           isofinish (p);
@@ -676,9 +676,9 @@ with an empty format string, as
 </pre>
         <p>An example of the use of <code>plot3</code> is
 
-     <pre class="example">             z = [0:0.05:5];
-             plot3 (cos(2*pi*z), sin(2*pi*z), z, ";helix;");
-             plot3 (z, exp(2i*pi*z), ";complex sinusoid;");
+     <pre class="example">          z = [0:0.05:5];
+          plot3 (cos (2*pi*z), sin (2*pi*z), z, ";helix;");
+          plot3 (z, exp (2i*pi*z), ";complex sinusoid;");
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

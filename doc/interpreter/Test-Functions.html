@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -37,13 +37,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Test-and-Demo-Functions.html#Test-and-D
 <p><a name="doc_002dtest"></a>
 
 <div class="defun">
-&mdash; Command:  <b>test</b><var> name<a name="index-test-3374"></a></var><br>
-&mdash; Command:  <b>test</b><var> name quiet|normal|verbose<a name="index-test-3375"></a></var><br>
-&mdash; Function File:  <b>test</b> (<var>'name', 'quiet|normal|verbose', fid</var>)<var><a name="index-test-3376"></a></var><br>
-&mdash; Function File:  <b>test</b> ([]<var>, 'explain', fid</var>)<var><a name="index-test-3377"></a></var><br>
-&mdash; Function File: <var>success</var> = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-3378"></a></var><br>
-&mdash; Function File: [<var>n</var>, <var>max</var>] = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-3379"></a></var><br>
-&mdash; Function File: [<var>code</var>, <var>idx</var>] = <b>test</b> (<var>'name', 'grabdemo'</var>)<var><a name="index-test-3380"></a></var><br>
+&mdash; Command:  <b>test</b><var> name<a name="index-test-3375"></a></var><br>
+&mdash; Command:  <b>test</b><var> name quiet|normal|verbose<a name="index-test-3376"></a></var><br>
+&mdash; Function File:  <b>test</b> (<var>'name', 'quiet|normal|verbose', fid</var>)<var><a name="index-test-3377"></a></var><br>
+&mdash; Function File:  <b>test</b> ([]<var>, 'explain', fid</var>)<var><a name="index-test-3378"></a></var><br>
+&mdash; Function File: <var>success</var> = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-3379"></a></var><br>
+&mdash; Function File: [<var>n</var>, <var>max</var>] = <b>test</b> (<var><small class="dots">...</small></var>)<var><a name="index-test-3380"></a></var><br>
+&mdash; Function File: [<var>code</var>, <var>idx</var>] = <b>test</b> (<var>'name', 'grabdemo'</var>)<var><a name="index-test-3381"></a></var><br>
 <blockquote>
         <p>Perform tests from the first file in the loadpath matching <var>name</var>. 
 <code>test</code> can be called as a command or as a function.  Called with
@@ -303,11 +303,11 @@ path and the user will have to remember to type
    <p><a name="doc_002dassert"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>assert</b> (<var>cond</var>)<var><a name="index-assert-3381"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>cond, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-3382"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>cond, msg_id, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-3383"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>observed, expected</var>)<var><a name="index-assert-3384"></a></var><br>
-&mdash; Function File:  <b>assert</b> (<var>observed, expected, tol</var>)<var><a name="index-assert-3385"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>cond</var>)<var><a name="index-assert-3382"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>cond, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-3383"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>cond, msg_id, errmsg, <small class="dots">...</small></var>)<var><a name="index-assert-3384"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>observed, expected</var>)<var><a name="index-assert-3385"></a></var><br>
+&mdash; Function File:  <b>assert</b> (<var>observed, expected, tol</var>)<var><a name="index-assert-3386"></a></var><br>
 <blockquote>
         <p>Produce an error if the specified condition is not met.  <code>assert</code> can
 be called in three different ways.
@@ -341,9 +341,9 @@ always be interpreted as an absolute tolerance.
    <p><a name="doc_002dfail"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>fail</b> (<var>code</var>)<var><a name="index-fail-3386"></a></var><br>
-&mdash; Function File:  <b>fail</b> (<var>code, pattern</var>)<var><a name="index-fail-3387"></a></var><br>
-&mdash; Function File:  <b>fail</b> (<var>code, 'warning', pattern</var>)<var><a name="index-fail-3388"></a></var><br>
+&mdash; Function File:  <b>fail</b> (<var>code</var>)<var><a name="index-fail-3387"></a></var><br>
+&mdash; Function File:  <b>fail</b> (<var>code, pattern</var>)<var><a name="index-fail-3388"></a></var><br>
+&mdash; Function File:  <b>fail</b> (<var>code, 'warning', pattern</var>)<var><a name="index-fail-3389"></a></var><br>
 <blockquote>
         <p>Return true if <var>code</var> fails with an error message matching
 <var>pattern</var>, otherwise produce an error.  Note that <var>code</var>

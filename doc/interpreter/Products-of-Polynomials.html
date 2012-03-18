@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -66,23 +66,26 @@ convolution represents the coefficient vector of the product polynomial.
    <p><a name="doc_002dconvn"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>C</var> = <b>convn</b> (<var>A, B, shape</var>)<var><a name="index-convn-2712"></a></var><br>
-<blockquote><p>Return the n-D convolution of <var>A</var> and <var>B</var> where the size
-of <var>C</var> is given by
+&mdash; Loadable Function: <var>C</var> = <b>convn</b> (<var>A, B</var>)<var><a name="index-convn-2712"></a></var><br>
+&mdash; Loadable Function: <var>C</var> = <b>convn</b> (<var>A, B, shape</var>)<var><a name="index-convn-2713"></a></var><br>
+<blockquote><p>Return the n-D convolution of <var>A</var> and <var>B</var>.  The size of the result
+is determined by the optional <var>shape</var> argument which takes the following
+values
 
           <dl>
-<dt><var>shape</var> = "full"<dd>Return the full convolution.
+<dt><var>shape</var> = "full"<dd>Return the full convolution.  (default)
 
-          <br><dt><var>shape</var> = "same"<dd>Return central part of the convolution with the same size as <var>A</var>.
+          <br><dt><var>shape</var> = "same"<dd>Return central part of the convolution with the same size as <var>A</var>. 
+The central part of the convolution begins at the indices
+<code>floor ([size(</code><var>B</var><code>)/2] + 1)</code>.
 
           <br><dt><var>shape</var> = "valid"<dd>Return only the parts which do not include zero-padded edges. 
+The size of the result is <code>max (size (A) - size (B) + 1, 0)</code>. 
 </dl>
 
-        <p>By default <var>shape</var> is &lsquo;<samp><span class="samp">"full"</span></samp>&rsquo;. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
+     <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+     <!-- A simple blank line produces the correct behavior. -->
+     <!-- @sp 1 -->
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dconv2.html#doc_002dconv2">conv2</a>, <a href="doc_002dconv.html#doc_002dconv">conv</a>. 
 </p></blockquote></div>
 
@@ -90,7 +93,7 @@ of <var>C</var> is given by
    <p><a name="doc_002ddeconv"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>deconv</b> (<var>y, a</var>)<var><a name="index-deconv-2713"></a></var><br>
+&mdash; Function File:  <b>deconv</b> (<var>y, a</var>)<var><a name="index-deconv-2714"></a></var><br>
 <blockquote><p>Deconvolve two vectors.
 
         <p><code>[b, r] = deconv (y, a)</code> solves for <var>b</var> and <var>r</var> such that
@@ -110,9 +113,9 @@ a remainder polynomial of lowest order.
    <p><a name="doc_002dconv2"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>conv2</b> (<var>A, B</var>)<var><a name="index-conv2-2714"></a></var><br>
-&mdash; Loadable Function:  <b>conv2</b> (<var>v1, v2, m</var>)<var><a name="index-conv2-2715"></a></var><br>
-&mdash; Loadable Function:  <b>conv2</b> (<var><small class="dots">...</small>, shape</var>)<var><a name="index-conv2-2716"></a></var><br>
+&mdash; Loadable Function:  <b>conv2</b> (<var>A, B</var>)<var><a name="index-conv2-2715"></a></var><br>
+&mdash; Loadable Function:  <b>conv2</b> (<var>v1, v2, m</var>)<var><a name="index-conv2-2716"></a></var><br>
+&mdash; Loadable Function:  <b>conv2</b> (<var><small class="dots">...</small>, shape</var>)<var><a name="index-conv2-2717"></a></var><br>
 <blockquote><p>Return the 2-D convolution of <var>A</var> and <var>B</var>.  The size of the result
 is determined by the optional <var>shape</var> argument which takes the following
 values
@@ -120,14 +123,17 @@ values
           <dl>
 <dt><var>shape</var> = "full"<dd>Return the full convolution.  (default)
 
-          <br><dt><var>shape</var> = "same"<dd>Return the central part of the convolution with the same size as <var>A</var>.
+          <br><dt><var>shape</var> = "same"<dd>Return the central part of the convolution with the same size as <var>A</var>. 
+The central part of the convolution begins at the indices
+<code>floor ([size(</code><var>B</var><code>)/2] + 1)</code>.
 
           <br><dt><var>shape</var> = "valid"<dd>Return only the parts which do not include zero-padded edges. 
+The size of the result is <code>max (size (A) - size (B) + 1, 0)</code>. 
 </dl>
 
         <p>When the third argument is a matrix, return the convolution of the matrix
 <var>m</var> by the vector <var>v1</var> in the column direction and by the vector
-<var>v2</var> in the row direction
+<var>v2</var> in the row direction. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
@@ -139,22 +145,22 @@ values
    <p><a name="doc_002dpolygcd"></a>
 
 <div class="defun">
-&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a</var>)<var><a name="index-polygcd-2717"></a></var><br>
-&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a, tol</var>)<var><a name="index-polygcd-2718"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a</var>)<var><a name="index-polygcd-2718"></a></var><br>
+&mdash; Function File: <var>q</var> = <b>polygcd</b> (<var>b, a, tol</var>)<var><a name="index-polygcd-2719"></a></var><br>
 <blockquote>
         <p>Find the greatest common divisor of two polynomials.  This is equivalent
 to the polynomial found by multiplying together all the common roots. 
 Together with deconv, you can reduce a ratio of two polynomials. 
 The tolerance <var>tol</var> defaults to <code>sqrt(eps)</code>.
 
-        <p><strong>Caution:</strong> This is a numerically unstable algorithm and should not be used on large polynomials.
+        <p><strong>Caution:</strong> This is a numerically unstable algorithm and should not
+be used on large polynomials.
 
         <p>Example code:
 
-     <pre class="example">          polygcd (poly(1:8), poly(3:12)) - poly(3:8)
+     <pre class="example">          polygcd (poly (1:8), poly (3:12)) - poly (3:8)
           &rArr; [ 0, 0, 0, 0, 0, 0, 0 ]
-          deconv (poly(1:8), polygcd (poly(1:8), poly(3:12))) ...
-            - poly(1:2)
+          deconv (poly (1:8), polygcd (poly (1:8), poly (3:12))) - poly(1:2)
           &rArr; [ 0, 0, 0 ]
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -167,15 +173,15 @@ The tolerance <var>tol</var> defaults to <code>sqrt(eps)</code>.
    <p><a name="doc_002dresidue"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>r</var>, <var>p</var>, <var>k</var>, <var>e</var>] = <b>residue</b> (<var>b, a</var>)<var><a name="index-residue-2719"></a></var><br>
-&mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k</var>)<var><a name="index-residue-2720"></a></var><br>
-&mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k, e</var>)<var><a name="index-residue-2721"></a></var><br>
+&mdash; Function File: [<var>r</var>, <var>p</var>, <var>k</var>, <var>e</var>] = <b>residue</b> (<var>b, a</var>)<var><a name="index-residue-2720"></a></var><br>
+&mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k</var>)<var><a name="index-residue-2721"></a></var><br>
+&mdash; Function File: [<var>b</var>, <var>a</var>] = <b>residue</b> (<var>r, p, k, e</var>)<var><a name="index-residue-2722"></a></var><br>
 <blockquote><p>The first calling form computes the partial fraction expansion for the
 quotient of the polynomials, <var>b</var> and <var>a</var>.
 
-     <pre class="example">           B(s)    M       r(m)         N
-           ---- = SUM -------------  + SUM k(i)*s^(N-i)
-           A(s)   m=1 (s-p(m))^e(m)    i=1
+     <pre class="example">          B(s)    M       r(m)         N
+          ---- = SUM -------------  + SUM k(i)*s^(N-i)
+          A(s)   m=1 (s-p(m))^e(m)    i=1
 </pre>
         <p class="noindent">where M is the number of poles (the length of the <var>r</var>,
 <var>p</var>, and <var>e</var>), the <var>k</var> vector is a polynomial of order N-1
@@ -186,11 +192,11 @@ the multiplicity of the m-th residue's pole.
 
      <pre class="example">          b = [1, 1, 1];
           a = [1, -5, 8, -4];
-          [r, p, k, e] = residue (b, a);
-               &rArr; r = [-2; 7; 3]
-               &rArr; p = [2; 2; 1]
-               &rArr; k = [](0x0)
-               &rArr; e = [1; 2; 1]
+          [r, p, k, e] = residue (b, a)
+             &rArr; r = [-2; 7; 3]
+             &rArr; p = [2; 2; 1]
+             &rArr; k = [](0x0)
+             &rArr; e = [1; 2; 1]
 </pre>
         <p class="noindent">which represents the following partial fraction expansion
 
@@ -212,9 +218,9 @@ determined by the function <code>mpoles</code>.
      <pre class="example">          r = [-2; 7; 3];
           p = [2; 2; 1];
           k = [1, 0];
-          [b, a] = residue (r, p, k);
-               &rArr; b = [1, -5, 9, -3, 1]
-               &rArr; a = [1, -5, 8, -4]
+          [b, a] = residue (r, p, k)
+             &rArr; b = [1, -5, 9, -3, 1]
+             &rArr; a = [1, -5, 8, -4]
           
           where mpoles is used to determine e = [1; 2; 1]
 </pre>
@@ -224,15 +230,15 @@ determined by the function <code>mpoles</code>.
           p = [2; 1; 2];
           k = [1, 0];
           e = [2; 1; 1];
-          [b, a] = residue (r, p, k, e);
-               &rArr; b = [1, -5, 9, -3, 1]
-               &rArr; a = [1, -5, 8, -4]
+          [b, a] = residue (r, p, k, e)
+             &rArr; b = [1, -5, 9, -3, 1]
+             &rArr; a = [1, -5, 8, -4]
 </pre>
         <p class="noindent">which represents the following partial fraction expansion
 
-     <pre class="example">              -2        7        3         s^4 - 5s^3 + 9s^2 - 3s + 1
-             ----- + ------- + ----- + s = --------------------------
-             (s-2)   (s-2)^2   (s-1)          s^3 - 5s^2 + 8s - 4
+     <pre class="example">           -2        7        3         s^4 - 5s^3 + 9s^2 - 3s + 1
+          ----- + ------- + ----- + s = --------------------------
+          (s-2)   (s-2)^2   (s-1)          s^3 - 5s^2 + 8s - 4
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

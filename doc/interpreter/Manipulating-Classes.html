@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -46,7 +46,7 @@ then Octave will printed nothing when displaying the contents of a class.
    <p><a name="doc_002ddisplay"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>display</b> (<var>a</var>)<var><a name="index-display-2991"></a></var><br>
+&mdash; Function File:  <b>display</b> (<var>a</var>)<var><a name="index-display-2992"></a></var><br>
 <blockquote><p>Display the contents of an object.  If <var>a</var> is an object of the
 class "myclass", then <code>display</code> is called in a case like
 
@@ -182,7 +182,7 @@ initialized before it is saved.  This can be done with the
    <p><a name="doc_002dsaveobj"></a>
 
 <div class="defun">
-&mdash; Function File: <var>b</var> = <b>saveobj</b> (<var>a</var>)<var><a name="index-saveobj-2992"></a></var><br>
+&mdash; Function File: <var>b</var> = <b>saveobj</b> (<var>a</var>)<var><a name="index-saveobj-2993"></a></var><br>
 <blockquote><p>Method of a class to manipulate an object prior to saving it to a file. 
 The function <code>saveobj</code> is called when the object <var>a</var> is saved
 using the <code>save</code> function.  An example of the use of <code>saveobj</code>
@@ -193,7 +193,7 @@ initialized before the object is saved.  For example:
      <pre class="example">          function b = saveobj (a)
             b = a;
             if (isempty (b.field))
-               b.field = initfield(b);
+               b.field = initfield (b);
             endif
           endfunction
 </pre>
@@ -212,7 +212,7 @@ fields are reinserted into the user object.
    <p><a name="doc_002dloadobj"></a>
 
 <div class="defun">
-&mdash; Function File: <var>b</var> = <b>loadobj</b> (<var>a</var>)<var><a name="index-loadobj-2993"></a></var><br>
+&mdash; Function File: <var>b</var> = <b>loadobj</b> (<var>a</var>)<var><a name="index-loadobj-2994"></a></var><br>
 <blockquote><p>Method of a class to manipulate an object after loading it from a file. 
 The function <code>loadobj</code> is called when the object <var>a</var> is loaded
 using the <code>load</code> function.  An example of the use of <code>saveobj</code>

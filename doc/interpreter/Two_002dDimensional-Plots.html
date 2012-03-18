@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -349,13 +349,13 @@ pairs.  The following example modifies the face and edge colors.
 </pre>
         <p class="noindent">The color of the bars is taken from the figure's colormap, such that
 
-     <pre class="example">          bar (rand(10,3))
-          colormap (summer ())
+     <pre class="example">          bar (rand (10, 3));
+          colormap (summer (64));
 </pre>
         <p class="noindent">will change the colors used for the bars.  The color of bars can also be set
 manually using the "facecolor" property as shown below.
 
-     <pre class="example">          h = bar (rand(10,3))
+     <pre class="example">          h = bar (rand (10, 3));
           set (h(1), "facecolor", "r")
           set (h(2), "facecolor", "g")
           set (h(3), "facecolor", "b")
@@ -439,12 +439,12 @@ that <code>bar (</code><var>xx</var><code>, </code><var>nn</var><code>)</code> w
 pairs, <var>prop</var> and <var>val</var> pairs.  For example the face and edge
 color may be modified.
 
-     <pre class="example">          hist (randn (1, 100), 25, "facecolor", "r", "edgecolor", "b")
+     <pre class="example">          hist (randn (1, 100), 25, "facecolor", "r", "edgecolor", "b");
 </pre>
         <p class="noindent">The histograms colors also depend upon the colormap.
 
-     <pre class="example">          hist (rand (10, 3))
-          colormap (summer ())
+     <pre class="example">          hist (rand (10, 3));
+          colormap (summer ());
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -511,7 +511,7 @@ be altered by the <code>linespec</code> argument in the same manner as the
 <code>plot</code> command.  For example,
 
      <pre class="example">          x = 1:10;
-          y = ones (1, length (x))*2.*x;
+          y = 2*x;
           stem (x, y, "r");
 </pre>
         <p class="noindent">plots 10 stems with heights from 2 to 20 in red;
@@ -522,13 +522,13 @@ handle regroups the elements of the stem graph together as the
 children of the "stem series" handle, allowing them to be altered
 together.  For example,
 
-     <pre class="example">          x = [0 : 10]';
+     <pre class="example">          x = [0:10]';
           y = [sin(x), cos(x)]
           h = stem (x, y);
           set (h(2), "color", "g");
           set (h(1), "basevalue", -1)
 </pre>
-        <p class="noindent">changes the color of the second "stem series"  and moves the base line
+        <p class="noindent">changes the color of the second "stem series" and moves the base line
 of the first. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -639,7 +639,7 @@ axis object that surrounds the other axes, such that the commands
 axis.  Finally <var>p</var> returns the graphics objects associated with
 the histogram and <var>pax</var> the corresponding axes objects.
 
-     <pre class="example">          plotmatrix (randn (100, 3), 'g+')
+     <pre class="example">          plotmatrix (randn (100, 3), "g+")
 </pre>
         </blockquote></div>
 
@@ -707,7 +707,7 @@ line objects representing each histogram.
 histogram, the polar vectors necessary to plot the histogram are
 returned.
 
-     <pre class="example">          [r, t] = rose ([2*randn(1e5,1), pi + 2 * randn(1e5,1)]);
+     <pre class="example">          [r, t] = rose ([2*randn(1e5,1), pi + 2*randn(1e5,1)]);
           polar (r, t);
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -827,8 +827,8 @@ If <var>vn</var> is omitted it defaults to 10.
           y = x;
           z = x' * y;
           contourc (x, y, z, 2:3)
-               &rArr;   2.0000   2.0000   1.0000   3.0000   1.5000   2.0000
-               2.0000   1.0000   2.0000   2.0000   2.0000   1.5000
+             &rArr;   2.0000   2.0000   1.0000   3.0000   1.5000   2.0000
+                  2.0000   1.0000   2.0000   2.0000   2.0000   1.5000
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -855,8 +855,8 @@ contour levels, <var>c</var>, is only returned if requested.  For example:
 
      <pre class="example">          contour3 (peaks (19));
           hold on
-          surface (peaks (19), "facecolor", "none", "EdgeColor", "black")
-          colormap hot
+          surface (peaks (19), "facecolor", "none", "EdgeColor", "black");
+          colormap hot;
 </pre>
         <p>The style to use for the plot can be defined with a line style <var>style</var>
 in a similar manner to the line styles used with the <code>plot</code> command. 
@@ -1238,7 +1238,7 @@ in a similar manner to the line styles used with the <code>plot</code> command.
 line objects representing the drawn vectors.
 
      <pre class="example">          a = toeplitz ([1;randn(9,1)], [1,randn(1,9)]);
-          compass (eig (a))
+          compass (eig (a));
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -1267,8 +1267,8 @@ in a similar manner to the line styles used with the <code>plot</code> command.
         <p>The optional return value <var>h</var> is a vector of graphics handles to the
 line objects representing the drawn vectors.
 
-     <pre class="example">          phi = [0 : 15 : 360] * pi / 180;
-          feather (sin (phi), cos (phi))
+     <pre class="example">          phi = [0 : 15 : 360] * pi/180;
+          feather (sin (phi), cos (phi));
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

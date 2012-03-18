@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -125,12 +125,12 @@ current position.  It is ignored for top level entries.
 
         <p>Examples:
 
-     <pre class="example">          f = uimenu("label", "&amp;File", "accelerator", "f");
-          e = uimenu("label", "&amp;Edit", "accelerator", "e");
-          uimenu(f, "label", "Close", "accelerator", "q", ...
-                    "callback", "close (gcf)");
-          uimenu(e, "label", "Toggle &amp;Grid", "accelerator", "g", ...
-                    "callback", "grid (gca)");
+     <pre class="example">          f = uimenu ("label", "&amp;File", "accelerator", "f");
+          e = uimenu ("label", "&amp;Edit", "accelerator", "e");
+          uimenu (f, "label", "Close", "accelerator", "q", ...
+                     "callback", "close (gcf)");
+          uimenu (e, "label", "Toggle &amp;Grid", "accelerator", "g", ...
+                     "callback", "grid (gca)");
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

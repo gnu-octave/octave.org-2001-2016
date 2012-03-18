@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -49,10 +49,10 @@ higher-level functions.
    <p><a name="doc_002dsystem"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>system</b> (<var>"string"</var>)<var><a name="index-system-3240"></a></var><br>
-&mdash; Built-in Function:  <b>system</b> (<var>"string", return_output</var>)<var><a name="index-system-3241"></a></var><br>
-&mdash; Built-in Function:  <b>system</b> (<var>"string", return_output, type</var>)<var><a name="index-system-3242"></a></var><br>
-&mdash; Built-in Function: [<var>status</var>, <var>output</var>] = <b>system</b> (<var><small class="dots">...</small></var>)<var><a name="index-system-3243"></a></var><br>
+&mdash; Built-in Function:  <b>system</b> (<var>"string"</var>)<var><a name="index-system-3241"></a></var><br>
+&mdash; Built-in Function:  <b>system</b> (<var>"string", return_output</var>)<var><a name="index-system-3242"></a></var><br>
+&mdash; Built-in Function:  <b>system</b> (<var>"string", return_output, type</var>)<var><a name="index-system-3243"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>output</var>] = <b>system</b> (<var><small class="dots">...</small></var>)<var><a name="index-system-3244"></a></var><br>
 <blockquote><p>Execute a shell command specified by <var>string</var>. 
 If the optional argument <var>type</var> is "async", the process
 is started in the background and the process ID of the child process
@@ -96,10 +96,10 @@ command shell that is started to run the command.
    <p><a name="doc_002dunix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>unix</b> (<var>"command"</var>)<var><a name="index-unix-3244"></a></var><br>
-&mdash; Function File: <var>status</var> = <b>unix</b> (<var>"command"</var>)<var><a name="index-unix-3245"></a></var><br>
-&mdash; Function File: [<var>status</var>, <var>text</var>] = <b>unix</b> (<var>"command"</var>)<var><a name="index-unix-3246"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>unix</b> (<var>"command", "-echo"</var>)<var><a name="index-unix-3247"></a></var><br>
+&mdash; Function File:  <b>unix</b> (<var>"command"</var>)<var><a name="index-unix-3245"></a></var><br>
+&mdash; Function File: <var>status</var> = <b>unix</b> (<var>"command"</var>)<var><a name="index-unix-3246"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>text</var>] = <b>unix</b> (<var>"command"</var>)<var><a name="index-unix-3247"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>unix</b> (<var>"command", "-echo"</var>)<var><a name="index-unix-3248"></a></var><br>
 <blockquote><p>Execute a system command if running under a Unix-like operating
 system, otherwise do nothing.  Return the exit status of the program
 in <var>status</var> and any output from the command in <var>text</var>. 
@@ -116,10 +116,10 @@ given, then <var>text</var> is also sent to standard output.
    <p><a name="doc_002ddos"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>dos</b> (<var>"command"</var>)<var><a name="index-dos-3248"></a></var><br>
-&mdash; Function File: <var>status</var> = <b>dos</b> (<var>"command"</var>)<var><a name="index-dos-3249"></a></var><br>
-&mdash; Function File: [<var>status</var>, <var>text</var>] = <b>dos</b> (<var>"command"</var>)<var><a name="index-dos-3250"></a></var><br>
-&mdash; Function File: [<small class="dots">...</small>] = <b>dos</b> (<var>"command", "-echo"</var>)<var><a name="index-dos-3251"></a></var><br>
+&mdash; Function File:  <b>dos</b> (<var>"command"</var>)<var><a name="index-dos-3249"></a></var><br>
+&mdash; Function File: <var>status</var> = <b>dos</b> (<var>"command"</var>)<var><a name="index-dos-3250"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>text</var>] = <b>dos</b> (<var>"command"</var>)<var><a name="index-dos-3251"></a></var><br>
+&mdash; Function File: [<small class="dots">...</small>] = <b>dos</b> (<var>"command", "-echo"</var>)<var><a name="index-dos-3252"></a></var><br>
 <blockquote><p>Execute a system command if running under a Windows-like operating
 system, otherwise do nothing.  Return the exit status of the program
 in <var>status</var> and any output from the command in <var>text</var>. 
@@ -136,8 +136,8 @@ given, then <var>text</var> is also sent to standard output.
    <p><a name="doc_002dperl"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>perl</b> (<var>scriptfile</var>)<var><a name="index-perl-3252"></a></var><br>
-&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>perl</b> (<var>scriptfile, argument1, argument2, <small class="dots">...</small></var>)<var><a name="index-perl-3253"></a></var><br>
+&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>perl</b> (<var>scriptfile</var>)<var><a name="index-perl-3253"></a></var><br>
+&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>perl</b> (<var>scriptfile, argument1, argument2, <small class="dots">...</small></var>)<var><a name="index-perl-3254"></a></var><br>
 <blockquote><p>Invoke Perl script <var>scriptfile</var> with possibly a list of
 command line arguments. 
 Returns output in <var>output</var> and status
@@ -153,8 +153,8 @@ in <var>status</var>.
    <p><a name="doc_002dpython"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>python</b> (<var>scriptfile</var>)<var><a name="index-python-3254"></a></var><br>
-&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>python</b> (<var>scriptfile, argument1, argument2, <small class="dots">...</small></var>)<var><a name="index-python-3255"></a></var><br>
+&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>python</b> (<var>scriptfile</var>)<var><a name="index-python-3255"></a></var><br>
+&mdash; Function File: [<var>output</var>, <var>status</var>] = <b>python</b> (<var>scriptfile, argument1, argument2, <small class="dots">...</small></var>)<var><a name="index-python-3256"></a></var><br>
 <blockquote><p>Invoke python script <var>scriptfile</var> with possibly a list of
 command line arguments. 
 Returns output in <var>output</var> and status
@@ -170,7 +170,7 @@ in <var>status</var>.
    <p><a name="doc_002dpopen"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>fid</var> = <b>popen</b> (<var>command, mode</var>)<var><a name="index-popen-3256"></a></var><br>
+&mdash; Built-in Function: <var>fid</var> = <b>popen</b> (<var>command, mode</var>)<var><a name="index-popen-3257"></a></var><br>
 <blockquote><p>Start a process and create a pipe.  The name of the command to run is
 given by <var>command</var>.  The file identifier corresponding to the input
 or output stream of the process is returned in <var>fid</var>.  The argument
@@ -200,7 +200,7 @@ open for writing.
    <p><a name="doc_002dpclose"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>pclose</b> (<var>fid</var>)<var><a name="index-pclose-3257"></a></var><br>
+&mdash; Built-in Function:  <b>pclose</b> (<var>fid</var>)<var><a name="index-pclose-3258"></a></var><br>
 <blockquote><p>Close a file identifier that was opened by <code>popen</code>.  You may also
 use <code>fclose</code> for the same purpose. 
 </p></blockquote></div>
@@ -209,7 +209,7 @@ use <code>fclose</code> for the same purpose.
    <p><a name="doc_002dpopen2"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>in</var>, <var>out</var>, <var>pid</var>] = <b>popen2</b> (<var>command, args</var>)<var><a name="index-popen2-3258"></a></var><br>
+&mdash; Built-in Function: [<var>in</var>, <var>out</var>, <var>pid</var>] = <b>popen2</b> (<var>command, args</var>)<var><a name="index-popen2-3259"></a></var><br>
 <blockquote><p>Start a subprocess with two-way communication.  The name of the process
 is given by <var>command</var>, and <var>args</var> is an array of strings
 containing options for the command.  The file identifiers for the input
@@ -252,9 +252,9 @@ exit status, it will linger until Octave exits.
    <p><a name="doc_002dEXEC_005fPATH"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>EXEC_PATH</b> ()<var><a name="index-EXEC_005fPATH-3259"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>EXEC_PATH</b> (<var>new_val</var>)<var><a name="index-EXEC_005fPATH-3260"></a></var><br>
-&mdash; Built-in Function:  <b>EXEC_PATH</b> (<var>new_val, "local"</var>)<var><a name="index-EXEC_005fPATH-3261"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>EXEC_PATH</b> ()<var><a name="index-EXEC_005fPATH-3260"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>EXEC_PATH</b> (<var>new_val</var>)<var><a name="index-EXEC_005fPATH-3261"></a></var><br>
+&mdash; Built-in Function:  <b>EXEC_PATH</b> (<var>new_val, "local"</var>)<var><a name="index-EXEC_005fPATH-3262"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies a colon separated
 list of directories to append to the shell PATH when executing external
 programs.  The initial value of is taken from the environment variable
@@ -274,7 +274,7 @@ they can be used, look at the definition of the function <code>popen2</code>.
    <p><a name="doc_002dfork"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>pid</var>, <var>msg</var>] = <b>fork</b> ()<var><a name="index-fork-3262"></a></var><br>
+&mdash; Built-in Function: [<var>pid</var>, <var>msg</var>] = <b>fork</b> ()<var><a name="index-fork-3263"></a></var><br>
 <blockquote><p>Create a copy of the current process.
 
         <p>Fork can return one of the following values:
@@ -296,7 +296,7 @@ action.  A system dependent error message will be waiting in <var>msg</var>.
    <p><a name="doc_002dexec"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>exec</b> (<var>file, args</var>)<var><a name="index-exec-3263"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>exec</b> (<var>file, args</var>)<var><a name="index-exec-3264"></a></var><br>
 <blockquote><p>Replace current process with a new process.  Calling <code>exec</code> without
 first calling <code>fork</code> will terminate your current Octave process and
 replace it with the program named by <var>file</var>.  For example,
@@ -314,7 +314,7 @@ error message.
    <p><a name="doc_002dpipe"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>read_fd</var>, <var>write_fd</var>, <var>err</var>, <var>msg</var>] = <b>pipe</b> ()<var><a name="index-pipe-3264"></a></var><br>
+&mdash; Built-in Function: [<var>read_fd</var>, <var>write_fd</var>, <var>err</var>, <var>msg</var>] = <b>pipe</b> ()<var><a name="index-pipe-3265"></a></var><br>
 <blockquote><p>Create a pipe and return the reading and writing ends of the pipe
 into <var>read_fd</var> and <var>write_fd</var> respectively.
 
@@ -327,7 +327,7 @@ system-dependent error message.
    <p><a name="doc_002ddup2"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>dup2</b> (<var>old, new</var>)<var><a name="index-dup2-3265"></a></var><br>
+&mdash; Built-in Function: [<var>fid</var>, <var>msg</var>] = <b>dup2</b> (<var>old, new</var>)<var><a name="index-dup2-3266"></a></var><br>
 <blockquote><p>Duplicate a file descriptor.
 
         <p>If successful, <var>fid</var> is greater than zero and contains the new file
@@ -339,7 +339,7 @@ system-dependent error message.
    <p><a name="doc_002dwaitpid"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>pid</var>, <var>status</var>, <var>msg</var>] = <b>waitpid</b> (<var>pid, options</var>)<var><a name="index-waitpid-3266"></a></var><br>
+&mdash; Built-in Function: [<var>pid</var>, <var>status</var>, <var>msg</var>] = <b>waitpid</b> (<var>pid, options</var>)<var><a name="index-waitpid-3267"></a></var><br>
 <blockquote><p>Wait for process <var>pid</var> to terminate.  The <var>pid</var> argument can be:
 
           <dl>
@@ -383,7 +383,7 @@ information about the subprocess that exited.
    <p><a name="doc_002dWCONTINUE"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WCONTINUE</b> ()<var><a name="index-WCONTINUE-3267"></a></var><br>
+&mdash; Built-in Function:  <b>WCONTINUE</b> ()<var><a name="index-WCONTINUE-3268"></a></var><br>
 <blockquote><p>Return the numerical value of the option argument that may be
 passed to <code>waitpid</code> to indicate that it should also return
 if a stopped child has been resumed by delivery of a <code>SIGCONT</code>
@@ -399,7 +399,7 @@ signal.
    <p><a name="doc_002dWCOREDUMP"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WCOREDUMP</b> (<var>status</var>)<var><a name="index-WCOREDUMP-3268"></a></var><br>
+&mdash; Built-in Function:  <b>WCOREDUMP</b> (<var>status</var>)<var><a name="index-WCOREDUMP-3269"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
 child produced a core dump.  This function should only be employed if
 <code>WIFSIGNALED</code> returned true.  The macro used to implement this
@@ -416,7 +416,7 @@ Unix implementations (e.g., AIX, SunOS).
    <p><a name="doc_002dWEXITSTATUS"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WEXITSTATUS</b> (<var>status</var>)<var><a name="index-WEXITSTATUS-3269"></a></var><br>
+&mdash; Built-in Function:  <b>WEXITSTATUS</b> (<var>status</var>)<var><a name="index-WEXITSTATUS-3270"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return the exit
 status of the child.  This function should only be employed if
 <code>WIFEXITED</code> returned true. 
@@ -431,7 +431,7 @@ status of the child.  This function should only be employed if
    <p><a name="doc_002dWIFCONTINUED"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WIFCONTINUED</b> (<var>status</var>)<var><a name="index-WIFCONTINUED-3270"></a></var><br>
+&mdash; Built-in Function:  <b>WIFCONTINUED</b> (<var>status</var>)<var><a name="index-WIFCONTINUED-3271"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
 child process was resumed by delivery of <code>SIGCONT</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -445,7 +445,7 @@ child process was resumed by delivery of <code>SIGCONT</code>.
    <p><a name="doc_002dWIFSIGNALED"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WIFSIGNALED</b> (<var>status</var>)<var><a name="index-WIFSIGNALED-3271"></a></var><br>
+&mdash; Built-in Function:  <b>WIFSIGNALED</b> (<var>status</var>)<var><a name="index-WIFSIGNALED-3272"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
 child process was terminated by a signal. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -459,7 +459,7 @@ child process was terminated by a signal.
    <p><a name="doc_002dWIFSTOPPED"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WIFSTOPPED</b> (<var>status</var>)<var><a name="index-WIFSTOPPED-3272"></a></var><br>
+&mdash; Built-in Function:  <b>WIFSTOPPED</b> (<var>status</var>)<var><a name="index-WIFSTOPPED-3273"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
 child process was stopped by delivery of a signal; this is only
 possible if the call was done using <code>WUNTRACED</code> or when the child
@@ -475,7 +475,7 @@ is being traced (see ptrace(2)).
    <p><a name="doc_002dWIFEXITED"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WIFEXITED</b> (<var>status</var>)<var><a name="index-WIFEXITED-3273"></a></var><br>
+&mdash; Built-in Function:  <b>WIFEXITED</b> (<var>status</var>)<var><a name="index-WIFEXITED-3274"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
 child terminated normally. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -489,7 +489,7 @@ child terminated normally.
    <p><a name="doc_002dWNOHANG"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WNOHANG</b> ()<var><a name="index-WNOHANG-3274"></a></var><br>
+&mdash; Built-in Function:  <b>WNOHANG</b> ()<var><a name="index-WNOHANG-3275"></a></var><br>
 <blockquote><p>Return the numerical value of the option argument that may be
 passed to <code>waitpid</code> to indicate that it should return its
 status immediately instead of waiting for a process to exit. 
@@ -504,7 +504,7 @@ status immediately instead of waiting for a process to exit.
    <p><a name="doc_002dWSTOPSIG"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WSTOPSIG</b> (<var>status</var>)<var><a name="index-WSTOPSIG-3275"></a></var><br>
+&mdash; Built-in Function:  <b>WSTOPSIG</b> (<var>status</var>)<var><a name="index-WSTOPSIG-3276"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return the number of
 the signal which caused the child to stop.  This function should only
 be employed if <code>WIFSTOPPED</code> returned true. 
@@ -519,7 +519,7 @@ be employed if <code>WIFSTOPPED</code> returned true.
    <p><a name="doc_002dWTERMSIG"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WTERMSIG</b> (<var>status</var>)<var><a name="index-WTERMSIG-3276"></a></var><br>
+&mdash; Built-in Function:  <b>WTERMSIG</b> (<var>status</var>)<var><a name="index-WTERMSIG-3277"></a></var><br>
 <blockquote><p>Given <var>status</var> from a call to <code>waitpid</code>, return the number of
 the signal that caused the child process to terminate.  This function
 should only be employed if <code>WIFSIGNALED</code> returned true. 
@@ -534,7 +534,7 @@ should only be employed if <code>WIFSIGNALED</code> returned true.
    <p><a name="doc_002dWUNTRACED"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>WUNTRACED</b> ()<var><a name="index-WUNTRACED-3277"></a></var><br>
+&mdash; Built-in Function:  <b>WUNTRACED</b> ()<var><a name="index-WUNTRACED-3278"></a></var><br>
 <blockquote><p>Return the numerical value of the option argument that may be
 passed to <code>waitpid</code> to indicate that it should also return
 if the child process has stopped but is not traced via the
@@ -550,39 +550,39 @@ if the child process has stopped but is not traced via the
    <p><a name="doc_002dfcntl"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>fcntl</b> (<var>fid, request, arg</var>)<var><a name="index-fcntl-3278"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>fcntl</b> (<var>fid, request, arg</var>)<var><a name="index-fcntl-3279"></a></var><br>
 <blockquote><p>Change the properties of the open file <var>fid</var>.  The following values
 may be passed as <var>request</var>:
 
           <dl>
-<dt><code>F_DUPFD</code><a name="index-F_005fDUPFD-3279"></a><dd>Return a duplicate file descriptor.
+<dt><code>F_DUPFD</code><a name="index-F_005fDUPFD-3280"></a><dd>Return a duplicate file descriptor.
 
-          <br><dt><code>F_GETFD</code><a name="index-F_005fGETFD-3280"></a><dd>Return the file descriptor flags for <var>fid</var>.
+          <br><dt><code>F_GETFD</code><a name="index-F_005fGETFD-3281"></a><dd>Return the file descriptor flags for <var>fid</var>.
 
-          <br><dt><code>F_SETFD</code><a name="index-F_005fSETFD-3281"></a><dd>Set the file descriptor flags for <var>fid</var>.
+          <br><dt><code>F_SETFD</code><a name="index-F_005fSETFD-3282"></a><dd>Set the file descriptor flags for <var>fid</var>.
 
-          <br><dt><code>F_GETFL</code><a name="index-F_005fGETFL-3282"></a><dd>Return the file status flags for <var>fid</var>.  The following codes may be
+          <br><dt><code>F_GETFL</code><a name="index-F_005fGETFL-3283"></a><dd>Return the file status flags for <var>fid</var>.  The following codes may be
 returned (some of the flags may be undefined on some systems).
 
                <dl>
-<dt><code>O_RDONLY</code><a name="index-O_005fRDONLY-3283"></a><dd>Open for reading only.
+<dt><code>O_RDONLY</code><a name="index-O_005fRDONLY-3284"></a><dd>Open for reading only.
 
-               <br><dt><code>O_WRONLY</code><a name="index-O_005fWRONLY-3284"></a><dd>Open for writing only.
+               <br><dt><code>O_WRONLY</code><a name="index-O_005fWRONLY-3285"></a><dd>Open for writing only.
 
-               <br><dt><code>O_RDWR</code><a name="index-O_005fRDWR-3285"></a><dd>Open for reading and writing.
+               <br><dt><code>O_RDWR</code><a name="index-O_005fRDWR-3286"></a><dd>Open for reading and writing.
 
-               <br><dt><code>O_APPEND</code><a name="index-O_005fAPPEND-3286"></a><dd>Append on each write.
+               <br><dt><code>O_APPEND</code><a name="index-O_005fAPPEND-3287"></a><dd>Append on each write.
 
-               <br><dt><code>O_CREAT</code><a name="index-O_005fCREAT-3287"></a><dd>Create the file if it does not exist.
+               <br><dt><code>O_CREAT</code><a name="index-O_005fCREAT-3288"></a><dd>Create the file if it does not exist.
 
-               <br><dt><code>O_NONBLOCK</code><a name="index-O_005fNONBLOCK-3288"></a><dd>Non-blocking mode.
+               <br><dt><code>O_NONBLOCK</code><a name="index-O_005fNONBLOCK-3289"></a><dd>Non-blocking mode.
 
-               <br><dt><code>O_SYNC</code><a name="index-O_005fSYNC-3289"></a><dd>Wait for writes to complete.
+               <br><dt><code>O_SYNC</code><a name="index-O_005fSYNC-3290"></a><dd>Wait for writes to complete.
 
-               <br><dt><code>O_ASYNC</code><a name="index-O_005fASYNC-3290"></a><dd>Asynchronous I/O. 
+               <br><dt><code>O_ASYNC</code><a name="index-O_005fASYNC-3291"></a><dd>Asynchronous I/O. 
 </dl>
 
-          <br><dt><code>F_SETFL</code><a name="index-F_005fSETFL-3291"></a><dd>Set the file status flags for <var>fid</var> to the value specified by
+          <br><dt><code>F_SETFL</code><a name="index-F_005fSETFL-3292"></a><dd>Set the file status flags for <var>fid</var> to the value specified by
 <var>arg</var>.  The only flags that can be changed are <code>O_APPEND</code><!-- /@w --> and
 <code>O_NONBLOCK</code><!-- /@w -->. 
 </dl>
@@ -596,7 +596,7 @@ system-dependent error message.
    <p><a name="doc_002dkill"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>kill</b> (<var>pid, sig</var>)<var><a name="index-kill-3292"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>kill</b> (<var>pid, sig</var>)<var><a name="index-kill-3293"></a></var><br>
 <blockquote><p>Send signal <var>sig</var> to process <var>pid</var>.
 
         <p>If <var>pid</var> is positive, then signal <var>sig</var> is sent to <var>pid</var>.
@@ -620,7 +620,7 @@ performed.
    <p><a name="doc_002dSIG"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>SIG</b> ()<var><a name="index-SIG-3293"></a></var><br>
+&mdash; Built-in Function:  <b>SIG</b> ()<var><a name="index-SIG-3294"></a></var><br>
 <blockquote><p>Return a structure containing Unix signal names and their defined values. 
 </p></blockquote></div>
 

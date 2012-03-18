@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -43,8 +43,8 @@ status information on files; and for manipulating file and path names.
    <p><a name="doc_002dmovefile"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>movefile</b> (<var>f1, f2</var>)<var><a name="index-movefile-3150"></a></var><br>
-&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>movefile</b> (<var>f1, f2, 'f'</var>)<var><a name="index-movefile-3151"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>movefile</b> (<var>f1, f2</var>)<var><a name="index-movefile-3151"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>movefile</b> (<var>f1, f2, 'f'</var>)<var><a name="index-movefile-3152"></a></var><br>
 <blockquote><p>Move the file <var>f1</var> to the new name <var>f2</var>.  The name <var>f1</var>
 may contain globbing patterns.  If <var>f1</var> expands to multiple file
 names, <var>f2</var> must be a directory.  If the force flag 'f' is given
@@ -65,7 +65,7 @@ message identifier.
    <p><a name="doc_002drename"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>rename</b> (<var>old, new</var>)<var><a name="index-rename-3152"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>rename</b> (<var>old, new</var>)<var><a name="index-rename-3153"></a></var><br>
 <blockquote><p>Change the name of file <var>old</var> to <var>new</var>.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -82,8 +82,8 @@ system-dependent error message.
    <p><a name="doc_002dcopyfile"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>copyfile</b> (<var>f1, f2</var>)<var><a name="index-copyfile-3153"></a></var><br>
-&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>copyfile</b> (<var>f1, f2, 'f'</var>)<var><a name="index-copyfile-3154"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>copyfile</b> (<var>f1, f2</var>)<var><a name="index-copyfile-3154"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>copyfile</b> (<var>f1, f2, 'f'</var>)<var><a name="index-copyfile-3155"></a></var><br>
 <blockquote><p>Copy the file <var>f1</var> to the new name <var>f2</var>.  The name <var>f1</var>
 may contain globbing patterns.  If <var>f1</var> expands to multiple file
 names, <var>f2</var> must be a directory.  If the force flag 'f' is given then
@@ -104,7 +104,7 @@ message identifier.
    <p><a name="doc_002dunlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>unlink</b> (<var>file</var>)<var><a name="index-unlink-3155"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>unlink</b> (<var>file</var>)<var><a name="index-unlink-3156"></a></var><br>
 <blockquote><p>Delete the file named <var>file</var>.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -116,7 +116,7 @@ system-dependent error message.
    <p><a name="doc_002dlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>link</b> (<var>old, new</var>)<var><a name="index-link-3156"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>link</b> (<var>old, new</var>)<var><a name="index-link-3157"></a></var><br>
 <blockquote><p>Create a new link (also known as a hard link) to an existing file.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -133,7 +133,7 @@ system-dependent error message.
    <p><a name="doc_002dsymlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>symlink</b> (<var>old, new</var>)<var><a name="index-symlink-3157"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>symlink</b> (<var>old, new</var>)<var><a name="index-symlink-3158"></a></var><br>
 <blockquote><p>Create a symbolic link <var>new</var> which contains the string <var>old</var>.
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -150,7 +150,7 @@ system-dependent error message.
    <p><a name="doc_002dreadlink"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>result</var>, <var>err</var>, <var>msg</var>] = <b>readlink</b> (<var>symlink</var>)<var><a name="index-readlink-3158"></a></var><br>
+&mdash; Built-in Function: [<var>result</var>, <var>err</var>, <var>msg</var>] = <b>readlink</b> (<var>symlink</var>)<var><a name="index-readlink-3159"></a></var><br>
 <blockquote><p>Read the value of the symbolic link <var>symlink</var>.
 
         <p>If successful, <var>result</var> contains the contents of the symbolic link
@@ -168,8 +168,8 @@ system-dependent error message.
    <p><a name="doc_002dmkdir"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>mkdir</b> (<var>dir</var>)<var><a name="index-mkdir-3159"></a></var><br>
-&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>mkdir</b> (<var>parent, dir</var>)<var><a name="index-mkdir-3160"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>mkdir</b> (<var>dir</var>)<var><a name="index-mkdir-3160"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>mkdir</b> (<var>parent, dir</var>)<var><a name="index-mkdir-3161"></a></var><br>
 <blockquote><p>Create a directory named <var>dir</var> in the directory <var>parent</var>.
 
         <p>If successful, <var>status</var> is 1, with <var>msg</var> and <var>msgid</var> empty
@@ -187,8 +187,8 @@ message identifier.
    <p><a name="doc_002drmdir"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir</var>)<var><a name="index-rmdir-3161"></a></var><br>
-&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir, "s"</var>)<var><a name="index-rmdir-3162"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir</var>)<var><a name="index-rmdir-3162"></a></var><br>
+&mdash; Built-in Function: [<var>status</var>, <var>msg</var>, <var>msgid</var>] = <b>rmdir</b> (<var>dir, "s"</var>)<var><a name="index-rmdir-3163"></a></var><br>
 <blockquote><p>Remove the directory named <var>dir</var>.
 
         <p>If successful, <var>status</var> is 1, with <var>msg</var> and <var>msgid</var> empty
@@ -209,9 +209,9 @@ recursively remove all subdirectories as well.
    <p><a name="doc_002dconfirm_005frecursive_005frmdir"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>confirm_recursive_rmdir</b> ()<var><a name="index-confirm_005frecursive_005frmdir-3163"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>confirm_recursive_rmdir</b> (<var>new_val</var>)<var><a name="index-confirm_005frecursive_005frmdir-3164"></a></var><br>
-&mdash; Built-in Function:  <b>confirm_recursive_rmdir</b> (<var>new_val, "local"</var>)<var><a name="index-confirm_005frecursive_005frmdir-3165"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>confirm_recursive_rmdir</b> ()<var><a name="index-confirm_005frecursive_005frmdir-3164"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>confirm_recursive_rmdir</b> (<var>new_val</var>)<var><a name="index-confirm_005frecursive_005frmdir-3165"></a></var><br>
+&mdash; Built-in Function:  <b>confirm_recursive_rmdir</b> (<var>new_val, "local"</var>)<var><a name="index-confirm_005frecursive_005frmdir-3166"></a></var><br>
 <blockquote><p>Query or set the internal variable that controls whether Octave
 will ask for confirmation before recursively removing a directory tree.
 
@@ -224,7 +224,7 @@ variable value is restored when exiting the function.
    <p><a name="doc_002dmkfifo"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>mkfifo</b> (<var>name, mode</var>)<var><a name="index-mkfifo-3166"></a></var><br>
+&mdash; Built-in Function: [<var>err</var>, <var>msg</var>] = <b>mkfifo</b> (<var>name, mode</var>)<var><a name="index-mkfifo-3167"></a></var><br>
 <blockquote><p>Create a <var>fifo</var> special file named <var>name</var> with file mode <var>mode</var>
 
         <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string. 
@@ -236,7 +236,7 @@ system-dependent error message.
    <p><a name="doc_002dumask"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>umask</b> (<var>mask</var>)<var><a name="index-umask-3167"></a></var><br>
+&mdash; Built-in Function:  <b>umask</b> (<var>mask</var>)<var><a name="index-umask-3168"></a></var><br>
 <blockquote><p>Set the permission mask for file creation.  The parameter <var>mask</var>
 is an integer, interpreted as an octal number.  If successful,
 returns the previous value of the mask (as an integer to be
@@ -247,10 +247,10 @@ interpreted as an octal number); otherwise an error message is printed.
 <a name="doc_002dstat"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>stat</b> (<var>file</var>)<var><a name="index-stat-3168"></a></var><br>
-&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>stat</b> (<var>fid</var>)<var><a name="index-stat-3169"></a></var><br>
-&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>lstat</b> (<var>file</var>)<var><a name="index-lstat-3170"></a></var><br>
-&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>lstat</b> (<var>fid</var>)<var><a name="index-lstat-3171"></a></var><br>
+&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>stat</b> (<var>file</var>)<var><a name="index-stat-3169"></a></var><br>
+&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>stat</b> (<var>fid</var>)<var><a name="index-stat-3170"></a></var><br>
+&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>lstat</b> (<var>file</var>)<var><a name="index-lstat-3171"></a></var><br>
+&mdash; Built-in Function: [<var>info</var>, <var>err</var>, <var>msg</var>] = <b>lstat</b> (<var>fid</var>)<var><a name="index-lstat-3172"></a></var><br>
 <blockquote><p>Return a structure <var>info</var> containing the following information about
 <var>file</var> or file identifier <var>fid</var>.
 
@@ -329,7 +329,7 @@ if you want information about the symbolic link itself.
    <p><a name="doc_002dS_005fISBLK"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>S_ISBLK</b> (<var>mode</var>)<var><a name="index-S_005fISBLK-3172"></a></var><br>
+&mdash; Built-in Function:  <b>S_ISBLK</b> (<var>mode</var>)<var><a name="index-S_005fISBLK-3173"></a></var><br>
 <blockquote><p>Return true if <var>mode</var> corresponds to a block device.  The value
 of <var>mode</var> is assumed to be returned from a call to <code>stat</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -343,7 +343,7 @@ of <var>mode</var> is assumed to be returned from a call to <code>stat</code>.
    <p><a name="doc_002dS_005fISCHR"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>S_ISCHR</b> (<var>mode</var>)<var><a name="index-S_005fISCHR-3173"></a></var><br>
+&mdash; Built-in Function:  <b>S_ISCHR</b> (<var>mode</var>)<var><a name="index-S_005fISCHR-3174"></a></var><br>
 <blockquote><p>Return true if <var>mode</var> corresponds to a character device.  The value
 of <var>mode</var> is assumed to be returned from a call to <code>stat</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -357,7 +357,7 @@ of <var>mode</var> is assumed to be returned from a call to <code>stat</code>.
    <p><a name="doc_002dS_005fISDIR"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>S_ISDIR</b> (<var>mode</var>)<var><a name="index-S_005fISDIR-3174"></a></var><br>
+&mdash; Built-in Function:  <b>S_ISDIR</b> (<var>mode</var>)<var><a name="index-S_005fISDIR-3175"></a></var><br>
 <blockquote><p>Return true if <var>mode</var> corresponds to a directory.  The value
 of <var>mode</var> is assumed to be returned from a call to <code>stat</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -371,7 +371,7 @@ of <var>mode</var> is assumed to be returned from a call to <code>stat</code>.
    <p><a name="doc_002dS_005fISFIFO"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>S_ISFIFO</b> (<var>mode</var>)<var><a name="index-S_005fISFIFO-3175"></a></var><br>
+&mdash; Built-in Function:  <b>S_ISFIFO</b> (<var>mode</var>)<var><a name="index-S_005fISFIFO-3176"></a></var><br>
 <blockquote><p>Return true if <var>mode</var> corresponds to a fifo.  The value
 of <var>mode</var> is assumed to be returned from a call to <code>stat</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -385,7 +385,7 @@ of <var>mode</var> is assumed to be returned from a call to <code>stat</code>.
    <p><a name="doc_002dS_005fISLNK"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>S_ISLNK</b> (<var>mode</var>)<var><a name="index-S_005fISLNK-3176"></a></var><br>
+&mdash; Built-in Function:  <b>S_ISLNK</b> (<var>mode</var>)<var><a name="index-S_005fISLNK-3177"></a></var><br>
 <blockquote><p>Return true if <var>mode</var> corresponds to a symbolic link.  The value
 of <var>mode</var> is assumed to be returned from a call to <code>stat</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -399,7 +399,7 @@ of <var>mode</var> is assumed to be returned from a call to <code>stat</code>.
    <p><a name="doc_002dS_005fISREG"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>S_ISREG</b> (<var>mode</var>)<var><a name="index-S_005fISREG-3177"></a></var><br>
+&mdash; Built-in Function:  <b>S_ISREG</b> (<var>mode</var>)<var><a name="index-S_005fISREG-3178"></a></var><br>
 <blockquote><p>Return true if <var>mode</var> corresponds to a regular file.  The value
 of <var>mode</var> is assumed to be returned from a call to <code>stat</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -413,7 +413,7 @@ of <var>mode</var> is assumed to be returned from a call to <code>stat</code>.
    <p><a name="doc_002dS_005fISSOCK"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>S_ISSOCK</b> (<var>mode</var>)<var><a name="index-S_005fISSOCK-3178"></a></var><br>
+&mdash; Built-in Function:  <b>S_ISSOCK</b> (<var>mode</var>)<var><a name="index-S_005fISSOCK-3179"></a></var><br>
 <blockquote><p>Return true if <var>mode</var> corresponds to a socket.  The value
 of <var>mode</var> is assumed to be returned from a call to <code>stat</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -427,7 +427,7 @@ of <var>mode</var> is assumed to be returned from a call to <code>stat</code>.
    <p><a name="doc_002dfileattrib"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>status</var>, <var>result</var>, <var>msgid</var>] = <b>fileattrib</b> (<var>file</var>)<var><a name="index-fileattrib-3179"></a></var><br>
+&mdash; Function File: [<var>status</var>, <var>result</var>, <var>msgid</var>] = <b>fileattrib</b> (<var>file</var>)<var><a name="index-fileattrib-3180"></a></var><br>
 <blockquote><p>Return information about <var>file</var>.
 
         <p>If successful, <var>status</var> is 1, with <var>result</var> containing a
@@ -472,7 +472,7 @@ all the matching files.
    <p><a name="doc_002disdir"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>isdir</b> (<var>f</var>)<var><a name="index-isdir-3180"></a></var><br>
+&mdash; Function File:  <b>isdir</b> (<var>f</var>)<var><a name="index-isdir-3181"></a></var><br>
 <blockquote><p>Return true if <var>f</var> is a directory. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -485,7 +485,7 @@ all the matching files.
    <p><a name="doc_002dreaddir"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>files</var>, <var>err</var>, <var>msg</var>] = <b>readdir</b> (<var>dir</var>)<var><a name="index-readdir-3181"></a></var><br>
+&mdash; Built-in Function: [<var>files</var>, <var>err</var>, <var>msg</var>] = <b>readdir</b> (<var>dir</var>)<var><a name="index-readdir-3182"></a></var><br>
 <blockquote><p>Return names of the files in the directory <var>dir</var> as a cell array of
 strings.  If an error occurs, return an empty cell array in <var>files</var>.
 
@@ -503,7 +503,7 @@ system-dependent error message.
    <p><a name="doc_002dglob"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>glob</b> (<var>pattern</var>)<var><a name="index-glob-3182"></a></var><br>
+&mdash; Built-in Function:  <b>glob</b> (<var>pattern</var>)<var><a name="index-glob-3183"></a></var><br>
 <blockquote><p>Given an array of pattern strings (as a char array or a cell array) in
 <var>pattern</var>, return a cell array of file names that match any of
 them, or an empty cell array if no patterns match.  The pattern strings are
@@ -551,7 +551,7 @@ names.  For example:
    <p><a name="doc_002dfnmatch"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>fnmatch</b> (<var>pattern, string</var>)<var><a name="index-fnmatch-3183"></a></var><br>
+&mdash; Built-in Function:  <b>fnmatch</b> (<var>pattern, string</var>)<var><a name="index-fnmatch-3184"></a></var><br>
 <blockquote><p>Return 1 or zero for each element of <var>string</var> that matches any of
 the elements of the string array <var>pattern</var>, using the rules of
 filename pattern matching.  For example:
@@ -565,8 +565,8 @@ filename pattern matching.  For example:
    <p><a name="doc_002dfile_005fin_005fpath"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file</var>)<var><a name="index-file_005fin_005fpath-3184"></a></var><br>
-&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file, "all"</var>)<var><a name="index-file_005fin_005fpath-3185"></a></var><br>
+&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file</var>)<var><a name="index-file_005fin_005fpath-3185"></a></var><br>
+&mdash; Built-in Function:  <b>file_in_path</b> (<var>path, file, "all"</var>)<var><a name="index-file_005fin_005fpath-3186"></a></var><br>
 <blockquote><p>Return the absolute name of <var>file</var> if it can be found in
 <var>path</var>.  The value of <var>path</var> should be a colon-separated list of
 directories in the format described for <code>path</code>.  If no file
@@ -593,8 +593,8 @@ name in the path.  If no files are found, return an empty cell array.
    <p><a name="doc_002dfilesep"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>filesep</b> ()<var><a name="index-filesep-3186"></a></var><br>
-&mdash; Built-in Function:  <b>filesep</b> (<var>'all'</var>)<var><a name="index-filesep-3187"></a></var><br>
+&mdash; Built-in Function:  <b>filesep</b> ()<var><a name="index-filesep-3187"></a></var><br>
+&mdash; Built-in Function:  <b>filesep</b> (<var>'all'</var>)<var><a name="index-filesep-3188"></a></var><br>
 <blockquote><p>Return the system-dependent character used to separate directory names.
 
         <p>If 'all' is given, the function returns all valid file separators in
@@ -612,9 +612,9 @@ It is &lsquo;<samp><span class="samp">/</span></samp>&rsquo; (forward slash) und
    <p><a name="doc_002dfilemarker"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>filemarker</b> ()<var><a name="index-filemarker-3188"></a></var><br>
-&mdash; Built-in Function:  <b>filemarker</b> (<var>new_val</var>)<var><a name="index-filemarker-3189"></a></var><br>
-&mdash; Built-in Function:  <b>filemarker</b> (<var>new_val, "local"</var>)<var><a name="index-filemarker-3190"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>filemarker</b> ()<var><a name="index-filemarker-3189"></a></var><br>
+&mdash; Built-in Function:  <b>filemarker</b> (<var>new_val</var>)<var><a name="index-filemarker-3190"></a></var><br>
+&mdash; Built-in Function:  <b>filemarker</b> (<var>new_val, "local"</var>)<var><a name="index-filemarker-3191"></a></var><br>
 <blockquote><p>Query or set the character used to separate filename from the
 the subfunction names contained within the file.  This can be used in
 a generic manner to interact with subfunctions.  For example,
@@ -639,7 +639,7 @@ variable value is restored when exiting the function.
    <p><a name="doc_002dfileparts"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>dir</var>, <var>name</var>, <var>ext</var>, <var>ver</var>] = <b>fileparts</b> (<var>filename</var>)<var><a name="index-fileparts-3191"></a></var><br>
+&mdash; Function File: [<var>dir</var>, <var>name</var>, <var>ext</var>, <var>ver</var>] = <b>fileparts</b> (<var>filename</var>)<var><a name="index-fileparts-3192"></a></var><br>
 <blockquote><p>Return the directory, name, extension, and version components of
 <var>filename</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -653,7 +653,7 @@ variable value is restored when exiting the function.
    <p><a name="doc_002dfullfile"></a>
 
 <div class="defun">
-&mdash; Function File: <var>filename</var> = <b>fullfile</b> (<var>dir1, dir2, <small class="dots">...</small>, file</var>)<var><a name="index-fullfile-3192"></a></var><br>
+&mdash; Function File: <var>filename</var> = <b>fullfile</b> (<var>dir1, dir2, <small class="dots">...</small>, file</var>)<var><a name="index-fullfile-3193"></a></var><br>
 <blockquote><p>Return a complete filename constructed from the given components. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -666,7 +666,7 @@ variable value is restored when exiting the function.
    <p><a name="doc_002dtilde_005fexpand"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>tilde_expand</b> (<var>string</var>)<var><a name="index-tilde_005fexpand-3193"></a></var><br>
+&mdash; Built-in Function:  <b>tilde_expand</b> (<var>string</var>)<var><a name="index-tilde_005fexpand-3194"></a></var><br>
 <blockquote><p>Perform tilde expansion on <var>string</var>.  If <var>string</var> begins with a
 tilde character, (&lsquo;<samp><span class="samp">~</span></samp>&rsquo;), all of the characters preceding the first
 slash (or all characters, if there is no slash) are treated as a
@@ -686,7 +686,7 @@ home directory of the user running Octave.  For example:
    <p><a name="doc_002dcanonicalize_005ffile_005fname"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>cname</var>, <var>status</var>, <var>msg</var>] <b>canonicalize_file_name</b> (<var>name</var>)<var><a name="index-canonicalize_005ffile_005fname-3194"></a></var><br>
+&mdash; Built-in Function: [<var>cname</var>, <var>status</var>, <var>msg</var>] <b>canonicalize_file_name</b> (<var>name</var>)<var><a name="index-canonicalize_005ffile_005fname-3195"></a></var><br>
 <blockquote><p>Return the canonical name of file <var>name</var>. 
 </p></blockquote></div>
 
@@ -694,7 +694,7 @@ home directory of the user running Octave.  For example:
    <p><a name="doc_002dmake_005fabsolute_005ffilename"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>make_absolute_filename</b> (<var>file</var>)<var><a name="index-make_005fabsolute_005ffilename-3195"></a></var><br>
+&mdash; Built-in Function:  <b>make_absolute_filename</b> (<var>file</var>)<var><a name="index-make_005fabsolute_005ffilename-3196"></a></var><br>
 <blockquote><p>Return the full name of <var>file</var>, relative to the current directory. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -707,7 +707,7 @@ home directory of the user running Octave.  For example:
    <p><a name="doc_002dis_005fabsolute_005ffilename"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>is_absolute_filename</b> (<var>file</var>)<var><a name="index-is_005fabsolute_005ffilename-3196"></a></var><br>
+&mdash; Built-in Function:  <b>is_absolute_filename</b> (<var>file</var>)<var><a name="index-is_005fabsolute_005ffilename-3197"></a></var><br>
 <blockquote><p>Return true if <var>file</var> is an absolute filename. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -720,7 +720,7 @@ home directory of the user running Octave.  For example:
    <p><a name="doc_002dis_005frooted_005frelative_005ffilename"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>is_rooted_relative_filename</b> (<var>file</var>)<var><a name="index-is_005frooted_005frelative_005ffilename-3197"></a></var><br>
+&mdash; Built-in Function:  <b>is_rooted_relative_filename</b> (<var>file</var>)<var><a name="index-is_005frooted_005frelative_005ffilename-3198"></a></var><br>
 <blockquote><p>Return true if <var>file</var> is a rooted-relative filename. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -733,7 +733,7 @@ home directory of the user running Octave.  For example:
    <p><a name="doc_002dP_005ftmpdir"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>P_tmpdir</b> ()<var><a name="index-P_005ftmpdir-3198"></a></var><br>
+&mdash; Built-in Function:  <b>P_tmpdir</b> ()<var><a name="index-P_005ftmpdir-3199"></a></var><br>
 <blockquote><p>Return the default name of the directory for temporary files on
 this system.  The name of this directory is system dependent. 
 </p></blockquote></div>
@@ -742,7 +742,7 @@ this system.  The name of this directory is system dependent.
    <p><a name="doc_002dtempdir"></a>
 
 <div class="defun">
-&mdash; Function File: <var>dir</var> = <b>tempdir</b> ()<var><a name="index-tempdir-3199"></a></var><br>
+&mdash; Function File: <var>dir</var> = <b>tempdir</b> ()<var><a name="index-tempdir-3200"></a></var><br>
 <blockquote><p>Return the name of the system's directory for temporary files. 
 </p></blockquote></div>
 
@@ -750,9 +750,9 @@ this system.  The name of this directory is system dependent.
    <p><a name="doc_002dtempname"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>tempname</b> ()<var><a name="index-tempname-3200"></a></var><br>
-&mdash; Function File:  <b>tempname</b> (<var>dir</var>)<var><a name="index-tempname-3201"></a></var><br>
-&mdash; Function File:  <b>tempname</b> (<var>dir, prefix</var>)<var><a name="index-tempname-3202"></a></var><br>
+&mdash; Function File:  <b>tempname</b> ()<var><a name="index-tempname-3201"></a></var><br>
+&mdash; Function File:  <b>tempname</b> (<var>dir</var>)<var><a name="index-tempname-3202"></a></var><br>
+&mdash; Function File:  <b>tempname</b> (<var>dir, prefix</var>)<var><a name="index-tempname-3203"></a></var><br>
 <blockquote><p>This function is an alias for <code>tmpnam</code>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -765,8 +765,8 @@ this system.  The name of this directory is system dependent.
    <p><a name="doc_002drecycle"></a>
 
 <div class="defun">
-&mdash; Function File: <var>current_state</var> <b>recycle</b> ()<var><a name="index-recycle-3203"></a></var><br>
-&mdash; Function File: <var>old_state</var> <b>recycle</b> (<var>new_state</var>)<var><a name="index-recycle-3204"></a></var><br>
+&mdash; Function File: <var>current_state</var> <b>recycle</b> ()<var><a name="index-recycle-3204"></a></var><br>
+&mdash; Function File: <var>old_state</var> <b>recycle</b> (<var>new_state</var>)<var><a name="index-recycle-3205"></a></var><br>
 <blockquote><p>Query or set the preference for recycling deleted files.
 
         <p>Recycling files instead of permanently deleting them is currently not

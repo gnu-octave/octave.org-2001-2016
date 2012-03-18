@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -47,8 +47,8 @@ interpolation are <code>griddata</code>, <code>griddata3</code> and
    <p><a name="doc_002dgriddata"></a>
 
 <div class="defun">
-&mdash; Function File: <var>zi</var> = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2813"></a></var><br>
-&mdash; Function File: [<var>xi</var>, <var>yi</var>, <var>zi</var>] = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2814"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2814"></a></var><br>
+&mdash; Function File: [<var>xi</var>, <var>yi</var>, <var>zi</var>] = <b>griddata</b> (<var>x, y, z, xi, yi, method</var>)<var><a name="index-griddata-2815"></a></var><br>
 <blockquote>
         <p>Generate a regular mesh from irregular data using interpolation. 
 The function is defined by <var>z</var><code> = f (</code><var>x</var><code>, </code><var>y</var><code>)</code>. 
@@ -71,11 +71,11 @@ or <var>x</var><code>, </code><var>y</var> are vectors and <var>z</var> is matri
    <p><a name="doc_002dgriddata3"></a>
 
 <div class="defun">
-&mdash; Function File: <var>vi</var> = <b>griddata3</b> (<var>x, y, z, v xi, yi, zi, method, options</var>)<var><a name="index-griddata3-2815"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>griddata3</b> (<var>x, y, z, v, xi, yi, zi, method, options</var>)<var><a name="index-griddata3-2816"></a></var><br>
 <blockquote>
         <p>Generate a regular mesh from irregular data using interpolation. 
-The function is defined by <var>y</var><code> = f (</code><var>x</var><code>,</code><var>y</var><code>,</code><var>z</var><code>)</code>. 
-The interpolation points are all <var>xi</var>.
+The function is defined by <var>v</var><code> = f (</code><var>x</var><code>, </code><var>y</var><code>, </code><var>z</var><code>)</code>. 
+The interpolation points are specified by <var>xi</var>, <var>yi</var>, <var>zi</var>.
 
         <p>The interpolation method can be <code>"nearest"</code> or <code>"linear"</code>. 
 If method is omitted it defaults to <code>"linear"</code>. 
@@ -83,14 +83,14 @@ If method is omitted it defaults to <code>"linear"</code>.
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgriddata.html#doc_002dgriddata">griddata</a>, <a href="doc_002ddelaunayn.html#doc_002ddelaunayn">delaunayn</a>. 
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dgriddata.html#doc_002dgriddata">griddata</a>, <a href="doc_002dgriddatan.html#doc_002dgriddatan">griddatan</a>, <a href="doc_002ddelaunayn.html#doc_002ddelaunayn">delaunayn</a>. 
 </p></blockquote></div>
 
 <!-- griddatan scripts/geometry/griddatan.m -->
    <p><a name="doc_002dgriddatan"></a>
 
 <div class="defun">
-&mdash; Function File: <var>yi</var> = <b>griddatan</b> (<var>x, y, xi, method, options</var>)<var><a name="index-griddatan-2816"></a></var><br>
+&mdash; Function File: <var>yi</var> = <b>griddatan</b> (<var>x, y, xi, method, options</var>)<var><a name="index-griddatan-2817"></a></var><br>
 <blockquote>
         <p>Generate a regular mesh from irregular data using interpolation. 
 The function is defined by <var>y</var><code> = f (</code><var>x</var><code>)</code>. 

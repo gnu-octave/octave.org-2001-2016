@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -90,8 +90,8 @@ use <code>flipdim</code> instead.
 For example:
 
      <pre class="example">          flipdim ([1, 2; 3, 4], 2)
-               &rArr;  2  1
-                   4  3
+                &rArr;  2  1
+                    4  3
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -112,8 +112,8 @@ Negative values of <var>k</var> rotate the matrix in a clockwise direction.
 For example,
 
      <pre class="example">          rot90 ([1, 2; 3, 4], -1)
-               &rArr;  3  1
-                   4  2
+              &rArr;  3  1
+                  4  2
 </pre>
         <p class="noindent">rotates the given matrix clockwise by 90 degrees.  The following are all
 equivalent statements:
@@ -421,12 +421,12 @@ in the second output argument <var>ns</var>.
 
      <pre class="example">          x = ones (1, 2, 3);
           size (shiftdim (x, -1))
-               &rArr; [1, 1, 2, 3]
+             &rArr; [1, 1, 2, 3]
           size (shiftdim (x, 1))
-               &rArr; [2, 3]
-          [b, ns] = shiftdim (x);
-               &rArr; b =  [1, 1, 1; 1, 1, 1]
-               &rArr; ns = 1
+             &rArr; [2, 3]
+          [b, ns] = shiftdim (x)
+             &rArr; b = [1, 1, 1; 1, 1, 1]
+             &rArr; ns = 1
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->

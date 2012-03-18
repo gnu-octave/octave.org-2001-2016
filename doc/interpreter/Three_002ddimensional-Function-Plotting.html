@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -102,7 +102,7 @@ centered on the middle of the domain <var>dom</var>.
         <p>The optional return value <var>h</var> is a graphics handle to the created
 surface object.
 
-     <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
+     <pre class="example">          f = @(x,y) sqrt (abs (x .* y)) ./ (1 + x.^2 + y.^2);
           ezmesh (f, [-3, 3]);
 </pre>
         <p>An example of a parametrically defined function is
@@ -153,7 +153,7 @@ centered on the middle of the domain <var>dom</var>.
 handle for the created mesh plot and a second handle for the created contour
 plot.
 
-     <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
+     <pre class="example">          f = @(x,y) sqrt (abs (x .* y)) ./ (1 + x.^2 + y.^2);
           ezmeshc (f, [-3, 3]);
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -196,14 +196,14 @@ centered on the middle of the domain <var>dom</var>.
         <p>The optional return value <var>h</var> is a graphics handle to the created
 surface object.
 
-     <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
+     <pre class="example">          f = @(x,y) sqrt (abs (x .* y)) ./ (1 + x.^2 + y.^2);
           ezsurf (f, [-3, 3]);
 </pre>
         <p>An example of a parametrically defined function is
 
-     <pre class="example">          fx = @(s,t) cos (s) .* cos(t);
-          fy = @(s,t) sin (s) .* cos(t);
-          fz = @(s,t) sin(t);
+     <pre class="example">          fx = @(s,t) cos (s) .* cos (t);
+          fy = @(s,t) sin (s) .* cos (t);
+          fz = @(s,t) sin (t);
           ezsurf (fx, fy, fz, [-pi, pi, -pi/2, pi/2], 20);
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -247,7 +247,7 @@ centered on the middle of the domain <var>dom</var>.
 for the created surface plot and a second handle for the created contour
 plot.
 
-     <pre class="example">          f = @(x,y) sqrt(abs(x .* y)) ./ (1 + x.^2 + y.^2);
+     <pre class="example">          f = @(x,y) sqrt (abs (x .* y)) ./ (1 + x.^2 + y.^2);
           ezsurfc (f, [-3, 3]);
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->

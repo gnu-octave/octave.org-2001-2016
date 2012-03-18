@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -43,25 +43,25 @@ programs that do.  <strong>Warning:</strong> The functions <code>uiwait</code>,
    <p><a name="doc_002dguidata"></a>
 
 <div class="defun">
-&mdash; Function File: <var>data</var> = <b>guidata</b> (<var>handle</var>)<var><a name="index-guidata-3083"></a></var><br>
-&mdash; Function File:  <b>guidata</b> (<var>handle, data</var>)<var><a name="index-guidata-3084"></a></var><br>
+&mdash; Function File: <var>data</var> = <b>guidata</b> (<var>handle</var>)<var><a name="index-guidata-3084"></a></var><br>
+&mdash; Function File:  <b>guidata</b> (<var>handle, data</var>)<var><a name="index-guidata-3085"></a></var><br>
         </div>
 
 <!-- guihandles scripts/plot/guihandles.m -->
    <p><a name="doc_002dguihandles"></a>
 
 <div class="defun">
-&mdash; Function File: <var>hdata</var> = <b>guihandles</b> (<var>handle</var>)<var><a name="index-guihandles-3085"></a></var><br>
-&mdash; Function File: <var>hdata</var> = <b>guihandles</b><var><a name="index-guihandles-3086"></a></var><br>
+&mdash; Function File: <var>hdata</var> = <b>guihandles</b> (<var>handle</var>)<var><a name="index-guihandles-3086"></a></var><br>
+&mdash; Function File: <var>hdata</var> = <b>guihandles</b><var><a name="index-guihandles-3087"></a></var><br>
         </div>
 
 <!-- uiwait scripts/plot/uiwait.m -->
    <p><a name="doc_002duiwait"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>uiwait</b><var><a name="index-uiwait-3087"></a></var><br>
-&mdash; Function File:  <b>uiwait</b> (<var>h</var>)<var><a name="index-uiwait-3088"></a></var><br>
-&mdash; Function File:  <b>uiwait</b> (<var>h, timeout</var>)<var><a name="index-uiwait-3089"></a></var><br>
+&mdash; Function File:  <b>uiwait</b><var><a name="index-uiwait-3088"></a></var><br>
+&mdash; Function File:  <b>uiwait</b> (<var>h</var>)<var><a name="index-uiwait-3089"></a></var><br>
+&mdash; Function File:  <b>uiwait</b> (<var>h, timeout</var>)<var><a name="index-uiwait-3090"></a></var><br>
 <blockquote><p>Suspend program execution until the figure with handle <var>h</var> is
 deleted or <code>uiresume</code> is called.  When no figure handle is specified,
 this function uses the current figure.
@@ -86,7 +86,7 @@ the program execution is suspended indefinitely.
    <p><a name="doc_002duiresume"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>uiresume</b> (<var>h</var>)<var><a name="index-uiresume-3090"></a></var><br>
+&mdash; Function File:  <b>uiresume</b> (<var>h</var>)<var><a name="index-uiresume-3091"></a></var><br>
 <blockquote><p>Resume program execution suspended with <code>uiwait</code>.  The handle <var>h</var>
 must be the same as the on specified in <code>uiwait</code>.  If the handle
 is invalid or there is no <code>uiwait</code> call pending for the figure
@@ -102,10 +102,10 @@ with handle <var>h</var>, this function does nothing.
    <p><a name="doc_002dwaitfor"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>waitfor</b> (<var>h</var>)<var><a name="index-waitfor-3091"></a></var><br>
-&mdash; Built-in Function:  <b>waitfor</b> (<var>h, prop</var>)<var><a name="index-waitfor-3092"></a></var><br>
-&mdash; Built-in Function:  <b>waitfor</b> (<var>h, prop, value</var>)<var><a name="index-waitfor-3093"></a></var><br>
-&mdash; Built-in Function:  <b>waitfor</b> (<var><small class="dots">...</small>, "timeout", timeout</var>)<var><a name="index-waitfor-3094"></a></var><br>
+&mdash; Built-in Function:  <b>waitfor</b> (<var>h</var>)<var><a name="index-waitfor-3092"></a></var><br>
+&mdash; Built-in Function:  <b>waitfor</b> (<var>h, prop</var>)<var><a name="index-waitfor-3093"></a></var><br>
+&mdash; Built-in Function:  <b>waitfor</b> (<var>h, prop, value</var>)<var><a name="index-waitfor-3094"></a></var><br>
+&mdash; Built-in Function:  <b>waitfor</b> (<var><small class="dots">...</small>, "timeout", timeout</var>)<var><a name="index-waitfor-3095"></a></var><br>
 <blockquote><p>Suspend the execution of the current program until a condition is
 satisfied on the graphics handle <var>h</var>.  While the program is suspended
 graphics events are still being processed normally, allowing callbacks to

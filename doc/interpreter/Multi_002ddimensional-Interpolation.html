@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -42,11 +42,11 @@ in <a href="Interpolation-on-Scattered-Data.html#Interpolation-on-Scattered-Data
    <p><a name="doc_002dinterp2"></a>
 
 <div class="defun">
-&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var>x, y, z, xi, yi</var>)<var><a name="index-interp2-2756"></a></var><br>
-&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var>Z, xi, yi</var>)<var><a name="index-interp2-2757"></a></var><br>
-&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var>Z, n</var>)<var><a name="index-interp2-2758"></a></var><br>
-&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var><small class="dots">...</small>, method</var>)<var><a name="index-interp2-2759"></a></var><br>
-&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var><small class="dots">...</small>, method, extrapval</var>)<var><a name="index-interp2-2760"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var>x, y, z, xi, yi</var>)<var><a name="index-interp2-2757"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var>Z, xi, yi</var>)<var><a name="index-interp2-2758"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var>Z, n</var>)<var><a name="index-interp2-2759"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var><small class="dots">...</small>, method</var>)<var><a name="index-interp2-2760"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>interp2</b> (<var><small class="dots">...</small>, method, extrapval</var>)<var><a name="index-interp2-2761"></a></var><br>
 <blockquote>
         <p>Two-dimensional interpolation.  <var>x</var>, <var>y</var> and <var>z</var> describe a
 surface function.  If <var>x</var> and <var>y</var> are vectors their length
@@ -100,12 +100,12 @@ defined then NA is assumed.
    <p><a name="doc_002dinterp3"></a>
 
 <div class="defun">
-&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>x, y, z, v, xi, yi, zi</var>)<var><a name="index-interp3-2761"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>v, xi, yi, zi</var>)<var><a name="index-interp3-2762"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>v, m</var>)<var><a name="index-interp3-2763"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>v</var>)<var><a name="index-interp3-2764"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var><small class="dots">...</small>, method</var>)<var><a name="index-interp3-2765"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var><small class="dots">...</small>, method, extrapval</var>)<var><a name="index-interp3-2766"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>x, y, z, v, xi, yi, zi</var>)<var><a name="index-interp3-2762"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>v, xi, yi, zi</var>)<var><a name="index-interp3-2763"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>v, m</var>)<var><a name="index-interp3-2764"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var>v</var>)<var><a name="index-interp3-2765"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var><small class="dots">...</small>, method</var>)<var><a name="index-interp3-2766"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interp3</b> (<var><small class="dots">...</small>, method, extrapval</var>)<var><a name="index-interp3-2767"></a></var><br>
 <blockquote>
         <p>Perform 3-dimensional interpolation.  Each element of the 3-dimensional
 array <var>v</var> represents a value at a location given by the parameters
@@ -151,12 +151,12 @@ endpoints with that number.  If <var>extrap</var> is missing, assume NA.
    <p><a name="doc_002dinterpn"></a>
 
 <div class="defun">
-&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>x1, x2, <small class="dots">...</small>, v, y1, y2, <small class="dots">...</small></var>)<var><a name="index-interpn-2767"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>v, y1, y2, <small class="dots">...</small></var>)<var><a name="index-interpn-2768"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>v, m</var>)<var><a name="index-interpn-2769"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>v</var>)<var><a name="index-interpn-2770"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var><small class="dots">...</small>, method</var>)<var><a name="index-interpn-2771"></a></var><br>
-&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var><small class="dots">...</small>, method, extrapval</var>)<var><a name="index-interpn-2772"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>x1, x2, <small class="dots">...</small>, v, y1, y2, <small class="dots">...</small></var>)<var><a name="index-interpn-2768"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>v, y1, y2, <small class="dots">...</small></var>)<var><a name="index-interpn-2769"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>v, m</var>)<var><a name="index-interpn-2770"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var>v</var>)<var><a name="index-interpn-2771"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var><small class="dots">...</small>, method</var>)<var><a name="index-interpn-2772"></a></var><br>
+&mdash; Function File: <var>vi</var> = <b>interpn</b> (<var><small class="dots">...</small>, method, extrapval</var>)<var><a name="index-interpn-2773"></a></var><br>
 <blockquote>
         <p>Perform <var>n</var>-dimensional interpolation, where <var>n</var> is at least two. 
 Each element of the <var>n</var>-dimensional array <var>v</var> represents a value
@@ -234,7 +234,7 @@ cubic interpolation of <code>interp2</code> function can be called directly.
    <p><a name="doc_002dbicubic"></a>
 
 <div class="defun">
-&mdash; Function File: <var>zi</var> = <b>bicubic</b> (<var>x, y, z, xi, yi, extrapval</var>)<var><a name="index-bicubic-2773"></a></var><br>
+&mdash; Function File: <var>zi</var> = <b>bicubic</b> (<var>x, y, z, xi, yi, extrapval</var>)<var><a name="index-bicubic-2774"></a></var><br>
 <blockquote>
         <p>Return a matrix <var>zi</var> corresponding to the bicubic
 interpolations at <var>xi</var> and <var>yi</var> of the data supplied

@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -60,7 +60,7 @@ files holding data in mu-law encoding end in <samp><span class="file">au</span><
    <p><a name="doc_002dlin2mu"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>lin2mu</b> (<var>x, n</var>)<var><a name="index-lin2mu-2969"></a></var><br>
+&mdash; Function File:  <b>lin2mu</b> (<var>x, n</var>)<var><a name="index-lin2mu-2970"></a></var><br>
 <blockquote><p>Convert audio data from linear to mu-law.  Mu-law values use 8-bit
 unsigned integers.  Linear values use <var>n</var>-bit signed integers or
 floating point values in the range -1 &le; <var>x</var> &le; 1 if
@@ -79,7 +79,7 @@ the range of values in <var>x</var>.
    <p><a name="doc_002dmu2lin"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>mu2lin</b> (<var>x, n</var>)<var><a name="index-mu2lin-2970"></a></var><br>
+&mdash; Function File:  <b>mu2lin</b> (<var>x, n</var>)<var><a name="index-mu2lin-2971"></a></var><br>
 <blockquote><p>Convert audio data from mu-law to linear.  Mu-law values are 8-bit
 unsigned integers.  Linear values use <var>n</var>-bit signed integers
 or floating point values in the range -1&le;y&le;1 if <var>n</var>
@@ -97,7 +97,7 @@ is 0.
    <p><a name="doc_002dloadaudio"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>loadaudio</b> (<var>name, ext, bps</var>)<var><a name="index-loadaudio-2971"></a></var><br>
+&mdash; Function File:  <b>loadaudio</b> (<var>name, ext, bps</var>)<var><a name="index-loadaudio-2972"></a></var><br>
 <blockquote><p>Load audio data from the file <samp><var>name</var><span class="file">.</span><var>ext</var></samp> into the
 vector <var>x</var>.
 
@@ -119,7 +119,7 @@ the number of bits per sample used in the audio file.
    <p><a name="doc_002dsaveaudio"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>saveaudio</b> (<var>name, x, ext, bps</var>)<var><a name="index-saveaudio-2972"></a></var><br>
+&mdash; Function File:  <b>saveaudio</b> (<var>name, x, ext, bps</var>)<var><a name="index-saveaudio-2973"></a></var><br>
 <blockquote><p>Save a vector <var>x</var> of audio data to the file
 <samp><var>name</var><span class="file">.</span><var>ext</var></samp>.  The optional parameters <var>ext</var> and
 <var>bps</var> determine the encoding and the number of bits per sample used
@@ -144,8 +144,8 @@ hardware are welcome.
    <p><a name="doc_002dplayaudio"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>playaudio</b> (<var>name, ext</var>)<var><a name="index-playaudio-2973"></a></var><br>
-&mdash; Function File:  <b>playaudio</b> (<var>x</var>)<var><a name="index-playaudio-2974"></a></var><br>
+&mdash; Function File:  <b>playaudio</b> (<var>name, ext</var>)<var><a name="index-playaudio-2974"></a></var><br>
+&mdash; Function File:  <b>playaudio</b> (<var>x</var>)<var><a name="index-playaudio-2975"></a></var><br>
 <blockquote><p>Play the audio file <samp><var>name</var><span class="file">.</span><var>ext</var></samp> or the audio data
 stored in the vector <var>x</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -159,7 +159,7 @@ stored in the vector <var>x</var>.
    <p><a name="doc_002drecord"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>record</b> (<var>sec, sampling_rate</var>)<var><a name="index-record-2975"></a></var><br>
+&mdash; Function File:  <b>record</b> (<var>sec, sampling_rate</var>)<var><a name="index-record-2976"></a></var><br>
 <blockquote><p>Record <var>sec</var> seconds of audio input into the vector <var>x</var>.  The
 default value for <var>sampling_rate</var> is 8000 samples per second, or
 8kHz.  The program waits until the user types &lt;RET&gt; and then
@@ -175,9 +175,9 @@ immediately starts to record.
    <p><a name="doc_002dsetaudio"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>setaudio</b> ()<var><a name="index-setaudio-2976"></a></var><br>
-&mdash; Function File:  <b>setaudio</b> (<var>w_type</var>)<var><a name="index-setaudio-2977"></a></var><br>
-&mdash; Function File:  <b>setaudio</b> (<var>w_type, value</var>)<var><a name="index-setaudio-2978"></a></var><br>
+&mdash; Function File:  <b>setaudio</b> ()<var><a name="index-setaudio-2977"></a></var><br>
+&mdash; Function File:  <b>setaudio</b> (<var>w_type</var>)<var><a name="index-setaudio-2978"></a></var><br>
+&mdash; Function File:  <b>setaudio</b> (<var>w_type, value</var>)<var><a name="index-setaudio-2979"></a></var><br>
 <blockquote><p>Execute the shell command &lsquo;<samp><span class="samp">mixer</span></samp>&rsquo;, possibly with optional
 arguments <var>w_type</var> and <var>value</var>. 
 </p></blockquote></div>
@@ -186,22 +186,22 @@ arguments <var>w_type</var> and <var>value</var>.
    <p><a name="doc_002dwavread"></a>
 
 <div class="defun">
-&mdash; Function File: <var>y</var> = <b>wavread</b> (<var>filename</var>)<var><a name="index-wavread-2979"></a></var><br>
+&mdash; Function File: <var>y</var> = <b>wavread</b> (<var>filename</var>)<var><a name="index-wavread-2980"></a></var><br>
 <blockquote><p>Load the RIFF/WAVE sound file <var>filename</var>, and return the samples
 in vector <var>y</var>.  If the file contains multichannel data, then
 <var>y</var> is a matrix with the channels represented as columns.
 
-   &mdash; Function File: [<var>y</var>, <var>Fs</var>, <var>bps</var>] = <b>wavread</b> (<var>filename</var>)<var><a name="index-wavread-2980"></a></var><br>
+   &mdash; Function File: [<var>y</var>, <var>Fs</var>, <var>bps</var>] = <b>wavread</b> (<var>filename</var>)<var><a name="index-wavread-2981"></a></var><br>
 <blockquote><p>Additionally return the sample rate (<var>fs</var>) in Hz and the number of bits
 per sample (<var>bps</var>).
 
-   &mdash; Function File: [<small class="dots">...</small>] = <b>wavread</b> (<var>filename, n</var>)<var><a name="index-wavread-2981"></a></var><br>
+   &mdash; Function File: [<small class="dots">...</small>] = <b>wavread</b> (<var>filename, n</var>)<var><a name="index-wavread-2982"></a></var><br>
 <blockquote><p>Read only the first <var>n</var> samples from each channel.
 
-   &mdash; Function File: [<small class="dots">...</small>] = <b>wavread</b> (<var>filename, n1 n2</var>)<var><a name="index-wavread-2982"></a></var><br>
+   &mdash; Function File: [<small class="dots">...</small>] = <b>wavread</b> (<var>filename, n1 n2</var>)<var><a name="index-wavread-2983"></a></var><br>
 <blockquote><p>Read only samples <var>n1</var> through <var>n2</var> from each channel.
 
-   &mdash; Function File: [<var>samples</var>, <var>channels</var>] = <b>wavread</b> (<var>filename, "size"</var>)<var><a name="index-wavread-2983"></a></var><br>
+   &mdash; Function File: [<var>samples</var>, <var>channels</var>] = <b>wavread</b> (<var>filename, "size"</var>)<var><a name="index-wavread-2984"></a></var><br>
 <blockquote><p>Return the number of samples (<var>n</var>) and channels (<var>ch</var>)
 instead of the audio data. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -215,9 +215,9 @@ instead of the audio data.
    <p><a name="doc_002dwavwrite"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>wavwrite</b> (<var>y, filename</var>)<var><a name="index-wavwrite-2984"></a></var><br>
-&mdash; Function File:  <b>wavwrite</b> (<var>y, Fs, filename</var>)<var><a name="index-wavwrite-2985"></a></var><br>
-&mdash; Function File:  <b>wavwrite</b> (<var>y, Fs, bps, filename</var>)<var><a name="index-wavwrite-2986"></a></var><br>
+&mdash; Function File:  <b>wavwrite</b> (<var>y, filename</var>)<var><a name="index-wavwrite-2985"></a></var><br>
+&mdash; Function File:  <b>wavwrite</b> (<var>y, Fs, filename</var>)<var><a name="index-wavwrite-2986"></a></var><br>
+&mdash; Function File:  <b>wavwrite</b> (<var>y, Fs, bps, filename</var>)<var><a name="index-wavwrite-2987"></a></var><br>
 <blockquote><p>Write <var>y</var> to the canonical RIFF/WAVE sound file <var>filename</var>
 with sample rate <var>Fs</var> and bits per sample <var>bps</var>.  The
 default sample rate is 8000 Hz with 16-bits per sample.  Each column

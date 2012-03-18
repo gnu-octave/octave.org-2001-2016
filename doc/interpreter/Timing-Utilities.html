@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -70,7 +70,7 @@ referred to as a <var>tm_struct</var>.
    <p><a name="doc_002dtime"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>seconds</var> = <b>time</b> ()<var><a name="index-time-3100"></a></var><br>
+&mdash; Loadable Function: <var>seconds</var> = <b>time</b> ()<var><a name="index-time-3101"></a></var><br>
 <blockquote><p>Return the current time as the number of seconds since the epoch.  The
 epoch is referenced to 00:00:00 CUT (Coordinated Universal Time) 1 Jan
 1970.  For example, on Monday February 17, 1997 at 07:15:06 CUT, the
@@ -86,7 +86,7 @@ value returned by <code>time</code> was 856163706.
    <p><a name="doc_002dnow"></a>
 
 <div class="defun">
-&mdash; Function File: t = <b>now</b> ()<var><a name="index-now-3101"></a></var><br>
+&mdash; Function File: t = <b>now</b> ()<var><a name="index-now-3102"></a></var><br>
 <blockquote><p>Return the current local date/time as a serial day number
 (see <code>datenum</code>).
 
@@ -106,14 +106,14 @@ time.
    <p><a name="doc_002dctime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ctime</b> (<var>t</var>)<var><a name="index-ctime-3102"></a></var><br>
+&mdash; Function File:  <b>ctime</b> (<var>t</var>)<var><a name="index-ctime-3103"></a></var><br>
 <blockquote><p>Convert a value returned from <code>time</code> (or any other non-negative
 integer), to the local time and return a string of the same form as
 <code>asctime</code>.  The function <code>ctime (time)</code> is equivalent to
 <code>asctime (localtime (time))</code>.  For example:
 
      <pre class="example">          ctime (time ())
-               &rArr; "Mon Feb 17 01:15:06 1997"
+             &rArr; "Mon Feb 17 01:15:06 1997"
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -125,7 +125,7 @@ integer), to the local time and return a string of the same form as
    <p><a name="doc_002dgmtime"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>tm_struct</var> = <b>gmtime</b> (<var>t</var>)<var><a name="index-gmtime-3103"></a></var><br>
+&mdash; Loadable Function: <var>tm_struct</var> = <b>gmtime</b> (<var>t</var>)<var><a name="index-gmtime-3104"></a></var><br>
 <blockquote><p>Given a value returned from <code>time</code>, or any non-negative integer,
 return a time structure corresponding to CUT (Coordinated Universal Time). 
 For example:
@@ -155,7 +155,7 @@ For example:
    <p><a name="doc_002dlocaltime"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>tm_struct</var> = <b>localtime</b> (<var>t</var>)<var><a name="index-localtime-3104"></a></var><br>
+&mdash; Loadable Function: <var>tm_struct</var> = <b>localtime</b> (<var>t</var>)<var><a name="index-localtime-3105"></a></var><br>
 <blockquote><p>Given a value returned from <code>time</code>, or any non-negative integer,
 return a time structure corresponding to the local time zone.
 
@@ -184,7 +184,7 @@ return a time structure corresponding to the local time zone.
    <p><a name="doc_002dmktime"></a>
 
 <div class="defun">
-&mdash; Loadable Function: <var>seconds</var> = <b>mktime</b> (<var>tm_struct</var>)<var><a name="index-mktime-3105"></a></var><br>
+&mdash; Loadable Function: <var>seconds</var> = <b>mktime</b> (<var>tm_struct</var>)<var><a name="index-mktime-3106"></a></var><br>
 <blockquote><p>Convert a time structure corresponding to the local time to the number
 of seconds since the epoch.  For example:
 
@@ -201,7 +201,7 @@ of seconds since the epoch.  For example:
    <p><a name="doc_002dasctime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>asctime</b> (<var>tm_struct</var>)<var><a name="index-asctime-3106"></a></var><br>
+&mdash; Function File:  <b>asctime</b> (<var>tm_struct</var>)<var><a name="index-asctime-3107"></a></var><br>
 <blockquote><p>Convert a time structure to a string using the following
 format: "ddd mmm mm HH:MM:SS yyyy".  For example:
 
@@ -220,7 +220,7 @@ format: "ddd mmm mm HH:MM:SS yyyy".  For example:
    <p><a name="doc_002dstrftime"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>strftime</b> (<var>fmt, tm_struct</var>)<var><a name="index-strftime-3107"></a></var><br>
+&mdash; Loadable Function:  <b>strftime</b> (<var>fmt, tm_struct</var>)<var><a name="index-strftime-3108"></a></var><br>
 <blockquote><p>Format the time structure <var>tm_struct</var> in a flexible way using the
 format string <var>fmt</var> that contains &lsquo;<samp><span class="samp">%</span></samp>&rsquo; substitutions
 similar to those in <code>printf</code>.  Except where noted, substituted
@@ -335,7 +335,7 @@ field specifiers.
    <p><a name="doc_002dstrptime"></a>
 
 <div class="defun">
-&mdash; Loadable Function: [<var>tm_struct</var>, <var>nchars</var>] = <b>strptime</b> (<var>str, fmt</var>)<var><a name="index-strptime-3108"></a></var><br>
+&mdash; Loadable Function: [<var>tm_struct</var>, <var>nchars</var>] = <b>strptime</b> (<var>str, fmt</var>)<var><a name="index-strptime-3109"></a></var><br>
 <blockquote><p>Convert the string <var>str</var> to the time structure <var>tm_struct</var> under
 the control of the format string <var>fmt</var>.
 
@@ -358,7 +358,7 @@ useful.
    <p><a name="doc_002dclock"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>clock</b> ()<var><a name="index-clock-3109"></a></var><br>
+&mdash; Function File:  <b>clock</b> ()<var><a name="index-clock-3110"></a></var><br>
 <blockquote><p>Return the current local date and time as a date vector.  The date vector
 contains the following fields: current year, month (1-12), day (1-31),
 hour (0-23), minute (0-59), and second (0-61).  The seconds field has
@@ -382,13 +382,13 @@ a fractional part after the decimal point for extended accuracy.
    <p><a name="doc_002ddate"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>date</b> ()<var><a name="index-date-3110"></a></var><br>
+&mdash; Function File:  <b>date</b> ()<var><a name="index-date-3111"></a></var><br>
 <blockquote><p>Return the current date as a character string in the form DD-MMM-YYYY.
 
         <p>For example:
 
      <pre class="example">          date ()
-               &rArr; "20-Aug-1993"
+            &rArr; "20-Aug-1993"
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -400,7 +400,7 @@ a fractional part after the decimal point for extended accuracy.
    <p><a name="doc_002detime"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>etime</b> (<var>t2, t1</var>)<var><a name="index-etime-3111"></a></var><br>
+&mdash; Function File:  <b>etime</b> (<var>t2, t1</var>)<var><a name="index-etime-3112"></a></var><br>
 <blockquote><p>Return the difference in seconds between two time values returned from
 <code>clock</code> (<var>t2</var> - <var>t1</var>).  For example:
 
@@ -421,7 +421,7 @@ the variable <code>t0</code> was set.
    <p><a name="doc_002dcputime"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>total</var>, <var>user</var>, <var>system</var>] = <b>cputime</b> ()<var>;<a name="index-cputime-3112"></a></var><br>
+&mdash; Built-in Function: [<var>total</var>, <var>user</var>, <var>system</var>] = <b>cputime</b> ()<var>;<a name="index-cputime-3113"></a></var><br>
 <blockquote><p>Return the CPU time used by your Octave session.  The first output is
 the total time spent executing your process and is equal to the sum of
 second and third outputs, which are the number of CPU seconds spent
@@ -437,14 +437,14 @@ CPU time used is nonzero.
    <p><a name="doc_002dis_005fleap_005fyear"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>is_leap_year</b> ()<var><a name="index-is_005fleap_005fyear-3113"></a></var><br>
-&mdash; Function File:  <b>is_leap_year</b> (<var>year</var>)<var><a name="index-is_005fleap_005fyear-3114"></a></var><br>
+&mdash; Function File:  <b>is_leap_year</b> ()<var><a name="index-is_005fleap_005fyear-3114"></a></var><br>
+&mdash; Function File:  <b>is_leap_year</b> (<var>year</var>)<var><a name="index-is_005fleap_005fyear-3115"></a></var><br>
 <blockquote><p>Return true if <var>year</var> is a leap year and false otherwise.  If no
 year is specified, <code>is_leap_year</code> uses the current year. 
 For example:
 
      <pre class="example">          is_leap_year (2000)
-               &rArr; 1
+             &rArr; 1
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -456,8 +456,8 @@ For example:
 <a name="doc_002dtic"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>tic</b> ()<var><a name="index-tic-3115"></a></var><br>
-&mdash; Built-in Function:  <b>toc</b> ()<var><a name="index-toc-3116"></a></var><br>
+&mdash; Built-in Function:  <b>tic</b> ()<var><a name="index-tic-3116"></a></var><br>
+&mdash; Built-in Function:  <b>toc</b> ()<var><a name="index-toc-3117"></a></var><br>
 <blockquote><p>Set or check a wall-clock timer.  Calling <code>tic</code> without an
 output argument sets the timer.  Subsequent calls to <code>toc</code>
 return the number of seconds since the timer was set.  For example,
@@ -498,7 +498,7 @@ coarse resolution.)
    <p><a name="doc_002dpause"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>pause</b> (<var>seconds</var>)<var><a name="index-pause-3117"></a></var><br>
+&mdash; Built-in Function:  <b>pause</b> (<var>seconds</var>)<var><a name="index-pause-3118"></a></var><br>
 <blockquote><p>Suspend the execution of the program.  If invoked without any arguments,
 Octave waits until you type a character.  With a numeric argument, it
 pauses for the given number of seconds.  For example, the following
@@ -515,7 +515,7 @@ screen.
    <p><a name="doc_002dsleep"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>sleep</b> (<var>seconds</var>)<var><a name="index-sleep-3118"></a></var><br>
+&mdash; Built-in Function:  <b>sleep</b> (<var>seconds</var>)<var><a name="index-sleep-3119"></a></var><br>
 <blockquote><p>Suspend the execution of the program for the given number of seconds. 
 </p></blockquote></div>
 
@@ -523,7 +523,7 @@ screen.
    <p><a name="doc_002dusleep"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>usleep</b> (<var>microseconds</var>)<var><a name="index-usleep-3119"></a></var><br>
+&mdash; Built-in Function:  <b>usleep</b> (<var>microseconds</var>)<var><a name="index-usleep-3120"></a></var><br>
 <blockquote><p>Suspend the execution of the program for the given number of
 microseconds.  On systems where it is not possible to sleep for periods
 of time less than one second, <code>usleep</code> will pause the execution for
@@ -534,14 +534,14 @@ of time less than one second, <code>usleep</code> will pause the execution for
    <p><a name="doc_002ddatenum"></a>
 
 <div class="defun">
-&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>datevec</var>)<var><a name="index-datenum-3120"></a></var><br>
-&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day</var>)<var><a name="index-datenum-3121"></a></var><br>
-&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day, hour</var>)<var><a name="index-datenum-3122"></a></var><br>
-&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day, hour, minute</var>)<var><a name="index-datenum-3123"></a></var><br>
-&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day, hour, minute, second</var>)<var><a name="index-datenum-3124"></a></var><br>
-&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>"datestr"</var>)<var><a name="index-datenum-3125"></a></var><br>
-&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>"datestr", p</var>)<var><a name="index-datenum-3126"></a></var><br>
-&mdash; Function File: [<var>days</var>, <var>secs</var>] = <b>datenum</b> (<var><small class="dots">...</small></var>)<var><a name="index-datenum-3127"></a></var><br>
+&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>datevec</var>)<var><a name="index-datenum-3121"></a></var><br>
+&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day</var>)<var><a name="index-datenum-3122"></a></var><br>
+&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day, hour</var>)<var><a name="index-datenum-3123"></a></var><br>
+&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day, hour, minute</var>)<var><a name="index-datenum-3124"></a></var><br>
+&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>year, month, day, hour, minute, second</var>)<var><a name="index-datenum-3125"></a></var><br>
+&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>"datestr"</var>)<var><a name="index-datenum-3126"></a></var><br>
+&mdash; Function File: <var>days</var> = <b>datenum</b> (<var>"datestr", p</var>)<var><a name="index-datenum-3127"></a></var><br>
+&mdash; Function File: [<var>days</var>, <var>secs</var>] = <b>datenum</b> (<var><small class="dots">...</small></var>)<var><a name="index-datenum-3128"></a></var><br>
 <blockquote><p>Return the date/time input as a serial day number, with Jan 1, 0000
 defined as day 1.
 
@@ -597,9 +597,9 @@ is available on the Wikipedia entry for leap seconds.
    <p><a name="doc_002ddatestr"></a>
 
 <div class="defun">
-&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date</var>)<var><a name="index-datestr-3128"></a></var><br>
-&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, f</var>)<var><a name="index-datestr-3129"></a></var><br>
-&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, f, p</var>)<var><a name="index-datestr-3130"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date</var>)<var><a name="index-datestr-3129"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, f</var>)<var><a name="index-datestr-3130"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>datestr</b> (<var>date, f, p</var>)<var><a name="index-datestr-3131"></a></var><br>
 <blockquote><p>Format the given date/time according to the format <code>f</code> and return
 the result in <var>str</var>.  <var>date</var> is a serial date number (see
 <code>datenum</code>) or a date vector (see <code>datevec</code>).  The value of
@@ -691,11 +691,11 @@ is returned.
    <p><a name="doc_002ddatevec"></a>
 
 <div class="defun">
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date</var>)<var><a name="index-datevec-3131"></a></var><br>
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f</var>)<var><a name="index-datevec-3132"></a></var><br>
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, p</var>)<var><a name="index-datevec-3133"></a></var><br>
-&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f, p</var>)<var><a name="index-datevec-3134"></a></var><br>
-&mdash; Function File: [<var>y</var>, <var>m</var>, <var>d</var>, <var>h</var>, <var>mi</var>, <var>s</var>] = <b>datevec</b> (<var><small class="dots">...</small></var>)<var><a name="index-datevec-3135"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date</var>)<var><a name="index-datevec-3132"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f</var>)<var><a name="index-datevec-3133"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, p</var>)<var><a name="index-datevec-3134"></a></var><br>
+&mdash; Function File: <var>v</var> = <b>datevec</b> (<var>date, f, p</var>)<var><a name="index-datevec-3135"></a></var><br>
+&mdash; Function File: [<var>y</var>, <var>m</var>, <var>d</var>, <var>h</var>, <var>mi</var>, <var>s</var>] = <b>datevec</b> (<var><small class="dots">...</small></var>)<var><a name="index-datevec-3136"></a></var><br>
 <blockquote><p>Convert a serial date number (see <code>datenum</code>) or date string (see
 <code>datestr</code>) into a date vector.
 
@@ -719,7 +719,7 @@ minus 50.
    <p><a name="doc_002daddtodate"></a>
 
 <div class="defun">
-&mdash; Function File: <var>d</var> = <b>addtodate</b> (<var>d, q, f</var>)<var><a name="index-addtodate-3136"></a></var><br>
+&mdash; Function File: <var>d</var> = <b>addtodate</b> (<var>d, q, f</var>)<var><a name="index-addtodate-3137"></a></var><br>
 <blockquote><p>Add <var>q</var> amount of time (with units <var>f</var>) to the serial datenum,
 <var>d</var>.
 
@@ -736,10 +736,10 @@ or "millisecond".
    <p><a name="doc_002dcalendar"></a>
 
 <div class="defun">
-&mdash; Function File: <var>c</var> = <b>calendar</b> ()<var><a name="index-calendar-3137"></a></var><br>
-&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>d</var>)<var><a name="index-calendar-3138"></a></var><br>
-&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>y, m</var>)<var><a name="index-calendar-3139"></a></var><br>
-&mdash; Function File:  <b>calendar</b> (<var><small class="dots">...</small></var>)<var><a name="index-calendar-3140"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> ()<var><a name="index-calendar-3138"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>d</var>)<var><a name="index-calendar-3139"></a></var><br>
+&mdash; Function File: <var>c</var> = <b>calendar</b> (<var>y, m</var>)<var><a name="index-calendar-3140"></a></var><br>
+&mdash; Function File:  <b>calendar</b> (<var><small class="dots">...</small></var>)<var><a name="index-calendar-3141"></a></var><br>
 <blockquote><p>Return the current monthly calendar in a 6x7 matrix.
 
         <p>If <var>d</var> is specified, return the calendar for the month containing
@@ -761,8 +761,8 @@ instead of returning a matrix.
    <p><a name="doc_002dweekday"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d</var>)<var><a name="index-weekday-3141"></a></var><br>
-&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d, format</var>)<var><a name="index-weekday-3142"></a></var><br>
+&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d</var>)<var><a name="index-weekday-3142"></a></var><br>
+&mdash; Function File: [<var>n</var>, <var>s</var>] = <b>weekday</b> (<var>d, format</var>)<var><a name="index-weekday-3143"></a></var><br>
 <blockquote><p>Return the day of the week as a number in <var>n</var> and as a string in <var>s</var>. 
 The days of the week are numbered 1&ndash;7 with the first day being Sunday.
 
@@ -794,7 +794,7 @@ is "long" then <var>s</var> will contain the full name.
    <p><a name="doc_002deomday"></a>
 
 <div class="defun">
-&mdash; Function File: <var>e</var> = <b>eomday</b> (<var>y, m</var>)<var><a name="index-eomday-3143"></a></var><br>
+&mdash; Function File: <var>e</var> = <b>eomday</b> (<var>y, m</var>)<var><a name="index-eomday-3144"></a></var><br>
 <blockquote><p>Return the last day of the month <var>m</var> for the year <var>y</var>. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -807,12 +807,12 @@ is "long" then <var>s</var> will contain the full name.
    <p><a name="doc_002ddatetick"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>datetick</b> ()<var><a name="index-datetick-3144"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var>form</var>)<var><a name="index-datetick-3145"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var>axis, form</var>)<var><a name="index-datetick-3146"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keeplimits"</var>)<var><a name="index-datetick-3147"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keepticks"</var>)<var><a name="index-datetick-3148"></a></var><br>
-&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>ax, <small class="dots">...</small></var>)<var><a name="index-datetick-3149"></a></var><br>
+&mdash; Function File:  <b>datetick</b> ()<var><a name="index-datetick-3145"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var>form</var>)<var><a name="index-datetick-3146"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var>axis, form</var>)<var><a name="index-datetick-3147"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keeplimits"</var>)<var><a name="index-datetick-3148"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>, "keepticks"</var>)<var><a name="index-datetick-3149"></a></var><br>
+&mdash; Function File:  <b>datetick</b> (<var><small class="dots">...</small>ax, <small class="dots">...</small></var>)<var><a name="index-datetick-3150"></a></var><br>
 <blockquote><p>Add date formatted tick labels to an axis.  The axis the apply the
 ticks to is determined by <var>axis</var> that can take the values "x",
 "y" or "z".  The default value is "x".  The formatting of the labels is

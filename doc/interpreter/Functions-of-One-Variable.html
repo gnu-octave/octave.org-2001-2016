@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -313,7 +313,7 @@ or both limits may be infinite or contain weak end singularities.
 Variable transformation will be used to treat any infinite intervals and
 weaken the singularities.  For example:
 
-     <pre class="example">          quadgk(@(x) 1 ./ (sqrt (x) .* (x + 1)), 0, Inf)
+     <pre class="example">          quadgk (@(x) 1 ./ (sqrt (x) .* (x + 1)), 0, Inf)
 </pre>
         <p class="noindent">Note that the formulation of the integrand uses the
 element-by-element operator <code>./</code> and all user functions to
@@ -353,7 +353,7 @@ a subinterval to fall on the breakpoints of the function and can result in
 significantly improved estimation of the error in the integral, faster
 computation, or both.  For example,
 
-          <pre class="example">               quadgk (@(x) abs (1 - x.^2), 0, 2, 'Waypoints', 1)
+          <pre class="example">               quadgk (@(x) abs (1 - x.^2), 0, 2, "Waypoints", 1)
 </pre>
           <p class="noindent">signals the breakpoint in the integrand at <var>x</var><code> = 1</code>.
 

@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -47,9 +47,9 @@ in a least-squares sense, which just is what the <code>polyfit</code> function d
    <p><a name="doc_002dpolyfit"></a>
 
 <div class="defun">
-&mdash; Function File: <var>p</var> = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2728"></a></var><br>
-&mdash; Function File: [<var>p</var>, <var>s</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2729"></a></var><br>
-&mdash; Function File: [<var>p</var>, <var>s</var>, <var>mu</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2730"></a></var><br>
+&mdash; Function File: <var>p</var> = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2729"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>s</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2730"></a></var><br>
+&mdash; Function File: [<var>p</var>, <var>s</var>, <var>mu</var>] = <b>polyfit</b> (<var>x, y, n</var>)<var><a name="index-polyfit-2731"></a></var><br>
 <blockquote><p>Return the coefficients of a polynomial <var>p</var>(<var>x</var>) of degree
 <var>n</var> that minimizes the least-squares-error of the fit to the points
 <code>[</code><var>x</var><code>, </code><var>y</var><code>]</code>.
@@ -109,8 +109,8 @@ on adjoined intervals.
    <p><a name="doc_002dmkpp"></a>
 
 <div class="defun">
-&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>breaks, coefs</var>)<var><a name="index-mkpp-2731"></a></var><br>
-&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>breaks, coefs, d</var>)<var><a name="index-mkpp-2732"></a></var><br>
+&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>breaks, coefs</var>)<var><a name="index-mkpp-2732"></a></var><br>
+&mdash; Function File: <var>pp</var> = <b>mkpp</b> (<var>breaks, coefs, d</var>)<var><a name="index-mkpp-2733"></a></var><br>
 <blockquote>
         <p>Construct a piecewise polynomial (pp) structure from sample points
 <var>breaks</var> and coefficients <var>coefs</var>.  <var>breaks</var> must be a vector of
@@ -142,7 +142,7 @@ size <code>[</code><var>ni</var><code>*prod(</code><var>d</var> <var>m</var><cod
    <p><a name="doc_002dunmkpp"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>x</var>, <var>p</var>, <var>n</var>, <var>k</var>, <var>d</var>] = <b>unmkpp</b> (<var>pp</var>)<var><a name="index-unmkpp-2733"></a></var><br>
+&mdash; Function File: [<var>x</var>, <var>p</var>, <var>n</var>, <var>k</var>, <var>d</var>] = <b>unmkpp</b> (<var>pp</var>)<var><a name="index-unmkpp-2734"></a></var><br>
 <blockquote>
         <p>Extract the components of a piecewise polynomial structure <var>pp</var>. 
 The components are:
@@ -173,7 +173,7 @@ the r-th polynomial defined on interval <var>i</var>.
    <p><a name="doc_002dppval"></a>
 
 <div class="defun">
-&mdash; Function File: <var>yi</var> = <b>ppval</b> (<var>pp, xi</var>)<var><a name="index-ppval-2734"></a></var><br>
+&mdash; Function File: <var>yi</var> = <b>ppval</b> (<var>pp, xi</var>)<var><a name="index-ppval-2735"></a></var><br>
 <blockquote><p>Evaluate the piecewise polynomial structure <var>pp</var> at the points <var>xi</var>. 
 If <var>pp</var> describes a scalar polynomial function, the result is an
 array of the same shape as <var>xi</var>. 
@@ -191,8 +191,8 @@ multi-dimensional array.
    <p><a name="doc_002dppder"></a>
 
 <div class="defun">
-&mdash; Function File: ppd = <b>ppder</b> (<var>pp</var>)<var><a name="index-ppder-2735"></a></var><br>
-&mdash; Function File: ppd = <b>ppder</b> (<var>pp, m</var>)<var><a name="index-ppder-2736"></a></var><br>
+&mdash; Function File: ppd = <b>ppder</b> (<var>pp</var>)<var><a name="index-ppder-2736"></a></var><br>
+&mdash; Function File: ppd = <b>ppder</b> (<var>pp, m</var>)<var><a name="index-ppder-2737"></a></var><br>
 <blockquote><p>Compute the piecewise <var>m</var>-th derivative of a piecewise polynomial
 struct <var>pp</var>.  If <var>m</var> is omitted the first derivative is calculated. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -206,8 +206,8 @@ struct <var>pp</var>.  If <var>m</var> is omitted the first derivative is calcul
    <p><a name="doc_002dppint"></a>
 
 <div class="defun">
-&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp</var>)<var><a name="index-ppint-2737"></a></var><br>
-&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp, c</var>)<var><a name="index-ppint-2738"></a></var><br>
+&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp</var>)<var><a name="index-ppint-2738"></a></var><br>
+&mdash; Function File: <var>ppi</var> = <b>ppint</b> (<var>pp, c</var>)<var><a name="index-ppint-2739"></a></var><br>
 <blockquote><p>Compute the integral of the piecewise polynomial struct <var>pp</var>. 
 <var>c</var>, if given, is the constant of integration. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -221,7 +221,7 @@ struct <var>pp</var>.  If <var>m</var> is omitted the first derivative is calcul
    <p><a name="doc_002dppjumps"></a>
 
 <div class="defun">
-&mdash; Function File: <var>jumps</var> = <b>ppjumps</b> (<var>pp</var>)<var><a name="index-ppjumps-2739"></a></var><br>
+&mdash; Function File: <var>jumps</var> = <b>ppjumps</b> (<var>pp</var>)<var><a name="index-ppjumps-2740"></a></var><br>
 <blockquote><p>Evaluate the boundary jumps of a piecewise polynomial. 
 If there are n intervals, and the dimensionality of <var>pp</var> is
 d, the resulting array has dimensions <code>[d, n-1]</code>. 

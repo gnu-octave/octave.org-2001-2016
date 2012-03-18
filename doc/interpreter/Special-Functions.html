@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -201,7 +201,7 @@ compatible dimensions.
         <p>For example:
 
      <pre class="example">          bincoeff (5, 2)
-               &rArr; 10
+             &rArr; 10
 </pre>
         <p>In most cases, the <code>nchoosek</code> function is faster for small
 scalar integer arguments.  It also warns about loss of precision for
@@ -397,18 +397,18 @@ The return value has one dimension more than <var>x</var>.
         <p>The Legendre Function of degree <var>n</var> and order <var>m</var>:
 
      <pre class="example">           m        m       2  m/2   d^m
-          P(x) = (-1) * (1-x  )    * ----  P (x)
+          P(x) = (-1) * (1-x  )    * ----  P(x)
            n                         dx^m   n
 </pre>
         <p class="noindent">with Legendre polynomial of degree <var>n</var>:
 
-     <pre class="example">                    1     d^n   2    n
-          P (x) = ------ [----(x - 1)  ]
-           n      2^n n!  dx^n
+     <pre class="example">                    1    d^n   2    n
+          P(x) = ------ [----(x - 1) ]
+           n     2^n n!  dx^n
 </pre>
         <p class="noindent"><code>legendre (3, [-1.0, -0.9, -0.8])</code> returns the matrix:
 
-     <pre class="example">           x  |   -1.0   |   -0.9   |  -0.8
+     <pre class="example">           x  |   -1.0   |   -0.9   |   -0.8
           ------------------------------------
           m=0 | -1.00000 | -0.47250 | -0.08000
           m=1 |  0.00000 | -1.99420 | -1.98000
@@ -422,15 +422,15 @@ to the unnormalized Legendre functions by the following:
 
         <p>For Legendre functions of degree n and order 0:
 
-     <pre class="example">            0       0
-          SP (x) = P (x)
-            n       n
+     <pre class="example">            0      0
+          SP(x) = P(x)
+            n      n
 </pre>
         <p>For Legendre functions of degree n and order m:
 
-     <pre class="example">            m       m          m    2(n-m)! 0.5
-          SP (x) = P (x) * (-1)  * [-------]
-            n       n               (n+m)!
+     <pre class="example">            m      m         m    2(n-m)! 0.5
+          SP(x) = P(x) * (-1)  * [-------]
+            n      n              (n+m)!
 </pre>
         <p>If the optional argument <var>normalization</var> is <code>"norm"</code>,
 compute the fully normalized associated Legendre function. 
@@ -439,9 +439,9 @@ to the unnormalized Legendre functions by the following:
 
         <p>For Legendre functions of degree <var>n</var> and order <var>m</var>
 
-     <pre class="example">            m       m          m    (n+0.5)(n-m)! 0.5
-          NP (x) = P (x) * (-1)  * [-------------]
-            n       n                   (n+m)!
+     <pre class="example">            m      m         m    (n+0.5)(n-m)! 0.5
+          NP(x) = P(x) * (-1)  * [-------------]
+            n      n                  (n+m)!
 </pre>
         </blockquote></div>
 

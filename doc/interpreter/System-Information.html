@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -39,18 +39,18 @@ Up:&nbsp;<a rel="up" accesskey="u" href="System-Utilities.html#System-Utilities"
 <p><a name="doc_002dcomputer"></a>
 
 <div class="defun">
-&mdash; Function File: [<var>c</var>, <var>maxsize</var>, <var>endian</var>] = <b>computer</b> ()<var><a name="index-computer-3322"></a></var><br>
-&mdash; Function File: <var>arch</var> = <b>computer</b> (<var>"arch"</var>)<var><a name="index-computer-3323"></a></var><br>
+&mdash; Function File: [<var>c</var>, <var>maxsize</var>, <var>endian</var>] = <b>computer</b> ()<var><a name="index-computer-3323"></a></var><br>
+&mdash; Function File: <var>arch</var> = <b>computer</b> (<var>"arch"</var>)<var><a name="index-computer-3324"></a></var><br>
 <blockquote><p>Print or return a string of the form <var>cpu</var>-<var>vendor</var>-<var>os</var>
 that identifies the kind of computer Octave is running on.  If invoked
 with an output argument, the value is returned instead of printed.  For
 example:
 
      <pre class="example">          computer ()
-               -| i586-pc-linux-gnu
+             -| i586-pc-linux-gnu
           
           x = computer ()
-               &rArr; x = "i586-pc-linux-gnu"
+             &rArr; x = "i586-pc-linux-gnu"
 </pre>
         <p>If two output arguments are requested, also return the maximum number
 of elements for an array.
@@ -68,7 +68,7 @@ running.
    <p><a name="doc_002duname"></a>
 
 <div class="defun">
-&mdash; Built-in Function: [<var>uts</var>, <var>err</var>, <var>msg</var>] = <b>uname</b> ()<var><a name="index-uname-3324"></a></var><br>
+&mdash; Built-in Function: [<var>uts</var>, <var>err</var>, <var>msg</var>] = <b>uname</b> ()<var><a name="index-uname-3325"></a></var><br>
 <blockquote><p>Return system information in the structure.  For example:
 
      <pre class="example">          uname ()
@@ -89,8 +89,8 @@ system-dependent error message.
    <p><a name="doc_002dnproc"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>nproc</b> ()<var><a name="index-nproc-3325"></a></var><br>
-&mdash; Loadable Function:  <b>nproc</b> (<var>query</var>)<var><a name="index-nproc-3326"></a></var><br>
+&mdash; Loadable Function:  <b>nproc</b> ()<var><a name="index-nproc-3326"></a></var><br>
+&mdash; Loadable Function:  <b>nproc</b> (<var>query</var>)<var><a name="index-nproc-3327"></a></var><br>
 <blockquote><p>Return the current number of available processors.
 
         <p>If called with the optional argument <var>query</var>, modify how processors
@@ -109,7 +109,7 @@ variable.
    <p><a name="doc_002dispc"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ispc</b> ()<var><a name="index-ispc-3327"></a></var><br>
+&mdash; Function File:  <b>ispc</b> ()<var><a name="index-ispc-3328"></a></var><br>
 <blockquote><p>Return true if Octave is running on a Windows system and false otherwise. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -122,7 +122,7 @@ variable.
    <p><a name="doc_002disunix"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>isunix</b> ()<var><a name="index-isunix-3328"></a></var><br>
+&mdash; Function File:  <b>isunix</b> ()<var><a name="index-isunix-3329"></a></var><br>
 <blockquote><p>Return true if Octave is running on a Unix-like system and false otherwise. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -135,7 +135,7 @@ variable.
    <p><a name="doc_002dismac"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ismac</b> ()<var><a name="index-ismac-3329"></a></var><br>
+&mdash; Function File:  <b>ismac</b> ()<var><a name="index-ismac-3330"></a></var><br>
 <blockquote><p>Return true if Octave is running on a Mac OS X system and false otherwise. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
@@ -148,7 +148,7 @@ variable.
    <p><a name="doc_002disieee"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>isieee</b> ()<var><a name="index-isieee-3330"></a></var><br>
+&mdash; Built-in Function:  <b>isieee</b> ()<var><a name="index-isieee-3331"></a></var><br>
 <blockquote><p>Return true if your computer <em>claims</em> to conform to the IEEE standard
 for floating point calculations.  No actual tests are performed. 
 </p></blockquote></div>
@@ -157,7 +157,7 @@ for floating point calculations.  No actual tests are performed.
    <p><a name="doc_002disdeployed"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>isdeployed</b> ()<var><a name="index-isdeployed-3331"></a></var><br>
+&mdash; Function File:  <b>isdeployed</b> ()<var><a name="index-isdeployed-3332"></a></var><br>
 <blockquote><p>Return true if the current program has been compiled and is running
 separately from the Octave interpreter and false if it is running in
 the Octave interpreter.  Currently, this function always returns
@@ -168,7 +168,7 @@ false in Octave.
    <p><a name="doc_002dOCTAVE_005fHOME"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>OCTAVE_HOME</b> ()<var><a name="index-OCTAVE_005fHOME-3332"></a></var><br>
+&mdash; Built-in Function:  <b>OCTAVE_HOME</b> ()<var><a name="index-OCTAVE_005fHOME-3333"></a></var><br>
 <blockquote><p>Return the name of the top-level Octave installation directory. 
 </p></blockquote></div>
 
@@ -176,7 +176,7 @@ false in Octave.
    <p><a name="doc_002dmatlabroot"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>matlabroot</b> ()<var><a name="index-matlabroot-3333"></a></var><br>
+&mdash; Function File:  <b>matlabroot</b> ()<var><a name="index-matlabroot-3334"></a></var><br>
 <blockquote><p>Return the name of the top-level Octave installation directory.
 
         <p>This is an alias for the function <code>OCTAVE_HOME</code><!-- /@w --> provided
@@ -192,7 +192,7 @@ for compatibility.
    <p><a name="doc_002dOCTAVE_005fVERSION"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>OCTAVE_VERSION</b> ()<var><a name="index-OCTAVE_005fVERSION-3334"></a></var><br>
+&mdash; Built-in Function:  <b>OCTAVE_VERSION</b> ()<var><a name="index-OCTAVE_005fVERSION-3335"></a></var><br>
 <blockquote><p>Return the version number of Octave, as a string. 
 </p></blockquote></div>
 
@@ -200,7 +200,7 @@ for compatibility.
    <p><a name="doc_002dversion"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>version</b> ()<var><a name="index-version-3335"></a></var><br>
+&mdash; Function File:  <b>version</b> ()<var><a name="index-version-3336"></a></var><br>
 <blockquote><p>Return the version number of Octave, as a string.
 
         <p>This is an alias for the function <samp><span class="env">OCTAVE_VERSION</span></samp><!-- /@w --> provided for
@@ -216,12 +216,12 @@ compatibility
    <p><a name="doc_002dver"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>ver</b> ()<var><a name="index-ver-3336"></a></var><br>
+&mdash; Function File:  <b>ver</b> ()<var><a name="index-ver-3337"></a></var><br>
 <blockquote><p>Display a header containing the current Octave version number, license
 string and operating system, followed by the installed package names,
 versions, and installation directories.
 
-   &mdash; Function File: v = <b>ver</b> ()<var><a name="index-ver-3337"></a></var><br>
+   &mdash; Function File: v = <b>ver</b> ()<var><a name="index-ver-3338"></a></var><br>
 <blockquote><p>Return a vector of structures, respecting Octave and each installed package. 
 The structure includes the following fields.
 
@@ -235,10 +235,10 @@ The structure includes the following fields.
           <br><dt><code>Date</code><dd>Date respecting the version/revision. 
 </dl>
 
-   &mdash; Function File: v = <b>ver</b> (<var>"Octave"</var>)<var><a name="index-ver-3338"></a></var><br>
+   &mdash; Function File: v = <b>ver</b> (<var>"Octave"</var>)<var><a name="index-ver-3339"></a></var><br>
 <blockquote><p>Return version information for Octave only.
 
-   &mdash; Function File: v = <b>ver</b> (<var>package</var>)<var><a name="index-ver-3339"></a></var><br>
+   &mdash; Function File: v = <b>ver</b> (<var>package</var>)<var><a name="index-ver-3340"></a></var><br>
 <blockquote><p>Return version information for <var>package</var>.
 
      <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -251,7 +251,7 @@ The structure includes the following fields.
    <p><a name="doc_002dcompare_005fversions"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>compare_versions</b> (<var>v1, v2, operator</var>)<var><a name="index-compare_005fversions-3340"></a></var><br>
+&mdash; Function File:  <b>compare_versions</b> (<var>v1, v2, operator</var>)<var><a name="index-compare_005fversions-3341"></a></var><br>
 <blockquote><p>Compare two version strings using the given <var>operator</var>.
 
         <p>This function assumes that versions <var>v1</var> and <var>v2</var> are
@@ -301,21 +301,21 @@ numeric part even though <code>double("a")</code> is greater than
    <p><a name="doc_002dlicense"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>license</b><var><a name="index-license-3341"></a></var><br>
+&mdash; Function File:  <b>license</b><var><a name="index-license-3342"></a></var><br>
 <blockquote><p>Display the license of Octave.
 
-   &mdash; Function File:  <b>license</b> (<var>"inuse"</var>)<var><a name="index-license-3342"></a></var><br>
+   &mdash; Function File:  <b>license</b> (<var>"inuse"</var>)<var><a name="index-license-3343"></a></var><br>
 <blockquote><p>Display a list of packages currently being used.
 
-   &mdash; Function File: <var>retval</var> = <b>license</b> (<var>"inuse"</var>)<var><a name="index-license-3343"></a></var><br>
+   &mdash; Function File: <var>retval</var> = <b>license</b> (<var>"inuse"</var>)<var><a name="index-license-3344"></a></var><br>
 <blockquote><p>Return a structure containing the fields <code>feature</code> and <code>user</code>.
 
-   &mdash; Function File: <var>retval</var> = <b>license</b> (<var>"test", feature</var>)<var><a name="index-license-3344"></a></var><br>
+   &mdash; Function File: <var>retval</var> = <b>license</b> (<var>"test", feature</var>)<var><a name="index-license-3345"></a></var><br>
 <blockquote><p>Return 1 if a license exists for the product identified by the string
 <var>feature</var> and 0 otherwise.  The argument <var>feature</var> is case
 insensitive and only the first 27 characters are checked.
 
-   &mdash; Function File:  <b>license</b> (<var>"test", feature, toggle</var>)<var><a name="index-license-3345"></a></var><br>
+   &mdash; Function File:  <b>license</b> (<var>"test", feature, toggle</var>)<var><a name="index-license-3346"></a></var><br>
 <blockquote><p>Enable or disable license testing for <var>feature</var>, depending on
 <var>toggle</var>, which may be one of:
 
@@ -326,7 +326,7 @@ as usual.
           <br><dt>"disable"<dd>Future tests for the specified license of <var>feature</var> return 0. 
 </dl>
 
-   &mdash; Function File: <var>retval</var> = <b>license</b> (<var>"checkout", feature</var>)<var><a name="index-license-3346"></a></var><br>
+   &mdash; Function File: <var>retval</var> = <b>license</b> (<var>"checkout", feature</var>)<var><a name="index-license-3347"></a></var><br>
 <blockquote><p>Check out a license for <var>feature</var>, returning 1 on success and 0
 on failure.
 
@@ -342,8 +342,8 @@ on failure.
    <p><a name="doc_002doctave_005fconfig_005finfo"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>octave_config_info</b> ()<var><a name="index-octave_005fconfig_005finfo-3347"></a></var><br>
-&mdash; Built-in Function:  <b>octave_config_info</b> (<var>option</var>)<var><a name="index-octave_005fconfig_005finfo-3348"></a></var><br>
+&mdash; Built-in Function:  <b>octave_config_info</b> ()<var><a name="index-octave_005fconfig_005finfo-3348"></a></var><br>
+&mdash; Built-in Function:  <b>octave_config_info</b> (<var>option</var>)<var><a name="index-octave_005fconfig_005finfo-3349"></a></var><br>
 <blockquote><p>Return a structure containing configuration and installation
 information for Octave.
 
@@ -356,7 +356,7 @@ specified option.
    <p><a name="doc_002dusejava"></a>
 
 <div class="defun">
-&mdash; Function File:  <b>usejava</b> (<var>feature</var>)<var><a name="index-usejava-3349"></a></var><br>
+&mdash; Function File:  <b>usejava</b> (<var>feature</var>)<var><a name="index-usejava-3350"></a></var><br>
 <blockquote><p>Return true if the specific Sun Java element <var>feature</var> is available.
 
         <p>Possible features are:
@@ -381,7 +381,7 @@ not implement an interface to Java and this function always returns
    <p><a name="doc_002dgetrusage"></a>
 
 <div class="defun">
-&mdash; Loadable Function:  <b>getrusage</b> ()<var><a name="index-getrusage-3350"></a></var><br>
+&mdash; Loadable Function:  <b>getrusage</b> ()<var><a name="index-getrusage-3351"></a></var><br>
 <blockquote><p>Return a structure containing a number of statistics about the current
 Octave process.  Not all fields are available on all systems.  If it is
 not possible to get CPU time statistics, the CPU time slots are set to

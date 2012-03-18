@@ -20,7 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -33,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Grammar-and-Parser.html#Grammar-and-Par
 
 <h3 class="section">I.2 Parser</h3>
 
-<p><a name="index-parser-3463"></a>
+<p><a name="index-parser-3464"></a>
 The parser has a number of variables that affect its internal operation. 
 These variables are generally documented in the manual alongside the code that
 they affect.  For example, <code>allow_noninteger_range_as_index</code> is discussed
@@ -48,8 +48,8 @@ from being evaluated periodically.
    <p><a name="doc_002dadd_005finput_005fevent_005fhook"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>add_input_event_hook</b> (<var>fcn</var>)<var><a name="index-add_005finput_005fevent_005fhook-3464"></a></var><br>
-&mdash; Built-in Function:  <b>add_input_event_hook</b> (<var>fcn, data</var>)<var><a name="index-add_005finput_005fevent_005fhook-3465"></a></var><br>
+&mdash; Built-in Function:  <b>add_input_event_hook</b> (<var>fcn</var>)<var><a name="index-add_005finput_005fevent_005fhook-3465"></a></var><br>
+&mdash; Built-in Function:  <b>add_input_event_hook</b> (<var>fcn, data</var>)<var><a name="index-add_005finput_005fevent_005fhook-3466"></a></var><br>
 <blockquote><p>Add the named function <var>fcn</var> to the list of functions to call
 periodically when Octave is waiting for input.  The function should
 have the form
@@ -69,7 +69,7 @@ arguments.
    <p><a name="doc_002dremove_005finput_005fevent_005fhook"></a>
 
 <div class="defun">
-&mdash; Built-in Function:  <b>remove_input_event_hook</b> (<var>fcn</var>)<var><a name="index-remove_005finput_005fevent_005fhook-3466"></a></var><br>
+&mdash; Built-in Function:  <b>remove_input_event_hook</b> (<var>fcn</var>)<var><a name="index-remove_005finput_005fevent_005fhook-3467"></a></var><br>
 <blockquote><p>Remove the named function <var>fcn</var> from the list of functions to call
 periodically when Octave is waiting for input. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -88,9 +88,9 @@ functions.
    <p><a name="doc_002dmissing_005ffunction_005fhook"></a>
 
 <div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>missing_function_hook</b> ()<var><a name="index-missing_005ffunction_005fhook-3467"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>missing_function_hook</b> (<var>new_val</var>)<var><a name="index-missing_005ffunction_005fhook-3468"></a></var><br>
-&mdash; Built-in Function:  <b>missing_function_hook</b> (<var>new_val, "local"</var>)<var><a name="index-missing_005ffunction_005fhook-3469"></a></var><br>
+&mdash; Built-in Function: <var>val</var> = <b>missing_function_hook</b> ()<var><a name="index-missing_005ffunction_005fhook-3468"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>missing_function_hook</b> (<var>new_val</var>)<var><a name="index-missing_005ffunction_005fhook-3469"></a></var><br>
+&mdash; Built-in Function:  <b>missing_function_hook</b> (<var>new_val, "local"</var>)<var><a name="index-missing_005ffunction_005fhook-3470"></a></var><br>
 <blockquote><p>Query or set the internal variable that specifies the function to call when
 an unknown identifier is requested.
 

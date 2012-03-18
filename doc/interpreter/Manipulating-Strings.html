@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -164,7 +164,7 @@ string array or cell array of strings.
         <p>For example:
 
      <pre class="example">          index ("Teststring", "t")
-               &rArr; 4
+             &rArr; 4
 </pre>
         <p>If <var>direction</var> is &lsquo;<samp><span class="samp">"first"</span></samp>&rsquo;, return the first element found. 
 If <var>direction</var> is &lsquo;<samp><span class="samp">"last"</span></samp>&rsquo;, return the last element found.
@@ -314,7 +314,7 @@ boundaries.
         <p>Example:
 
      <pre class="example">          strsplit ("a,b,c", ",")
-                 &rArr;
+                &rArr;
                     {
                       [1,1] = a
                       [1,2] = b
@@ -322,7 +322,7 @@ boundaries.
                     }
           
           strsplit (["a,b" ; "cde"], ",")
-                 &rArr;
+                &rArr;
                     {
                       [1,1] = a
                       [1,2] = b
@@ -355,6 +355,7 @@ been processed.
         <p>The string <var>format</var> describes how the words in <var>str</var> should be
 parsed. 
 It may contain any combination of the following specifiers:
+
           <dl>
 <dt><code>%s</code><dd>The word is parsed as a string.
 
@@ -391,13 +392,13 @@ output argument and likewise for the rest of the specifiers.
 </pre>
         <p>Optional numeric argument <var>format_repeat</var> can be used for
 limiting the number of items read:
+
           <dl>
 <dt>-1<dd>(default) read all of the string until the end.
 
           <br><dt>N<dd>Read N times <var>nargout</var> items.  0 (zero) is an acceptable
-value for <var>format_repeat</var>.
-
-        </dl>
+value for <var>format_repeat</var>. 
+</dl>
 
         <p>The behavior of <code>strread</code> can be changed via property-value
 pairs.  The following properties are recognized:

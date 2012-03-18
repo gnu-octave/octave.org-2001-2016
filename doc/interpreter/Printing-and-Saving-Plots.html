@@ -21,7 +21,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../../octave.css">
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -200,16 +200,16 @@ option.  For example, by writing <code>"-S640,480"</code><!-- /@w -->.
 
         <p>Example: Print to a file, using the svg device.
 
-     <pre class="example">          figure (1)
-          clf ()
-          surf (peaks)
+     <pre class="example">          figure (1);
+          clf ();
+          surf (peaks);
           print -dsvg figure1.svg
 </pre>
         <p>Example: Print to an HP Deskjet 550C.
 
-     <pre class="example">          figure (1)
-          clf ()
-          surf (peaks)
+     <pre class="example">          figure (1);
+          clf ();
+          surf (peaks);
           print -dcdj550
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
@@ -247,10 +247,9 @@ format <var>fmt</var>.
 <var>fmt</var> is omitted it is extracted from the extension of <var>filename</var>. 
 The default format is <code>"pdf"</code>.
 
-     <pre class="example">          figure (1);
-          clf ();
+     <pre class="example">          clf ();
           surf (peaks);
-          saveas(1, "figure1.png");
+          saveas (1, "figure1.png");
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
