@@ -69,7 +69,7 @@ __nav_buttons__([get-involved])
 
   <p>
     Assuming you have Mercurial installed on your machine you may
-    check out the latest development version of Octave sources with
+    obtain the latest development version of Octave sources with
     the following command:
   </p>
 
@@ -78,12 +78,12 @@ __nav_buttons__([get-involved])
   </div>
 
   <p>
-    Once you have the repository checked out, you can resync with the
+    Once you have cloned the repository, you can resync with the
     archive by doing
   </p> 
 
   <div id="code">
-    <code>hg -v pull</code><br>
+    <code>hg -v pull  ##-v means "verbose", to get more diagnostic output</code><br>
     <code>hg -v update</code><br>
   </div>
 
