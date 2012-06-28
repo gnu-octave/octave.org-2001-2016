@@ -76,9 +76,24 @@ div#nav-item {
   font-size: 12pt;
   font-weight: bold;
   text-align: center;
-  padding: 2px;
-  border: 2px solid;
+  padding: 5px;
+  border: 1px solid #aaaaaa;
   background: #e8e8e8;
+  background-image: linear-gradient(bottom, rgb(255,247,255) 13%, rgb(240,240,240) 57%);
+  background-image: -o-linear-gradient(bottom, rgb(255,247,255) 13%, rgb(240,240,240) 57%);
+  background-image: -moz-linear-gradient(bottom, rgb(255,247,255) 13%, rgb(240,240,240) 57%);
+  background-image: -webkit-linear-gradient(bottom, rgb(255,247,255) 13%, rgb(240,240,240) 57%);
+  background-image: -ms-linear-gradient(bottom, rgb(255,247,255) 13%, rgb(240,240,240) 57%);
+
+  background-image: -webkit-gradient(
+	  linear,
+	  left bottom,
+	  left top,
+	  color-stop(0.13, rgb(255,247,255)),
+	  color-stop(0.57, rgb(240,240,240))
+  );
+  border-radius: 4px;
+  box-shadow: 0px 3px 10px #cccccc;
 }
 
 div#current-nav {
