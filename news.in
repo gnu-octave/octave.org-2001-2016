@@ -3,6 +3,18 @@ __header__([Octave News Archive], [logo])
 <div class="content">
 
 <dl>
+    <dt>July 18, 2012</dt>
+    <dd>
+      Octave has
+      been <a href="http://sophia.estec.esa.int/socis2012/?q=node/13">accepted
+      into SOCIS</a>. We're now hiring for one position!
+    </dd>
+    <dt>July 16, 2012</dt>
+    <dd>
+      <a href="http://www.octave.org/wiki/index.php?title=OctConf_2012">OctConf
+      2012</a> is currently underway.
+    </dd>
+
     <dt>June 8, 2012</dt>
     <dd>
       <a href="http://planet.octave.org">Planet Octave</a> is up,
