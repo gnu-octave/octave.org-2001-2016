@@ -35,7 +35,7 @@ __nav_buttons__([download])
   <h1>OS X</h1>
   <p>
     The Wiki has some instructions for
-    <a href="http://www.octave.org/wiki/index.php?title=Installing_MacOS_X_Bundle">installing
+    <a href="http://www.octave.org/wiki/Installing_MacOS_X_Bundle">installing
     Octave on OS X systems</a>.
   </p>
 
@@ -48,7 +48,7 @@ __nav_buttons__([download])
   <h2>MinGW</h2>
   <p>
     The Wiki has some instructions for
-    <a href="http://www.octave.org/wiki/index.php?title=Octave_for_Windows">installing Octave on Windows systems</a>.
+    <a href="http://www.octave.org/wiki/Octave_for_Windows">installing Octave on Windows systems</a>.
   </p>
 
   <h1>Sources</h1>
