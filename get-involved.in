@@ -85,9 +85,9 @@ __nav_buttons__([get-involved])
     url:
 
     <div id="code">
-      <code>[[subpaths]]</code><br/>
-      <code>git://git.sv.gnu.org/gnulib = http://git.savannah.gnu.org/r/gnulib.git</code><br/>
-    </div>
+      [[subpaths]]<br/>
+      git://git.sv.gnu.org/gnulib = http://git.savannah.gnu.org/r/gnulib.git<br/>
+     </div>
   </p>
 
   <p>
