@@ -299,7 +299,7 @@ for more details.</dd>
 <dd>Please see this
 __MAIL_THREAD__(`maintainers', `2006', `June', `000309')
 if you are having trouble compiling Octave 2.9.6 with GCC 3.x.  
-After applying the patch, you'll need to run bootstrap and configure
+After applying the patch, you'll need to run autogen.sh and configure
 again.  This means you'll need to have a recent version of 
 autoconf installed.  Or, you can upgrade to GCC 4.x or you can wait for
 2.9.7.  So many options!</dd>
