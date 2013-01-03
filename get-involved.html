@@ -173,22 +173,10 @@
   </div>
 
   <p>
-    This will clone <em>two</em> repositories, one of which is git. If
-    you have trouble with the git:// url (e.g. due to firewall
-    restrictions), try adding the following to
-    your <span id="code">~/.hgrc</span> to use an alternative http://
-    url:
-
-    <div id="code">
-      [subpaths]<br/>
-      git://git.sv.gnu.org/gnulib = http://git.savannah.gnu.org/r/gnulib.git<br/>
-     </div>
+    This will clone <em>two</em> repositories, one of which is
+    subrepository of the main Octave repository. Once you have these,
+    you can resync with the archive by doing
   </p>
-
-  <p>
-    Once you have cloned the repository, you can resync with the
-    archive by doing
-  </p> 
 
   <div id="code">
     <code>hg -v pull  ##-v means "verbose", to get more diagnostic output</code><br>
