@@ -21,7 +21,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -52,6 +51,12 @@ by the string <var>s</var>.  For example:
 
      <pre class="example">          bin2dec ("1110")
                &rArr; 14
+</pre>
+        <p>Spaces are ignored during conversion and may be used to make the binary
+number more readable.
+
+     <pre class="example">          bin2dec ("1000 0001")
+               &rArr; 129
 </pre>
         <p>If <var>s</var> is a string matrix, return a column vector with one converted
 number per row of <var>s</var>; Invalid rows evaluate to NaN.

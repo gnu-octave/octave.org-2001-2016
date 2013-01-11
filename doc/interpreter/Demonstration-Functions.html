@@ -20,7 +20,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -52,11 +51,11 @@ example must also be introduced by the keyword 'demo' flush left to the
 prefix with no intervening spaces.  The remainder of the example can
 contain arbitrary Octave code.  For example:
 
-     <pre class="example">          !demo
-          ! t=0:0.01:2*pi; x = sin (t);
-          ! plot (t,x)
-          ! %-------------------------------------------------
-          ! % the figure window shows one cycle of a sine wave
+     <pre class="example">          %!demo
+          %! t=0:0.01:2*pi; x = sin (t);
+          %! plot (t,x)
+          %! %-------------------------------------------------
+          %! % the figure window shows one cycle of a sine wave
 </pre>
         <p>Note that the code is displayed before it is executed, so a simple
 comment at the end suffices for labeling what is being shown.  It is
@@ -67,7 +66,7 @@ variables.  This means that every demo must have separate initialization
 code.  Alternatively, all demos can be combined into a single large demo
 with the code
 
-     <pre class="example">          ! input("Press &lt;enter&gt; to continue: ","s");
+     <pre class="example">          %! input("Press &lt;enter&gt; to continue: ","s");
 </pre>
         <p class="noindent">between the sections, but this is discouraged.  Other techniques
 to avoid multiple initialization blocks include using multiple plots
@@ -82,12 +81,12 @@ evaluates one line, or one statement if the statement crosses
 multiple lines, you must wrap your demo in "if 1 &lt;demo stuff&gt; endif"
 with the 'if' on the same line as 'demo'.  For example:
 
-     <pre class="example">          !demo if 1
-          !  function y=f(x)
-          !    y=x;
-          !  endfunction
-          !  f(3)
-          ! endif
+     <pre class="example">          %!demo if 1
+          %!  function y=f(x)
+          %!    y=x;
+          %!  endfunction
+          %!  f(3)
+          %! endif
 </pre>
         <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
      <!-- A simple blank line produces the correct behavior. -->
@@ -260,7 +259,7 @@ than absolutely as <code>abs (</code><var>x</var><code> - </code><var>y</var><co
 <kbd>demo ("speed")</kbd> to run them. 
 </p></blockquote></div>
 
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- DO NOT EDIT!  Generated automatically by munge-texi.pl. -->
 <!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->

@@ -20,7 +20,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -41,7 +40,7 @@ the following elements:
      <dl>
 <dt><code>usec</code><dd>Microseconds after the second (0-999999).
 
-     <br><dt><code>sec</code><dd>Seconds after the minute (0-61).  This number can be 61 to account
+     <br><dt><code>sec</code><dd>Seconds after the minute (0-60).  This number can be 60 to account
 for leap seconds.
 
      <br><dt><code>min</code><dd>Minutes after the hour (0-59).
@@ -405,7 +404,7 @@ a fractional part after the decimal point for extended accuracy.
 <code>clock</code> (<var>t2</var> - <var>t1</var>).  For example:
 
      <pre class="example">          t0 = clock ();
-           many computations later...
+          # many computations later...
           elapsed_time = etime (clock (), t0);
 </pre>
         <p class="noindent">will set the variable <code>elapsed_time</code> to the number of seconds since

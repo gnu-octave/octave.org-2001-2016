@@ -21,7 +21,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -580,11 +579,8 @@ also be set to zero.
         <p>The default value of <var>k</var> is zero, so that <code>triu</code> and
 <code>tril</code> normally include the main diagonal as part of the result.
 
-        <p>If the value of <var>k</var> is negative, additional elements above (for
-<code>tril</code>) or below (for <code>triu</code>) the main diagonal are also
-selected.
-
-        <p>The absolute value of <var>k</var> must not be greater than the number of
+        <p>If the value of <var>k</var> is nonzero integer, the selection of elementsstarts at an offset of <var>k</var> diagonals above or below the maindiagonal; above for positive <var>k</var> and below for negative <var>k</var>. 
+The absolute value of <var>k</var> must not be greater than the number of
 sub-diagonals or super-diagonals.
 
         <p>For example:

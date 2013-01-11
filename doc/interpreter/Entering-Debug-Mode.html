@@ -20,7 +20,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -56,6 +55,11 @@ before reaching the debugging mode, a normal interrupt will occur.
         <p>When called from inside a function with the "local" option, the variable is
 changed locally for the function and any subroutines it calls.  The original
 variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddebug_005fon_005ferror.html#doc_002ddebug_005fon_005ferror">debug_on_error</a>, <a href="doc_002ddebug_005fon_005fwarning.html#doc_002ddebug_005fon_005fwarning">debug_on_warning</a>. 
 </p></blockquote></div>
 
 <!-- debug_on_warning src/error.cc -->
@@ -71,6 +75,11 @@ to enter the debugger when a warning is encountered.
         <p>When called from inside a function with the "local" option, the variable is
 changed locally for the function and any subroutines it calls.  The original
 variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddebug_005fon_005ferror.html#doc_002ddebug_005fon_005ferror">debug_on_error</a>, <a href="doc_002ddebug_005fon_005finterrupt.html#doc_002ddebug_005fon_005finterrupt">debug_on_interrupt</a>. 
 </p></blockquote></div>
 
 <!-- debug_on_error src/error.cc -->
@@ -88,6 +97,11 @@ the top-level error message).
         <p>When called from inside a function with the "local" option, the variable is
 changed locally for the function and any subroutines it calls.  The original
 variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002ddebug_005fon_005fwarning.html#doc_002ddebug_005fon_005fwarning">debug_on_warning</a>, <a href="doc_002ddebug_005fon_005finterrupt.html#doc_002ddebug_005fon_005finterrupt">debug_on_interrupt</a>. 
 </p></blockquote></div>
 
    </body></html>

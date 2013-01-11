@@ -21,7 +21,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -104,12 +103,12 @@ formatted and written to the output stream.  For example,
 <a name="index-conversion-specifications-_0028_0040code_007bprintf_007d_0029-991"></a>
 <pre class="example">     pct = 37;
      filename = "foo.txt";
-     printf ("Processed %d%% of `%s'.\nPlease be patient.\n",
+     printf ("Processed %d%% of '%s'.\nPlease be patient.\n",
              pct, filename);
 </pre>
    <p class="noindent">produces output like
 
-<pre class="example">     Processed 37% of `foo.txt'.
+<pre class="example">     Processed 37% of 'foo.txt'.
      Please be patient.
 </pre>
    <p>This example shows the use of the &lsquo;<samp><span class="samp">%d</span></samp>&rsquo; conversion to specify that a

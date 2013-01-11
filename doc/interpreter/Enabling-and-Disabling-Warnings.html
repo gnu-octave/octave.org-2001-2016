@@ -20,7 +20,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -41,13 +40,13 @@ all warnings will be enabled or disabled.
    <p>It is also possible to enable and disable individual warnings through
 their string identifications.  The following code will issue a warning
 
-<pre class="example">     warning ("non-negative-variable",
+<pre class="example">     warning ("example:non-negative-variable",
               "'a' must be non-negative.  Setting 'a' to zero.");
 </pre>
    <p class="noindent">while the following won't issue a warning
 
-<pre class="example">     warning ("off", "non-negative-variable");
-     warning ("non-negative-variable",
+<pre class="example">     warning ("off", "example:non-negative-variable");
+     warning ("example:non-negative-variable",
               "'a' must be non-negative.  Setting 'a' to zero.");
 </pre>
    <p>The functions distributed with Octave can issue one of the following
@@ -272,7 +271,7 @@ expression.
 By default, the <code>Octave:variable-switch-label</code> warning is disabled. 
 </dl>
 
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- DO NOT EDIT!  Generated automatically by munge-texi.pl. -->
 <!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->

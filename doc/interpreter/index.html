@@ -18,7 +18,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 Copyright &copy; 1996, 1997, 1999, 2000, 2001, 2002, 2005, 2006,
@@ -207,21 +206,21 @@ modified versions.
 </li></ul>
 <li><a name="toc_Statements" href="Statements.html#Statements">10 Statements</a>
 <ul>
-<li><a href="The-_003ccode_003eif_003c_002fcode_003e-Statement.html#The-_003ccode_003eif_003c_002fcode_003e-Statement">10.1 The <code>if</code> Statement</a>
-<li><a href="The-_003ccode_003eswitch_003c_002fcode_003e-Statement.html#The-_003ccode_003eswitch_003c_002fcode_003e-Statement">10.2 The <code>switch</code> Statement</a>
+<li><a href="The-if-Statement.html#The-if-Statement">10.1 The if Statement</a>
+<li><a href="The-switch-Statement.html#The-switch-Statement">10.2 The switch Statement</a>
 <ul>
 <li><a href="Notes-for-the-C-Programmer.html#Notes-for-the-C-Programmer">10.2.1 Notes for the C Programmer</a>
 </li></ul>
-<li><a href="The-_003ccode_003ewhile_003c_002fcode_003e-Statement.html#The-_003ccode_003ewhile_003c_002fcode_003e-Statement">10.3 The <code>while</code> Statement</a>
-<li><a href="The-_003ccode_003edo_002duntil_003c_002fcode_003e-Statement.html#The-_003ccode_003edo_002duntil_003c_002fcode_003e-Statement">10.4 The <code>do-until</code> Statement</a>
-<li><a href="The-_003ccode_003efor_003c_002fcode_003e-Statement.html#The-_003ccode_003efor_003c_002fcode_003e-Statement">10.5 The <code>for</code> Statement</a>
+<li><a href="The-while-Statement.html#The-while-Statement">10.3 The while Statement</a>
+<li><a href="The-do_002duntil-Statement.html#The-do_002duntil-Statement">10.4 The do-until Statement</a>
+<li><a href="The-for-Statement.html#The-for-Statement">10.5 The for Statement</a>
 <ul>
 <li><a href="Looping-Over-Structure-Elements.html#Looping-Over-Structure-Elements">10.5.1 Looping Over Structure Elements</a>
 </li></ul>
-<li><a href="The-_003ccode_003ebreak_003c_002fcode_003e-Statement.html#The-_003ccode_003ebreak_003c_002fcode_003e-Statement">10.6 The <code>break</code> Statement</a>
-<li><a href="The-_003ccode_003econtinue_003c_002fcode_003e-Statement.html#The-_003ccode_003econtinue_003c_002fcode_003e-Statement">10.7 The <code>continue</code> Statement</a>
-<li><a href="The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement.html#The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement">10.8 The <code>unwind_protect</code> Statement</a>
-<li><a href="The-_003ccode_003etry_003c_002fcode_003e-Statement.html#The-_003ccode_003etry_003c_002fcode_003e-Statement">10.9 The <code>try</code> Statement</a>
+<li><a href="The-break-Statement.html#The-break-Statement">10.6 The break Statement</a>
+<li><a href="The-continue-Statement.html#The-continue-Statement">10.7 The continue Statement</a>
+<li><a href="The-unwind_005fprotect-Statement.html#The-unwind_005fprotect-Statement">10.8 The unwind_protect Statement</a>
+<li><a href="The-try-Statement.html#The-try-Statement">10.9 The try Statement</a>
 <li><a href="Continuation-Lines.html#Continuation-Lines">10.10 Continuation Lines</a>
 </li></ul>
 <li><a name="toc_Functions-and-Scripts" href="Functions-and-Scripts.html#Functions-and-Scripts">11 Functions and Scripts</a>
@@ -706,7 +705,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
 
 <p>This manual documents how to run, install and port GNU Octave, as well
 as its new features and incompatibilities, and how to report bugs. 
-It corresponds to GNU Octave version 3.6.1.
+It corresponds to GNU Octave version 3.6.4-rc1.
 
 <!--  -->
 <ul class="menu">
@@ -1013,15 +1012,15 @@ It corresponds to GNU Octave version 3.6.1.
 
 </p>
 <ul class="menu">
-<li><a href="The-_003ccode_003eif_003c_002fcode_003e-Statement.html#The-_003ccode_003eif_003c_002fcode_003e-Statement">The <code>if</code> Statement</a>
-<li><a href="The-_003ccode_003eswitch_003c_002fcode_003e-Statement.html#The-_003ccode_003eswitch_003c_002fcode_003e-Statement">The <code>switch</code> Statement</a>
-<li><a href="The-_003ccode_003ewhile_003c_002fcode_003e-Statement.html#The-_003ccode_003ewhile_003c_002fcode_003e-Statement">The <code>while</code> Statement</a>
-<li><a href="The-_003ccode_003edo_002duntil_003c_002fcode_003e-Statement.html#The-_003ccode_003edo_002duntil_003c_002fcode_003e-Statement">The <code>do-until</code> Statement</a>
-<li><a href="The-_003ccode_003efor_003c_002fcode_003e-Statement.html#The-_003ccode_003efor_003c_002fcode_003e-Statement">The <code>for</code> Statement</a>
-<li><a href="The-_003ccode_003ebreak_003c_002fcode_003e-Statement.html#The-_003ccode_003ebreak_003c_002fcode_003e-Statement">The <code>break</code> Statement</a>
-<li><a href="The-_003ccode_003econtinue_003c_002fcode_003e-Statement.html#The-_003ccode_003econtinue_003c_002fcode_003e-Statement">The <code>continue</code> Statement</a>
-<li><a href="The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement.html#The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement">The <code>unwind_protect</code> Statement</a>
-<li><a href="The-_003ccode_003etry_003c_002fcode_003e-Statement.html#The-_003ccode_003etry_003c_002fcode_003e-Statement">The <code>try</code> Statement</a>
+<li><a href="The-if-Statement.html#The-if-Statement">The if Statement</a>
+<li><a href="The-switch-Statement.html#The-switch-Statement">The switch Statement</a>
+<li><a href="The-while-Statement.html#The-while-Statement">The while Statement</a>
+<li><a href="The-do_002duntil-Statement.html#The-do_002duntil-Statement">The do-until Statement</a>
+<li><a href="The-for-Statement.html#The-for-Statement">The for Statement</a>
+<li><a href="The-break-Statement.html#The-break-Statement">The break Statement</a>
+<li><a href="The-continue-Statement.html#The-continue-Statement">The continue Statement</a>
+<li><a href="The-unwind_005fprotect-Statement.html#The-unwind_005fprotect-Statement">The unwind_protect Statement</a>
+<li><a href="The-try-Statement.html#The-try-Statement">The try Statement</a>
 <li><a href="Continuation-Lines.html#Continuation-Lines">Continuation Lines</a>
 
 </li></ul>
@@ -1715,7 +1714,7 @@ It corresponds to GNU Octave version 3.6.1.
    </ul>
 
 <!--  -->
-<!-- DO NOT EDIT!  Generated automatically by munge-texi. -->
+<!-- DO NOT EDIT!  Generated automatically by munge-texi.pl. -->
 <!-- Copyright (C) 1996-2012 John W. Eaton -->
 <!-- This file is part of Octave. -->
 <!-- Octave is free software; you can redistribute it and/or modify it -->

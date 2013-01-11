@@ -20,7 +20,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -55,7 +54,10 @@ It is however possible to access the last warning as a string using the
 If a warning has such an ID the user can enable and disable this warning
 as will be described in the next section.  To assign an ID to a warning,
 simply call <code>warning</code> with two string arguments, where the first
-is the identification string, and the second is the actual warning.
+is the identification string, and the second is the actual warning.  Note
+that warning IDs are in the format "NAMESPACE:WARNING-NAME".  The namespace
+"Octave" is used for Octave's own warnings.  Any other string is available
+as a namespace for user's own warnings.
 
 <!-- warning src/error.cc -->
    <p><a name="doc_002dwarning"></a>
@@ -77,8 +79,10 @@ of an unusual condition, but only when it makes sense for your program
 to go on.
 
         <p>The optional message identifier allows users to enable or disable
-warnings tagged by <var>id</var>.  The special identifier &lsquo;<samp><span class="samp">"all"</span></samp>&rsquo; may
-be used to set the state of all warnings.
+warnings tagged by <var>id</var>.  A message identifier is of the form
+"NAMESPACE:WARNING-NAME".  Octave's own warnings use the "Octave"
+namespace (see <a href="doc_002dwarning_005fids.html#doc_002dwarning_005fids">doc-warning_ids</a>).  The special identifier &lsquo;<samp><span class="samp">"all"</span></samp>&rsquo;
+may be used to set the state of all warnings.
 
         <p>If the first argument is &lsquo;<samp><span class="samp">"on"</span></samp>&rsquo; or &lsquo;<samp><span class="samp">"off"</span></samp>&rsquo;, set the state
 of a particular warning using the identifier <var>id</var>.  If the first

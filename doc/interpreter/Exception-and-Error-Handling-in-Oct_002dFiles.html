@@ -21,7 +21,6 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -73,7 +72,7 @@ without being deallocated.  Therefore, ideally Octave itself should
 allocate any memory that is needed by the foreign code, with either the
 fortran_vec method or the <code>OCTAVE_LOCAL_BUFFER</code><!-- /@w --> macro.
 
-   <p>The Octave unwind_protect mechanism (<a href="The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement.html#The-_003ccode_003eunwind_005fprotect_003c_002fcode_003e-Statement">The <code>unwind_protect</code> Statement</a>)
+   <p>The Octave unwind_protect mechanism (<a href="The-unwind_005fprotect-Statement.html#The-unwind_005fprotect-Statement">The unwind_protect Statement</a>)
 can also be used in oct-files.  In conjunction with the exception
 handling of Octave, it is important to enforce that certain code is run
 to allow variables, etc. to be restored even if an exception occurs.  An
