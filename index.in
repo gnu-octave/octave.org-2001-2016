@@ -27,6 +27,13 @@ __nav_buttons__([home])
   <h1>News</h1>
 
   <dl>
+    <dt>February 21, 2013</dt>
+    <dd>Version 3.6.4 has been released and is now available
+      for <a href="download.html">download</a>. Octave 3.6.4 is a
+      minor bug-fixing release. See
+      the <a href="NEWS-3.6.html">NEWS</a> file for a list of
+      user-visible changes since 3.4.
+    </dd>
     <dt>January 28, 2013</dt>
     <dd>
       <a href="http://wiki.octave.org/OctConf_2013">OctConf 2013</a>
