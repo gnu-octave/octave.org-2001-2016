@@ -66,13 +66,6 @@ __nav_buttons__([home])
       it's principally dedicated to the blogs from students working
       under Google Summer of Code.
     </dd>
-    <dt>May 31, 2012</dt>
-    <dd>Version 3.6.2 has been released and is now available
-      for <a href="download.html">download</a>. Octave 3.6.2 is a
-      minor bug-fixing release. See
-      the <a href="NEWS-3.6.html">NEWS</a> file for a list of
-      user-visible changes since 3.4.
-    </dd>
   </dl>
 
   <p>
