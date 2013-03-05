@@ -34,6 +34,28 @@ __nav_buttons__
     your Octave needs.
   </p>
 
+  <h1>MOXOFF</h1>
+
+  <p>
+    <a href="http://www.moxoff.com/octave">MOXOFF</a> provides custom
+    programming and custom numerical modeling solutions based on free
+    software tools and in particular on GNU Octave.
+  </p>
+  <p>
+    MOXOFF applies mathematics and statistical analysis to complex,
+    multiphysics problems. Our approach covers a broad spectrum of
+    fields: we run applied research and develop innovative
+    mathematical solutions for engineering, life science and social
+    science problems. Our skills can be applied to a wide range of
+    subjects: bio-technologies, aerospace design, domestic appliances,
+    conventional and renewable power generation, electronics,
+    financial instruments, analysis and simulation of geological
+    processes, biomedical equipment to cite just a few of our more
+    recent projects. We deliver business-class solutions based on GNU
+    Octave and we also provide evolutive maintenance. We design GNU
+    Octave based interfaces to free software tools for scientific
+    computing.
+  </p>
 </div>
 
 __footer__
