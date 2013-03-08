@@ -20,6 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -154,17 +155,85 @@ the file <samp><span class="file">data</span></samp> in Octave's binary format.
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dload.html#doc_002dload">load</a>, <a href="doc_002ddefault_005fsave_005foptions.html#doc_002ddefault_005fsave_005foptions">default_save_options</a>, <a href="doc_002dsave_005fheader_005fformat_005fstring.html#doc_002dsave_005fheader_005fformat_005fstring">save_header_format_string</a>, <a href="doc_002ddlmread.html#doc_002ddlmread">dlmread</a>, <a href="doc_002dcsvread.html#doc_002dcsvread">csvread</a>, <a href="doc_002dfread.html#doc_002dfread">fread</a>. 
 </p></blockquote></div>
 
+   <p>There are three functions that modify the behavior of <code>save</code>.
+
+<!-- default_save_options src/load-save.cc -->
+   <p><a name="doc_002ddefault_005fsave_005foptions"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>default_save_options</b> ()<var><a name="index-default_005fsave_005foptions-911"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>default_save_options</b> (<var>new_val</var>)<var><a name="index-default_005fsave_005foptions-912"></a></var><br>
+&mdash; Built-in Function:  <b>default_save_options</b> (<var>new_val, "local"</var>)<var><a name="index-default_005fsave_005foptions-913"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the default options
+for the <code>save</code> command, and defines the default format. 
+Typical values include <code>"-ascii"</code>, <code>"-text -zip"</code>. 
+The default value is <samp><span class="option">-text</span></samp>.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsave.html#doc_002dsave">save</a>. 
+</p></blockquote></div>
+
+<!-- save_precision src/ls-oct-ascii.cc -->
+   <p><a name="doc_002dsave_005fprecision"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>save_precision</b> ()<var><a name="index-save_005fprecision-914"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>save_precision</b> (<var>new_val</var>)<var><a name="index-save_005fprecision-915"></a></var><br>
+&mdash; Built-in Function:  <b>save_precision</b> (<var>new_val, "local"</var>)<var><a name="index-save_005fprecision-916"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the number of
+digits to keep when saving data in text format.
+
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
+</p></blockquote></div>
+
+<!-- save_header_format_string src/load-save.cc -->
+   <p><a name="doc_002dsave_005fheader_005fformat_005fstring"></a>
+
+<div class="defun">
+&mdash; Built-in Function: <var>val</var> = <b>save_header_format_string</b> ()<var><a name="index-save_005fheader_005fformat_005fstring-917"></a></var><br>
+&mdash; Built-in Function: <var>old_val</var> = <b>save_header_format_string</b> (<var>new_val</var>)<var><a name="index-save_005fheader_005fformat_005fstring-918"></a></var><br>
+&mdash; Built-in Function:  <b>save_header_format_string</b> (<var>new_val, "local"</var>)<var><a name="index-save_005fheader_005fformat_005fstring-919"></a></var><br>
+<blockquote><p>Query or set the internal variable that specifies the format
+string used for the comment line written at the beginning of
+text-format data files saved by Octave.  The format string is
+passed to <code>strftime</code> and should begin with the character
+&lsquo;<samp><span class="samp">#</span></samp>&rsquo; and contain no newline characters.  If the value of
+<code>save_header_format_string</code> is the empty string,
+the header comment is omitted from text-format data files.  The
+default value is
+<!-- Set example in small font to prevent overfull line -->
+
+     <pre class="smallexample">          "# Created by Octave VERSION, %a %b %d %H:%M:%S %Y %Z &lt;USER@HOST&gt;"
+</pre>
+        <p>When called from inside a function with the "local" option, the variable is
+changed locally for the function and any subroutines it calls.  The original
+variable value is restored when exiting the function. 
+<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
+<!-- A simple blank line produces the correct behavior. -->
+<!-- @sp 1 -->
+
+     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dsave.html#doc_002dsave">save</a>. 
+</p></blockquote></div>
+
 <!-- load src/load-save.cc -->
    <p><a name="doc_002dload"></a>
 
 <div class="defun">
-&mdash; Command:  <b>load</b><var> file<a name="index-load-911"></a></var><br>
-&mdash; Command:  <b>load</b><var> options file<a name="index-load-912"></a></var><br>
-&mdash; Command:  <b>load</b><var> options file v1 v2 <small class="dots">...</small><a name="index-load-913"></a></var><br>
-&mdash; Command: S = <b>load</b> (<var>"options", "file", "v1", "v2", <small class="dots">...</small></var>)<var><a name="index-load-914"></a></var><br>
-&mdash; Command:  <b>load</b><var> file options<a name="index-load-915"></a></var><br>
-&mdash; Command:  <b>load</b><var> file options v1 v2 <small class="dots">...</small><a name="index-load-916"></a></var><br>
-&mdash; Command: S = <b>load</b> (<var>"file", "options", "v1", "v2", <small class="dots">...</small></var>)<var><a name="index-load-917"></a></var><br>
+&mdash; Command:  <b>load</b><var> file<a name="index-load-920"></a></var><br>
+&mdash; Command:  <b>load</b><var> options file<a name="index-load-921"></a></var><br>
+&mdash; Command:  <b>load</b><var> options file v1 v2 <small class="dots">...</small><a name="index-load-922"></a></var><br>
+&mdash; Command: S = <b>load</b> (<var>"options", "file", "v1", "v2", <small class="dots">...</small></var>)<var><a name="index-load-923"></a></var><br>
+&mdash; Command:  <b>load</b><var> file options<a name="index-load-924"></a></var><br>
+&mdash; Command:  <b>load</b><var> file options v1 v2 <small class="dots">...</small><a name="index-load-925"></a></var><br>
+&mdash; Command: S = <b>load</b> (<var>"file", "options", "v1", "v2", <small class="dots">...</small></var>)<var><a name="index-load-926"></a></var><br>
 <blockquote><p>Load the named variables <var>v1</var>, <var>v2</var>, <small class="dots">...</small>, from the file
 <var>file</var>.  If no variables are specified then all variables found in the
 file will be loaded.  As with <code>save</code>, the list of variables to extract
@@ -242,81 +311,13 @@ format.
    <p><a name="doc_002dfileread"></a>
 
 <div class="defun">
-&mdash; Function File: <var>str</var> = <b>fileread</b> (<var>filename</var>)<var><a name="index-fileread-918"></a></var><br>
+&mdash; Function File: <var>str</var> = <b>fileread</b> (<var>filename</var>)<var><a name="index-fileread-927"></a></var><br>
 <blockquote><p>Read the contents of <var>filename</var> and return it as a string. 
 <!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
 <!-- A simple blank line produces the correct behavior. -->
 <!-- @sp 1 -->
 
      <p class="noindent"><strong>See also:</strong> <a href="doc_002dfread.html#doc_002dfread">fread</a>, <a href="doc_002dtextread.html#doc_002dtextread">textread</a>, <a href="doc_002dsscanf.html#doc_002dsscanf">sscanf</a>. 
-</p></blockquote></div>
-
-   <p>There are three functions that modify the behavior of <code>save</code>.
-
-<!-- default_save_options src/load-save.cc -->
-   <p><a name="doc_002ddefault_005fsave_005foptions"></a>
-
-<div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>default_save_options</b> ()<var><a name="index-default_005fsave_005foptions-919"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>default_save_options</b> (<var>new_val</var>)<var><a name="index-default_005fsave_005foptions-920"></a></var><br>
-&mdash; Built-in Function:  <b>default_save_options</b> (<var>new_val, "local"</var>)<var><a name="index-default_005fsave_005foptions-921"></a></var><br>
-<blockquote><p>Query or set the internal variable that specifies the default options
-for the <code>save</code> command, and defines the default format. 
-Typical values include <code>"-ascii"</code>, <code>"-text -zip"</code>. 
-The default value is <samp><span class="option">-text</span></samp>.
-
-        <p>When called from inside a function with the "local" option, the variable is
-changed locally for the function and any subroutines it calls.  The original
-variable value is restored when exiting the function. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dsave.html#doc_002dsave">save</a>. 
-</p></blockquote></div>
-
-<!-- save_precision src/ls-oct-ascii.cc -->
-   <p><a name="doc_002dsave_005fprecision"></a>
-
-<div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>save_precision</b> ()<var><a name="index-save_005fprecision-922"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>save_precision</b> (<var>new_val</var>)<var><a name="index-save_005fprecision-923"></a></var><br>
-&mdash; Built-in Function:  <b>save_precision</b> (<var>new_val, "local"</var>)<var><a name="index-save_005fprecision-924"></a></var><br>
-<blockquote><p>Query or set the internal variable that specifies the number of
-digits to keep when saving data in text format.
-
-        <p>When called from inside a function with the "local" option, the variable is
-changed locally for the function and any subroutines it calls.  The original
-variable value is restored when exiting the function. 
-</p></blockquote></div>
-
-<!-- save_header_format_string src/load-save.cc -->
-   <p><a name="doc_002dsave_005fheader_005fformat_005fstring"></a>
-
-<div class="defun">
-&mdash; Built-in Function: <var>val</var> = <b>save_header_format_string</b> ()<var><a name="index-save_005fheader_005fformat_005fstring-925"></a></var><br>
-&mdash; Built-in Function: <var>old_val</var> = <b>save_header_format_string</b> (<var>new_val</var>)<var><a name="index-save_005fheader_005fformat_005fstring-926"></a></var><br>
-&mdash; Built-in Function:  <b>save_header_format_string</b> (<var>new_val, "local"</var>)<var><a name="index-save_005fheader_005fformat_005fstring-927"></a></var><br>
-<blockquote><p>Query or set the internal variable that specifies the format
-string used for the comment line written at the beginning of
-text-format data files saved by Octave.  The format string is
-passed to <code>strftime</code> and should begin with the character
-&lsquo;<samp><span class="samp">#</span></samp>&rsquo; and contain no newline characters.  If the value of
-<code>save_header_format_string</code> is the empty string,
-the header comment is omitted from text-format data files.  The
-default value is
-<!-- Set example in small font to prevent overfull line -->
-
-     <pre class="smallexample">          "# Created by Octave VERSION, %a %b %d %H:%M:%S %Y %Z &lt;USER@HOST&gt;"
-</pre>
-        <p>When called from inside a function with the "local" option, the variable is
-changed locally for the function and any subroutines it calls.  The original
-variable value is restored when exiting the function. 
-<!-- Texinfo @sp should work but in practice produces ugly results for HTML. -->
-<!-- A simple blank line produces the correct behavior. -->
-<!-- @sp 1 -->
-
-     <p class="noindent"><strong>See also:</strong> <a href="doc_002dstrftime.html#doc_002dstrftime">strftime</a>, <a href="doc_002dsave.html#doc_002dsave">save</a>. 
 </p></blockquote></div>
 
 <!-- native_float_format src/sysdep.cc -->

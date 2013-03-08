@@ -20,6 +20,7 @@
   span.roman { font-family:serif; font-weight:normal; } 
   span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
+<link rel="stylesheet" type="text/css" href="../manual.css">
 </head>
 <body>
 <div class="node">
@@ -252,6 +253,35 @@ in the log file but not executed.  For example:
      %! plot (<var>t</var>, <var>x</var>);
      %! # you should now see a sine wave in your figure window
 </pre>
+   <p class="noindent">The following trivial code snippet provides examples for the use of
+fail, assert, error and xtest:
+
+<pre class="example">     function output = must_be_zero (<var>input</var>)
+       if (<var>input</var> != 0)
+         error ("Non-zero input!")
+       endif
+       output = input;
+     endfunction
+     
+     %!fail ("must_be_zero (1)");
+     %!assert (must_be_zero (0), 0);
+     %!error &lt;Non-zero&gt; must_be_zero (1);
+     %!xtest error ("This code generates an error");
+</pre>
+   <p class="noindent">When putting this a file <samp><span class="file">must_be_zero.m</span></samp>, and running the test, we see
+
+<pre class="example">     test must_be_zero verbose
+     
+     &rArr;
+     &gt;&gt;&gt;&gt;&gt; /path/to/must_be_zero.m
+       ***** fail ("must_be_zero (1)");
+       ***** assert (must_be_zero (0), 0);
+       ***** error &lt;Non-zero&gt; must_be_zero (1);
+       ***** xtest error ("This code generates an error");
+     !!!!! known failure
+     This code generates an error
+     PASSES 4 out of 4 tests (1 expected failures)
+</pre>
    <h5 class="subsubheading">Block type summary:</h5>
 
      <dl>
@@ -348,9 +378,17 @@ always be interpreted as an absolute tolerance.
 <var>pattern</var>, otherwise produce an error.  Note that <var>code</var>
 is a string and if <var>code</var> runs successfully, the error produced is:
 
-     <pre class="example">                    expected error but got none
+     <pre class="example">                    expected error &lt;.&gt; but got none
 </pre>
-        <p>If the code fails with a different error, the message produced is:
+        <p>Code must be in the form of a string that may be passed by
+<code>fail</code> to the Octave interpreter via the <code>evalin</code> function,
+that is, a (quoted) string constant or a string variable.
+
+        <p>If called with two arguments, the behavior is similar to
+<code>fail (</code><var>code</var><code>)</code>, except the return value will only be true if
+code fails with an error message containing pattern (case sensitive). 
+If the code fails with a different error to that given in pattern,
+the message produced is:
 
      <pre class="example">                    expected &lt;pattern&gt;
                     but got &lt;text of actual error&gt;
