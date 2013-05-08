@@ -24,7 +24,11 @@ __nav_buttons__([home])
     <a href="license.html">GNU General Public License</a>.
   </p>
 
-  <img src="http://www2.mate.polimi.it/ocs/?cf=42"/>
+  <p>
+    <a href="http://www2.mate.polimi.it/ocs/?cf=42">
+      <img src="http://octave.sourceforge.net/octconf2013_banner.png">
+    </a>
+  </p>
 
   <h1>News</h1>
 
