@@ -5,13 +5,6 @@ __nav_buttons__([home])
 <div id="content">
 
   <p>
-    <a href="http://www2.mate.polimi.it/ocs/?cf=42">
-      <img  width="400"
-            src="http://octave.sourceforge.net/octconf2013_banner.png"/>
-    </a>
-  </p>
-
-  <p>
     <a href="images/screenshot.png"><img border=0 src="images/screenshot-small.png" alt="[screenshot]" /></a>
   </p>
 
