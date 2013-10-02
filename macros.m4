@@ -24,7 +24,7 @@ dnl
 define([__footer__], [dnl
     <div id="footer">
       <p>
-        Copyright &copy; 1998-2012 John W. Eaton.  Verbatim copying
+        Copyright &copy; 1998-2013 John W. Eaton.  Verbatim copying
         and distribution is permitted in any medium, provided this
         notice is preserved.
       </p>
