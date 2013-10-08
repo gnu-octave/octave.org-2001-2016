@@ -6,6 +6,7 @@ HTML_SRC := \
   about.in \
   bugs.in \
   commercial-support.in \
+  community-news.in \
   donate.in \
   download.in \
   get-involved.in \
