@@ -7,7 +7,7 @@ The following string must be present for Octave to recognize and
 display this page as the comunity news page:
 
   this-is-the-gnu-octave-community-news-page
-  community-news-page-serial=1
+  community-news-page-serial=2
 
 -->
 
@@ -22,15 +22,30 @@ body {
 </style>
 </head>
 <body>
+<h2>3.8.0-rc1 Release Candidate Available</h2>
 <p>
-This window will be used to inform you about Octave community events.
-Octave may show it to you even if you've chosen hide the window by
-default.  We'll try not to bother you too much, but we do want to keep
-you up to date with the latest information about important bug fixes,
-new releases, or any other news that all Octave users should be aware of.
+The first release candidate for Octave 3.8 is now available
+at <a href="alpha.gnu.org/gnu/octave/octave-3.8.0-rc1.tar.gz">alpha.gnu.org/gnu/octave/octave-3.8.0-rc1.tar.gz</a>.
 </p>
 <p>
-<small><em>&mdash; The Octave Developers, October 8, 2013</em></small>
+Octave 3.8 is a major new release with many new features, including an
+experimental graphical user interface.  But because the GUI is not
+quite as polished as we would like, we have decided to wait until the
+4.0.x release series before making the GUI the default interface.
+Until then, you can use the <tt>--force-gui</tt> option to start the GUI.
+See the release notes or the "Experimental GUI Info" button in the GUI
+for more information about the release and how you can help us with
+GUI development and speed up the 4.0 release.
+</p>
+<h2>Community News Window in Octave 3.8</h2>
+<p>
+Beginning with the 3.8.x release series of Octave, we will be
+displaying news about Octave community events here.  In Octave's GUI
+interface, this window will appear when there is new information.
+Octave will check for it at most once per day.
+</p>
+<p>
+<small><em>&mdash; The Octave Developers, December 4, 2013</em></small>
 </p>
 </body>
 </html>
