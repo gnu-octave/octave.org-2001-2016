@@ -7,7 +7,7 @@ The following string must be present for Octave to recognize and
 display this page as the comunity news page:
 
   this-is-the-gnu-octave-community-news-page
-  community-news-page-serial=2
+  community-news-page-serial=3
 
 -->
 
@@ -22,10 +22,10 @@ body {
 </style>
 </head>
 <body>
-<h2>3.8.0-rc1 Release Candidate Available</h2>
+<h2>3.8.0 Released</h2>
 <p>
-The first release candidate for Octave 3.8 is now available
-at <a href="alpha.gnu.org/gnu/octave/octave-3.8.0-rc1.tar.gz">alpha.gnu.org/gnu/octave/octave-3.8.0-rc1.tar.gz</a>.
+Octave 3.8.0 is now available
+at <a href="ftp.gnu.org/gnu/octave/octave-3.8.0.tar.gz">ftp.gnu.org/gnu/octave/octave-3.8.0.tar.gz</a>.
 </p>
 <p>
 Octave 3.8 is a major new release with many new features, including an
@@ -36,6 +36,9 @@ Until then, you can use the <tt>--force-gui</tt> option to start the GUI.
 See the release notes or the "Experimental GUI Info" button in the GUI
 for more information about the release and how you can help us with
 GUI development and speed up the 4.0 release.
+</p>
+<p>
+<small><em>&mdash; The Octave Developers, December 27, 2013</em></small>
 </p>
 <h2>Community News Window in Octave 3.8</h2>
 <p>
