@@ -24,53 +24,62 @@ __nav_buttons__([home])
     <a href="license.html">GNU General Public License</a>.
   </p>
 
-  <h1>News</h1>
-
-  <dl>
-    <dt>May 8, 2013</dt>
-    <dd>
-      Registrations for OctConf 2013 are
-      <a href="http://www2.mate.polimi.it/ocs/?cf=42">now open</a>!
-    </dd>
-    <dt>February 21, 2013</dt>
-    <dd>Version 3.6.4 has been released and is now available
-      for <a href="download.html">download</a>. Octave 3.6.4 is a
-      minor bug-fixing release. See
-      the <a href="NEWS-3.6.html">NEWS</a> file for a list of
-      user-visible changes since 3.4.
-    </dd>
-    <dt>January 28, 2013</dt>
-    <dd>
-      <a href="http://wiki.octave.org/OctConf_2013">OctConf 2013</a>
-      will take place in Milano, Italy during June 24-26, 2013. All
-      Octave users, developers, and enthusiasts are welcome to attend!
-    </dd>
-    <dt>August 1, 2012</dt>
-    <dd>
-      <a href="http://jordi.inversethought.com/blog/socis-2012-students/">ESA
-      approved <em>two</em> students</a> to work for Octave under the
-      SOCIS mentorship programme! Congratulations to Wendy Liu and
-      Andrius Sutas who will be working on finishing the Agora website
-      and low-level I/O respectively.
-    </dd>
-    <dt>July 18, 2012</dt>
-    <dd>
-      Octave has
-      been <a href="http://sophia.estec.esa.int/socis2012/?q=node/13">accepted
-      into SOCIS</a>. We're now hiring for one position!
-    </dd>
-    <dt>July 16, 2012</dt>
-    <dd>
-      <a href="http://www.octave.org/wiki/OctConf_2012">OctConf
-      2012</a> is currently underway.
-    </dd>
-  </dl>
-
+  <h2>December 31, 2013 &mdash; Octave 3.8.0 Released</h2>
   <p>
-    For older news, see the <a href="news.html">news archive</a>.
+    Octave 3.8.0 is a major new release and is now available for
+    <a href="download.html">download</a>.
+  </p>
+  <p>
+    One of the biggest new features for Octave 3.8 is a graphical user
+    interface.  It is the one thing that users have requested most
+    often over the last few years and now it is almost ready.  But
+    because it is not quite as polished as we would like, we have
+    decided to wait until the 4.0.x release series before making the
+    GUI the default interface (until then, you can use
+    the <tt>--force-gui</tt> option to start the GUI).
+  </p>
+  <p>
+    Given the length of time and the number of bug fixes and
+    improvements since the last major release Octave, we also decided
+    against delaying the release any longer.  So please enjoy the 3.8
+    release of Octave and the preview of the new GUI.  We believe it
+    is working reasonably well, but we also know that there are some
+    obvious rough spots and many things that could be improved.
+  </p>
+  <p>
+    <strong>We need your help</strong>.  There are many ways that you
+    can help us fix the remaining problems, complete the GUI, and
+    improve the overall user experience for both novices and experts
+    alike:
+    <ul>
+      <li>
+        If you are a skilled software developer, you can help by
+        contributing your time to
+        <a href="http://octave.org/get-involved.html">help with
+          Octave's development</a>.
+      </li>
+      <li>
+        If Octave does not work properly, you are encouraged
+        to <a href="http://octave.org/bugs.html">report the problems
+        you find</a>.
+      </li>
+      <li>
+        Whether you are a user or developer, you can help to fund the
+        project.  Octave development takes a lot of time and
+        expertise.
+        Your <a href="http://octave.org/donate.html">contributions
+        help Octave continue to improve</a>.
+      </li>
+    </ul>
+  </p>
+  <p>
+    We hope you find Octave to be useful.  Please help us make it even
+    better for the future!
+  <p>
+    See the <a href="NEWS-3.8.html">NEWS</a> file for a more complete
+    list of user-visible changes.
   </p>
 
 </div>
 
 __footer__
-

@@ -3,7 +3,12 @@ __header__([Octave News Archive], [logo])
 <div class="content">
 
 <dl>
-    <dt>May 8, 2013</dt>
+    <dt>December 31, 2013</dt>
+    <dd>Version 3.8.0 has been released and is now available
+      for <a href="download.html">download</a>.  Octave 3.8.0 is a
+      major new release.  See the <a href="NEWS-3.8.html">NEWS</a>
+      file for a list of user-visible changes.
+    </dd>
     <dd>
       Registrations for OctConf 2013 are
       <a href="http://www2.mate.polimi.it/ocs/?cf=42">now open</a>!
