@@ -112,6 +112,13 @@ define([__donate_button__], [dnl
       Following the Continue link will take you to a Free Software Foundation
       page for payment processing.
     </div>
+    <div id="bitcoin">
+        Bitcoin donations also accepted at <a
+        href="bitcoin:1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF">this address</a>.
+        <div id="bitcoinaddress">
+           1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF
+        </div>
+    </div>   
   </div>
 </div>
 ])dnl

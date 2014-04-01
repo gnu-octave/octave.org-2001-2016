@@ -113,6 +113,16 @@ div#donate-form {
   text-align: left;
 }
 
+div#bitcoin{
+  font-size: 10pt;
+  text-align: left;
+}
+
+div#bitcoinaddress{
+  font-size: 6pt;
+  text-align: center;
+}
+
 div.donate-field {
   font-weight: bold;
   padding: 5px;
