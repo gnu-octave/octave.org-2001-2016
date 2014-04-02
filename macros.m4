@@ -113,6 +113,7 @@ define([__donate_button__], [dnl
       page for payment processing.
     </div>
     <div id="bitcoin">
+        <img src="images/donate-bitcoin.png"/>
         Bitcoin donations also accepted at <a
         href="bitcoin:1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF">this address</a>.
         <div id="bitcoinaddress">
