@@ -5,10 +5,6 @@ __nav_buttons__([home])
 <div id="content">
   
   <p>
-    <a href="http://wiki.octave.org/OctConf_2014"><img border="0" src="images/octconf-2014.png"></a>
-  </p>
-
-  <p>
     <a href="images/screenshot.png"><img border=0 src="images/screenshot-small.png" alt="[screenshot]" /></a>
   </p>
 
