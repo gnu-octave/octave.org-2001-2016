@@ -77,7 +77,7 @@ define([__donate_button__], [dnl
       conferences.
     </div>
     <div id="donate-form">
-      <form action="https://crm.fsf.org/civicrm/contribute/transact?reset=1&id=10"
+      <form action="https://my.fsf.org/donate/working-together/octave"
             method="post">
         <div class="donate-field">
           <label>Amount (USD)</label>
