@@ -24,16 +24,9 @@ __nav_buttons__([home])
     <a href="license.html">GNU General Public License</a>.
   </p>
 
-  <h2>August 26, 2014 &mdash; OctConf 2014</h2>
+  <h2>August 6, 2014 &mdash; Octave 3.8.2 Released</h2>
   <p>
-    <a href="http://wiki.octave.org/OctConf_2014">OctConf 2014</a>
-    will take place during September 19-21 in Montréal, Canada. Users
-    and developers are welcome to attend.
-  </p>
-
-  <h2>March 7, 2014 &mdash; Octave 3.8.1 Released</h2>
-  <p>
-    Version 3.8.1 is a bug fixing release and is now available for
+    Version 3.8.2 is a bug fixing release and is now available for
     <a href="download.html">download</a>.
   </p>
   <p>
@@ -85,6 +78,12 @@ __nav_buttons__([home])
   <p>
     See the <a href="NEWS-3.8.html">NEWS</a> file for a more complete
     list of user-visible changes.
+  </p>
+
+  <p>
+    The release announcement for Octave 
+    <a href="http://lists.gnu.org/archive/html/help-octave/2014-08/msg00072.html">3.8.2</a> 
+    contains a list of bugs fixed since the previous release.
   </p>
 
 </div>
