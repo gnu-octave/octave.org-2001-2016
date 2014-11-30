@@ -78,7 +78,7 @@ define([__donate_button__], [dnl
     </div>
     <div id="donate-form">
       <form action='https://crm.fsf.org/civicrm/contribute/transact?reset=1&id=10'
-            method="post">
+            method="get">
         <div class="donate-field">
           <label>Amount (USD)</label>
           <div></div>
