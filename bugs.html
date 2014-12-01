@@ -55,36 +55,9 @@
       conferences.
     </div>
     <div id="donate-form">
-      <form action='https://crm.fsf.org/civicrm/contribute/transact?reset=1&id=10'
-            method="get">
-        <div class="donate-field">
-          <label>Amount (USD)</label>
-          <div></div>
-          $<input type="text" name="amount" size="5" value="50.00" tabindex="1" />
-        </div>
-        <div class="donate-field">
-          <input type="radio" class="noborder"
-                 name="method" value="othercc"
-                 id="cb_method_other"
-                 checked="checked"
-                 tabindex="3" />
-          <label for="cb_method_other">Pay with credit card</label>
-        </div>
-        <div class="donate-field">
-          <div></div>
-          <input type="radio" class="noborder"
-                 name="method" value="paypal"
-                 id="cb_method_paypal"
-                 tabindex="4" />
-          <label for="cb_method_paypal">Pay with PayPal</label>
-        </div>
-        <div class="donate-field">
-          <input class="context" type="submit"
-                 tabindex="99"
-                 name="form.button.Continue"
-                 value="Continue..." />
-        </div>
-      </form>
+      <div class="crm-contribute-button-wrapper" id="crm_cpid_10_button">
+          <a href='https://crm.fsf.org/civicrm/contribute/transact?reset=1&id=10' class="crm-contribute-button"><span class="crm-contribute-button-inner">Continue</span></a>
+      </div>
     </div>
     <div id="donate-blurb">
       Following the Continue link will take you to a Free Software Foundation
