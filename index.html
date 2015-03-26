@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <head>
+  <meta charset="UTF-8">
   <title>GNU Octave</title>
   <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
@@ -9,62 +10,62 @@
     <div id="logo">
       <p>
         <span id="logo-text">GNU Octave</span>
-        <img border="0" src="images//logo.png" alt="GNU Octave Logo"/>
+        <img src="images//logo.png" alt="GNU Octave Logo"/>
       </p>
     </div>
 
 
 <div id="nav-box">
 
-  <div id="nav-button">
-    <div id="nav-item">
+  <div class="nav-button">
+    <div class="nav-item">
       <div id="currentnav">Home</div>
     </div>
   </div>
 
-  <div id="nav-button">
-    <div id="nav-item">
+  <div class="nav-button">
+    <div class="nav-item">
       <a href="about.html">About</a>
     </div>
   </div>
 
-  <div id="nav-button">
-    <div id="nav-item">
+  <div class="nav-button">
+    <div class="nav-item">
       <a href="download.html">Download</a>
     </div>
   </div>
 
-  <div id="nav-button">
-    <div id="nav-item">
+  <div class="nav-button">
+    <div class="nav-item">
       <a href="support.html">Support</a>
     </div>
   </div>
 
-  <div id="nav-button">
-    <div id="nav-item">
+  <div class="nav-button">
+    <div class="nav-item">
       <a href="get-involved.html">Get Involved</a>
     </div>
   </div>
 
-<div id="nav-button">
-  <div id="nav-item">
+<div class="nav-button">
+  <div class="nav-item">
     <a href="donate.html">Donate</a>
-    <div id="donate-blurb">
+    <div class="donate-blurb">
       Your donations help to fund continuing maintenance tasks,
       development of new features and the organization of Octave
       conferences.
     </div>
     <div id="donate-form">
       <div class="crm-contribute-button-wrapper" id="crm_cpid_10_button">
-          <a href='https://crm.fsf.org/civicrm/contribute/transact?reset=1&id=10' class="crm-contribute-button"><span class="crm-contribute-button-inner">Continue</span></a>
+          <a href='https://crm.fsf.org/civicrm/contribute/transact?reset=1&amp;id=10' class="crm-contribute-button"><span class="crm-contribute-button-inner">Continue</span></a>
       </div>
     </div>
-    <div id="donate-blurb">
+    <div class="donate-blurb">
       Following the Continue link will take you to a Free Software Foundation
       page for payment processing.
     </div>
     <div id="bitcoin">
-        <img src="images/donate-bitcoin.png"/>
+        <img src="images/donate-bitcoin.png" alt="donate bitcoin">
         Bitcoin donations also accepted at <a
         href="bitcoin:1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF">this address</a>.
         <div id="bitcoinaddress">
@@ -81,7 +82,7 @@
 <div id="content">
   
   <p>
-    <a href="images/screenshot.png"><img border=0 src="images/screenshot-small.png" alt="screenshot" /></a>
+    <a href="images/screenshot.png"><img src="images/screenshot-small.png" alt="screenshot" /></a>
   </p>
 
   <p>
@@ -100,6 +101,10 @@
     <a href="license.html">GNU General Public License</a>.
   </p>
 
+  <p class="centered">
+    <a href="http://wiki.octave.org/OctConf_2015"><img id="octconf" src="images/octconf-2015.png" alt="OctConf 2015" /></a>
+  </p>
+
   <h2>August 6, 2014 &mdash; Octave 3.8.2 Released</h2>
   <p>
     Version 3.8.2 is a bug fixing release and is now available for
@@ -112,7 +117,7 @@
     is almost ready.  But because it is not quite as polished as we
     would like, we have decided to wait until the 4.0.x release series
     before making the GUI the default interface (until then, you can use
-    the <tt>--force-gui</tt> option to start the GUI).
+    the <code>--force-gui</code> option to start the GUI).
   </p>
   <p>
     Given the length of time and the number of bug fixes and
@@ -127,35 +132,35 @@
     can help us fix the remaining problems, complete the GUI, and
     improve the overall user experience for both novices and experts
     alike:
-    <ul>
-      <li>
-        If you are a skilled software developer, you can help by
-        contributing your time to
-        <a href="http://octave.org/get-involved.html">help with
-          Octave's development</a>.
-      </li>
-      <li>
-        If Octave does not work properly, you are encouraged
-        to <a href="http://octave.org/bugs.html">report the problems
-        you find</a>.
-      </li>
-      <li>
-        Whether you are a user or developer, you can help to fund the
-        project.  Octave development takes a lot of time and
-        expertise.
-        Your <a href="http://octave.org/donate.html">contributions
-        help Octave continue to improve</a>.
-      </li>
-    </ul>
   </p>
+  <ul>
+    <li>
+      If you are a skilled software developer, you can help by
+      contributing your time to
+      <a href="http://octave.org/get-involved.html">help with
+        Octave's development</a>.
+    </li>
+    <li>
+      If Octave does not work properly, you are encouraged
+      to <a href="http://octave.org/bugs.html">report the problems
+      you find</a>.
+    </li>
+    <li>
+      Whether you are a user or developer, you can help to fund the
+      project.  Octave development takes a lot of time and
+      expertise.
+      Your <a href="http://octave.org/donate.html">contributions
+      help Octave continue to improve</a>.
+    </li>
+  </ul>
   <p>
     We hope you find Octave to be useful.  Please help us make it even
     better for the future!
+  </p>
   <p>
     See the <a href="NEWS-3.8.html">NEWS</a> file for a more complete
     list of user-visible changes.
   </p>
-
   <p>
     The release announcement for Octave 
     <a href="http://lists.gnu.org/archive/html/help-octave/2014-08/msg00072.html">3.8.2</a> 

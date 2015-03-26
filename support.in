@@ -81,7 +81,8 @@ __nav_buttons__([support])
 
   <p>
     If your question isn't answered in the FAQ, the manual, or the Wiki,
-    the <tt>help@octave.org</tt> mailing list</a> is a good resource.
+    the <a href="mailto:help@octave.org">help@octave.org</a> mailing
+    list is a good resource.
   </p>
 
   <div id="search-form">
@@ -92,7 +93,7 @@ __nav_buttons__([support])
             <input type="hidden" name="node" value="1599825" />
             <input id="query" name="query" size="25" />
             <select name="days">
-              <option value="0" selected="true">all dates</option>
+              <option value="0" selected>all dates</option>
               <option value="1">past 24 hours</option>
               <option value="7">past week</option>
               <option value="30">past month</option>
@@ -106,17 +107,12 @@ __nav_buttons__([support])
       </tr>
       <tr>
         <td>
-          <a href="http://octave.1599824.n4.nabble.com/template/NamlServlet.jtp?macro=adv_search_page&node=1599825">Advanced Search</a>
+          <a href="http://octave.1599824.n4.nabble.com/template/NamlServlet.jtp?macro=adv_search_page&amp;node=1599825">Advanced Search</a>
       </tr>
       <tr>
         <td>
           <a href="https://lists.gnu.org/mailman/listinfo/help-octave">List
   Info Page</a> (subscribe here)
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="mailto:help@octave.org">Post</a>
         </td>
       </tr>
     </table>
@@ -126,9 +122,9 @@ __nav_buttons__([support])
   <p>
     Too impatient for email? You can find Octave developers and users
     on
-    the <a href="http://webchat.freenode.net/?channels=octave&uio=MT1mYWxzZSYyPXRydWUmMTI9dHJ1ZQda"><tt>#octave</tt>
+    the <a href="http://webchat.freenode.net/?channels=octave&amp;uio=MT1mYWxzZSYyPXRydWUmMTI9dHJ1ZQda"><code>#octave</code>
     channel</a>
-    at <a href="http://freenode.net"><tt>irc.freenode.net</tt></a>. The
+    at <a href="http://freenode.net"><code>irc.freenode.net</code></a>. The
     atmosphere is relaxed and chat isn't restricted to matters
     strictly pertaining to Octave.
   </p>

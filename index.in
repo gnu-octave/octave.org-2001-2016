@@ -5,7 +5,7 @@ __nav_buttons__([home])
 <div id="content">
   
   <p>
-    <a href="images/screenshot.png"><img border=0 src="images/screenshot-small.png" alt="[screenshot]" /></a>
+    <a href="images/screenshot.png"><img src="images/screenshot-small.png" alt="[screenshot]" /></a>
   </p>
 
   <p>
@@ -24,6 +24,10 @@ __nav_buttons__([home])
     <a href="license.html">GNU General Public License</a>.
   </p>
 
+  <p class="centered">
+    <a href="http://wiki.octave.org/OctConf_2015"><img id="octconf" src="images/octconf-2015.png" alt="[OctConf 2015]" /></a>
+  </p>
+
   <h2>August 6, 2014 &mdash; Octave 3.8.2 Released</h2>
   <p>
     Version 3.8.2 is a bug fixing release and is now available for
@@ -36,7 +40,7 @@ __nav_buttons__([home])
     is almost ready.  But because it is not quite as polished as we
     would like, we have decided to wait until the 4.0.x release series
     before making the GUI the default interface (until then, you can use
-    the <tt>--force-gui</tt> option to start the GUI).
+    the <code>--force-gui</code> option to start the GUI).
   </p>
   <p>
     Given the length of time and the number of bug fixes and
@@ -51,35 +55,35 @@ __nav_buttons__([home])
     can help us fix the remaining problems, complete the GUI, and
     improve the overall user experience for both novices and experts
     alike:
-    <ul>
-      <li>
-        If you are a skilled software developer, you can help by
-        contributing your time to
-        <a href="http://octave.org/get-involved.html">help with
-          Octave's development</a>.
-      </li>
-      <li>
-        If Octave does not work properly, you are encouraged
-        to <a href="http://octave.org/bugs.html">report the problems
-        you find</a>.
-      </li>
-      <li>
-        Whether you are a user or developer, you can help to fund the
-        project.  Octave development takes a lot of time and
-        expertise.
-        Your <a href="http://octave.org/donate.html">contributions
-        help Octave continue to improve</a>.
-      </li>
-    </ul>
   </p>
+  <ul>
+    <li>
+      If you are a skilled software developer, you can help by
+      contributing your time to
+      <a href="http://octave.org/get-involved.html">help with
+        Octave's development</a>.
+    </li>
+    <li>
+      If Octave does not work properly, you are encouraged
+      to <a href="http://octave.org/bugs.html">report the problems
+      you find</a>.
+    </li>
+    <li>
+      Whether you are a user or developer, you can help to fund the
+      project.  Octave development takes a lot of time and
+      expertise.
+      Your <a href="http://octave.org/donate.html">contributions
+      help Octave continue to improve</a>.
+    </li>
+  </ul>
   <p>
     We hope you find Octave to be useful.  Please help us make it even
     better for the future!
+  </p>
   <p>
     See the <a href="NEWS-3.8.html">NEWS</a> file for a more complete
     list of user-visible changes.
   </p>
-
   <p>
     The release announcement for Octave 
     <a href="http://lists.gnu.org/archive/html/help-octave/2014-08/msg00072.html">3.8.2</a> 

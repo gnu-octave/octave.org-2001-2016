@@ -25,9 +25,6 @@ div#container {
   padding: 0px;
 }
 
-div#top-buttons {
-}
-
 div#top-buttons ul {
   padding: 0px;
   text-align: left;
@@ -66,7 +63,7 @@ div#nav-box {
   margin-bottom: 20px;
 }
 
-div#nav-button {
+div.nav-button {
   margin: 0px 0px 0px 0px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -87,7 +84,7 @@ div#nav-button {
   border-radius: 4px;
 }
 
-div#nav-item {
+div.nav-item {
   font-size: 12pt;
   font-weight: bold;
   text-align: center;
@@ -101,11 +98,11 @@ div#nav-item {
   background-image: -ms-linear-gradient(bottom, rgb(255,247,255) 13%, rgb(240,240,240) 57%);
 
   background-image: -webkit-gradient(
-	  linear,
-	  left bottom,
-	  left top,
-	  color-stop(0.13, rgb(255,247,255)),
-	  color-stop(0.57, rgb(240,240,240))
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.13, rgb(255,247,255)),
+    color-stop(0.57, rgb(240,240,240))
   );
   border-radius: 4px;
   box-shadow: 0px 3px 10px #cccccc;
@@ -115,7 +112,7 @@ div#current-nav {
   color: #000000;
 }
 
-div#donate-blurb {
+div.donate-blurb {
   font-size: 10pt;
   font-weight: normal;
   text-align: left;
@@ -163,12 +160,12 @@ a:hover {
   color: #1b1c7d;
 }
 
-div#code {
-margin-left: 30px;
-margin-right: 30px;
-padding: 5px;
-background-color: #d0d0d0;
-color: #000000;
+div.code {
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 5px;
+  background-color: #d0d0d0;
+  color: #000000;
 }
 
 /* the page content */
@@ -194,9 +191,6 @@ dt {
   margin-top: 7px;
 }
 
-dd {
-}
-
 h1 {
   font-size: 16pt;
   font-weight: bold;
@@ -210,4 +204,13 @@ h2 {
 h3 {
   font-size: 12pt;
   font-weight: bold;
+}
+
+img#octconf {
+  padding: 10px;
+  border: 2px solid #0790c0;
+}
+
+p.centered {
+  text-align: center;
 }

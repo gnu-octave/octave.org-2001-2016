@@ -3,9 +3,10 @@ dnl
 dnl __header__([TITLE], [opt_STYLE])
 dnl
 define([__header__], [dnl
+<!DOCTYPE html>
 <html>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <head>
+  <meta charset="UTF-8">
   <title>$1</title>
   <link rel="stylesheet" type="text/css" href="octave.css" />
 </head>
@@ -14,7 +15,7 @@ define([__header__], [dnl
     <div id="logo">
       <p>
         <span id="logo-text">$1</span>
-        <img border="0" src="images//logo.png" alt="[GNU Octave Logo]"/>
+        <img src="images//logo.png" alt="[GNU Octave Logo]"/>
       </p>
     </div>
 ])dnl
@@ -43,8 +44,8 @@ define([__nav_box_begin__], [<div id="nav-box">
 define([__nav_box_end__], [</div>
 ])dnl
 define([__nav_button__], [dnl
-  <div id="nav-button">
-    <div id="nav-item">
+  <div class="nav-button">
+    <div class="nav-item">
       ifelse([$1], [$2], [<div id="currentnav">$3</div>], [<a href="$4">$3</a>])
     </div>
   </div>
@@ -68,25 +69,25 @@ dnl
 dnl __donate_button__
 dnl
 define([__donate_button__], [dnl
-<div id="nav-button">
-  <div id="nav-item">
+<div class="nav-button">
+  <div class="nav-item">
     ifelse([$1], [donate], [<div id="currentnav">Donate</div>], [<a href="donate.html">Donate</a>])
-    <div id="donate-blurb">
+    <div class="donate-blurb">
       Your donations help to fund continuing maintenance tasks,
       development of new features and the organization of Octave
       conferences.
     </div>
     <div id="donate-form">
       <div class="crm-contribute-button-wrapper" id="crm_cpid_10_button">
-          <a href='https://crm.fsf.org/civicrm/contribute/transact?reset=1&id=10' class="crm-contribute-button"><span class="crm-contribute-button-inner">Continue</span></a>
+          <a href='https://crm.fsf.org/civicrm/contribute/transact?reset=1&amp;id=10' class="crm-contribute-button"><span class="crm-contribute-button-inner">Continue</span></a>
       </div>
     </div>
-    <div id="donate-blurb">
+    <div class="donate-blurb">
       Following the Continue link will take you to a Free Software Foundation
       page for payment processing.
     </div>
     <div id="bitcoin">
-        <img src="images/donate-bitcoin.png"/>
+        <img src="images/donate-bitcoin.png" alt="[donate bitcoin]">
         Bitcoin donations also accepted at <a
         href="bitcoin:1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF">this address</a>.
         <div id="bitcoinaddress">

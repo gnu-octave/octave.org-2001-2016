@@ -36,17 +36,17 @@ __nav_buttons__([get-involved])
   <p>
     If you want to participate in Octave development, you should join
     the <a href="https://lists.gnu.org/mailman/listinfo/octave-maintainers">
-      <tt>maintainers@octave.org</tt></a> mailing list.  <b>Please
+      <code>maintainers@octave.org</code></a> mailing list.  <b>Please
       use this list only if you are participating in Octave's
       development.</b>  If you are looking for help in using Octave,
-      please use the <a href="https://lists.gnu.org/mailman/listinfo/help-octave"><tt>help@octave.org</tt></a>
+      please use the <a href="https://lists.gnu.org/mailman/listinfo/help-octave"><code>help@octave.org</code></a>
       list instead, or check out other <a href="support.html">support
       options</a>.
   </p>
 
   <p>
     For sometimes faster communication, you can also chat in IRC
-    in <tt>#octave</tt> in Freenode. Note, however, that the primary
+    in <code>#octave</code> in Freenode. Note, however, that the primary
     medium for development talk is the mailing list.
   </p>
 
@@ -67,7 +67,7 @@ __nav_buttons__([get-involved])
   <p>
     If you decide to use the development sources from the Mercurial
     archive, please read the
-    file <a href="http://www.octave.org/hg/octave/file/tip/etc/HACKING"><tt>etc/HACKING</tt></a>
+    file <a href="http://www.octave.org/hg/octave/file/tip/etc/HACKING"><code>etc/HACKING</code></a>
     that is available with the source files.
   </p> 
 
@@ -77,7 +77,7 @@ __nav_buttons__([get-involved])
     the following command:
   </p>
 
-  <div id="code">
+  <div class="code">
     <code>hg clone http://www.octave.org/hg/octave</code>
   </div>
 
@@ -93,7 +93,7 @@ __nav_buttons__([get-involved])
   </div>
 
   <p>
-    The <tt>-v</tt> option is not required but provides extra
+    The <code>-v</code> option is not required but provides extra
     information about what was pulled and updated.  The Octave manual
     has more information
     about <a href="doc/interpreter/Contributing-Guidelines.html#Contributing-Guidelines">contributing
