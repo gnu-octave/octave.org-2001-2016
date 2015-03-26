@@ -87,7 +87,7 @@ __nav_buttons__([get-involved])
     you can resync with the archive by doing
   </p>
 
-  <div id="code">
+  <div class="code">
     <code>hg -v pull  ##-v means "verbose", to get more diagnostic output</code><br>
     <code>hg -v update</code><br>
   </div>
