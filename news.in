@@ -3,6 +3,30 @@ __header__([Octave News Archive], [logo])
 <div class="content">
 
 <dl>
+  <dt>May 29, 2015</dt>
+  <dd>
+    <p>
+      Version 4.0.0 has been released and is now available
+      for <a href="download.html">download</a>.  Octave 4.0 is a major
+      new release with many new features, including a graphical user
+      interface, support for classdef object-oriented programming,
+      better compatibility with Matlab, and many new and improved
+      functions.
+    </p>
+    <p>
+      An official Windows binary installer is also available
+      from <a href="ftp://ftp.gnu.org/gnu/octave/windows/octave-4.0.0_0-installer.exe">ftp://ftp.gnu.org/gnu/octave/windows/octave-4.0.0_0-installer.exe</a>
+    </p>
+    <p>
+      A list of important user-visible changes is availble
+      at <a href="http://octave.org/NEWS-4.0.html">http://octave.org/NEWS-4.0.html</a>,
+      by selecting the Release Notes item in the News menu of the GUI, or by
+      typing <tt>news</tt> at the Octave command prompt.
+    </p>
+    <p>
+      Thanks to the many people who contributed to this release!
+    </p>
+  </dd>
     <dt>March 7, 2014</dt>
     <dd>Version 3.8.1 has been released and is now available
       for <a href="download.html">download</a>.  Octave 3.8.1 is a
