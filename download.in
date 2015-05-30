@@ -4,7 +4,7 @@ __nav_buttons__([download])
 
 <div id="content">
 
-  GNU Octave 3.8.2 was released August 6, 2014.  Please read the
+  GNU Octave 4.0.0 was released May 29, 2015.  Please read the
   <a href="http://www.octave.org">announcement</a> on the front page of
   the Octave web site.
 
@@ -42,17 +42,11 @@ __nav_buttons__([download])
   </p>
 
   <h1>Windows</h1>
-  <h2>Cygwin</h2>
   <p>
-    There is an <a href="http://cygwin.com/packages">Octave package
-    for Cygwin</a>.
+    Windows binaries with corresponding source code can be downloaded from
+    <a href="https://ftp.gnu.org/gnu/octave/windows/">https://ftp.gnu.org/gnu/octave/windows/</a>
   </p>
-  <h2>MinGW</h2>
-  <p>
-    The Wiki has some instructions for
-    <a href="http://www.octave.org/wiki/Octave_for_Windows">installing Octave on Windows systems</a>.
-  </p>
-
+                
   <h1>Sources</h1>
   <p>
     The latest released version of Octave is always available
