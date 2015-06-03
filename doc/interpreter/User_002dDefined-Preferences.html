@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -57,29 +56,32 @@ Previous: <a href="GUI-Utility-Functions.html#GUI-Utility-Functions" accesskey="
 </div>
 <hr>
 <a name="User_002dDefined-Preferences-1"></a>
-<h3 class="section">35.4 User-Defined Preferences</h3>
+<h3 class="section">35.5 User-Defined Preferences</h3>
 
 <a name="XREFgetpref"></a><dl>
-<dt><a name="index-getpref"></a>Function File: <em></em> <strong>getpref</strong> <em>(<var>group</var>, <var>pref</var>, <var>default</var>)</em></dt>
-<dd><p>Return the preference value corresponding to the named preference
-<var>pref</var> in the preference group <var>group</var>.
+<dt><a name="index-getpref"></a>Function File: <em></em> <strong>getpref</strong> <em>(<var>group</var>, <var>pref</var>)</em></dt>
+<dt><a name="index-getpref-1"></a>Function File: <em></em> <strong>getpref</strong> <em>(<var>group</var>, <var>pref</var>, <var>default</var>)</em></dt>
+<dt><a name="index-getpref-2"></a>Function File: <em></em> <strong>getpref</strong> <em>(<var>group</var>)</em></dt>
+<dd><p>Return the preference value corresponding to the named preference <var>pref</var>
+in the preference group <var>group</var>.
 </p>
 <p>The named preference group must be a character string.
 </p>
 <p>If <var>pref</var> does not exist in <var>group</var> and <var>default</var> is
 specified, return <var>default</var>.
 </p>
-<p>The preference <var>pref</var> may be a character string or a cell array
-of character strings.  The corresponding default value <var>default</var>
-may be any value, or, if <var>pref</var> is a cell array of strings,
-<var>default</var> must be a cell array of values with the same size as
-<var>pref</var>.
+<p>The preference <var>pref</var> may be a character string or a cell array of
+character strings.
 </p>
-<p>If neither <var>pref</var> nor <var>default</var> are specified, return a
-structure of preferences for the preference group <var>group</var>.
+<p>The corresponding default value <var>default</var> may be any value, or, if
+<var>pref</var> is a cell array of strings, <var>default</var> must be a cell array
+of values with the same size as <var>pref</var>.
 </p>
-<p>If no arguments are specified, return a structure containing all
-groups of preferences and their values.
+<p>If neither <var>pref</var> nor <var>default</var> are specified, return a structure
+of preferences for the preference group <var>group</var>.
+</p>
+<p>If no arguments are specified, return a structure containing all groups of
+preferences and their values.
 </p>
 <p><strong>See also:</strong> <a href="#XREFaddpref">addpref</a>, <a href="#XREFsetpref">setpref</a>, <a href="#XREFispref">ispref</a>, <a href="#XREFrmpref">rmpref</a>.
 </p></dd></dl>
@@ -87,15 +89,17 @@ groups of preferences and their values.
 
 <a name="XREFsetpref"></a><dl>
 <dt><a name="index-setpref"></a>Function File: <em></em> <strong>setpref</strong> <em>(<var>group</var>, <var>pref</var>, <var>val</var>)</em></dt>
-<dd><p>Set a preference <var>pref</var> to the given <var>val</var> in the named
-preference group <var>group</var>.
+<dd><p>Set a preference <var>pref</var> to the given <var>val</var> in the named preference
+group <var>group</var>.
 </p>
 <p>The named preference group must be a character string.
 </p>
-<p>The preference <var>pref</var> may be a character string or a cell array
-of character strings.  The corresponding value <var>val</var> may be any
-value, or, if <var>pref</var> is a cell array of strings, <var>val</var>
-must be a cell array of values with the same size as <var>pref</var>.
+<p>The preference <var>pref</var> may be a character string or a cell array of
+character strings.
+</p>
+<p>The corresponding value <var>val</var> may be any value, or, if <var>pref</var> is a
+cell array of strings, <var>val</var> must be a cell array of values with the
+same size as <var>pref</var>.
 </p>
 <p>If the named preference or group does not exist, it is added.
 </p>
@@ -105,33 +109,32 @@ must be a cell array of values with the same size as <var>pref</var>.
 
 <a name="XREFaddpref"></a><dl>
 <dt><a name="index-addpref"></a>Function File: <em></em> <strong>addpref</strong> <em>(<var>group</var>, <var>pref</var>, <var>val</var>)</em></dt>
-<dd><p>Add a preference <var>pref</var> and associated value <var>val</var> to the
-named preference group <var>group</var>.
+<dd><p>Add a preference <var>pref</var> and associated value <var>val</var> to the named
+preference group <var>group</var>.
 </p>
 <p>The named preference group must be a character string.
 </p>
-<p>The preference <var>pref</var> may be a character string or a cell array
-of character strings.  The corresponding value <var>val</var> may be any
-value, or, if <var>pref</var> is a cell array of strings, <var>val</var>
-must be a cell array of values with the same size as <var>pref</var>.
+<p>The preference <var>pref</var> may be a character string or a cell array of
+character strings.
+</p>
+<p>The corresponding value <var>val</var> may be any value, or, if <var>pref</var> is a
+cell array of strings, <var>val</var> must be a cell array of values with the
+same size as <var>pref</var>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFsetpref">setpref</a>, <a href="#XREFgetpref">getpref</a>, <a href="#XREFispref">ispref</a>, <a href="#XREFrmpref">rmpref</a>.
 </p></dd></dl>
 
 
 <a name="XREFrmpref"></a><dl>
-<dt><a name="index-rmpref"></a>Function File: <em></em> <strong>rmpref</strong> <em>(<var>group</var>)</em></dt>
-<dt><a name="index-rmpref-1"></a>Function File: <em></em> <strong>rmpref</strong> <em>(<var>group</var>, <var>pref</var>)</em></dt>
-<dd><p>Remove the named preference <var>pref</var> from the preference group
-<var>group</var>.
+<dt><a name="index-rmpref"></a>Function File: <em></em> <strong>rmpref</strong> <em>(<var>group</var>, <var>pref</var>)</em></dt>
+<dt><a name="index-rmpref-1"></a>Function File: <em></em> <strong>rmpref</strong> <em>(<var>group</var>)</em></dt>
+<dd><p>Remove the named preference <var>pref</var> from the preference group <var>group</var>.
 </p>
 <p>The named preference group must be a character string.
 </p>
-<p>The preference <var>pref</var> may be a character string or cell array
-of strings.
+<p>The preference <var>pref</var> may be a character string or cell array of strings.
 </p>
-<p>If <var>pref</var> is not specified, remove the preference group
-<var>group</var>.
+<p>If <var>pref</var> is not specified, remove the preference group <var>group</var>.
 </p>
 <p>It is an error to remove a nonexistent preference or group.
 </p>
@@ -141,16 +144,17 @@ of strings.
 
 <a name="XREFispref"></a><dl>
 <dt><a name="index-ispref"></a>Function File: <em></em> <strong>ispref</strong> <em>(<var>group</var>, <var>pref</var>)</em></dt>
-<dd><p>Return true if the named preference <var>pref</var> exists in the
-preference group <var>group</var>.
+<dt><a name="index-ispref-1"></a>Function File: <em></em> <strong>ispref</strong> <em>(<var>group</var>)</em></dt>
+<dd><p>Return true if the named preference <var>pref</var> exists in the preference
+group <var>group</var>.
 </p>
 <p>The named preference group must be a character string.
 </p>
-<p>The preference <var>pref</var> may be a character string or a cell array
-of character strings.
+<p>The preference <var>pref</var> may be a character string or a cell array of
+character strings.
 </p>
-<p>If <var>pref</var> is not specified, return true if the preference
-group <var>group</var> exists.
+<p>If <var>pref</var> is not specified, return true if the preference group
+<var>group</var> exists.
 </p>
 <p><strong>See also:</strong> <a href="#XREFgetpref">getpref</a>, <a href="#XREFaddpref">addpref</a>, <a href="#XREFsetpref">setpref</a>, <a href="#XREFrmpref">rmpref</a>.
 </p></dd></dl>

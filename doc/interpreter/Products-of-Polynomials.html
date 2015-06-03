@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -89,9 +88,10 @@ convolution represents the coefficient vector of the product polynomial.
 <a name="XREFconvn"></a><dl>
 <dt><a name="index-convn"></a>Built-in Function: <em><var>C</var> =</em> <strong>convn</strong> <em>(<var>A</var>, <var>B</var>)</em></dt>
 <dt><a name="index-convn-1"></a>Built-in Function: <em><var>C</var> =</em> <strong>convn</strong> <em>(<var>A</var>, <var>B</var>, <var>shape</var>)</em></dt>
-<dd><p>Return the n-D convolution of <var>A</var> and <var>B</var>.  The size of the result
-is determined by the optional <var>shape</var> argument which takes the following
-values
+<dd><p>Return the n-D convolution of <var>A</var> and <var>B</var>.
+</p>
+<p>The size of the result is determined by the optional <var>shape</var> argument
+which takes the following values
 </p>
 <dl compact="compact">
 <dt><var>shape</var> = <code>&quot;full&quot;</code></dt>
@@ -134,9 +134,10 @@ a remainder polynomial of lowest order.
 <dt><a name="index-conv2"></a>Built-in Function: <em></em> <strong>conv2</strong> <em>(<var>A</var>, <var>B</var>)</em></dt>
 <dt><a name="index-conv2-1"></a>Built-in Function: <em></em> <strong>conv2</strong> <em>(<var>v1</var>, <var>v2</var>, <var>m</var>)</em></dt>
 <dt><a name="index-conv2-2"></a>Built-in Function: <em></em> <strong>conv2</strong> <em>(&hellip;, <var>shape</var>)</em></dt>
-<dd><p>Return the 2-D convolution of <var>A</var> and <var>B</var>.  The size of the result
-is determined by the optional <var>shape</var> argument which takes the following
-values
+<dd><p>Return the 2-D convolution of <var>A</var> and <var>B</var>.
+</p>
+<p>The size of the result is determined by the optional <var>shape</var> argument
+which takes the following values
 </p>
 <dl compact="compact">
 <dt><var>shape</var> = <code>&quot;full&quot;</code></dt>
@@ -167,10 +168,13 @@ The size of the result is <code>max (size (A) - size (B) + 1, 0)</code>.
 <dt><a name="index-polygcd"></a>Function File: <em><var>q</var> =</em> <strong>polygcd</strong> <em>(<var>b</var>, <var>a</var>)</em></dt>
 <dt><a name="index-polygcd-1"></a>Function File: <em><var>q</var> =</em> <strong>polygcd</strong> <em>(<var>b</var>, <var>a</var>, <var>tol</var>)</em></dt>
 <dd>
-<p>Find the greatest common divisor of two polynomials.  This is equivalent
-to the polynomial found by multiplying together all the common roots.
-Together with deconv, you can reduce a ratio of two polynomials.
-The tolerance <var>tol</var> defaults to <code>sqrt (eps)</code>.
+<p>Find the greatest common divisor of two polynomials.
+</p>
+<p>This is equivalent to the polynomial found by multiplying together all the
+common roots.  Together with deconv, you can reduce a ratio of two
+polynomials.
+</p>
+<p>The tolerance <var>tol</var> defaults to <code>sqrt (eps)</code>.
 </p>
 <p><strong>Caution:</strong> This is a numerically unstable algorithm and should not
 be used on large polynomials.
@@ -195,16 +199,18 @@ deconv (poly (1:8), polygcd (poly (1:8), poly (3:12))) - poly (1:2)
 <dd><p>The first calling form computes the partial fraction expansion for the
 quotient of the polynomials, <var>b</var> and <var>a</var>.
 </p>
+<p>The quotient is defined as
+</p>
 <div class="example">
-<pre class="example">B(s)    M       r(m)         N
----- = SUM -------------  + SUM k(i)*s^(N-i)
-A(s)   m=1 (s-p(m))^e(m)    i=1
+<pre class="example">B(s)    M       r(m)        N
+---- = SUM ------------- + SUM k(i)*s^(N-i)
+A(s)   m=1 (s-p(m))^e(m)   i=1
 </pre></div>
 
-<p>where <em>M</em> is the number of poles (the length of the <var>r</var>,
-<var>p</var>, and <var>e</var>), the <var>k</var> vector is a polynomial of order <em>N-1</em>
-representing the direct contribution, and the <var>e</var> vector specifies
-the multiplicity of the m-th residue&rsquo;s pole.
+<p>where <em>M</em> is the number of poles (the length of the <var>r</var>, <var>p</var>,
+and <var>e</var>), the <var>k</var> vector is a polynomial of order <em>N-1</em>
+representing the direct contribution, and the <var>e</var> vector specifies the
+multiplicity of the m-th residue&rsquo;s pole.
 </p>
 <p>For example,
 </p>
@@ -227,11 +233,11 @@ a = [1, -5, 8, -4];
 </pre></div>
 
 
-<p>The second calling form performs the inverse operation and computes
-the reconstituted quotient of polynomials, <var>b</var>(s)/<var>a</var>(s),
-from the partial fraction expansion; represented by the residues,
-poles, and a direct polynomial specified by <var>r</var>, <var>p</var> and
-<var>k</var>, and the pole multiplicity <var>e</var>.
+<p>The second calling form performs the inverse operation and computes the
+reconstituted quotient of polynomials, <var>b</var>(s)/<var>a</var>(s), from the
+partial fraction expansion; represented by the residues, poles, and a direct
+polynomial specified by <var>r</var>, <var>p</var> and <var>k</var>, and the pole
+multiplicity <var>e</var>.
 </p>
 <p>If the multiplicity, <var>e</var>, is not explicitly specified the multiplicity is
 determined by the function <code>mpoles</code>.

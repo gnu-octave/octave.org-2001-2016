@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -64,17 +63,37 @@ Previous: <a href="A-Sample-Function-Description.html#A-Sample-Function-Descript
 except that the word &lsquo;Function&rsquo; is replaced by &lsquo;Command&rsquo;.  Commands are
 functions that may be called without surrounding their arguments in
 parentheses.  For example, here is the description for Octave&rsquo;s
-<code>cd</code> command:
+<code>diary</code> command:
 </p>
 <dl>
-<dt><a name="index-cd"></a>Command: <em></em> <strong>cd</strong> <em>dir</em></dt>
-<dt><a name="index-chdir"></a>Command: <em></em> <strong>chdir</strong> <em>dir</em></dt>
-<dd><p>Change the current working directory to <var>dir</var>.  For example,
-<kbd>cd ~/octave</kbd> changes the current working directory to
-<samp>~/octave</samp>.  If the directory does not exist, an error message is
-printed and the working directory is not changed.
-</p></dd></dl>
+<dt><a name="index-diary"></a>Command: <em></em> <strong>diary</strong></dt>
+<dt><a name="index-diary-1"></a>Command: <em></em> <strong>diary</strong> <em>on</em></dt>
+<dt><a name="index-diary-2"></a>Command: <em></em> <strong>diary</strong> <em>off</em></dt>
+<dt><a name="index-diary-3"></a>Command: <em></em> <strong>diary</strong> <em><var>filename</var></em></dt>
+<dd><p>Record a list of all commands <em>and</em> the output they produce, mixed
+together just as they appear on the terminal.
+</p>
+<p>Valid options are:
+</p>
+<dl compact="compact">
+<dt>on</dt>
+<dd><p>Start recording a session in a file called <samp>diary</samp> in the
+current working directory.
+</p>
+</dd>
+<dt>off</dt>
+<dd><p>Stop recording the session in the diary file.
+</p>
+</dd>
+<dt><var>filename</var></dt>
+<dd><p>Record the session in the file named <var>filename</var>.
+</p></dd>
+</dl>
 
+<p>With no arguments, <code>diary</code> toggles the current diary state.
+</p>
+<p><strong>See also:</strong> history.
+</p></dd></dl>
 
 
 

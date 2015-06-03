@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -71,7 +70,9 @@ a hexadecimal number to a floating point number.
 <a name="XREFbin2dec"></a><dl>
 <dt><a name="index-bin2dec"></a>Function File: <em></em> <strong>bin2dec</strong> <em>(<var>s</var>)</em></dt>
 <dd><p>Return the decimal number corresponding to the binary number represented
-by the string <var>s</var>.  For example:
+by the string <var>s</var>.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">bin2dec (&quot;1110&quot;)
@@ -98,20 +99,22 @@ converted number per cell element in <var>s</var>.
 
 <a name="XREFdec2bin"></a><dl>
 <dt><a name="index-dec2bin"></a>Function File: <em></em> <strong>dec2bin</strong> <em>(<var>d</var>, <var>len</var>)</em></dt>
-<dd><p>Return a binary number corresponding to the non-negative integer
-<var>d</var>, as a string of ones and zeros.  For example:
+<dd><p>Return a binary number corresponding to the non-negative integer <var>d</var>,
+as a string of ones and zeros.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">dec2bin (14)
      &rArr; &quot;1110&quot;
 </pre></div>
 
-<p>If <var>d</var> is a matrix or cell array, return a string matrix with one
-row per element in <var>d</var>, padded with leading zeros to the width of 
-the largest value.
+<p>If <var>d</var> is a matrix or cell array, return a string matrix with one row
+per element in <var>d</var>, padded with leading zeros to the width of the
+largest value.
 </p>
-<p>The optional second argument, <var>len</var>, specifies the minimum
-number of digits in the result.
+<p>The optional second argument, <var>len</var>, specifies the minimum number of
+digits in the result.
 </p>
 <p><strong>See also:</strong> <a href="#XREFbin2dec">bin2dec</a>, <a href="#XREFdec2base">dec2base</a>, <a href="#XREFdec2hex">dec2hex</a>.
 </p></dd></dl>
@@ -119,20 +122,22 @@ number of digits in the result.
 
 <a name="XREFdec2hex"></a><dl>
 <dt><a name="index-dec2hex"></a>Function File: <em></em> <strong>dec2hex</strong> <em>(<var>d</var>, <var>len</var>)</em></dt>
-<dd><p>Return the hexadecimal string corresponding to the non-negative
-integer <var>d</var>.  For example:
+<dd><p>Return the hexadecimal string corresponding to the non-negative integer
+<var>d</var>.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">dec2hex (2748)
      &rArr; &quot;ABC&quot;
 </pre></div>
 
-<p>If <var>d</var> is a matrix or cell array, return a string matrix with one
-row per element in <var>d</var>, padded with leading zeros to the width of 
-the largest value.
+<p>If <var>d</var> is a matrix or cell array, return a string matrix with one row
+per element in <var>d</var>, padded with leading zeros to the width of the
+largest value.
 </p>
-<p>The optional second argument, <var>len</var>, specifies the minimum
-number of digits in the result.
+<p>The optional second argument, <var>len</var>, specifies the minimum number of
+digits in the result.
 </p>
 <p><strong>See also:</strong> <a href="#XREFhex2dec">hex2dec</a>, <a href="#XREFdec2base">dec2base</a>, <a href="#XREFdec2bin">dec2bin</a>.
 </p></dd></dl>
@@ -140,8 +145,10 @@ number of digits in the result.
 
 <a name="XREFhex2dec"></a><dl>
 <dt><a name="index-hex2dec"></a>Function File: <em></em> <strong>hex2dec</strong> <em>(<var>s</var>)</em></dt>
-<dd><p>Return the integer corresponding to the hexadecimal number represented
-by the string <var>s</var>.  For example:
+<dd><p>Return the integer corresponding to the hexadecimal number represented by
+the string <var>s</var>.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">hex2dec (&quot;12B&quot;)
@@ -164,29 +171,29 @@ converted number per cell element in <var>s</var>.
 <a name="XREFdec2base"></a><dl>
 <dt><a name="index-dec2base"></a>Function File: <em></em> <strong>dec2base</strong> <em>(<var>d</var>, <var>base</var>)</em></dt>
 <dt><a name="index-dec2base-1"></a>Function File: <em></em> <strong>dec2base</strong> <em>(<var>d</var>, <var>base</var>, <var>len</var>)</em></dt>
-<dd><p>Return a string of symbols in base <var>base</var> corresponding to
-the non-negative integer <var>d</var>.
+<dd><p>Return a string of symbols in base <var>base</var> corresponding to the
+non-negative integer <var>d</var>.
 </p>
 <div class="example">
 <pre class="example">dec2base (123, 3)
    &rArr; &quot;11120&quot;
 </pre></div>
 
-<p>If <var>d</var> is a matrix or cell array, return a string matrix with one
-row per element in <var>d</var>, padded with leading zeros to the width of 
-the largest value.
+<p>If <var>d</var> is a matrix or cell array, return a string matrix with one row
+per element in <var>d</var>, padded with leading zeros to the width of the
+largest value.
 </p>
 <p>If <var>base</var> is a string then the characters of <var>base</var> are used as
-the symbols for the digits of <var>d</var>.  Space (&rsquo; &rsquo;) may not be used
-as a symbol.
+the symbols for the digits of <var>d</var>.  Space (&rsquo; &rsquo;) may not be used as a
+symbol.
 </p>
 <div class="example">
 <pre class="example">dec2base (123, &quot;aei&quot;)
    &rArr; &quot;eeeia&quot;
 </pre></div>
 
-<p>The optional third argument, <var>len</var>, specifies the minimum
-number of digits in the result.
+<p>The optional third argument, <var>len</var>, specifies the minimum number of
+digits in the result.
 </p>
 <p><strong>See also:</strong> <a href="#XREFbase2dec">base2dec</a>, <a href="#XREFdec2bin">dec2bin</a>, <a href="#XREFdec2hex">dec2hex</a>.
 </p></dd></dl>
@@ -203,15 +210,14 @@ integer (base 10).
 </pre></div>
 
 <p>If <var>s</var> is a string matrix, return a column vector with one value per
-row of <var>s</var>.  If a row contains invalid symbols then the
-corresponding value will be NaN.
+row of <var>s</var>.  If a row contains invalid symbols then the corresponding
+value will be NaN.
 </p>
 <p>If <var>s</var> is a cell array of strings, return a column vector with one
 value per cell element in <var>s</var>.
 </p>
 <p>If <var>base</var> is a string, the characters of <var>base</var> are used as the
-symbols for the digits of <var>s</var>.  Space (&rsquo; &rsquo;) may not be used as a
-symbol.
+symbols for the digits of <var>s</var>.  Space (&rsquo; &rsquo;) may not be used as a symbol.
 </p>
 <div class="example">
 <pre class="example">base2dec (&quot;yyyzx&quot;, &quot;xyz&quot;)
@@ -226,7 +232,8 @@ symbol.
 <dt><a name="index-num2hex"></a>Built-in Function: <em><var>s</var> =</em> <strong>num2hex</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Typecast a double or single precision number or vector to a 8 or 16
 character hexadecimal string of the IEEE 754 representation of the number.
-For example:
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">num2hex ([-1, 1, e, Inf])
@@ -255,11 +262,12 @@ string has a length of 8.  For example:
 <dt><a name="index-hex2num"></a>Built-in Function: <em><var>n</var> =</em> <strong>hex2num</strong> <em>(<var>s</var>)</em></dt>
 <dt><a name="index-hex2num-1"></a>Built-in Function: <em><var>n</var> =</em> <strong>hex2num</strong> <em>(<var>s</var>, <var>class</var>)</em></dt>
 <dd><p>Typecast the 16 character hexadecimal character string to an IEEE 754
-double precision number.  If fewer than 16 characters are given the
-strings are right padded with <code>'0'</code> characters.
+double precision number.
 </p>
-<p>Given a string matrix, <code>hex2num</code> treats each row as a separate
-number.
+<p>If fewer than 16 characters are given the strings are right padded with
+<code>'0'</code> characters.
+</p>
+<p>Given a string matrix, <code>hex2num</code> treats each row as a separate number.
 </p>
 <div class="example">
 <pre class="example">hex2num ([&quot;4005bf0a8b145769&quot;; &quot;4024000000000000&quot;])
@@ -269,7 +277,7 @@ number.
 <p>The optional argument <var>class</var> can be passed as the string
 <code>&quot;single&quot;</code> to specify that the given string should be interpreted as
 a single precision number.  In this case, <var>s</var> should be an 8 character
-hexadecimal string.  For example: 
+hexadecimal string.  For example:
 </p>
 <div class="example">
 <pre class="example">hex2num ([&quot;402df854&quot;; &quot;41200000&quot;], &quot;single&quot;)
@@ -284,8 +292,8 @@ hexadecimal string.  For example:
 <dt><a name="index-str2double"></a>Built-in Function: <em></em> <strong>str2double</strong> <em>(<var>s</var>)</em></dt>
 <dd><p>Convert a string to a real or complex number.
 </p>
-<p>The string must be in one of the following formats where
-a and b are real numbers and the complex unit is <code>'i'</code> or <code>'j'</code>:
+<p>The string must be in one of the following formats where a and b are real
+numbers and the complex unit is <code>'i'</code> or <code>'j'</code>:
 </p>
 <ul>
 <li> a + bi
@@ -306,12 +314,12 @@ the brackets indicate optional arguments and <code>'d'</code> indicates zero or
 more digits.  The special input values <code>Inf</code>, <code>NaN</code>, and <code>NA</code>
 are also accepted.
 </p>
-<p><var>s</var> may be a character string, character matrix, or cell array.
-For character arrays the conversion is repeated for every row, and
-a double or complex array is returned.  Empty rows in <var>s</var> are deleted
-and not returned in the numeric array.  For cell arrays each character
-string element is processed and a double or complex array of the same
-dimensions as <var>s</var> is returned.
+<p><var>s</var> may be a character string, character matrix, or cell array.  For
+character arrays the conversion is repeated for every row, and a double or
+complex array is returned.  Empty rows in <var>s</var> are deleted and not
+returned in the numeric array.  For cell arrays each character string
+element is processed and a double or complex array of the same dimensions as
+<var>s</var> is returned.
 </p>
 <p>For unconvertible scalar or character string input <code>str2double</code> returns
 a NaN.  Similarly, for character array input <code>str2double</code> returns a
@@ -332,11 +340,12 @@ risk of using <code>eval</code> on unknown data.
 <dt><a name="index-strjust"></a>Function File: <em></em> <strong>strjust</strong> <em>(<var>s</var>)</em></dt>
 <dt><a name="index-strjust-1"></a>Function File: <em></em> <strong>strjust</strong> <em>(<var>s</var>, <var>pos</var>)</em></dt>
 <dd><p>Return the text, <var>s</var>, justified according to <var>pos</var>, which may
-be <code>&quot;left&quot;</code>, <code>&quot;center&quot;</code>, or <code>&quot;right&quot;</code>.  If <var>pos</var>
-is omitted it defaults to <code>&quot;right&quot;</code>.
+be <code>&quot;left&quot;</code>, <code>&quot;center&quot;</code>, or <code>&quot;right&quot;</code>.
 </p>
-<p>Null characters are replaced by spaces.  All other character
-data are treated as non-white space.
+<p>If <var>pos</var> is omitted it defaults to <code>&quot;right&quot;</code>.
+</p>
+<p>Null characters are replaced by spaces.  All other character data are
+treated as non-white space.
 </p>
 <p>Example:
 </p>
@@ -356,8 +365,9 @@ data are treated as non-white space.
 <a name="XREFstr2num"></a><dl>
 <dt><a name="index-str2num"></a>Function File: <em><var>x</var> =</em> <strong>str2num</strong> <em>(<var>s</var>)</em></dt>
 <dt><a name="index-str2num-1"></a>Function File: <em>[<var>x</var>, <var>state</var>] =</em> <strong>str2num</strong> <em>(<var>s</var>)</em></dt>
-<dd><p>Convert the string (or character array) <var>s</var> to a number (or an
-array).  Examples:
+<dd><p>Convert the string (or character array) <var>s</var> to a number (or an array).
+</p>
+<p>Examples:
 </p>
 <div class="example">
 <pre class="example">str2num (&quot;3.141596&quot;)
@@ -372,10 +382,9 @@ str2num ([&quot;1, 2, 3&quot;; &quot;4, 5, 6&quot;])
 conversion is successful.  If the conversion fails the numeric output,
 <var>x</var>, is empty and <var>state</var> is false.
 </p>
-<p><strong>Caution:</strong> As <code>str2num</code> uses the <code>eval</code> function
-to do the conversion, <code>str2num</code> will execute any code contained
-in the string <var>s</var>.  Use <code>str2double</code> for a safer and faster
-conversion.
+<p><strong>Caution:</strong> As <code>str2num</code> uses the <code>eval</code> function to do the
+conversion, <code>str2num</code> will execute any code contained in the string
+<var>s</var>.  Use <code>str2double</code> for a safer and faster conversion.
 </p>
 <p>For cell array of strings use <code>str2double</code>.
 </p>
@@ -385,7 +394,9 @@ conversion.
 
 <a name="XREFtoascii"></a><dl>
 <dt><a name="index-toascii"></a>Mapping Function: <em></em> <strong>toascii</strong> <em>(<var>s</var>)</em></dt>
-<dd><p>Return ASCII representation of <var>s</var> in a matrix.  For example:
+<dd><p>Return ASCII representation of <var>s</var> in a matrix.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">toascii (&quot;ASCII&quot;)
@@ -402,7 +413,9 @@ conversion.
 <dt><a name="index-lower"></a>Mapping Function: <em></em> <strong>lower</strong> <em>(<var>s</var>)</em></dt>
 <dd><p>Return a copy of the string or cell string <var>s</var>, with each uppercase
 character replaced by the corresponding lowercase one; non-alphabetic
-characters are left unchanged.  For example:
+characters are left unchanged.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">tolower (&quot;MiXeD cAsE 123&quot;)
@@ -418,7 +431,9 @@ characters are left unchanged.  For example:
 <dt><a name="index-upper"></a>Mapping Function: <em></em> <strong>upper</strong> <em>(<var>s</var>)</em></dt>
 <dd><p>Return a copy of the string or cell string <var>s</var>, with each lowercase
 character replaced by the corresponding uppercase one; non-alphabetic
-characters are left unchanged.  For example:
+characters are left unchanged.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">toupper (&quot;MiXeD cAsE 123&quot;)
@@ -431,33 +446,41 @@ characters are left unchanged.  For example:
 
 <a name="XREFdo_005fstring_005fescapes"></a><dl>
 <dt><a name="index-do_005fstring_005fescapes"></a>Built-in Function: <em></em> <strong>do_string_escapes</strong> <em>(<var>string</var>)</em></dt>
-<dd><p>Convert special characters in <var>string</var> to their escaped forms.
+<dd><p>Convert escape sequences in <var>string</var> to the characters they represent.
+</p>
+<p>Escape sequences begin with a leading backslash
+(<code>'\'</code>) followed by 1&ndash;3 characters
+(.e.g., <code>&quot;\n&quot;</code> =&gt; newline).
+</p>
+<p><strong>See also:</strong> <a href="#XREFundo_005fstring_005fescapes">undo_string_escapes</a>.
 </p></dd></dl>
 
 
 <a name="XREFundo_005fstring_005fescapes"></a><dl>
 <dt><a name="index-undo_005fstring_005fescapes"></a>Built-in Function: <em></em> <strong>undo_string_escapes</strong> <em>(<var>s</var>)</em></dt>
-<dd><p>Convert special characters in strings back to their escaped forms.  For
-example, the expression
+<dd><p>Convert special characters in strings back to their escaped forms.
+</p>
+<p>For example, the expression
 </p>
 <div class="example">
 <pre class="example">bell = &quot;\a&quot;;
 </pre></div>
 
-<p>assigns the value of the alert character (control-g, ASCII code 7) to
-the string variable <code>bell</code>.  If this string is printed, the
-system will ring the terminal bell (if it is possible).  This is
-normally the desired outcome.  However, sometimes it is useful to be
-able to print the original representation of the string, with the
-special characters replaced by their escape sequences.  For example,
+<p>assigns the value of the alert character (control-g, ASCII code 7) to the
+string variable <code>bell</code>.  If this string is printed, the system will
+ring the terminal bell (if it is possible).  This is normally the desired
+outcome.  However, sometimes it is useful to be able to print the original
+representation of the string, with the special characters replaced by their
+escape sequences.  For example,
 </p>
 <div class="example">
 <pre class="example">octave:13&gt; undo_string_escapes (bell)
 ans = \a
 </pre></div>
 
-<p>replaces the unprintable alert character with its printable
-representation.
+<p>replaces the unprintable alert character with its printable representation.
+</p>
+<p><strong>See also:</strong> <a href="#XREFdo_005fstring_005fescapes">do_string_escapes</a>.
 </p></dd></dl>
 
 

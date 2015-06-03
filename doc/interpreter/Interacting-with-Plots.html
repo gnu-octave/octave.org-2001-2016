@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -57,7 +56,7 @@ Next: <a href="Test-Plotting-Functions.html#Test-Plotting-Functions" accesskey="
 </div>
 <hr>
 <a name="Interacting-with-Plots-1"></a>
-<h4 class="subsection">15.2.9 Interacting with Plots</h4>
+<h4 class="subsection">15.2.10 Interacting with Plots</h4>
 
 <p>The user can select points on a plot with the <code>ginput</code> function or
 selection the position at which to place text on the plot with the
@@ -79,13 +78,17 @@ was clicked in the units of the current axes.  The return value <var>button</var
 is 1, 2, or 3 for the left, middle, or right button.  If a key is pressed
 the ASCII value is returned in <var>button</var>.
 </p>
+<p>Implementation Note: <code>ginput</code> is intenteded for 2-D plots.  For 3-D
+plots see the <var>currentpoint</var> property of the current axes which can be
+transformed with knowledge of the current <code>view</code> into data units.
+</p>
 <p><strong>See also:</strong> <a href="#XREFgtext">gtext</a>, <a href="#XREFwaitforbuttonpress">waitforbuttonpress</a>.
 </p></dd></dl>
 
 
 <a name="XREFwaitforbuttonpress"></a><dl>
 <dt><a name="index-waitforbuttonpress"></a>Function File: <em></em> <strong>waitforbuttonpress</strong> <em>()</em></dt>
-<dt><a name="index-waitforbuttonpress-1"></a>Function File: <em><var>a</var> =</em> <strong>waitforbuttonpress</strong> <em>()</em></dt>
+<dt><a name="index-waitforbuttonpress-1"></a>Function File: <em><var>b</var> =</em> <strong>waitforbuttonpress</strong> <em>()</em></dt>
 <dd><p>Wait for mouse click or key press over the current figure window.
 </p>
 <p>The return value of <var>b</var> is 0 if a mouse button was pressed or 1 if a
@@ -119,11 +122,12 @@ text object(s).
 
 
 <a name="XREFuimenu"></a><dl>
-<dt><a name="index-uimenu"></a>Function File: <em></em> <strong>uimenu</strong> <em>(<var>property</var>, <var>value</var>, &hellip;)</em></dt>
-<dt><a name="index-uimenu-1"></a>Function File: <em></em> <strong>uimenu</strong> <em>(<var>h</var>, <var>property</var>, <var>value</var>, &hellip;)</em></dt>
-<dd><p>Create a uimenu object and return a handle to it.  If <var>h</var> is omitted
-then a top-level menu for the current figure is created.  If <var>h</var>
-is given then a submenu relative to <var>h</var> is created.
+<dt><a name="index-uimenu"></a>Function File: <em><var>hui</var> =</em> <strong>uimenu</strong> <em>(<var>property</var>, <var>value</var>, &hellip;)</em></dt>
+<dt><a name="index-uimenu-1"></a>Function File: <em><var>hui</var> =</em> <strong>uimenu</strong> <em>(<var>h</var>, <var>property</var>, <var>value</var>, &hellip;)</em></dt>
+<dd><p>Create a uimenu object and return a handle to it.
+</p>
+<p>If <var>h</var> is omitted then a top-level menu for the current figure is
+created.  If <var>h</var> is given then a submenu relative to <var>h</var> is created.
 </p>
 <p>uimenu objects have the following specific properties:
 </p>

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -79,11 +78,11 @@ void mxSetNzmax (mxArray *ptr, mwSize nzmax);
 </pre></div>
 
 <p><code>mxGetNzmax</code> gets the maximum number of elements that can be stored
-in the sparse matrix.  This is not necessarily the number of non-zero
+in the sparse matrix.  This is not necessarily the number of nonzero
 elements in the sparse matrix.  <code>mxGetJc</code> returns an array with one
 additional value than the number of columns in the sparse matrix.  The
 difference between consecutive values of the array returned by
-<code>mxGetJc</code> define the number of non-zero elements in each column of
+<code>mxGetJc</code> define the number of nonzero elements in each column of
 the sparse matrix.  Therefore,
 </p>
 <div class="example">
@@ -96,10 +95,10 @@ Jc = mxGetJc (m);
 nz = Jc[n];
 </pre></div>
 
-<p>returns the actual number of non-zero elements stored in the matrix in
+<p>returns the actual number of nonzero elements stored in the matrix in
 <code>nz</code>.  As the arrays returned by <code>mxGetPr</code> and <code>mxGetPi</code>
-only contain the non-zero values of the matrix, we also need a pointer
-to the rows of the non-zero elements, and this is given by
+only contain the nonzero values of the matrix, we also need a pointer
+to the rows of the nonzero elements, and this is given by
 <code>mxGetIr</code>.  A complete example of the use of sparse matrices in
 mex-files is given by the file <samp>mysparse.c</samp> shown below.
 </p>
@@ -138,7 +137,7 @@ mexFunction (int nlhs, mxArray *plhs[],
       i = n;
       while (jc[i] == jc[i-1] &amp;&amp; i != 0) i--;
 
-      mexPrintf (&quot;last non-zero element (%d, %d) = (%g, %g)\n&quot;,
+      mexPrintf (&quot;last nonzero element (%d, %d) = (%g, %g)\n&quot;,
                  ir[nz-1]+ 1, i, pr[nz-1], pi[nz-1]);
 
       v = mxCreateSparse (m, n, nz, mxCOMPLEX);
@@ -171,7 +170,7 @@ mexFunction (int nlhs, mxArray *plhs[],
 
       i = n;
       while (jc[i] == jc[i-1] &amp;&amp; i != 0) i--;
-      mexPrintf (&quot;last non-zero element (%d, %d) = %d\n&quot;,
+      mexPrintf (&quot;last nonzero element (%d, %d) = %d\n&quot;,
                  ir[nz-1]+ 1, i, pbr[nz-1]);
 
       v = mxCreateSparseLogicalMatrix (m, n, nz);
@@ -201,7 +200,7 @@ mexFunction (int nlhs, mxArray *plhs[],
 
       i = n;
       while (jc[i] == jc[i-1] &amp;&amp; i != 0) i--;
-      mexPrintf (&quot;last non-zero element (%d, %d) = %g\n&quot;,
+      mexPrintf (&quot;last nonzero element (%d, %d) = %g\n&quot;,
                  ir[nz-1]+ 1, i, pr[nz-1]);
 
       v = mxCreateSparse (m, n, nz, mxREAL);
@@ -222,6 +221,16 @@ mexFunction (int nlhs, mxArray *plhs[],
     }
 }
 </pre><pre class="example">
+</pre></div>
+
+<p>A sample usage of <code>mysparse</code> is
+</p>
+<div class="example">
+<pre class="example">sm = sparse ([1, 0; 0, pi]);
+mysparse (sm)
+&rArr;
+Matrix is 2-by-2 real sparse matrix with 2 elements
+last nonzero element (2, 2) = 3.14159
 </pre></div>
 
 <hr>

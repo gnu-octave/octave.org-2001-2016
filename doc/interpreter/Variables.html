@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -102,8 +101,10 @@ before they have been given a value.  Doing so results in an error.
 <a name="index-ans"></a>
 <a name="XREFans"></a><dl>
 <dt><a name="index-ans-1"></a>Automatic Variable: <strong>ans</strong></dt>
-<dd><p>The most recently computed result that was not
-explicitly assigned to a variable.  For example, after the expression
+<dd><p>The most recently computed result that was not explicitly assigned to a
+variable.
+</p>
+<p>For example, after the expression
 </p>
 <div class="example">
 <pre class="example">3^2 + 4^2
@@ -124,21 +125,10 @@ explicitly assigned to a variable.  For example, after the expression
 <a name="XREFgenvarname"></a><dl>
 <dt><a name="index-genvarname"></a>Function File: <em><var>varname</var> =</em> <strong>genvarname</strong> <em>(<var>str</var>)</em></dt>
 <dt><a name="index-genvarname-1"></a>Function File: <em><var>varname</var> =</em> <strong>genvarname</strong> <em>(<var>str</var>, <var>exclusions</var>)</em></dt>
-<dd><p>Create unique variable(s) from <var>str</var>.  If <var>exclusions</var> is
-given, then the variable(s) will be unique to each other and to
-<var>exclusions</var> (<var>exclusions</var> may be either a string or a cellstr).
+<dd><p>Create valid unique variable name(s) from <var>str</var>.
 </p>
-<p>If <var>str</var> is a cellstr, then a unique variable is created for each
-cell in <var>str</var>.
-</p>
-<div class="example">
-<pre class="example">x = 3.141;
-genvarname (&quot;x&quot;, who ())
-  &rArr; x1
-</pre></div>
-
-<p>If <var>wanted</var> is a cell array, genvarname will make sure the returned
-strings are distinct:
+<p>If <var>str</var> is a cellstr, then a unique variable is created for each cell
+in <var>str</var>.
 </p>
 <div class="example">
 <pre class="example">genvarname ({&quot;foo&quot;, &quot;foo&quot;})
@@ -149,9 +139,19 @@ strings are distinct:
      }
 </pre></div>
 
-<p>Note that the result is a char array/cell array of strings, not the
-variables themselves.  To define a variable, <code>eval()</code> can be
-used.  The following trivial example sets <code>x</code> to <code>42</code>.
+<p>If <var>exclusions</var> is given, then the variable(s) will be unique to each
+other and to <var>exclusions</var> (<var>exclusions</var> may be either a string or a
+cellstr).
+</p>
+<div class="example">
+<pre class="example">x = 3.141;
+genvarname (&quot;x&quot;, who ())
+  &rArr; x1
+</pre></div>
+
+<p>Note that the result is a char array or cell array of strings, not the
+variables themselves.  To define a variable, <code>eval()</code> can be used.
+The following trivial example sets <code>x</code> to <code>42</code>.
 </p>
 <div class="example">
 <pre class="example">name = genvarname (&quot;x&quot;);
@@ -159,7 +159,7 @@ eval ([name &quot; = 42&quot;]);
   &rArr; x =  42
 </pre></div>
 
-<p>Also, this can be useful for creating unique struct field names.
+<p>This can be useful for creating unique struct field names.
 </p>
 <div class="example">
 <pre class="example">x = struct ();
@@ -174,33 +174,34 @@ endfor
      }
 </pre></div>
 
-<p>Since variable names may only contain letters, digits and underscores,
-genvarname replaces any sequence of disallowed characters with
-an underscore.  Also, variables may not begin with a digit; in this
-case an underscore is added before the variable name.
+<p>Since variable names may only contain letters, digits, and underscores,
+<code>genvarname</code> will replace any sequence of disallowed characters with
+an underscore.  Also, variables may not begin with a digit; in this case
+an &lsquo;<samp>x</samp>&rsquo; is added before the variable name.
 </p>
 <p>Variable names beginning and ending with two underscores <code>&quot;__&quot;</code> are
-valid but they are used internally by octave and should generally be
-avoided, therefore genvarname will not generate such names.
+valid, but they are used internally by Octave and should generally be
+avoided; therefore, <code>genvarname</code> will not generate such names.
 </p>
-<p>genvarname will also make sure that returned names do not clash with
+<p><code>genvarname</code> will also ensure that returned names do not clash with
 keywords such as <code>&quot;for&quot;</code> and <code>&quot;if&quot;</code>.  A number will be
 appended if necessary.  Note, however, that this does <strong>not</strong> include
-function names, such as <code>&quot;sin&quot;</code>.  Such names should be included in
-<var>avoid</var> if necessary.
+function names such as <code>&quot;sin&quot;</code>.  Such names should be included in
+<var>exclusions</var> if necessary.
 </p>
-<p><strong>See also:</strong> <a href="#XREFisvarname">isvarname</a>, <a href="Status-of-Variables.html#XREFexist">exist</a>, <a href="Temporary-Files.html#XREFtmpnam">tmpnam</a>, <a href="Evaluation.html#XREFeval">eval</a>.
+<p><strong>See also:</strong> <a href="#XREFisvarname">isvarname</a>, <a href="Keywords.html#XREFiskeyword">iskeyword</a>, <a href="Status-of-Variables.html#XREFexist">exist</a>, <a href="Status-of-Variables.html#XREFwho">who</a>, <a href="Temporary-Files.html#XREFtempname">tempname</a>, <a href="Evaluation.html#XREFeval">eval</a>.
 </p></dd></dl>
 
 
 <a name="XREFnamelengthmax"></a><dl>
 <dt><a name="index-namelengthmax"></a>Function File: <em></em> <strong>namelengthmax</strong> <em>()</em></dt>
-<dd><p>Return the <small>MATLAB</small> compatible maximum variable name length.  Octave is
-capable of storing strings up to <em>2^{31} - 1</em> in length.
-However for <small>MATLAB</small> compatibility all variable, function,
-and structure field names should be shorter than the length supplied by
-<code>namelengthmax</code>.  In particular variables stored to a <small>MATLAB</small> file
-format will have their names truncated to this length.
+<dd><p>Return the <small>MATLAB</small> compatible maximum variable name length.
+</p>
+<p>Octave is capable of storing strings up to <em>2^{31} - 1</em> in length.
+However for <small>MATLAB</small> compatibility all variable, function, and structure
+field names should be shorter than the length returned by
+<code>namelengthmax</code>.  In particular, variables stored to a <small>MATLAB</small> file
+format (<samp>*.mat</samp>) will have their names truncated to this length.
 </p></dd></dl>
 
 

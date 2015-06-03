@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -65,7 +64,7 @@ It is quite important that each and every function have a sufficient level
 of parameter checking to ensure that Octave behaves well.
 </p>
 <p>The minimum requirement, as previously discussed, is to check the number
-of input arguments before using them to avoid referencing a non-existent
+of input arguments before using them to avoid referencing a nonexistent
 argument.  However, in some cases this might not be sufficient as the
 underlying code imposes further constraints.  For example, an external
 function call might be undefined if the input arguments are not
@@ -119,9 +118,9 @@ DEFUN_DLD (paramdemo, args, nargout, &quot;Parameter Check Demo&quot;)
 <div class="example">
 <pre class="example">paramdemo ([1, 2, NaN, Inf])
 &rArr; Properties of input array:
-      includes Inf or NaN values
-      includes other values than 1 and 0
-      includes only int, Inf or NaN values
+     includes Inf or NaN values
+     includes other values than 1 and 0
+     includes only int, Inf or NaN values
 </pre></div>
 
 <hr>

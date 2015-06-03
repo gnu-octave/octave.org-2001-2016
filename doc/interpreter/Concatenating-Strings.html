@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -110,14 +109,14 @@ eliminates empty strings.
 <div class="example">
 <pre class="example">char (&quot;orange&quot;, &quot;green&quot;, &quot;&quot;, &quot;red&quot;)
     &rArr; orange
-       green 
+       green
 
        red
 </pre><pre class="example">
 </pre><pre class="example">strvcat (&quot;orange&quot;, &quot;green&quot;, &quot;&quot;, &quot;red&quot;)
     &rArr; orange
-       green 
-       red  
+       green
+       red
 </pre></div>
 
 </li><li> All string concatenation functions except <code>cstrcat</code> also accept cell
@@ -127,10 +126,10 @@ concatenates within the cells of the cell arrays:
 
 <div class="example">
 <pre class="example">char ({&quot;red&quot;, &quot;green&quot;, &quot;&quot;, &quot;blue&quot;})
-     &rArr; red  
+     &rArr; red
         green
 
-        blue 
+        blue
 </pre><pre class="example">
 </pre><pre class="example">strcat ({&quot;abc&quot;; &quot;ghi&quot;}, {&quot;def&quot;; &quot;jkl&quot;})
      &rArr;
@@ -165,19 +164,19 @@ from the internal representation of the strings in a string array
 <dt><a name="index-char-2"></a>Built-in Function: <em></em> <strong>char</strong> <em>(<var>s1</var>, <var>s2</var>, &hellip;)</em></dt>
 <dt><a name="index-char-3"></a>Built-in Function: <em></em> <strong>char</strong> <em>(<var>cell_array</var>)</em></dt>
 <dd><p>Create a string array from one or more numeric matrices, character
-matrices, or cell arrays.  Arguments are concatenated vertically.
-The returned values are padded with blanks as needed to make each row
-of the string array have the same length.  Empty input strings are
-significant and will concatenated in the output.
+matrices, or cell arrays.
 </p>
-<p>For numerical input, each element is converted
-to the corresponding ASCII character.  A range error results if an input
-is outside the ASCII range (0-255).
+<p>Arguments are concatenated vertically.  The returned values are padded with
+blanks as needed to make each row of the string array have the same length.
+Empty input strings are significant and will concatenated in the output.
+</p>
+<p>For numerical input, each element is converted to the corresponding ASCII
+character.  A range error results if an input is outside the ASCII range
+(0-255).
 </p>
 <p>For cell arrays, each element is concatenated separately.  Cell arrays
-converted through
-<code>char</code> can mostly be converted back with <code>cellstr</code>.
-For example:
+converted through <code>char</code> can mostly be converted back with
+<code>cellstr</code>.  For example:
 </p>
 <div class="example">
 <pre class="example">char ([97, 98, 99], &quot;&quot;, {&quot;98&quot;, &quot;99&quot;, 100}, &quot;str1&quot;, [&quot;ha&quot;, &quot;lf&quot;])
@@ -200,19 +199,20 @@ For example:
 <dt><a name="index-strvcat-2"></a>Built-in Function: <em></em> <strong>strvcat</strong> <em>(<var>s1</var>, <var>s2</var>, &hellip;)</em></dt>
 <dt><a name="index-strvcat-3"></a>Built-in Function: <em></em> <strong>strvcat</strong> <em>(<var>cell_array</var>)</em></dt>
 <dd><p>Create a character array from one or more numeric matrices, character
-matrices, or cell arrays.  Arguments are concatenated vertically.
-The returned values are padded with blanks as needed to make each row
-of the string array have the same length.  Unlike <code>char</code>, empty
-strings are removed and will not appear in the output.
+matrices, or cell arrays.
 </p>
-<p>For numerical input, each element is converted
-to the corresponding ASCII character.  A range error results if an input
-is outside the ASCII range (0-255).
+<p>Arguments are concatenated vertically.  The returned values are padded with
+blanks as needed to make each row of the string array have the same length.
+Unlike <code>char</code>, empty strings are removed and will not appear in the
+output.
+</p>
+<p>For numerical input, each element is converted to the corresponding ASCII
+character.  A range error results if an input is outside the ASCII range
+(0-255).
 </p>
 <p>For cell arrays, each element is concatenated separately.  Cell arrays
-converted through
-<code>strvcat</code> can mostly be converted back with <code>cellstr</code>.
-For example:
+converted through <code>strvcat</code> can mostly be converted back with
+<code>cellstr</code>.  For example:
 </p>
 <div class="example">
 <pre class="example">strvcat ([97, 98, 99], &quot;&quot;, {&quot;98&quot;, &quot;99&quot;, 100}, &quot;str1&quot;, [&quot;ha&quot;, &quot;lf&quot;])
@@ -231,11 +231,12 @@ For example:
 <a name="XREFstrcat"></a><dl>
 <dt><a name="index-strcat"></a>Function File: <em></em> <strong>strcat</strong> <em>(<var>s1</var>, <var>s2</var>, &hellip;)</em></dt>
 <dd><p>Return a string containing all the arguments concatenated
-horizontally.  If the arguments are cell strings, <code>strcat</code>
-returns a cell string with the individual cells concatenated.
-For numerical input, each element is converted to the
-corresponding ASCII character.  Trailing white space for any
-character string input is eliminated before the strings are
+horizontally.
+</p>
+<p>If the arguments are cell strings, <code>strcat</code> returns a cell string
+with the individual cells concatenated.  For numerical input, each element
+is converted to the corresponding ASCII character.  Trailing white space
+for any character string input is eliminated before the strings are
 concatenated.  Note that cell string values do <strong>not</strong> have
 whitespace trimmed.
 </p>
@@ -270,7 +271,7 @@ strcat (s, s, s)
     &rArr;
         {
           [1,1] = ababab
-          [2,1] = cd cd cd 
+          [2,1] = cd cd cd
         }
 </pre></div>
 
@@ -281,8 +282,10 @@ strcat (s, s, s)
 
 <a name="XREFcstrcat"></a><dl>
 <dt><a name="index-cstrcat"></a>Function File: <em></em> <strong>cstrcat</strong> <em>(<var>s1</var>, <var>s2</var>, &hellip;)</em></dt>
-<dd><p>Return a string containing all the arguments concatenated
-horizontally.  Trailing white space is preserved.  For example:
+<dd><p>Return a string containing all the arguments concatenated horizontally
+with trailing white space preserved.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">cstrcat (&quot;ab   &quot;, &quot;cd&quot;)

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -84,17 +83,19 @@ provides such an algorithm.
 <dt><a name="index-polyval-2"></a>Function File: <em>[<var>y</var>, <var>dy</var>] =</em> <strong>polyval</strong> <em>(<var>p</var>, <var>x</var>, <var>s</var>)</em></dt>
 <dt><a name="index-polyval-3"></a>Function File: <em>[<var>y</var>, <var>dy</var>] =</em> <strong>polyval</strong> <em>(<var>p</var>, <var>x</var>, <var>s</var>, <var>mu</var>)</em></dt>
 <dd>
-<p>Evaluate the polynomial <var>p</var> at the specified values of <var>x</var>.  When
-<var>mu</var> is present, evaluate the polynomial for
-(<var>x</var>-<var>mu</var>(1))/<var>mu</var>(2).
-If <var>x</var> is a vector or matrix, the polynomial is evaluated for each of
+<p>Evaluate the polynomial <var>p</var> at the specified values of <var>x</var>.
+</p>
+<p>If <var>x</var> is a vector or matrix, the polynomial is evaluated for each of
 the elements of <var>x</var>.
 </p>
-<p>In addition to evaluating the polynomial, the second output
-represents the prediction interval, <var>y</var> +/- <var>dy</var>, which
-contains at least 50% of the future predictions.  To calculate the
-prediction interval, the structured variable <var>s</var>, originating
-from <code>polyfit</code>, must be supplied.
+<p>When <var>mu</var> is present, evaluate the polynomial for
+(<var>x</var>-<var>mu</var>(1))/<var>mu</var>(2).
+</p>
+<p>In addition to evaluating the polynomial, the second output represents the
+prediction interval, <var>y</var> +/- <var>dy</var>, which contains at least 50% of
+the future predictions.  To calculate the prediction interval, the
+structured variable <var>s</var>, originating from <code>polyfit</code>, must be
+supplied.
 </p>
 
 <p><strong>See also:</strong> <a href="#XREFpolyvalm">polyvalm</a>, <a href="Derivatives-_002f-Integrals-_002f-Transforms.html#XREFpolyaffine">polyaffine</a>, <a href="Polynomial-Interpolation.html#XREFpolyfit">polyfit</a>, <a href="Finding-Roots.html#XREFroots">roots</a>, <a href="Miscellaneous-Functions.html#XREFpoly">poly</a>.

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -110,25 +109,28 @@ distribution on [2,4] and <var>x</var>, use
 <dd><p>Perform a PP-plot (probability plot).
 </p>
 <p>If F is the CDF of the distribution <var>dist</var> with parameters
-<var>params</var> and <var>x</var> a sample vector of length <var>n</var>, the
-PP-plot graphs ordinate <var>y</var>(<var>i</var>) = F (<var>i</var>-th largest
-element of <var>x</var>) versus abscissa <var>p</var>(<var>i</var>) = (<var>i</var> -
-0.5)/<var>n</var>.  If the sample comes from F, the pairs will
-approximately follow a straight line.
+<var>params</var> and <var>x</var> a sample vector of length <var>n</var>, the PP-plot
+graphs ordinate <var>y</var>(<var>i</var>) = F (<var>i</var>-th largest element of
+<var>x</var>) versus abscissa <var>p</var>(<var>i</var>) = (<var>i</var> - 0.5)/<var>n</var>.  If
+the sample comes from F, the pairs will approximately follow a straight
+line.
 </p>
-<p>The default for <var>dist</var> is the standard normal distribution.  The
-optional argument <var>params</var> contains a list of parameters of
-<var>dist</var>.  For example, for a probability plot of the uniform
-distribution on [2,4] and <var>x</var>, use
+<p>The default for <var>dist</var> is the standard normal distribution.
+</p>
+<p>The optional argument <var>params</var> contains a list of parameters of
+<var>dist</var>.
+</p>
+<p>For example, for a probability plot of the uniform distribution on [2,4]
+and <var>x</var>, use
 </p>
 <div class="example">
 <pre class="example">ppplot (x, &quot;uniform&quot;, 2, 4)
 </pre></div>
 
-<p><var>dist</var> can be any string for which a function <var>dist_cdf</var>
-that calculates the CDF of distribution <var>dist</var> exists.
+<p><var>dist</var> can be any string for which a function <var>dist_cdf</var> that
+calculates the CDF of distribution <var>dist</var> exists.
 </p>
-<p>If no output arguments are given, the data are plotted directly.
+<p>If no output is requested then the data are plotted immediately.
 </p></dd></dl>
 
 

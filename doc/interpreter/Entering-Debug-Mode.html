@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -61,10 +60,10 @@ Next: <a href="Leaving-Debug-Mode.html#Leaving-Debug-Mode" accesskey="n" rel="ne
 
 <p>There are two basic means of interrupting the execution of an Octave
 script.  These are breakpoints (see <a href="Breakpoints.html#Breakpoints">Breakpoints</a>), discussed in the next
-section and interruption based on some condition.
+section, and interruption based on some condition.
 </p>
 <p>Octave supports three means to stop execution based on the values set in
-the functions <code>debug_on_interrupt</code>, <code>debug_on_warning</code> and
+the functions <code>debug_on_interrupt</code>, <code>debug_on_warning</code>, and
 <code>debug_on_error</code>.
 </p>
 <a name="XREFdebug_005fon_005finterrupt"></a><dl>
@@ -73,11 +72,13 @@ the functions <code>debug_on_interrupt</code>, <code>debug_on_warning</code> and
 <dt><a name="index-debug_005fon_005finterrupt-2"></a>Built-in Function: <em></em> <strong>debug_on_interrupt</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that controls whether Octave will try
 to enter debugging mode when it receives an interrupt signal (typically
-generated with <kbd>C-c</kbd>).  If a second interrupt signal is received
-before reaching the debugging mode, a normal interrupt will occur.
+generated with <kbd>C-c</kbd>).
+</p>
+<p>If a second interrupt signal is received before reaching the debugging mode,
+a normal interrupt will occur.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 <p><strong>See also:</strong> <a href="#XREFdebug_005fon_005ferror">debug_on_error</a>, <a href="#XREFdebug_005fon_005fwarning">debug_on_warning</a>.
@@ -92,7 +93,7 @@ The original variable value is restored when exiting the function.
 to enter the debugger when a warning is encountered.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 <p><strong>See also:</strong> <a href="#XREFdebug_005fon_005ferror">debug_on_error</a>, <a href="#XREFdebug_005fon_005finterrupt">debug_on_interrupt</a>.
@@ -104,12 +105,13 @@ The original variable value is restored when exiting the function.
 <dt><a name="index-debug_005fon_005ferror-1"></a>Built-in Function: <em><var>old_val</var> =</em> <strong>debug_on_error</strong> <em>(<var>new_val</var>)</em></dt>
 <dt><a name="index-debug_005fon_005ferror-2"></a>Built-in Function: <em></em> <strong>debug_on_error</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that controls whether Octave will try
-to enter the debugger when an error is encountered.  This will also
-inhibit printing of the normal traceback message (you will only see
-the top-level error message).
+to enter the debugger when an error is encountered.
+</p>
+<p>This will also inhibit printing of the normal traceback message (you will
+only see the top-level error message).
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 <p><strong>See also:</strong> <a href="#XREFdebug_005fon_005fwarning">debug_on_warning</a>, <a href="#XREFdebug_005fon_005finterrupt">debug_on_interrupt</a>.

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -68,50 +67,64 @@ and <a href="Interpolation-on-Scattered-Data.html#Interpolation-on-Scattered-Dat
 <dt><a name="index-interp1-1"></a>Function File: <em><var>yi</var> =</em> <strong>interp1</strong> <em>(<var>y</var>, <var>xi</var>)</em></dt>
 <dt><a name="index-interp1-2"></a>Function File: <em><var>yi</var> =</em> <strong>interp1</strong> <em>(&hellip;, <var>method</var>)</em></dt>
 <dt><a name="index-interp1-3"></a>Function File: <em><var>yi</var> =</em> <strong>interp1</strong> <em>(&hellip;, <var>extrap</var>)</em></dt>
-<dt><a name="index-interp1-4"></a>Function File: <em><var>pp</var> =</em> <strong>interp1</strong> <em>(&hellip;, &quot;pp&quot;)</em></dt>
+<dt><a name="index-interp1-4"></a>Function File: <em><var>yi</var> =</em> <strong>interp1</strong> <em>(&hellip;, &quot;left&quot;)</em></dt>
+<dt><a name="index-interp1-5"></a>Function File: <em><var>yi</var> =</em> <strong>interp1</strong> <em>(&hellip;, &quot;right&quot;)</em></dt>
+<dt><a name="index-interp1-6"></a>Function File: <em><var>pp</var> =</em> <strong>interp1</strong> <em>(&hellip;, &quot;pp&quot;)</em></dt>
 <dd>
-<p>One-dimensional interpolation.  Interpolates to determine the value of
-<var>yi</var> at the points, <var>xi</var>.  If not specified, <var>x</var> is taken
-to be the indices of <var>y</var>.  If <var>y</var> is a matrix or an N-dimensional
+<p>One-dimensional interpolation.
+</p>
+<p>Interpolate input data to determine the value of <var>yi</var> at the points
+<var>xi</var>.  If not specified, <var>x</var> is taken to be the indices of <var>y</var>
+(<code>1:length (<var>y</var>)</code>).  If <var>y</var> is a matrix or an N-dimensional
 array, the interpolation is performed on each column of <var>y</var>.
 </p>
-<p>Method is one of:
+<p>The interpolation <var>method</var> is one of:
 </p>
 <dl compact="compact">
 <dt><code>&quot;nearest&quot;</code></dt>
 <dd><p>Return the nearest neighbor.
 </p>
 </dd>
-<dt><code>&quot;linear&quot;</code></dt>
-<dd><p>Linear interpolation from nearest neighbors
+<dt><code>&quot;previous&quot;</code></dt>
+<dd><p>Return the previous neighbor.
+</p>
+</dd>
+<dt><code>&quot;next&quot;</code></dt>
+<dd><p>Return the next neighbor.
+</p>
+</dd>
+<dt><code>&quot;linear&quot;</code> (default)</dt>
+<dd><p>Linear interpolation from nearest neighbors.
 </p>
 </dd>
 <dt><code>&quot;pchip&quot;</code></dt>
-<dd><p>Piecewise cubic Hermite interpolating polynomial
+<dd><p>Piecewise cubic Hermite interpolating polynomial&mdash;shape-preserving
+interpolation with smooth first derivative.
 </p>
 </dd>
 <dt><code>&quot;cubic&quot;</code></dt>
-<dd><p>Cubic interpolation (same as <code>pchip</code>)
+<dd><p>Cubic interpolation (same as <code>&quot;pchip&quot;</code>).
 </p>
 </dd>
 <dt><code>&quot;spline&quot;</code></dt>
 <dd><p>Cubic spline interpolation&mdash;smooth first and second derivatives
-throughout the curve
+throughout the curve.
 </p></dd>
 </dl>
 
-<p>Appending &rsquo;*&rsquo; to the start of the above method forces <code>interp1</code>
+<p>Adding &rsquo;*&rsquo; to the start of any method above forces <code>interp1</code>
 to assume that <var>x</var> is uniformly spaced, and only <code><var>x</var>(1)</code>
 and <code><var>x</var>(2)</code> are referenced.  This is usually faster,
 and is never slower.  The default method is <code>&quot;linear&quot;</code>.
 </p>
 <p>If <var>extrap</var> is the string <code>&quot;extrap&quot;</code>, then extrapolate values
-beyond the endpoints.  If <var>extrap</var> is a number, replace values beyond
-the endpoints with that number.  If <var>extrap</var> is missing, assume NA.
+beyond the endpoints using the current <var>method</var>.  If <var>extrap</var> is a
+number, then replace values beyond the endpoints with that number.  When
+unspecified, <var>extrap</var> defaults to <code>NA</code>.
 </p>
-<p>If the string argument <code>&quot;pp&quot;</code> is specified, then <var>xi</var> should not be
-supplied and <code>interp1</code> returns the piecewise polynomial that
-can later be used with <code>ppval</code> to evaluate the interpolation.
+<p>If the string argument <code>&quot;pp&quot;</code> is specified, then <var>xi</var> should not
+be supplied and <code>interp1</code> returns a piecewise polynomial object.  This
+object can later be used with <code>ppval</code> to evaluate the interpolation.
 There is an equivalence, such that <code>ppval (interp1 (<var>x</var>,
 <var>y</var>, <var>method</var>, <code>&quot;pp&quot;</code>), <var>xi</var>) == interp1 (<var>x</var>, <var>y</var>,
 <var>xi</var>, <var>method</var>, <code>&quot;extrap&quot;</code>)</code>.
@@ -122,7 +135,7 @@ If <var>x</var> is increasing, the default discontinuous interpolant is
 right-continuous.  If <var>x</var> is decreasing, the default discontinuous
 interpolant is left-continuous.
 The continuity condition of the interpolant may be specified by using
-the options, <code>&quot;-left&quot;</code> or <code>&quot;-right&quot;</code>, to select a left-continuous
+the options <code>&quot;left&quot;</code> or <code>&quot;right&quot;</code> to select a left-continuous
 or right-continuous interpolant, respectively.
 Discontinuous interpolation is only allowed for <code>&quot;nearest&quot;</code> and
 <code>&quot;linear&quot;</code> methods; in all other cases, the <var>x</var>-values must be
@@ -136,16 +149,16 @@ yf = sin (2*pi*xf/5);
 xp = [0:10];
 yp = sin (2*pi*xp/5);
 lin = interp1 (xp, yp, xf);
-spl = interp1 (xp, yp, xf, &quot;spline&quot;);
-cub = interp1 (xp, yp, xf, &quot;cubic&quot;);
 near = interp1 (xp, yp, xf, &quot;nearest&quot;);
-plot (xf, yf, &quot;r&quot;, xf, lin, &quot;g&quot;, xf, spl, &quot;b&quot;,
-      xf, cub, &quot;c&quot;, xf, near, &quot;m&quot;, xp, yp, &quot;r*&quot;);
-legend (&quot;original&quot;, &quot;linear&quot;, &quot;spline&quot;, &quot;cubic&quot;, &quot;nearest&quot;);
+pch = interp1 (xp, yp, xf, &quot;pchip&quot;);
+spl = interp1 (xp, yp, xf, &quot;spline&quot;);
+plot (xf,yf,&quot;r&quot;, xf,near,&quot;g&quot;, xf,lin,&quot;b&quot;, xf,pch,&quot;c&quot;, xf,spl,&quot;m&quot;,
+      xp,yp,&quot;r*&quot;);
+legend (&quot;original&quot;, &quot;nearest&quot;, &quot;linear&quot;, &quot;pchip&quot;, &quot;spline&quot;);
 </pre></div>
 
 
-<p><strong>See also:</strong> <a href="#XREFinterpft">interpft</a>.
+<p><strong>See also:</strong> <a href="Signal-Processing.html#XREFpchip">pchip</a>, <a href="#XREFspline">spline</a>, <a href="#XREFinterpft">interpft</a>, <a href="Multi_002ddimensional-Interpolation.html#XREFinterp2">interp2</a>, <a href="Multi_002ddimensional-Interpolation.html#XREFinterp3">interp3</a>, <a href="Multi_002ddimensional-Interpolation.html#XREFinterpn">interpn</a>.
 </p></dd></dl>
 
 
@@ -184,12 +197,12 @@ legend (&quot;spline&quot;, &quot;pchip&quot;);
 <div class="float"><a name="fig_003ainterpderiv1"></a>
 <div align="center"><img src="interpderiv1.png" alt="interpderiv1">
 </div>
-<div class="float-caption"><p><strong>Figure 29.1: </strong>Comparison of <code>&quot;pchip&quot;</code> and <code>&quot;spline&quot;</code> interpolation methods for a 
+<div class="float-caption"><p><strong>Figure 29.1: </strong>Comparison of <code>&quot;pchip&quot;</code> and <code>&quot;spline&quot;</code> interpolation methods for a
 step function</p></div></div>
 <div class="float"><a name="fig_003ainterpderiv2"></a>
 <div align="center"><img src="interpderiv2.png" alt="interpderiv2">
 </div>
-<div class="float-caption"><p><strong>Figure 29.2: </strong>Comparison of the second derivative of the <code>&quot;pchip&quot;</code> and <code>&quot;spline&quot;</code> 
+<div class="float-caption"><p><strong>Figure 29.2: </strong>Comparison of the second derivative of the <code>&quot;pchip&quot;</code> and <code>&quot;spline&quot;</code>
 interpolation methods for a step function</p></div></div>
 <p>Fourier interpolation, is a resampling technique where a signal is
 converted to the frequency domain, padded with zeros and then
@@ -199,23 +212,25 @@ reconverted to the time domain.
 <dt><a name="index-interpft"></a>Function File: <em></em> <strong>interpft</strong> <em>(<var>x</var>, <var>n</var>)</em></dt>
 <dt><a name="index-interpft-1"></a>Function File: <em></em> <strong>interpft</strong> <em>(<var>x</var>, <var>n</var>, <var>dim</var>)</em></dt>
 <dd>
-<p>Fourier interpolation.  If <var>x</var> is a vector, then <var>x</var> is
-resampled with <var>n</var> points.  The data in <var>x</var> is assumed to be
-equispaced.  If <var>x</var> is a matrix or an N-dimensional array, the
-interpolation is performed on each column of <var>x</var>.  If <var>dim</var> is
-specified, then interpolate along the dimension <var>dim</var>.
+<p>Fourier interpolation.
 </p>
-<p><code>interpft</code> assumes that the interpolated function is periodic,
-and so assumptions are made about the endpoints of the interpolation.
+<p>If <var>x</var> is a vector then <var>x</var> is resampled with <var>n</var> points.  The
+data in <var>x</var> is assumed to be equispaced.  If <var>x</var> is a matrix or an
+N-dimensional array, the interpolation is performed on each column of
+<var>x</var>.
 </p>
-
+<p>If <var>dim</var> is specified, then interpolate along the dimension <var>dim</var>.
+</p>
+<p><code>interpft</code> assumes that the interpolated function is periodic, and so
+assumptions are made about the endpoints of the interpolation.
+</p>
 <p><strong>See also:</strong> <a href="#XREFinterp1">interp1</a>.
 </p></dd></dl>
 
 
-<p>There are two significant limitations on Fourier interpolation.  Firstly,
+<p>There are two significant limitations on Fourier interpolation.  First,
 the function signal is assumed to be periodic, and so non-periodic
-signals will be poorly represented at the edges.  Secondly, both the
+signals will be poorly represented at the edges.  Second, both the
 signal and its interpolation are required to be sampled at equispaced
 points.  An example of the use of <code>interpft</code> is
 </p>
@@ -247,18 +262,21 @@ underlie the <code>interp1</code> function can be called directly.
 </p>
 <p>When called with two arguments, return the piecewise polynomial <var>pp</var>
 that may be used with <code>ppval</code> to evaluate the polynomial at specific
-points.  When called with a third input argument, <code>spline</code> evaluates
-the spline at the points <var>xi</var>.  The third calling form <code>spline
-(<var>x</var>, <var>y</var>, <var>xi</var>)</code> is equivalent to <code>ppval (spline
-(<var>x</var>, <var>y</var>), <var>xi</var>)</code>.
+points.
 </p>
-<p>The variable <var>x</var> must be a vector of length <var>n</var>.  <var>y</var> can be
-either a vector or array.  If <var>y</var> is a vector it must have a length of
-either <var>n</var> or <code><var>n</var> + 2</code>.  If the length of <var>y</var> is
-<var>n</var>, then the &quot;not-a-knot&quot; end condition is used.  If the length of
-<var>y</var> is <code><var>n</var> + 2</code>, then the first and last values of the
-vector <var>y</var> are the values of the first derivative of the cubic spline
-at the endpoints.
+<p>When called with a third input argument, <code>spline</code> evaluates the spline
+at the points <var>xi</var>.  The third calling form
+<code>spline (<var>x</var>, <var>y</var>, <var>xi</var>)</code> is equivalent to
+<code>ppval (spline (<var>x</var>, <var>y</var>), <var>xi</var>)</code>.
+</p>
+<p>The variable <var>x</var> must be a vector of length <var>n</var>.
+</p>
+<p><var>y</var> can be either a vector or array.  If <var>y</var> is a vector it must
+have a length of either <var>n</var> or <code><var>n</var> + 2</code>.  If the length of
+<var>y</var> is <var>n</var>, then the <code>&quot;not-a-knot&quot;</code> end condition is used.
+If the length of <var>y</var> is <code><var>n</var> + 2</code>, then the first and last
+values of the vector <var>y</var> are the values of the first derivative of the
+cubic spline at the endpoints.
 </p>
 <p>If <var>y</var> is an array, then the size of <var>y</var> must have the form
 <code>[<var>s1</var>, <var>s2</var>, &hellip;, <var>sk</var>, <var>n</var>]</code>
@@ -267,8 +285,8 @@ or
 The array is reshaped internally to a matrix where the leading
 dimension is given by
 <code><var>s1</var> * <var>s2</var> * &hellip; * <var>sk</var></code>
-and each row of this matrix is then treated separately.  Note that this
-is exactly opposite to <code>interp1</code> but is done for <small>MATLAB</small>
+and each row of this matrix is then treated separately.  Note that this is
+exactly the opposite of <code>interp1</code> but is done for <small>MATLAB</small>
 compatibility.
 </p>
 

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -75,15 +74,16 @@ higher-level functions.
 <dt><a name="index-system-2"></a>Built-in Function: <em></em> <strong>system</strong> <em>(&quot;<var>string</var>&quot;, <var>return_output</var>, <var>type</var>)</em></dt>
 <dt><a name="index-system-3"></a>Built-in Function: <em>[<var>status</var>, <var>output</var>] =</em> <strong>system</strong> <em>(&hellip;)</em></dt>
 <dd><p>Execute a shell command specified by <var>string</var>.
-If the optional argument <var>type</var> is <code>&quot;async&quot;</code>, the process
-is started in the background and the process ID of the child process
-is returned immediately.  Otherwise, the child process is started and
-Octave waits until it exits.  If the <var>type</var> argument is omitted, it
-defaults to the value <code>&quot;sync&quot;</code>.
+</p>
+<p>If the optional argument <var>type</var> is <code>&quot;async&quot;</code>, the process is
+started in the background and the process ID of the child process is
+returned immediately.  Otherwise, the child process is started and Octave
+waits until it exits.  If the <var>type</var> argument is omitted, it defaults to
+the value <code>&quot;sync&quot;</code>.
 </p>
 <p>If <var>system</var> is called with one or more output arguments, or if the
 optional argument <var>return_output</var> is true and the subprocess is started
-synchronously, then the output from the command is returned as a variable.  
+synchronously, then the output from the command is returned as a variable.
 Otherwise, if the subprocess is executed synchronously, its output is sent
 to the standard output.  To send the output of a command executed with
 <code>system</code> through the pager, use a command like
@@ -122,13 +122,16 @@ command shell that is started to run the command.
 <dt><a name="index-unix-1"></a>Function File: <em><var>status</var> =</em> <strong>unix</strong> <em>(&quot;<var>command</var>&quot;)</em></dt>
 <dt><a name="index-unix-2"></a>Function File: <em>[<var>status</var>, <var>text</var>] =</em> <strong>unix</strong> <em>(&quot;<var>command</var>&quot;)</em></dt>
 <dt><a name="index-unix-3"></a>Function File: <em>[&hellip;] =</em> <strong>unix</strong> <em>(&quot;<var>command</var>&quot;, &quot;-echo&quot;)</em></dt>
-<dd><p>Execute a system command if running under a Unix-like operating
-system, otherwise do nothing.  Return the exit status of the program
-in <var>status</var> and any output from the command in <var>text</var>.
-When called with no output argument, or the <code>&quot;-echo&quot;</code> argument is
+<dd><p>Execute a system command if running under a Unix-like operating system,
+otherwise do nothing.
+</p>
+<p>Octave waits for the external command to finish before returning the exit
+status of the program in <var>status</var> and any output in <var>text</var>.
+</p>
+<p>When called with no output argument, or the <code>&quot;-echo&quot;</code> argument is
 given, then <var>text</var> is also sent to standard output.
 </p>
-<p><strong>See also:</strong> <a href="#XREFdos">dos</a>, <a href="#XREFsystem">system</a>, <a href="System-Information.html#XREFisunix">isunix</a>, <a href="System-Information.html#XREFispc">ispc</a>.
+<p><strong>See also:</strong> <a href="#XREFdos">dos</a>, <a href="#XREFsystem">system</a>, <a href="System-Information.html#XREFisunix">isunix</a>, <a href="System-Information.html#XREFismac">ismac</a>, <a href="System-Information.html#XREFispc">ispc</a>.
 </p></dd></dl>
 
 
@@ -137,13 +140,42 @@ given, then <var>text</var> is also sent to standard output.
 <dt><a name="index-dos-1"></a>Function File: <em><var>status</var> =</em> <strong>dos</strong> <em>(&quot;<var>command</var>&quot;)</em></dt>
 <dt><a name="index-dos-2"></a>Function File: <em>[<var>status</var>, <var>text</var>] =</em> <strong>dos</strong> <em>(&quot;<var>command&quot;</var>)</em></dt>
 <dt><a name="index-dos-3"></a>Function File: <em>[&hellip;] =</em> <strong>dos</strong> <em>(&quot;<var>command</var>&quot;, &quot;-echo&quot;)</em></dt>
-<dd><p>Execute a system command if running under a Windows-like operating
-system, otherwise do nothing.  Return the exit status of the program
-in <var>status</var> and any output from the command in <var>text</var>.
-When called with no output argument, or the <code>&quot;-echo&quot;</code> argument is
+<dd><p>Execute a system command if running under a Windows-like operating system,
+otherwise do nothing.
+</p>
+<p>Octave waits for the external command to finish before returning the exit
+status of the program in <var>status</var> and any output in <var>text</var>.
+</p>
+<p>When called with no output argument, or the <code>&quot;-echo&quot;</code> argument is
 given, then <var>text</var> is also sent to standard output.
 </p>
-<p><strong>See also:</strong> <a href="#XREFunix">unix</a>, <a href="#XREFsystem">system</a>, <a href="System-Information.html#XREFisunix">isunix</a>, <a href="System-Information.html#XREFispc">ispc</a>.
+<p><strong>See also:</strong> <a href="#XREFunix">unix</a>, <a href="#XREFsystem">system</a>, <a href="System-Information.html#XREFisunix">isunix</a>, <a href="System-Information.html#XREFismac">ismac</a>, <a href="System-Information.html#XREFispc">ispc</a>.
+</p></dd></dl>
+
+
+<a name="XREFopen"></a><dl>
+<dt><a name="index-open"></a>Function File: <em><var>output</var> =</em> <strong>open</strong> <em><var>file</var></em></dt>
+<dt><a name="index-open-1"></a>Function File: <em><var>output</var> =</em> <strong>open</strong> <em>(<var>file</var>)</em></dt>
+<dd><p>Open the file <var>file</var> in Octave or in an external application based on
+the file type as determined by the file name extension.
+</p>
+<p>Recognized file types are
+</p>
+<dl compact="compact">
+<dt><code>.m</code></dt>
+<dd><p>Open file in the editor.
+</p>
+</dd>
+<dt><code>.mat</code></dt>
+<dd><p>Load the file in the base workspace.
+</p>
+</dd>
+<dt><code>.exe</code></dt>
+<dd><p>Execute the program (on Windows systems only).
+</p></dd>
+</dl>
+
+<p>Other file types are opened in the appropriate external application.
 </p></dd></dl>
 
 
@@ -152,9 +184,11 @@ given, then <var>text</var> is also sent to standard output.
 <dt><a name="index-perl-1"></a>Function File: <em><var>output</var> =</em> <strong>perl</strong> <em>(<var>scriptfile</var>, <var>argument1</var>, <var>argument2</var>, &hellip;)</em></dt>
 <dt><a name="index-perl-2"></a>Function File: <em>[<var>output</var>, <var>status</var>] =</em> <strong>perl</strong> <em>(&hellip;)</em></dt>
 <dd><p>Invoke Perl script <var>scriptfile</var>, possibly with a list of command line
-arguments.  Return output in <var>output</var> and optional status in
-<var>status</var>.  If <var>scriptfile</var> is not an absolute file name it is
-is searched for in the current directory and then in the Octave loadpath.
+arguments.
+</p>
+<p>Return output in <var>output</var> and optional status in <var>status</var>.  If
+<var>scriptfile</var> is not an absolute file name it is searched for in the
+current directory and then in the Octave loadpath.
 </p>
 <p><strong>See also:</strong> <a href="#XREFsystem">system</a>, <a href="#XREFpython">python</a>.
 </p></dd></dl>
@@ -165,9 +199,11 @@ is searched for in the current directory and then in the Octave loadpath.
 <dt><a name="index-python-1"></a>Function File: <em><var>output</var> =</em> <strong>python</strong> <em>(<var>scriptfile</var>, <var>argument1</var>, <var>argument2</var>, &hellip;)</em></dt>
 <dt><a name="index-python-2"></a>Function File: <em>[<var>output</var>, <var>status</var>] =</em> <strong>python</strong> <em>(&hellip;)</em></dt>
 <dd><p>Invoke Python script <var>scriptfile</var>, possibly with a list of command line
-arguments.  Return output in <var>output</var> and optional status in
-<var>status</var>.  If <var>scriptfile</var> is not an absolute file name it is
-is searched for in the current directory and then in the Octave loadpath.
+arguments.
+</p>
+<p>Return output in <var>output</var> and optional status in <var>status</var>.  If
+<var>scriptfile</var> is not an absolute file name it is searched for in the
+current directory and then in the Octave loadpath.
 </p>
 <p><strong>See also:</strong> <a href="#XREFsystem">system</a>, <a href="#XREFperl">perl</a>.
 </p></dd></dl>
@@ -175,9 +211,9 @@ is searched for in the current directory and then in the Octave loadpath.
 
 <a name="XREFpopen"></a><dl>
 <dt><a name="index-popen"></a>Built-in Function: <em><var>fid</var> =</em> <strong>popen</strong> <em>(<var>command</var>, <var>mode</var>)</em></dt>
-<dd><p>Start a process and create a pipe.  The name of the command to run is
-given by <var>command</var>.  The file identifier corresponding to the input
-or output stream of the process is returned in <var>fid</var>.  The argument
+<dd><p>Start a process and create a pipe.
+</p>
+<p>The name of the command to run is given by <var>command</var>.  The argument
 <var>mode</var> may be
 </p>
 <dl compact="compact">
@@ -192,6 +228,9 @@ open for writing.
 </p></dd>
 </dl>
 
+<p>The file identifier corresponding to the input or output stream of the
+process is returned in <var>fid</var>.
+</p>
 <p>For example:
 </p>
 <div class="example">
@@ -204,25 +243,32 @@ endwhile
    -| drwxr-xr-x   3 root  root  1024 Feb 15 13:28 lib
    -| drwxrwxrwt  15 root  root  2048 Feb 17 14:53 tmp
 </pre></div>
-</dd></dl>
+
+<p><strong>See also:</strong> <a href="#XREFpopen2">popen2</a>.
+</p></dd></dl>
 
 
 <a name="XREFpclose"></a><dl>
 <dt><a name="index-pclose"></a>Built-in Function: <em></em> <strong>pclose</strong> <em>(<var>fid</var>)</em></dt>
-<dd><p>Close a file identifier that was opened by <code>popen</code>.  You may also
-use <code>fclose</code> for the same purpose.
+<dd><p>Close a file identifier that was opened by <code>popen</code>.
+</p>
+<p>The function <code>fclose</code> may also be used for the same purpose.
+</p>
+<p><strong>See also:</strong> <a href="Opening-and-Closing-Files.html#XREFfclose">fclose</a>, <a href="#XREFpopen">popen</a>.
 </p></dd></dl>
 
 
 <a name="XREFpopen2"></a><dl>
 <dt><a name="index-popen2"></a>Built-in Function: <em>[<var>in</var>, <var>out</var>, <var>pid</var>] =</em> <strong>popen2</strong> <em>(<var>command</var>, <var>args</var>)</em></dt>
-<dd><p>Start a subprocess with two-way communication.  The name of the process
-is given by <var>command</var>, and <var>args</var> is an array of strings
-containing options for the command.  The file identifiers for the input
-and output streams of the subprocess are returned in <var>in</var> and
-<var>out</var>.  If execution of the command is successful, <var>pid</var>
-contains the process ID of the subprocess.  Otherwise, <var>pid</var> is
--1.
+<dd><p>Start a subprocess with two-way communication.
+</p>
+<p>The name of the process is given by <var>command</var>, and <var>args</var> is an
+array of strings containing options for the command.
+</p>
+<p>The file identifiers for the input and output streams of the subprocess are
+returned in <var>in</var> and <var>out</var>.  If execution of the command is
+successful, <var>pid</var> contains the process ID of the subprocess.  Otherwise,
+<var>pid</var> is -1.
 </p>
 <p>For example:
 </p>
@@ -266,12 +312,14 @@ exit status, it will linger until Octave exits.
 <dt><a name="index-EXEC_005fPATH-2"></a>Built-in Function: <em></em> <strong>EXEC_PATH</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that specifies a colon separated
 list of directories to append to the shell PATH when executing external
-programs.  The initial value of is taken from the environment variable
-<code><span class="nolinebreak">OCTAVE_EXEC_PATH</span></code><!-- /@w -->, but that value can be overridden by
-the command line argument <samp>--exec-path PATH</samp>.
+programs.
+</p>
+<p>The initial value of is taken from the environment variable
+<code><span class="nolinebreak">OCTAVE_EXEC_PATH</span></code><!-- /@w -->, but that value can be overridden by the command
+line argument <samp>--exec-path PATH</samp>.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 
@@ -291,9 +339,9 @@ they can be used, look at the definition of the function <code>popen2</code>.
 </p>
 <dl compact="compact">
 <dt>&gt; 0</dt>
-<dd><p>You are in the parent process.  The value returned from <code>fork</code> is
-the process id of the child process.  You should probably arrange to
-wait for any child processes to exit.
+<dd><p>You are in the parent process.  The value returned from <code>fork</code> is the
+process id of the child process.  You should probably arrange to wait for
+any child processes to exit.
 </p>
 </dd>
 <dt>0</dt>
@@ -311,9 +359,11 @@ action.  A system dependent error message will be waiting in <var>msg</var>.
 
 <a name="XREFexec"></a><dl>
 <dt><a name="index-exec"></a>Built-in Function: <em>[<var>err</var>, <var>msg</var>] =</em> <strong>exec</strong> <em>(<var>file</var>, <var>args</var>)</em></dt>
-<dd><p>Replace current process with a new process.  Calling <code>exec</code> without
-first calling <code>fork</code> will terminate your current Octave process and
-replace it with the program named by <var>file</var>.  For example,
+<dd><p>Replace current process with a new process.
+</p>
+<p>Calling <code>exec</code> without first calling <code>fork</code> will terminate your
+current Octave process and replace it with the program named by <var>file</var>.
+For example,
 </p>
 <div class="example">
 <pre class="example">exec (&quot;ls&quot; &quot;-l&quot;)
@@ -329,12 +379,12 @@ error message.
 
 <a name="XREFpipe"></a><dl>
 <dt><a name="index-pipe"></a>Built-in Function: <em>[<var>read_fd</var>, <var>write_fd</var>, <var>err</var>, <var>msg</var>] =</em> <strong>pipe</strong> <em>()</em></dt>
-<dd><p>Create a pipe and return the reading and writing ends of the pipe
-into <var>read_fd</var> and <var>write_fd</var> respectively.
+<dd><p>Create a pipe and return the reading and writing ends of the pipe into
+<var>read_fd</var> and <var>write_fd</var> respectively.
 </p>
 <p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string.
-Otherwise, <var>err</var> is nonzero and <var>msg</var> contains a
-system-dependent error message.
+Otherwise, <var>err</var> is nonzero and <var>msg</var> contains a system-dependent
+error message.
 </p>
 <p><strong>See also:</strong> <a href="Filesystem-Utilities.html#XREFmkfifo">mkfifo</a>.
 </p></dd></dl>
@@ -344,15 +394,19 @@ system-dependent error message.
 <dt><a name="index-dup2"></a>Built-in Function: <em>[<var>fid</var>, <var>msg</var>] =</em> <strong>dup2</strong> <em>(<var>old</var>, <var>new</var>)</em></dt>
 <dd><p>Duplicate a file descriptor.
 </p>
-<p>If successful, <var>fid</var> is greater than zero and contains the new file
-ID.  Otherwise, <var>fid</var> is negative and <var>msg</var> contains a
-system-dependent error message.
+<p>If successful, <var>fid</var> is greater than zero and contains the new file ID.
+Otherwise, <var>fid</var> is negative and <var>msg</var> contains a system-dependent
+error message.
+</p>
+<p><strong>See also:</strong> <a href="Opening-and-Closing-Files.html#XREFfopen">fopen</a>, <a href="Opening-and-Closing-Files.html#XREFfclose">fclose</a>, <a href="#XREFfcntl">fcntl</a>.
 </p></dd></dl>
 
 
 <a name="XREFwaitpid"></a><dl>
 <dt><a name="index-waitpid"></a>Built-in Function: <em>[<var>pid</var>, <var>status</var>, <var>msg</var>] =</em> <strong>waitpid</strong> <em>(<var>pid</var>, <var>options</var>)</em></dt>
-<dd><p>Wait for process <var>pid</var> to terminate.  The <var>pid</var> argument can be:
+<dd><p>Wait for process <var>pid</var> to terminate.
+</p>
+<p>The <var>pid</var> argument can be:
 </p>
 <dl compact="compact">
 <dt>-1</dt>
@@ -360,8 +414,8 @@ system-dependent error message.
 </p>
 </dd>
 <dt>0</dt>
-<dd><p>Wait for any child process whose process group ID is equal to that of
-the Octave interpreter process.
+<dd><p>Wait for any child process whose process group ID is equal to that of the
+Octave interpreter process.
 </p>
 </dd>
 <dt>&gt; 0</dt>
@@ -369,13 +423,13 @@ the Octave interpreter process.
 </p></dd>
 </dl>
 
-<p>The <var>options</var> argument can be a bitwise OR of zero or more of
-the following constants:
+<p>The <var>options</var> argument can be a bitwise OR of zero or more of the
+following constants:
 </p>
 <dl compact="compact">
 <dt><code>0</code></dt>
-<dd><p>Wait until signal is received or a child process exits (this is the
-default if the <var>options</var> argument is missing).
+<dd><p>Wait until signal is received or a child process exits (this is the default
+if the <var>options</var> argument is missing).
 </p>
 </dd>
 <dt><code>WNOHANG</code></dt>
@@ -383,8 +437,8 @@ default if the <var>options</var> argument is missing).
 </p>
 </dd>
 <dt><code>WUNTRACED</code></dt>
-<dd><p>Report the status of any child processes that are stopped, and whose
-status has not yet been reported since they stopped.
+<dd><p>Report the status of any child processes that are stopped, and whose status
+has not yet been reported since they stopped.
 </p>
 </dd>
 <dt><code>WCONTINUE</code></dt>
@@ -393,11 +447,11 @@ This value may not be meaningful on all systems.
 </p></dd>
 </dl>
 
-<p>If the returned value of <var>pid</var> is greater than 0, it is the process
-ID of the child process that exited.  If an error occurs, <var>pid</var> will
-be less than zero and <var>msg</var> will contain a system-dependent error
-message.  The value of <var>status</var> contains additional system-dependent
-information about the subprocess that exited.
+<p>If the returned value of <var>pid</var> is greater than 0, it is the process ID
+of the child process that exited.  If an error occurs, <var>pid</var> will be
+less than zero and <var>msg</var> will contain a system-dependent error message.
+The value of <var>status</var> contains additional system-dependent information
+about the subprocess that exited.
 </p>
 <p><strong>See also:</strong> <a href="#XREFWCONTINUE">WCONTINUE</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWNOHANG">WNOHANG</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWUNTRACED">WUNTRACED</a>.
 </p></dd></dl>
@@ -406,9 +460,8 @@ information about the subprocess that exited.
 <a name="XREFWCONTINUE"></a><dl>
 <dt><a name="index-WCONTINUE"></a>Built-in Function: <em></em> <strong>WCONTINUE</strong> <em>()</em></dt>
 <dd><p>Return the numerical value of the option argument that may be
-passed to <code>waitpid</code> to indicate that it should also return
-if a stopped child has been resumed by delivery of a <code>SIGCONT</code>
-signal.
+passed to <code>waitpid</code> to indicate that it should also return if a stopped
+child has been resumed by delivery of a <code>SIGCONT</code> signal.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWNOHANG">WNOHANG</a>, <a href="#XREFWUNTRACED">WUNTRACED</a>.
 </p></dd></dl>
@@ -416,11 +469,12 @@ signal.
 
 <a name="XREFWCOREDUMP"></a><dl>
 <dt><a name="index-WCOREDUMP"></a>Built-in Function: <em></em> <strong>WCOREDUMP</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
-child produced a core dump.  This function should only be employed if
-<code>WIFSIGNALED</code> returned true.  The macro used to implement this
-function is not specified in POSIX.1-2001 and is not available on some
-Unix implementations (e.g., AIX, SunOS).
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+true if the child produced a core dump.
+</p>
+<p>This function should only be employed if <code>WIFSIGNALED</code> returned true.
+The macro used to implement this function is not specified in POSIX.1-2001
+and is not available on some Unix implementations (e.g., AIX, SunOS).
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWIFEXITED">WIFEXITED</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>.
 </p></dd></dl>
@@ -428,9 +482,10 @@ Unix implementations (e.g., AIX, SunOS).
 
 <a name="XREFWEXITSTATUS"></a><dl>
 <dt><a name="index-WEXITSTATUS"></a>Built-in Function: <em></em> <strong>WEXITSTATUS</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return the exit
-status of the child.  This function should only be employed if
-<code>WIFEXITED</code> returned true.
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+the exit status of the child.
+</p>
+<p>This function should only be employed if <code>WIFEXITED</code> returned true.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWIFEXITED">WIFEXITED</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>.
 </p></dd></dl>
@@ -438,17 +493,17 @@ status of the child.  This function should only be employed if
 
 <a name="XREFWIFCONTINUED"></a><dl>
 <dt><a name="index-WIFCONTINUED"></a>Built-in Function: <em></em> <strong>WIFCONTINUED</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
-child process was resumed by delivery of <code>SIGCONT</code>.
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+true if the child process was resumed by delivery of <code>SIGCONT</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWIFEXITED">WIFEXITED</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>.
 </p></dd></dl>
 
- 
+
 <a name="XREFWIFSIGNALED"></a><dl>
 <dt><a name="index-WIFSIGNALED"></a>Built-in Function: <em></em> <strong>WIFSIGNALED</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
-child process was terminated by a signal.
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+true if the child process was terminated by a signal.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWIFEXITED">WIFEXITED</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>.
 </p></dd></dl>
@@ -456,10 +511,11 @@ child process was terminated by a signal.
 
 <a name="XREFWIFSTOPPED"></a><dl>
 <dt><a name="index-WIFSTOPPED"></a>Built-in Function: <em></em> <strong>WIFSTOPPED</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
-child process was stopped by delivery of a signal; this is only
-possible if the call was done using <code>WUNTRACED</code> or when the child
-is being traced (see ptrace(2)).
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+true if the child process was stopped by delivery of a signal.
+</p>
+<p>This is only possible if the call was done using <code>WUNTRACED</code> or when
+the child is being traced (see ptrace(2)).
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWIFEXITED">WIFEXITED</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>.
 </p></dd></dl>
@@ -467,8 +523,8 @@ is being traced (see ptrace(2)).
 
 <a name="XREFWIFEXITED"></a><dl>
 <dt><a name="index-WIFEXITED"></a>Built-in Function: <em></em> <strong>WIFEXITED</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return true if the
-child terminated normally.
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+true if the child terminated normally.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>.
 </p></dd></dl>
@@ -477,8 +533,8 @@ child terminated normally.
 <a name="XREFWNOHANG"></a><dl>
 <dt><a name="index-WNOHANG"></a>Built-in Function: <em></em> <strong>WNOHANG</strong> <em>()</em></dt>
 <dd><p>Return the numerical value of the option argument that may be
-passed to <code>waitpid</code> to indicate that it should return its
-status immediately instead of waiting for a process to exit.
+passed to <code>waitpid</code> to indicate that it should return its status
+immediately instead of waiting for a process to exit.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWUNTRACED">WUNTRACED</a>, <a href="#XREFWCONTINUE">WCONTINUE</a>.
 </p></dd></dl>
@@ -486,19 +542,21 @@ status immediately instead of waiting for a process to exit.
 
 <a name="XREFWSTOPSIG"></a><dl>
 <dt><a name="index-WSTOPSIG"></a>Built-in Function: <em></em> <strong>WSTOPSIG</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return the number of
-the signal which caused the child to stop.  This function should only
-be employed if <code>WIFSTOPPED</code> returned true.
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+the number of the signal which caused the child to stop.
+</p>
+<p>This function should only be employed if <code>WIFSTOPPED</code> returned true.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWIFEXITED">WIFEXITED</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWTERMSIG">WTERMSIG</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>.
 </p></dd></dl>
 
- 
+
 <a name="XREFWTERMSIG"></a><dl>
 <dt><a name="index-WTERMSIG"></a>Built-in Function: <em></em> <strong>WTERMSIG</strong> <em>(<var>status</var>)</em></dt>
-<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return the number of
-the signal that caused the child process to terminate.  This function
-should only be employed if <code>WIFSIGNALED</code> returned true.
+<dd><p>Given <var>status</var> from a call to <code>waitpid</code>, return
+the number of the signal that caused the child process to terminate.
+</p>
+<p>This function should only be employed if <code>WIFSIGNALED</code> returned true.
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWIFEXITED">WIFEXITED</a>, <a href="#XREFWEXITSTATUS">WEXITSTATUS</a>, <a href="#XREFWIFSIGNALED">WIFSIGNALED</a>, <a href="#XREFWCOREDUMP">WCOREDUMP</a>, <a href="#XREFWIFSTOPPED">WIFSTOPPED</a>, <a href="#XREFWSTOPSIG">WSTOPSIG</a>, <a href="#XREFWIFCONTINUED">WIFCONTINUED</a>.
 </p></dd></dl>
@@ -507,9 +565,8 @@ should only be employed if <code>WIFSIGNALED</code> returned true.
 <a name="XREFWUNTRACED"></a><dl>
 <dt><a name="index-WUNTRACED"></a>Built-in Function: <em></em> <strong>WUNTRACED</strong> <em>()</em></dt>
 <dd><p>Return the numerical value of the option argument that may be
-passed to <code>waitpid</code> to indicate that it should also return
-if the child process has stopped but is not traced via the
-<code>ptrace</code> system call
+passed to <code>waitpid</code> to indicate that it should also return if the child
+process has stopped but is not traced via the <code>ptrace</code> system call
 </p>
 <p><strong>See also:</strong> <a href="#XREFwaitpid">waitpid</a>, <a href="#XREFWNOHANG">WNOHANG</a>, <a href="#XREFWCONTINUE">WCONTINUE</a>.
 </p></dd></dl>
@@ -517,8 +574,9 @@ if the child process has stopped but is not traced via the
 
 <a name="XREFfcntl"></a><dl>
 <dt><a name="index-fcntl"></a>Built-in Function: <em>[<var>err</var>, <var>msg</var>] =</em> <strong>fcntl</strong> <em>(<var>fid</var>, <var>request</var>, <var>arg</var>)</em></dt>
-<dd><p>Change the properties of the open file <var>fid</var>.  The following values
-may be passed as <var>request</var>:
+<dd><p>Change the properties of the open file <var>fid</var>.
+</p>
+<p>The following values may be passed as <var>request</var>:
 </p>
 <dl compact="compact">
 <dt><code>F_DUPFD</code>
@@ -599,15 +657,17 @@ returned (some of the flags may be undefined on some systems).
 <dt><code>F_SETFL</code>
 <a name="index-F_005fSETFL"></a>
 </dt>
-<dd><p>Set the file status flags for <var>fid</var> to the value specified by
-<var>arg</var>.  The only flags that can be changed are <code><span class="nolinebreak">O_APPEND</span></code><!-- /@w --> and
+<dd><p>Set the file status flags for <var>fid</var> to the value specified by <var>arg</var>.
+ The only flags that can be changed are <code><span class="nolinebreak">O_APPEND</span></code><!-- /@w --> and
 <code><span class="nolinebreak">O_NONBLOCK</span></code><!-- /@w -->.
 </p></dd>
 </dl>
 
-<p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string.
-Otherwise, <var>err</var> is nonzero and <var>msg</var> contains a
-system-dependent error message.
+<p>If successful, <var>err</var> is 0 and <var>msg</var> is an empty string.  Otherwise,
+<var>err</var> is nonzero and <var>msg</var> contains a system-dependent error
+message.
+</p>
+<p><strong>See also:</strong> <a href="Opening-and-Closing-Files.html#XREFfopen">fopen</a>, <a href="#XREFdup2">dup2</a>.
 </p></dd></dl>
 
 

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -74,7 +73,7 @@ lists should be aligned on the first char after the open parenthesis.
 You should put a space before the left open parenthesis and after commas,
 for both function definitions and function calls.
 </p>
-<p>Recommended indent is 2 spaces.  When indenting, indent the statement
+<p>The recommended indent is 2 spaces.  When indenting, indent the statement
 after control structures (like <code>if</code>, <code>while</code>, etc.).  If there
 is a compound statement, indent <em>both</em> the curly braces and the
 body of the statement (so that the body gets indented by <em>two</em>
@@ -104,12 +103,12 @@ innermost braces enclosing the split.  Example:
                   : (nargin == 2) ? SVD::economy : SVD::std);
 </pre></div>
 
-<p>Consider putting extra braces around a multiline expression to make it
+<p>Consider putting extra braces around a multi-line expression to make it
 more readable, even if they are not necessary.  Also, do not hesitate to
 put extra braces anywhere if it improves clarity.
 </p>
-<p>Declare variables just before they&rsquo;re needed.  Use local variables of
-blocks&mdash;it helps optimization.  Don&rsquo;t write multi-line variable
+<p>Declare variables just before they are needed.  Use local variables of
+blocks&mdash;it helps optimization.  Don&rsquo;t write a multi-line variable
 declaration with a single type specification and multiple variables.  If
 the variables don&rsquo;t fit on single line, repeat the type specification.
 Example:

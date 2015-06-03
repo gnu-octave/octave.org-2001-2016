@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -73,8 +72,9 @@ corresponding character in the string array.  For example:
 <a name="XREFisalnum"></a><dl>
 <dt><a name="index-isalnum"></a>Mapping Function: <em></em> <strong>isalnum</strong> <em>(<var>s</var>)</em></dt>
 <dd><p>Return a logical array which is true where the elements of <var>s</var> are
-letters or digits and false where they are not.  This is equivalent to
-(<code>isalpha (<var>s</var>) | isdigit (<var>s</var>)</code>).
+letters or digits and false where they are not.
+</p>
+<p>This is equivalent to (<code>isalpha (<var>s</var>) | isdigit (<var>s</var>)</code>).
 </p>
 <p><strong>See also:</strong> <a href="#XREFisalpha">isalpha</a>, <a href="#XREFisdigit">isdigit</a>, <a href="#XREFispunct">ispunct</a>, <a href="#XREFisspace">isspace</a>, <a href="#XREFiscntrl">iscntrl</a>.
 </p></dd></dl>
@@ -83,8 +83,9 @@ letters or digits and false where they are not.  This is equivalent to
 <a name="XREFisalpha"></a><dl>
 <dt><a name="index-isalpha"></a>Mapping Function: <em></em> <strong>isalpha</strong> <em>(<var>s</var>)</em></dt>
 <dd><p>Return a logical array which is true where the elements of <var>s</var> are
-letters and false where they are not.  This is equivalent to
-(<code>islower (<var>s</var>) | isupper (<var>s</var>)</code>).
+letters and false where they are not.
+</p>
+<p>This is equivalent to (<code>islower (<var>s</var>) | isupper (<var>s</var>)</code>).
 </p>
 <p><strong>See also:</strong> <a href="#XREFisdigit">isdigit</a>, <a href="#XREFispunct">ispunct</a>, <a href="#XREFisspace">isspace</a>, <a href="#XREFiscntrl">iscntrl</a>, <a href="#XREFisalnum">isalnum</a>, <a href="#XREFislower">islower</a>, <a href="#XREFisupper">isupper</a>.
 </p></dd></dl>
@@ -93,8 +94,9 @@ letters and false where they are not.  This is equivalent to
 <a name="XREFisletter"></a><dl>
 <dt><a name="index-isletter"></a>Function File: <em></em> <strong>isletter</strong> <em>(<var>s</var>)</em></dt>
 <dd><p>Return a logical array which is true where the elements of <var>s</var>
-are letters and false where they are not.  This is an alias for
-the <code>isalpha</code> function.
+are letters and false where they are not.
+</p>
+<p>This is an alias for the <code>isalpha</code> function.
 </p>
 <p><strong>See also:</strong> <a href="#XREFisalpha">isalpha</a>, <a href="#XREFisdigit">isdigit</a>, <a href="#XREFispunct">ispunct</a>, <a href="#XREFisspace">isspace</a>, <a href="#XREFiscntrl">iscntrl</a>, <a href="#XREFisalnum">isalnum</a>.
 </p></dd></dl>
@@ -194,15 +196,17 @@ not.
 
 <a name="XREFisstrprop"></a><dl>
 <dt><a name="index-isstrprop"></a>Function File: <em></em> <strong>isstrprop</strong> <em>(<var>str</var>, <var>prop</var>)</em></dt>
-<dd><p>Test character string properties.  For example:
+<dd><p>Test character string properties.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">isstrprop (&quot;abc123&quot;, &quot;alpha&quot;)
 &rArr; [1, 1, 1, 0, 0, 0]
 </pre></div>
 
-<p>If <var>str</var> is a cell array, <code>isstrpop</code> is applied recursively
-to each element of the cell array.
+<p>If <var>str</var> is a cell array, <code>isstrpop</code> is applied recursively to
+each element of the cell array.
 </p>
 <p>Numeric arrays are converted to character strings.
 </p>
@@ -236,13 +240,13 @@ to each element of the cell array.
 </dd>
 <dt><code>&quot;space&quot;</code></dt>
 <dt><code>&quot;wspace&quot;</code></dt>
-<dd><p>True for whitespace characters (space, formfeed, newline, carriage
-return, tab, vertical tab).
+<dd><p>True for whitespace characters (space, formfeed, newline, carriage return,
+tab, vertical tab).
 </p>
 </dd>
 <dt><code>&quot;punct&quot;</code></dt>
-<dd><p>True for punctuation characters (printing characters except space
-or letter or digit).
+<dd><p>True for punctuation characters (printing characters except space or
+letter or digit).
 </p>
 </dd>
 <dt><code>&quot;cntrl&quot;</code></dt>

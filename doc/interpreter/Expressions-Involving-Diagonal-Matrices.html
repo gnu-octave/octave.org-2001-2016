@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -58,11 +57,12 @@ Next: <a href="Expressions-Involving-Permutation-Matrices.html#Expressions-Invol
 <hr>
 <a name="Expressions-Involving-Diagonal-Matrices-1"></a>
 <h4 class="subsection">21.2.1 Expressions Involving Diagonal Matrices</h4>
+<a name="index-diagonal-matrix-expressions"></a>
 
 <p>Assume <var>D</var> is a diagonal matrix.  If <var>M</var> is a full matrix,
 then <code>D*M</code> will scale the rows of <var>M</var>.  That means,
 if <code>S = D*M</code>, then for each pair of indices
-i,j it holds 
+i,j it holds
 </p>
 <div class="example">
 <pre class="example">S(i,j) = D(i,i) * M(i,j).
@@ -77,8 +77,8 @@ If <code>m &lt; n</code>, then the expression <code>D*M</code> is equivalent to
 <pre class="example">D(:,1:m) * M(1:m,:),
 </pre></div>
 
-<p>i.e., trailing <code>n-m</code> rows of <var>M</var> are ignored.  If <code>m &gt; n</code>, 
-then <code>D*M</code> is equivalent to 
+<p>i.e., trailing <code>n-m</code> rows of <var>M</var> are ignored.  If <code>m &gt; n</code>,
+then <code>D*M</code> is equivalent to
 </p>
 <div class="example">
 <pre class="example">[D(1:n,n) * M; zeros(m-n, columns (M))],
@@ -87,6 +87,7 @@ then <code>D*M</code> is equivalent to
 <p>i.e., null rows are appended to the result.
 The situation for right-multiplication <code>M*D</code> is analogous.
 </p>
+<a name="index-pseudoinverse-1"></a>
 <p>The expressions <code>D \ M</code> and <code>M / D</code> perform inverse scaling.
 They are equivalent to solving a diagonal (or rectangular diagonal)
 in a least-squares minimum-norm sense.  In exact arithmetic, this is
@@ -94,15 +95,15 @@ equivalent to multiplying by a pseudoinverse.  The pseudoinverse of
 a rectangular diagonal matrix is again a rectangular diagonal matrix
 with swapped dimensions, where each nonzero diagonal element is replaced
 by its reciprocal.
-The matrix division algorithms do, in fact, use division rather than 
+The matrix division algorithms do, in fact, use division rather than
 multiplication by reciprocals for better numerical accuracy; otherwise, they
 honor the above definition.  Note that a diagonal matrix is never truncated due
-to ill-conditioning; otherwise, it would not be much useful for scaling.  This
+to ill-conditioning; otherwise, it would not be of much use for scaling.  This
 is typically consistent with linear algebra needs.  A full matrix that only
-happens to be diagonal (an is thus not a special object) is of course treated
+happens to be diagonal (and is thus not a special object) is of course treated
 normally.
 </p>
-<p>Multiplication and division by diagonal matrices works efficiently also when
+<p>Multiplication and division by diagonal matrices work efficiently also when
 combined with sparse matrices, i.e., <code>D*S</code>, where <var>D</var> is a diagonal
 matrix and <var>S</var> is a sparse matrix scales the rows of the sparse matrix and
 returns a sparse matrix.  The expressions <code>S*D</code>, <code>D\S</code>, <code>S/D</code>
@@ -112,9 +113,9 @@ work analogically.
 </p>
 <div class="example">
 <pre class="example">D1 + D2
-D1 - D2 
-D1 * D2 
-D1 / D2 
+D1 - D2
+D1 * D2
+D1 / D2
 D1 \ D2
 </pre></div>
 
@@ -124,7 +125,7 @@ above.
 </p>
 <p>Also, a diagonal matrix <var>D</var> can be multiplied or divided by a scalar, or
 raised to a scalar power if it is square, producing diagonal matrix result in
-all cases. 
+all cases.
 </p>
 <p>A diagonal matrix can also be transposed or conjugate-transposed, giving the
 expected result.  Extracting a leading submatrix of a diagonal matrix, i.e.,

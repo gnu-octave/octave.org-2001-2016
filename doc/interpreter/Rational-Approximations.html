@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -63,8 +62,10 @@ Next: <a href="Coordinate-Transformations.html#Coordinate-Transformations" acces
 <dt><a name="index-rat"></a>Function File: <em><var>s</var> =</em> <strong>rat</strong> <em>(<var>x</var>, <var>tol</var>)</em></dt>
 <dt><a name="index-rat-1"></a>Function File: <em>[<var>n</var>, <var>d</var>] =</em> <strong>rat</strong> <em>(<var>x</var>, <var>tol</var>)</em></dt>
 <dd>
-<p>Find a rational approximation to <var>x</var> within the tolerance defined
-by <var>tol</var> using a continued fraction expansion.  For example:
+<p>Find a rational approximation to <var>x</var> within the tolerance defined by
+<var>tol</var> using a continued fraction expansion.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">rat (pi) = 3 + 1/(7 + 1/16) = 355/113
@@ -72,8 +73,8 @@ rat (e) = 3 + 1/(-4 + 1/(2 + 1/(5 + 1/(-2 + 1/(-7)))))
         = 1457/536
 </pre></div>
 
-<p>Called with two arguments returns the numerator and denominator separately
-as two matrices.
+<p>When called with two output arguments return the numerator and denominator
+separately as two matrices.
 </p>
 <p><strong>See also:</strong> <a href="#XREFrats">rats</a>.
 </p></dd></dl>
@@ -82,7 +83,8 @@ as two matrices.
 <a name="XREFrats"></a><dl>
 <dt><a name="index-rats"></a>Built-in Function: <em></em> <strong>rats</strong> <em>(<var>x</var>, <var>len</var>)</em></dt>
 <dd><p>Convert <var>x</var> into a rational approximation represented as a string.
-You can convert the string back into a matrix as follows:
+</p>
+<p>The string can be converted back into a matrix as follows:
 </p>
 <div class="example">
 <pre class="example">r = rats (hilb (4));
@@ -91,6 +93,9 @@ x = str2num (r)
 
 <p>The optional second argument defines the maximum length of the string
 representing the elements of <var>x</var>.  By default <var>len</var> is 9.
+</p>
+<p>If the length of the smallest possible rational approximation exceeds
+<var>len</var>, an asterisk (*) padded with spaces will be returned instead.
 </p>
 <p><strong>See also:</strong> <a href="Terminal-Output.html#XREFformat">format</a>, <a href="#XREFrat">rat</a>.
 </p></dd></dl>

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -97,8 +96,7 @@ of <var>nr</var>, the last column is padded with zeros.
 
 <p>If <var>size</var> is omitted, a value of <code>Inf</code> is assumed.
 </p>
-<p>A string is returned if <var>template</var> specifies only character
-conversions.
+<p>A string is returned if <var>template</var> specifies only character conversions.
 </p>
 <p>The number of items successfully read is returned in <var>count</var>.
 </p>
@@ -122,8 +120,7 @@ complete description of the syntax of the template string.
 <dt><a name="index-scanf-1"></a>Built-in Function: <em>[<var>v1</var>, <var>v2</var>, &hellip;, <var>count</var>, <var>errmsg</var>]] =</em> <strong>scanf</strong> <em>(<var>template</var>, &quot;C&quot;)</em></dt>
 <dd><p>This is equivalent to calling <code>fscanf</code> with <var>fid</var> = <code>stdin</code>.
 </p>
-<p>It is currently not useful to call <code>scanf</code> in interactive
-programs.
+<p>It is currently not useful to call <code>scanf</code> in interactive programs.
 </p>
 <p><strong>See also:</strong> <a href="#XREFfscanf">fscanf</a>, <a href="#XREFsscanf">sscanf</a>, <a href="Formatted-Output.html#XREFprintf">printf</a>.
 </p></dd></dl>
@@ -133,10 +130,11 @@ programs.
 <dt><a name="index-sscanf"></a>Built-in Function: <em>[<var>val</var>, <var>count</var>, <var>errmsg</var>, <var>pos</var>] =</em> <strong>sscanf</strong> <em>(<var>string</var>, <var>template</var>, <var>size</var>)</em></dt>
 <dt><a name="index-sscanf-1"></a>Built-in Function: <em>[<var>v1</var>, <var>v2</var>, &hellip;, <var>count</var>, <var>errmsg</var>] =</em> <strong>sscanf</strong> <em>(<var>string</var>, <var>template</var>, &quot;C&quot;)</em></dt>
 <dd><p>This is like <code>fscanf</code>, except that the characters are taken from the
-string <var>string</var> instead of from a stream.  Reaching the end of the
-string is treated as an end-of-file condition.  In addition to the values
-returned by <code>fscanf</code>, the index of the next character to be read
-is returned in <var>pos</var>.
+string <var>string</var> instead of from a stream.
+</p>
+<p>Reaching the end of the string is treated as an end-of-file condition.  In
+addition to the values returned by <code>fscanf</code>, the index of the next
+character to be read is returned in <var>pos</var>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFfscanf">fscanf</a>, <a href="#XREFscanf">scanf</a>, <a href="Formatted-Output.html#XREFsprintf">sprintf</a>.
 </p></dd></dl>

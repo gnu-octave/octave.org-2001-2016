@@ -15,7 +15,7 @@
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
 <link href="High_002dLevel-Plotting.html#High_002dLevel-Plotting" rel="up" title="High-Level Plotting">
 <link href="Use-of-the-interpreter-Property.html#Use-of-the-interpreter-Property" rel="next" title="Use of the interpreter Property">
-<link href="Multiple-Plot-Windows.html#Multiple-Plot-Windows" rel="prev" title="Multiple Plot Windows">
+<link href="Manipulation-of-Plot-Objects.html#Manipulation-of-Plot-Objects" rel="prev" title="Manipulation of Plot Objects">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -53,11 +52,12 @@ ul.no-bullet {list-style: none}
 <a name="Manipulation-of-Plot-Windows"></a>
 <div class="header">
 <p>
-Next: <a href="Use-of-the-interpreter-Property.html#Use-of-the-interpreter-Property" accesskey="n" rel="next">Use of the <code>interpreter</code> Property</a>, Previous: <a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows" accesskey="p" rel="prev">Multiple Plot Windows</a>, Up: <a href="High_002dLevel-Plotting.html#High_002dLevel-Plotting" accesskey="u" rel="up">High-Level Plotting</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Use-of-the-interpreter-Property.html#Use-of-the-interpreter-Property" accesskey="n" rel="next">Use of the <code>interpreter</code> Property</a>, Previous: <a href="Manipulation-of-Plot-Objects.html#Manipulation-of-Plot-Objects" accesskey="p" rel="prev">Manipulation of Plot Objects</a>, Up: <a href="High_002dLevel-Plotting.html#High_002dLevel-Plotting" accesskey="u" rel="up">High-Level Plotting</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
 <a name="Manipulation-of-Plot-Windows-1"></a>
-<h4 class="subsection">15.2.6 Manipulation of Plot Windows</h4>
+<h4 class="subsection">15.2.7 Manipulation of Plot Windows</h4>
+<a name="index-plotting_002c-window-manipulation"></a>
 
 <p>By default, Octave refreshes the plot window when a prompt is printed,
 or when waiting for input.  The
@@ -67,17 +67,22 @@ or when waiting for input.  The
 <dt><a name="index-drawnow"></a>Built-in Function: <em></em> <strong>drawnow</strong> <em>()</em></dt>
 <dt><a name="index-drawnow-1"></a>Built-in Function: <em></em> <strong>drawnow</strong> <em>(&quot;expose&quot;)</em></dt>
 <dt><a name="index-drawnow-2"></a>Built-in Function: <em></em> <strong>drawnow</strong> <em>(<var>term</var>, <var>file</var>, <var>mono</var>, <var>debug_file</var>)</em></dt>
-<dd><p>Update figure windows and their children.  The event queue is flushed and
-any callbacks generated are executed.  With the optional argument
-<code>&quot;expose&quot;</code>, only graphic objects are updated and no other events or
-callbacks are processed.
-The third calling form of <code>drawnow</code> is for debugging and is
+<dd><p>Update figure windows and their children.
+</p>
+<p>The event queue is flushed and any callbacks generated are executed.
+</p>
+<p>With the optional argument <code>&quot;expose&quot;</code>, only graphic objects are
+updated and no other events or callbacks are processed.
+</p>
+<p>The third calling form of <code>drawnow</code> is for debugging and is
 undocumented.
+</p>
+<p><strong>See also:</strong> <a href="#XREFrefresh">refresh</a>.
 </p></dd></dl>
 
 
 <p>Only figures that are modified will be updated.  The <code>refresh</code>
-function can also be used to force an update of the current figure, even if
+function can also be used to cause an update of the current figure, even if
 it is not modified.
 </p>
 <a name="XREFrefresh"></a><dl>
@@ -125,25 +130,26 @@ determine what to do.
 <table>
 <thead><tr><th width="25%">Figure NextPlot</th><th width="75%">Action</th></tr></thead>
 <tr><td width="25%"><code>&quot;new&quot;</code></td><td width="75%">Create a new figure and make it the current figure.</td></tr>
-<tr><td width="25%"><code>&quot;add&quot;</code> (default)</td><td width="75%">Add new graphic objects to the current figure.</td></tr>
-<tr><td width="25%"><code>&quot;replacechildren&quot;</code></td><td width="75%">Delete child objects whose HandleVisibility is
-set to <code>&quot;on&quot;</code>.  Set NextPlot property to <code>&quot;add&quot;</code>.  This
-typically clears a figure, but leaves in place hidden objects such as
-menubars.  This is equivalent to <code>clf</code>.</td></tr>
+<tr><td width="25%"><code>&quot;add&quot;</code> (default)</td><td width="75%">Add new graphic objects to the current
+figure.</td></tr>
+<tr><td width="25%"><code>&quot;replacechildren&quot;</code></td><td width="75%">Delete child objects whose
+HandleVisibility is set to <code>&quot;on&quot;</code>.  Set NextPlot property to
+<code>&quot;add&quot;</code>.  This typically clears a figure, but leaves in place hidden
+objects such as menubars.  This is equivalent to <code>clf</code>.</td></tr>
 <tr><td width="25%"><code>&quot;replace&quot;</code></td><td width="75%">Delete all child objects of the figure and
 reset all figure properties to their defaults.  However, the following
 four properties are not reset: Position, Units, PaperPosition, PaperUnits.
- This is equivalent to <code>clf reset</code>.</td></tr>
+This is equivalent to <code>clf reset</code>.</td></tr>
 </table>
 
 <table>
 <thead><tr><th width="25%">Axis NextPlot</th><th width="75%">Action</th></tr></thead>
-<tr><td width="25%"><code>&quot;add&quot;</code></td><td width="75%">Add new graphic objects to the current axes.  This is
-equivalent to <code>hold on</code>.</td></tr>
-<tr><td width="25%"><code>&quot;replacechildren&quot;</code></td><td width="75%">Delete child objects whose HandleVisibility is
-set to <code>&quot;on&quot;</code>, but leave axis properties unmodified.  This typically
-clears a plot, but preserves special settings such as log scaling for
-axes.  This is equivalent to <code>cla</code>.</td></tr>
+<tr><td width="25%"><code>&quot;add&quot;</code></td><td width="75%">Add new graphic objects to the current axes.  This
+is equivalent to <code>hold on</code>.</td></tr>
+<tr><td width="25%"><code>&quot;replacechildren&quot;</code></td><td width="75%">Delete child objects whose
+HandleVisibility is set to <code>&quot;on&quot;</code>, but leave axis properties
+unmodified.  This typically clears a plot, but preserves special settings
+such as log scaling for axes.  This is equivalent to <code>cla</code>.</td></tr>
 <tr><td width="25%"><code>&quot;replace&quot;</code> (default)</td><td width="75%">Delete all child objects of the
 axis and reset all axis properties to their defaults.  However, the
 following properties are not reset: Position, Units.  This is equivalent
@@ -281,21 +287,29 @@ this axis rather than the current axes returned by <code>gca</code>.
 
 <a name="XREFdelete"></a><dl>
 <dt><a name="index-delete"></a>Function File: <em></em> <strong>delete</strong> <em>(<var>file</var>)</em></dt>
-<dt><a name="index-delete-1"></a>Function File: <em></em> <strong>delete</strong> <em>(<var>handle</var>)</em></dt>
+<dt><a name="index-delete-1"></a>Function File: <em></em> <strong>delete</strong> <em>(<var>file1</var>, <var>file2</var>, &hellip;)</em></dt>
+<dt><a name="index-delete-2"></a>Function File: <em></em> <strong>delete</strong> <em>(<var>handle</var>)</em></dt>
 <dd><p>Delete the named file or graphics handle.
 </p>
-<p>Deleting graphics objects is the proper way to remove
+<p><var>file</var> may contain globbing patterns such as &lsquo;<samp>*</samp>&rsquo;.  Multiple files
+to be deleted may be specified in the same function call.
+</p>
+<p><var>handle</var> may be a scalar or vector of graphic handles to delete.
+</p>
+<p>Programming Note: Deleting graphics objects is the proper way to remove
 features from a plot without clearing the entire figure.
 </p>
-<p><strong>See also:</strong> <a href="#XREFclf">clf</a>, <a href="#XREFcla">cla</a>, <a href="Filesystem-Utilities.html#XREFunlink">unlink</a>.
+<p><strong>See also:</strong> <a href="#XREFclf">clf</a>, <a href="#XREFcla">cla</a>, <a href="Filesystem-Utilities.html#XREFunlink">unlink</a>, <a href="Filesystem-Utilities.html#XREFrmdir">rmdir</a>.
 </p></dd></dl>
 
 
 <a name="XREFclose"></a><dl>
 <dt><a name="index-close"></a>Command: <em></em> <strong>close</strong></dt>
 <dt><a name="index-close-1"></a>Command: <em></em> <strong>close</strong> <em>(<var>h</var>)</em></dt>
-<dt><a name="index-close-2"></a>Command: <em></em> <strong>close</strong> <em>all</em></dt>
-<dt><a name="index-close-3"></a>Command: <em></em> <strong>close</strong> <em>all hidden</em></dt>
+<dt><a name="index-close-2"></a>Command: <em></em> <strong>close</strong> <em><var>h</var></em></dt>
+<dt><a name="index-close-3"></a>Command: <em></em> <strong>close</strong> <em>all</em></dt>
+<dt><a name="index-close-4"></a>Command: <em></em> <strong>close</strong> <em>all hidden</em></dt>
+<dt><a name="index-close-5"></a>Command: <em></em> <strong>close</strong> <em>all force</em></dt>
 <dd><p>Close figure window(s).
 </p>
 <p>When called with no arguments, close the current figure.  This is equivalent
@@ -307,6 +321,10 @@ of graphics handles, then close each figure in <var>h</var>.
 </p>
 <p>If the argument <code>&quot;all hidden&quot;</code> is given then all figures, including
 hidden ones, are closed.
+</p>
+<p>If the argument <code>&quot;all force&quot;</code> is given then all figures are closed
+even when <code>&quot;closerequestfcn&quot;</code> has been altered to prevent closing
+the window.
 </p>
 <p>Implementation Note: <code>close</code> operates by calling the function specified
 by the <code>&quot;closerequestfcn&quot;</code> property for each figure.  By default, the
@@ -334,7 +352,7 @@ points to this function.
 <hr>
 <div class="header">
 <p>
-Next: <a href="Use-of-the-interpreter-Property.html#Use-of-the-interpreter-Property" accesskey="n" rel="next">Use of the <code>interpreter</code> Property</a>, Previous: <a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows" accesskey="p" rel="prev">Multiple Plot Windows</a>, Up: <a href="High_002dLevel-Plotting.html#High_002dLevel-Plotting" accesskey="u" rel="up">High-Level Plotting</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="Use-of-the-interpreter-Property.html#Use-of-the-interpreter-Property" accesskey="n" rel="next">Use of the <code>interpreter</code> Property</a>, Previous: <a href="Manipulation-of-Plot-Objects.html#Manipulation-of-Plot-Objects" accesskey="p" rel="prev">Manipulation of Plot Objects</a>, Up: <a href="High_002dLevel-Plotting.html#High_002dLevel-Plotting" accesskey="u" rel="up">High-Level Plotting</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
 </div>
 
 

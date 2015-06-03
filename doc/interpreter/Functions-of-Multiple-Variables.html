@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -109,11 +108,11 @@ variables.  For example:
 <dt><a name="index-dblquad-2"></a>Function File: <em></em> <strong>dblquad</strong> <em>(<var>f</var>, <var>xa</var>, <var>xb</var>, <var>ya</var>, <var>yb</var>, <var>tol</var>, <var>quadf</var>)</em></dt>
 <dt><a name="index-dblquad-3"></a>Function File: <em></em> <strong>dblquad</strong> <em>(<var>f</var>, <var>xa</var>, <var>xb</var>, <var>ya</var>, <var>yb</var>, <var>tol</var>, <var>quadf</var>, &hellip;)</em></dt>
 <dd><p>Numerically evaluate the double integral of <var>f</var>.
-<var>f</var> is a function handle, inline function, or string
-containing the name of the function to evaluate.  The function <var>f</var> must
-have the form <em>z = f(x,y)</em> where <var>x</var> is a vector and <var>y</var> is a
-scalar.  It should return a vector of the same length and orientation as
-<var>x</var>.
+</p>
+<p><var>f</var> is a function handle, inline function, or string containing the name
+of the function to evaluate.  The function <var>f</var> must have the form
+<em>z = f(x,y)</em> where <var>x</var> is a vector and <var>y</var> is a scalar.  It
+should return a vector of the same length and orientation as <var>x</var>.
 </p>
 <p><var>xa</var>, <var>ya</var> and <var>xb</var>, <var>yb</var> are the lower and upper limits of
 integration for x and y respectively.  The underlying integrator determines
@@ -140,18 +139,19 @@ matrix ([]).
 <dt><a name="index-triplequad-2"></a>Function File: <em></em> <strong>triplequad</strong> <em>(<var>f</var>, <var>xa</var>, <var>xb</var>, <var>ya</var>, <var>yb</var>, <var>za</var>, <var>zb</var>, <var>tol</var>, <var>quadf</var>)</em></dt>
 <dt><a name="index-triplequad-3"></a>Function File: <em></em> <strong>triplequad</strong> <em>(<var>f</var>, <var>xa</var>, <var>xb</var>, <var>ya</var>, <var>yb</var>, <var>za</var>, <var>zb</var>, <var>tol</var>, <var>quadf</var>, &hellip;)</em></dt>
 <dd><p>Numerically evaluate the triple integral of <var>f</var>.
-<var>f</var> is a function handle, inline function, or string
-containing the name of the function to evaluate.  The function <var>f</var> must
-have the form <em>w = f(x,y,z)</em> where either <var>x</var> or <var>y</var> is a
-vector and the remaining inputs are scalars.  It should return a vector of
-the same length and orientation as <var>x</var> or <var>y</var>.
+</p>
+<p><var>f</var> is a function handle, inline function, or string containing the name
+of the function to evaluate.  The function <var>f</var> must have the form
+<em>w = f(x,y,z)</em> where either <var>x</var> or <var>y</var> is a vector and the
+remaining inputs are scalars.  It should return a vector of the same length
+and orientation as <var>x</var> or <var>y</var>.
 </p>
 <p><var>xa</var>, <var>ya</var>, <var>za</var> and <var>xb</var>, <var>yb</var>, <var>zb</var> are the lower
 and upper limits of integration for x, y, and z respectively.  The
 underlying integrator determines whether infinite bounds are accepted.
 </p>
 <p>The optional argument <var>tol</var> defines the absolute tolerance used to
-integrate each sub-integral.  The default value is <em>1e^{-6}</em>.
+integrate each sub-integral.  The default value is 1e-6.
 </p>
 <p>The optional argument <var>quadf</var> specifies which underlying integrator
 function to use.  Any choice but <code>quad</code> is available and the default

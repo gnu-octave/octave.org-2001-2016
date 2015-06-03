@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -66,15 +65,21 @@ Previous: <a href="Coordinate-Transformations.html#Coordinate-Transformations" a
 <dt><a name="index-e-3"></a>Built-in Function: <em></em> <strong>e</strong> <em>(<var>n</var>, <var>m</var>, <var>k</var>, &hellip;)</em></dt>
 <dt><a name="index-e-4"></a>Built-in Function: <em></em> <strong>e</strong> <em>(&hellip;, <var>class</var>)</em></dt>
 <dd><p>Return a scalar, matrix, or N-dimensional array whose elements are all equal
-to the base of natural logarithms.  The constant
+to the base of natural logarithms.
+</p>
+<p>The constant
 &lsquo;<samp>e</samp>&rsquo; satisfies the equation <code>log</code> (e) = 1.
 </p>
-<p>When called with no arguments, return a scalar with the value <em>e</em>.  When
-called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+<p>When called with no arguments, return a scalar with the value <em>e</em>.
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="Exponents-and-Logarithms.html#XREFlog">log</a>, <a href="Exponents-and-Logarithms.html#XREFexp">exp</a>, <a href="#XREFpi">pi</a>, <a href="#XREFI">I</a>.
@@ -90,15 +95,20 @@ either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 <dd><p>Return a scalar, matrix, or N-dimensional array whose elements are all equal
 to the ratio of the circumference of a circle to its
 diameter.
-Internally, <code>pi</code> is computed as &lsquo;<samp>4.0 * atan (1.0)</samp>&rsquo;.
+</p>
+<p>Internally, <code>pi</code> is computed as &lsquo;<samp>4.0 * atan (1.0)</samp>&rsquo;.
 </p>
 <p>When called with no arguments, return a scalar with the value of
 pi.
-When called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFe">e</a>, <a href="#XREFI">I</a>.
@@ -122,12 +132,16 @@ to the pure imaginary unit, defined as
 <p>I, and its equivalents i, j, and J, are functions so any of the names may
 be reused for other purposes (such as i for a counter variable).
 </p>
-<p>When called with no arguments, return a scalar with the value <em>i</em>.  When
-called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+<p>When called with no arguments, return a scalar with the value <em>i</em>.
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFe">e</a>, <a href="#XREFpi">pi</a>, <a href="Exponents-and-Logarithms.html#XREFlog">log</a>, <a href="Exponents-and-Logarithms.html#XREFexp">exp</a>.
@@ -146,8 +160,8 @@ either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 to the IEEE representation for positive infinity.
 </p>
 <p>Infinity is produced when results are too large to be represented using the
-the IEEE floating point format for numbers.  Two common examples which
-produce infinity are division by zero and overflow.
+IEEE floating point format for numbers.  Two common examples which produce
+infinity are division by zero and overflow.
 </p>
 <div class="example">
 <pre class="example">[ 1/0 e^800 ]
@@ -155,11 +169,15 @@ produce infinity are division by zero and overflow.
 </pre></div>
 
 <p>When called with no arguments, return a scalar with the value &lsquo;<samp>Inf</samp>&rsquo;.
-When called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="Finding-Elements-and-Checking-Conditions.html#XREFisinf">isinf</a>, <a href="#XREFNaN">NaN</a>.
@@ -176,21 +194,27 @@ either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 <dt><a name="index-NaN-4"></a>Built-in Function: <em></em> <strong>NaN</strong> <em>(&hellip;, <var>class</var>)</em></dt>
 <dd><p>Return a scalar, matrix, or N-dimensional array whose elements are all equal
 to the IEEE symbol NaN (Not a Number).
-NaN is the result of operations which do not produce a well defined numerical
+</p>
+<p>NaN is the result of operations which do not produce a well defined numerical
 result.  Common operations which produce a NaN are arithmetic with infinity
 (Inf - Inf), zero divided by zero (0/0),
 and any operation involving another NaN value (5 + NaN).
 </p>
 <p>Note that NaN always compares not equal to NaN (NaN != NaN).  This behavior
-is specified by the IEEE standard for floating point arithmetic.  To
-find NaN values, use the <code>isnan</code> function.
+is specified by the IEEE standard for floating point arithmetic.  To find
+NaN values, use the <code>isnan</code> function.
 </p>
 <p>When called with no arguments, return a scalar with the value &lsquo;<samp>NaN</samp>&rsquo;.
-When called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="Finding-Elements-and-Checking-Conditions.html#XREFisnan">isnan</a>, <a href="#XREFInf">Inf</a>.
@@ -204,22 +228,25 @@ either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 <dt><a name="index-eps-3"></a>Built-in Function: <em></em> <strong>eps</strong> <em>(<var>n</var>, <var>m</var>, <var>k</var>, &hellip;)</em></dt>
 <dt><a name="index-eps-4"></a>Built-in Function: <em></em> <strong>eps</strong> <em>(&hellip;, <var>class</var>)</em></dt>
 <dd><p>Return a scalar, matrix or N-dimensional array whose elements are all eps,
-the machine precision.  More precisely, <code>eps</code> is the relative spacing
-between any two adjacent numbers in the machine&rsquo;s floating point system.
-This number is obviously system dependent.  On machines that support IEEE
-floating point arithmetic, <code>eps</code> is approximately
+the machine precision.
+</p>
+<p>More precisely, <code>eps</code> is the relative spacing between any two adjacent
+numbers in the machine&rsquo;s floating point system.  This number is obviously
+system dependent.  On machines that support IEEE floating point arithmetic,
+<code>eps</code> is approximately
 2.2204e-16 for double precision and 1.1921e-07
 for single precision.
 </p>
 <p>When called with no arguments, return a scalar with the value
 <code>eps (1.0)</code>.
-Given a single argument <var>x</var>, return the distance between <var>x</var> and
-the next largest value.
-When called with more than one argument the first two arguments are taken as
-the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
-either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
+</p>
+<p>Given a single argument <var>x</var>, return the distance between <var>x</var> and the
+next largest value.
+</p>
+<p>When called with more than one argument the first two arguments are taken as
+the number of rows and columns and any further arguments specify additional
+matrix dimensions.  The optional argument <var>class</var> specifies the return
+type and may be either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFrealmax">realmax</a>, <a href="#XREFrealmin">realmin</a>, <a href="Integer-Data-Types.html#XREFintmax">intmax</a>, <a href="Bit-Manipulations.html#XREFbitmax">bitmax</a>.
 </p></dd></dl>
@@ -231,20 +258,25 @@ either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 <dt><a name="index-realmax-2"></a>Built-in Function: <em></em> <strong>realmax</strong> <em>(<var>n</var>, <var>m</var>)</em></dt>
 <dt><a name="index-realmax-3"></a>Built-in Function: <em></em> <strong>realmax</strong> <em>(<var>n</var>, <var>m</var>, <var>k</var>, &hellip;)</em></dt>
 <dt><a name="index-realmax-4"></a>Built-in Function: <em></em> <strong>realmax</strong> <em>(&hellip;, <var>class</var>)</em></dt>
-<dd><p>Return a scalar, matrix or N-dimensional array whose elements are all equal
-to the largest floating point number that is representable.  The actual
-value is system dependent.  On machines that support IEEE
+<dd><p>Return a scalar, matrix, or N-dimensional array whose elements are all equal
+to the largest floating point number that is representable.
+</p>
+<p>The actual value is system dependent.  On machines that support IEEE
 floating point arithmetic, <code>realmax</code> is approximately
 1.7977e+308 for double precision and 3.4028e+38
 for single precision.
 </p>
 <p>When called with no arguments, return a scalar with the value
 <code>realmax (<code>&quot;double&quot;</code>)</code>.
-When called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFrealmin">realmin</a>, <a href="Integer-Data-Types.html#XREFintmax">intmax</a>, <a href="Bit-Manipulations.html#XREFbitmax">bitmax</a>, <a href="#XREFeps">eps</a>.
@@ -257,20 +289,25 @@ either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 <dt><a name="index-realmin-2"></a>Built-in Function: <em></em> <strong>realmin</strong> <em>(<var>n</var>, <var>m</var>)</em></dt>
 <dt><a name="index-realmin-3"></a>Built-in Function: <em></em> <strong>realmin</strong> <em>(<var>n</var>, <var>m</var>, <var>k</var>, &hellip;)</em></dt>
 <dt><a name="index-realmin-4"></a>Built-in Function: <em></em> <strong>realmin</strong> <em>(&hellip;, <var>class</var>)</em></dt>
-<dd><p>Return a scalar, matrix or N-dimensional array whose elements are all equal
+<dd><p>Return a scalar, matrix, or N-dimensional array whose elements are all equal
 to the smallest normalized floating point number that is representable.
-The actual value is system dependent.  On machines that support
+</p>
+<p>The actual value is system dependent.  On machines that support
 IEEE floating point arithmetic, <code>realmin</code> is approximately
 2.2251e-308 for double precision and 1.1755e-38
 for single precision.
 </p>
 <p>When called with no arguments, return a scalar with the value
 <code>realmin (<code>&quot;double&quot;</code>)</code>.
-When called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFrealmax">realmax</a>, <a href="Integer-Data-Types.html#XREFintmin">intmin</a>, <a href="#XREFeps">eps</a>.

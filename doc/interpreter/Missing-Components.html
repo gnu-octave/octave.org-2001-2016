@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -70,12 +69,14 @@ the package maintainer and registered with Octave using
 <dt><a name="index-missing_005fcomponent_005fhook-1"></a>Built-in Function: <em><var>old_val</var> =</em> <strong>missing_component_hook</strong> <em>(<var>new_val</var>)</em></dt>
 <dt><a name="index-missing_005fcomponent_005fhook-2"></a>Built-in Function: <em></em> <strong>missing_component_hook</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that specifies the function to call when
-a component of Octave is missing.  This can be useful for packagers that
-may split the Octave installation into multiple sub-packages, for example,
-to provide a hint to users for how to install the missing components.
+a component of Octave is missing.
+</p>
+<p>This can be useful for packagers that may split the Octave installation into
+multiple sub-packages, for example, to provide a hint to users for how to
+install the missing components.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 <p>The hook function is expected to be of the form

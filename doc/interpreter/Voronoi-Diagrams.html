@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -66,7 +65,7 @@ tessellation where <var>p</var> is a member of <var>s</var>, are closer to <var>
 than any other point in <var>s</var>.  The Voronoi diagram is related to the
 Delaunay triangulation of a set of points, in that the vertexes of the
 Voronoi tessellation are the centers of the circum-circles of the
-simplices of the Delaunay tessellation. 
+simplices of the Delaunay tessellation.
 </p>
 <a name="XREFvoronoi"></a><dl>
 <dt><a name="index-voronoi"></a>Function File: <em></em> <strong>voronoi</strong> <em>(<var>x</var>, <var>y</var>)</em></dt>
@@ -76,21 +75,24 @@ simplices of the Delaunay tessellation.
 <dt><a name="index-voronoi-4"></a>Function File: <em><var>h</var> =</em> <strong>voronoi</strong> <em>(&hellip;)</em></dt>
 <dt><a name="index-voronoi-5"></a>Function File: <em>[<var>vx</var>, <var>vy</var>] =</em> <strong>voronoi</strong> <em>(&hellip;)</em></dt>
 <dd><p>Plot the Voronoi diagram of points <code>(<var>x</var>, <var>y</var>)</code>.
-The Voronoi facets with points at infinity are not drawn.
 </p>
-<p>If <code>&quot;linespec&quot;</code> is given it is used to set the color and line style
-of the plot.  If an axis graphics handle <var>hax</var> is supplied then the
-Voronoi diagram is drawn on the specified axis rather than in a new
-figure.
+<p>The Voronoi facets with points at infinity are not drawn.
 </p>
 <p>The <var>options</var> argument, which must be a string or cell array of strings,
 contains options passed to the underlying qhull command.
 See the documentation for the Qhull library for details
 <a href="http://www.qhull.org/html/qh-quick.htm#options">http://www.qhull.org/html/qh-quick.htm#options</a>.
 </p>
+<p>If <code>&quot;linespec&quot;</code> is given it is used to set the color and line style of
+the plot.
+</p>
+<p>If an axis graphics handle <var>hax</var> is supplied then the Voronoi diagram is
+drawn on the specified axis rather than in a new figure.
+</p>
 <p>If a single output argument is requested then the Voronoi diagram will be
 plotted and a graphics handle <var>h</var> to the plot is returned.
-[<var>vx</var>, <var>vy</var>] = voronoi (&hellip;) returns the Voronoi vertices
+</p>
+<p>[<var>vx</var>, <var>vy</var>] = voronoi (&hellip;) returns the Voronoi vertices
 instead of plotting the diagram.
 </p>
 <div class="example">
@@ -110,9 +112,12 @@ legend (&quot;&quot;, &quot;points&quot;, &quot;hull&quot;);
 <a name="XREFvoronoin"></a><dl>
 <dt><a name="index-voronoin"></a>Function File: <em>[<var>C</var>, <var>F</var>] =</em> <strong>voronoin</strong> <em>(<var>pts</var>)</em></dt>
 <dt><a name="index-voronoin-1"></a>Function File: <em>[<var>C</var>, <var>F</var>] =</em> <strong>voronoin</strong> <em>(<var>pts</var>, <var>options</var>)</em></dt>
-<dd><p>Compute N-dimensional Voronoi facets.  The input matrix <var>pts</var>
-of size [n, dim] contains n points in a space of dimension dim.
-<var>C</var> contains the points of the Voronoi facets.  The list <var>F</var>
+<dd><p>Compute N-dimensional Voronoi facets.
+</p>
+<p>The input matrix <var>pts</var> of size [n, dim] contains n points in a space of
+dimension dim.
+</p>
+<p><var>C</var> contains the points of the Voronoi facets.  The list <var>F</var>
 contains, for each facet, the indices of the Voronoi points.
 </p>
 <p>An optional second argument, which must be a string or cell array of strings,
@@ -129,8 +134,8 @@ See the documentation for the Qhull library for details
 </li></ul>
 
 <p>If <var>options</var> is not present or <code>[]</code> then the default arguments are
-used.  Otherwise, <var>options</var> replaces the default argument list. 
-To append user options to the defaults it is necessary to repeat the 
+used.  Otherwise, <var>options</var> replaces the default argument list.
+To append user options to the defaults it is necessary to repeat the
 default arguments in <var>options</var>.  Use a null string to pass no arguments.
 </p>
 
@@ -168,19 +173,20 @@ with the <code>polyarea</code> and <code>inpolygon</code> functions respectively
 <dt><a name="index-polyarea"></a>Function File: <em></em> <strong>polyarea</strong> <em>(<var>x</var>, <var>y</var>)</em></dt>
 <dt><a name="index-polyarea-1"></a>Function File: <em></em> <strong>polyarea</strong> <em>(<var>x</var>, <var>y</var>, <var>dim</var>)</em></dt>
 <dd>
-<p>Determine area of a polygon by triangle method.  The variables
-<var>x</var> and <var>y</var> define the vertex pairs, and must therefore have
-the same shape.  They can be either vectors or arrays.  If they are
-arrays then the columns of <var>x</var> and <var>y</var> are treated separately
-and an area returned for each.
+<p>Determine area of a polygon by triangle method.
 </p>
-<p>If the optional <var>dim</var> argument is given, then <code>polyarea</code>
-works along this dimension of the arrays <var>x</var> and <var>y</var>.
+<p>The variables <var>x</var> and <var>y</var> define the vertex pairs, and must
+therefore have the same shape.  They can be either vectors or arrays.  If
+they are arrays then the columns of <var>x</var> and <var>y</var> are treated
+separately and an area returned for each.
+</p>
+<p>If the optional <var>dim</var> argument is given, then <code>polyarea</code> works
+along this dimension of the arrays <var>x</var> and <var>y</var>.
 </p>
 </dd></dl>
 
 
-<p>An example of the use of <code>polyarea</code> might be 
+<p>An example of the use of <code>polyarea</code> might be
 </p>
 <div class="example">
 <pre class="example">rand (&quot;state&quot;, 2);
@@ -199,15 +205,22 @@ available with <code>rectint</code>
 </p>
 <a name="XREFrectint"></a><dl>
 <dt><a name="index-rectint"></a>Function File: <em><var>area</var> =</em> <strong>rectint</strong> <em>(<var>a</var>, <var>b</var>)</em></dt>
-<dd>
-<p>Compute the area of intersection of rectangles in <var>a</var> and
-rectangles in <var>b</var>.  Rectangles are defined as [x y width height]
-where x and y are the minimum values of the two orthogonal
-dimensions.
+<dd><p>Compute area or volume of intersection of rectangles or N-D boxes.
 </p>
-<p>If <var>a</var> or <var>b</var> are matrices, then the output, <var>area</var>, is a
-matrix where the i-th row corresponds to the i-th row of a and the j-th
-column corresponds to the j-th row of b.
+<p>Compute the area of intersection of rectangles in <var>a</var> and rectangles in
+<var>b</var>.  N-dimensional boxes are supported in which case the volume, or
+hypervolume is computed according to the number of dimensions.
+</p>
+<p>2-dimensional rectangles are defined as <code>[xpos ypos width height]</code>
+where xpos and ypos are the position of the bottom left corner.  Higher
+dimensions are supported where the coordinates for the minimum value of each
+dimension follow the length of the box in that dimension, e.g.,
+<code>[xpos ypos zpos kpos &hellip; width height depth k_length &hellip;]</code>.
+</p>
+<p>Each row of <var>a</var> and <var>b</var> define a rectangle, and if both define
+multiple rectangles, then the output, <var>area</var>, is a matrix where the i-th
+row corresponds to the i-th row of a and the j-th column corresponds to the
+j-th row of b.
 </p>
 
 <p><strong>See also:</strong> <a href="#XREFpolyarea">polyarea</a>.
@@ -215,14 +228,20 @@ column corresponds to the j-th row of b.
 
 
 <a name="XREFinpolygon"></a><dl>
-<dt><a name="index-inpolygon"></a>Function File: <em>[<var>in</var>, <var>on</var>] =</em> <strong>inpolygon</strong> <em>(<var>x</var>, <var>y</var>, <var>xv</var>, <var>yv</var>)</em></dt>
+<dt><a name="index-inpolygon"></a>Function File: <em><var>in</var> =</em> <strong>inpolygon</strong> <em>(<var>x</var>, <var>y</var>, <var>xv</var>, <var>yv</var>)</em></dt>
+<dt><a name="index-inpolygon-1"></a>Function File: <em>[<var>in</var>, <var>on</var>] =</em> <strong>inpolygon</strong> <em>(<var>x</var>, <var>y</var>, <var>xv</var>, <var>yv</var>)</em></dt>
 <dd>
-<p>For a polygon defined by vertex points <code>(<var>xv</var>, <var>yv</var>)</code>, determine
-if the points <code>(<var>x</var>, <var>y</var>)</code> are inside or outside the polygon.
-The variables <var>x</var>, <var>y</var>, must have the same dimension.  The optional
-output <var>on</var> gives the points that are on the polygon.
+<p>For a polygon defined by vertex points <code>(<var>xv</var>, <var>yv</var>)</code>, return
+true if the points <code>(<var>x</var>, <var>y</var>)</code> are inside (or on the boundary)
+of the polygon; Otherwise, return false.
 </p>
-</dd></dl>
+<p>The input variables <var>x</var> and <var>y</var>, must have the same dimension.
+</p>
+<p>The optional output <var>on</var> returns true if the points are exactly on the
+polygon edge, and false otherwise.
+</p>
+<p><strong>See also:</strong> <a href="Delaunay-Triangulation.html#XREFdelaunay">delaunay</a>.
+</p></dd></dl>
 
 
 <p>An example of the use of <code>inpolygon</code> might be

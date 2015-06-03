@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -59,8 +58,8 @@ Next: <a href="General-Guidelines.html#General-Guidelines" accesskey="n" rel="ne
 <a name="Basics-of-Generating-a-Changeset-1"></a>
 <h3 class="section">D.3 Basics of Generating a Changeset</h3>
 
-<p>The preferable form of contribution is creating a Mercurial changeset
-and submit it to the <a href="http://savannah.gnu.org/bugs/?group=octave">bug</a> or
+<p>The best way to contribute is to create a Mercurial changeset and submit it to
+the <a href="http://savannah.gnu.org/bugs/?group=octave">bug</a> or
 <a href="http://savannah.gnu.org/patch/?func=additem&amp;group=octave">patch</a>
 trackers<a name="DOCF13" href="#FOOT13"><sup>13</sup></a>.
 Mercurial is the source code management system currently used to develop
@@ -69,7 +68,7 @@ also acceptable, but they slow down the review process.  If you want to
 make more contributions, you should really get familiar with Mercurial.
 A good place to start is
 <a href="http://www.selenic.com/mercurial/wiki/index.cgi/Tutorial">http://www.selenic.com/mercurial/wiki/index.cgi/Tutorial</a>.  There
-you will also find help how to install Mercurial.
+you will also find help about how to install Mercurial.
 </p>
 <p>A simple contribution sequence could look like this:
 </p>
@@ -89,7 +88,7 @@ hg export -o ../cool.diff tip
 </pre></div>
 
 <p>You may want to get familiar with Mercurial queues to manage your
-changesets.  For working with queues you have to activate the extension
+changesets.  To work with queues you must activate the extension
 mq with the following entry in Mercurial&rsquo;s configuration file
 <samp>.hgrc</samp> (or <samp>Mercurial.ini</samp> on Windows):
 </p>
@@ -160,7 +159,7 @@ status.ignored = black bold
 
 <p>Sometimes a few further improvements for the pager extension are
 necessary.  The following options should not be enabled unless paging
-isn&rsquo;t working correctly:
+is not working correctly.
 </p>
 <div class="example">
 <pre class="example">[pager]
@@ -176,8 +175,8 @@ attend = tags, help, annotate, cat, diff, export, status, \
 <p>Enabling the described extensions should immediately lead to a difference
 when using the command line version of hg.  Of these options, the
 only one that enables a new command is graphlog.  It is recommanded
-that you use the command <code>hg glog</code> instead of <code>hg log</code> for a better
-feel what commits are being based on.
+that to use the command <code>hg glog</code>, instead of <code>hg log</code>, for a better
+feel about what commits are being based on.
 </p>
 <div class="footnote">
 <hr>

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -90,17 +89,19 @@ endfunction
 <a name="XREFisargout"></a><dl>
 <dt><a name="index-isargout"></a>Built-in Function: <em></em> <strong>isargout</strong> <em>(<var>k</var>)</em></dt>
 <dd><p>Within a function, return a logical value indicating whether the argument
-<var>k</var> will be assigned on output to a variable.  If the result is false,
-the argument has been ignored during the function call through the use of
-the tilde (~) special output argument.  Functions can use <code>isargout</code> to
-avoid performing unnecessary calculations for outputs which are unwanted.
+<var>k</var> will be assigned to a variable on output.
+</p>
+<p>If the result is false, the argument has been ignored during the function
+call through the use of the tilde (~) special output argument.  Functions
+can use <code>isargout</code> to avoid performing unnecessary calculations for
+outputs which are unwanted.
 </p>
 <p>If <var>k</var> is outside the range <code>1:max (nargout)</code>, the function returns
 false.  <var>k</var> can also be an array, in which case the function works
 element-by-element and a logical array is returned.  At the top level,
 <code>isargout</code> returns an error.
 </p>
-<p><strong>See also:</strong> <a href="Multiple-Return-Values.html#XREFnargout">nargout</a>, <a href="Defining-Functions.html#XREFnargin">nargin</a>, <a href="Multiple-Return-Values.html#XREFvarargin">varargin</a>, <a href="Multiple-Return-Values.html#XREFvarargout">varargout</a>, <a href="Multiple-Return-Values.html#XREFnthargout">nthargout</a>.
+<p><strong>See also:</strong> <a href="Multiple-Return-Values.html#XREFnargout">nargout</a>, <a href="Multiple-Return-Values.html#XREFvarargout">varargout</a>, <a href="Multiple-Return-Values.html#XREFnthargout">nthargout</a>.
 </p></dd></dl>
 
 

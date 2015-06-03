@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -77,9 +76,11 @@ array, cell, or struct.
 <dt><a name="index-arrayfun-4"></a>Function File: <em></em> <strong>arrayfun</strong> <em>(&hellip;, &quot;UniformOutput&quot;, <var>val</var>)</em></dt>
 <dt><a name="index-arrayfun-5"></a>Function File: <em></em> <strong>arrayfun</strong> <em>(&hellip;, &quot;ErrorHandler&quot;, <var>errfunc</var>)</em></dt>
 <dd>
-<p>Execute a function on each element of an array.  This is useful for
-functions that do not accept array arguments.  If the function does
-accept array arguments it is better to call the function directly.
+<p>Execute a function on each element of an array.
+</p>
+<p>This is useful for functions that do not accept array arguments.  If the
+function does accept array arguments it is better to call the function
+directly.
 </p>
 <p>The first input argument <var>func</var> can be a string, a function
 handle, an inline function, or an anonymous function.  The input
@@ -176,10 +177,11 @@ arrayfun (@str2num, [1234],
 
 <a name="XREFspfun"></a><dl>
 <dt><a name="index-spfun"></a>Function File: <em><var>y</var> =</em> <strong>spfun</strong> <em>(<var>f</var>, <var>S</var>)</em></dt>
-<dd><p>Compute <code>f(<var>S</var>)</code> for the non-zero values of <var>S</var>.
-This results in a sparse matrix with the same structure as
-<var>S</var>.  The function <var>f</var> can be passed as a string, a
-function handle, or an inline function.
+<dd><p>Compute <code>f(<var>S</var>)</code> for the nonzero values of <var>S</var>.
+</p>
+<p>This results in a sparse matrix with the same structure as <var>S</var>.  The
+function <var>f</var> can be passed as a string, a function handle, or an
+inline function.
 </p>
 <p><strong>See also:</strong> <a href="#XREFarrayfun">arrayfun</a>, <a href="#XREFcellfun">cellfun</a>, <a href="#XREFstructfun">structfun</a>.
 </p></dd></dl>
@@ -196,8 +198,10 @@ function handle, or an inline function.
 <dt><a name="index-cellfun-7"></a>Built-in Function: <em></em> <strong>cellfun</strong> <em>(&hellip;, &quot;UniformOutput&quot;, <var>val</var>)</em></dt>
 <dd>
 <p>Evaluate the function named <var>name</var> on the elements of the cell array
-<var>C</var>.  Elements in <var>C</var> are passed on to the named function
-individually.  The function <var>name</var> can be one of the functions
+<var>C</var>.
+</p>
+<p>Elements in <var>C</var> are passed on to the named function individually.  The
+function <var>name</var> can be one of the functions
 </p>
 <dl compact="compact">
 <dt><code>isempty</code></dt>
@@ -241,9 +245,9 @@ number is the product of the dimensions of the object at each cell element.
 
 <p>Additionally, <code>cellfun</code> accepts an arbitrary function <var>func</var>
 in the form of an inline function, function handle, or the name of a
-function (in a character string). The function can take one or more arguments,
-with the inputs arguments given by <var>C</var>, <var>D</var>, etc.  Equally the
-function can return one or more output arguments.  For example:
+function (in a character string).  The function can take one or more
+arguments, with the inputs arguments given by <var>C</var>, <var>D</var>, etc.
+Equally the function can return one or more output arguments.  For example:
 </p>
 <div class="example">
 <pre class="example">cellfun (&quot;atan2&quot;, {1, 0}, {0, 1})
@@ -330,18 +334,17 @@ v = cellfun (@det, a); # faster
 <var>S</var>.  The fields of <var>S</var> are passed to the function <var>func</var>
 individually.
 </p>
-<p><code>structfun</code> accepts an arbitrary function <var>func</var> in the form of
-an inline function, function handle, or the name of a function (in a
-character string).  In the case of a character string argument, the
-function must accept a single argument named <var>x</var>, and it must return
-a string value.  If the function returns more than one argument, they are
-returned as separate output variables.
+<p><code>structfun</code> accepts an arbitrary function <var>func</var> in the form of an
+inline function, function handle, or the name of a function (in a character
+string).  In the case of a character string argument, the function must
+accept a single argument named <var>x</var>, and it must return a string value.
+If the function returns more than one argument, they are returned as
+separate output variables.
 </p>
-<p>If the parameter <code>&quot;UniformOutput&quot;</code> is set to true (the default),
-then the function must return a single element which will be concatenated
-into the return value.  If <code>&quot;UniformOutput&quot;</code> is false, the outputs
-are placed into a structure with the same fieldnames as the input
-structure.
+<p>If the parameter <code>&quot;UniformOutput&quot;</code> is set to true (the default), then
+the function must return a single element which will be concatenated into
+the return value.  If <code>&quot;UniformOutput&quot;</code> is false, the outputs are
+placed into a structure with the same fieldnames as the input structure.
 </p>
 <div class="example">
 <pre class="example">s.name1 = &quot;John Smith&quot;;
@@ -355,9 +358,8 @@ structfun (@(x) regexp (x, '(\w+)$', &quot;matches&quot;){1}, s,
    }
 </pre></div>
 
-<p>Given the parameter <code>&quot;ErrorHandler&quot;</code>, <var>errfunc</var> defines a
-function to call in case <var>func</var> generates an error.  The form of the
-function is
+<p>Given the parameter <code>&quot;ErrorHandler&quot;</code>, <var>errfunc</var> defines a function
+to call in case <var>func</var> generates an error.  The form of the function is
 </p>
 <div class="example">
 <pre class="example">function [&hellip;] = errfunc (<var>se</var>, &hellip;)
@@ -375,6 +377,15 @@ example on how to use an error handler, see <a href="#XREFcellfun">cellfun</a>.
 </p></dd></dl>
 
 
+<p>Consistent with earlier advice, seek to use Octave built-in functions whenever
+possible for the best performance.  This advice applies especially to the four
+functions above.  For example, when adding two arrays together
+element-by-element one could use a handle to the built-in addition function
+<code>@plus</code> or define an anonymous function <code>@(x,y) x + y</code>.  But, the
+anonymous function is 60% slower than the first method.
+See <a href="Operator-Overloading.html#Operator-Overloading">Operator Overloading</a>, for a list of basic functions which might be used
+in place of anonymous ones.
+</p>
 <hr>
 <div class="header">
 <p>

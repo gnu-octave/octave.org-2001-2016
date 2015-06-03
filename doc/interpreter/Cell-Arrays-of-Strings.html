@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -69,7 +68,7 @@ for an operation, there are several functions that convert a cell
 array of strings to a character array and back.  <code>char</code> and
 <code>strvcat</code> convert cell arrays to a character array
 (see <a href="Concatenating-Strings.html#Concatenating-Strings">Concatenating Strings</a>), while the function <code>cellstr</code>
-converts a character array to a cell array of strings: 
+converts a character array to a cell array of strings:
 </p>
 <div class="example">
 <pre class="example">a = [&quot;hello&quot;; &quot;world&quot;];
@@ -82,9 +81,16 @@ c = cellstr (a)
 </pre></div>
 
 <a name="XREFcellstr"></a><dl>
-<dt><a name="index-cellstr"></a>Built-in Function: <em></em> <strong>cellstr</strong> <em>(<var>string</var>)</em></dt>
-<dd><p>Create a new cell array object from the elements of the string
-array <var>string</var>.
+<dt><a name="index-cellstr"></a>Built-in Function: <em><var>cstr</var> =</em> <strong>cellstr</strong> <em>(<var>strmat</var>)</em></dt>
+<dd><p>Create a new cell array object from the elements of the string array
+<var>strmat</var>.
+</p>
+<p>Each row of <var>strmat</var> becomes an element of <var>cstr</var>.  Any trailing
+spaces in a row are deleted before conversion.
+</p>
+<p>To convert back from a cellstr to a character array use <code>char</code>.
+</p>
+<p><strong>See also:</strong> <a href="Creating-Cell-Arrays.html#XREFcell">cell</a>, <a href="Concatenating-Strings.html#XREFchar">char</a>.
 </p></dd></dl>
 
 
@@ -114,8 +120,8 @@ cell array of strings.
 </p>
 <a name="XREFiscellstr"></a><dl>
 <dt><a name="index-iscellstr"></a>Built-in Function: <em></em> <strong>iscellstr</strong> <em>(<var>cell</var>)</em></dt>
-<dd><p>Return true if every element of the cell array <var>cell</var> is a
-character string.
+<dd><p>Return true if every element of the cell array <var>cell</var> is a character
+string.
 </p>
 <p><strong>See also:</strong> <a href="Character-Arrays.html#XREFischar">ischar</a>.
 </p></dd></dl>

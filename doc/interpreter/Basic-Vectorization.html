@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -134,13 +133,11 @@ automatically.
 </p>
 <a name="XREFvectorize"></a><dl>
 <dt><a name="index-vectorize-1"></a>Built-in Function: <em></em> <strong>vectorize</strong> <em>(<var>fun</var>)</em></dt>
-<dd><p>Create a vectorized version of the inline function <var>fun</var>
-by replacing all occurrences of <code>*</code>, <code>/</code>, etc., with
-<code>.*</code>, <code>./</code>, etc.
+<dd><p>Create a vectorized version of the inline function <var>fun</var> by replacing
+all occurrences of <code>*</code>, <code>/</code>, etc., with <code>.*</code>, <code>./</code>, etc.
 </p>
-<p>This may be useful, for example, when using inline functions with
-numerical integration or optimization where a vector-valued function
-is expected.
+<p>This may be useful, for example, when using inline functions with numerical
+integration or optimization where a vector-valued function is expected.
 </p>
 <div class="example">
 <pre class="example">fcn = vectorize (inline (&quot;x^2 - 1&quot;))

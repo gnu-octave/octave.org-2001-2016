@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -79,11 +78,15 @@ to the special constant used to designate missing values.
 To find NA values, use the <code>isna</code> function.
 </p>
 <p>When called with no arguments, return a scalar with the value &lsquo;<samp>NA</samp>&rsquo;.
-When called with a single argument, return a square matrix with the dimension
-specified.  When called with more than one scalar argument the first two
-arguments are taken as the number of rows and columns and any further
-arguments specify additional matrix dimensions.
-The optional argument <var>class</var> specifies the return type and may be
+</p>
+<p>When called with a single argument, return a square matrix with the dimension
+specified.
+</p>
+<p>When called with more than one scalar argument the first two arguments are
+taken as the number of rows and columns and any further arguments specify
+additional matrix dimensions.
+</p>
+<p>The optional argument <var>class</var> specifies the return type and may be
 either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFisna">isna</a>.
@@ -94,7 +97,8 @@ either <code>&quot;double&quot;</code> or <code>&quot;single&quot;</code>.
 <dt><a name="index-isna"></a>Mapping Function: <em></em> <strong>isna</strong> <em>(<var>x</var>)</em></dt>
 <dd><p>Return a logical array which is true where the elements of <var>x</var> are
 NA (missing) values and false where they are not.
-For example:
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">isna ([13, Inf, NA, NaN])

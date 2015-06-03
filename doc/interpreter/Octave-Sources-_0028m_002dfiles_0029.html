@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -61,7 +60,7 @@ Next: <a href="C_002b_002b-Sources.html#C_002b_002b-Sources" accesskey="n" rel="
 
 <p>Don&rsquo;t use tabs.  Tabs cause trouble.  If you are used to them, set up
 your editor so that it converts tabs to spaces.  Indent the bodies of
-the statement blocks.  Recommended indent is 2 spaces.  When calling
+statement blocks.  The recommended indent is 2 spaces.  When calling
 functions, put spaces after commas and before the calling parentheses,
 like this:
 </p>
@@ -69,16 +68,17 @@ like this:
 <pre class="example">  x = max (sin (y+3), 2);
 </pre></div>
 
-<p>An exception are matrix and vector constructors:
+<p>An exception are matrix or cell constructors:
 </p>
 <div class="example">
 <pre class="example">  [sin(x), cos(x)]
+  {sin(x), cos(x)}
 </pre></div>
 
 <p>Here, putting spaces after <code>sin</code>, <code>cos</code> would result in a
-parse error.  In indexing expression, do not put a space after the
+parse error.  For an indexing expression, do not put a space after the
 identifier (this differentiates indexing and function calls nicely).
-The space after comma is not necessary if index expressions are simple,
+The space after a comma is not necessary if index expressions are simple,
 i.e., you may write
 </p>
 <div class="example">
@@ -97,10 +97,10 @@ names must be lowercase.  Function names are global, so choose them
 wisely.
 </p>
 <p>Always use a specific end-of-block statement (like <code>endif</code>,
-<code>endswitch</code>) rather than generic <code>end</code>.
+<code>endswitch</code>) rather than the generic <code>end</code>.
 </p>
-<p>Enclose the <code>if</code>, <code>while</code>, <code>until</code> and <code>switch</code>
-conditions in parentheses, like in C:
+<p>Enclose the <code>if</code>, <code>while</code>, <code>until</code>, and <code>switch</code>
+conditions in parentheses, as in C:
 </p>
 <div class="example">
 <pre class="example">if (isvector (a))

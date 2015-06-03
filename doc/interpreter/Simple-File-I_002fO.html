@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -81,7 +80,7 @@ read into memory using the <code>load</code> command.
 <pre class="example">load myfile.mat
 A
      -| A =
-     -| 
+     -|
      -|    1   2   3
      -|    4   5   6
      -|    7   8   9
@@ -92,17 +91,20 @@ A
 <dt><a name="index-save-1"></a>Command: <em></em> <strong>save</strong> <em>options file</em></dt>
 <dt><a name="index-save-2"></a>Command: <em></em> <strong>save</strong> <em>options file <var>v1</var> <var>v2</var> &hellip;</em></dt>
 <dt><a name="index-save-3"></a>Command: <em></em> <strong>save</strong> <em>options file -struct <var>STRUCT</var> <var>f1</var> <var>f2</var> &hellip;</em></dt>
+<dt><a name="index-save-4"></a>Command: <em></em> <strong>save</strong> <em><code>&quot;-&quot;</code> <var>v1</var> <var>v2</var> &hellip;</em></dt>
+<dt><a name="index-save-5"></a>Built-in Function: <em><var>s</var> =</em> <strong>save</strong> <em>(<code>&quot;-&quot;</code> <var>v1</var> <var>v2</var> &hellip;)</em></dt>
 <dd><p>Save the named variables <var>v1</var>, <var>v2</var>, &hellip;, in the file
-<var>file</var>.  The special filename &lsquo;<samp>-</samp>&rsquo; may be used to write
-output to the terminal.  If no variable names are listed, Octave saves
-all the variables in the current scope.  Otherwise, full variable names or
-pattern syntax can be used to specify the variables to save.
-If the <samp>-struct</samp> modifier is used, fields <var>f1</var> <var>f2</var> &hellip;
-of the scalar structure <var>STRUCT</var> are saved as if they were variables
-with corresponding names.
-Valid options for the <code>save</code> command are listed in the following table.
-Options that modify the output format override the format specified by
-<code>save_default_options</code>.
+<var>file</var>.
+</p>
+<p>The special filename &lsquo;<samp>-</samp>&rsquo; may be used to return the
+content of the variables as a string.  If no variable names are listed,
+Octave saves all the variables in the current scope.  Otherwise, full
+variable names or pattern syntax can be used to specify the variables to
+save.  If the <samp>-struct</samp> modifier is used, fields <var>f1</var> <var>f2</var>
+&hellip; of the scalar structure <var>STRUCT</var> are saved as if they were
+variables with corresponding names.  Valid options for the <code>save</code>
+command are listed in the following table.  Options that modify the output
+format override the format specified by <code>save_default_options</code>.
 </p>
 <p>If save is invoked using the functional form
 </p>
@@ -112,6 +114,9 @@ Options that modify the output format override the format specified by
 
 <p>then the <var>options</var>, <var>file</var>, and variable name arguments
 (<var>v1</var>, &hellip;) must be specified as character strings.
+</p>
+<p>If called with a filename of <code>&quot;-&quot;</code>, write the output to stdout
+if nargout is 0, otherwise return the output in a character string.
 </p>
 <dl compact="compact">
 <dt><code>-append</code></dt>
@@ -233,11 +238,12 @@ the file <samp>data</samp> in Octave&rsquo;s binary format.
 <dt><a name="index-save_005fdefault_005foptions-2"></a>Built-in Function: <em></em> <strong>save_default_options</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that specifies the default options
 for the <code>save</code> command, and defines the default format.
-Typical values include <code>&quot;-ascii&quot;</code>, <code>&quot;-text -zip&quot;</code>.
+</p>
+<p>Typical values include <code>&quot;-ascii&quot;</code>, <code>&quot;-text -zip&quot;</code>.
 The default value is <samp>-text</samp>.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 <p><strong>See also:</strong> <a href="#XREFsave">save</a>.
@@ -248,8 +254,8 @@ The original variable value is restored when exiting the function.
 <dt><a name="index-save_005fprecision"></a>Built-in Function: <em><var>val</var> =</em> <strong>save_precision</strong> <em>()</em></dt>
 <dt><a name="index-save_005fprecision-1"></a>Built-in Function: <em><var>old_val</var> =</em> <strong>save_precision</strong> <em>(<var>new_val</var>)</em></dt>
 <dt><a name="index-save_005fprecision-2"></a>Built-in Function: <em></em> <strong>save_precision</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
-<dd><p>Query or set the internal variable that specifies the number of
-digits to keep when saving data in text format.
+<dd><p>Query or set the internal variable that specifies the number of digits to
+keep when saving data in text format.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
 variable is changed locally for the function and any subroutines it calls.
@@ -263,19 +269,19 @@ The original variable value is restored when exiting the function.
 <dt><a name="index-save_005fheader_005fformat_005fstring-2"></a>Built-in Function: <em></em> <strong>save_header_format_string</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that specifies the format
 string used for the comment line written at the beginning of
-text-format data files saved by Octave.  The format string is
-passed to <code>strftime</code> and should begin with the character
-&lsquo;<samp>#</samp>&rsquo; and contain no newline characters.  If the value of
-<code>save_header_format_string</code> is the empty string,
-the header comment is omitted from text-format data files.  The
-default value is
+text-format data files saved by Octave.
+</p>
+<p>The format string is passed to <code>strftime</code> and should begin with the
+character &lsquo;<samp>#</samp>&rsquo; and contain no newline characters.  If the value of
+<code>save_header_format_string</code> is the empty string, the header comment is
+omitted from text-format data files.  The default value is
 </p>
 <div class="smallexample">
 <pre class="smallexample">&quot;# Created by Octave VERSION, %a %b %d %H:%M:%S %Y %Z &lt;USER@HOST&gt;&quot;
 </pre></div>
 
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 <p><strong>See also:</strong> <a href="Timing-Utilities.html#XREFstrftime">strftime</a>, <a href="#XREFsave">save</a>.
@@ -291,7 +297,9 @@ The original variable value is restored when exiting the function.
 <dt><a name="index-load-5"></a>Command: <em></em> <strong>load</strong> <em>file options v1 v2 &hellip;</em></dt>
 <dt><a name="index-load-6"></a>Command: <em>S =</em> <strong>load</strong> <em>(&quot;file&quot;, &quot;options&quot;, &quot;v1&quot;, &quot;v2&quot;, &hellip;)</em></dt>
 <dd><p>Load the named variables <var>v1</var>, <var>v2</var>, &hellip;, from the file
-<var>file</var>.  If no variables are specified then all variables found in the
+<var>file</var>.
+</p>
+<p>If no variables are specified then all variables found in the
 file will be loaded.  As with <code>save</code>, the list of variables to extract
 can be full names or use a pattern syntax.  The format of the file is
 automatically detected but may be overridden by supplying the appropriate
@@ -397,7 +405,7 @@ format.
 
 <a name="XREFnative_005ffloat_005fformat"></a><dl>
 <dt><a name="index-native_005ffloat_005fformat"></a>Built-in Function: <em></em> <strong>native_float_format</strong> <em>()</em></dt>
-<dd><p>Return the native floating point format as a string
+<dd><p>Return the native floating point format as a string.
 </p></dd></dl>
 
 
@@ -419,7 +427,9 @@ and <code>fclose</code>.
 </p>
 <a name="XREFfdisp"></a><dl>
 <dt><a name="index-fdisp"></a>Built-in Function: <em></em> <strong>fdisp</strong> <em>(<var>fid</var>, <var>x</var>)</em></dt>
-<dd><p>Display the value of <var>x</var> on the stream <var>fid</var>.  For example:
+<dd><p>Display the value of <var>x</var> on the stream <var>fid</var>.
+</p>
+<p>For example:
 </p>
 <div class="example">
 <pre class="example">fdisp (stdout, &quot;The value of pi is:&quot;), fdisp (stdout, pi)
@@ -447,20 +457,19 @@ separated lists.
 </p>
 <p><var>file</var> should be a file name or writable file ID given by <code>fopen</code>.
 </p>
-<p>The parameter <var>delim</var> specifies the delimiter to use to separate
-values on a row.
+<p>The parameter <var>delim</var> specifies the delimiter to use to separate values
+on a row.
 </p>
-<p>The value of <var>r</var> specifies the number of delimiter-only lines to
-add to the start of the file.
+<p>The value of <var>r</var> specifies the number of delimiter-only lines to add to
+the start of the file.
 </p>
-<p>The value of <var>c</var> specifies the number of delimiters to prepend to
-each line of data.
+<p>The value of <var>c</var> specifies the number of delimiters to prepend to each
+line of data.
 </p>
-<p>If the argument <code>&quot;-append&quot;</code> is given, append to the end of
-<var>file</var>.
+<p>If the argument <code>&quot;-append&quot;</code> is given, append to the end of <var>file</var>.
 </p>
-<p>In addition, the following keyword value pairs may appear at the end
-of the argument list:
+<p>In addition, the following keyword value pairs may appear at the end of
+the argument list:
 </p>
 <dl compact="compact">
 <dt><code>&quot;append&quot;</code></dt>
@@ -472,10 +481,12 @@ of the argument list:
 </p>
 </dd>
 <dt><code>&quot;newline&quot;</code></dt>
-<dd><p>The character(s) to use to separate each row.  Three special cases
-exist for this option.  <code>&quot;unix&quot;</code> is changed into <code>&quot;\n&quot;</code>,
-<code>&quot;pc&quot;</code> is changed into <code>&quot;\r\n&quot;</code>, and <code>&quot;mac&quot;</code> is changed
-into <code>&quot;\r&quot;</code>.  Other values for this option are kept as is.
+<dd><p>The character(s) to use to separate each row.  Three special cases exist
+for this option.  <code>&quot;unix&quot;</code> is changed into
+<code>&quot;\n&quot;</code>, <code>&quot;pc&quot;</code> is changed into
+<code>&quot;\r\n&quot;</code>, and <code>&quot;mac&quot;</code> is
+changed into <code>&quot;\r&quot;</code>.  Any other value is used
+directly as the newline separator.
 </p>
 </dd>
 <dt><code>&quot;roffset&quot;</code></dt>
@@ -487,8 +498,8 @@ into <code>&quot;\r&quot;</code>.  Other values for this option are kept as is.
 </p>
 </dd>
 <dt><code>&quot;precision&quot;</code></dt>
-<dd><p>The precision to use when writing the file.  It can either be a
-format string (as used by fprintf) or a number of significant digits.
+<dd><p>The precision to use when writing the file.  It can either be a format
+string (as used by fprintf) or a number of significant digits.
 </p></dd>
 </dl>
 
@@ -497,7 +508,7 @@ format string (as used by fprintf) or a number of significant digits.
 </pre></div>
 
 <div class="example">
-<pre class="example">dlmwrite (&quot;file.tex&quot;, a, &quot;delimiter&quot;, &quot;&amp;&quot;, &quot;newline&quot;, &quot;\\n&quot;)
+<pre class="example">dlmwrite (&quot;file.tex&quot;, a, &quot;delimiter&quot;, &quot;&amp;&quot;, &quot;newline&quot;, &quot;\n&quot;)
 </pre></div>
 
 
@@ -511,9 +522,11 @@ format string (as used by fprintf) or a number of significant digits.
 <dt><a name="index-dlmread-2"></a>Built-in Function: <em><var>data</var> =</em> <strong>dlmread</strong> <em>(<var>file</var>, <var>sep</var>, <var>r0</var>, <var>c0</var>)</em></dt>
 <dt><a name="index-dlmread-3"></a>Built-in Function: <em><var>data</var> =</em> <strong>dlmread</strong> <em>(<var>file</var>, <var>sep</var>, <var>range</var>)</em></dt>
 <dt><a name="index-dlmread-4"></a>Built-in Function: <em><var>data</var> =</em> <strong>dlmread</strong> <em>(&hellip;, &quot;emptyvalue&quot;, <var>EMPTYVAL</var>)</em></dt>
-<dd><p>Read the matrix <var>data</var> from a text file.  If not defined the separator
-between fields is determined from the file itself.  Otherwise the
-separation character is defined by <var>sep</var>.
+<dd><p>Read the matrix <var>data</var> from a text file which uses the delimiter
+<var>sep</var> between data values.
+</p>
+<p>If <var>sep</var> is not defined the separator between fields is determined from
+the file itself.
 </p>
 <p>Given two scalar arguments <var>r0</var> and <var>c0</var>, these define the starting
 row and column of the data to be read.  These values are indexed from zero,
@@ -591,19 +604,67 @@ supports two more:
 The first <var>value</var> number of lines of <var>filename</var> are skipped.
 
 </li><li> <code>&quot;endofline&quot;</code>:
-Specify a single character or <code>&quot;\r\n&quot;</code>.  If no value is given, it
-will be inferred from the file.  If set to &quot;&quot; (empty string) EOLs are
-ignored as delimiters.
+Specify a single character or
+<code>&quot;\r\n&quot;</code>.  If no value is given, it
+will be inferred from the file.  If set to <code>&quot;&quot;</code> (empty string) EOLs
+are ignored as delimiters.
 </li></ul>
 
-<p>The optional input <var>n</var> specifies the number of data lines to read; in
-this sense it differs slightly from the format repeat count in strread.
+<p>The optional input <var>n</var> (format repeat count) specifies the number of
+times the format string is to be used or the number of lines to be read,
+whichever happens first while reading.  The former is equivalent to
+requesting that the data output vectors should be of length <var>N</var>.
+Note that when reading files with format strings referring to multiple
+lines, <var>n</var> should rather be the number of lines to be read than the
+number of format string uses.
 </p>
-<p>If the format string is empty (not: omitted) and the file contains only
+<p>If the format string is empty (not just omitted) and the file contains only
 numeric data (excluding headerlines), textread will return a rectangular
 matrix with the number of columns matching the number of numeric fields on
 the first data line of the file.  Empty fields are returned as zero values.
 </p>
+<p>Examples:
+</p>
+<div class="example">
+<pre class="example">  Assume a data file like:
+  1 a 2 b
+  3 c 4 d
+  5 e
+</pre></div>
+
+<div class="example">
+<pre class="example">  [a, b] = textread (f, &quot;%f %s&quot;)
+  returns two columns of data, one with doubles, the other a
+  cellstr array:
+  a = [1; 2; 3; 4; 5]
+  b = {&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;; &quot;e&quot;}
+</pre></div>
+
+<div class="example">
+<pre class="example">  [a, b] = textread (f, &quot;%f %s&quot;, 3)
+  (read data into two culumns, try to use the format string
+  three times)
+  returns
+  a = [1; 2; 3]
+  b = {&quot;a&quot;; &quot;b&quot;; &quot;c&quot;}
+
+</pre></div>
+
+<div class="example">
+<pre class="example">  With a data file like:
+  1
+  a
+  2
+  b
+
+  [a, b] = textread (f, &quot;%f %s&quot;, 2)
+  returns a = 1 and b = {&quot;a&quot;}; i.e., the format string is used
+  only once because the format string refers to 2 lines of the
+  data file. To obtain 2x1 data output columns, specify N = 4
+  (number of data lines containing all requested data) rather
+  than 2.
+</pre></div>
+
 
 <p><strong>See also:</strong> <a href="Manipulating-Strings.html#XREFstrread">strread</a>, <a href="#XREFload">load</a>, <a href="#XREFdlmread">dlmread</a>, <a href="Formatted-Input.html#XREFfscanf">fscanf</a>, <a href="#XREFtextscan">textscan</a>.
 </p></dd></dl>
@@ -633,10 +694,10 @@ of the same class in the output cell array.  A value of 0 or false (default)
 leaves output in distinct columns.
 
 </li><li> <code>&quot;endofline&quot;</code>:
-Specify <code>&quot;\r&quot;</code>, <code>&quot;\n&quot;</code> or <code>&quot;\r\n&quot;</code> (for CR, LF, or
-CRLF).  If no value is given, it will be inferred from the file.  If set
-to &quot;&quot; (empty string) EOLs are ignored as delimiters and added to
-whitespace.
+Specify <code>&quot;\r&quot;</code>, <code>&quot;\n&quot;</code> or
+<code>&quot;\r\n&quot;</code> (for CR, LF, or CRLF).  If no
+value is given, it will be inferred from the file.  If set to &quot;&quot; (empty
+string) EOLs are ignored as delimiters and added to whitespace.
 
 </li><li> <code>&quot;headerlines&quot;</code>:
 The first <var>value</var> number of lines of <var>fid</var> are skipped.
@@ -702,8 +763,8 @@ files)
 <ul>
 <li> ASCII table
 
-<p>Import ASCII table using the specified number of header rows and
-the specified delimiter.
+<p>Import ASCII table using the specified number of header rows and the
+specified delimiter.
 </p>
 </li><li> Image file
 

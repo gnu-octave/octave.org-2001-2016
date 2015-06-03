@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -60,13 +59,15 @@ Next: <a href="System-Utilities.html#System-Utilities" accesskey="n" rel="next">
 <h2 class="chapter">35 GUI Development</h2>
 
 <p>Octave is principally a batch or command-line language.  However, it does
-offer some limited features for constructing graphical interfaces for
-interacting with users.
+offer some features for constructing graphical interfaces that interact with
+users.
 </p>
-<p>The GUI elements available are I/O dialogs and a progress bar.  For example,
-rather than hardcoding a filename for output results a script can open a dialog
-box and allow the user to choose a file.  Similarly, if a calculation is
-expected to take a long time a script can display a progress bar.
+<p>The GUI elements available are I/O dialogs, a progress bar, and UI elements
+for plot windows.  For example, rather than hardcoding a filename for output
+results a script can open a dialog box and allow the user to choose a file.
+Similarly, if a calculation is expected to take a long time a script can
+display a progress bar.  The various UI elements can be used to fully customize
+the plot window with menubars, context menus, 
 </p>
 <p>Several utility functions make it possible to store private data for use with
 a GUI which will not pollute the user&rsquo;s variable space.
@@ -80,9 +81,11 @@ preferences.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="Progress-Bar.html#Progress-Bar" accesskey="2">Progress Bar</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="GUI-Utility-Functions.html#GUI-Utility-Functions" accesskey="3">GUI Utility Functions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="UI-Elements.html#UI-Elements" accesskey="3">UI Elements</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="User_002dDefined-Preferences.html#User_002dDefined-Preferences" accesskey="4">User-Defined Preferences</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="GUI-Utility-Functions.html#GUI-Utility-Functions" accesskey="4">GUI Utility Functions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="User_002dDefined-Preferences.html#User_002dDefined-Preferences" accesskey="5">User-Defined Preferences</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 

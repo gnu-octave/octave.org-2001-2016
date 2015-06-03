@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -59,27 +58,30 @@ Next: <a href="Polynomial-Manipulations.html#Polynomial-Manipulations" accesskey
 <a name="Sets-1"></a>
 <h2 class="chapter">27 Sets</h2>
 
-<p>Octave has a limited number of functions for managing sets of data, where a
-set is defined as a collection of unique elements.  In Octave a set is
-represented as a vector of numbers.
+<p>Octave has a number of functions for managing sets of data.  A set is defined
+as a collection of unique elements and is typically represented by a vector of
+numbers sorted in ascending order.  Any vector or matrix can be converted to a
+set by removing duplicates through the use of the <code>unique</code> function.
+However, it isn&rsquo;t necessary to explicitly create a set as all of the functions
+which operate on sets will convert their input to a set before proceeding.
 </p>
 <a name="XREFunique"></a><dl>
 <dt><a name="index-unique"></a>Function File: <em></em> <strong>unique</strong> <em>(<var>x</var>)</em></dt>
 <dt><a name="index-unique-1"></a>Function File: <em></em> <strong>unique</strong> <em>(<var>x</var>, &quot;rows&quot;)</em></dt>
-<dt><a name="index-unique-2"></a>Function File: <em></em> <strong>unique</strong> <em>(&hellip;, &quot;first&quot;)</em></dt>
-<dt><a name="index-unique-3"></a>Function File: <em></em> <strong>unique</strong> <em>(&hellip;, &quot;last&quot;)</em></dt>
-<dt><a name="index-unique-4"></a>Function File: <em>[<var>y</var>, <var>i</var>, <var>j</var>] =</em> <strong>unique</strong> <em>(&hellip;)</em></dt>
-<dd><p>Return the unique elements of <var>x</var>, sorted in ascending order.
-If the input <var>x</var> is a vector then the output is also a vector with the
-same orientation (row or column) as the input.  For a matrix input the
-output is always a column vector.  <var>x</var> may also be a cell array of
-strings.
+<dt><a name="index-unique-2"></a>Function File: <em>[<var>y</var>, <var>i</var>, <var>j</var>] =</em> <strong>unique</strong> <em>(&hellip;)</em></dt>
+<dt><a name="index-unique-3"></a>Function File: <em>[<var>y</var>, <var>i</var>, <var>j</var>] =</em> <strong>unique</strong> <em>(&hellip;, &quot;first&quot;)</em></dt>
+<dt><a name="index-unique-4"></a>Function File: <em>[<var>y</var>, <var>i</var>, <var>j</var>] =</em> <strong>unique</strong> <em>(&hellip;, &quot;last&quot;)</em></dt>
+<dd><p>Return the unique elements of <var>x</var> sorted in ascending order.
 </p>
-<p>If the optional argument <code>&quot;rows&quot;</code> is supplied, return the unique
-rows of <var>x</var>, sorted in ascending order.
+<p>If the input <var>x</var> is a column vector then return a column vector;
+Otherwise, return a row vector.  <var>x</var> may also be a cell array of strings.
+</p>
+<p>If the optional argument <code>&quot;rows&quot;</code> is given then return the unique
+rows of <var>x</var> sorted in ascending order.  The input must be a 2-D matrix
+to use this option.
 </p>
 <p>If requested, return index vectors <var>i</var> and <var>j</var> such that
-<code>x(i)==y</code> and <code>y(j)==x</code>.
+<code><var>y</var> = <var>x</var>(<var>i</var>)</code> and <code><var>x</var> = <var>y</var>(<var>j</var>)</code>.
 </p>
 <p>Additionally, if <var>i</var> is a requested output then one of <code>&quot;first&quot;</code> or
 <code>&quot;last&quot;</code> may be given as an input.  If <code>&quot;last&quot;</code> is specified,
@@ -95,6 +97,11 @@ is specified, return the lowest.  The default is <code>&quot;last&quot;</code>.
 </td></tr>
 </table>
 
+<hr>
+<div class="header">
+<p>
+Next: <a href="Polynomial-Manipulations.html#Polynomial-Manipulations" accesskey="n" rel="next">Polynomial Manipulations</a>, Previous: <a href="Statistics.html#Statistics" accesskey="p" rel="prev">Statistics</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+</div>
 
 
 

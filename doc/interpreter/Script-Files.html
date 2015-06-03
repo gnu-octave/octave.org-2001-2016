@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -75,7 +74,7 @@ scope as the other variables that are visible on the command line.
 </p>
 <p>Even though a script file may not begin with the <code>function</code>
 keyword, it is possible to define more than one function in a single
-script file and load (but not execute) all of them at once.  To do 
+script file and load (but not execute) all of them at once.  To do
 this, the first token in the file (ignoring comments and other white
 space) must be something other than <code>function</code>.  If you have no
 other statements to evaluate, you can use a statement that has no
@@ -153,9 +152,12 @@ execute commands from any file.
 </p>
 <a name="XREFsource"></a><dl>
 <dt><a name="index-source"></a>Built-in Function: <em></em> <strong>source</strong> <em>(<var>file</var>)</em></dt>
-<dd><p>Parse and execute the contents of <var>file</var>.  This is equivalent to
-executing commands from a script file, but without requiring the file to
-be named <samp><var>file</var>.m</samp>.
+<dd><p>Parse and execute the contents of <var>file</var>.
+</p>
+<p>This is equivalent to executing commands from a script file, but without
+requiring the file to be named <samp><var>file</var>.m</samp>.
+</p>
+<p><strong>See also:</strong> <a href="Calling-a-Function-by-its-Name.html#XREFrun">run</a>.
 </p></dd></dl>
 
 

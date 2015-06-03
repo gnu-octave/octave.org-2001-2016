@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -76,9 +75,12 @@ area = polyval (integral, 3) - polyval (integral, 0)
 <dt><a name="index-polyder-1"></a>Function File: <em>[<var>k</var>] =</em> <strong>polyder</strong> <em>(<var>a</var>, <var>b</var>)</em></dt>
 <dt><a name="index-polyder-2"></a>Function File: <em>[<var>q</var>, <var>d</var>] =</em> <strong>polyder</strong> <em>(<var>b</var>, <var>a</var>)</em></dt>
 <dd><p>Return the coefficients of the derivative of the polynomial whose
-coefficients are given by the vector <var>p</var>.  If a pair of polynomials
-is given, return the derivative of the product <em><var>a</var>*<var>b</var></em>.
-If two inputs and two outputs are given, return the derivative of the
+coefficients are given by the vector <var>p</var>.
+</p>
+<p>If a pair of polynomials is given, return the derivative of the product
+<em><var>a</var>*<var>b</var></em>.
+</p>
+<p>If two inputs and two outputs are given, return the derivative of the
 polynomial quotient <em><var>b</var>/<var>a</var></em>.  The quotient numerator is
 in <var>q</var> and the denominator in <var>d</var>.
 </p>
@@ -90,8 +92,10 @@ in <var>q</var> and the denominator in <var>d</var>.
 <dt><a name="index-polyint"></a>Function File: <em></em> <strong>polyint</strong> <em>(<var>p</var>)</em></dt>
 <dt><a name="index-polyint-1"></a>Function File: <em></em> <strong>polyint</strong> <em>(<var>p</var>, <var>k</var>)</em></dt>
 <dd><p>Return the coefficients of the integral of the polynomial whose
-coefficients are represented by the vector <var>p</var>.  The variable
-<var>k</var> is the constant of integration, which by default is set to zero.
+coefficients are represented by the vector <var>p</var>.
+</p>
+<p>The variable <var>k</var> is the constant of integration, which by default is
+set to zero.
 </p>
 <p><strong>See also:</strong> <a href="#XREFpolyder">polyder</a>, <a href="Evaluating-Polynomials.html#XREFpolyval">polyval</a>.
 </p></dd></dl>
@@ -100,9 +104,10 @@ coefficients are represented by the vector <var>p</var>.  The variable
 <a name="XREFpolyaffine"></a><dl>
 <dt><a name="index-polyaffine"></a>Function File: <em></em> <strong>polyaffine</strong> <em>(<var>f</var>, <var>mu</var>)</em></dt>
 <dd><p>Return the coefficients of the polynomial vector <var>f</var> after an affine
-transformation.  If <var>f</var> is the vector representing the polynomial f(x),
-then <code><var>g</var> = polyaffine (<var>f</var>, <var>mu</var>)</code> is the vector
-representing:
+transformation.
+</p>
+<p>If <var>f</var> is the vector representing the polynomial f(x), then
+<code><var>g</var> = polyaffine (<var>f</var>, <var>mu</var>)</code> is the vector representing:
 </p>
 <div class="example">
 <pre class="example">g(x) = f( (x - <var>mu</var>(1)) / <var>mu</var>(2) )

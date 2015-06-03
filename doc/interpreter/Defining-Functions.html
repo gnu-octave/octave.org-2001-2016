@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -88,8 +87,8 @@ endfunction
 </pre></div>
 
 <p>The <code>printf</code> statement (see <a href="Input-and-Output.html#Input-and-Output">Input and Output</a>) simply tells
-Octave to print the string <code>&quot;\a&quot;</code>.  The special character &lsquo;<samp>\a</samp>&rsquo;
-stands for the alert character (ASCII 7).  See <a href="Strings.html#Strings">Strings</a>.
+Octave to print the string <code>&quot;\a&quot;</code>.  The special character
+&lsquo;<samp>\a</samp>&rsquo; stands for the alert character (ASCII 7).  See <a href="Strings.html#Strings">Strings</a>.
 </p>
 <p>Once this function is defined, you can ask Octave to evaluate it by
 typing the name of the function.
@@ -226,23 +225,42 @@ possibilities and issue our own error message.
 <a name="XREFnargin"></a><dl>
 <dt><a name="index-nargin"></a>Built-in Function: <em></em> <strong>nargin</strong> <em>()</em></dt>
 <dt><a name="index-nargin-1"></a>Built-in Function: <em></em> <strong>nargin</strong> <em>(<var>fcn</var>)</em></dt>
-<dd><p>Within a function, return the number of arguments passed to the function.
-At the top level, return the number of command line arguments passed to
-Octave.
+<dd><p>Report the number of input arguments to a function.
 </p>
-<p>If called with the optional argument <var>fcn</var>, a function name or handle,
+<p>Called from within a function, return the number of arguments passed to the
+function.  At the top level, return the number of command line arguments
+passed to Octave.
+</p>
+<p>If called with the optional argument <var>fcn</var>&mdash;a function name or handle&mdash;
 return the declared number of arguments that the function can accept.
-If the last argument is <var>varargin</var> the returned value is negative.
-This feature does not work on builtin functions.
 </p>
-<p><strong>See also:</strong> <a href="Multiple-Return-Values.html#XREFnargout">nargout</a>, <a href="Multiple-Return-Values.html#XREFvarargin">varargin</a>, <a href="Ignoring-Arguments.html#XREFisargout">isargout</a>, <a href="Multiple-Return-Values.html#XREFvarargout">varargout</a>, <a href="Multiple-Return-Values.html#XREFnthargout">nthargout</a>.
+<p>If the last argument to <var>fcn</var> is <var>varargin</var> the returned value is
+negative.  For example, the function <code>union</code> for sets is declared as
+</p>
+<div class="example">
+<pre class="example">function [y, ia, ib] = union (a, b, varargin)
+
+and
+
+nargin (&quot;union&quot;)
+&rArr; -3
+</pre></div>
+
+<p>Programming Note: <code>nargin</code> does not work on built-in functions.
+</p>
+<p><strong>See also:</strong> <a href="Multiple-Return-Values.html#XREFnargout">nargout</a>, <a href="Multiple-Return-Values.html#XREFnarginchk">narginchk</a>, <a href="Multiple-Return-Values.html#XREFvarargin">varargin</a>, <a href="#XREFinputname">inputname</a>.
 </p></dd></dl>
 
 
 <a name="XREFinputname"></a><dl>
 <dt><a name="index-inputname"></a>Function File: <em></em> <strong>inputname</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Return the name of the <var>n</var>-th argument to the calling function.
-If the argument is not a simple variable name, return an empty string.
+</p>
+<p>If the argument is not a simple variable name, return an empty string.
+<code>inputname</code> may only be used within a function body, not at the
+command line.
+</p>
+<p><strong>See also:</strong> <a href="#XREFnargin">nargin</a>, <a href="Multiple-Return-Values.html#XREFnthargout">nthargout</a>.
 </p></dd></dl>
 
 
@@ -251,9 +269,11 @@ If the argument is not a simple variable name, return an empty string.
 <dt><a name="index-silent_005ffunctions-1"></a>Built-in Function: <em><var>old_val</var> =</em> <strong>silent_functions</strong> <em>(<var>new_val</var>)</em></dt>
 <dt><a name="index-silent_005ffunctions-2"></a>Built-in Function: <em></em> <strong>silent_functions</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that controls whether internal
-output from a function is suppressed.  If this option is disabled,
-Octave will display the results produced by evaluating expressions
-within a function body that are not terminated with a semicolon.
+output from a function is suppressed.
+</p>
+<p>If this option is disabled, Octave will display the results produced by
+evaluating expressions within a function body that are not terminated with
+a semicolon.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
 variable is changed locally for the function and any subroutines it calls.

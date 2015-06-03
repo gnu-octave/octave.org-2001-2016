@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -71,7 +70,7 @@ be taken into account.  There are several possible solutions, but the most
 common is illustrated in the following example,
 </p>
 <div class="example">
-<pre class="example">DEFUN_DLD (do_what_i_want, args, nargout, 
+<pre class="example">DEFUN_DLD (do_what_i_want, args, nargout,
   &quot;-*- texinfo -*-\n\
 @deftypefn {Function File} {} do_what_i_say (@var{n})\n\
 A function that does what the user actually wants rather\n\

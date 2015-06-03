@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -67,19 +66,25 @@ of dialog box.
 <dt><a name="index-msgbox"></a>Function File: <em><var>h</var> =</em> <strong>msgbox</strong> <em>(<var>msg</var>)</em></dt>
 <dt><a name="index-msgbox-1"></a>Function File: <em><var>h</var> =</em> <strong>msgbox</strong> <em>(<var>msg</var>, <var>title</var>)</em></dt>
 <dt><a name="index-msgbox-2"></a>Function File: <em><var>h</var> =</em> <strong>msgbox</strong> <em>(<var>msg</var>, <var>title</var>, <var>icon</var>)</em></dt>
-<dd><p>Display <var>msg</var> using a message dialog box. 
+<dt><a name="index-msgbox-3"></a>Function File: <em><var>h</var> =</em> <strong>msgbox</strong> <em>(&hellip;, <var>createmode</var>)</em></dt>
+<dd><p>Display <var>msg</var> using a message dialog box.
 </p>
-<p>The message may have multiple lines separated by newline characters
-(<code>&quot;\n&quot;</code>), or it may be a cellstr array with one element for each
-line.  The optional input <var>title</var> (character string) can be used to
-decorate the dialog caption.
+<p>The message may have multiple lines separated by newline characters (&quot;\n&quot;),
+or it may be a cellstr array with one element for each line.
 </p>
-<p>The optional argument <var>icon</var> selects a dialog icon. 
-It can be one of <code>&quot;none&quot;</code> (default), <code>&quot;error&quot;</code>,
-<code>&quot;help&quot;</code>, or <code>&quot;warn&quot;</code>.
+<p>The optional input <var>title</var> (character string) can be used to decorate
+the dialog caption.
+</p>
+<p>The optional argument <var>icon</var> selects a dialog icon.
+It can be one of <code>&quot;none&quot;</code> (default), <code>&quot;error&quot;</code>, <code>&quot;help&quot;</code>,
+or <code>&quot;warn&quot;</code>.
 </p>
 <p>The return value is always 1.
 </p>
+<p>Compatibility Note: The optional argument <var>createmode</var> is accepted for
+<small>MATLAB</small> compatibility, but is not implemented.
+</p>
+
 <p><strong>See also:</strong> <a href="#XREFerrordlg">errordlg</a>, <a href="#XREFhelpdlg">helpdlg</a>, <a href="#XREFinputdlg">inputdlg</a>, <a href="#XREFlistdlg">listdlg</a>, <a href="#XREFquestdlg">questdlg</a>, <a href="#XREFwarndlg">warndlg</a>.
 </p></dd></dl>
 
@@ -88,15 +93,21 @@ It can be one of <code>&quot;none&quot;</code> (default), <code>&quot;error&quot
 <a name="XREFerrordlg"></a><dl>
 <dt><a name="index-errordlg"></a>Function File: <em><var>h</var> =</em> <strong>errordlg</strong> <em>(<var>msg</var>)</em></dt>
 <dt><a name="index-errordlg-1"></a>Function File: <em><var>h</var> =</em> <strong>errordlg</strong> <em>(<var>msg</var>, <var>title</var>)</em></dt>
+<dt><a name="index-errordlg-2"></a>Function File: <em><var>h</var> =</em> <strong>errordlg</strong> <em>(<var>msg</var>, <var>title</var>, <var>createmode</var>)</em></dt>
 <dd><p>Display <var>msg</var> using an error dialog box.
 </p>
-<p>The message may have multiple lines separated by newline characters
-(&quot;\n&quot;), or it may be a cellstr array with one element for each
-line.  The optional input <var>title</var> (character string) can be used to
-set the dialog caption.  The default title is <code>&quot;Error Dialog&quot;</code>.
+<p>The message may have multiple lines separated by newline characters (&quot;\n&quot;),
+or it may be a cellstr array with one element for each line.
+</p>
+<p>The optional input <var>title</var> (character string) can be used to set the
+dialog caption.  The default title is <code>&quot;Error Dialog&quot;</code>.
 </p>
 <p>The return value is always 1.
 </p>
+<p>Compatibility Note: The optional argument <var>createmode</var> is accepted for
+<small>MATLAB</small> compatibility, but is not implemented.
+</p>
+
 <p><strong>See also:</strong> <a href="#XREFhelpdlg">helpdlg</a>, <a href="#XREFinputdlg">inputdlg</a>, <a href="#XREFlistdlg">listdlg</a>, <a href="#XREFmsgbox">msgbox</a>, <a href="#XREFquestdlg">questdlg</a>, <a href="#XREFwarndlg">warndlg</a>.
 </p></dd></dl>
 
@@ -109,7 +120,9 @@ set the dialog caption.  The default title is <code>&quot;Error Dialog&quot;</co
 </p>
 <p>The message may have multiple lines separated by newline characters
 (&quot;\n&quot;), or it may be a cellstr array with one element for each
-line.  The optional input <var>title</var> (character string) can be used to
+line.
+</p>
+<p>The optional input <var>title</var> (character string) can be used to
 set the dialog caption.  The default title is <code>&quot;Help Dialog&quot;</code>.
 </p>
 <p>The return value is always 1.
@@ -124,42 +137,37 @@ set the dialog caption.  The default title is <code>&quot;Help Dialog&quot;</cod
 <dt><a name="index-inputdlg-1"></a>Function File: <em><var>cstr</var> =</em> <strong>inputdlg</strong> <em>(<var>prompt</var>, <var>title</var>)</em></dt>
 <dt><a name="index-inputdlg-2"></a>Function File: <em><var>cstr</var> =</em> <strong>inputdlg</strong> <em>(<var>prompt</var>, <var>title</var>, <var>rowscols</var>)</em></dt>
 <dt><a name="index-inputdlg-3"></a>Function File: <em><var>cstr</var> =</em> <strong>inputdlg</strong> <em>(<var>prompt</var>, <var>title</var>, <var>rowscols</var>, <var>defaults</var>)</em></dt>
-<dd><p>Return user input from a multi-textfield dialog box in a cell array
-of strings, or an empty cell array if the dialog is closed by the
-Cancel button.
+<dd><p>Return user input from a multi-textfield dialog box in a cell array of
+strings, or an empty cell array if the dialog is closed by the Cancel
+button.
 </p>
 <p>Inputs:
 </p>
 <dl compact="compact">
 <dt><var>prompt</var></dt>
-<dd><p>A cell array with strings labeling each text field.  This input is required. 
+<dd><p>A cell array with strings labeling each text field.  This input is required.
 </p>
 </dd>
 <dt><var>title</var></dt>
-<dd><p>String to use for the caption of the dialog.  The default is <code>&quot;Input
-Dialog&quot;</code>.
+<dd><p>String to use for the caption of the dialog.  The default is
+<code>&quot;Input Dialog&quot;</code>.
 </p>
 </dd>
 <dt><var>rowscols</var></dt>
 <dd><p>Specifies the size of the text fields and can take three forms:
 </p>
 <ol>
-<li> a scalar value which defines the number of rows used for each
-text field.
+<li> a scalar value which defines the number of rows used for each text field.
 
-</li><li> a vector which defines the individual number of rows
-used for each text field. 
+</li><li> a vector which defines the individual number of rows used for each text field.
 
-</li><li> a matrix which defines the individual number of rows and
-columns used for each text field.  In the matrix each row describes
-a single text field.  The first column specifies the number of input
-rows to use and the second column specifies the text field width.
+</li><li> a matrix which defines the individual number of rows and columns used for each text field.  In the matrix each row describes a single text field.  The first column specifies the number of input rows to use and the second column specifies the text field width.
 </li></ol>
 
 </dd>
 <dt><var>defaults</var></dt>
-<dd><p>A list of default values to place in each text fields.  It must be
-a cell array of strings with the same size as <var>prompt</var>.
+<dd><p>A list of default values to place in each text fields.  It must be a cell
+array of strings with the same size as <var>prompt</var>.
 </p></dd>
 </dl>
 
@@ -170,15 +178,16 @@ a cell array of strings with the same size as <var>prompt</var>.
 <a name="index-dialog_002c-displaying-a-list-dialog"></a>
 <a name="XREFlistdlg"></a><dl>
 <dt><a name="index-listdlg"></a>Function File: <em>[<var>sel</var>, <var>ok</var>] =</em> <strong>listdlg</strong> <em>(<var>key</var>, <var>value</var>, &hellip;)</em></dt>
-<dd><p>Return user inputs from a list dialog box in a vector of 
-selection indices <var>sel</var> and a flag <var>ok</var> indicating how the
-user closed the dialog box.  The value of <var>ok</var> is 1 if the user
-closed the box with the OK button, otherwise it is 0 and <var>sel</var> is
-empty.
+<dd><p>Return user inputs from a list dialog box in a vector of selection indices
+<var>sel</var> and a flag <var>ok</var> indicating how the user closed the dialog
+box.
+</p>
+<p>The value of <var>ok</var> is 1 if the user closed the box with the OK button,
+otherwise it is 0 and <var>sel</var> is empty.
 </p>
 <p>The indices in <var>sel</var> are 1-based.
 </p>
-<p>The arguments are specified in form of <var>key</var>, <var>value</var> pairs. 
+<p>The arguments are specified in form of <var>key</var>, <var>value</var> pairs.
 The <code>&quot;ListString&quot;</code> argument pair must be specified.
 </p>
 <p>Valid <var>key</var> and <var>value</var> pairs are:
@@ -193,13 +202,13 @@ The <code>&quot;ListString&quot;</code> argument pair must be specified.
 </p>
 </dd>
 <dt><code>&quot;ListSize&quot;</code></dt>
-<dd><p>a vector with two elements <var>width</var> and <var>height</var> defining
-the size of the list field in pixels.  Default is [160 300].
+<dd><p>a vector with two elements <var>width</var> and <var>height</var> defining the size
+of the list field in pixels.  Default is [160 300].
 </p>
 </dd>
 <dt><code>&quot;InitialValue&quot;</code></dt>
-<dd><p>a vector containing 1-based indices of preselected elements.  Default
-is 1 (first item).
+<dd><p>a vector containing 1-based indices of preselected elements.
+Default is 1 (first item).
 </p>
 </dd>
 <dt><code>&quot;Name&quot;</code></dt>
@@ -207,8 +216,8 @@ is 1 (first item).
 </p>
 </dd>
 <dt><code>&quot;PromptString&quot;</code></dt>
-<dd><p>a cell array of strings to be displayed above the list field.  Default
-is {}.
+<dd><p>a cell array of strings to be displayed above the list field.
+Default is {}.
 </p>
 </dd>
 <dt><code>&quot;OKString&quot;</code></dt>
@@ -233,7 +242,7 @@ endif
 </pre></div>
 
 
-<p><strong>See also:</strong> <a href="#XREFerrordlg">errordlg</a>, <a href="#XREFhelpdlg">helpdlg</a>, <a href="#XREFinputdlg">inputdlg</a>, <a href="#XREFmsgbox">msgbox</a>, <a href="#XREFquestdlg">questdlg</a>, <a href="#XREFwarndlg">warndlg</a>.
+<p><strong>See also:</strong> <a href="Terminal-Input.html#XREFmenu">menu</a>, <a href="#XREFerrordlg">errordlg</a>, <a href="#XREFhelpdlg">helpdlg</a>, <a href="#XREFinputdlg">inputdlg</a>, <a href="#XREFmsgbox">msgbox</a>, <a href="#XREFquestdlg">questdlg</a>, <a href="#XREFwarndlg">warndlg</a>.
 </p></dd></dl>
 
 
@@ -244,27 +253,26 @@ endif
 <dt><a name="index-questdlg-2"></a>Function File: <em><var>btn</var> =</em> <strong>questdlg</strong> <em>(<var>msg</var>, <var>title</var>, <var>default</var>)</em></dt>
 <dt><a name="index-questdlg-3"></a>Function File: <em><var>btn</var> =</em> <strong>questdlg</strong> <em>(<var>msg</var>, <var>title</var>, <var>btn1</var>, <var>btn2</var>, <var>default</var>)</em></dt>
 <dt><a name="index-questdlg-4"></a>Function File: <em><var>btn</var> =</em> <strong>questdlg</strong> <em>(<var>msg</var>, <var>title</var>, <var>btn1</var>, <var>btn2</var>, <var>btn3</var>, <var>default</var>)</em></dt>
-<dd><p>Display <var>msg</var> using a question dialog box and return the caption
-of the activated button.
+<dd><p>Display <var>msg</var> using a question dialog box and return the caption of
+the activated button.
 </p>
 <p>The dialog may contain two or three buttons which will all close the dialog.
 </p>
-<p>The message may have multiple lines separated by newline characters
-(&quot;\n&quot;), or it may be a cellstr array with one element for each
-line.  The optional <var>title</var> (character string) can be used to
-decorate the dialog caption.
+<p>The message may have multiple lines separated by newline characters (&quot;\n&quot;),
+or it may be a cellstr array with one element for each line.
 </p>
-<p>The string <var>default</var> identifies the default button, 
-which is activated by pressing the <tt class="key">ENTER</tt> key.
-It must match one of the strings given in <var>btn1</var>, <var>btn2</var>, or
-<var>btn3</var>.
+<p>The optional <var>title</var> (character string) can be used to decorate the
+dialog caption.
 </p>
-<p>If only <var>msg</var> and <var>title</var> are specified, three buttons with
-the default captions <code>&quot;Yes&quot;</code>, <code>&quot;No&quot;</code>, and <code>&quot;Cancel&quot;</code> are
-used.
+<p>The string <var>default</var> identifies the default button, which is activated
+by pressing the <tt class="key">ENTER</tt> key.  It must match one of the strings given
+in <var>btn1</var>, <var>btn2</var>, or <var>btn3</var>.
 </p>
-<p>If only two button captions, <var>btn1</var> and <var>btn2</var>, are specified 
-the dialog will have only these two buttons.
+<p>If only <var>msg</var> and <var>title</var> are specified, three buttons with the
+default captions <code>&quot;Yes&quot;</code>, <code>&quot;No&quot;</code>, and <code>&quot;Cancel&quot;</code> are used.
+</p>
+<p>If only two button captions, <var>btn1</var> and <var>btn2</var>, are specified the
+dialog will have only these two buttons.
 </p>
 
 <p><strong>See also:</strong> <a href="#XREFerrordlg">errordlg</a>, <a href="#XREFhelpdlg">helpdlg</a>, <a href="#XREFinputdlg">inputdlg</a>, <a href="#XREFlistdlg">listdlg</a>, <a href="#XREFwarndlg">warndlg</a>.
@@ -275,12 +283,19 @@ the dialog will have only these two buttons.
 <a name="XREFwarndlg"></a><dl>
 <dt><a name="index-warndlg"></a>Function File: <em><var>h</var> =</em> <strong>warndlg</strong> <em>(<var>msg</var>)</em></dt>
 <dt><a name="index-warndlg-1"></a>Function File: <em><var>h</var> =</em> <strong>warndlg</strong> <em>(<var>msg</var>, <var>title</var>)</em></dt>
-<dd><p>Display <var>msg</var> using a warning dialog box. 
+<dt><a name="index-warndlg-2"></a>Function File: <em><var>h</var> =</em> <strong>warndlg</strong> <em>(<var>msg</var>, <var>title</var>, <var>createmode</var>)</em></dt>
+<dd><p>Display <var>msg</var> using a warning dialog box.
 </p>
-<p>The message may have multiple lines separated by newline characters
-(&quot;\n&quot;), or it may be a cellstr array with one element for each
-line.  The optional input <var>title</var> (character string) can be used to
-set the dialog caption.  The default title is <code>&quot;Warning Dialog&quot;</code>.
+<p>The message may have multiple lines separated by newline characters (&quot;\n&quot;),
+or it may be a cellstr array with one element for each line.
+</p>
+<p>The optional input <var>title</var> (character string) can be used to set the
+dialog caption.  The default title is <code>&quot;Warning Dialog&quot;</code>.
+</p>
+<p>The return value is always 1.
+</p>
+<p>Compatibility Note: The optional argument <var>createmode</var> is accepted for
+<small>MATLAB</small> compatibility, but is not implemented.
 </p>
 
 <p><strong>See also:</strong> <a href="#XREFhelpdlg">helpdlg</a>, <a href="#XREFinputdlg">inputdlg</a>, <a href="#XREFlistdlg">listdlg</a>, <a href="#XREFquestdlg">questdlg</a>.

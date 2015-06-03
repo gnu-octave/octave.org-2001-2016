@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -76,9 +75,8 @@ or function names:
 <tr><td width="33%"><code>function</code></td><td width="33%"><code>global</code></td><td width="33%"><code>if</code></td></tr>
 <tr><td width="33%"><code>methods</code></td><td width="33%"><code>otherwise</code></td><td width="33%"><code>parfor</code></td></tr>
 <tr><td width="33%"><code>persistent</code></td><td width="33%"><code>properties</code></td><td width="33%"><code>return</code></td></tr>
-<tr><td width="33%"><code>static</code></td><td width="33%"><code>switch</code></td><td width="33%"><code>try</code></td></tr>
-<tr><td width="33%"><code>until</code></td><td width="33%"><code>unwind_protect</code></td><td width="33%"><code>unwind_protect_cleanup</code></td></tr>
-<tr><td width="33%"><code>while</code></td></tr>
+<tr><td width="33%"><code>switch</code></td><td width="33%"><code>try</code></td><td width="33%"><code>until</code></td></tr>
+<tr><td width="33%"><code>unwind_protect</code></td><td width="33%"><code>unwind_protect_cleanup</code></td><td width="33%"><code>while</code></td></tr>
 </table>
 
 <p>The function <code>iskeyword</code> can be used to quickly check whether an
@@ -87,8 +85,9 @@ identifier is reserved by Octave.
 <a name="XREFiskeyword"></a><dl>
 <dt><a name="index-iskeyword"></a>Built-in Function: <em></em> <strong>iskeyword</strong> <em>()</em></dt>
 <dt><a name="index-iskeyword-1"></a>Built-in Function: <em></em> <strong>iskeyword</strong> <em>(<var>name</var>)</em></dt>
-<dd><p>Return true if <var>name</var> is an Octave keyword.  If <var>name</var>
-is omitted, return a list of keywords.
+<dd><p>Return true if <var>name</var> is an Octave keyword.
+</p>
+<p>If <var>name</var> is omitted, return a list of keywords.
 </p>
 <p><strong>See also:</strong> <a href="Variables.html#XREFisvarname">isvarname</a>, <a href="Status-of-Variables.html#XREFexist">exist</a>.
 </p></dd></dl>

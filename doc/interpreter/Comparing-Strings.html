@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -162,45 +161,6 @@ This is just the opposite of the corresponding C library function.
 <p><strong>Caution:</strong> National alphabets are not supported.
 </p>
 <p><strong>See also:</strong> <a href="#XREFstrncmp">strncmp</a>, <a href="#XREFstrcmp">strcmp</a>, <a href="#XREFstrcmpi">strcmpi</a>.
-</p></dd></dl>
-
-
-<a name="XREFvalidatestring"></a><dl>
-<dt><a name="index-validatestring"></a>Function File: <em><var>validstr</var> =</em> <strong>validatestring</strong> <em>(<var>str</var>, <var>strarray</var>)</em></dt>
-<dt><a name="index-validatestring-1"></a>Function File: <em><var>validstr</var> =</em> <strong>validatestring</strong> <em>(<var>str</var>, <var>strarray</var>, <var>funcname</var>)</em></dt>
-<dt><a name="index-validatestring-2"></a>Function File: <em><var>validstr</var> =</em> <strong>validatestring</strong> <em>(<var>str</var>, <var>strarray</var>, <var>funcname</var>, <var>varname</var>)</em></dt>
-<dt><a name="index-validatestring-3"></a>Function File: <em><var>validstr</var> =</em> <strong>validatestring</strong> <em>(&hellip;, <var>position</var>)</em></dt>
-<dd><p>Verify that <var>str</var> is an element, or substring of an element, in
-<var>strarray</var>.
-</p>
-<p>When <var>str</var> is a character string to be tested, and <var>strarray</var> is a
-cellstr of valid values, then <var>validstr</var> will be the validated form
-of <var>str</var> where validation is defined as <var>str</var> being a member
-or substring of <var>validstr</var>.  This is useful for both verifying
-and expanding short options, such as <code>&quot;r&quot;</code>, to their longer forms,
-such as <code>&quot;red&quot;</code>.  If <var>str</var> is a substring of <var>validstr</var>, and
-there are multiple matches, the shortest match will be returned if all
-matches are substrings of each other.  Otherwise, an error will be raised
-because the expansion of <var>str</var> is ambiguous.  All comparisons are case
-insensitive.
-</p>
-<p>The additional inputs <var>funcname</var>, <var>varname</var>, and <var>position</var>
-are optional and will make any generated validation error message more
-specific.
-</p>
-<p>Examples:
-</p>
-<div class="smallexample">
-<pre class="smallexample">validatestring (&quot;r&quot;, {&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;})
-&rArr; &quot;red&quot;
-
-validatestring (&quot;b&quot;, {&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;black&quot;})
-&rArr; error: validatestring: multiple unique matches were found for 'b':
-   blue, black
-</pre></div>
-
-
-<p><strong>See also:</strong> <a href="#XREFstrcmp">strcmp</a>, <a href="#XREFstrcmpi">strcmpi</a>.
 </p></dd></dl>
 
 

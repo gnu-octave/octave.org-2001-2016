@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -217,10 +216,9 @@ result.
 <dt><a name="index-sub2ind-1"></a>Function File: <em><var>ind</var> =</em> <strong>sub2ind</strong> <em>(<var>dims</var>, <var>s1</var>, <var>s2</var>, &hellip;, <var>sN</var>)</em></dt>
 <dd><p>Convert subscripts to a linear index.
 </p>
-<p>The following example shows how to convert the two-dimensional
-index <code>(2,3)</code> of a 3-by-3 matrix to a linear index.  The matrix
-is linearly indexed moving from one column to next, filling up
-all rows in each column.
+<p>The following example shows how to convert the two-dimensional index
+<code>(2,3)</code> of a 3-by-3 matrix to a linear index.  The matrix is linearly
+indexed moving from one column to next, filling up all rows in each column.
 </p>
 <div class="example">
 <pre class="example">linear_index = sub2ind ([3, 3], 2, 3)
@@ -252,11 +250,18 @@ moving from one column to next, filling up all rows in each column.
 <a name="XREFisindex"></a><dl>
 <dt><a name="index-isindex"></a>Built-in Function: <em></em> <strong>isindex</strong> <em>(<var>ind</var>)</em></dt>
 <dt><a name="index-isindex-1"></a>Built-in Function: <em></em> <strong>isindex</strong> <em>(<var>ind</var>, <var>n</var>)</em></dt>
-<dd><p>Return true if <var>ind</var> is a valid index.  Valid indices are
-either positive integers (although possibly of real data type), or logical
-arrays.  If present, <var>n</var> specifies the maximum extent of the dimension
-to be indexed.  When possible the internal result is cached so that
-subsequent indexing using <var>ind</var> will not perform the check again.
+<dd><p>Return true if <var>ind</var> is a valid index.
+</p>
+<p>Valid indices are either positive integers (although possibly of real data
+type), or logical arrays.
+</p>
+<p>If present, <var>n</var> specifies the maximum extent of the dimension to be
+indexed.  When possible the internal result is cached so that subsequent
+indexing using <var>ind</var> will not perform the check again.
+</p>
+<p>Implementation Note: Strings are first converted to double values before the
+checks for valid indices are made.  Unless a string contains the NULL
+character &quot;\0&quot;, it will always be a valid index.
 </p></dd></dl>
 
 
@@ -265,12 +270,14 @@ subsequent indexing using <var>ind</var> will not perform the check again.
 <dt><a name="index-allow_005fnoninteger_005frange_005fas_005findex-1"></a>Built-in Function: <em><var>old_val</var> =</em> <strong>allow_noninteger_range_as_index</strong> <em>(<var>new_val</var>)</em></dt>
 <dt><a name="index-allow_005fnoninteger_005frange_005fas_005findex-2"></a>Built-in Function: <em></em> <strong>allow_noninteger_range_as_index</strong> <em>(<var>new_val</var>, &quot;local&quot;)</em></dt>
 <dd><p>Query or set the internal variable that controls whether non-integer
-ranges are allowed as indices.  This might be useful for <small>MATLAB</small>
-compatibility; however, it is still not entirely compatible because
-<small>MATLAB</small> treats the range expression differently in different contexts.
+ranges are allowed as indices.
+</p>
+<p>This might be useful for <small>MATLAB</small> compatibility; however, it is still not
+entirely compatible because <small>MATLAB</small> treats the range expression
+differently in different contexts.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p></dd></dl>
 

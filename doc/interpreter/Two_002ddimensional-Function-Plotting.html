@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -58,8 +57,9 @@ Next: <a href="Two_002ddimensional-Geometric-Shapes.html#Two_002ddimensional-Geo
 <hr>
 <a name="Two_002ddimensional-Function-Plotting-1"></a>
 <h4 class="subsubsection">15.2.1.2 Two-dimensional Function Plotting</h4>
+<a name="index-plotting_002c-two_002ddimensional-functions"></a>
 
-<p>Octave can plot a function from a function handle inline function or
+<p>Octave can plot a function from a function handle, inline function, or
 string defining the function without the user needing to explicitly
 create the data to be plotted.  The function <code>fplot</code> also generates
 two-dimensional plots with linear axes using a function name and limits
@@ -115,11 +115,19 @@ be plotted manually with <code>plot (<var>x</var>, <var>y</var>)</code>.
 fplot (&quot;[cos(x), sin(x)]&quot;, [0, 2*pi])
 </pre></div>
 
-<p>Note: <code>fplot</code> works best with continuous functions.  Functions with
+<p>Programming Notes:
+</p>
+<p><code>fplot</code> works best with continuous functions.  Functions with
 discontinuities are unlikely to plot well.  This restriction may be removed
 in the future.
 </p>
-<p><strong>See also:</strong> <a href="#XREFezplot">ezplot</a>, <a href="Two_002dDimensional-Plots.html#XREFplot">plot</a>.
+<p><code>fplot</code> requires that the function accept and return a vector argument.
+Consider this when writing user-defined functions and use <code>.*</code>,
+<code>./</code>, etc.  See the function <code>vectorize</code> for potentially
+converting inline or anonymous functions to vectorized versions.
+</p> 
+
+<p><strong>See also:</strong> <a href="#XREFezplot">ezplot</a>, <a href="Two_002dDimensional-Plots.html#XREFplot">plot</a>, <a href="Basic-Vectorization.html#XREFvectorize">vectorize</a>.
 </p></dd></dl>
 
 

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -66,9 +65,13 @@ of integer data and convert among the supported floating point formats
 as the data are read.
 </p>
 <a name="XREFfread"></a><dl>
-<dt><a name="index-fread"></a>Built-in Function: <em>[<var>val</var>, <var>count</var>] =</em> <strong>fread</strong> <em>(<var>fid</var>, <var>size</var>, <var>precision</var>, <var>skip</var>, <var>arch</var>)</em></dt>
-<dd><p>Read binary data of type <var>precision</var> from the specified file ID
-<var>fid</var>.
+<dt><a name="index-fread"></a>Built-in Function: <em><var>val</var> =</em> <strong>fread</strong> <em>(<var>fid</var>)</em></dt>
+<dt><a name="index-fread-1"></a>Built-in Function: <em><var>val</var> =</em> <strong>fread</strong> <em>(<var>fid</var>, <var>size</var>)</em></dt>
+<dt><a name="index-fread-2"></a>Built-in Function: <em><var>val</var> =</em> <strong>fread</strong> <em>(<var>fid</var>, <var>size</var>, <var>precision</var>)</em></dt>
+<dt><a name="index-fread-3"></a>Built-in Function: <em><var>val</var> =</em> <strong>fread</strong> <em>(<var>fid</var>, <var>size</var>, <var>precision</var>, <var>skip</var>)</em></dt>
+<dt><a name="index-fread-4"></a>Built-in Function: <em><var>val</var> =</em> <strong>fread</strong> <em>(<var>fid</var>, <var>size</var>, <var>precision</var>, <var>skip</var>, <var>arch</var>)</em></dt>
+<dt><a name="index-fread-5"></a>Built-in Function: <em>[<var>val</var>, <var>count</var>] =</em> <strong>fread</strong> <em>(&hellip;)</em></dt>
+<dd><p>Read binary data from the file specified by the file descriptor <var>fid</var>.
 </p>
 <p>The optional argument <var>size</var> specifies the amount of data to read
 and may be one of
@@ -232,7 +235,7 @@ a complete block of 3 values.
 for the file.  Valid values are
 </p>
 <dl compact="compact">
-<dt><code><code>&quot;native&quot;</code></code></dt>
+<dt><code>&quot;native&quot;</code></dt>
 <dd><p>The format of the current machine.
 </p>
 </dd>
@@ -245,18 +248,22 @@ for the file.  Valid values are
 </p></dd>
 </dl>
 
-<p>The data read from the file is returned in <var>val</var>, and the number of
-values read is returned in <code>count</code>
+<p>The output argument <var>val</var> contains the data read from the file.
+The optional return value <var>count</var> contains the number of elements read.
 </p>
 <p><strong>See also:</strong> <a href="#XREFfwrite">fwrite</a>, <a href="Line_002dOriented-Input.html#XREFfgets">fgets</a>, <a href="Line_002dOriented-Input.html#XREFfgetl">fgetl</a>, <a href="Formatted-Input.html#XREFfscanf">fscanf</a>, <a href="Opening-and-Closing-Files.html#XREFfopen">fopen</a>.
 </p></dd></dl>
 
 
 <a name="XREFfwrite"></a><dl>
-<dt><a name="index-fwrite"></a>Built-in Function: <em><var>count</var> =</em> <strong>fwrite</strong> <em>(<var>fid</var>, <var>data</var>, <var>precision</var>, <var>skip</var>, <var>arch</var>)</em></dt>
-<dd><p>Write data in binary form of type <var>precision</var> to the specified file
-ID <var>fid</var>, returning the number of values successfully written to the
-file.
+<dt><a name="index-fwrite"></a>Built-in Function: <em></em> <strong>fwrite</strong> <em>(<var>fid</var>, <var>data</var>)</em></dt>
+<dt><a name="index-fwrite-1"></a>Built-in Function: <em></em> <strong>fwrite</strong> <em>(<var>fid</var>, <var>data</var>, <var>precision</var>)</em></dt>
+<dt><a name="index-fwrite-2"></a>Built-in Function: <em></em> <strong>fwrite</strong> <em>(<var>fid</var>, <var>data</var>, <var>precision</var>, <var>skip</var>)</em></dt>
+<dt><a name="index-fwrite-3"></a>Built-in Function: <em></em> <strong>fwrite</strong> <em>(<var>fid</var>, <var>data</var>, <var>precision</var>, <var>skip</var>, <var>arch</var>)</em></dt>
+<dt><a name="index-fwrite-4"></a>Built-in Function: <em><var>count</var> =</em> <strong>fwrite</strong> <em>(&hellip;)</em></dt>
+<dd><p>Write data in binary form to the file specified by the file descriptor
+<var>fid</var>, returning the number of values <var>count</var> successfully written
+to the file.
 </p>
 <p>The argument <var>data</var> is a matrix of values that are to be written to
 the file.  The values are extracted in column-major order.

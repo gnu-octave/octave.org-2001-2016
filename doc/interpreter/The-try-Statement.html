@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -62,10 +61,7 @@ Next: <a href="Continuation-Lines.html#Continuation-Lines" accesskey="n" rel="ne
 <a name="index-catch"></a>
 <a name="index-end_005ftry_005fcatch"></a>
 
-<p>In addition to unwind_protect, Octave supports another limited form of
-exception handling.
-</p>
-<p>The general form of a <code>try</code> block looks like this:
+<p>The original form of a <code>try</code> block looks like this:
 </p>
 <div class="example">
 <pre class="example">try
@@ -79,15 +75,25 @@ end_try_catch
 Octave expressions or commands.  The statements in <var>cleanup</var> are
 only executed if an error occurs in <var>body</var>.
 </p>
-<p>No warnings or error messages are printed while <var>body</var> is
-executing.  If an error does occur during the execution of <var>body</var>,
-<var>cleanup</var> can use the function <code>lasterr</code> to access the text
-of the message that would have been printed.  This is the same
-as <code>eval (<var>try</var>, <var>catch</var>)</code> but it is more efficient since
-the commands do not need to be parsed each time the <var>try</var> and
-<var>catch</var> statements are evaluated.  See <a href="Errors-and-Warnings.html#Errors-and-Warnings">Errors and Warnings</a>, for more
-information about the <code>lasterr</code> function.
+<p>No warnings or error messages are printed while <var>body</var> is executing.
+If an error does occur during the execution of <var>body</var>, <var>cleanup</var>
+can use the functions <code>lasterr</code> or <code>lasterror</code> to access the
+text of the message that would have been printed, as well as its
+identifier.  The alternative form,
 </p>
+<div class="example">
+<pre class="example">try
+  <var>body</var>
+catch <var>err</var>
+  <var>cleanup</var>
+end_try_catch
+</pre></div>
+
+<p>will automatically store the output of <code>lasterror</code> in the structure
+<var>err</var>.  See <a href="Errors-and-Warnings.html#Errors-and-Warnings">Errors and Warnings</a>, for more information about the
+<code>lasterr</code> and <code>lasterror</code> functions.
+</p>
+
 
 
 

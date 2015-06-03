@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -77,16 +76,17 @@ appearance of tic marks.
 <p>The argument <var>limits</var> should be a 2-, 4-, or 6-element vector.  The
 first and second elements specify the lower and upper limits for the
 x-axis.  The third and fourth specify the limits for the y-axis, and the
-fifth and sixth specify the limits for the z-axis.
+fifth and sixth specify the limits for the z-axis.  The special values
+-Inf and Inf may be used to indicate that the limit should automatically be
+computed based on the data in the axis.
 </p>
 <p>Without any arguments, <code>axis</code> turns autoscaling on.
 </p>
 <p>With one output argument, <code><var>limits</var> = axis</code> returns the current
 axis limits.
 </p>
-<p>The vector argument specifying limits is optional, and additional
-string arguments may be used to specify various axis properties.  For
-example,
+<p>The vector argument specifying limits is optional, and additional string
+arguments may be used to specify various axis properties.  For example,
 </p>
 <div class="example">
 <pre class="example">axis ([1, 2, 3, 4], &quot;square&quot;);
@@ -98,8 +98,7 @@ example,
 <pre class="example">axis (&quot;tic&quot;, &quot;labely&quot;);
 </pre></div>
 
-<p>turns tic marks on for all axes and tic mark labels on for the y-axis
-only.
+<p>turns tic marks on for all axes and tic mark labels on for the y-axis only.
 </p>
 <p>The following options control the aspect ratio of the axes.
 </p>
@@ -121,8 +120,8 @@ only.
 </p>
 <dl compact="compact">
 <dt><code>&quot;auto&quot;</code></dt>
-<dd><p>Set the specified axes to have nice limits around the data
-or all if no axes are specified.
+<dd><p>Set the specified axes to have nice limits around the data or all if no
+axes are specified.
 </p>
 </dd>
 <dt><code>&quot;manual&quot;</code></dt>
@@ -150,13 +149,13 @@ or all if no axes are specified.
 </p>
 </dd>
 <dt><code>&quot;tic[xyz]&quot;</code></dt>
-<dd><p>Turn tic marks on for all axes, or turn them on for the
-specified axes and off for the remainder.
+<dd><p>Turn tic marks on for all axes, or turn them on for the specified axes and
+off for the remainder.
 </p>
 </dd>
 <dt><code>&quot;label[xyz]&quot;</code></dt>
-<dd><p>Turn tic labels on for all axes, or turn them on for the
-specified axes and off for the remainder.
+<dd><p>Turn tic labels on for all axes, or turn them on for the specified axes
+and off for the remainder.
 </p>
 </dd>
 <dt><code>&quot;nolabel&quot;</code></dt>
@@ -178,8 +177,8 @@ specified axes and off for the remainder.
 </p></dd>
 </dl>
 
-<p>If the first argument <var>hax</var> is an axes handle, then operate on
-this axes rather than the current axes returned by <code>gca</code>.
+<p>If the first argument <var>hax</var> is an axes handle, then operate on this
+axes rather than the current axes returned by <code>gca</code>.
 </p>
 
 <p><strong>See also:</strong> <a href="#XREFxlim">xlim</a>, <a href="#XREFylim">ylim</a>, <a href="#XREFzlim">zlim</a>, <a href="Aspect-Ratio.html#XREFdaspect">daspect</a>, <a href="Aspect-Ratio.html#XREFpbaspect">pbaspect</a>, <a href="Plot-Annotations.html#XREFbox">box</a>, <a href="Plot-Annotations.html#XREFgrid">grid</a>.
@@ -197,10 +196,10 @@ function.
 <dt><a name="index-caxis-4"></a>Function File: <em><var>limits</var> =</em> <strong>caxis</strong> <em>()</em></dt>
 <dd><p>Query or set color axis limits for plots.
 </p>
-<p>The limits argument should be a 2-element vector specifying the
-lower and upper limits to assign to the first and last value in the
-colormap.  Data values outside this range are clamped to the first and last
-colormap entries.
+<p>The limits argument should be a 2-element vector specifying the lower and
+upper limits to assign to the first and last value in the colormap.  Data
+values outside this range are clamped to the first and last colormap
+entries.
 </p>
 <p>If the <code>&quot;auto&quot;</code> option is given then automatic colormap limits are
 applied.  The automatic algorithm sets <var>cmin</var> to the minimum data value
@@ -232,8 +231,10 @@ get or set individual axis limits.  Each has the same form.
 <dd><p>Query or set the limits of the x-axis for the current plot.
 </p>
 <p>Called without arguments <code>xlim</code> returns the x-axis limits of the
-current plot.  With the input query <code>&quot;mode&quot;</code>, return the current
-x-limit calculation mode which is either <code>&quot;auto&quot;</code> or <code>&quot;manual&quot;</code>.
+current plot.
+</p>
+<p>With the input query <code>&quot;mode&quot;</code>, return the current x-limit
+calculation mode which is either <code>&quot;auto&quot;</code> or <code>&quot;manual&quot;</code>.
 </p>
 <p>If passed a 2-element vector [<var>x_lo</var> <var>x_hi</var>], the limits of the
 x-axis are set to these values and the mode is set to <code>&quot;manual&quot;</code>.

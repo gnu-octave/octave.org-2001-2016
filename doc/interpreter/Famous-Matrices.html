@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -137,7 +136,7 @@ Previous: <a href="Special-Utility-Matrices.html#Special-Utility-Matrices" acces
 <dt><a name="index-gallery-22"></a>Function File: <em>[<var>c</var>, <var>d</var>, <var>e</var>] =</em> <strong>gallery</strong> <em>(&quot;dorr&quot;, <var>n</var>)</em></dt>
 <dt><a name="index-gallery-23"></a>Function File: <em>[<var>c</var>, <var>d</var>, <var>e</var>] =</em> <strong>gallery</strong> <em>(&quot;dorr&quot;, <var>n</var>, <var>theta</var>)</em></dt>
 <dt><a name="index-gallery-24"></a>Function File: <em><var>a</var> =</em> <strong>gallery</strong> <em>(&quot;dorr&quot;, &hellip;)</em></dt>
-<dd><p>Create a diagonally dominant, ill conditioned, tridiagonal matrix.
+<dd><p>Create a diagonally dominant, ill-conditioned, tridiagonal matrix.
 </p>
 </dd></dl>
 
@@ -165,7 +164,7 @@ Previous: <a href="Special-Utility-Matrices.html#Special-Utility-Matrices" acces
 <dl>
 <dt><a name="index-gallery-31"></a>Function File: <em><var>f</var> =</em> <strong>gallery</strong> <em>(&quot;frank&quot;, <var>n</var>)</em></dt>
 <dt><a name="index-gallery-32"></a>Function File: <em><var>f</var> =</em> <strong>gallery</strong> <em>(&quot;frank&quot;, <var>n</var>, <var>k</var>)</em></dt>
-<dd><p>Create a Frank matrix (ill conditioned eigenvalues).
+<dd><p>Create a Frank matrix (ill-conditioned eigenvalues).
 </p>
 </dd></dl>
 
@@ -221,9 +220,9 @@ If <var>imin</var> is given then the integers are in the range
 <p>The second input is a matrix of dimensions describing the size of the output.
 The dimensions can also be input as comma-separated arguments.
 </p>
-<p>The input <var>j</var> is an integer index in the range [0, 2^32-1].  The
-values of the output matrix are always exactly the same
-(reproducibility) for a given size input and <var>j</var> index.
+<p>The input <var>j</var> is an integer index in the range [0, 2^32-1].  The values
+of the output matrix are always exactly the same (reproducibility) for a
+given size input and <var>j</var> index.
 </p>
 <p>The final optional argument determines the class of the resulting matrix.
 Possible values for <var>class</var>: <code>&quot;uint8&quot;</code>, <code>&quot;uint16&quot;</code>,
@@ -248,7 +247,7 @@ Possible values for <var>class</var>: <code>&quot;uint8&quot;</code>, <code>&quo
 <dl>
 <dt><a name="index-gallery-51"></a>Function File: <em><var>a</var> =</em> <strong>gallery</strong> <em>(&quot;ipjfact&quot;, <var>n</var>)</em></dt>
 <dt><a name="index-gallery-52"></a>Function File: <em><var>a</var> =</em> <strong>gallery</strong> <em>(&quot;ipjfact&quot;, <var>n</var>, <var>k</var>)</em></dt>
-<dd><p>Create an Hankel matrix with factorial elements.
+<dd><p>Create a Hankel matrix with factorial elements.
 </p>
 </dd></dl>
 
@@ -336,9 +335,9 @@ Possible values for <var>class</var>: <code>&quot;uint8&quot;</code>, <code>&quo
 <p>The first input is a matrix of dimensions describing the size of the output.
 The dimensions can also be input as comma-separated arguments.
 </p>
-<p>The input <var>j</var> is an integer index in the range [0, 2^32-1].  The
-values of the output matrix are always exactly the same
-(reproducibility) for a given size input and <var>j</var> index.
+<p>The input <var>j</var> is an integer index in the range [0, 2^32-1].  The values
+of the output matrix are always exactly the same (reproducibility) for a
+given size input and <var>j</var> index.
 </p>
 <p>The final optional argument determines the class of the resulting matrix.
 Possible values for <var>class</var>: <code>&quot;single&quot;</code>, <code>&quot;double&quot;</code>.
@@ -355,7 +354,8 @@ The default is <code>&quot;double&quot;</code>.
 
 <dl>
 <dt><a name="index-gallery-77"></a>Function File: <em><var>a</var> =</em> <strong>gallery</strong> <em>(&quot;parter&quot;, <var>n</var>)</em></dt>
-<dd><p>Create a Parter matrix (a Toeplitz matrix with singular values near pi).
+<dd><p>Create a Parter matrix (a Toeplitz matrix with singular values
+near pi).
 </p>
 </dd></dl>
 
@@ -404,8 +404,8 @@ The default is <code>&quot;double&quot;</code>.
 
 <dl>
 <dt><a name="index-gallery-91"></a>Function File: <em><var>a</var> =</em> <strong>gallery</strong> <em>(&quot;redheff&quot;, <var>n</var>)</em></dt>
-<dd><p>Create a zero and ones matrix of Redheffer associated with the Riemann
-hypothesis.
+<dd><p>Create a zero and ones matrix of Redheffer associated with the
+Riemann hypothesis.
 </p>
 </dd></dl>
 
@@ -460,7 +460,8 @@ hypothesis.
 <dt><a name="index-gallery-109"></a>Function File: <em><var>t</var> =</em> <strong>gallery</strong> <em>(&quot;triw&quot;, <var>n</var>)</em></dt>
 <dt><a name="index-gallery-110"></a>Function File: <em><var>t</var> =</em> <strong>gallery</strong> <em>(&quot;triw&quot;, <var>n</var>, <var>alpha</var>)</em></dt>
 <dt><a name="index-gallery-111"></a>Function File: <em><var>t</var> =</em> <strong>gallery</strong> <em>(&quot;triw&quot;, <var>n</var>, <var>alpha</var>, <var>k</var>)</em></dt>
-<dd><p>Create an upper triangular matrix discussed by Kahan, Golub and Wilkinson.
+<dd><p>Create an upper triangular matrix discussed by
+Kahan, Golub, and Wilkinson.
 </p>
 </dd></dl>
 
@@ -474,9 +475,9 @@ hypothesis.
 <p>The first input is a matrix of dimensions describing the size of the output.
 The dimensions can also be input as comma-separated arguments.
 </p>
-<p>The input <var>j</var> is an integer index in the range [0, 2^32-1].  The
-values of the output matrix are always exactly the same
-(reproducibility) for a given size input and <var>j</var> index.
+<p>The input <var>j</var> is an integer index in the range [0, 2^32-1].  The values
+of the output matrix are always exactly the same (reproducibility) for a
+given size input and <var>j</var> index.
 </p>
 <p>The final optional argument determines the class of the resulting matrix.
 Possible values for <var>class</var>: <code>&quot;single&quot;</code>, <code>&quot;double&quot;</code>.
@@ -500,10 +501,11 @@ The default is <code>&quot;double&quot;</code>.
 
 <a name="XREFhadamard"></a><dl>
 <dt><a name="index-hadamard"></a>Function File: <em></em> <strong>hadamard</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Construct a Hadamard matrix (Hn) of size <var>n</var>-by-<var>n</var>.  The
-size <var>n</var> must be of the form <em>2^k * p</em> in which
-p is one of 1, 12, 20 or 28.  The returned matrix is normalized,
-meaning <code>Hn(:,1)&nbsp;==&nbsp;1</code><!-- /@w --> and <code>Hn(1,:)&nbsp;==&nbsp;1</code><!-- /@w -->.
+<dd><p>Construct a Hadamard matrix (Hn) of size <var>n</var>-by-<var>n</var>.
+</p>
+<p>The size <var>n</var> must be of the form <em>2^k * p</em> in which p is one of
+1, 12, 20 or 28.  The returned matrix is normalized, meaning
+<code>Hn(:,1)&nbsp;==&nbsp;1</code><!-- /@w --> and <code>Hn(1,:)&nbsp;==&nbsp;1</code><!-- /@w -->.
 </p>
 <p>Some of the properties of Hadamard matrices are:
 </p>
@@ -529,13 +531,14 @@ matrix.
 <dt><a name="index-hankel"></a>Function File: <em></em> <strong>hankel</strong> <em>(<var>c</var>)</em></dt>
 <dt><a name="index-hankel-1"></a>Function File: <em></em> <strong>hankel</strong> <em>(<var>c</var>, <var>r</var>)</em></dt>
 <dd><p>Return the Hankel matrix constructed from the first column <var>c</var>, and
-(optionally) the last row <var>r</var>.  If the last element of <var>c</var> is
-not the same as the first element of <var>r</var>, the last element of
-<var>c</var> is used.  If the second argument is omitted, it is assumed to
-be a vector of zeros with the same size as <var>c</var>.
+(optionally) the last row <var>r</var>.
 </p>
-<p>A Hankel matrix formed from an m-vector <var>c</var>, and an n-vector
-<var>r</var>, has the elements
+<p>If the last element of <var>c</var> is not the same as the first element of
+<var>r</var>, the last element of <var>c</var> is used.  If the second argument is
+omitted, it is assumed to be a vector of zeros with the same size as <var>c</var>.
+</p>
+<p>A Hankel matrix formed from an m-vector <var>c</var>, and an n-vector <var>r</var>,
+has the elements
 </p>
 <div class="example">
 <pre class="example">H(i,j) = c(i+j-1),  i+j-1 &lt;= m;
@@ -549,8 +552,9 @@ H(i,j) = r(i+j-m),  otherwise
 
 <a name="XREFhilb"></a><dl>
 <dt><a name="index-hilb"></a>Function File: <em></em> <strong>hilb</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Return the Hilbert matrix of order <var>n</var>.  The <em>i,j</em> element
-of a Hilbert matrix is defined as
+<dd><p>Return the Hilbert matrix of order <var>n</var>.
+</p>
+<p>The <em>i,j</em> element of a Hilbert matrix is defined as
 </p>
 <div class="example">
 <pre class="example">H(i, j) = 1 / (i + j - 1)
@@ -558,9 +562,9 @@ of a Hilbert matrix is defined as
 
 
 <p>Hilbert matrices are close to being singular which make them difficult to
-invert with numerical routines.
-Comparing the condition number of a random matrix 5x5 matrix with that of
-a Hilbert matrix of order 5 reveals just how difficult the problem is.
+invert with numerical routines.  Comparing the condition number of a random
+matrix 5x5 matrix with that of a Hilbert matrix of order 5 reveals just how
+difficult the problem is.
 </p>
 <div class="example">
 <pre class="example">cond (rand (5))
@@ -576,31 +580,32 @@ cond (hilb (5))
 
 <a name="XREFinvhilb"></a><dl>
 <dt><a name="index-invhilb"></a>Function File: <em></em> <strong>invhilb</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Return the inverse of the Hilbert matrix of order <var>n</var>.  This can be
-computed exactly using
+<dd><p>Return the inverse of the Hilbert matrix of order <var>n</var>.
+</p>
+<p>This can be computed exactly using
 </p>
 <div class="example">
 <pre class="example">
-            (i+j)         /n+i-1\  /n+j-1\   /i+j-2\ 2
- A(i,j) = -1      (i+j-1)(       )(       ) (       )
-                          \ n-j /  \ n-i /   \ i-2 /
+           (i+j)         /n+i-1\  /n+j-1\   /i+j-2\ 2
+A(i,j) = -1      (i+j-1)(       )(       ) (       )
+                         \ n-j /  \ n-i /   \ i-2 /
 
-        = p(i) p(j) / (i+j-1)
+       = p(i) p(j) / (i+j-1)
 
 </pre></div>
 
 <p>where
 </p>
 <div class="example">
-<pre class="example">             k  /k+n-1\   /n\
-    p(k) = -1  (       ) (   )
-                \ k-1 /   \k/
+<pre class="example">         k  /k+n-1\   /n\
+p(k) = -1  (       ) (   )
+            \ k-1 /   \k/
 </pre></div>
 
-<p>The validity of this formula can easily be checked by expanding
-the binomial coefficients in both formulas as factorials.  It can
-be derived more directly via the theory of Cauchy matrices.
-See J. W. Demmel, <cite>Applied Numerical Linear Algebra</cite>, p. 92.
+<p>The validity of this formula can easily be checked by expanding the binomial
+coefficients in both formulas as factorials.  It can be derived more
+directly via the theory of Cauchy matrices.  See J. W. Demmel,
+<cite>Applied Numerical Linear Algebra</cite>, p. 92.
 </p>
 <p>Compare this with the numerical calculation of <code>inverse (hilb (n))</code>,
 which suffers from the ill-conditioning of the Hilbert matrix, and the
@@ -613,9 +618,10 @@ finite precision of your computer&rsquo;s floating point arithmetic.
 <a name="XREFmagic"></a><dl>
 <dt><a name="index-magic"></a>Function File: <em></em> <strong>magic</strong> <em>(<var>n</var>)</em></dt>
 <dd>
-<p>Create an <var>n</var>-by-<var>n</var> magic square.  A magic square is an arrangement
-of the integers <code>1:n^2</code> such that the row sums, column sums, and
-diagonal sums are all equal to the same value.
+<p>Create an <var>n</var>-by-<var>n</var> magic square.
+</p>
+<p>A magic square is an arrangement of the integers <code>1:n^2</code> such that the
+row sums, column sums, and diagonal sums are all equal to the same value.
 </p>
 <p>Note: <var>n</var> must be greater than 2 for the magic square to exist.
 </p></dd></dl>
@@ -624,15 +630,21 @@ diagonal sums are all equal to the same value.
 <a name="XREFpascal"></a><dl>
 <dt><a name="index-pascal"></a>Function File: <em></em> <strong>pascal</strong> <em>(<var>n</var>)</em></dt>
 <dt><a name="index-pascal-1"></a>Function File: <em></em> <strong>pascal</strong> <em>(<var>n</var>, <var>t</var>)</em></dt>
-<dd><p>Return the Pascal matrix of order <var>n</var> if <code><var>t</var> = 0</code>.  <var>t</var>
-defaults to 0.  Return the pseudo-lower triangular Cholesky&nbsp;factor of
-the Pascal matrix if <code><var>t</var> = 1</code> (The sign of some columns may be
-negative).  This matrix is its own inverse, that is <code>pascal (<var>n</var>,
-1) ^ 2 == eye (<var>n</var>)</code>.  If <code><var>t</var> = -1</code>, return the true
-Cholesky&nbsp;factor with strictly positive values on the diagonal.  If
-<code><var>t</var> = 2</code>, return a transposed and permuted version of <code>pascal
-(<var>n</var>, 1)</code>, which is the cube root of the identity matrix.  That is,
-<code>pascal (<var>n</var>, 2) ^ 3 == eye (<var>n</var>)</code>.
+<dd><p>Return the Pascal matrix of order <var>n</var> if <code><var>t</var> = 0</code>.
+</p>
+<p>The default value of <var>t</var> is 0.
+</p>
+<p>When <code><var>t</var> = 1</code>, return the pseudo-lower triangular
+Cholesky&nbsp;factor of the Pascal matrix (The sign of some columns may be
+negative).  This matrix is its own inverse, that is
+<code>pascal (<var>n</var>, 1) ^ 2 == eye (<var>n</var>)</code>.
+</p>
+<p>If <code><var>t</var> = -1</code>, return the true Cholesky&nbsp;factor with strictly
+positive values on the diagonal.
+</p>
+<p>If <code><var>t</var> = 2</code>, return a transposed and permuted version of
+<code>pascal (<var>n</var>, 1)</code>, which is the cube root of the identity matrix.
+That is, <code>pascal (<var>n</var>, 2) ^ 3 == eye (<var>n</var>)</code>.
 </p>
 
 <p><strong>See also:</strong> <a href="Matrix-Factorizations.html#XREFchol">chol</a>.
@@ -641,10 +653,10 @@ Cholesky&nbsp;factor with strictly positive values on the diagonal.  If
 
 <a name="XREFrosser"></a><dl>
 <dt><a name="index-rosser"></a>Function File: <em></em> <strong>rosser</strong> <em>()</em></dt>
-<dd><p>Return the Rosser matrix.  This is a difficult test case used to evaluate
-eigenvalue algorithms.
+<dd><p>Return the Rosser matrix.
 </p>
-
+<p>This is a difficult test case used to evaluate eigenvalue algorithms.
+</p>
 <p><strong>See also:</strong> <a href="#XREFwilkinson">wilkinson</a>, <a href="Basic-Matrix-Functions.html#XREFeig">eig</a>.
 </p></dd></dl>
 
@@ -653,10 +665,11 @@ eigenvalue algorithms.
 <dt><a name="index-toeplitz"></a>Function File: <em></em> <strong>toeplitz</strong> <em>(<var>c</var>)</em></dt>
 <dt><a name="index-toeplitz-1"></a>Function File: <em></em> <strong>toeplitz</strong> <em>(<var>c</var>, <var>r</var>)</em></dt>
 <dd><p>Return the Toeplitz matrix constructed from the first column <var>c</var>,
-and (optionally) the first row <var>r</var>.  If the first element of <var>r</var>
-is not the same as the first element of <var>c</var>, the first element of
-<var>c</var> is used.  If the second argument is omitted, the first row is
-taken to be the same as the first column.
+and (optionally) the first row <var>r</var>.
+</p>
+<p>If the first element of <var>r</var> is not the same as the first element of
+<var>c</var>, the first element of <var>c</var> is used.  If the second argument is
+omitted, the first row is taken to be the same as the first column.
 </p>
 <p>A square Toeplitz matrix has the form:
 </p>
@@ -679,8 +692,9 @@ c(n) c(n-1) c(n-2) &hellip;  c(0)
 <dt><a name="index-vander"></a>Function File: <em></em> <strong>vander</strong> <em>(<var>c</var>)</em></dt>
 <dt><a name="index-vander-1"></a>Function File: <em></em> <strong>vander</strong> <em>(<var>c</var>, <var>n</var>)</em></dt>
 <dd><p>Return the Vandermonde matrix whose next to last column is <var>c</var>.
-If <var>n</var> is specified, it determines the number of columns;
-otherwise, <var>n</var> is taken to be equal to the length of <var>c</var>.
+</p>
+<p>If <var>n</var> is specified, it determines the number of columns; otherwise,
+<var>n</var> is taken to be equal to the length of <var>c</var>.
 </p>
 <p>A Vandermonde matrix has the form:
 </p>
@@ -700,10 +714,11 @@ c(n)^(n-1) &hellip; c(n)^2  c(n)  1
 
 <a name="XREFwilkinson"></a><dl>
 <dt><a name="index-wilkinson"></a>Function File: <em></em> <strong>wilkinson</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Return the Wilkinson matrix of order <var>n</var>.  Wilkinson matrices are
-symmetric and tridiagonal with pairs of nearly, but not exactly, equal
-eigenvalues.  They are useful in testing the behavior and performance
-of eigenvalue solvers.
+<dd><p>Return the Wilkinson matrix of order <var>n</var>.
+</p>
+<p>Wilkinson matrices are symmetric and tridiagonal with pairs of nearly, but
+not exactly, equal eigenvalues.  They are useful in testing the behavior and
+performance of eigenvalue solvers.
 </p>
 
 <p><strong>See also:</strong> <a href="#XREFrosser">rosser</a>, <a href="Basic-Matrix-Functions.html#XREFeig">eig</a>.

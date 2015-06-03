@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
+<head>
+<title>GNU Octave: UI Elements</title>
+
+<meta name="description" content="GNU Octave: UI Elements">
+<meta name="keywords" content="GNU Octave: UI Elements">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Concept-Index.html#Concept-Index" rel="index" title="Concept Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="GUI-Development.html#GUI-Development" rel="up" title="GUI Development">
+<link href="GUI-Utility-Functions.html#GUI-Utility-Functions" rel="next" title="GUI Utility Functions">
+<link href="Progress-Bar.html#Progress-Bar" rel="prev" title="Progress Bar">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+<a name="UI-Elements"></a>
+<div class="header">
+<p>
+Next: <a href="GUI-Utility-Functions.html#GUI-Utility-Functions" accesskey="n" rel="next">GUI Utility Functions</a>, Previous: <a href="Progress-Bar.html#Progress-Bar" accesskey="p" rel="prev">Progress Bar</a>, Up: <a href="GUI-Development.html#GUI-Development" accesskey="u" rel="up">GUI Development</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Concept-Index.html#Concept-Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<a name="UI-Elements-1"></a>
+<h3 class="section">35.3 UI Elements</h3>
+
+<p>The ui* series of functions work best with the <code>qt</code> graphics
+toolkit, although some functionality is available with the <code>fltk</code> toolkit.
+There is no support for the <code>gnuplot</code> toolkit.
+</p>
+<a name="XREFuicontextmenu"></a><dl>
+<dt><a name="index-uicontextmenu"></a>Function File: <em><var>hui</var> =</em> <strong>uicontextmenu</strong> <em>(&quot;Name&quot;, value, &hellip;)</em></dt>
+</dl>
+
+
+<a name="XREFuicontrol"></a><dl>
+<dt><a name="index-uicontrol"></a>Function File: <em><var>hui</var> =</em> <strong>uicontrol</strong> <em>(&quot;Name&quot;, value, &hellip;)</em></dt>
+<dt><a name="index-uicontrol-1"></a>Function File: <em><var>hui</var> =</em> <strong>uicontrol</strong> <em>(<var>parent</var>, &quot;Name&quot;, value, &hellip;)</em></dt>
+<dt><a name="index-uicontrol-2"></a>Function File: <em></em> <strong>uicontrol</strong> <em>(<var>h</var>)</em></dt>
+</dl>
+
+
+<a name="XREFuipanel"></a><dl>
+<dt><a name="index-uipanel"></a>Function File: <em><var>hui</var> =</em> <strong>uipanel</strong> <em>(&quot;Name&quot;, value, &hellip;)</em></dt>
+<dt><a name="index-uipanel-1"></a>Function File: <em><var>hui</var> =</em> <strong>uipanel</strong> <em>(<var>parent</var>, &quot;Name&quot;, value, &hellip;)</em></dt>
+</dl>
+
+
+<a name="XREFuipushtool"></a><dl>
+<dt><a name="index-uipushtool"></a>Function File: <em><var>hui</var> =</em> <strong>uipushtool</strong> <em>(&quot;Name&quot;, value, &hellip;)</em></dt>
+<dt><a name="index-uipushtool-1"></a>Function File: <em><var>hui</var> =</em> <strong>uipushtool</strong> <em>(<var>parent</var>, &quot;Name&quot;, value, &hellip;)</em></dt>
+</dl>
+
+
+<a name="XREFuitoggletool"></a><dl>
+<dt><a name="index-uitoggletool"></a>Function File: <em><var>hui</var> =</em> <strong>uitoggletool</strong> <em>(&quot;Name&quot;, value, &hellip;)</em></dt>
+<dt><a name="index-uitoggletool-1"></a>Function File: <em><var>hui</var> =</em> <strong>uitoggletool</strong> <em>(<var>parent</var>, &quot;Name&quot;, value, &hellip;)</em></dt>
+</dl>
+
+
+<a name="XREFuitoolbar"></a><dl>
+<dt><a name="index-uitoolbar"></a>Function File: <em><var>hui</var> =</em> <strong>uitoolbar</strong> <em>(&quot;Name&quot;, value, &hellip;)</em></dt>
+<dt><a name="index-uitoolbar-1"></a>Function File: <em><var>hui</var> =</em> <strong>uitoolbar</strong> <em>(<var>parent</var>, &quot;Name&quot;, value, &hellip;)</em></dt>
+</dl>
+
+
+
+
+
+</body>
+</html>

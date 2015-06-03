@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -75,7 +74,9 @@ dt
 <a name="XREFlsode"></a><dl>
 <dt><a name="index-lsode"></a>Built-in Function: <em>[<var>x</var>, <var>istate</var>, <var>msg</var>] =</em> <strong>lsode</strong> <em>(<var>fcn</var>, <var>x_0</var>, <var>t</var>)</em></dt>
 <dt><a name="index-lsode-1"></a>Built-in Function: <em>[<var>x</var>, <var>istate</var>, <var>msg</var>] =</em> <strong>lsode</strong> <em>(<var>fcn</var>, <var>x_0</var>, <var>t</var>, <var>t_crit</var>)</em></dt>
-<dd><p>Solve the set of differential equations
+<dd><p>Ordinary Differential Equation (ODE) solver.
+</p>
+<p>The set of differential equations to solve is
 </p>
 <div class="example">
 <pre class="example">dx
@@ -162,10 +163,13 @@ parameters for <code>lsode</code>.
 <dt><a name="index-lsode_005foptions-1"></a>Built-in Function: <em>val =</em> <strong>lsode_options</strong> <em>(<var>opt</var>)</em></dt>
 <dt><a name="index-lsode_005foptions-2"></a>Built-in Function: <em></em> <strong>lsode_options</strong> <em>(<var>opt</var>, <var>val</var>)</em></dt>
 <dd><p>Query or set options for the function <code>lsode</code>.
-When called with no arguments, the names of all available options and
+</p>
+<p>When called with no arguments, the names of all available options and
 their current values are displayed.
-Given one argument, return the value of the corresponding option.
-When called with two arguments, <code>lsode_options</code> set the option
+</p>
+<p>Given one argument, return the value of the option <var>opt</var>.
+</p>
+<p>When called with two arguments, <code>lsode_options</code> sets the option
 <var>opt</var> to value <var>val</var>.
 </p>
 <p>Options include
@@ -271,9 +275,10 @@ A more efficient set of output points might be
         logspace(log10(304), log10(500), 150)];
 </pre></div>
 
-<p>See Alan C. Hindmarsh, <cite>ODEPACK, A Systematized Collection of ODE
-Solvers</cite>, in Scientific Computing, R. S. Stepleman, editor, (1983) for
-more information about the inner workings of <code>lsode</code>.
+<p>See Alan C. Hindmarsh,
+<cite>ODEPACK, A Systematized Collection of ODE Solvers</cite>,
+in Scientific Computing, R. S. Stepleman, editor, (1983)
+for more information about the inner workings of <code>lsode</code>.
 </p>
 <p>An m-file for the differential equation used above is included with the
 Octave distribution in the examples directory under the name

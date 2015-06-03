@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -60,7 +59,7 @@ Next: <a href="Creating-Sparse-Matrices-in-Oct_002dFiles.html#Creating-Sparse-Ma
 <h4 class="subsubsection">A.1.6.1 Array and Sparse Class Differences</h4>
 
 <p>The number of elements in a sparse matrix is considered to be the number
-of non-zero elements rather than the product of the dimensions.  Therefore
+of nonzero elements rather than the product of the dimensions.  Therefore
 </p>
 <div class="example">
 <pre class="example">SparseMatrix sm;
@@ -68,13 +67,13 @@ of non-zero elements rather than the product of the dimensions.  Therefore
 int nel = sm.nelem ();
 </pre></div>
 
-<p>returns the number of non-zero elements.  If the user really requires the
-number of elements in the matrix, including the non-zero elements, they
+<p>returns the number of nonzero elements.  If the user really requires the
+number of elements in the matrix, including the nonzero elements, they
 should use <code>numel</code> rather than <code>nelem</code>.  Note that for very
 large matrices, where the product of the two dimensions is larger than
 the representation of an unsigned int, then <code>numel</code> can overflow.
 An example is <code>speye (1e6)</code> which will create a matrix with a million
-rows and columns, but only a million non-zero elements.  Therefore the
+rows and columns, but only a million nonzero elements.  Therefore the
 number of rows by the number of columns in this case is more than two
 hundred times the maximum value that can be represented by an unsigned int.
 The use of <code>numel</code> should therefore be avoided useless it is known

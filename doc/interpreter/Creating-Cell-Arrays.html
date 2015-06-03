@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -62,7 +61,7 @@ Next: <a href="Indexing-Cell-Arrays.html#Indexing-Cell-Arrays" accesskey="n" rel
 <p>The introductory example (see <a href="Basic-Usage-of-Cell-Arrays.html#Basic-Usage-of-Cell-Arrays">Basic Usage of Cell Arrays</a>) showed
 how to create a cell array containing currently available variables.
 In many situations, however, it is useful to create a cell array and
-then fill it with data. 
+then fill it with data.
 </p>
 <p>The <code>cell</code> function returns a cell array of a given size, containing
 empty matrices.  This function is similar to the <code>zeros</code>
@@ -107,10 +106,13 @@ object, such as <a href="Object-Sizes.html#XREFlength">length</a>, <a href="Obje
 <dt><a name="index-cell-2"></a>Built-in Function: <em></em> <strong>cell</strong> <em>(<var>m</var>, <var>n</var>, <var>k</var>, &hellip;)</em></dt>
 <dt><a name="index-cell-3"></a>Built-in Function: <em></em> <strong>cell</strong> <em>([<var>m</var> <var>n</var> &hellip;])</em></dt>
 <dd><p>Create a new cell array object.
-If invoked with a single scalar integer argument, return a square
-NxN cell array.  If invoked with two or more scalar
-integer arguments, or a vector of integer values, return an array with
-the given dimensions.
+</p>
+<p>If invoked with a single scalar integer argument, return a square
+NxN cell array.  If invoked with two or more scalar integer
+arguments, or a vector of integer values, return an array with the given
+dimensions.
+</p>
+<p><strong>See also:</strong> <a href="Cell-Arrays-of-Strings.html#XREFcellstr">cellstr</a>, <a href="#XREFmat2cell">mat2cell</a>, <a href="#XREFnum2cell">num2cell</a>, <a href="Processing-Data-in-Structures.html#XREFstruct2cell">struct2cell</a>.
 </p></dd></dl>
 
 
@@ -121,9 +123,11 @@ is possible to convert numerical arrays into cell arrays using the
 <a name="XREFnum2cell"></a><dl>
 <dt><a name="index-num2cell"></a>Built-in Function: <em><var>C</var> =</em> <strong>num2cell</strong> <em>(<var>A</var>)</em></dt>
 <dt><a name="index-num2cell-1"></a>Built-in Function: <em><var>C</var> =</em> <strong>num2cell</strong> <em>(<var>A</var>, <var>dim</var>)</em></dt>
-<dd><p>Convert the numeric matrix <var>A</var> to a cell array.  If <var>dim</var> is
-defined, the value <var>C</var> is of dimension 1 in this dimension and the
-elements of <var>A</var> are placed into <var>C</var> in slices.  For example:
+<dd><p>Convert the numeric matrix <var>A</var> to a cell array.
+</p>
+<p>If <var>dim</var> is defined, the value <var>C</var> is of dimension 1 in this
+dimension and the elements of <var>A</var> are placed into <var>C</var> in slices.
+For example:
 </p>
 <div class="example">
 <pre class="example">num2cell ([1,2;3,4])
@@ -155,12 +159,14 @@ num2cell ([1,2;3,4],1)
 <dt><a name="index-mat2cell"></a>Built-in Function: <em><var>C</var> =</em> <strong>mat2cell</strong> <em>(<var>A</var>, <var>m</var>, <var>n</var>)</em></dt>
 <dt><a name="index-mat2cell-1"></a>Built-in Function: <em><var>C</var> =</em> <strong>mat2cell</strong> <em>(<var>A</var>, <var>d1</var>, <var>d2</var>, &hellip;)</em></dt>
 <dt><a name="index-mat2cell-2"></a>Built-in Function: <em><var>C</var> =</em> <strong>mat2cell</strong> <em>(<var>A</var>, <var>r</var>)</em></dt>
-<dd><p>Convert the matrix <var>A</var> to a cell array.  If <var>A</var> is 2-D, then
-it is required that <code>sum (<var>m</var>) == size (<var>A</var>, 1)</code> and
+<dd><p>Convert the matrix <var>A</var> to a cell array.
+</p>
+<p>If <var>A</var> is 2-D, then it is required that
+<code>sum (<var>m</var>) == size (<var>A</var>, 1)</code> and
 <code>sum (<var>n</var>) == size (<var>A</var>, 2)</code>.  Similarly, if <var>A</var> is
-multi-dimensional and the number of dimensional arguments is equal
-to the dimensions of <var>A</var>, then it is required that <code>sum (<var>di</var>)
-== size (<var>A</var>, i)</code>.
+multi-dimensional and the number of dimensional arguments is equal to the
+dimensions of <var>A</var>, then it is required that
+<code>sum (<var>di</var>) == size (<var>A</var>, i)</code>.
 </p>
 <p>Given a single dimensional argument <var>r</var>, the other dimensional
 arguments are assumed to equal <code>size (<var>A</var>,<var>i</var>)</code>.
@@ -199,8 +205,9 @@ arguments are assumed to equal <code>size (<var>A</var>,<var>i</var>)</code>.
 <dt><a name="index-cellslices"></a>Built-in Function: <em><var>sl</var> =</em> <strong>cellslices</strong> <em>(<var>x</var>, <var>lb</var>, <var>ub</var>, <var>dim</var>)</em></dt>
 <dd><p>Given an array <var>x</var>, this function produces a cell array of slices from
 the array determined by the index vectors <var>lb</var>, <var>ub</var>, for lower and
-upper bounds, respectively.  In other words, it is equivalent to the
-following code:
+upper bounds, respectively.
+</p>
+<p>In other words, it is equivalent to the following code:
 </p>
 <div class="example">
 <pre class="example">n = length (lb);

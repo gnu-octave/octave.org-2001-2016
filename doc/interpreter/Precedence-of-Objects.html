@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -70,8 +69,11 @@ to a function or operator.  To do this the <code>superiorto</code> and
 <dt><a name="index-superiorto"></a>Built-in Function: <em></em> <strong>superiorto</strong> <em>(<var>class_name</var>, &hellip;)</em></dt>
 <dd><p>When called from a class constructor, mark the object currently
 constructed as having a higher precedence than <var>class_name</var>.
-More that one such class can be specified in a single call.
+</p>
+<p>More that one such class can be specified in a single call.
 This function may only be called from a class constructor.
+</p>
+<p><strong>See also:</strong> <a href="#XREFinferiorto">inferiorto</a>.
 </p></dd></dl>
 
 
@@ -79,8 +81,11 @@ This function may only be called from a class constructor.
 <dt><a name="index-inferiorto"></a>Built-in Function: <em></em> <strong>inferiorto</strong> <em>(<var>class_name</var>, &hellip;)</em></dt>
 <dd><p>When called from a class constructor, mark the object currently
 constructed as having a lower precedence than <var>class_name</var>.
-More that one such class can be specified in a single call.
+</p>
+<p>More that one such class can be specified in a single call.
 This function may only be called from a class constructor.
+</p>
+<p><strong>See also:</strong> <a href="#XREFsuperiorto">superiorto</a>.
 </p></dd></dl>
 
 
@@ -132,7 +137,7 @@ endfunction
 </pre></div>
 
 <p>Note that user classes always have higher precedence than built-in
-Octave types.  So in fact marking our polynomial class higher than the 
+Octave types.  So in fact marking our polynomial class higher than the
 <code>&quot;double&quot;</code> class is in fact not necessary.
 </p>
 <p>When faced with two objects that have the same precedence, Octave will use the

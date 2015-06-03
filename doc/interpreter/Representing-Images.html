@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -87,10 +86,9 @@ between 0 and 1.
 <dt><a name="index-iscolormap"></a>Function File: <em></em> <strong>iscolormap</strong> <em>(<var>cmap</var>)</em></dt>
 <dd><p>Return true if <var>cmap</var> is a colormap.
 </p>
-<p>A colormap is a real matrix with <var>n</var> rows and 3 columns.
-Each row represents a single color.  The columns contain red, green,
-and blue intensities respectively.  All entries must be between 0 and 1
-inclusive.
+<p>A colormap is a real matrix with <var>n</var> rows and 3 columns.  Each row
+represents a single color.  The columns contain red, green, and blue
+intensities respectively.  All entries must be between 0 and 1 inclusive.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>, <a href="#XREFrgbplot">rgbplot</a>.
 </p></dd></dl>
@@ -105,11 +103,11 @@ inclusive.
 <dd><p>Convert a grayscale or binary intensity image to an indexed image.
 </p>
 <p>The indexed image will consist of <var>n</var> different intensity values.
-If not given <var>n</var> defaults to 64 for grayscale images or 2 for
-binary black and white images.
+If not given <var>n</var> defaults to 64 for grayscale images or 2 for binary
+black and white images.
 </p>
-<p>The output <var>img</var> is of class uint8 if <var>n</var> is less than or
-equal to 256; Otherwise the return class is uint16.
+<p>The output <var>img</var> is of class uint8 if <var>n</var> is less than or equal to
+256; Otherwise the return class is uint16.
 </p>
 <p><strong>See also:</strong> <a href="#XREFind2gray">ind2gray</a>, <a href="#XREFrgb2ind">rgb2ind</a>.
 </p></dd></dl>
@@ -144,7 +142,7 @@ using a single color channel from <code>ind2rgb</code>.
 </p>
 <p>The input image <var>rgb</var> can be specified as a single matrix of size
 MxNx3, or as three separate variables, <var>R</var>, <var>G</var>, and
-<var>B</var>, its three colour channels, red, green, and blue.
+<var>B</var>, its three color channels, red, green, and blue.
 </p>
 <p>It outputs an indexed image <var>x</var> and a colormap <var>map</var> to interpret
 an image exactly the same as the input.  No dithering or other form of color
@@ -154,7 +152,7 @@ number of unique colors in the image (which will be equal to the number
 of rows in <var>map</var>) in order
 </p>
 <p>Multi-dimensional indexed images (of size MxNx3xK) are also
-supported, both via a single input (<var>rgb</var>) or its three colour channels
+supported, both via a single input (<var>rgb</var>) or its three color channels
 as separate variables.
 </p>
 
@@ -259,9 +257,10 @@ option.
 <a name="XREFautumn"></a><dl>
 <dt><a name="index-autumn"></a>Function File: <em><var>map</var> =</em> <strong>autumn</strong> <em>()</em></dt>
 <dt><a name="index-autumn-1"></a>Function File: <em><var>map</var> =</em> <strong>autumn</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Create color colormap.  This colormap ranges from red through orange
-to yellow.
-The argument <var>n</var> must be a scalar.
+<dd><p>Create color colormap.
+This colormap ranges from red through orange to yellow.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -273,7 +272,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-bone-1"></a>Function File: <em><var>map</var> =</em> <strong>bone</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap varies from black to white with
 gray-blue shades.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -284,11 +284,13 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-colorcube"></a>Function File: <em><var>map</var> =</em> <strong>colorcube</strong> <em>()</em></dt>
 <dt><a name="index-colorcube-1"></a>Function File: <em><var>map</var> =</em> <strong>colorcube</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap is composed of as many equally
-spaced colors (not grays) in the RGB color space as possible.  If there
-are not a perfect number <var>n</var> of regularly spaced colors then the
+spaced colors (not grays) in the RGB color space as possible.
+</p>
+<p>If there are not a perfect number <var>n</var> of regularly spaced colors then the
 remaining entries in the colormap are gradients of pure red, green, blue,
 and gray.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -299,7 +301,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-cool"></a>Function File: <em><var>map</var> =</em> <strong>cool</strong> <em>()</em></dt>
 <dt><a name="index-cool-1"></a>Function File: <em><var>map</var> =</em> <strong>cool</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  The colormap varies from cyan to magenta.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -309,11 +312,39 @@ If unspecified, the length of the current colormap, or 64, is used.
 <a name="XREFcopper"></a><dl>
 <dt><a name="index-copper"></a>Function File: <em><var>map</var> =</em> <strong>copper</strong> <em>()</em></dt>
 <dt><a name="index-copper-1"></a>Function File: <em><var>map</var> =</em> <strong>copper</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Create color colormap.  This colormap varies from black to
-a light copper tone.
-The argument <var>n</var> must be a scalar.
+<dd><p>Create color colormap.  This colormap varies from black to a light copper
+tone.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
+<p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
+</p></dd></dl>
+
+
+<a name="XREFcubehelix"></a><dl>
+<dt><a name="index-cubehelix"></a>Function File: <em><var>map</var> =</em> <strong>cubehelix</strong> <em>()</em></dt>
+<dt><a name="index-cubehelix-1"></a>Function File: <em><var>map</var> =</em> <strong>cubehelix</strong> <em>(<var>n</var>)</em></dt>
+<dd><p>Create cubehelix colormap.
+</p>
+<p>This colormap varies from black to white going though blue, green, and red
+tones while maintaining a monotonically increasing perception of intensity.
+This is achieved by transversing a color cube from black to white through
+a helix, hence the name cubehelix, while taking into account the perceived
+brightness of each channel according to the NTSC specifications from 1953.
+</p>
+<div class="example">
+<pre class="example">rgbplot (cubehelix (256))
+</pre></div>
+
+<p>The argument <var>n</var> must be a scalar.
+If unspecified, the length of the current colormap, or 64, is used.
+</p>
+<p>Reference: Green, D. A., 2011,
+<cite>&quot;A colour scheme for the display of astronomical intensity
+images&quot;</cite>, Bulletin of the Astronomical Society of India, 39, 289.
+</p>
+
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
 </p></dd></dl>
 
@@ -321,9 +352,10 @@ If unspecified, the length of the current colormap, or 64, is used.
 <a name="XREFflag"></a><dl>
 <dt><a name="index-flag"></a>Function File: <em><var>map</var> =</em> <strong>flag</strong> <em>()</em></dt>
 <dt><a name="index-flag-1"></a>Function File: <em><var>map</var> =</em> <strong>flag</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Create color colormap.  This colormap cycles through red, white, blue,
-and black with each index change.
-The argument <var>n</var> must be a scalar.
+<dd><p>Create color colormap.  This colormap cycles through red, white, blue, and
+black with each index change.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -333,9 +365,10 @@ If unspecified, the length of the current colormap, or 64, is used.
 <a name="XREFgray"></a><dl>
 <dt><a name="index-gray"></a>Function File: <em><var>map</var> =</em> <strong>gray</strong> <em>()</em></dt>
 <dt><a name="index-gray-1"></a>Function File: <em><var>map</var> =</em> <strong>gray</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Create gray colormap.  This colormap varies from black to white with
-shades of gray.
-The argument <var>n</var> must be a scalar.
+<dd><p>Create gray colormap.  This colormap varies from black to white with shades
+of gray.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -347,7 +380,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-hot-1"></a>Function File: <em><var>map</var> =</em> <strong>hot</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap ranges from black through dark red,
 red, orange, yellow, to white.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -358,7 +392,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-hsv"></a>Function File: <em></em> <strong>hsv</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap begins with red, changes through
 yellow, green, cyan, blue, and magenta, before returning to red.
-It is useful for displaying periodic functions.  The map is obtained by
+</p>
+<p>It is useful for displaying periodic functions.  The map is obtained by
 linearly varying the hue through all possible values while keeping constant
 maximum saturation and value.  The equivalent code is
 <code>hsv2rgb ([(0:N-1)'/N, ones(N,2)])</code>.
@@ -375,7 +410,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-jet-1"></a>Function File: <em><var>map</var> =</em> <strong>jet</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap ranges from dark blue through blue,
 cyan, green, yellow, red, to dark red.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -388,7 +424,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dd><p>Create color colormap.  This colormap is composed of the list of colors
 in the current axes <code>&quot;ColorOrder&quot;</code> property.  The default is blue,
 green, red, cyan, pink, yellow, and gray.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -400,7 +437,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-ocean-1"></a>Function File: <em><var>map</var> =</em> <strong>ocean</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap varies from black to white with shades
 of blue.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -411,8 +449,11 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-pink"></a>Function File: <em><var>map</var> =</em> <strong>pink</strong> <em>()</em></dt>
 <dt><a name="index-pink-1"></a>Function File: <em><var>map</var> =</em> <strong>pink</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap varies from black to white with
-shades of gray-pink.  It gives a sepia tone when used on grayscale images.
-The argument <var>n</var> must be a scalar.
+shades of gray-pink.
+</p>
+<p>This colormap gives a sepia tone when used on grayscale images.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -424,7 +465,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-prism-1"></a>Function File: <em><var>map</var> =</em> <strong>prism</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap cycles through red, orange, yellow,
 green, blue and violet with each index change.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -436,7 +478,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-rainbow-1"></a>Function File: <em><var>map</var> =</em> <strong>rainbow</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap ranges from red through orange,
 yellow, green, blue, to violet.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -447,7 +490,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-spring"></a>Function File: <em><var>map</var> =</em> <strong>spring</strong> <em>()</em></dt>
 <dt><a name="index-spring-1"></a>Function File: <em><var>map</var> =</em> <strong>spring</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap varies from magenta to yellow.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -458,7 +502,8 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-summer"></a>Function File: <em><var>map</var> =</em> <strong>summer</strong> <em>()</em></dt>
 <dt><a name="index-summer-1"></a>Function File: <em><var>map</var> =</em> <strong>summer</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap varies from green to yellow.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -469,8 +514,9 @@ If unspecified, the length of the current colormap, or 64, is used.
 <dt><a name="index-white"></a>Function File: <em><var>map</var> =</em> <strong>white</strong> <em>()</em></dt>
 <dt><a name="index-white-1"></a>Function File: <em><var>map</var> =</em> <strong>white</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap is completely white.
-The argument <var>n</var> should be a scalar.  If it
-is omitted, the length of the current colormap or 64 is assumed.
+</p>
+<p>The argument <var>n</var> must be a scalar.
+If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
 </p></dd></dl>
@@ -480,7 +526,8 @@ is omitted, the length of the current colormap or 64 is assumed.
 <dt><a name="index-winter"></a>Function File: <em><var>map</var> =</em> <strong>winter</strong> <em>()</em></dt>
 <dt><a name="index-winter-1"></a>Function File: <em><var>map</var> =</em> <strong>winter</strong> <em>(<var>n</var>)</em></dt>
 <dd><p>Create color colormap.  This colormap varies from blue to green.
-The argument <var>n</var> must be a scalar.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, the length of the current colormap, or 64, is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>.
@@ -490,8 +537,9 @@ If unspecified, the length of the current colormap, or 64, is used.
 <a name="XREFcontrast"></a><dl>
 <dt><a name="index-contrast"></a>Function File: <em><var>cmap</var> =</em> <strong>contrast</strong> <em>(<var>x</var>)</em></dt>
 <dt><a name="index-contrast-1"></a>Function File: <em><var>cmap</var> =</em> <strong>contrast</strong> <em>(<var>x</var>, <var>n</var>)</em></dt>
-<dd><p>Return a gray colormap that maximizes the contrast in an image.  The
-returned colormap will have <var>n</var> rows.  If <var>n</var> is not defined
+<dd><p>Return a gray colormap that maximizes the contrast in an image.
+</p>
+<p>The returned colormap will have <var>n</var> rows.  If <var>n</var> is not defined
 then the size of the current colormap is used.
 </p>
 <p><strong>See also:</strong> <a href="#XREFcolormap">colormap</a>, <a href="#XREFbrighten">brighten</a>.
@@ -508,10 +556,16 @@ and <var>contour</var> functions.
 <a name="XREFgmap40"></a><dl>
 <dt><a name="index-gmap40"></a>Function File: <em><var>map</var> =</em> <strong>gmap40</strong> <em>()</em></dt>
 <dt><a name="index-gmap40-1"></a>Function File: <em><var>map</var> =</em> <strong>gmap40</strong> <em>(<var>n</var>)</em></dt>
-<dd><p>Create color colormap.  The colormap consists of red, green, blue, yellow,
-magenta and cyan.  This colormap is specifically designed for users of
-gnuplot 4.0 where these 6 colors are the allowable ones for patch objects.
-The argument <var>n</var> must be a scalar.
+<dd>
+<p><code>gmap40</code> is deprecated and will be removed in Octave version 4.4.
+</p>
+<p>Create color colormap.  The colormap consists of red, green, blue, yellow,
+magenta and cyan.
+</p>
+<p>This colormap is specifically designed for users of gnuplot 4.0 where these
+6 colors are the allowable ones for patch objects.
+</p>
+<p>The argument <var>n</var> must be a scalar.
 If unspecified, a length of 6 is assumed.  Larger values of <var>n</var> result
 in a repetition of the above colors.
 </p>
@@ -523,16 +577,20 @@ in a repetition of the above colors.
 replace it.
 </p>
 <a name="XREFbrighten"></a><dl>
-<dt><a name="index-brighten"></a>Function File: <em><var>map_out</var> =</em> <strong>brighten</strong> <em>(<var>map</var>, <var>beta</var>)</em></dt>
-<dt><a name="index-brighten-1"></a>Function File: <em><var>map_out</var> =</em> <strong>brighten</strong> <em>(<var>beta</var>)</em></dt>
+<dt><a name="index-brighten"></a>Function File: <em><var>map_out</var> =</em> <strong>brighten</strong> <em>(<var>beta</var>)</em></dt>
+<dt><a name="index-brighten-1"></a>Function File: <em><var>map_out</var> =</em> <strong>brighten</strong> <em>(<var>map</var>, <var>beta</var>)</em></dt>
 <dt><a name="index-brighten-2"></a>Function File: <em><var>map_out</var> =</em> <strong>brighten</strong> <em>(<var>h</var>, <var>beta</var>)</em></dt>
-<dd><p>Brighten or darken a colormap.  If the <var>map</var> argument is omitted, the
-function is applied to the current colormap.  The first argument can also be
-a valid graphics handle <var>h</var>, in which case <code>brighten</code> is applied to
-the colormap associated with this handle.
+<dt><a name="index-brighten-3"></a>Function File: <em></em> <strong>brighten</strong> <em>(&hellip;)</em></dt>
+<dd><p>Brighten or darken a colormap.
 </p>
-<p>The argument <var>beta</var> must be a scalar between -1 and 1, where a
-negative value darkens and a positive value brightens the colormap.
+<p>The argument <var>beta</var> must be a scalar between -1 and 1, where a negative
+value darkens and a positive value brightens the colormap.
+</p>
+<p>If the <var>map</var> argument is omitted, the function is applied to the current
+colormap.
+</p>
+<p>The first argument can also be a valid graphics handle <var>h</var>, in which
+case <code>brighten</code> is applied to the colormap associated with this handle.
 </p>
 <p>If no output is specified then the result is written to the current colormap.
 </p>
@@ -546,11 +604,12 @@ negative value darkens and a positive value brightens the colormap.
 <dt><a name="index-spinmap-2"></a>Function File: <em></em> <strong>spinmap</strong> <em>(<var>t</var>, <var>inc</var>)</em></dt>
 <dt><a name="index-spinmap-3"></a>Function File: <em></em> <strong>spinmap</strong> <em>(&quot;inf&quot;)</em></dt>
 <dd><p>Cycle the colormap for <var>t</var> seconds with a color increment of <var>inc</var>.
-Both parameters are optional.  The default cycle time is 5 seconds and the
+</p>
+<p>Both parameters are optional.  The default cycle time is 5 seconds and the
 default increment is 2.  If the option <code>&quot;inf&quot;</code> is given then cycle
 continuously until <kbd>Control-C</kbd> is pressed.
 </p>
-<p>When rotating the original color 1 becomes color 2, color 2 becomes
+<p>When rotating, the original color 1 becomes color 2, color 2 becomes
 color 3, etc.  A positive or negative increment is allowed and a higher
 value of <var>inc</var> will cause faster cycling through the colormap.
 </p>
@@ -590,7 +649,7 @@ root properties will not be changed.
 <dd><p>Convert an input image <var>X</var> to an ouput indexed image <var>Y</var> which uses
 the smallest colormap possible <var>newmap</var>.
 </p>
-<p>When the input is an indexed image (<var>X</var> with colormap <var>map</var>) the 
+<p>When the input is an indexed image (<var>X</var> with colormap <var>map</var>) the
 output is a colormap <var>newmap</var> from which any repeated rows have been
 eliminated.  The output image, <var>Y</var>, is the original input image with
 the indices adjusted to match the new, possibly smaller, colormap.
@@ -629,8 +688,8 @@ the colormap <var>map</var> and returns a new colormap <var>newmap</var>.  It al
 returns the indexed image <var>Y</var> which is the equivalent of the original
 input image <var>X</var> when displayed using <var>newmap</var>.
 </p>
-<p>When called with an optional third argument the order of colors in the
-new colormap is defined by <var>index</var>.
+<p>When called with an optional third argument the order of colors in the new
+colormap is defined by <var>index</var>.
 </p>
 <p><strong>Caution:</strong> <code>index</code> should not have repeated elements or the
 function will fail.

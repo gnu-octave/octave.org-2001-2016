@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -72,10 +71,10 @@ including function definitions.
 <dd><a name="index-site-startup-file"></a>
 <p>where <var>octave-home</var> is the directory in which Octave is installed
 (the default is <samp>/usr/local</samp>).
-This file is provided so that changes to the default Octave environment 
+This file is provided so that changes to the default Octave environment
 can be made globally for all users at your site for all versions of Octave
-you have installed.  Care should be taken when making changes to this file 
-since all users of Octave at your site will be affected.  The default file 
+you have installed.  Care should be taken when making changes to this file
+since all users of Octave at your site will be affected.  The default file
 may be overridden by the environment variable <code><span class="nolinebreak">OCTAVE_SITE_INITFILE</span></code><!-- /@w -->.
 </p>
 </dd>
@@ -94,7 +93,7 @@ affected.  The default file may be overridden by the environment variable
 <dt><code>~/.octaverc</code></dt>
 <dd><a name="index-personal-startup-file"></a>
 <a name="index-_007e_002f_002eoctaverc"></a>
-<p>This file is used to make personal changes to the default 
+<p>This file is used to make personal changes to the default
 Octave environment.
 </p>
 </dd>
@@ -116,18 +115,6 @@ Octave searches for <samp>.octaverc</samp>.
 invoke Octave with the <samp>--verbose</samp> option but without the
 <samp>--silent</samp> option.
 </p>
-<p>The <code>dump_prefs</code> function is useful for determining what customizations
-to Octave are possible and which are in effect.
-</p>
-<a name="XREFdump_005fprefs"></a><dl>
-<dt><a name="index-dump_005fprefs"></a>Function File: <em></em> <strong>dump_prefs</strong> <em>()</em></dt>
-<dt><a name="index-dump_005fprefs-1"></a>Function File: <em></em> <strong>dump_prefs</strong> <em>(<var>fid</var>)</em></dt>
-<dd><p>Dump all of the current user preference variables in a format that can be
-parsed by Octave later.  <var>fid</var> is a file descriptor as returned by
-<code>fopen</code>.  If <var>file</var> is omitted, the listing is printed to stdout.
-</p></dd></dl>
-
-
 <hr>
 <div class="header">
 <p>

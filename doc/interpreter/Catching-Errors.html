@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -96,13 +95,28 @@ for n = 1:100
 endfor
 </pre></div>
 
+<p>Alternatively, the output of the <code>lasterror</code> function can be found
+in a variable indicated immediately after the <code>catch</code> keyword, as
+in the example below showing how to redirect an error as a warning:
+</p>
+<div class="example">
+<pre class="example">try
+  &hellip;
+catch err
+  warning(err.identifier, err.message);
+  &hellip;
+end_try_catch
+</pre></div>
+
 <a name="XREFlasterror"></a><dl>
 <dt><a name="index-lasterror"></a>Built-in Function: <em><var>lasterr</var> =</em> <strong>lasterror</strong> <em>()</em></dt>
 <dt><a name="index-lasterror-1"></a>Built-in Function: <em></em> <strong>lasterror</strong> <em>(<var>err</var>)</em></dt>
 <dt><a name="index-lasterror-2"></a>Built-in Function: <em></em> <strong>lasterror</strong> <em>(&quot;reset&quot;)</em></dt>
-<dd><p>Query or set the last error message structure.  When called without
-arguments, return a structure containing the last error message and other
-information related to this error.  The elements of the structure are:
+<dd><p>Query or set the last error message structure.
+</p>
+<p>When called without arguments, return a structure containing the last error
+message and other information related to this error.  The elements of the
+structure are:
 </p>
 <dl compact="compact">
 <dt><code>message</code></dt>
@@ -115,8 +129,8 @@ information related to this error.  The elements of the structure are:
 </dd>
 <dt><code>stack</code></dt>
 <dd><p>A structure containing information on where the message occurred.  This may
-be an empty structure if the information cannot
-be obtained.  The fields of the structure are:
+be an empty structure if the information cannot be obtained.  The fields of
+the structure are:
 </p>
 <dl compact="compact">
 <dt><code>file</code></dt>
@@ -153,10 +167,14 @@ fields are set to their default values.
 <dt><a name="index-lasterr"></a>Built-in Function: <em>[<var>msg</var>, <var>msgid</var>] =</em> <strong>lasterr</strong> <em>()</em></dt>
 <dt><a name="index-lasterr-1"></a>Built-in Function: <em></em> <strong>lasterr</strong> <em>(<var>msg</var>)</em></dt>
 <dt><a name="index-lasterr-2"></a>Built-in Function: <em></em> <strong>lasterr</strong> <em>(<var>msg</var>, <var>msgid</var>)</em></dt>
-<dd><p>Query or set the last error message.  When called without input arguments,
-return the last error message and message identifier.  With one
-argument, set the last error message to <var>msg</var>.  With two arguments,
-also set the last message identifier.
+<dd><p>Query or set the last error message.
+</p>
+<p>When called without input arguments, return the last error message and
+message identifier.
+</p>
+<p>With one argument, set the last error message to <var>msg</var>.
+</p>
+<p>With two arguments, also set the last message identifier.
 </p>
 <p><strong>See also:</strong> <a href="#XREFlasterror">lasterror</a>, <a href="Raising-Errors.html#XREFerror">error</a>, <a href="Issuing-Warnings.html#XREFlastwarn">lastwarn</a>.
 </p></dd></dl>
@@ -211,7 +229,7 @@ of input arguments.
 </dd>
 <dt><code>Octave:invalid-indexing</code></dt>
 <dd><p>Indicates that a data-type was indexed incorrectly, e.g., real-value index
-for arrays, non-existent field of a structure.
+for arrays, nonexistent field of a structure.
 </p>
 </dd>
 <dt><code>Octave:bad-alloc</code></dt>
@@ -219,8 +237,8 @@ for arrays, non-existent field of a structure.
 </p>
 </dd>
 <dt><code>Octave:undefined-function</code></dt>
-<dd><p>Indicates a call to a function that is not defined.  The function may
-exist but Octave is unable to find it in the search path.
+<dd><p>Indicates a call to a function that is not defined.  The function may exist
+but Octave is unable to find it in the search path.
 </p>
 </dd>
 </dl>
@@ -252,11 +270,12 @@ endfor
 
 <a name="XREFrethrow"></a><dl>
 <dt><a name="index-rethrow"></a>Built-in Function: <em></em> <strong>rethrow</strong> <em>(<var>err</var>)</em></dt>
-<dd><p>Reissue a previous error as defined by <var>err</var>.  <var>err</var> is a structure
-that must contain at least the <code>&quot;message&quot;</code> and <code>&quot;identifier&quot;</code>
-fields.  <var>err</var> can also contain a field <code>&quot;stack&quot;</code> that gives
-information on the assumed location of the error.  Typically <var>err</var> is
-returned from <code>lasterror</code>.
+<dd><p>Reissue a previous error as defined by <var>err</var>.
+</p>
+<p><var>err</var> is a structure that must contain at least the <code>&quot;message&quot;</code>
+and <code>&quot;identifier&quot;</code> fields.  <var>err</var> can also contain a field
+<code>&quot;stack&quot;</code> that gives information on the assumed location of the
+error.  Typically <var>err</var> is returned from <code>lasterror</code>.
 </p>
 <p><strong>See also:</strong> <a href="#XREFlasterror">lasterror</a>, <a href="#XREFlasterr">lasterr</a>, <a href="Raising-Errors.html#XREFerror">error</a>.
 </p></dd></dl>
@@ -271,12 +290,16 @@ returned from <code>lasterror</code>.
 set its value to <var>val</var> and return the previous value, or return
 the named error code given <var>name</var> as a character string, or -1
 if <var>name</var> is not found.
+</p>
+<p><strong>See also:</strong> <a href="#XREFerrno_005flist">errno_list</a>.
 </p></dd></dl>
 
 
 <a name="XREFerrno_005flist"></a><dl>
 <dt><a name="index-errno_005flist"></a>Built-in Function: <em></em> <strong>errno_list</strong> <em>()</em></dt>
 <dd><p>Return a structure containing the system-dependent errno values.
+</p>
+<p><strong>See also:</strong> <a href="#XREFerrno">errno</a>.
 </p></dd></dl>
 
 

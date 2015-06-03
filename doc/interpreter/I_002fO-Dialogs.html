@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -67,9 +66,11 @@ a file name.
 <dt><a name="index-uigetdir"></a>Function File: <em><var>dirname</var> =</em> <strong>uigetdir</strong> <em>()</em></dt>
 <dt><a name="index-uigetdir-1"></a>Function File: <em><var>dirname</var> =</em> <strong>uigetdir</strong> <em>(<var>init_path</var>)</em></dt>
 <dt><a name="index-uigetdir-2"></a>Function File: <em><var>dirname</var> =</em> <strong>uigetdir</strong> <em>(<var>init_path</var>, <var>dialog_name</var>)</em></dt>
-<dd><p>Open a GUI dialog for selecting a directory.  If <var>init_path</var> is not
-given the current working directory is used.  <var>dialog_name</var> may be
-used to customize the dialog title.
+<dd><p>Open a GUI dialog for selecting a directory.
+</p>
+<p>If <var>init_path</var> is not given the current working directory is used.
+</p>
+<p><var>dialog_name</var> may be used to customize the dialog title.
 </p>
 <p><strong>See also:</strong> <a href="#XREFuigetfile">uigetfile</a>, <a href="#XREFuiputfile">uiputfile</a>.
 </p></dd></dl>
@@ -85,7 +86,8 @@ used to customize the dialog title.
 <dd>
 <p>Open a GUI dialog for selecting a file and return the filename <var>fname</var>,
 the path to this file <var>fpath</var>, and the filter index <var>fltidx</var>.
-<var>flt</var> contains a (list of) file filter string(s) in one of the following
+</p>
+<p><var>flt</var> contains a (list of) file filter string(s) in one of the following
 formats:
 </p>
 <dl compact="compact">
@@ -100,8 +102,8 @@ is selected as default file.  Example: <code>uigetfile (&quot;myfun.m&quot;)</co
 </p>
 </dd>
 <dt>A 2-column cell array</dt>
-<dd><p>containing a file extension in the first column and a brief description
-in the second column.
+<dd><p>containing a file extension in the first column and a brief description in
+the second column.
 Example: <code>uigetfile ({&quot;*.ext&quot;, &quot;My Description&quot;;&quot;*.xyz&quot;,
 &quot;XYZ-Format&quot;})</code>
 </p>
@@ -113,7 +115,8 @@ Formats&quot;})</code>
 </dl>
 
 <p><var>dialog_name</var> can be used to customize the dialog title.
-If <var>default_file</var> is given then it will be selected in the GUI dialog.
+</p>
+<p>If <var>default_file</var> is given then it will be selected in the GUI dialog.
 If, in addition, a path is given it is also used as current path.
 </p>
 <p>The screen position of the GUI dialog can be set using the
@@ -131,8 +134,10 @@ cell array containing the files.
 <dt><a name="index-uiputfile-1"></a>Function File: <em>[<var>fname</var>, <var>fpath</var>, <var>fltidx</var>] =</em> <strong>uiputfile</strong> <em>(<var>flt</var>)</em></dt>
 <dt><a name="index-uiputfile-2"></a>Function File: <em>[<var>fname</var>, <var>fpath</var>, <var>fltidx</var>] =</em> <strong>uiputfile</strong> <em>(<var>flt</var>, <var>dialog_name</var>)</em></dt>
 <dt><a name="index-uiputfile-3"></a>Function File: <em>[<var>fname</var>, <var>fpath</var>, <var>fltidx</var>] =</em> <strong>uiputfile</strong> <em>(<var>flt</var>, <var>dialog_name</var>, <var>default_file</var>)</em></dt>
-<dd><p>Open a GUI dialog for selecting a file.  <var>flt</var> contains a (list of) file
-filter string(s) in one of the following formats:
+<dd><p>Open a GUI dialog for selecting a file.
+</p>
+<p><var>flt</var> contains a (list of) file filter string(s) in one of the following
+formats:
 </p>
 <dl compact="compact">
 <dt><code>&quot;/path/to/filename.ext&quot;</code></dt>

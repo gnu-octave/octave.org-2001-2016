@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -68,8 +67,8 @@ Previous: <a href="Ordinary-Differential-Equations.html#Ordinary-Differential-Eq
 
 <p>where
 <em>x-dot</em>
-is the derivative of <em>x</em>.  The equation is solved using Petzold&rsquo;s
-DAE solver <small>DASPK</small>.
+is the derivative of <em>x</em>.  The equation is solved using
+Petzold&rsquo;s DAE solver <small>DASPK</small>.
 </p>
 <a name="XREFdaspk"></a><dl>
 <dt><a name="index-daspk"></a>Built-in Function: <em>[<var>x</var>, <var>xdot</var>, <var>istate</var>, <var>msg</var>] =</em> <strong>daspk</strong> <em>(<var>fcn</var>, <var>x_0</var>, <var>xdot_0</var>, <var>t</var>, <var>t_crit</var>)</em></dt>
@@ -157,10 +156,13 @@ parameters for <code>daspk</code>.
 <dt><a name="index-daspk_005foptions-1"></a>Built-in Function: <em>val =</em> <strong>daspk_options</strong> <em>(<var>opt</var>)</em></dt>
 <dt><a name="index-daspk_005foptions-2"></a>Built-in Function: <em></em> <strong>daspk_options</strong> <em>(<var>opt</var>, <var>val</var>)</em></dt>
 <dd><p>Query or set options for the function <code>daspk</code>.
-When called with no arguments, the names of all available options and
+</p>
+<p>When called with no arguments, the names of all available options and
 their current values are displayed.
-Given one argument, return the value of the corresponding option.
-When called with two arguments, <code>daspk_options</code> set the option
+</p>
+<p>Given one argument, return the value of the option <var>opt</var>.
+</p>
+<p>When called with two arguments, <code>daspk_options</code> sets the option
 <var>opt</var> to value <var>val</var>.
 </p>
 <p>Options include
@@ -271,10 +273,10 @@ declare which variables in the problem are algebraic (default is 0).
 <dd><p>A vector of the same length as the state vector.  A nonzero element
 indicates that the corresponding element of the state vector is an
 algebraic variable (i.e., its derivative does not appear explicitly
-in the equation set.
+in the equation set).
 </p>
 <p>This option is required by the
-<code>compute consistent initial condition&quot;</code> and
+<code>&quot;compute consistent initial condition&quot;</code> and
 <code>&quot;exclude algebraic variables from error test&quot;</code> options.
 </p>
 </dd>
@@ -436,10 +438,13 @@ parameters for <code>dassl</code>.
 <dt><a name="index-dassl_005foptions-1"></a>Built-in Function: <em>val =</em> <strong>dassl_options</strong> <em>(<var>opt</var>)</em></dt>
 <dt><a name="index-dassl_005foptions-2"></a>Built-in Function: <em></em> <strong>dassl_options</strong> <em>(<var>opt</var>, <var>val</var>)</em></dt>
 <dd><p>Query or set options for the function <code>dassl</code>.
-When called with no arguments, the names of all available options and
+</p>
+<p>When called with no arguments, the names of all available options and
 their current values are displayed.
-Given one argument, return the value of the corresponding option.
-When called with two arguments, <code>dassl_options</code> set the option
+</p>
+<p>Given one argument, return the value of the option <var>opt</var>.
+</p>
+<p>When called with two arguments, <code>dassl_options</code> sets the option
 <var>opt</var> to value <var>val</var>.
 </p>
 <p>Options include
@@ -628,10 +633,13 @@ parameters for <code>dasrt</code>.
 <dt><a name="index-dasrt_005foptions-1"></a>Built-in Function: <em>val =</em> <strong>dasrt_options</strong> <em>(<var>opt</var>)</em></dt>
 <dt><a name="index-dasrt_005foptions-2"></a>Built-in Function: <em></em> <strong>dasrt_options</strong> <em>(<var>opt</var>, <var>val</var>)</em></dt>
 <dd><p>Query or set options for the function <code>dasrt</code>.
-When called with no arguments, the names of all available options and
+</p>
+<p>When called with no arguments, the names of all available options and
 their current values are displayed.
-Given one argument, return the value of the corresponding option.
-When called with two arguments, <code>dasrt_options</code> set the option
+</p>
+<p>Given one argument, return the value of the option <var>opt</var>.
+</p>
+<p>When called with two arguments, <code>dasrt_options</code> sets the option
 <var>opt</var> to value <var>val</var>.
 </p>
 <p>Options include

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -74,38 +73,38 @@ shows the image given in the first input argument.
 <dd><p>Display the image <var>im</var>, where <var>im</var> can be a 2-dimensional
 (grayscale image) or a 3-dimensional (RGB image) matrix.
 </p>
-<p>If <var>limits</var> is a 2-element vector <code>[<var>low</var>, <var>high</var>]</code>,
-the image is shown using a display range between <var>low</var> and
-<var>high</var>.  If an empty matrix is passed for <var>limits</var>, the
-display range is computed as the range between the minimal and the
-maximal value in the image.
+<p>If <var>limits</var> is a 2-element vector <code>[<var>low</var>, <var>high</var>]</code>, the
+image is shown using a display range between <var>low</var> and <var>high</var>.  If
+an empty matrix is passed for <var>limits</var>, the display range is computed
+as the range between the minimal and the maximal value in the image.
 </p>
 <p>If <var>map</var> is a valid color map, the image will be shown as an indexed
 image using the supplied color map.
 </p>
-<p>If a file name is given instead of an image, the file will be read and
-shown.
+<p>If a file name is given instead of an image, the file will be read and shown.
 </p>
-<p>If given, the parameter <var>string_param1</var> has value
-<var>value1</var>.  <var>string_param1</var> can be any of the following:
+<p>If given, the parameter <var>string_param1</var> has value <var>value1</var>.
+<var>string_param1</var> can be any of the following:
 </p>
 <dl compact="compact">
 <dt><code>&quot;displayrange&quot;</code></dt>
 <dd><p><var>value1</var> is the display range as described above.
 </p>
 </dd>
+<dt><code>&quot;colormap&quot;</code></dt>
+<dd><p><var>value1</var> is the colormap to use when displaying an indexed image.
+</p>
+</dd>
 <dt><code>&quot;xdata&quot;</code></dt>
 <dd><p>If <var>value1</var> is a two element vector, it must contain horizontal axis
-limits in the form [xmin xmax]; Otherwise <var>value1</var> must be a
-vector and only the first and last elements will be used for xmin and
-xmax respectively.
+limits in the form [xmin xmax]; Otherwise <var>value1</var> must be a vector and
+only the first and last elements will be used for xmin and xmax respectively.
 </p>
 </dd>
 <dt><code>&quot;ydata&quot;</code></dt>
 <dd><p>If <var>value1</var> is a two element vector, it must contain vertical axis
-limits in the form [ymin ymax]; Otherwise <var>value1</var> must be a
-vector and only the first and last elements will be used for ymin and
-ymax respectively.
+limits in the form [ymin ymax]; Otherwise <var>value1</var> must be a vector and
+only the first and last elements will be used for ymin and ymax respectively.
 </p>
 </dd>
 </dl>
@@ -125,7 +124,8 @@ ymax respectively.
 <dd><p>Display a matrix as an indexed color image.
 </p>
 <p>The elements of <var>img</var> are indices into the current colormap.
-<var>x</var> and <var>y</var> are optional 2-element vectors, <code>[min,&nbsp;max]</code><!-- /@w -->,
+</p>
+<p><var>x</var> and <var>y</var> are optional 2-element vectors, <code>[min,&nbsp;max]</code><!-- /@w -->,
 which specify the range for the axis labels.  If a range is specified as
 <code>[max,&nbsp;min]</code><!-- /@w --> then the image will be reversed along that axis.  For
 convenience, <var>x</var> and <var>y</var> may be specified as N-element vectors
@@ -167,10 +167,11 @@ and inserts it in the current axes.
 <dt><a name="index-imagesc-4"></a>Function File: <em></em> <strong>imagesc</strong> <em>(&quot;<var>prop1</var>&quot;, <var>val1</var>, &hellip;)</em></dt>
 <dt><a name="index-imagesc-5"></a>Function File: <em></em> <strong>imagesc</strong> <em>(<var>hax</var>, &hellip;)</em></dt>
 <dt><a name="index-imagesc-6"></a>Function File: <em><var>h</var> =</em> <strong>imagesc</strong> <em>(&hellip;)</em></dt>
-<dd><p>Display a scaled version of the matrix <var>img</var> as a color image.  The
-colormap is scaled so that the entries of the matrix occupy the entire
-colormap.  If <code><var>climits</var> = [<var>lo</var>, <var>hi</var>]</code> is given, then that
-range is set to the <code>&quot;clim&quot;</code> of the current axes.
+<dd><p>Display a scaled version of the matrix <var>img</var> as a color image.
+</p>
+<p>The colormap is scaled so that the entries of the matrix occupy the entire
+colormap.  If <code><var>climits</var> = [<var>lo</var>, <var>hi</var>]</code> is given, then
+that range is set to the <code>&quot;clim&quot;</code> of the current axes.
 </p>
 <p>The axis values corresponding to the matrix elements are specified in
 <var>x</var> and <var>y</var>, either as pairs giving the minimum and maximum

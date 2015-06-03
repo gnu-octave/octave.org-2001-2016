@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -128,8 +127,7 @@ one can
 the same characteristics as the vector returned from <code>size</code>.  For example:
 
 <div class="example">
-<pre class="example">dim_vector dv (2);
-dv(0) = 2; dv(1) = 3;  // 2 rows, 3 columns
+<pre class="example">dim_vector dv (2, 3);  // 2 rows, 3 columns
 Matrix a (dv);
 </pre></div>
 

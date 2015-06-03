@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -94,6 +93,13 @@ covariance [default]
 </p></dd>
 </dl>
 
+<p>Compatibility Note:: Octave always computes the covariance matrix.
+For two inputs, however, <small>MATLAB</small> will calculate
+<code>cov (<var>x</var>(:), <var>y</var>(:))</code> whenever the number of elements in
+<var>x</var> and <var>y</var> are equal.  This will result in a scalar rather than
+a matrix output.  Code relying on this odd definition will need to be
+changed when running in Octave.
+</p>
 <p><strong>See also:</strong> <a href="#XREFcorr">corr</a>.
 </p></dd></dl>
 
@@ -128,12 +134,12 @@ the correlation between the columns of <var>x</var>.
 <p>For two data vectors <var>x</var> and <var>y</var>, Spearman&rsquo;s <var>rho</var> is the
 correlation coefficient of the ranks of <var>x</var> and <var>y</var>.
 </p>
-<p>If <var>x</var> and <var>y</var> are drawn from independent distributions,
-<var>rho</var> has zero mean and variance <code>1 / (n - 1)</code>, and is
-asymptotically normally distributed.
+<p>If <var>x</var> and <var>y</var> are drawn from independent distributions, <var>rho</var>
+has zero mean and variance <code>1 / (n - 1)</code>, and is asymptotically
+normally distributed.
 </p>
-<p><code>spearman (<var>x</var>)</code> is equivalent to <code>spearman (<var>x</var>,
-<var>x</var>)</code>.
+<p><code>spearman (<var>x</var>)</code> is equivalent to
+<code>spearman (<var>x</var>, <var>x</var>)</code>.
 </p>
 <p><strong>See also:</strong> <a href="Basic-Statistical-Functions.html#XREFranks">ranks</a>, <a href="#XREFkendall">kendall</a>.
 </p></dd></dl>
@@ -145,10 +151,10 @@ asymptotically normally distributed.
 <dd><a name="index-Kendall_0027s-Tau"></a>
 <p>Compute Kendall&rsquo;s <var>tau</var>.
 </p>
-<p>For two data vectors <var>x</var>, <var>y</var> of common length <var>n</var>,
-Kendall&rsquo;s <var>tau</var> is the correlation of the signs of all rank
-differences of <var>x</var> and <var>y</var>; i.e., if both <var>x</var> and
-<var>y</var> have distinct entries, then
+<p>For two data vectors <var>x</var>, <var>y</var> of common length <var>n</var>, Kendall&rsquo;s
+<var>tau</var> is the correlation of the signs of all rank differences of
+<var>x</var> and <var>y</var>; i.e., if both <var>x</var> and <var>y</var> have distinct
+entries, then
 </p>
 
 <div class="example">

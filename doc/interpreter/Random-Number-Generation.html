@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -361,8 +360,8 @@ be specified with a vector of dimensions <var>sz</var>.
 <dt><a name="index-nbinrnd-1"></a>Function File: <em></em> <strong>nbinrnd</strong> <em>(<var>n</var>, <var>p</var>, <var>r</var>)</em></dt>
 <dt><a name="index-nbinrnd-2"></a>Function File: <em></em> <strong>nbinrnd</strong> <em>(<var>n</var>, <var>p</var>, <var>r</var>, <var>c</var>, &hellip;)</em></dt>
 <dt><a name="index-nbinrnd-3"></a>Function File: <em></em> <strong>nbinrnd</strong> <em>(<var>n</var>, <var>p</var>, [<var>sz</var>])</em></dt>
-<dd><p>Return a matrix of random samples from the negative binomial
-distribution with parameters <var>n</var> and <var>p</var>.
+<dd><p>Return a matrix of random samples from the negative binomial distribution
+with parameters <var>n</var> and <var>p</var>.
 </p>
 <p>When called with a single size argument, return a square matrix with
 the dimension specified.  When called with more than one scalar argument the
@@ -454,7 +453,8 @@ be specified with a vector of dimensions <var>sz</var>.
 <dt><a name="index-unidrnd-3"></a>Function File: <em></em> <strong>unidrnd</strong> <em>(<var>n</var>, [<var>sz</var>])</em></dt>
 <dd><p>Return a matrix of random samples from the discrete uniform distribution
 which assumes the integer values 1&ndash;<var>n</var> with equal probability.
-<var>n</var> may be a scalar or a multi-dimensional array.
+</p>
+<p><var>n</var> may be a scalar or a multi-dimensional array.
 </p>
 <p>When called with a single size argument, return a square matrix with
 the dimension specified.  When called with more than one scalar argument the
@@ -508,11 +508,13 @@ be specified with a vector of dimensions <var>sz</var>.
 <a name="XREFwienrnd"></a><dl>
 <dt><a name="index-wienrnd"></a>Function File: <em></em> <strong>wienrnd</strong> <em>(<var>t</var>, <var>d</var>, <var>n</var>)</em></dt>
 <dd><p>Return a simulated realization of the <var>d</var>-dimensional Wiener Process
-on the interval [0, <var>t</var>].  If <var>d</var> is omitted, <var>d</var> = 1 is
-used.  The first column of the return matrix contains time, the
-remaining columns contain the Wiener process.
+on the interval [0, <var>t</var>].
 </p>
-<p>The optional parameter <var>n</var> gives the number of summands used for
+<p>If <var>d</var> is omitted, <var>d</var> = 1 is used.  The first column of the
+return matrix contains time, the remaining columns contain the Wiener
+process.
+</p>
+<p>The optional parameter <var>n</var> defines the number of summands used for
 simulating the process over an interval of length 1.  If <var>n</var> is
 omitted, <var>n</var> = 1000 is used.
 </p></dd></dl>

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -123,8 +122,9 @@ to disable dependency checking.
 <a name="XREFpkg"></a><dl>
 <dt><a name="index-pkg-1"></a>Command: <em></em> <strong>pkg</strong> <em><var>command</var> <var>pkg_name</var></em></dt>
 <dt><a name="index-pkg-2"></a>Command: <em></em> <strong>pkg</strong> <em><var>command</var> <var>option</var> <var>pkg_name</var></em></dt>
-<dd><p>Manage packages (groups of add-on functions) for Octave.  Different actions
-are available depending on the value of <var>command</var>.
+<dd><p>Manage packages (groups of add-on functions) for Octave.
+</p>
+<p>Different actions are available depending on the value of <var>command</var>.
 </p>
 <p>Available commands:
 </p>
@@ -233,11 +233,25 @@ possible to unload all installed packages at once with the keyword
 <dd><p>Show the list of currently installed packages.  For example,
 </p>
 <div class="example">
+<pre class="example">pkg list
+</pre></div>
+
+<p>will produce a short report with the package name, version, and installation
+directory for each installed package.  Supply a package name to limit
+reporting to a particular package.  For example:
+</p>
+<div class="example">
+<pre class="example">pkg list image
+</pre></div>
+
+<p>If a single return argument is requested then <code>pkg</code> returns a cell
+array where each element is a structure with information on a single
+package.
+</p>
+<div class="example">
 <pre class="example">installed_packages = pkg (&quot;list&quot;)
 </pre></div>
 
-<p>returns a cell array containing a structure for each installed package.
-</p>
 <p>If two output arguments are requested <code>pkg</code> splits the list of
 installed packages into those which were installed by the current user,
 and those which were installed by the system administrator.
@@ -246,8 +260,8 @@ and those which were installed by the system administrator.
 <pre class="example">[user_packages, system_packages] = pkg (&quot;list&quot;)
 </pre></div>
 
-<p>The option <code>&quot;-forge&quot;</code> lists packages available at the Octave-Forge
-repository.  This requires an internet connection and the cURL library. 
+<p>The <code>&quot;-forge&quot;</code> option lists packages available at the Octave-Forge
+repository.  This requires an internet connection and the cURL library.
 For example:
 </p>
 <div class="example">
@@ -272,7 +286,7 @@ output rather than printed on screen:
 <pre class="example">desc = pkg (&quot;describe&quot;, &quot;secs1d&quot;, &quot;image&quot;)
 </pre></div>
 
-<p>If any of the requested packages is not installed, pkg returns an
+<p>If any of the requested packages is not installed, <code>pkg</code> returns an
 error, unless a second output is requested:
 </p>
 <div class="example">
@@ -370,7 +384,9 @@ autoloading state of a package to be changed.  For example,
 </p>
 </dd>
 </dl>
-</dd></dl>
+
+<p><strong>See also:</strong> <a href="System-Information.html#XREFver">ver</a>, <a href="Getting-Help.html#XREFnews">news</a>.
+</p></dd></dl>
 
 
 <hr>

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -58,6 +57,7 @@ Next: <a href="Multiple-Plot-Windows.html#Multiple-Plot-Windows" accesskey="n" r
 <hr>
 <a name="Multiple-Plots-on-One-Page-1"></a>
 <h4 class="subsection">15.2.4 Multiple Plots on One Page</h4>
+<a name="index-plotting_002c-multiple-plots-per-figure"></a>
 
 <p>Octave can display more than one plot in a single figure.  The simplest
 way to do this is to use the <code>subplot</code> function to divide the plot
@@ -90,8 +90,8 @@ numbered in column-major order (top to bottom, left to right).
 current axes for plotting (<code>gca</code>) to the location given by <var>index</var>.
 </p>
 <p>If only one numeric argument is supplied, then it must be a three digit
-value specifying the number of rows in digit 1, the number of
-columns in digit 2, and the plot index in digit 3.
+value specifying the number of rows in digit 1, the number of columns in
+digit 2, and the plot index in digit 3.
 </p>
 <p>The plot index runs row-wise; First, all columns in a row are numbered
 and then the next row is filled.

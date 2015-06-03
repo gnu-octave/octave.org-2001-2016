@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -161,10 +160,10 @@ object.
 <dt><a name="index-tetramesh-3"></a>Function File: <em><var>h</var> =</em> <strong>tetramesh</strong> <em>(&hellip;)</em></dt>
 <dd><p>Display the tetrahedrons defined in the m-by-4 matrix <var>T</var> as 3-D patches.
 </p>
-<p><var>T</var> is typically the output of a Delaunay triangulation
-of a 3-D set of points.  Every row of <var>T</var> contains four indices into
-the n-by-3 matrix <var>X</var> of the vertices of a tetrahedron.  Every row in
-<var>X</var> represents one point in 3-D space. 
+<p><var>T</var> is typically the output of a Delaunay triangulation of a 3-D set
+of points.  Every row of <var>T</var> contains four indices into the n-by-3
+matrix <var>X</var> of the vertices of a tetrahedron.  Every row in <var>X</var>
+represents one point in 3-D space.
 </p>
 <p>The vector <var>C</var> specifies the color of each tetrahedron as an index
 into the current colormap.  The default value is 1:m where m is the number
@@ -176,13 +175,13 @@ the values in <var>C</var> are cyclically repeated.
 property/value pairs directly to the patch function as additional arguments.
 </p>
 <p>The optional return value <var>h</var> is a vector of patch handles where each
-handle represents one tetrahedron in the order given by <var>T</var>. 
+handle represents one tetrahedron in the order given by <var>T</var>.
 A typical use case for <var>h</var> is to turn the respective patch
 <code>&quot;visible&quot;</code> property <code>&quot;on&quot;</code> or <code>&quot;off&quot;</code>.
 </p>
 <p>Type <code>demo tetramesh</code> to see examples on using <code>tetramesh</code>.
 </p>
-<p><strong>See also:</strong> <a href="#XREFtrimesh">trimesh</a>, <a href="Delaunay-Triangulation.html#XREFdelaunay3">delaunay3</a>, <a href="Delaunay-Triangulation.html#XREFdelaunayn">delaunayn</a>, <a href="Graphics-Objects.html#XREFpatch">patch</a>.
+<p><strong>See also:</strong> <a href="#XREFtrimesh">trimesh</a>, <a href="Delaunay-Triangulation.html#XREFdelaunay">delaunay</a>, <a href="Delaunay-Triangulation.html#XREFdelaunayn">delaunayn</a>, <a href="Graphics-Objects.html#XREFpatch">patch</a>.
 </p></dd></dl>
 
 

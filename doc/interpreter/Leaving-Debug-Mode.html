@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -59,8 +58,8 @@ Next: <a href="Breakpoints.html#Breakpoints" accesskey="n" rel="next">Breakpoint
 <a name="Leaving-Debug-Mode-1"></a>
 <h3 class="section">13.2 Leaving Debug Mode</h3>
 
-<p>To leave the debug mode, use either <code>dbcont</code> 
-or <code>return</code>.
+<p>Use either <code>dbcont</code> or <code>return</code> to leave the debug mode and
+continue the normal execution of the script.
 </p>
 <a name="XREFdbcont"></a><dl>
 <dt><a name="index-dbcont"></a>Command: <em></em> <strong>dbcont</strong></dt>
@@ -70,13 +69,13 @@ or <code>return</code>.
 </p></dd></dl>
 
 
-<p>To quit debug mode and return directly to the prompt <code>dbquit</code>
-should be used instead
+<p>To quit debug mode and return directly to the prompt without executing
+any additional code use <code>dbquit</code>.
 </p>
 <a name="XREFdbquit"></a><dl>
 <dt><a name="index-dbquit"></a>Command: <em></em> <strong>dbquit</strong></dt>
-<dd><p>Quit debugging mode immediately without further code execution and
-return to the Octave prompt.
+<dd><p>Quit debugging mode immediately without further code execution and return to
+the Octave prompt.
 </p>
 <p><strong>See also:</strong> <a href="#XREFdbcont">dbcont</a>, <a href="Debug-Mode.html#XREFdbstep">dbstep</a>.
 </p></dd></dl>

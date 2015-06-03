@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -60,10 +59,10 @@ Next: <a href="Password-Database-Functions.html#Password-Database-Functions" acc
 <h3 class="section">36.8 Current Working Directory</h3>
 
 <a name="XREFcd"></a><dl>
-<dt><a name="index-cd-3"></a>Command: <em></em> <strong>cd</strong> <em><var>dir</var></em></dt>
-<dt><a name="index-cd-4"></a>Command: <em></em> <strong>cd</strong></dt>
-<dt><a name="index-cd-5"></a>Built-in Function: <em><var>old_dir</var> =</em> <strong>cd</strong> <em><var>dir</var></em></dt>
-<dt><a name="index-chdir-1"></a>Command: <em></em> <strong>chdir</strong> <em>&hellip;</em></dt>
+<dt><a name="index-cd-2"></a>Command: <em></em> <strong>cd</strong> <em><var>dir</var></em></dt>
+<dt><a name="index-cd-3"></a>Command: <em></em> <strong>cd</strong></dt>
+<dt><a name="index-cd-4"></a>Built-in Function: <em><var>old_dir</var> =</em> <strong>cd</strong> <em>(<var>dir</var>)</em></dt>
+<dt><a name="index-chdir"></a>Command: <em></em> <strong>chdir</strong> <em>&hellip;</em></dt>
 <dd><p>Change the current working directory to <var>dir</var>.
 </p>
 <p>If <var>dir</var> is omitted, the current directory is changed to the user&rsquo;s home
@@ -91,10 +90,26 @@ present working directory rather than changing to the user&rsquo;s home director
 
 <a name="XREFls"></a><dl>
 <dt><a name="index-ls"></a>Command: <em></em> <strong>ls</strong></dt>
-<dt><a name="index-ls-1"></a>Command: <em></em> <strong>ls</strong> <em>filenames</em></dt>
-<dt><a name="index-ls-2"></a>Command: <em></em> <strong>ls</strong> <em>options</em></dt>
-<dt><a name="index-ls-3"></a>Command: <em></em> <strong>ls</strong> <em>options filenames</em></dt>
-<dd><p>List directory contents.  For example:
+<dt><a name="index-ls-1"></a>Command: <em></em> <strong>ls</strong> <em><var>filenames</var></em></dt>
+<dt><a name="index-ls-2"></a>Command: <em></em> <strong>ls</strong> <em><var>options</var></em></dt>
+<dt><a name="index-ls-3"></a>Command: <em></em> <strong>ls</strong> <em><var>options</var> <var>filenames</var></em></dt>
+<dt><a name="index-ls-4"></a>Function File: <em><var>list</var> =</em> <strong>ls</strong> <em>(&hellip;)</em></dt>
+<dd>
+<p>List directory contents.
+</p>
+<p>The <code>ls</code> command is implemented by calling the native operating
+system&rsquo;s directory listing command&mdash;available <var>options</var> will vary from
+system to system.
+</p>
+<p>Filenames are subject to shell expansion if they contain any wildcard
+characters &lsquo;<samp>*</samp>&rsquo;, &lsquo;<samp>?</samp>&rsquo;, &lsquo;<samp>[]</samp>&rsquo;.  To find a literal example of a
+wildcard character the wildcard must be escaped using the backslash operator
+&lsquo;<samp>\</samp>&rsquo;.
+</p>
+<p>If the optional output <var>list</var> is requested then <code>ls</code> returns a
+character array with one row for each file/directory name.
+</p>
+<p>Example usage on a UNIX-like system:
 </p>
 <div class="example">
 <pre class="example">ls -l
@@ -103,15 +118,7 @@ present working directory rather than changing to the user&rsquo;s home director
      -| -rw-r--r--   1 jwe  users  1315 Aug 17 23:14 bar.m
 </pre></div>
 
-<p>The <code>dir</code> and <code>ls</code> commands are implemented by calling your
-system&rsquo;s directory listing command, so the available options will vary
-from system to system.
-</p>
-<p>Filenames are subject to shell expansion if they contain any wildcard
-characters &lsquo;<samp>*</samp>&rsquo;, &lsquo;<samp>?</samp>&rsquo;, &lsquo;<samp>[]</samp>&rsquo;.  If you want to find a
-literal example of a wildcard character you must escape it using the
-backslash operator &lsquo;<samp>\</samp>&rsquo;.
-</p>
+
 <p><strong>See also:</strong> <a href="#XREFdir">dir</a>, <a href="Filesystem-Utilities.html#XREFreaddir">readdir</a>, <a href="Filesystem-Utilities.html#XREFglob">glob</a>, <a href="Status-of-Variables.html#XREFwhat">what</a>, <a href="Filesystem-Utilities.html#XREFstat">stat</a>, <a href="Filesystem-Utilities.html#XREFfilesep">filesep</a>, <a href="#XREFls_005fcommand">ls_command</a>.
 </p></dd></dl>
 
@@ -137,7 +144,7 @@ backslash operator &lsquo;<samp>\</samp>&rsquo;.
 </p>
 <dl compact="compact">
 <dt>name</dt>
-<dd><p>File or directory name. 
+<dd><p>File or directory name.
 </p>
 </dd>
 <dt>date</dt>
@@ -149,7 +156,7 @@ backslash operator &lsquo;<samp>\</samp>&rsquo;.
 </p>
 </dd>
 <dt>isdir</dt>
-<dd><p>True if name is a directory. 
+<dd><p>True if name is a directory.
 </p>
 </dd>
 <dt>datenum</dt>
@@ -166,16 +173,16 @@ information about the named file.  <var>directory</var> may also be a list rathe
 than a single directory or file.
 </p>
 <p><var>directory</var> is subject to shell expansion if it contains any wildcard
-characters &lsquo;<samp>*</samp>&rsquo;, &lsquo;<samp>?</samp>&rsquo;, &lsquo;<samp>[]</samp>&rsquo;.  If you want to find a
-literal example of a wildcard character you must escape it using the
-backslash operator &lsquo;<samp>\</samp>&rsquo;.
+characters &lsquo;<samp>*</samp>&rsquo;, &lsquo;<samp>?</samp>&rsquo;, &lsquo;<samp>[]</samp>&rsquo;.  To find a literal example of a
+wildcard character the wildcard must be escaped using the backslash operator
+&lsquo;<samp>\</samp>&rsquo;.
 </p>
-<p>Note that for symbolic links, <code>dir</code> returns information about
-the file that the symbolic link points to rather than the link itself.
+<p>Note that for symbolic links, <code>dir</code> returns information about the
+file that the symbolic link points to rather than the link itself.
 However, if the link points to a nonexistent file, <code>dir</code> returns
 information about the link.
 </p>
-<p><strong>See also:</strong> <a href="#XREFls">ls</a>, <a href="Filesystem-Utilities.html#XREFreaddir">readdir</a>, <a href="Filesystem-Utilities.html#XREFglob">glob</a>, <a href="Status-of-Variables.html#XREFwhat">what</a>, <a href="Filesystem-Utilities.html#XREFstat">stat</a>.
+<p><strong>See also:</strong> <a href="#XREFls">ls</a>, <a href="Filesystem-Utilities.html#XREFreaddir">readdir</a>, <a href="Filesystem-Utilities.html#XREFglob">glob</a>, <a href="Status-of-Variables.html#XREFwhat">what</a>, <a href="Filesystem-Utilities.html#XREFstat">stat</a>, <a href="Filesystem-Utilities.html#XREFlstat">lstat</a>.
 </p></dd></dl>
 
 

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -66,10 +65,11 @@ values of individual bits are <code>bitset</code> and <code>bitget</code>.
 <a name="XREFbitset"></a><dl>
 <dt><a name="index-bitset"></a>Function File: <em><var>C</var> =</em> <strong>bitset</strong> <em>(<var>A</var>, <var>n</var>)</em></dt>
 <dt><a name="index-bitset-1"></a>Function File: <em><var>C</var> =</em> <strong>bitset</strong> <em>(<var>A</var>, <var>n</var>, <var>val</var>)</em></dt>
-<dd><p>Set or reset bit(s) <var>n</var> of unsigned integers in <var>A</var>.
-<var>val</var> = 0 resets and <var>val</var> = 1 sets the bits.
-The lowest significant bit is: <var>n</var> = 1.  All variables must be the
-same size or scalars.
+<dd><p>Set or reset bit(s) <var>n</var> of the unsigned integers in <var>A</var>.
+</p>
+<p><var>val</var> = 0 resets and <var>val</var> = 1 sets the bits.
+The least significant bit is <var>n</var> = 1.  All variables must be the same
+size or scalars.
 </p>
 <div class="example">
 <pre class="example">dec2bin (bitset (10, 1))
@@ -82,8 +82,9 @@ same size or scalars.
 
 <a name="XREFbitget"></a><dl>
 <dt><a name="index-bitget"></a>Function File: <em><var>c</var> =</em> <strong>bitget</strong> <em>(<var>A</var>, <var>n</var>)</em></dt>
-<dd><p>Return the status of bit(s) <var>n</var> of unsigned integers in <var>A</var>
-the lowest significant bit is <var>n</var> = 1.
+<dd><p>Return the status of bit(s) <var>n</var> of the unsigned integers in <var>A</var>.
+</p>
+<p>The least significant bit is <var>n</var> = 1.
 </p>
 <div class="example">
 <pre class="example">bitget (100, 8:-1:1)
@@ -127,7 +128,9 @@ the function <code>bitmax</code>.
 <dt><a name="index-bitmax-1"></a>Built-in Function: <em></em> <strong>bitmax</strong> <em>(&quot;double&quot;)</em></dt>
 <dt><a name="index-bitmax-2"></a>Built-in Function: <em></em> <strong>bitmax</strong> <em>(&quot;single&quot;)</em></dt>
 <dd><p>Return the largest integer that can be represented within a floating point
-value.  The default class is <code>&quot;double&quot;</code>, but <code>&quot;single&quot;</code> is a
+value.
+</p>
+<p>The default class is <code>&quot;double&quot;</code>, but <code>&quot;single&quot;</code> is a
 valid option.  On IEEE-754 compatible systems, <code>bitmax</code> is
 <em>2^{53} - 1</em><!-- /@w --> for <code>&quot;double&quot;</code> and <em>2^{24} -1</em><!-- /@w --> for
 <code>&quot;single&quot;</code>.
@@ -145,7 +148,8 @@ operators.
 <a name="XREFbitand"></a><dl>
 <dt><a name="index-bitand"></a>Built-in Function: <em></em> <strong>bitand</strong> <em>(<var>x</var>, <var>y</var>)</em></dt>
 <dd><p>Return the bitwise AND of non-negative integers.
-<var>x</var>, <var>y</var> must be in the range [0,bitmax]
+</p>
+<p><var>x</var>, <var>y</var> must be in the range [0,bitmax]
 </p>
 <p><strong>See also:</strong> <a href="#XREFbitor">bitor</a>, <a href="#XREFbitxor">bitxor</a>, <a href="#XREFbitset">bitset</a>, <a href="#XREFbitget">bitget</a>, <a href="#XREFbitcmp">bitcmp</a>, <a href="#XREFbitshift">bitshift</a>, <a href="#XREFbitmax">bitmax</a>.
 </p></dd></dl>
@@ -154,7 +158,8 @@ operators.
 <a name="XREFbitor"></a><dl>
 <dt><a name="index-bitor"></a>Built-in Function: <em></em> <strong>bitor</strong> <em>(<var>x</var>, <var>y</var>)</em></dt>
 <dd><p>Return the bitwise OR of non-negative integers.
-<var>x</var>, <var>y</var> must be in the range [0,bitmax]
+</p>
+<p><var>x</var>, <var>y</var> must be in the range [0,bitmax]
 </p>
 <p><strong>See also:</strong> <a href="#XREFbitor">bitor</a>, <a href="#XREFbitxor">bitxor</a>, <a href="#XREFbitset">bitset</a>, <a href="#XREFbitget">bitget</a>, <a href="#XREFbitcmp">bitcmp</a>, <a href="#XREFbitshift">bitshift</a>, <a href="#XREFbitmax">bitmax</a>.
 </p></dd></dl>
@@ -163,7 +168,8 @@ operators.
 <a name="XREFbitxor"></a><dl>
 <dt><a name="index-bitxor"></a>Built-in Function: <em></em> <strong>bitxor</strong> <em>(<var>x</var>, <var>y</var>)</em></dt>
 <dd><p>Return the bitwise XOR of non-negative integers.
-<var>x</var>, <var>y</var> must be in the range [0,bitmax]
+</p>
+<p><var>x</var>, <var>y</var> must be in the range [0,bitmax]
 </p>
 <p><strong>See also:</strong> <a href="#XREFbitand">bitand</a>, <a href="#XREFbitor">bitor</a>, <a href="#XREFbitset">bitset</a>, <a href="#XREFbitget">bitget</a>, <a href="#XREFbitcmp">bitcmp</a>, <a href="#XREFbitshift">bitshift</a>, <a href="#XREFbitmax">bitmax</a>.
 </p></dd></dl>
@@ -176,8 +182,9 @@ bitwise &rsquo;not&rsquo; operator is <code>bitcmp</code>.
 </p>
 <a name="XREFbitcmp"></a><dl>
 <dt><a name="index-bitcmp"></a>Function File: <em></em> <strong>bitcmp</strong> <em>(<var>A</var>, <var>k</var>)</em></dt>
-<dd><p>Return the <var>k</var>-bit complement of integers in <var>A</var>.  If
-<var>k</var> is omitted <code>k = log2 (bitmax) + 1</code> is assumed.
+<dd><p>Return the <var>k</var>-bit complement of integers in <var>A</var>.
+</p>
+<p>If <var>k</var> is omitted <code>k = log2 (bitmax) + 1</code> is assumed.
 </p>
 <div class="example">
 <pre class="example">bitcmp (7,4)
@@ -188,6 +195,7 @@ dec2bin (bitcmp (11, 6))
   &rArr; 110100
 </pre></div>
 
+
 <p><strong>See also:</strong> <a href="#XREFbitand">bitand</a>, <a href="#XREFbitor">bitor</a>, <a href="#XREFbitxor">bitxor</a>, <a href="#XREFbitset">bitset</a>, <a href="#XREFbitget">bitget</a>, <a href="#XREFbitcmp">bitcmp</a>, <a href="#XREFbitshift">bitshift</a>, <a href="#XREFbitmax">bitmax</a>.
 </p></dd></dl>
 
@@ -197,10 +205,11 @@ dec2bin (bitcmp (11, 6))
 <a name="XREFbitshift"></a><dl>
 <dt><a name="index-bitshift"></a>Built-in Function: <em></em> <strong>bitshift</strong> <em>(<var>a</var>, <var>k</var>)</em></dt>
 <dt><a name="index-bitshift-1"></a>Built-in Function: <em></em> <strong>bitshift</strong> <em>(<var>a</var>, <var>k</var>, <var>n</var>)</em></dt>
-<dd><p>Return a <var>k</var> bit shift of <var>n</var>-digit unsigned
-integers in <var>a</var>.  A positive <var>k</var> leads to a left shift;
-A negative value to a right shift.  If <var>n</var> is omitted it defaults
-to log2(bitmax)+1.
+<dd><p>Return a <var>k</var> bit shift of <var>n</var>-digit unsigned integers in <var>a</var>.
+</p>
+<p>A positive <var>k</var> leads to a left shift; A negative value to a right shift.
+</p>
+<p>If <var>n</var> is omitted it defaults to log2(bitmax)+1.
 <var>n</var> must be in the range [1,log2(bitmax)+1] usually [1,33].
 </p>
 <div class="example">

@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -62,12 +61,10 @@ Previous: <a href="Convex-Hull.html#Convex-Hull" accesskey="p" rel="prev">Convex
 <p>An important use of the Delaunay tessellation is that it can be used to
 interpolate from scattered data to an arbitrary set of points.  To do
 this the N-simplex of the known set of points is calculated with
-<code>delaunay</code>, <code>delaunay3</code> or <code>delaunayn</code>.  Then the
-simplices in to which the desired points are found are
-identified.  Finally the vertices of the simplices are used to
-interpolate to the desired points.  The functions that perform this
-interpolation are <code>griddata</code>, <code>griddata3</code> and
-<code>griddatan</code>.
+<code>delaunay</code> or <code>delaunayn</code>.  Then the simplices in to which the
+desired points are found are identified.  Finally the vertices of the simplices
+are used to interpolate to the desired points.  The functions that perform this
+interpolation are <code>griddata</code>, <code>griddata3</code> and <code>griddatan</code>.
 </p>
 <a name="XREFgriddata"></a><dl>
 <dt><a name="index-griddata"></a>Function File: <em><var>zi</var> =</em> <strong>griddata</strong> <em>(<var>x</var>, <var>y</var>, <var>z</var>, <var>xi</var>, <var>yi</var>)</em></dt>
@@ -75,12 +72,13 @@ interpolation are <code>griddata</code>, <code>griddata3</code> and
 <dt><a name="index-griddata-2"></a>Function File: <em>[<var>xi</var>, <var>yi</var>, <var>zi</var>] =</em> <strong>griddata</strong> <em>(&hellip;)</em></dt>
 <dd>
 <p>Generate a regular mesh from irregular data using interpolation.
-The function is defined by <code><var>z</var> = f (<var>x</var>, <var>y</var>)</code>.
-Inputs <code><var>x</var>, <var>y</var>, <var>z</var></code> are vectors of the same length
-or <code><var>x</var>, <var>y</var></code> are vectors and <code><var>z</var></code> is matrix.
 </p>
-<p>The interpolation points are all <code>(<var>xi</var>, <var>yi</var>)</code>.  If
-<var>xi</var>, <var>yi</var> are vectors then they are made into a 2-D mesh.
+<p>The function is defined by <code><var>z</var> = f (<var>x</var>, <var>y</var>)</code>.  Inputs
+<code><var>x</var>, <var>y</var>, <var>z</var></code> are vectors of the same length or
+<code><var>x</var>, <var>y</var></code> are vectors and <code><var>z</var></code> is matrix.
+</p>
+<p>The interpolation points are all <code>(<var>xi</var>, <var>yi</var>)</code>.  If <var>xi</var>,
+<var>yi</var> are vectors then they are made into a 2-D mesh.
 </p>
 <p>The interpolation method can be <code>&quot;nearest&quot;</code>, <code>&quot;cubic&quot;</code> or
 <code>&quot;linear&quot;</code>.  If method is omitted it defaults to <code>&quot;linear&quot;</code>.
@@ -95,7 +93,8 @@ or <code><var>x</var>, <var>y</var></code> are vectors and <code><var>z</var></c
 <dt><a name="index-griddata3-2"></a>Function File: <em><var>vi</var> =</em> <strong>griddata3</strong> <em>(<var>x</var>, <var>y</var>, <var>z</var>, <var>v</var>, <var>xi</var>, <var>yi</var>, <var>zi</var>, <var>method</var>, <var>options</var>)</em></dt>
 <dd>
 <p>Generate a regular mesh from irregular data using interpolation.
-The function is defined by <code><var>v</var> = f (<var>x</var>, <var>y</var>, <var>z</var>)</code>.
+</p>
+<p>The function is defined by <code><var>v</var> = f (<var>x</var>, <var>y</var>, <var>z</var>)</code>.
 The interpolation points are specified by <var>xi</var>, <var>yi</var>, <var>zi</var>.
 </p>
 <p>The interpolation method can be <code>&quot;nearest&quot;</code> or <code>&quot;linear&quot;</code>.
@@ -116,7 +115,8 @@ values.
 <dt><a name="index-griddatan-2"></a>Function File: <em><var>yi</var> =</em> <strong>griddatan</strong> <em>(<var>x</var>, <var>y</var>, <var>xi</var>, <var>method</var>, <var>options</var>)</em></dt>
 <dd>
 <p>Generate a regular mesh from irregular data using interpolation.
-The function is defined by <code><var>y</var> = f (<var>x</var>)</code>.
+</p>
+<p>The function is defined by <code><var>y</var> = f (<var>x</var>)</code>.
 The interpolation points are all <var>xi</var>.
 </p>
 <p>The interpolation method can be <code>&quot;nearest&quot;</code> or <code>&quot;linear&quot;</code>.
@@ -142,8 +142,7 @@ z = sin (2*(x.^2+y.^2));
 griddata (x,y,z,xx,yy);
 </pre></div>
 
-<p>that interpolates from a random scattering of points, to a uniform
-grid. 
+<p>that interpolates from a random scattering of points, to a uniform grid.
 The output of the above can be seen in <a href="#fig_003agriddata">Figure 30.6</a>.
 </p>
 <div class="float"><a name="fig_003agriddata"></a>

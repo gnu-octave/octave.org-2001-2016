@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -59,7 +58,7 @@ Next: <a href="Iterative-Techniques.html#Iterative-Techniques" accesskey="n" rel
 <a name="Linear-Algebra-on-Sparse-Matrices"></a>
 <h3 class="section">22.2 Linear Algebra on Sparse Matrices</h3>
 
-<p>Octave includes a polymorphic solver for sparse matrices, where 
+<p>Octave includes a polymorphic solver for sparse matrices, where
 the exact solver used to factorize the matrix, depends on the properties
 of the sparse matrix itself.  Generally, the cost of determining the matrix type
 is small relative to the cost of factorizing the matrix itself, but in any
@@ -78,7 +77,7 @@ account the permutations.  Goto 8
 than that given by <code>spparms (&quot;bandden&quot;)</code> continue, else goto 4.
 
 <ol>
-<li> If the matrix is tridiagonal and the right-hand side is not sparse 
+<li> If the matrix is tridiagonal and the right-hand side is not sparse
 continue, else goto 3b.
 
 <ol>
@@ -86,7 +85,7 @@ continue, else goto 3b.
       Cholesky&nbsp;factorization using <small>LAPACK</small> xPTSV.
 
 </li><li> If the above failed or the matrix is not Hermitian with a positive
-      real diagonal use Gaussian elimination with pivoting using 
+      real diagonal use Gaussian elimination with pivoting using
       <small>LAPACK</small> xGTSV, and goto 8.
 </li></ol>
 
@@ -94,7 +93,7 @@ continue, else goto 3b.
       Cholesky&nbsp;factorization using <small>LAPACK</small> xPBTRF.
 
 </li><li> if the above failed or the matrix is not Hermitian with a positive
-      real diagonal use Gaussian elimination with pivoting using 
+      real diagonal use Gaussian elimination with pivoting using
       <small>LAPACK</small> xGBTRF, and goto 8.
 </li></ol>
 
@@ -102,14 +101,14 @@ continue, else goto 3b.
 or backward substitution, and goto 8
 
 </li><li> If the matrix is an upper triangular matrix with column permutations
-or lower triangular matrix with row permutations, perform a sparse forward 
+or lower triangular matrix with row permutations, perform a sparse forward
 or backward substitution, and goto 8
 
 </li><li> If the matrix is square, Hermitian with a real positive diagonal, attempt
 sparse Cholesky&nbsp;factorization using <small>CHOLMOD</small>.
 
 </li><li> If the sparse Cholesky&nbsp;factorization failed or the matrix is not
-Hermitian with a real positive diagonal, and the matrix is square, factorize 
+Hermitian with a real positive diagonal, and the matrix is square, factorize
 using <small>UMFPACK</small>.
 
 </li><li> If the matrix is not square, or any of the previous solvers flags
@@ -117,7 +116,7 @@ a singular or near singular matrix, find a minimum norm solution using
 <small>CXSPARSE</small><a name="DOCF10" href="#FOOT10"><sup>10</sup></a>.
 </li></ol>
 
-<p>The band density is defined as the number of non-zero values in the band
+<p>The band density is defined as the number of nonzero values in the band
 divided by the total number of values in the full band.  The banded
 matrix solvers can be entirely disabled by using <em>spparms</em> to set
 <code>bandden</code> to 1 (i.e., <code>spparms (&quot;bandden&quot;, 1)</code>).
@@ -151,13 +150,16 @@ used with care.
 <dt><a name="index-normest"></a>Function File: <em><var>n</var> =</em> <strong>normest</strong> <em>(<var>A</var>)</em></dt>
 <dt><a name="index-normest-1"></a>Function File: <em><var>n</var> =</em> <strong>normest</strong> <em>(<var>A</var>, <var>tol</var>)</em></dt>
 <dt><a name="index-normest-2"></a>Function File: <em>[<var>n</var>, <var>c</var>] =</em> <strong>normest</strong> <em>(&hellip;)</em></dt>
-<dd><p>Estimate the 2-norm of the matrix <var>A</var> using a power series
-analysis.  This is typically used for large matrices, where the cost
-of calculating <code>norm (<var>A</var>)</code> is prohibitive and an approximation
-to the 2-norm is acceptable.
+<dd><p>Estimate the 2-norm of the matrix <var>A</var> using a power series analysis.
+</p>
+<p>This is typically used for large matrices, where the cost of calculating
+<code>norm (<var>A</var>)</code> is prohibitive and an approximation to the 2-norm is
+acceptable.
 </p>
 <p><var>tol</var> is the tolerance to which the 2-norm is calculated.  By default
-<var>tol</var> is 1e-6.  <var>c</var> returns the number of iterations needed for
+<var>tol</var> is 1e-6.
+</p>
+<p>The optional output <var>c</var> returns the number of iterations needed for
 <code>normest</code> to converge.
 </p></dd></dl>
 
@@ -167,8 +169,9 @@ to the 2-norm is acceptable.
 <dt><a name="index-onenormest-1"></a>Function File: <em>[<var>est</var>, <var>v</var>, <var>w</var>, <var>iter</var>] =</em> <strong>onenormest</strong> <em>(<var>apply</var>, <var>apply_t</var>, <var>n</var>, <var>t</var>)</em></dt>
 <dd>
 <p>Apply Higham and Tisseur&rsquo;s randomized block 1-norm estimator to
-matrix <var>A</var> using <var>t</var> test vectors.  If <var>t</var> exceeds 5, then
-only 5 test vectors are used.
+matrix <var>A</var> using <var>t</var> test vectors.
+</p>
+<p>If <var>t</var> exceeds 5, then only 5 test vectors are used.
 </p>
 <p>If the matrix is not explicit, e.g., when estimating the norm of
 <code>inv (<var>A</var>)</code> given an LU&nbsp;factorization, <code>onenormest</code>
@@ -177,11 +180,10 @@ applies <var>A</var> and its conjugate transpose through a pair of functions
 <var>n</var> by <var>t</var>.  The implicit version requires an explicit dimension
 <var>n</var>.
 </p>
-<p>Returns the norm estimate <var>est</var>, two vectors <var>v</var> and
-<var>w</var> related by norm
-<code>(<var>w</var>, 1) = <var>est</var> * norm (<var>v</var>, 1)</code>,
-and the number of iterations <var>iter</var>.  The number of
-iterations is limited to 10 and is at least 2.
+<p>Returns the norm estimate <var>est</var>, two vectors <var>v</var> and <var>w</var> related
+by norm <code>(<var>w</var>, 1) = <var>est</var> * norm (<var>v</var>, 1)</code>, and the number
+of iterations <var>iter</var>.  The number of iterations is limited to 10 and is
+at least 2.
 </p>
 <p>References:
 </p>
@@ -208,9 +210,10 @@ Pseudospectra</cite>. <a href="http://citeseer.ist.psu.edu/223007.html">http://c
 <dt><a name="index-condest-3"></a>Function File: <em>[<var>est</var>, <var>v</var>] =</em> <strong>condest</strong> <em>(<var>A</var>, <var>solve</var>, <var>solve_t</var>, <var>t</var>)</em></dt>
 <dt><a name="index-condest-4"></a>Function File: <em>[<var>est</var>, <var>v</var>] =</em> <strong>condest</strong> <em>(<var>apply</var>, <var>apply_t</var>, <var>solve</var>, <var>solve_t</var>, <var>n</var>, <var>t</var>)</em></dt>
 <dd>
-<p>Estimate the 1-norm condition number of a matrix <var>A</var>
-using <var>t</var> test vectors using a randomized 1-norm estimator.
-If <var>t</var> exceeds 5, then only 5 test vectors are used.
+<p>Estimate the 1-norm condition number of a matrix <var>A</var> using <var>t</var> test
+vectors using a randomized 1-norm estimator.
+</p>
+<p>If <var>t</var> exceeds 5, then only 5 test vectors are used.
 </p>
 <p>If the matrix is not explicit, e.g., when estimating the condition
 number of <var>A</var> given an LU&nbsp;factorization, <code>condest</code> uses the
@@ -236,11 +239,10 @@ following functions:
 
 <p>The implicit version requires an explicit dimension <var>n</var>.
 </p>
-<p><code>condest</code> uses a randomized algorithm to approximate
-the 1-norms.
+<p><code>condest</code> uses a randomized algorithm to approximate the 1-norms.
 </p>
-<p><code>condest</code> returns the 1-norm condition estimate <var>est</var> and
-a vector <var>v</var> satisfying <code>norm (A*v, 1) == norm (A, 1) * norm
+<p><code>condest</code> returns the 1-norm condition estimate <var>est</var> and a vector
+<var>v</var> satisfying <code>norm (A*v, 1) == norm (A, 1) * norm
 (<var>v</var>, 1) / <var>est</var></code>.  When <var>est</var> is large, <var>v</var> is an
 approximate null vector.
 </p>
@@ -268,14 +270,16 @@ Pseudospectra</cite>. <a href="http://citeseer.ist.psu.edu/223007.html">http://c
 <dt><a name="index-spparms-2"></a>Built-in Function: <em>[<var>keys</var>, <var>vals</var>] =</em> <strong>spparms</strong> <em>()</em></dt>
 <dt><a name="index-spparms-3"></a>Built-in Function: <em><var>val</var> =</em> <strong>spparms</strong> <em>(<var>key</var>)</em></dt>
 <dt><a name="index-spparms-4"></a>Built-in Function: <em></em> <strong>spparms</strong> <em>(<var>vals</var>)</em></dt>
-<dt><a name="index-spparms-5"></a>Built-in Function: <em></em> <strong>spparms</strong> <em>(&quot;defaults&quot;)</em></dt>
+<dt><a name="index-spparms-5"></a>Built-in Function: <em></em> <strong>spparms</strong> <em>(&quot;default&quot;)</em></dt>
 <dt><a name="index-spparms-6"></a>Built-in Function: <em></em> <strong>spparms</strong> <em>(&quot;tight&quot;)</em></dt>
 <dt><a name="index-spparms-7"></a>Built-in Function: <em></em> <strong>spparms</strong> <em>(<var>key</var>, <var>val</var>)</em></dt>
 <dd><p>Query or set the parameters used by the sparse solvers and factorization
-functions.  The first four calls above get information about the current
-settings, while the others change the current settings.  The parameters are
-stored as pairs of keys and values, where the values are all floats and the
-keys are one of the following strings:
+functions.
+</p>
+<p>The first four calls above get information about the current settings, while
+the others change the current settings.  The parameters are stored as pairs
+of keys and values, where the values are all floats and the keys are one of
+the following strings:
 </p>
 <dl compact="compact">
 <dt>&lsquo;<samp>spumoni</samp>&rsquo;</dt>
@@ -325,7 +329,7 @@ use the sparsity preserving amd functions (default 1)
 </p>
 </dd>
 <dt>&lsquo;<samp>bandden</samp>&rsquo;</dt>
-<dd><p>The density of non-zero elements in a banded matrix before it is treated
+<dd><p>The density of nonzero elements in a banded matrix before it is treated
 by the <small>LAPACK</small> banded solvers (default 0.5)
 </p>
 </dd>
@@ -338,9 +342,11 @@ by the <small>LAPACK</small> banded solvers (default 0.5)
 <p>The value of individual keys can be set with
 <code>spparms (<var>key</var>, <var>val</var>)</code>.
 The default values can be restored with the special keyword
-<code>&quot;defaults&quot;</code>.  The special keyword <code>&quot;tight&quot;</code> can be used to
+<code>&quot;default&quot;</code>.  The special keyword <code>&quot;tight&quot;</code> can be used to
 set the mmd solvers to attempt a sparser solution at the potential cost of
 longer running time.
+</p>
+<p><strong>See also:</strong> <a href="Matrix-Factorizations.html#XREFchol">chol</a>, <a href="Mathematical-Considerations.html#XREFcolamd">colamd</a>, <a href="Matrix-Factorizations.html#XREFlu">lu</a>, <a href="Matrix-Factorizations.html#XREFqr">qr</a>, <a href="Mathematical-Considerations.html#XREFsymamd">symamd</a>.
 </p></dd></dl>
 
 
@@ -348,10 +354,11 @@ longer running time.
 <dt><a name="index-sprank"></a>Loadable Function: <em><var>p</var> =</em> <strong>sprank</strong> <em>(<var>S</var>)</em></dt>
 <dd><a name="index-structural-rank"></a>
 
-<p>Calculate the structural rank of the sparse matrix <var>S</var>.  Note that
-only the structure of the matrix is used in this calculation based on
-a Dulmage-Mendelsohn permutation to block triangular form.  As such the
-numerical rank of the matrix <var>S</var> is bounded by
+<p>Calculate the structural rank of the sparse matrix <var>S</var>.
+</p>
+<p>Note that only the structure of the matrix is used in this calculation based
+on a Dulmage-Mendelsohn permutation to block triangular form.  As
+such the numerical rank of the matrix <var>S</var> is bounded by
 <code>sprank (<var>S</var>) &gt;= rank (<var>S</var>)</code>.  Ignoring floating point errors
 <code>sprank (<var>S</var>) == rank (<var>S</var>)</code>.
 </p>
@@ -365,7 +372,8 @@ numerical rank of the matrix <var>S</var> is bounded by
 <dt><a name="index-symbfact-2"></a>Loadable Function: <em>[&hellip;] =</em> <strong>symbfact</strong> <em>(<var>S</var>, <var>typ</var>, <var>mode</var>)</em></dt>
 <dd>
 <p>Perform a symbolic factorization analysis on the sparse matrix <var>S</var>.
-Where
+</p>
+<p>The input variables are
 </p>
 <dl compact="compact">
 <dt><var>S</var></dt>
@@ -431,7 +439,9 @@ function to find a least squares solution to a linear equation.
 </p>
 <a name="XREFspaugment"></a><dl>
 <dt><a name="index-spaugment"></a>Function File: <em><var>s</var> =</em> <strong>spaugment</strong> <em>(<var>A</var>, <var>c</var>)</em></dt>
-<dd><p>Create the augmented matrix of <var>A</var>.  This is given by
+<dd><p>Create the augmented matrix of <var>A</var>.
+</p>
+<p>This is given by
 </p>
 <div class="example">
 <pre class="example">[<var>c</var> * eye(<var>m</var>, <var>m</var>), <var>A</var>;
@@ -451,11 +461,11 @@ function to find a least squares solution to a linear equation.
 <pre class="example"><var>r</var> = <var>b</var> - <var>A</var> * <var>x</var>
 </pre></div>
 
-<p>As the matrix <var>s</var> is symmetric indefinite it can be factorized
-with <code>lu</code>, and the minimum norm solution can therefore be found
-without the need for a <code>qr</code> factorization.  As the residual
-error will be <code>zeros (<var>m</var>, <var>m</var>)</code> for under determined
-problems, and example can be
+<p>As the matrix <var>s</var> is symmetric indefinite it can be factorized with
+<code>lu</code>, and the minimum norm solution can therefore be found without the
+need for a <code>qr</code> factorization.  As the residual error will be
+<code>zeros (<var>m</var>, <var>m</var>)</code> for underdetermined problems, and example
+can be
 </p>
 <div class="example">
 <pre class="example">m = 11; n = 10; mn = max (m, n);
@@ -468,12 +478,14 @@ x1 = Q * (U \ (L \ (P  * [ones(m,1); zeros(n,1)])));
 x1 = x1(end - n + 1 : end);
 </pre></div>
 
-<p>To find the solution of an overdetermined problem needs an estimate
-of the residual error <var>r</var> and so it is more complex to formulate
-a minimum norm solution using the <code>spaugment</code> function.
+<p>To find the solution of an overdetermined problem needs an estimate of the
+residual error <var>r</var> and so it is more complex to formulate a minimum norm
+solution using the <code>spaugment</code> function.
 </p>
-<p>In general the left division operator is more stable and faster than
-using the <code>spaugment</code> function.
+<p>In general the left division operator is more stable and faster than using
+the <code>spaugment</code> function.
+</p>
+<p><strong>See also:</strong> <a href="Arithmetic-Ops.html#XREFmldivide">mldivide</a>.
 </p></dd></dl>
 
 
@@ -504,8 +516,10 @@ singular values and vectors.
 <dt><a name="index-eigs-18"></a>Function File: <em>[<var>V</var>, <var>d</var>, <var>flag</var>] =</em> <strong>eigs</strong> <em>(<var>A</var>, &hellip;)</em></dt>
 <dt><a name="index-eigs-19"></a>Function File: <em>[<var>V</var>, <var>d</var>, <var>flag</var>] =</em> <strong>eigs</strong> <em>(<var>af</var>, <var>n</var>, &hellip;)</em></dt>
 <dd><p>Calculate a limited number of eigenvalues and eigenvectors of <var>A</var>,
-based on a selection criteria.  The number of eigenvalues and eigenvectors to
-calculate is given by <var>k</var> and defaults to 6.
+based on a selection criteria.
+</p>
+<p>The number of eigenvalues and eigenvectors to calculate is given by
+<var>k</var> and defaults to 6.
 </p>
 <p>By default, <code>eigs</code> solve the equation
 where
@@ -613,13 +627,13 @@ default is <code>1:<var>n</var></code>.
 
 <p>It is also possible to represent <var>A</var> by a function denoted <var>af</var>.
 <var>af</var> must be followed by a scalar argument <var>n</var> defining the length
-of the vector argument accepted by <var>af</var>.  <var>af</var> can be
-a function handle, an inline function, or a string.  When <var>af</var> is a
-string it holds the name of the function to use.
+of the vector argument accepted by <var>af</var>.  <var>af</var> can be a function
+handle, an inline function, or a string.  When <var>af</var> is a string it
+holds the name of the function to use.
 </p>
-<p><var>af</var> is a function of the form <code>y = af (x)</code>
-where the required return value of <var>af</var> is determined by
-the value of <var>sigma</var>.  The four possible forms are
+<p><var>af</var> is a function of the form <code>y = af (x)</code> where the required
+return value of <var>af</var> is determined by the value of <var>sigma</var>.  The
+four possible forms are
 </p>
 <dl compact="compact">
 <dt><code>A * x</code></dt>
@@ -631,8 +645,8 @@ the value of <var>sigma</var>.  The four possible forms are
 </p>
 </dd>
 <dt><code>(A - sigma * I) \ x</code></dt>
-<dd><p>for the standard eigenvalue problem, where <code>I</code> is the identity matrix of
-the same size as <var>A</var>.
+<dd><p>for the standard eigenvalue problem, where <code>I</code> is the identity matrix
+of the same size as <var>A</var>.
 </p>
 </dd>
 <dt><code>(A - sigma * B) \ x</code></dt>
@@ -653,9 +667,9 @@ eigenvalues.
 of the convergence.  If <var>flag</var> is 0 then all eigenvalues have converged.
 Any other value indicates a failure to converge.
 </p>
-<p>This function is based on the <small>ARPACK</small> package, written by R. Lehoucq,
-K. Maschhoff, D. Sorensen, and C. Yang.  For more information see
-<a href="http://www.caam.rice.edu/software/ARPACK/">http://www.caam.rice.edu/software/ARPACK/</a>.
+<p>This function is based on the <small>ARPACK</small> package, written by
+R. Lehoucq, K. Maschhoff, D. Sorensen, and C. Yang.  For more
+information see <a href="http://www.caam.rice.edu/software/ARPACK/">http://www.caam.rice.edu/software/ARPACK/</a>.
 </p>
 
 <p><strong>See also:</strong> <a href="Basic-Matrix-Functions.html#XREFeig">eig</a>, <a href="#XREFsvds">svds</a>.
@@ -670,8 +684,9 @@ K. Maschhoff, D. Sorensen, and C. Yang.  For more information see
 <dt><a name="index-svds-4"></a>Function File: <em>[<var>u</var>, <var>s</var>, <var>v</var>] =</em> <strong>svds</strong> <em>(&hellip;)</em></dt>
 <dt><a name="index-svds-5"></a>Function File: <em>[<var>u</var>, <var>s</var>, <var>v</var>, <var>flag</var>] =</em> <strong>svds</strong> <em>(&hellip;)</em></dt>
 <dd>
-<p>Find a few singular values of the matrix <var>A</var>.  The singular values
-are calculated using
+<p>Find a few singular values of the matrix <var>A</var>.
+</p>
+<p>The singular values are calculated using
 </p>
 <div class="example">
 <pre class="example">[<var>m</var>, <var>n</var>] = size (<var>A</var>);
@@ -741,8 +756,8 @@ efficient.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <h3><a name="FOOT10" href="#DOCF10">(10)</a></h3>
-<p>The <small>CHOLMOD</small>, <small>UMFPACK</small> and <small>CXSPARSE</small> packages were
-written by Tim Davis and are available at
+<p>The <small>CHOLMOD</small>, <small>UMFPACK</small> and <small>CXSPARSE</small>
+packages were written by Tim Davis and are available at
 <a href="http://www.cise.ufl.edu/research/sparse/">http://www.cise.ufl.edu/research/sparse/</a></p>
 </div>
 <hr>

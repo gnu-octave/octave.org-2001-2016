@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -75,6 +74,10 @@ legend (&quot;sin (x)&quot;);
 <p>The functions <code>grid</code> and <code>box</code> may also be used to add grid
 and border lines to the plot.  By default, the grid is off and the
 border lines are on.
+</p>
+<p>Finally, arrows, text and rectangular or elliptic boxes can be added to
+highlight parts of a plot using the <code>annotation</code> function.  Those objects
+are drawn in an invisible axes, on top of every other axes.
 </p>
 <a name="XREFtitle"></a><dl>
 <dt><a name="index-title"></a>Function File: <em></em> <strong>title</strong> <em>(<var>string</var>)</em></dt>
@@ -136,8 +139,8 @@ as follows:
 <tr><td width="6%"></td><td width="14%">outside</td><td width="80%">can be appended to any location string</td></tr>
 </table>
 
-<p>The optional parameter <var>orient</var> determines if the key elements
-are placed vertically or horizontally.  The allowed values are
+<p>The optional parameter <var>orient</var> determines if the key elements are
+placed vertically or horizontally.  The allowed values are
 <code>&quot;vertical&quot;</code> (default) or <code>&quot;horizontal&quot;</code>.
 </p>
 <p>The following customizations are available using <var>option</var>:
@@ -263,7 +266,7 @@ object.
 </p>
 <p>The contour levels are specified by the contour matrix <var>c</var> which is
 returned by <code>contour</code>, <code>contourc</code>, <code>contourf</code>, and
-<code>contour3</code>.  Contour labels are rotated to match the local line 
+<code>contour3</code>.  Contour labels are rotated to match the local line
 orientation and centered on the line.  The position of labels along the
 contour line is chosen randomly.
 </p>
@@ -298,17 +301,17 @@ clabel (c, h, -4:2:6, &quot;fontsize&quot;, 12);
 
 
 <a name="XREFbox"></a><dl>
-<dt><a name="index-box"></a>Command: <em></em> <strong>box</strong> <em>on</em></dt>
-<dt><a name="index-box-1"></a>Command: <em></em> <strong>box</strong> <em>off</em></dt>
-<dt><a name="index-box-2"></a>Command: <em></em> <strong>box</strong></dt>
+<dt><a name="index-box"></a>Command: <em></em> <strong>box</strong></dt>
+<dt><a name="index-box-1"></a>Command: <em></em> <strong>box</strong> <em>on</em></dt>
+<dt><a name="index-box-2"></a>Command: <em></em> <strong>box</strong> <em>off</em></dt>
 <dt><a name="index-box-3"></a>Function File: <em></em> <strong>box</strong> <em>(<var>hax</var>, &hellip;)</em></dt>
 <dd><p>Control display of the axis border.
 </p>
 <p>The argument may be either <code>&quot;on&quot;</code> or <code>&quot;off&quot;</code>.  If it is
 omitted, the current box state is toggled.
 </p>
-<p>If the first argument <var>hax</var> is an axes handle, then operate on
-this axis rather than the current axes returned by <code>gca</code>.
+<p>If the first argument <var>hax</var> is an axes handle, then operate on this
+axis rather than the current axes returned by <code>gca</code>.
 </p>
 <p><strong>See also:</strong> <a href="Axis-Configuration.html#XREFaxis">axis</a>, <a href="#XREFgrid">grid</a>.
 </p></dd></dl>
@@ -414,11 +417,147 @@ object.
 colorbar object.
 </p>
 <p>Implementation Note: A colorbar is created as an additional axes to the
-current figure with the <code>&quot;tag&quot;</code> property set to <code>&quot;colorbar&quot;</code>. 
+current figure with the <code>&quot;tag&quot;</code> property set to <code>&quot;colorbar&quot;</code>.
 The created axes object has the extra property <code>&quot;location&quot;</code> which
 controls the positioning of the colorbar.
 </p>
 <p><strong>See also:</strong> <a href="Representing-Images.html#XREFcolormap">colormap</a>.
+</p></dd></dl>
+
+
+<a name="XREFannotation"></a><dl>
+<dt><a name="index-annotation"></a>Function File: <em></em> <strong>annotation</strong> <em>(<var>type</var>)</em></dt>
+<dt><a name="index-annotation-1"></a>Function File: <em></em> <strong>annotation</strong> <em>(&quot;line&quot;, <var>x</var>, <var>y</var>)</em></dt>
+<dt><a name="index-annotation-2"></a>Function File: <em></em> <strong>annotation</strong> <em>(&quot;arrow&quot;, <var>x</var>, <var>y</var>)</em></dt>
+<dt><a name="index-annotation-3"></a>Function File: <em></em> <strong>annotation</strong> <em>(&quot;doublearrow&quot;, <var>x</var>, <var>y</var>)</em></dt>
+<dt><a name="index-annotation-4"></a>Function File: <em></em> <strong>annotation</strong> <em>(&quot;textarrow&quot;, <var>x</var>, <var>y</var>)</em></dt>
+<dt><a name="index-annotation-5"></a>Function File: <em></em> <strong>annotation</strong> <em>(&quot;textbox&quot;, <var>pos</var>)</em></dt>
+<dt><a name="index-annotation-6"></a>Function File: <em></em> <strong>annotation</strong> <em>(&quot;rectangle&quot;, <var>pos</var>)</em></dt>
+<dt><a name="index-annotation-7"></a>Function File: <em></em> <strong>annotation</strong> <em>(&quot;ellipse&quot;, <var>pos</var>)</em></dt>
+<dt><a name="index-annotation-8"></a>Function File: <em></em> <strong>annotation</strong> <em>(&hellip;, <var>prop</var>, <var>val</var>)</em></dt>
+<dt><a name="index-annotation-9"></a>Function File: <em></em> <strong>annotation</strong> <em>(<var>hf</var>, &hellip;)</em></dt>
+<dt><a name="index-annotation-10"></a>Function File: <em><var>h</var> =</em> <strong>annotation</strong> <em>(&hellip;)</em></dt>
+<dd><p>Draw annotations to emphasize parts of a figure.
+</p>
+<p>You may build a default annotation by specifying only the <var>type</var>
+of the annotation.
+</p>
+<p>Otherwise you can select the type of annotation and then set its position
+using either <var>x</var> and <var>y</var> coordinates for line-based annotations or a
+position vector <var>pos</var> for others.  In either case, coordinates are
+interpreted using the <code>&quot;units&quot;</code> property of the annotation object.
+The default is <code>&quot;normalized&quot;</code>, which means the lower left hand corner
+of the figure has coordinates &lsquo;<samp>[0 0]</samp>&rsquo; and the upper right hand corner
+&lsquo;<samp>[1 1]</samp>&rsquo;.
+</p>
+<p>If the first argument <var>hf</var> is a figure handle, then plot into this
+figure, rather than the current figure returned by <code>gcf</code>.
+</p>
+<p>Further arguments can be provided in the form of <var>prop</var>/<var>val</var> pairs
+to customize the annotation appearance.
+</p>
+<p>The optional return value <var>h</var> is a graphics handle to the created
+annotation object.  This can be used with the <code>set</code> function to
+customize an existing annotation object.
+</p>
+<p>All annotation objects share two properties:
+</p>
+<ul>
+<li> <code>&quot;units&quot;</code>: the units in which coordinates are interpreted.<br>
+Its value may be one of <code>&quot;centimeters&quot;</code> | <code>&quot;characters&quot;</code> |
+<code>&quot;inches&quot;</code> | <code>&quot;{normalized}&quot;</code> | <code>&quot;pixels&quot;</code> |
+<code>&quot;points&quot;</code>.
+
+</li><li> <code>&quot;position&quot;</code>: a four-element vector [x0 y0 width height].<br>
+The vector specifies the coordinates (x0,y0) of the origin of the annotation
+object, its width, and its height.  The width and height may be negative,
+depending on the orientation of the object.
+
+</li></ul>
+
+<p>Valid annotation types and their specific properties are described
+below:
+</p>
+<dl compact="compact">
+<dt><code>&quot;line&quot;</code></dt>
+<dd><p>Constructs a line.  <var>x</var> and <var>y</var> must be two-element vectors
+specifying the x and y coordinates of the two ends of the line.
+</p>
+<p>The line can be customized using <code>&quot;linewidth&quot;</code>, <code>&quot;linestyle&quot;</code>,
+and <code>&quot;color&quot;</code> properties the same way as for <code>line</code> objects.
+</p>
+</dd>
+<dt><code>&quot;arrow&quot;</code></dt>
+<dd><p>Construct an arrow.  The second point in vectors <var>x</var> and <var>y</var>
+specifies the arrowhead coordinates.
+</p>
+<p>Besides line properties, the arrowhead can be customized using
+<code>&quot;headlength&quot;</code>, <code>&quot;headwidth&quot;</code>, and <code>&quot;headstyle&quot;</code>
+properties.  Supported values for <code>&quot;headstyle&quot;</code> property are:
+[<code>&quot;diamond&quot;</code> | <code>&quot;ellipse&quot;</code> | <code>&quot;plain&quot;</code> |
+<code>&quot;rectangle&quot;</code> | <code>&quot;vback1&quot;</code> | <code>&quot;{vback2}&quot;</code> |
+<code>&quot;vback3&quot;</code>]
+</p>
+</dd>
+<dt><code>&quot;doublearrow&quot;</code></dt>
+<dd><p>Construct a double arrow.  Vectors <var>x</var> and <var>y</var> specify the
+arrowhead coordinates.
+</p>
+<p>The line and the arrowhead can be customized as for arrow annotations, but
+some property names are duplicated:
+<code>&quot;head1length&quot;</code>/<code>&quot;head2length&quot;</code>,
+<code>&quot;head1width&quot;</code>/<code>&quot;head2width&quot;</code>, etc.  The index 1 marks the
+properties of the arrowhead at the first point in <var>x</var> and <var>y</var>
+coordinates.
+</p>
+</dd>
+<dt><code>&quot;textarrow&quot;</code></dt>
+<dd><p>Construct an arrow with a text label at the opposite end from the arrowhead.
+</p>
+<p>The line and the arrowhead can be customized as for arrow annotations, and
+the text can be customized using the same properties as <code>text</code> graphics
+objects.  Note, however, that some text property names are prefixed with
+&quot;text&quot; to distinguish them from arrow properties:
+<code>&quot;textbackgroundcolor&quot;</code>, <code>&quot;textcolor&quot;</code>,
+<code>&quot;textedgecolor&quot;</code>, <code>&quot;textlinewidth&quot;</code>,
+<code>&quot;textmargin&quot;</code>, <code>&quot;textrotation&quot;</code>.
+</p>
+</dd>
+<dt><code>&quot;textbox&quot;</code></dt>
+<dd><p>Construct a box with text inside.  <var>pos</var> specifies the
+<code>&quot;position&quot;</code> property of the annotation.
+</p>
+<p>You may use <code>&quot;backgroundcolor&quot;</code>, <code>&quot;edgecolor&quot;</code>,
+<code>&quot;linestyle&quot;</code>, and <code>&quot;linewidth&quot;</code> properties to customize
+the box background color and edge appearance.  A limited set of <code>text</code>
+objects properties are also available; Besides <code>&quot;font&hellip;&quot;</code>
+properties, you may also use <code>&quot;horizontalalignment&quot;</code> and
+<code>&quot;verticalalignment&quot;</code> to position the text inside the box.
+</p>
+<p>Finally, the <code>&quot;fitboxtotext&quot;</code> property controls the actual extent of
+the box.  If <code>&quot;on&quot;</code> (the default) the box limits are fitted to the
+text extent.
+</p>
+</dd>
+<dt><code>&quot;rectangle&quot;</code></dt>
+<dd><p>Construct a rectangle.  <var>pos</var> specifies the <code>&quot;position&quot;</code> property
+of the annotation.
+</p>
+<p>You may use <code>&quot;facecolor&quot;</code>, <code>&quot;color&quot;</code>, <code>&quot;linestyle&quot;</code>, and
+<code>&quot;linewidth&quot;</code> properties to customize the rectangle background color
+and edge appearance.
+</p>
+</dd>
+<dt><code>&quot;ellipse&quot;</code></dt>
+<dd><p>Construct an ellipse.  <var>pos</var> specifies the <code>&quot;position&quot;</code> property
+of the annotation.
+</p>
+<p>See <code>&quot;rectangle&quot;</code> annotations for customization.
+</p></dd>
+</dl>
+
+
+<p><strong>See also:</strong> <a href="#XREFxlabel">xlabel</a>, <a href="#XREFylabel">ylabel</a>, <a href="#XREFzlabel">zlabel</a>, <a href="#XREFtitle">title</a>, <a href="#XREFtext">text</a>, <a href="Interacting-with-Plots.html#XREFgtext">gtext</a>, <a href="#XREFlegend">legend</a>, <a href="#XREFcolorbar">colorbar</a>.
 </p></dd></dl>
 
 

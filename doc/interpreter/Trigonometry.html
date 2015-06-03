@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -257,8 +256,9 @@ do not distinguish -0.
 <a name="XREFatan2"></a><dl>
 <dt><a name="index-atan2"></a>Mapping Function: <em></em> <strong>atan2</strong> <em>(<var>y</var>, <var>x</var>)</em></dt>
 <dd><p>Compute atan (<var>y</var> / <var>x</var>) for corresponding elements of <var>y</var>
-and <var>x</var>.  Signal an error if <var>y</var> and <var>x</var> do not match in size
-and orientation.
+and <var>x</var>.
+</p>
+<p><var>y</var> and <var>x</var> must match in size and orientation.
 </p>
 <p><strong>See also:</strong> <a href="#XREFtan">tan</a>, <a href="#XREFtand">tand</a>, <a href="#XREFtanh">tanh</a>, <a href="#XREFatanh">atanh</a>.
 </p></dd></dl>
@@ -278,25 +278,28 @@ cos (pi/2)
 
 <a name="XREFsind"></a><dl>
 <dt><a name="index-sind"></a>Function File: <em></em> <strong>sind</strong> <em>(<var>x</var>)</em></dt>
-<dd><p>Compute the sine for each element of <var>x</var> in degrees.  Returns zero
-for elements where <code><var>x</var>/180</code> is an integer.
+<dd><p>Compute the sine for each element of <var>x</var> in degrees.
+</p>
+<p>Returns zero for elements where <code><var>x</var>/180</code> is an integer.
 </p>
 <p><strong>See also:</strong> <a href="#XREFasind">asind</a>, <a href="#XREFsin">sin</a>.
 </p></dd></dl>
 
 <a name="XREFcosd"></a><dl>
 <dt><a name="index-cosd"></a>Function File: <em></em> <strong>cosd</strong> <em>(<var>x</var>)</em></dt>
-<dd><p>Compute the cosine for each element of <var>x</var> in degrees.  Returns zero
-for elements where <code>(<var>x</var>-90)/180</code> is an integer.
+<dd><p>Compute the cosine for each element of <var>x</var> in degrees.
+</p>
+<p>Returns zero for elements where <code>(<var>x</var>-90)/180</code> is an integer.
 </p>
 <p><strong>See also:</strong> <a href="#XREFacosd">acosd</a>, <a href="#XREFcos">cos</a>.
 </p></dd></dl>
 
 <a name="XREFtand"></a><dl>
 <dt><a name="index-tand"></a>Function File: <em></em> <strong>tand</strong> <em>(<var>x</var>)</em></dt>
-<dd><p>Compute the tangent for each element of <var>x</var> in degrees.  Returns zero
-for elements where <code><var>x</var>/180</code> is an integer and <code>Inf</code> for
-elements where <code>(<var>x</var>-90)/180</code> is an integer.
+<dd><p>Compute the tangent for each element of <var>x</var> in degrees.
+</p>
+<p>Returns zero for elements where <code><var>x</var>/180</code> is an integer and
+<code>Inf</code> for elements where <code>(<var>x</var>-90)/180</code> is an integer.
 </p>
 <p><strong>See also:</strong> <a href="#XREFatand">atand</a>, <a href="#XREFtan">tan</a>.
 </p></dd></dl>

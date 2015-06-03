@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -68,7 +67,7 @@ array sizes when using the default 32-bit indexing mode:
 </p>
 <div class="example">
 <pre class="example">double:         16GB
-single:          8GB 
+single:          8GB
 uint64, int64:  16GB
 uint32, int32:   8GB
 uint16, int16:   4GB
@@ -175,11 +174,22 @@ done
 
 <p>Other systems may require a different solution.
 </p>
+</li><li> <small>ARPACK</small> (http://forge.scilab.org/index.php/p/arpack-ng/)
+
+<ul class="no-bullet">
+<li>- Add <samp>-fdefault-integer-8</samp> to <code>FFLAGS</code> when running configure.
+
+</li><li>- Run <code>make</code> to build the library.
+
+</li><li>- Run <code>make install</code> to install the library.
+</li></ul>
+
 </li><li> ATLAS instead of reference <small>BLAS</small> and <small>LAPACK</small>
 
 <p>Suggestions on how to compile ATLAS would be most welcome.
 </p>
 </li><li> <small>GLPK</small>
+
 </li><li> Qhull (<a href="http://www.qhull.org">http://www.qhull.org</a>)
 
 <p>Both <small>GLPK</small> and Qhull use <code>int</code> internally so maximum problem
@@ -200,7 +210,7 @@ sizes may be limited.
 <p>You must ensure that all Fortran sources except those in the
 <samp>liboctave/cruft/ranlib</samp> directory are compiled such that INTEGERS are
 8-bytes wide.  If you are using gfortran, the configure script should
-automatically set the Makefile variable <code><span class="nolinebreak">F77_INTEGER_8_FLAG</span></code><!-- /@w --> to 
+automatically set the Makefile variable <code><span class="nolinebreak">F77_INTEGER_8_FLAG</span></code><!-- /@w --> to
 <samp>-fdefault-integer-8</samp>.  If you are using another compiler, you
 must set this variable yourself.  You should NOT set this flag in
 <code>FFLAGS</code>, otherwise the files in <samp>liboctave/cruft/ranlib</samp> will be

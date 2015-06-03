@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -64,11 +63,11 @@ Next: <a href="Sparse-Matrices-with-Mex_002dFiles.html#Sparse-Matrices-with-Mex_
 dimensional matrix, or <code>mxCreateStructArray</code>.
 </p>
 <div class="example">
-<pre class="example">mxArray *mxCreateStructArray (int ndims, int *dims, 
-                              int num_keys, 
+<pre class="example">mxArray *mxCreateStructArray (int ndims, int *dims,
+                              int num_keys,
                               const char **keys);
-mxArray *mxCreateStructMatrix (int rows, int cols, 
-                               int num_keys, 
+mxArray *mxCreateStructMatrix (int rows, int cols,
+                               int num_keys,
                                const char **keys);
 </pre></div>
 
@@ -79,11 +78,11 @@ mxArray *mxCreateStructMatrix (int rows, int cols,
 <div class="example">
 <pre class="example">mxArray *mxGetField (const mxArray *ptr, mwIndex index,
                      const char *key);
-mxArray *mxGetFieldByNumber (const mxArray *ptr, 
+mxArray *mxGetFieldByNumber (const mxArray *ptr,
                              mwIndex index, int key_num);
-void mxSetField (mxArray *ptr, mwIndex index, 
+void mxSetField (mxArray *ptr, mwIndex index,
                  const char *key, mxArray *val);
-void mxSetFieldByNumber (mxArray *ptr, mwIndex index, 
+void mxSetFieldByNumber (mxArray *ptr, mwIndex index,
                          int key_num, mxArray *val);
 </pre></div>
 
@@ -139,34 +138,24 @@ mexFunction (int nlhs, mxArray* plhs[],
 <p>An example of the behavior of this function within Octave is then
 </p>
 <div class="example">
-<pre class="example">a(1).f1 = &quot;f11&quot;; a(1).f2 = &quot;f12&quot;; 
+<pre class="example">a(1).f1 = &quot;f11&quot;; a(1).f2 = &quot;f12&quot;;
 a(2).f1 = &quot;f21&quot;; a(2).f2 = &quot;f22&quot;;
-b = mystruct (a)
-&rArr; field f1(0) = f11
+b = mystruct (a);
+&rArr;  field f1(0) = f11
     field f1(1) = f21
     field f2(0) = f12
     field f2(1) = f22
-    b =
-    {
-      this =
+b
+&rArr; 2x2 struct array containing the fields:
 
-      (,
-        [1] = this1
-        [2] = this2
-        [3] = this3
-        [4] = this4
-      ,)
+     this
+     that
 
-      that =
+b(3)
+&rArr; scalar structure containing the fields:
 
-      (,
-        [1] = that1
-        [2] = that2
-        [3] = that3
-        [4] = that4
-      ,)
-
-    }
+     this = this3
+     that = that3
 </pre></div>
 
 <hr>

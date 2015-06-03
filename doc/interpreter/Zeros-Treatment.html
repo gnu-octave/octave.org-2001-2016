@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -58,28 +57,26 @@ Previous: <a href="Example-Code.html#Example-Code" accesskey="p" rel="prev">Exam
 <hr>
 <a name="Differences-in-Treatment-of-Zero-Elements"></a>
 <h3 class="section">21.5 Differences in Treatment of Zero Elements</h3>
+<a name="index-matrix_002c-zero-elements"></a>
 
 <p>Making diagonal and permutation matrices special matrix objects in their own
 right and the consequent usage of smarter algorithms for certain operations
 implies, as a side effect, small differences in treating zeros.
-The contents of this section applies also to sparse matrices, discussed in
-the following chapter.
+The contents of this section apply also to sparse matrices, discussed in
+the following chapter.  (see <a href="Sparse-Matrices.html#Sparse-Matrices">Sparse Matrices</a>)
 </p>
-<p>The IEEE standard defines the result of the expressions <code>0*Inf</code> and 
-<code>0*NaN</code> as <code>NaN</code>, as it has been generally agreed that this is the
-best compromise.
-Numerical software dealing with structured and sparse matrices (including
-Octave) however, almost always makes a distinction between a &quot;numerical zero&quot;
-and an &quot;assumed zero&quot;. 
-A &quot;numerical zero&quot; is a zero value occurring in a place where any floating-point
-value could occur.  It is normally stored somewhere in memory as an explicit
-value. 
-An &quot;assumed zero&quot;, on the contrary, is a zero matrix element implied by the
-matrix structure (diagonal, triangular) or a sparsity pattern; its value is
-usually not stored explicitly anywhere, but is implied by the underlying
-data structure.
+<p>The IEEE floating point standard defines the result of the expressions
+<code>0*Inf</code> and <code>0*NaN</code> as <code>NaN</code>.  This is widely agreed to be a
+good compromise.  Numerical software dealing with structured and sparse matrices
+(including Octave) however, almost always makes a distinction between a
+&quot;numerical zero&quot; and an &quot;assumed zero&quot;.  A &quot;numerical zero&quot; is a zero value
+occurring in a place where any floating-point value could occur.  It is
+normally stored somewhere in memory as an explicit value.  An &quot;assumed zero&quot;, on
+the contrary, is a zero matrix element implied by the matrix structure
+(diagonal, triangular) or a sparsity pattern; its value is usually not stored
+explicitly anywhere, but is implied by the underlying data structure.
 </p>
-<p>The primary distinction is that an assumed zero, when multiplied 
+<p>The primary distinction is that an assumed zero, when multiplied
 by any number, or divided by any nonzero number,
 yields *always* a zero, even when, e.g., multiplied by <code>Inf</code>
 or divided by <code>NaN</code>.

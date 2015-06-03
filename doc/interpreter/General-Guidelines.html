@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -59,31 +58,29 @@ Next: <a href="Octave-Sources-_0028m_002dfiles_0029.html#Octave-Sources-_0028m_0
 <a name="General-Guidelines-1"></a>
 <h3 class="section">D.4 General Guidelines</h3>
 
-<p>All Octave&rsquo;s sources are distributed under the General Public License
+<p>All Octave&rsquo;s sources are distributed under the GNU General Public License
 (GPL).  Currently, Octave uses GPL version 3.  For details about this
 license, see <a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a>.  Therefore,
 whenever you create a new source file, it should have the following
 comment header (use appropriate year, name and comment marks):
 </p>
 <div class="example">
-<pre class="example">## Copyright (C) 1996-2013 John W. Eaton &lt;jwe@octave.org&gt;
+<pre class="example">## Copyright (C) 1996-2015 John W. Eaton &lt;jwe@octave.org&gt;
 ##
 ## This file is part of Octave.
 ##
-## Octave is free software; you can redistribute it and/or
-## modify it under the terms of the GNU General Public
-## License as published by the Free Software Foundation;
-## either version 3 of the License, or (at your option) any
-## later version.
+## Octave is free software; you can redistribute it and/or modify it
+## under the terms of the GNU General Public License as published by
+## the Free Software Foundation; either version 3 of the License, or
+## (at your option) any later version.
 ##
-## Octave is distributed in the hope that it will be useful,
-## but WITHOUT ANY WARRANTY; without even the implied
-## warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-## PURPOSE.  See the GNU General Public License for more
-## details.
+## Octave is distributed in the hope that it will be useful, but
+## WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
 ##
-## You should have received a copy of the GNU General Public
-## License along with Octave; see the file COPYING.  If not,
+## You should have received a copy of the GNU General Public License
+## along with Octave; see the file COPYING.  If not,
 ## see &lt;http://www.gnu.org/licenses/&gt;.
 </pre></div>
 
@@ -91,13 +88,13 @@ comment header (use appropriate year, name and comment marks):
 changes, record and briefly describe the changes in your commit message.
 You should have previously configured your <samp>.hgrc</samp> (or
 <samp>Mercurial.ini</samp> on Windows) with your name and email, which will
-get automatically added to your commit message.  Your commit message
+be automatically added to your commit message.  Your commit message
 should have a brief one-line explanation of what the commit does.  If you
 are patching a bug, this one-line explanation should mention the bug
-number at the end.  If your change is small and only touches one file,
-this is typically sufficient.  If you are modifying several files or
+number at the end.  If your change is small and only touches one file then
+this is typically sufficient.  If you are modifying several files, or
 several parts of one file, you should enumerate your changes roughly
-following the GNU coding standards on changelogs, like the following
+following the GNU coding standards for changelogs, as in the following
 example:
 </p>
 <div class="example">
@@ -113,12 +110,12 @@ documentation.
 (FCN_FILES): Include test_ctor_vs_method.m in the list.
 </pre></div>
 
-<p>In this example, the names of files is mentioned, and in parentheses the
-name of the function in that file that was modified.  There is no need to
-mention the function for m-files that only contain one function.  The
-commit message should describe what is changed, not why.  Any explanation
-of why a change is needed should appear as comments in the code,
-particularly if there is something that might not be obvious to someone
+<p>In this example, the names of the file changed is listed first, and in
+parentheses the name of the function in that file that was modified.  There
+is no need to mention the function for m-files that only contain one function.
+The commit message should describe what was changed, not why it was changed.
+Any explanation for why a change is needed should appear as comments in the
+code, particularly if there is something that might not be obvious to someone
 reading it later.
 </p>
 <p>When submitting code which addresses a known bug on the Octave bug
@@ -130,7 +127,7 @@ first line of the commit messages.  For example:
 </pre></div>
 
 <p>The preferred comment mark for places that may need further attention is
-FIXME.
+<code>FIXME:</code>.
 </p>
 <hr>
 <div class="header">

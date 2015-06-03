@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -61,20 +60,54 @@ Next: <a href="Current-Working-Directory.html#Current-Working-Directory" accessk
 
 <a name="XREFgetenv"></a><dl>
 <dt><a name="index-getenv"></a>Built-in Function: <em></em> <strong>getenv</strong> <em>(<var>var</var>)</em></dt>
-<dd><p>Return the value of the environment variable <var>var</var>.  For example,
+<dd><p>Return the value of the environment variable <var>var</var>.
+</p>
+<p>For example,
 </p>
 <div class="example">
 <pre class="example">getenv (&quot;PATH&quot;)
 </pre></div>
 
 <p>returns a string containing the value of your path.
+</p>
+<p><strong>See also:</strong> <a href="#XREFsetenv">setenv</a>, <a href="#XREFunsetenv">unsetenv</a>.
 </p></dd></dl>
 
 
-<a name="XREFputenv"></a><dl>
-<dt><a name="index-putenv"></a>Built-in Function: <em></em> <strong>putenv</strong> <em>(<var>var</var>, <var>value</var>)</em></dt>
+<a name="XREFsetenv"></a><dl>
 <dt><a name="index-setenv"></a>Built-in Function: <em></em> <strong>setenv</strong> <em>(<var>var</var>, <var>value</var>)</em></dt>
+<dt><a name="index-setenv-1"></a>Built-in Function: <em></em> <strong>setenv</strong> <em>(<var>var</var>)</em></dt>
+<dt><a name="index-putenv"></a>Built-in Function: <em></em> <strong>putenv</strong> <em>(&hellip;)</em></dt>
 <dd><p>Set the value of the environment variable <var>var</var> to <var>value</var>.
+</p>
+<p>If no <var>value</var> is specified then the variable will be assigned the null
+string.
+</p>
+<p><strong>See also:</strong> <a href="#XREFunsetenv">unsetenv</a>, <a href="#XREFgetenv">getenv</a>.
+</p></dd></dl>
+
+
+<a name="XREFunsetenv"></a><dl>
+<dt><a name="index-unsetenv"></a>Built-in Function: <em><var>status</var> =</em> <strong>unsetenv</strong> <em>(<var>var</var>)</em></dt>
+<dd><p>Delete the environment variable <var>var</var>.
+</p>
+<p>Return 0 if the variable was deleted, or did not exist, and -1 if an error
+occurred.
+</p>
+<p><strong>See also:</strong> <a href="#XREFsetenv">setenv</a>, <a href="#XREFgetenv">getenv</a>.
+</p></dd></dl>
+
+
+<a name="XREFget_005fhome_005fdirectory"></a><dl>
+<dt><a name="index-get_005fhome_005fdirectory"></a>Built-in Function: <em><var>homedir</var> =</em> <strong>get_home_directory</strong> <em>()</em></dt>
+<dd><p>Return the current home directory.
+</p>
+<p>On most systems, this is equivalent to <code>getenv (&quot;HOME&quot;)</code>.  On Windows
+systems, if the environment variable <code>HOME</code> is not set then it is
+equivalent to
+<code>fullfile (getenv (&quot;HOMEDRIVE&quot;), getenv (&quot;HOMEPATH&quot;))</code>
+</p>
+<p><strong>See also:</strong> <a href="#XREFgetenv">getenv</a>.
 </p></dd></dl>
 
 

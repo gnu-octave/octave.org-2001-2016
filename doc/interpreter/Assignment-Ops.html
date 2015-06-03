@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -183,7 +182,7 @@ expression need not match.  For example, the expression
 <pre class="example">[a, b] = [u, s, v] = svd (a)
 </pre></div>
 
-<p>is equivalent to 
+<p>is equivalent to
 </p>
 <div class="example">
 <pre class="example">[u, s, v] = svd (a)
@@ -245,8 +244,18 @@ of the form
 <pre class="example"><var>expr1</var> = (<var>expr1</var>) <var>op</var> (<var>expr2</var>)
 </pre></div>
 
-<p>where <var>op</var> can be either <code>+</code>, <code>-</code>, <code>*</code>, or <code>/</code>.
-So, the expression
+<p>where <var>op</var> can be either <code>+</code>, <code>-</code>, <code>*</code>, or <code>/</code>,
+as long as <var>expr2</var> is a simple expression with no side effects.  If
+<var>expr2</var> also contains an assignment operator, then this expression
+is evaluated as
+</p>
+<div class="example">
+<pre class="example"><var>temp</var> = <var>expr2</var>
+<var>expr1</var> = (<var>expr1</var>) <var>op</var> <var>temp</var>
+</pre></div>
+
+<p>where <var>temp</var> is a placeholder temporary value storing the computed
+result of evaluating <var>expr2</var>.  So, the expression
 </p>
 <div class="example">
 <pre class="example">a *= b+1

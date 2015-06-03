@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -155,14 +154,15 @@ scalar.  The following code accomplishes this with broadcasting,
 </p>
 <a name="XREFbsxfun"></a><dl>
 <dt><a name="index-bsxfun"></a>Built-in Function: <em></em> <strong>bsxfun</strong> <em>(<var>f</var>, <var>A</var>, <var>B</var>)</em></dt>
-<dd><p>The binary singleton expansion function applier performs broadcasting,
-that is, applies a binary function <var>f</var> element-by-element to two
+<dd><p>The binary singleton expansion function performs broadcasting,
+that is, it applies a binary function <var>f</var> element-by-element to two
 array arguments <var>A</var> and <var>B</var>, and expands as necessary
-singleton dimensions in either input argument.  <var>f</var> is a function
-handle, inline function, or string containing the name of the function
-to evaluate.  The function <var>f</var> must be capable of accepting two
-column-vector arguments of equal length, or one column vector argument
-and a scalar.
+singleton dimensions in either input argument.
+</p>
+<p><var>f</var> is a function handle, inline function, or string containing the name
+of the function to evaluate.  The function <var>f</var> must be capable of
+accepting two column-vector arguments of equal length, or one column vector
+argument and a scalar.
 </p>
 <p>The dimensions of <var>A</var> and <var>B</var> must be equal or singleton.  The
 singleton dimensions of the arrays will be expanded to the same

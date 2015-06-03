@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -74,18 +73,18 @@ from being evaluated periodically.
 <dt><a name="index-add_005finput_005fevent_005fhook"></a>Built-in Function: <em><var>id</var> =</em> <strong>add_input_event_hook</strong> <em>(<var>fcn</var>)</em></dt>
 <dt><a name="index-add_005finput_005fevent_005fhook-1"></a>Built-in Function: <em><var>id</var> =</em> <strong>add_input_event_hook</strong> <em>(<var>fcn</var>, <var>data</var>)</em></dt>
 <dd><p>Add the named function or function handle <var>fcn</var> to the list of functions
-to call periodically when Octave is waiting for input.  The function should
-have the form
+to call periodically when Octave is waiting for input.
+</p>
+<p>The function should have the form
 </p>
 <div class="example">
 <pre class="example"><var>fcn</var> (<var>data</var>)
 </pre></div>
 
-<p>If <var>data</var> is omitted, Octave calls the function without any
-arguments.
+<p>If <var>data</var> is omitted, Octave calls the function without any arguments.
 </p>
-<p>The returned identifier may be used to remove the function handle from
-the list of input hook functions.
+<p>The returned identifier may be used to remove the function handle from the
+list of input hook functions.
 </p>
 <p><strong>See also:</strong> <a href="#XREFremove_005finput_005fevent_005fhook">remove_input_event_hook</a>.
 </p></dd></dl>
@@ -115,7 +114,7 @@ substitutes for <small>MATLAB</small> functions.
 an unknown identifier is requested.
 </p>
 <p>When called from inside a function with the <code>&quot;local&quot;</code> option, the
-variable is changed locally for the function and any subroutines it calls.  
+variable is changed locally for the function and any subroutines it calls.
 The original variable value is restored when exiting the function.
 </p>
 <p><strong>See also:</strong> <a href="Missing-Components.html#XREFmissing_005fcomponent_005fhook">missing_component_hook</a>.

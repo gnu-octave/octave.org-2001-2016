@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -86,35 +85,48 @@ referred to as a <var>grp_struct</var>.
 <a name="XREFgetgrent"></a><dl>
 <dt><a name="index-getgrent"></a>Built-in Function: <em><var>grp_struct</var> =</em> <strong>getgrent</strong> <em>()</em></dt>
 <dd><p>Return an entry from the group database, opening it if necessary.
-Once the end of data has been reached, <code>getgrent</code> returns 0.
+</p>
+<p>Once the end of data has been reached, <code>getgrent</code> returns 0.
+</p>
+<p><strong>See also:</strong> <a href="#XREFsetgrent">setgrent</a>, <a href="#XREFendgrent">endgrent</a>.
 </p></dd></dl>
 
 
 <a name="XREFgetgrgid"></a><dl>
 <dt><a name="index-getgrgid"></a>Built-in Function: <em><var>grp_struct</var> =</em> <strong>getgrgid</strong> <em>(<var>gid</var>).</em></dt>
 <dd><p>Return the first entry from the group database with the group ID
-<var>gid</var>.  If the group ID does not exist in the database,
-<code>getgrgid</code> returns 0.
+<var>gid</var>.
+</p>
+<p>If the group ID does not exist in the database, <code>getgrgid</code> returns 0.
+</p>
+<p><strong>See also:</strong> <a href="#XREFgetgrnam">getgrnam</a>.
 </p></dd></dl>
 
 
 <a name="XREFgetgrnam"></a><dl>
 <dt><a name="index-getgrnam"></a>Built-in Function: <em><var>grp_struct</var> =</em> <strong>getgrnam</strong> <em>(<var>name</var>)</em></dt>
 <dd><p>Return the first entry from the group database with the group name
-<var>name</var>.  If the group name does not exist in the database,
-<code>getgrnam</code> returns 0.
+<var>name</var>.
+</p>
+<p>If the group name does not exist in the database, <code>getgrnam</code> returns 0.
+</p>
+<p><strong>See also:</strong> <a href="#XREFgetgrgid">getgrgid</a>.
 </p></dd></dl>
 
 
 <a name="XREFsetgrent"></a><dl>
 <dt><a name="index-setgrent"></a>Built-in Function: <em></em> <strong>setgrent</strong> <em>()</em></dt>
 <dd><p>Return the internal pointer to the beginning of the group database.
+</p>
+<p><strong>See also:</strong> <a href="#XREFgetgrent">getgrent</a>, <a href="#XREFendgrent">endgrent</a>.
 </p></dd></dl>
 
 
 <a name="XREFendgrent"></a><dl>
 <dt><a name="index-endgrent"></a>Built-in Function: <em></em> <strong>endgrent</strong> <em>()</em></dt>
 <dd><p>Close the group database.
+</p>
+<p><strong>See also:</strong> <a href="#XREFgetgrent">getgrent</a>, <a href="#XREFsetgrent">setgrent</a>.
 </p></dd></dl>
 
 

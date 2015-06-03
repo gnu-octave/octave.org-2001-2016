@@ -44,7 +44,6 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="../manual.css">
 
 
 </head>
@@ -68,8 +67,10 @@ then Octave will printed nothing when displaying the contents of a class.
 </p>
 <a name="XREFdisplay"></a><dl>
 <dt><a name="index-display"></a>Function File: <em></em> <strong>display</strong> <em>(<var>a</var>)</em></dt>
-<dd><p>Display the contents of an object.  If <var>a</var> is an object of the
-class <code>&quot;myclass&quot;</code>, then <code>display</code> is called in a case like
+<dd><p>Display the contents of an object.
+</p>
+<p>If <var>a</var> is an object of the class <code>&quot;myclass&quot;</code>, then <code>display</code>
+is called in a case like
 </p>
 <div class="example">
 <pre class="example">myclass (&hellip;)
@@ -124,7 +125,7 @@ endfunction
 <p>Note that in the display method, it makes sense to start the method
 with the line <code>fprintf (&quot;%s =&quot;, inputname (1))</code> to be consistent
 with the rest of Octave and print the variable name to be displayed
-when displaying the class. 
+when displaying the class.
 </p>
 <p>To be consistent with the Octave graphic handle classes, a class
 should also define the <code>get</code> and <code>set</code> methods.  The
@@ -155,7 +156,7 @@ endfunction
 </pre></div>
 
 <p>Similarly, the <code>set</code> method should taken as its first argument an
-object to modify, and then take property/value pairs to be modified. 
+object to modify, and then take property/value pairs to be modified.
 </p>
 <div class="example">
 <pre class="verbatim">function s = set (p, varargin)
@@ -213,7 +214,8 @@ initialized before it is saved.  This can be done with the
 <a name="XREFsaveobj"></a><dl>
 <dt><a name="index-saveobj"></a>Function File: <em><var>b</var> =</em> <strong>saveobj</strong> <em>(<var>a</var>)</em></dt>
 <dd><p>Method of a class to manipulate an object prior to saving it to a file.
-The function <code>saveobj</code> is called when the object <var>a</var> is saved
+</p>
+<p>The function <code>saveobj</code> is called when the object <var>a</var> is saved
 using the <code>save</code> function.  An example of the use of <code>saveobj</code>
 might be to remove fields of the object that don&rsquo;t make sense to be saved
 or it might be used to ensure that certain fields of the object are
@@ -241,7 +243,8 @@ fields are reinserted into the user object.
 <a name="XREFloadobj"></a><dl>
 <dt><a name="index-loadobj"></a>Function File: <em><var>b</var> =</em> <strong>loadobj</strong> <em>(<var>a</var>)</em></dt>
 <dd><p>Method of a class to manipulate an object after loading it from a file.
-The function <code>loadobj</code> is called when the object <var>a</var> is loaded
+</p>
+<p>The function <code>loadobj</code> is called when the object <var>a</var> is loaded
 using the <code>load</code> function.  An example of the use of <code>saveobj</code>
 might be to add fields to an object that don&rsquo;t make sense to be saved.
 For example:
