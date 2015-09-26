@@ -24,10 +24,6 @@ __nav_buttons__([home])
     <a href="license.html">GNU General Public License</a>.
   </p>
 
-  <p class="centered">
-    <a href="http://wiki.octave.org/OctConf_2015"><img id="octconf" src="images/octconf-2015.png" alt="[OctConf 2015]" /></a>
-  </p>
-
   <h2>May 29, 2015 &mdash; Octave 4.0.0 Released</h2>
   <p>
     Version 4.0.0 has been released and is now available
