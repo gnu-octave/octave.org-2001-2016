@@ -24,24 +24,20 @@ __nav_buttons__([home])
     <a href="license.html">GNU General Public License</a>.
   </p>
 
-  <h2>May 29, 2015 &mdash; Octave 4.0.0 Released</h2>
+  <h2>March 23, 2016 &mdash; Octave 4.0.1 Released</h2>
   <p>
-    Version 4.0.0 has been released and is now available
-    for <a href="download.html">download</a>.  Octave 4.0 is a major
-    new release with many new features, including a graphical user
-    interface, support for classdef object-oriented programming,
-    better compatibility with Matlab, and many new and improved
-    functions.
+    Version 4.0.1 has been released and is now available
+    for <a href="download.html">download</a>.  Octave 4.0.1 is
+    a <a href="bug-fixes-4-0-1.html">bug fixing release</a>.
+
+    Octave 4.0, released in May 2015 was a major new version with many
+    new features, including a graphical user interface, support for
+    classdef object-oriented programming, better compatibility with
+    Matlab, and many new and improved functions.
   </p>
   <p>
     An official Windows binary installer is also available
-    from <a href="ftp://ftp.gnu.org/gnu/octave/windows/octave-4.0.0_0-installer.exe">ftp://ftp.gnu.org/gnu/octave/windows/octave-4.0.0_0-installer.exe</a>
-  </p>
-  <p>
-    A list of important user-visible changes is availble
-    at <a href="http://octave.org/NEWS-4.0.html">http://octave.org/NEWS-4.0.html</a>,
-    by selecting the Release Notes item in the News menu of the GUI, or by
-    typing <tt>news</tt> at the Octave command prompt.
+    from <a href="ftp://ftp.gnu.org/gnu/octave/windows/octave-4.0.1-installer.exe">ftp://ftp.gnu.org/gnu/octave/windows/octave-4.0.1-installer.exe</a>
   </p>
   <p>
     Thanks to the many people who contributed to this release!
