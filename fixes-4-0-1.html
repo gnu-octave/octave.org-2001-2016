@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GNU Octave</title>
+  <link rel="stylesheet" type="text/css" href="octave.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="logo">
+      <p>
+        <span id="logo-text">GNU Octave</span>
+        <img src="images//logo.png" alt="GNU Octave Logo"/>
+      </p>
+    </div>
+
+
+<div id="nav-box">
+
+  <div class="nav-button">
+    <div class="nav-item">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="nav-button">
+    <div class="nav-item">
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div class="nav-button">
+    <div class="nav-item">
+      <a href="download.html">Download</a>
+    </div>
+  </div>
+
+  <div class="nav-button">
+    <div class="nav-item">
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+
+  <div class="nav-button">
+    <div class="nav-item">
+      <a href="get-involved.html">Get Involved</a>
+    </div>
+  </div>
+
+<div class="nav-button">
+  <div class="nav-item">
+    <a href="donate.html">Donate</a>
+    <div class="donate-blurb">
+      Your donations help to fund continuing maintenance tasks,
+      development of new features and the organization of Octave
+      conferences.
+    </div>
+    <div id="donate-form">
+      <div class="crm-contribute-button-wrapper" id="crm_cpid_10_button">
+          <a href='https://crm.fsf.org/civicrm/contribute/transact?reset=1&amp;id=10' class="crm-contribute-button"><span class="crm-contribute-button-inner">Continue</span></a>
+      </div>
+    </div>
+    <div class="donate-blurb">
+      Following the Continue link will take you to a Free Software Foundation
+      page for payment processing.
+    </div>
+    <div id="bitcoin">
+        <img src="images/donate-bitcoin.png" alt="donate bitcoin">
+        Bitcoin donations also accepted at <a
+        href="bitcoin:1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF">this address</a>.
+        <div id="bitcoinaddress">
+           1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF
+        </div>
+    </div>   
+  </div>
+</div>
+
+</div>
+
+
+
+<div id="content">
+  <h2>Bugs Fixed in GNU Octave 4.0.1</h2>
+  <p>
+    <ul>
+      <li>Allow strsplit to use '+' as a delimiter <a href="https://savannah.gnu.org/bugs/?47403">(bug #47403)</a></li>
+      svds.m: Special handling for case of sigma=0 <a href="https://savannah.gnu.org/bugs/?46683">(bug #46683)</a>
+
+      <li>Fix splines and remove unnecessary calculations <a href="https://savannah.gnu.org/bugs/?47013">(bug #47013)</a></li>
+
+      <li>Fix printf regression <a href="https://savannah.gnu.org/bugs/?47192">(bug #47192)</a></li>
+
+      <li>Avoid overflow while reshaping large sparse matrices <a href="https://savannah.gnu.org/bugs/?42850">(bug #42850)</a></li>
+
+      <li>Fix memory corruption allocating to sparse arrays <a href="https://savannah.gnu.org/bugs/?42825">(bug #42825)</a></li>
+
+      <li>Disable char/int8_t function overloads where not permitted <a href="https://savannah.gnu.org/bugs/?45411">(bug #45411)</a></li>
+
+      <li>Fix cut/paste error in rande documentation <a href="https://savannah.gnu.org/bugs/?47097">(bug #47097)</a></li>
+
+      <li>Fix regressions caused by ismatrix definition change <a href="https://savannah.gnu.org/bugs/?47036">(bug #47036)</a></li>
+
+      <li>doc: Update copyright date in octave.texi <a href="https://savannah.gnu.org/bugs/?47058">(bug #47058)</a></li>
+
+      <li>Fix regressions caused by ismatrix definition change <a href="https://savannah.gnu.org/bugs/?47036">(bug #47036)</a></li>
+
+      <li>Fix regression for coordinate transforms on 3-D arrays <a href="https://savannah.gnu.org/bugs/?47036">(bug #47036)</a></li>
+
+      <li>Fix regressions caused by ismatrix definition change <a href="https://savannah.gnu.org/bugs/?47036">(bug #47036)</a></li>
+
+      <li>doc: Correct example errobar code and plot <a href="https://savannah.gnu.org/bugs/?46972">(bug #46972)</a></li>
+
+      <li>__getlegenddata__.m: Fix handling of multiple child elements <a href="https://savannah.gnu.org/bugs/?46835">(bug #46835)</a></li>
+
+      <li>fzero.m: Correctly choose tolerance (eps) based on class of fun and X0 <a href="https://savannah.gnu.org/bugs/?46658">(bug #46658)</a></li>
+
+      <li>Fix behavior of warning ("error") call <a href="https://savannah.gnu.org/bugs/?45753">(bug #45753)</a></li>
+
+      <li>Fixed isequal for comparison of objects with overridden size <a href="https://savannah.gnu.org/bugs/?44334">(bug #44334)</a></li>
+
+      <li>Fix compilation of classdef with the clang compiler <a href="https://savannah.gnu.org/bugs/?41178">(bug #41178)</a></li>
+
+      <li>doc: Fix incorrect description of Hessenberg decomposition <a href="https://savannah.gnu.org/bugs/?46622">(bug #46622)</a></li>
+
+      <li>set all lexical_feedback variables in init function <a href="https://savannah.gnu.org/bugs/?46522">(bug #46522)</a></li>
+
+      <li>Stop segfault when find function called with 6 outputs <a href="https://savannah.gnu.org/bugs/?42424">(bug #42424)</a></li>
+
+      <li>textread.m, textscan.m: Properly process single-quoted endofline parameter <a href="https://savannah.gnu.org/bugs/?46477">(bug #46477)</a></li>
+
+      <li>Fix rotated graphics when printing through ghostscript <a href="https://savannah.gnu.org/bugs/?46435">(bug #46435)</a></li>
+
+      <li>drawnow: Add a delay to let the GUI thread lock the mutex when printing <a href="https://savannah.gnu.org/bugs/?44463">(bug #44463)</a></li>
+
+      <li>Fix segfault with 'dbclear all' <a href="https://savannah.gnu.org/bugs/?41843">(bug #41843)</a></li>
+
+      <li>Force left-to-right alignment for the whole GUI <a href="https://savannah.gnu.org/bugs/?46204">(bug #46204)</a></li>
+
+      <li>validateattributes.m: Fix typo on documentation <a href="https://savannah.gnu.org/bugs/?46328">(bug #46328)</a></li>
+
+      <li>doc: Fix typo in short-circuit operators documentation <a href="https://savannah.gnu.org/bugs/?46280">(bug #46280)</a></li>
+
+      <li>datevec.m: Properly handle FFF millisecond code <a href="https://savannah.gnu.org/bugs/?46171">(bug #46171)</a></li>
+
+      <li>Fix issue with gnuplot, subplot, and 2 y-axes <a href="https://savannah.gnu.org/bugs/?45822">(bug #45822)</a></li>
+
+      <li>plot.m: Use actual property names in the description FMT argument <a href="https://savannah.gnu.org/bugs/?46240">(bug #46240)</a></li>
+
+      <li>normrnd.m: Return correct result for vector case when std = 0 <a href="https://savannah.gnu.org/bugs/?46238">(bug #46238)</a></li>
+
+      <li>prevent doc browser from searching for an empty string <a href="https://savannah.gnu.org/bugs/?46227">(bug #46227)</a></li>
+
+      <li>improve focus detection of gui <a href="https://savannah.gnu.org/bugs/?45306">(bug #45306)</a></li>
+
+      <li>Fix segfault when complex double matrix calls ZGETRF <a href="https://savannah.gnu.org/bugs/?45577">(bug #45577)</a></li>
+
+      <li>Add uiXXXX documentation <a href="https://savannah.gnu.org/bugs/?46076">(bug #46076)</a></li>
+
+      <li>quantile.m: Fix operation along a singleton dimension <a href="https://savannah.gnu.org/bugs/?45455">(bug #45455)</a></li>
+
+      <li>__gnuplot_drawnow__.m: Use "screenpixelsperinch" instead of constant value <a href="https://savannah.gnu.org/bugs/?46122">(bug #46122)</a></li>
+
+      <li>methods.m: Rry Java class names if getMethods fails on Java objects <a href="https://savannah.gnu.org/bugs/?46010">(bug #46010)</a></li>
+
+      <li>textread.m, textscan.m: Always remove headerlines args before invoking strread <a href="https://savannah.gnu.org/bugs/?46080">(bug #46080)</a></li>
+
+      <li>Include stdint.h in mex.h file <a href="https://savannah.gnu.org/bugs/?46062">(bug #46062)</a></li>
+
+      <li>Handle hggroup objects "buttondownfcn" when children are clicked <a href="https://savannah.gnu.org/bugs/?45621">(bug #45621)</a></li>
+
+      <li>Fix selection of one pixel high(wide) images <a href="https://savannah.gnu.org/bugs/?46049">(bug #46049)</a></li>
+
+      <li>annotation.m: Document the "string" property of textbox and textarrow annotations <a href="https://savannah.gnu.org/bugs/?46036">(bug #46036)</a></li>
+
+      <li>mkoctfile: Apply default C++ compiler flags when linking oct-file <a href="https://savannah.gnu.org/bugs/?45280">(bug #45280)</a></li>
+
+      <li>Use backslash as windows file separator for canonicalize_file_name <a href="https://savannah.gnu.org/bugs/?45816">(bug #45816)</a></li>
+
+      <li>Generate correct ezplot for 2-input functions <a href="https://savannah.gnu.org/bugs/?46004">(bug #46004)</a></li>
+
+      <li>doc: Make excplicit that asctime and ctime values end in a newline <a href="https://savannah.gnu.org/bugs/?45976">(bug #45976)</a></li>
+
+      <li>Initialize interpreter correctly with script and --traditional <a href="https://savannah.gnu.org/bugs/?45921">(bug #45921)</a></li>
+
+      <li>do not leave debug modus when entering a command at debug prompt <a href="https://savannah.gnu.org/bugs/?45737">(bug #45737)</a></li>
+
+      <li>__finish__.m: Change from function to script to stay in base workspace <a href="https://savannah.gnu.org/bugs/?45869">(bug #45869)</a></li>
+
+      <li>Don't put default xtick vector size in documentation <a href="https://savannah.gnu.org/bugs/?45725">(bug #45725)</a></li>
+
+      <li>Fix 'descending' sort of Range objects <a href="https://savannah.gnu.org/bugs/?45739">(bug #45739)</a></li>
+
+      <li>strread.m: Clarify delimiter and whitespace usage <a href="https://savannah.gnu.org/bugs/?45712">(bug #45712)</a></li>
+
+      <li>strread.m: Properly preprocess all forms of string format specifier <a href="https://savannah.gnu.org/bugs/?45712">(bug #45712)</a></li>
+
+      <li>strfunc: Document function does not accept anonymous functions <a href="https://savannah.gnu.org/bugs/?45682">(bug #45682)</a></li>
+
+      <li>Fix hang when using errorbar with empty dataset <a href="https://savannah.gnu.org/bugs/?45554">(bug #45554)</a></li>
+
+      <li>doc: Clarify behavior of length function <a href="https://savannah.gnu.org/bugs/?45611">(bug #45611)</a></li>
+
+      <li>Allow sorting columns in workspace view <a href="https://savannah.gnu.org/bugs/?45448">(bug #45448)</a></li>
+
+      <li>Pass all fields in face/vertex structure through to patch() <a href="https://savannah.gnu.org/bugs/?45593">(bug #45593)</a></li>
+
+      <li>polar.m: Display plot titles on polar plots <a href="https://savannah.gnu.org/bugs/?45514">(bug #45514)</a></li>
+
+      <li>ellipke.m: Use correct definition of elliptic integral in documentation <a href="https://savannah.gnu.org/bugs/?45522">(bug #45522)</a></li>
+
+      <li>unpack.m: Stop hang when unpacking on to existing filename <a href="https://savannah.gnu.org/bugs/?45331">(bug #45331)</a></li>
+
+      <li>Allow NEWS to be displayed properly in QTextBrowser <a href="https://savannah.gnu.org/bugs/?45396">(bug #45396)</a></li>
+
+      <li>Fix crash when selecting an image <a href="https://savannah.gnu.org/bugs/?45372">(bug #45372)</a></li>
+
+      <li>qt toolkit: Set keyboard focus in canvas <a href="https://savannah.gnu.org/bugs/?44832">(bug #44832)</a></li>
+
+      <li>Change mxCreateNumericArray to be Matlab compatible for ndims < 2 <a href="https://savannah.gnu.org/bugs/?45319">(bug #45319)</a></li>
+
+                                                                          <li>Fix conversion from string cell array into java's String <a href="https://savannah.gnu.org/bugs/?45290">(bug #45290)</a></li>
+
+      <li>Fix load/save of integers with -hdf5 <a href="https://savannah.gnu.org/bugs/?45225">(bug #45225)</a></li>
+
+      <li>ellipke.m: Modify to accept row vectors <a href="https://savannah.gnu.org/bugs/?45283">(bug #45283)</a></li>
+
+      <li>Return correct hex value for printf when used with string inputs <a href="https://savannah.gnu.org/bugs/?45263">(bug #45263)</a></li>
+
+      <li>run.m: Return to original directory on Windows <a href="https://savannah.gnu.org/bugs/?45231">(bug #45231)</a></li>
+
+      <li>Convert double Octave vectors to double Java vectors <a href="https://savannah.gnu.org/bugs/?45264">(bug #45264)</a></li>
+
+      <li>Also load settings and translations in --no-gui mode <a href="https://savannah.gnu.org/bugs/?44222">(bug #44222)</a> and <a href="https://savannah.gnu.org/bugs/?45199">(bug #45199)</a></li>
+
+      <li>Avoid crash when trying to annotate an empty figure <a href="https://savannah.gnu.org/bugs/?45241">(bug #45241)</a></li>
+
+      <li>Allow copying a figure to clipboard even in --no-gui mode <a href="https://savannah.gnu.org/bugs/?44886">(bug #44886)</a></li>
+
+      <li>Allow saving/copying other figures than the currentfigure <a href="https://savannah.gnu.org/bugs/?45226">(bug #45226)</a></li>
+
+      <li>linsolve.m: Fix regression when calling linsolve with 2 arguments <a href="https://savannah.gnu.org/bugs/?45212">(bug #45212)</a></li>
+
+      <li>fftshift.m, ifftshift.m: Restore support for N-dimensional arrays <a href="https://savannah.gnu.org/bugs/?45207">(bug #45207)</a></li>
+    </ul>
+  </p>
+</div>
+
+    <div id="footer">
+      <p>
+        Copyright &copy; 1998-2015 John W. Eaton.  Verbatim copying
+        and distribution is permitted in any medium, provided this
+        notice is preserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
