@@ -25,7 +25,7 @@ dnl
 define([__footer__], [dnl
     <div id="footer">
       <p>
-        Copyright &copy; 1998-2015 John W. Eaton.  Verbatim copying
+        Copyright &copy; 1998-2016 John W. Eaton.  Verbatim copying
         and distribution is permitted in any medium, provided this
         notice is preserved.
       </p>
@@ -93,7 +93,7 @@ define([__donate_button__], [dnl
         <div id="bitcoinaddress">
            1E6HchBMX1EfiJQhSUanuF4VYKk552tEHF
         </div>
-    </div>   
+    </div>
   </div>
 </div>
 ])dnl
