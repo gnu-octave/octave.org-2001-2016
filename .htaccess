@@ -15,4 +15,4 @@
 
 RewriteEngine on
 
-RewriteRule ^doc/interpreter/(.*) doc/v4.0.1/$1 [R]
+RewriteRule ^doc/interpreter/(.*) http://www.gnu.org/software/octave/doc/v4.0.1/$1 [R]
