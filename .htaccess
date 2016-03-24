@@ -15,4 +15,4 @@
 
 RewriteEngine on
 
-RewriteRule ^doc/interpreter/(.*) doc/v4.0.1/$1
+RewriteRule ^doc/interpreter/(.*) doc/v4.0.1/$1 [R]
