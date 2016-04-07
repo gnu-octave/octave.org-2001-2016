@@ -15,6 +15,6 @@
 
 RewriteEngine on
 
-RewriteRule ^(software/octave)/octave.pdf $1/doc/octave-4.0.1.pdf [L]
+RewriteRule ^octave.pdf doc/octave-4.0.1.pdf [L]
 
-RewriteRule ^(software/octave/doc)/interpreter/(.*) $1/v4.0.1/$2 [L]
+RewriteRule ^doc/interpreter/(.*) doc/v4.0.1/$1 [L]
