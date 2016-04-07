@@ -15,6 +15,6 @@
 
 RewriteEngine on
 
-RewriteRule ^octave.pdf http://www.gnu.org/software/octave/doc/octave-4.0.1.pdf [PT]
+RewriteRule ^octave.pdf http://www.gnu.org/software/octave/doc/octave-4.0.1.pdf [R,L]
 
-RewriteRule ^doc/interpreter/(.*) http://www.gnu.org/software/octave/doc/v4.0.1/$1 [PT]
+RewriteRule ^doc/interpreter/(.*) http://www.gnu.org/software/octave/doc/v4.0.1/$1 [R,L]
