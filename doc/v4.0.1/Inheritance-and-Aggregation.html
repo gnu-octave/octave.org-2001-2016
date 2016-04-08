@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- Created by GNU Texinfo 6.0, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 6.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>GNU Octave: Inheritance and Aggregation</title>
 
@@ -37,14 +37,12 @@ pre.smalldisplay {font-family: inherit; font-size: smaller}
 pre.smallexample {font-size: smaller}
 pre.smallformat {font-family: inherit; font-size: smaller}
 pre.smalllisp {font-size: smaller}
-span.nocodebreak {white-space: nowrap}
 span.nolinebreak {white-space: nowrap}
-span.roman {font-family: serif; font-weight: normal}
+span.roman {font-family: initial; font-weight: normal}
 span.sansserif {font-family: sans-serif; font-weight: normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="octave.css">
 
 
 </head>
@@ -108,6 +106,7 @@ function f = FIRfilter (p)
   f = class (f, &quot;FIRfilter&quot;, p);
 endfunction
 </pre><pre class="example">
+
 </pre></div>
 
 <p>As before, the leading comments provide command-line documentation for
@@ -141,6 +140,7 @@ other than memory or other physical issues.
 endfunction
 
 </pre><pre class="example">
+
 </pre></div>
 
 <p>Note that we have used the polynomial field of the struct to display
@@ -190,6 +190,7 @@ to access the fields.  The <code>subsref</code> method may be used for both.
   endswitch
 endfunction
 </pre><pre class="example">
+
 </pre></div>
 
 <p>The <code>&quot;()&quot;</code> case allows us to filter data using the polynomial provided
@@ -236,6 +237,7 @@ publicly writable.
   endswitch
 endfunction
 </pre><pre class="example">
+
 </pre></div>
 
 <p>So that
@@ -276,6 +278,7 @@ function f = FIRfilter (p)
   f = class (f, &quot;FIRfilter&quot;);
 endfunction
 </pre><pre class="example">
+
 </pre></div>
 
 <p>For our example, the remaining class methods remain unchanged.

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- Created by GNU Texinfo 6.0, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 6.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>GNU Octave: Function Overloading</title>
 
@@ -37,14 +37,12 @@ pre.smalldisplay {font-family: inherit; font-size: smaller}
 pre.smallexample {font-size: smaller}
 pre.smallformat {font-family: inherit; font-size: smaller}
 pre.smalllisp {font-size: smaller}
-span.nocodebreak {white-space: nowrap}
 span.nolinebreak {white-space: nowrap}
-span.roman {font-family: serif; font-weight: normal}
+span.roman {font-family: initial; font-weight: normal}
 span.sansserif {font-family: sans-serif; font-weight: normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="octave.css">
 
 
 </head>
@@ -73,6 +71,7 @@ like
   endif
 endfunction
 </pre><pre class="example">
+
 </pre></div>
 
 <p>This function just hands off the work to the normal Octave <code>polyval</code>
@@ -91,6 +90,7 @@ polynomial class is the <code>plot</code> function.
   endif
 endfunction
 </pre><pre class="example">
+
 </pre></div>
 
 <p>which allows polynomials to be plotted in the domain near the region
@@ -107,6 +107,7 @@ in the use of methods of other classes with the user class.  An example
   b = a.poly;
 endfunction
 </pre><pre class="example">
+
 </pre></div>
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- Created by GNU Texinfo 6.0, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 6.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>GNU Octave: Concatenating Strings</title>
 
@@ -37,14 +37,12 @@ pre.smalldisplay {font-family: inherit; font-size: smaller}
 pre.smallexample {font-size: smaller}
 pre.smallformat {font-family: inherit; font-size: smaller}
 pre.smalllisp {font-size: smaller}
-span.nocodebreak {white-space: nowrap}
 span.nolinebreak {white-space: nowrap}
-span.roman {font-family: serif; font-weight: normal}
+span.roman {font-family: initial; font-weight: normal}
 span.sansserif {font-family: sans-serif; font-weight: normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
-<link rel="stylesheet" type="text/css" href="octave.css">
 
 
 </head>
@@ -99,6 +97,7 @@ horizontally.  For example:
     &rArr; an apple
        two pears
 </pre><pre class="example">
+
 </pre><pre class="example">strcat (&quot;oc&quot;, &quot;tave&quot;, &quot; is&quot;, &quot; good&quot;, &quot; for you&quot;)
      &rArr; octave is good for you
 </pre></div>
@@ -114,6 +113,7 @@ eliminates empty strings.
 
        red
 </pre><pre class="example">
+
 </pre><pre class="example">strvcat (&quot;orange&quot;, &quot;green&quot;, &quot;&quot;, &quot;red&quot;)
     &rArr; orange
        green
@@ -132,6 +132,7 @@ concatenates within the cells of the cell arrays:
 
         blue
 </pre><pre class="example">
+
 </pre><pre class="example">strcat ({&quot;abc&quot;; &quot;ghi&quot;}, {&quot;def&quot;; &quot;jkl&quot;})
      &rArr;
         {
@@ -149,6 +150,7 @@ kinds of behavior can be useful as can be seen in the examples:
      &rArr; dir1/file1
         directory2/file2
 </pre><pre class="example">
+
 cstrcat ([&quot;thirteen apples&quot;; &quot;a banana&quot;], [&quot; 5$&quot;;&quot; 1$&quot;])
       &rArr; thirteen apples 5$
          a banana        1$
