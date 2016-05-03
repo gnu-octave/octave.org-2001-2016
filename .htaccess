@@ -17,5 +17,5 @@ RewriteEngine on
 
 RewriteRule ^octave.pdf doc/octave-4.0.1.pdf [L]
 
-RewriteRule ^doc/interpreter$ doc/interpreter/index.html
+RewriteRule ^doc/interpreter$ doc/interpreter/ [C]
 RewriteRule ^doc/interpreter/(.*) doc/v4.0.1/$1 [L]
