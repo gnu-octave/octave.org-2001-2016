@@ -20,4 +20,4 @@ RewriteBase /software/octave/
 RewriteRule ^octave.pdf doc/octave-4.0.3.pdf [L]
 
 RewriteRule ^doc/interpreter$ doc/interpreter/ [R,L]
-RewriteRule ^doc/interpreter/(.*) doc/v4.0.1/$1 [L]
+RewriteRule ^doc/interpreter/(.*) doc/v4.0.3/$1 [L]
