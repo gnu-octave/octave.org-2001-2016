@@ -5,8 +5,8 @@ MACRO_FILE := macros.m4
 HTML_SRC := \
   about.in \
   bugs.in \
-  bug-fixes-4-0-1.in \
   fixes-4-0-1.in \
+  fixes-4-0-3.in \
   commercial-support.in \
   community-news.in \
   donate.in \

@@ -1,0 +1,69 @@
+__header__([GNU Octave], [logo])
+
+
+__nav_buttons__([])
+
+<div id="content">
+  <h2>Bugs Fixed in GNU Octave 4.0.3</h2>
+  <p>
+    <ul>
+      <li>doc: clarify differences between atan and atan2 <a href="https://savannah.gnu.org/bugs/?48178">(bug #48178)</a></li>
+
+      <li>doc: delete mention of unsupported syntax for looping over structs <a href="https://savannah.gnu.org/bugs/?48064">(bug #48064)</a></li>
+
+      <li>ver.m: return empty struct for unknown package <a href="https://savannah.gnu.org/bugs/?48235">(bug #48235)</a>.</li>
+
+      <li>Update gnulib subrepo for texinfo formatting fixes <a href="https://savannah.gnu.org/bugs/?48001">(bug #48001)</a></li>
+
+      <li>Fix typos in Java conversion of 32 and 64 bit integers <a href="https://savannah.gnu.org/bugs/?48107">(bug #48107)</a></li>
+
+      <li>Create valid gnuplot commands even for single-entry colormaps <a href="https://savannah.gnu.org/bugs/?48083">(bug #48083)</a>.</li>
+
+      <li>orderfields.m: Remove trailing bracket in docstring <a href="https://savannah.gnu.org/bugs/?48063">(bug #48063)</a>.</li>
+
+      <li>Don't overly restrict options passed to Java jvm <a href="https://savannah.gnu.org/bugs/?39063">(bug #39063)</a>.</li>
+
+      <li>Write integers with correct byte order on big-endian systems <a href="https://savannah.gnu.org/bugs/?47434">(bug #47434)</a></li>
+
+      <li>doc: Document syntax for specifying color when using Tex interpreter <a href="https://savannah.gnu.org/bugs/?47907">(bug #47907)</a>.</li>
+
+      <li>Round quantized pixel values before writing uintN images <a href="https://savannah.gnu.org/bugs/?47746">(bug #47746)</a></li>
+
+      <li>Fix popen2 error on Windows when child writes to stderr <a href="https://savannah.gnu.org/bugs/?43036">(bug #43036)</a></li>
+
+      <li>it_IT.ts: Correct Italian translation of "col:" <a href="https://savannah.gnu.org/bugs/?47857">(bug #47857)</a>.</li>
+
+      <li>avoid crash in audiowrite argument processing <a href="https://savannah.gnu.org/bugs/?47875">(bug #47875)</a></li>
+
+      <li>make __magick_read__ a built-in function <a href="https://savannah.gnu.org/bugs/?41699">(bug #41699)</a></li>
+
+      <li>sortrows.m: Improve docstring <a href="https://savannah.gnu.org/bugs/?47844">(bug #47844)</a>.</li>
+
+      <li>doc: Fix typo in exec docstring.</li>
+
+      <li>Use correct URL for Online Documentation <a href="https://savannah.gnu.org/bugs/?47835">(bug #47835)</a>.</li>
+
+      <li>Fix autoscale affecting legend axes objects <a href="https://savannah.gnu.org/bugs/?47765">(bug #47765)</a>.</li>
+
+      <li>configure.ac: Remove AC_CHECK_FUNC for pipe now that gnulib::pipe used.</li>
+
+      <li>doc: fix on manual the syntax to empty elements from cell array.</li>
+
+      <li>octave.texi: Set document encoding to UTF-8.</li>
+
+      <li>Enable the pipe function on Windows <a href="https://savannah.gnu.org/bugs/?47614">(bug #47614)</a></li>
+
+      <li>avoid mulitple definitions of static function-scope vars <a href="https://savannah.gnu.org/bugs/?47372">(bug #47372)</a></li>
+
+      <li>Array-sym.cc: Delete obsolete file.</li>
+
+      <li>Initialize variable to stop unstable results for lgamma <a href="https://savannah.gnu.org/bugs/?47524">(bug #47524)</a>.</li>
+
+      <li>call openmp function at initialization <a href="https://savannah.gnu.org/bugs/?47372">(bug #47372)</a></li>
+
+      <li>macros.texi: Colorized links for PDF files with Texinfo 6.x.</li>
+    </ul>
+  </p>
+</div>
+
+__footer__
