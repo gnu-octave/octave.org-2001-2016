@@ -206,9 +206,8 @@ h3 {
   font-weight: bold;
 }
 
-img#octconf {
-  padding: 10px;
-  border: 2px solid #0790c0;
+img#screenshot {
+  border: 1px solid #0790c0;
 }
 
 p.centered {

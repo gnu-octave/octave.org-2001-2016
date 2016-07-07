@@ -5,7 +5,9 @@ __nav_buttons__([home])
 <div id="content">
 
   <p>
-    <a href="images/screenshot.png"><img src="images/screenshot-small.png" alt="[screenshot]" /></a>
+    <a href="images/screenshot-2016.png">
+      <img src="images/screenshot-2016-small.png" id="screenshot" alt="[screenshot]" />
+    </a>
   </p>
 
   <p>
